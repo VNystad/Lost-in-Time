@@ -9,7 +9,7 @@ class Machine
 {
 public:
     // Different states
-    enum class StateId { MAINMENU, PAUSE };
+    enum class StateId { MAINMENU, GAME, PAUSE };
 
     Machine();
     ~Machine();
@@ -30,4 +30,4 @@ protected:
 };
 
 
-#endif //LOST_IN_TIME_MACHINE_H
+#endif

@@ -8,9 +8,9 @@ void StatePause::GoNext(Machine &machine)
     std::cout << "Paused" << std::endl;
     while(1)
     {
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::K))
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::R))
         {
-            machine.SetState(Machine::StateId::MAINMENU);
+            machine.SetState(Machine::StateId::GAME);
             break;
         }
     }

@@ -10,4 +10,4 @@ public:
 };
 
 
-#endif //STATE_STATEMAINMENU_H
+#endif

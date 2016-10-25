@@ -11,7 +11,7 @@ Machine::Machine()
     running = true;
 
     // Start in mainmenu
-    state = StateId::GAME;
+    state = StateId::MAINMENU;
 
     // Add all states to the map
     states.emplace(StateId::GAME, new StateGame());

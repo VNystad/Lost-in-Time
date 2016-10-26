@@ -1,12 +1,15 @@
 #include <iostream>
 #include "statemainmenu.h"
 #include "machine.h"
-
+/****************************************
+ * Loads images from path into temp texture
+ * @param path = file path where image is
+ ****************************************/
 sf::Texture *StateMainMenu::LoadTexture( std::string path)
 {
-    //Final texture
+    //temp texture
     sf::Texture *newTexture = new sf::Texture();
-    newTexture->loadFromFile(path);
+    //newTexture->loadFromFile(path);
 
     if(!newTexture->loadFromFile(path))
     {
@@ -16,19 +19,20 @@ sf::Texture *StateMainMenu::LoadTexture( std::string path)
     return newTexture;
 }
 /***********************************
- * Loads images to texture pointers
- * using the function above
+ * Loads texture pointers
+ * using the function above, making sprites
+ * of them
  **********************************/
 bool StateMainMenu::loadMedia()
 {
     //Load success flag
     bool success = true;
-    BackgroundTexture = LoadTexture("Resources/Pictures/backgroundMM.png");
+    BackgroundTexture = LoadTexture("Resources/Pictures/backgroundmainmenu.png");
     NewGameTexture = LoadTexture("Resources/Pictures/newgame.png");
     NewGameSelectedTexture = LoadTexture("Resources/Pictures/newgameselected.png");
     LoadGameTexture = LoadTexture("Resources/Pictures/loadgame.png");
     LoadGameSelectedTexture = LoadTexture("Resources/Pictures/loadgameselected.png");
-    ExitGameTexture = LoadTexture("Resources/Pictures/exitegame.png");
+    ExitGameTexture = LoadTexture("Resources/Pictures/exitgame.png");
     ExitGameSelectedTexture = LoadTexture("Resources/Pictures/exitgameselected.png");
 
     return success;
@@ -48,16 +52,22 @@ void StateMainMenu::GoNext(Machine &machine)
 
     sf::Sprite newGameSprite;
     newGameSprite.setTexture(*NewGameTexture);
-    newGameSprite.setPosition(10, 50);
+    newGameSprite.setPosition(1, 10);
     sf::Sprite newGameSelectedSprite;
     newGameSelectedSprite.setTexture(*NewGameSelectedTexture);
-    newGameSelectedSprite.setPosition(10, 50);
-    sf::Sprite sprite2;
-    sprite2.setTexture(*LoadGameTexture);
-    sprite2.setPosition(10, 300);
-    sf::Sprite sprite3;
-    sprite3.setTexture(*ExitGameTexture);
-    sprite3.setPosition(10, 500);
+    newGameSelectedSprite.setPosition(1, 10);
+    sf::Sprite loadGameSprite;
+    loadGameSprite.setTexture(*LoadGameTexture);
+    loadGameSprite.setPosition(10, 300);
+    sf::Sprite loadGameSelectedSprite;
+    loadGameSelectedSprite.setTexture(*LoadGameSelectedTexture);
+    loadGameSelectedSprite.setPosition(10, 300);
+    sf::Sprite exitGameSprite;
+    exitGameSprite.setTexture(*ExitGameTexture);
+    exitGameSprite.setPosition(10, 500);
+    sf::Sprite exitGameSelectedSprite;
+    exitGameSelectedSprite.setTexture(*ExitGameTexture);
+    exitGameSelectedSprite.setPosition(10, 500);
 
     sf::RenderWindow MainMenuWindow;
     MainMenuWindow.create(sf::VideoMode(config.screenWidth, config.screenHeight,32), "Lost in Time demo v01");
@@ -88,7 +98,7 @@ void StateMainMenu::GoNext(Machine &machine)
         if(!keypressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
         {
             menu ++;
-            if(menu > menuAmount)
+            if(menu > 3)
                 menu = 1;
             keypressed = true;
         }
@@ -96,7 +106,7 @@ void StateMainMenu::GoNext(Machine &machine)
         {
             menu --;
             if(menu <= 0)
-                menu = menuAmount;
+                menu = 3;
             keypressed = true;
         }
         if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
@@ -104,8 +114,7 @@ void StateMainMenu::GoNext(Machine &machine)
 
         /******************************
          * Check what option user is on
-         * and change make it clearly what
-         * he/she is on
+         * and draw new picture
          *****************************/
 
         MainMenuWindow.clear(sf::Color::Black);
@@ -113,25 +122,21 @@ void StateMainMenu::GoNext(Machine &machine)
         if(menu == 1)
         {
             MainMenuWindow.draw(newGameSelectedSprite);
+            MainMenuWindow.draw(loadGameSprite);
+            MainMenuWindow.draw(exitGameSprite);
         }
         if(menu == 2)
         {
             MainMenuWindow.draw(newGameSprite);
+            MainMenuWindow.draw(loadGameSelectedSprite);
+            MainMenuWindow.draw(exitGameSprite);
         }
-        /*if(menu == 3)
+        if(menu == 3)
         {
-            sprite1.setColor(sf::Color::White);
-            sprite2.setColor(sf::Color::White);
-            sprite3.setColor(sf::Color::Red);
+            MainMenuWindow.draw(newGameSprite);
+            MainMenuWindow.draw(loadGameSprite);
+            MainMenuWindow.draw(exitGameSelectedSprite);
         }
-*/
-
-
-        /**************
-         * draw objects, first clear window
-         *************/
-
-
 
         /********************************
          * Display window with new content

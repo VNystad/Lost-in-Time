@@ -22,9 +22,13 @@ protected:
     Config config;
 
     //Pointer to different images
+    sf::Texture *BackgroundTexture = NULL;
     sf::Texture *NewGameTexture = NULL;
+    sf::Texture *NewGameSelectedTexture = NULL;
     sf::Texture *LoadGameTexture = NULL;
+    sf::Texture *LoadGameSelectedTexture = NULL;
     sf::Texture *ExitGameTexture = NULL;
+    sf::Texture *ExitGameSelectedTexture = NULL;
 };
 
 

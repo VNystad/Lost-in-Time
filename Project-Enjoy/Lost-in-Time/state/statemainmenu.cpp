@@ -23,10 +23,13 @@ bool StateMainMenu::loadMedia()
 {
     //Load success flag
     bool success = true;
-
+    BackgroundTexture = LoadTexture("Resources/Pictures/backgroundMM.png");
     NewGameTexture = LoadTexture("Resources/Pictures/newgame.png");
+    NewGameSelectedTexture = LoadTexture("Resources/Pictures/newgameselected.png");
     LoadGameTexture = LoadTexture("Resources/Pictures/loadgame.png");
-    ExitGameTexture = LoadTexture("Resources/Pictures/exitgame.png");
+    LoadGameSelectedTexture = LoadTexture("Resources/Pictures/loadgameselected.png");
+    ExitGameTexture = LoadTexture("Resources/Pictures/exitegame.png");
+    ExitGameSelectedTexture = LoadTexture("Resources/Pictures/exitgameselected.png");
 
     return success;
 }
@@ -37,15 +40,24 @@ void StateMainMenu::GoNext(Machine &machine)
     keypressed = false;
     // Loads media
     loadMedia();
-    sf::Sprite sprite1;
-    sprite1.setTexture(*NewGameTexture);
-    sprite1.setPosition(100, 50);
+    sf::Sprite backgroundSprite;
+    backgroundSprite.setTexture(*BackgroundTexture);
+    backgroundSprite.setScale(
+            config.screenWidth / backgroundSprite.getLocalBounds().width,
+            config.screenHeight / backgroundSprite.getLocalBounds().height);
+
+    sf::Sprite newGameSprite;
+    newGameSprite.setTexture(*NewGameTexture);
+    newGameSprite.setPosition(10, 50);
+    sf::Sprite newGameSelectedSprite;
+    newGameSelectedSprite.setTexture(*NewGameSelectedTexture);
+    newGameSelectedSprite.setPosition(10, 50);
     sf::Sprite sprite2;
     sprite2.setTexture(*LoadGameTexture);
-    sprite2.setPosition(100, 300);
+    sprite2.setPosition(10, 300);
     sf::Sprite sprite3;
     sprite3.setTexture(*ExitGameTexture);
-    sprite3.setPosition(100, 500);
+    sprite3.setPosition(10, 500);
 
     sf::RenderWindow MainMenuWindow;
     MainMenuWindow.create(sf::VideoMode(config.screenWidth, config.screenHeight,32), "Lost in Time demo v01");
@@ -95,34 +107,31 @@ void StateMainMenu::GoNext(Machine &machine)
          * and change make it clearly what
          * he/she is on
          *****************************/
+
+        MainMenuWindow.clear(sf::Color::Black);
+        MainMenuWindow.draw(backgroundSprite);
         if(menu == 1)
         {
-            sprite1.setColor(sf::Color::Red);
-            sprite2.setColor(sf::Color::White);
-            sprite3.setColor(sf::Color::White);
+            MainMenuWindow.draw(newGameSelectedSprite);
         }
         if(menu == 2)
         {
-            sprite1.setColor(sf::Color::White);
-            sprite2.setColor(sf::Color::Red);
-            sprite3.setColor(sf::Color::White);
+            MainMenuWindow.draw(newGameSprite);
         }
-        if(menu == 3)
+        /*if(menu == 3)
         {
             sprite1.setColor(sf::Color::White);
             sprite2.setColor(sf::Color::White);
             sprite3.setColor(sf::Color::Red);
         }
-
+*/
 
 
         /**************
          * draw objects, first clear window
          *************/
-        MainMenuWindow.clear(sf::Color::Black);
-        MainMenuWindow.draw(sprite1);
-        MainMenuWindow.draw(sprite2);
-        MainMenuWindow.draw(sprite3);
+
+
 
         /********************************
          * Display window with new content

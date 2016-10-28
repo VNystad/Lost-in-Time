@@ -13,6 +13,9 @@ public:
 	App();
 	bool Tick();
     void move(float delta);
+    bool grounded();
+    void movement(float delta);
+    void gravity(float delta);
 
 protected:
 	Config config;
@@ -21,6 +24,7 @@ protected:
 	Square square;
     Platform platform1;
 	Platform platform2;
+
 
 	sf::Clock clock;
 };

@@ -12,16 +12,33 @@ struct Square
 	void move(float delta);
 	void draw();
 
-	int orgjumpspeed = 22;
-	int jumpspeed = orgjumpspeed;
-	int fallspeed;
+    const int size = 50;
 
-	const int size = 50;
-	const float speed = 400;
+    float gravity = 9;
+    float jumppower = 400;
+	const int orgjumpspeed = 15;
+	float jumpspeed = orgjumpspeed;
+
+	float fallspeed;
+    float maxfallspeed = 800;
+
+    const float maxmovespeed = 400;
+    float movepower = 50;
+
+    float movespeedleft = 0;
+    float movespeedright = 0;
+
+    //Checks for move direction, 0=Left, 1=Right, 2=Stopped
+    int movedirection;
+    //Checks if object is slowing down
+    bool slowingdownleft;
+    bool slowingdownright;
+
+    //Checks for airborne and wether the jump or fall have reached its apex.
+    bool jumpcheck = 1;
+    bool apexcheck = 1;
+
 	float x, y;
-	int jumpcheck = 1;
-	int apexcheck = 1;
-	int gravity = 9;
 
 
 

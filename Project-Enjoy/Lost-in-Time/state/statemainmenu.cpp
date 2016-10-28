@@ -52,22 +52,22 @@ void StateMainMenu::GoNext(Machine &machine)
 
     sf::Sprite newGameSprite;
     newGameSprite.setTexture(*NewGameTexture);
-    newGameSprite.setPosition(1, 10);
+    newGameSprite.setPosition(-60, -200);
     sf::Sprite newGameSelectedSprite;
     newGameSelectedSprite.setTexture(*NewGameSelectedTexture);
-    newGameSelectedSprite.setPosition(1, 10);
+    newGameSelectedSprite.setPosition(-60, -200);
     sf::Sprite loadGameSprite;
     loadGameSprite.setTexture(*LoadGameTexture);
-    loadGameSprite.setPosition(10, 300);
+    loadGameSprite.setPosition(10, 200);
     sf::Sprite loadGameSelectedSprite;
     loadGameSelectedSprite.setTexture(*LoadGameSelectedTexture);
-    loadGameSelectedSprite.setPosition(10, 300);
+    loadGameSelectedSprite.setPosition(10, 200);
     sf::Sprite exitGameSprite;
     exitGameSprite.setTexture(*ExitGameTexture);
-    exitGameSprite.setPosition(10, 500);
+    exitGameSprite.setPosition(10, 400);
     sf::Sprite exitGameSelectedSprite;
-    exitGameSelectedSprite.setTexture(*ExitGameTexture);
-    exitGameSelectedSprite.setPosition(10, 500);
+    exitGameSelectedSprite.setTexture(*ExitGameSelectedTexture);
+    exitGameSelectedSprite.setPosition(10, 400);
 
     sf::RenderWindow MainMenuWindow;
     MainMenuWindow.create(sf::VideoMode(config.screenWidth, config.screenHeight,32), "Lost in Time demo v01");
@@ -136,6 +136,23 @@ void StateMainMenu::GoNext(Machine &machine)
             MainMenuWindow.draw(newGameSprite);
             MainMenuWindow.draw(loadGameSprite);
             MainMenuWindow.draw(exitGameSelectedSprite);
+        }
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+        {
+            if(menu == 1)
+            {
+                machine.SetState(Machine::StateId::GAME);
+            }
+            if(menu == 2)
+            {
+                //machine.SetState(Machine::StateId::LOAD);
+            }
+            if(menu == 3)
+            {
+                MainMenuWindow.close();
+                machine.SetRunning(false);
+            }
         }
 
         /********************************

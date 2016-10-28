@@ -28,12 +28,12 @@ bool StateMainMenu::loadMedia()
     //Load success flag
     bool success = true;
     BackgroundTexture = LoadTexture("Resources/Pictures/backgroundmainmenu.png");
-    NewGameTexture = LoadTexture("Resources/Pictures/newgame.png");
-    NewGameSelectedTexture = LoadTexture("Resources/Pictures/newgameselected.png");
-    LoadGameTexture = LoadTexture("Resources/Pictures/loadgame.png");
-    LoadGameSelectedTexture = LoadTexture("Resources/Pictures/loadgameselected.png");
-    ExitGameTexture = LoadTexture("Resources/Pictures/exitgame.png");
-    ExitGameSelectedTexture = LoadTexture("Resources/Pictures/exitgameselected.png");
+    NewGameTexture = LoadTexture("Resources/Pictures/NewGame.png");
+    NewGameSelectedTexture = LoadTexture("Resources/Pictures/NewGameSelected.png");
+    LoadGameTexture = LoadTexture("Resources/Pictures/LoadGame.png");
+    LoadGameSelectedTexture = LoadTexture("Resources/Pictures/LoadGameSelected.png");
+    ExitGameTexture = LoadTexture("Resources/Pictures/ExitGame.png");
+    ExitGameSelectedTexture = LoadTexture("Resources/Pictures/ExitGameSelected.png");
 
     return success;
 }
@@ -52,22 +52,22 @@ void StateMainMenu::GoNext(Machine &machine)
 
     sf::Sprite newGameSprite;
     newGameSprite.setTexture(*NewGameTexture);
-    newGameSprite.setPosition(-60, -200);
+    newGameSprite.setPosition(-70, -20);
     sf::Sprite newGameSelectedSprite;
     newGameSelectedSprite.setTexture(*NewGameSelectedTexture);
-    newGameSelectedSprite.setPosition(-60, -200);
+    newGameSelectedSprite.setPosition(-70, -20);
     sf::Sprite loadGameSprite;
     loadGameSprite.setTexture(*LoadGameTexture);
-    loadGameSprite.setPosition(10, 200);
+    loadGameSprite.setPosition(-70, 180);
     sf::Sprite loadGameSelectedSprite;
     loadGameSelectedSprite.setTexture(*LoadGameSelectedTexture);
-    loadGameSelectedSprite.setPosition(10, 200);
+    loadGameSelectedSprite.setPosition(-70, 180);
     sf::Sprite exitGameSprite;
     exitGameSprite.setTexture(*ExitGameTexture);
-    exitGameSprite.setPosition(10, 400);
+    exitGameSprite.setPosition(-70, 400);
     sf::Sprite exitGameSelectedSprite;
     exitGameSelectedSprite.setTexture(*ExitGameSelectedTexture);
-    exitGameSelectedSprite.setPosition(10, 400);
+    exitGameSelectedSprite.setPosition(-70, 400);
 
     sf::RenderWindow MainMenuWindow;
     MainMenuWindow.create(sf::VideoMode(config.screenWidth, config.screenHeight,32), "Lost in Time demo v01");

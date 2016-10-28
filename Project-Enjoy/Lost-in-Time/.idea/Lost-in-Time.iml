@@ -6,12 +6,14 @@
       <sourceFolder url="file://$MODULE_DIR$/Resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/state/statepause.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/state/machine.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/state/stategame.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/state/state.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/state/statepause.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/state/statemainmenu.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/state/machine.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/state/statemainmenu.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/state/machine.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/state/stategame.h" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

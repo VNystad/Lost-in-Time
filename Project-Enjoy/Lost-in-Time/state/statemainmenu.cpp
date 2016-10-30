@@ -27,13 +27,13 @@ bool StateMainMenu::loadMedia()
 {
     //Load success flag
     bool success = true;
-    BackgroundTexture = LoadTexture("Resources/Pictures/backgroundmainmenu.png");
-    NewGameTexture = LoadTexture("Resources/Pictures/NewGame.png");
-    NewGameSelectedTexture = LoadTexture("Resources/Pictures/NewGameSelected.png");
-    LoadGameTexture = LoadTexture("Resources/Pictures/LoadGame.png");
-    LoadGameSelectedTexture = LoadTexture("Resources/Pictures/LoadGameSelected.png");
-    ExitGameTexture = LoadTexture("Resources/Pictures/ExitGame.png");
-    ExitGameSelectedTexture = LoadTexture("Resources/Pictures/ExitGameSelected.png");
+    BackgroundTexture = LoadTexture("data/backgroundmainmenu.png");
+    NewGameTexture = LoadTexture("data/NewGame.png");
+    NewGameSelectedTexture = LoadTexture("data/NewGameSelected.png");
+    LoadGameTexture = LoadTexture("data/LoadGame.png");
+    LoadGameSelectedTexture = LoadTexture("data/LoadGameSelected.png");
+    ExitGameTexture = LoadTexture("data/ExitGame.png");
+    ExitGameSelectedTexture = LoadTexture("data/ExitGameSelected.png");
 
     return success;
 }

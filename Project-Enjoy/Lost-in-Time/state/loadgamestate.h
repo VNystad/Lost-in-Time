@@ -13,4 +13,4 @@ public:
 };
 
 
-#endif //LOST_IN_TIME_LOADGAMESTATE_H
+#endif

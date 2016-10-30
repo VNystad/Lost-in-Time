@@ -1,4 +1,3 @@
-#include <iostream>
 #include "state/machine.h"
 
 int main()

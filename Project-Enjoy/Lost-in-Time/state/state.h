@@ -17,4 +17,4 @@ public:
 };
 
 
-#endif //STATE_STATE_H
+#endif

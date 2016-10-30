@@ -10,4 +10,4 @@ public:
 };
 
 
-#endif //STATE_STATEPAUSE_H
+#endif

@@ -19,4 +19,4 @@ protected:
 };
 
 
-#endif //LOST_IN_TIME_OBJECTSUPER_H
+#endif

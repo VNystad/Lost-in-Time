@@ -8,10 +8,10 @@
       <sourceFolder url="file://$MODULE_DIR$/state" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Framework" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Player" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Interface" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Enemy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Map" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/data" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Interface" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

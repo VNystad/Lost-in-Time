@@ -143,10 +143,12 @@ void StateMainMenu::GoNext(Machine &machine)
             if(menu == 1)
             {
                 machine.SetState(Machine::StateId::GAME);
+                return;
             }
             if(menu == 2)
             {
                 //machine.SetState(Machine::StateId::LOAD);
+                return;
             }
             if(menu == 3)
             {

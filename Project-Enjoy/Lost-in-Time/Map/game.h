@@ -4,7 +4,6 @@
 #include <list>
 #include "../Framework/config.h"
 #include "../Player/player.h"
-#include "bitmask.h"
 #include "map.h"
 #include <SFML/System/Clock.hpp>
 #include <SFML/Graphics.hpp>
@@ -23,7 +22,6 @@ public:
     void gravity(float delta);
 
 protected:
-    bool PixelPerfectTest(const sf::Sprite& Object1, const sf::Sprite& Object2, sf::Uint8 AlphaLimit);
     bool gameTick(sf::RenderWindow& window, std::list<Object*>& objects, float deltaTime);
 
     std::list<Object*> objects;

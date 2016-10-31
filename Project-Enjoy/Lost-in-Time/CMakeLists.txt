@@ -44,7 +44,6 @@ set(SOURCE_FILES
         Map/object.h
         Map/sprite.cpp
         Map/sprite.h
-        Map/bitmask.h
         Map
 
         Player/player.cpp

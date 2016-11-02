@@ -12,10 +12,10 @@ struct Square
 	void move(float delta);
 	void draw();
 
-    float jumppixelcounter;
-    float jumpcooldown = 900;
-
     const int size = 50;
+
+    //Timer for collision, it basically allows the object to land, but not move through the roof
+    float collisioncooldown;
 
     float gravity = 9;
     float jumppower = 400;

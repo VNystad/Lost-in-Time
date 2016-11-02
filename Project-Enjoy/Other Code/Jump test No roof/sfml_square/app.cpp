@@ -3,7 +3,7 @@
 #include "app.h"
 #include <iostream>
 
-App::App() : square(200, 200, config, window), platform1(100, 500, config, window), platform2(300, 350, config, window)
+App::App() : square(200, 200, config, window), platform1(100, 500, config, window), platform2(300, 400, config, window)
 {
 	// Create and configure the window
 	window.create(sf::VideoMode(config.screenWidth, config.screenHeight), "The Magic Square");
@@ -157,29 +157,11 @@ void App::gravity(float delta)
     //Checks if object is in contact with platform,
     //then marks the object as not airborne(jumpcheck) and current fallspeed as 0.
     //Jumpspeed are also resetted for later use.
-
-    //The code wil now also not jump through the roof.
-    //Current bugs: Sometimes falls inside landing platform, which also make the code think it crashed into the roof
-    //and gets sent to oblivion. I might try to reverse the roof collide code and also prevent it from landing
-    //inside the platform as well.
-
-    square.jumpcooldown += delta;
     if(grounded() == true)
     {
-        square.jumpcheck = false;
+        square.jumpcheck = 0;
         square.fallspeed = 0;
         square.jumpspeed = square.orgjumpspeed;
-        if(square.jumppixelcounter > 30*delta)
-        {
-            while(grounded() == true)
-            {
-                square.y += 1;
-                square.draw();
-            }
-            //square.y += 20;
-            square.apexcheck = true;
-            square.jumppixelcounter = 0;
-        }
     }
 
         //Check if falling off a platform
@@ -193,9 +175,8 @@ void App::gravity(float delta)
 
     //Tries to make the object jump when Up key is pressed,
     //but only succeeds if the object is not already airborne (jumpcheck).
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && square.jumpcheck == 0 && square.jumpcooldown > 30*delta)
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && square.jumpcheck == 0)
     {
-        square.jumpcooldown = 0;
         square.jumpcheck = true;
         square.apexcheck = false;
     }
@@ -203,34 +184,39 @@ void App::gravity(float delta)
     //Functionality for ascending or falling when the object is marked as airborne (jumpcheck).
     if(square.jumpcheck == true)
     {
+        if(square.collisioncooldown <= delta)
+            square.collisioncooldown += delta;
         //The Object ascends at a decreasing rate when the object is marked as ascending (apexcheck).
         if(square.jumpspeed >= 0 && square.apexcheck == false)
         {
-            if(grounded() == true && square.jumppixelcounter > 33)
-            {
-                square.apexcheck = true;
-                square.jumppixelcounter = 0;
-            }
-            else
-            {
-                square.y -= ((square.jumppower*square.jumpspeed)/square.gravity)*(delta);
-                square.jumpspeed -= 1;
-                if(square.jumppixelcounter <= 20)
-                    square.jumppixelcounter += ((square.jumppower*square.jumpspeed)/square.gravity)*(delta);
-            }
+            float pixelstomove = ((square.jumppower*square.jumpspeed)/square.gravity)*(delta);
+            square.jumpspeed -= 1;
 
+            for(float i = pixelstomove; i >= 0; i -= 1 )
+            {
+                if(grounded() == true && square.collisioncooldown > delta)
+                {
+                    i = -1;
+                    square.y += 1;
+                    square.apexcheck = true;
+                }
+
+                else
+                    square.y -= 1;
+                square.draw();
+            }
         }
             //The Object is descending (apexcheck) as well ass airborne (jumpcheck),
             //and therefore descends at an increasing rate because of how gravity works.
         else
         {
+            square.collisioncooldown = 0;
             square.apexcheck = true;
-            square.jumppixelcounter = 0;
             float pixelstomove = ((square.jumppower*square.fallspeed)/square.gravity)*(delta);
 
-            //Meant to improve collision detection, but grounded seems to be false all the time.
-            //For some reason, the grounded check earlier in the code checks instead which makes the object
-            //move inside the platform a little bit.
+            //Martins carefull movement mechanism:
+            //  -Makes the object check every pixel it moves for collision, prevents object in falling through the ground
+            //  Bug: It might move 1 pixel into the ground, must investigate
             for(float i = pixelstomove; i >= 0; i -= 1 )
             {
                 if(grounded() == true)
@@ -257,10 +243,10 @@ void App::gravity(float delta)
 bool App::grounded()
 {
     //Simply checks if the object is currently on the ground
-    if(square.rectangle.getGlobalBounds().intersects(platform1.platform.getGlobalBounds()) || (square.rectangle.getGlobalBounds().intersects(platform2.platform.getGlobalBounds())))
-    {
+ if(square.rectangle.getGlobalBounds().intersects(platform1.platform.getGlobalBounds()) || square.rectangle.getGlobalBounds().intersects(platform2.platform.getGlobalBounds()))
+ {
      return true;
-    }
+ }
     else
      return false;
 }

@@ -240,6 +240,7 @@ void App::gravity(float delta)
 
                 else
                     square.y += 1;
+                square.draw();
             }
 
             //Fallspeed cannot exceed the max fallspeed, the real life equivalent of wind resistance limiting

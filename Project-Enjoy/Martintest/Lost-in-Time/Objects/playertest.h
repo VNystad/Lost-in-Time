@@ -3,6 +3,9 @@
 
 
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include "../Framework/config.h"
 #include "gameobject.h"
 
 class PlayerTest : public GameObject
@@ -13,6 +16,7 @@ public:
     void DrawMe();
 
     int GetSize() const { return size; };
+
 
     //Checks object collision cd
     void SetVertiCollCD(float verticalcollisioncooldown) { this->verticalcollisioncooldown = verticalcollisioncooldown; }
@@ -105,7 +109,8 @@ protected:
     bool apexcheck = true;
 
     //Player position
-    float x, y;
+    float x = 200;
+    float y = 250;
 
     const Config& config;
     sf::RectangleShape* character;

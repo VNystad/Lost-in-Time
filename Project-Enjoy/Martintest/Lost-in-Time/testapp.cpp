@@ -1,3 +1,5 @@
+#include <iostream>
+#include <unistd.h>
 #include "testapp.h"
 
 TestApp::TestApp() : config(config), window(window)
@@ -30,6 +32,7 @@ bool TestApp::Tick()
         if (event.type == sf::Event::Closed)
         {
             window->close();
+
             return false;
         }
     }
@@ -63,10 +66,10 @@ void TestApp::Move(float delta)
 
     // Keep the box within screen borders
     p->SetPositionX(std::max(p->GetPositionX(), 0.f));
-    p->SetPositionX(std::min(p->GetPositionX(), (float)(config.screenWidth - p->GetSize())));
-    p->SetPositionX(std::min(p->GetPositionX(), (float)(config.screenWidth - p->GetSize())));
+    p->SetPositionX(std::min(p->GetPositionX(), (float) (config.screenWidth - p->GetSize())));
+    p->SetPositionX(std::min(p->GetPositionX(), (float) (config.screenWidth - p->GetSize())));
     p->SetPositionY(std::max(p->GetPositionY(), 0.f));
-    p->SetPositionY(std::min(p->GetPositionY(), (float)(config.screenHeight - p->GetSize())));
+    p->SetPositionY(std::min(p->GetPositionY(), (float) (config.screenHeight - p->GetSize())));
 }
 
 void TestApp::Gravity(float delta)
@@ -146,7 +149,7 @@ void TestApp::Gravity(float delta)
 
                 else
                     p->SetPositionY(p->GetPositionY() + 1);
-                p->DrawMe();;
+                p->DrawMe();
             }
 
             //Fallspeed cannot exceed the max fallspeed, the real life equivalent of wind resistance limiting
@@ -195,7 +198,7 @@ void TestApp::Movement(float delta)
     //Left speed handler
     //If the object is moving to the left OR the movespeed to the left is greater than zero
 
-    if(p->GetMovDir() == 1 || p->GetMoveSpeedL() > 0)
+    if(p->GetMovDir() == 0 || p->GetMoveSpeedL() > 0)
     {
         if(p->GetSlowDownL())
         {
@@ -225,11 +228,11 @@ void TestApp::Movement(float delta)
             if(Grounded() && p->GetHoriCollCD() >= delta)
             {
                 i = -1;
-                p->SetPositionX(p->GetPositionX() -1 );
+                p->SetPositionX(p->GetPositionX() + 1);
             }
 
             else if(i != 0)
-                p->SetPositionX(p->GetPositionX() +1 );
+                p->SetPositionX(p->GetPositionX() - 1);
             p->DrawMe();
         }
     }
@@ -266,11 +269,11 @@ void TestApp::Movement(float delta)
             if(Grounded() && p->GetHoriCollCD() >= delta)
             {
                 i = -1;
-                p->SetPositionX(p->GetPositionX() -1 );
+                p->SetPositionX(p->GetPositionX() - 1);
             }
 
             else if(i != 0)
-                p->SetPositionX(p->GetPositionX() +1 );
+                p->SetPositionX(p->GetPositionX() + 1);
             p->DrawMe();
         }
     }
@@ -278,11 +281,15 @@ void TestApp::Movement(float delta)
 bool TestApp::Grounded()
 {
     //Simply checks if the object is currently on the ground
-    if(p->GetCharacter().getLocalBounds().intersects(platform1->GetPlatform().getLocalBounds())
-       || p->GetCharacter().getLocalBounds().intersects(platform2->GetPlatform().getLocalBounds()))
+    if(p->GetCharacter().getGlobalBounds().intersects(platform1->GetPlatform().getGlobalBounds())
+       || p->GetCharacter().getGlobalBounds().intersects(platform2->GetPlatform().getGlobalBounds()))
     {
+        std::cout << "in air" << std::endl;
         return true;
     }
     else
+    {
+        std::cout << "on ground" << std::endl;
         return false;
+    }
 }

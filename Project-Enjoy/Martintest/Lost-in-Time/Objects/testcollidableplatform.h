@@ -6,9 +6,8 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics.hpp>
 #include "../Framework/config.h"
-#include "gameobject.h"
 
-class TestCollidablePlatform : public GameObject
+class TestCollidablePlatform
 {
 public:
 
@@ -23,7 +22,9 @@ public:
 protected:
     const int width = 400;
     const int height = 20;
-    float x, y;
+    //Platform position
+    float positionX;
+    float positionY;
 
     sf::RectangleShape* platform;
     const Config& config;

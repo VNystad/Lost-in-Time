@@ -1,7 +1,7 @@
 #include "testcollidableplatform.h"
 
 TestCollidablePlatform::TestCollidablePlatform(float x, float y, const Config& config, sf::RenderWindow* window)
-        : x(x), y(y),
+        : positionX(x), positionY(y),
           config(config),
           window(window)
 {
@@ -10,9 +10,10 @@ TestCollidablePlatform::TestCollidablePlatform(float x, float y, const Config& c
     platform->setFillColor(sf::Color::Yellow);
 }
 
+
 void TestCollidablePlatform::DrawMe()
 {
-    platform->setPosition(x, y);
+    platform->setPosition(positionX, positionY);
 
     window->draw(*platform);
 }

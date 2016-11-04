@@ -6,9 +6,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include "../Framework/config.h"
-#include "gameobject.h"
-
-class PlayerTest : public GameObject
+class PlayerTest
 {
 public:
     PlayerTest(float x, float y, const Config& config, sf::RenderWindow* window);
@@ -16,6 +14,12 @@ public:
     void DrawMe();
 
     int GetSize() const { return size; };
+
+    float GetPositionX();
+    float GetPositionY();
+    void SetPosition(float x, float y);
+    void SetPositionX(float x);
+    void SetPositionY(float y);
 
 
     //Checks object collision cd
@@ -48,6 +52,8 @@ public:
     void SetMovDir(int movedirection) { this->movedirection = movedirection; };
     int GetMovDir() const { return movedirection; }
 
+    float GetGravity() const { return gravity; }
+
     sf::RectangleShape GetCharacter() const { return *character; }
 
     /***************************************
@@ -65,12 +71,12 @@ public:
 
     void SetJumpSpeed(float jumpspeed ) { this->jumpspeed = jumpspeed; }
     float GetJumpSpeed() const { return jumpspeed; }
-    float GetOrigJumpSpeed() const { return orgjumpspeed; }
+    float GetOrigJumpSpeed() const { return origjumpspeed; }
 
     void SetJumpPower(float jumppower ) { this->jumppower = jumppower; }
     float GetJumpPower() const { return jumppower; }
 
-    float GetGravity() const { return gravity; }
+
 
 protected:
 
@@ -84,23 +90,35 @@ protected:
     float brakehorslowdown = 2;
     float regularhorslowdown = 1.5;
 
-    float gravity = 9;
-    float jumppower = 400;
-    const int orgjumpspeed = 15;
-    float jumpspeed = orgjumpspeed;
 
+    //Horisontal
+    const float maxmovespeed = 400;
+
+    /**********************
+     * Vertical variables
+     * *******************/
+
+    float gravity = 9;
+
+    const int origjumpspeed = 15;
     float fallspeed;
     float maxfallspeed = 800;
 
-    const float maxmovespeed = 400;
+    float jumppower = 250;
+    float jumpspeed = 15;
+
+
+
+
     float movepower = 50;
 
     float movespeedleft = 0;
     float movespeedright = 0;
 
-    //Checks for move direction, 0=Left, 1=Right, 2=Stopped
+    // Different movement directions 0=Left, 1=Right, 2=Stopped
     int movedirection = 2;
-    //Checks if object is slowing down
+
+    //Checks if player is slowing down
     bool slowingdownleft = false;
     bool slowingdownright = false;
 
@@ -109,8 +127,8 @@ protected:
     bool apexcheck = true;
 
     //Player position
-    float x = 200;
-    float y = 250;
+    float positionX = 180;
+    float positionY = 250;
 
     const Config& config;
     sf::RectangleShape* character;

@@ -13,7 +13,6 @@ public:
     bool Grounded();
     void Move(float delta);
     void Movement(float delta);
-    void Gravity(float delta);
 protected:
     //Pointers to different objects
     PlayerTest* p;

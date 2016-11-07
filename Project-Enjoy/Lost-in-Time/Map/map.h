@@ -3,8 +3,9 @@
 
 #include <string>
 #include <list>
+#include <map>
 #include "object.h"
-#include "../Framework/config.h"
+#include "layer.h"
 
 namespace Json
 {
@@ -15,13 +16,13 @@ namespace Json
 class Map
 {
 public:
-
-    Map();
+    // Construtor
+    Map() { }
 
 	// Load map from Tiled JSON file
 	static bool load(std::string filename, std::list<Object*>& objects);
 
-private:
+protected:
 
 	// Handles regular layers
 	static void loadLayer(Json::Value& layer, std::list<Object*>& objects, TileSize tileSize);

@@ -5,8 +5,8 @@ class Config
 {
 public:
     // Screen dimensions
-    const int screenWidth = 800;
-    const int screenHeight = 600;
+    const int screenWidth = 1024;
+    const int screenHeight = 576;
 };
 
 #endif

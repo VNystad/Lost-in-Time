@@ -2,16 +2,16 @@
 #include <SFML/Window.hpp>
 #include "game.h"
 
-Game::Game() : player(200, 200, config, window) {}
-
 bool Game::init()
 {
     // Load map information from JSON into object list
     if (!Map::load("data/map.json", objects))
     {
-        std::cout << "Failed to load map data." << std::endl;
+        std::cout << "Failed to load map data." << std::endl << std::endl;
         return false;
     }
+
+    objects.back();
 
     // Standard SFML setup
     window.create(sf::VideoMode(config.screenWidth, config.screenHeight), "Lost in Time");
@@ -22,6 +22,7 @@ bool Game::init()
     view.setCenter(view.getCenter().x, view.getCenter().y);
     window.setView(view);
 
+    // Window settings
     window.setVerticalSyncEnabled(true);
     window.setMouseCursorVisible(false);
     window.setFramerateLimit(60);
@@ -64,11 +65,17 @@ bool Game::gameTick(sf::RenderWindow& window, std::list<Object*>& objects, float
 
                     if (!Map::load("data/map.json", objects))
                     {
-                        std::cout << "Failed to reload map data." << std::endl;
+                        std::cout << "Failed to reload map data." << std::endl << std::endl;
                         return true;
                     }
                 }
+                // If player press esc, window will close
+                if (event.key.code == sf::Keyboard::Escape)
+                    window.close();
+
                 break;
+
+
 
             default:
                 // Ignore the other events
@@ -96,19 +103,17 @@ bool Game::gameTick(sf::RenderWindow& window, std::list<Object*>& objects, float
 
 void Game::move(float delta)
 {
-    //This function will make the object able to move and fall, with correlation to any hinderings such as gravity.
-    //The delta float is there for smoothness.
+    // This function will make the object able to move and fall, with correlation to any hinderings such as gravity.
+    // The delta float is there for smoothness.
 
     movement(delta);
     gravity(delta);
 
     // Keep the box within screen borders
-    player.x = std::max(player.x, 0.f);
-    player.x = std::min(player.x, (float)(config.screenWidth - player.size));
-    player.y = std::max(player.y, 0.f);
-    player.y = std::min(player.y, (float)(config.screenHeight - player.size));
-
-
+    player.x = std::max(player.x, 0);
+    player.x = std::min(player.x, (config.screenWidth - player.size));
+    player.y = std::max(player.y, 0);
+    player.y = std::min(player.y, (config.screenHeight - player.size));
 }
 
 void Game::movement(float delta)
@@ -201,7 +206,7 @@ void Game::gravity(float delta)
     //Checks if object is in contact with platform,
     //then marks the object as not airborne(jumpcheck) and current fallspeed as 0.
     //Jumpspeed are also resetted for later use.
-    if(grounded() == true)
+    if(colliding() == true)
     {
         player.jumpcheck = 0;
         player.fallspeed = 0;
@@ -241,12 +246,12 @@ void Game::gravity(float delta)
             player.apexcheck = true;
             float pixelstomove = ((player.jumppower*player.fallspeed)/player.gravity)*(delta);
 
-            //Meant to improve collision detection, but grounded seems to be false all the time.
-            //For some reason, the grounded check earlier in the code checks instead which makes the object
+            //Meant to improve collision detection, but colliding seems to be false all the time.
+            //For some reason, the colliding check earlier in the code checks instead which makes the object
             //move inside the platform a little bit.
             for(float i = pixelstomove; i >= 0; i -= 1 )
             {
-                if(grounded() == true)
+                if(colliding() == true)
                 {
                     i = -1;
                 }
@@ -266,14 +271,17 @@ void Game::gravity(float delta)
     //Gravity End-------------------------------------------------------------------------------------------------------
 }
 
-bool Game::grounded()
+bool Game::colliding()
 {
+    tileSize.x = 32;
+    tileSize.y = 32;
+    tileSize.s = 0;
+    Layer tempLayer(tileSize);
 
-   //Simply checks if the object is currently on the ground
-/*    if(player.character.getGlobalBounds().intersects())
-    {
-        return true;
-    }
-    else */
+    //if (player.y > 150 && player.y < 250)
+    //if (tempLayer.collidable[player.x][player.y] != 0) // Gives error when running
+        //return true;
+
+    //else
         return false;
 }

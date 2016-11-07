@@ -4,11 +4,10 @@
 // Simple structure (a class where everything is public) for our square
 struct Player
 {
-    Player(float x, float y, const Config& config, sf::RenderWindow& window);
-    void move(float delta);
+    Player(int x, int y, const Config& config, sf::RenderWindow& window);
     void draw();
 
-    const int size = 32;
+    const int size = 16;
 
     float gravity = 9;
     float jumppower = 400;
@@ -35,7 +34,7 @@ struct Player
     bool jumpcheck = 1;
     bool apexcheck = 1;
 
-    float x, y;
+    int x, y;
 
     sf::RectangleShape character;
 

@@ -6,6 +6,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -Wall -pedantic")
 set(SOURCE_FILES
         main.cpp
 
+        state
         state/machine.h
         state/machine.cpp
         state/state.h
@@ -17,8 +18,8 @@ set(SOURCE_FILES
         state/statepause.cpp
         state/teststate.cpp
         state/teststate.h
-        state
 
+        data
         data/map.json
         data/tileset.png
         data/backgroundmainmenu.png

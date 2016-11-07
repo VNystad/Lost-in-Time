@@ -3,6 +3,7 @@
 #include "statemainmenu.h"
 #include "statepause.h"
 #include "stategame.h"
+#include "teststate.h"
 
 // Creating machine
 Machine::Machine()
@@ -17,6 +18,7 @@ Machine::Machine()
     states.emplace(StateId::GAME, new StateGame());
     states.emplace(StateId::MAINMENU, new StateMainMenu());
     states.emplace(StateId::PAUSE, new StatePause());
+    states.emplace(StateId::TEST, new TestState());
 }
 
 // Destructing machine

@@ -2,11 +2,9 @@
 #include <cstring>
 #include <jsoncpp/json/json.h>
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include "map.h"
 #include "sprite.h"
-#include "layer.h"
-
-Map::Map(){}
 
 bool Map::load(std::string filename, std::list<Object*>& objects)
 {
@@ -21,6 +19,8 @@ bool Map::load(std::string filename, std::list<Object*>& objects)
 
 	// Read data from file into root object
 	bool parsingSuccessful = reader.parse(file, root);
+    if (parsingSuccessful == true)
+        std::cout << "Succesfully read from file into root object." << std::endl << std::endl;
 
 	// Get tile size information
 	TileSize tileSize;
@@ -33,7 +33,7 @@ bool Map::load(std::string filename, std::list<Object*>& objects)
 	{
 		if (layer["name"].asString() != "objects")
 			loadLayer(layer, objects, tileSize);
-		else
+        else
 			loadObjects(root, layer, objects, tileSize);
 	}
 
@@ -62,6 +62,30 @@ void Map::loadLayer(Json::Value& layer, std::list<Object*>& objects, TileSize ti
 	// Read in tilemap
 	for (size_t i = 0; i < layer["data"].size(); i++)
 		tmp->tilemap[i % tmp->width][i / tmp->width] = layer["data"][(int)i].asInt();
+
+    // If layer is foreground, this happens aswell
+    if((layer["name"].asString() == "foreground"))
+    {
+        // Clear tilemap for collision tiles
+        memset(tmp->collidable, 0, sizeof(tmp->collidable));
+
+        // Read in tilemap for collision tiles
+        for (size_t i = 0; i < layer["data"].size(); i++)
+            tmp->collidable[i % tmp->width][i / tmp->width] = layer["data"][(int)i].asInt();
+
+        // Render each tile
+        for (int y = 0; y < tmp->height; y++)
+        {
+            for (int x = 0; x < tmp->width; x++)
+            {
+                tmp->collidableID = tmp->collidable[x][y];
+
+                // Skip empty tiles
+                if (tmp->collidableID == 0)
+                    continue;
+            }
+        }
+    }
 
 	objects.push_back(tmp);
 }

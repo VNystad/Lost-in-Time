@@ -20,8 +20,10 @@ class Object
 {
 	// Map needs to access protected/private data
 	friend class Map;
+    friend class Game;
 
 public:
+    // Constructor
 	Object(TileSize tileSize) : tileSize(tileSize) { }
 	virtual ~Object();
 

@@ -13,7 +13,7 @@ class Object;
 class Game {
 public:
     // Constructor
-    Game() : player(200, 200, config, window) {}
+    Game() : playergroundbox(200, 200, config, window), playervisbox(200, 200 - playergroundbox.size, config, window) {}
 
     bool init();
     void run();
@@ -29,7 +29,9 @@ protected:
 
     std::map<int, Tile*> *collidabletiles = new std::map<int, Tile*>;
 
-    Player player;
+    Player playergroundbox;
+    Player playervisbox;
+
     TileSize tileSize;
     Config config;
     std::list<Object*> objects;

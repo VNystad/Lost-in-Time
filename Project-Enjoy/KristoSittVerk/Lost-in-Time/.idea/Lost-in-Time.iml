@@ -2,12 +2,12 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/Enemy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Interface" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/data" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Objects" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/state" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Enemy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Framework" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Map" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
@@ -17,18 +17,18 @@
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
-          <root url="file://E:/dev/dev/libs/SFML/include" />
-          <root url="file://E:/dev/dev/libs/jsoncpp/include" />
-          <root url="file://E:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/6.2.0/include" />
-          <root url="file://E:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/6.2.0/include-fixed" />
-          <root url="file://E:/mingw-w64/mingw64/x86_64-w64-mingw32/include" />
+          <root url="file://E:/Programmer/TheMinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include" />
+          <root url="file://E:/Programmer/TheMinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include-fixed" />
+          <root url="file://E:/Programmer/TheMinGW64/mingw64/x86_64-w64-mingw32/include" />
+          <root url="file://E:/Programmer/CLionLibraries/SFML/include" />
+          <root url="file://E:/Programmer/CLionLibraries/jsoncpp/include" />
         </CLASSES>
         <SOURCES>
-          <root url="file://E:/dev/dev/libs/SFML/include" />
-          <root url="file://E:/dev/dev/libs/jsoncpp/include" />
-          <root url="file://E:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/6.2.0/include" />
-          <root url="file://E:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/6.2.0/include-fixed" />
-          <root url="file://E:/mingw-w64/mingw64/x86_64-w64-mingw32/include" />
+          <root url="file://E:/Programmer/TheMinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include" />
+          <root url="file://E:/Programmer/TheMinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include-fixed" />
+          <root url="file://E:/Programmer/TheMinGW64/mingw64/x86_64-w64-mingw32/include" />
+          <root url="file://E:/Programmer/CLionLibraries/SFML/include" />
+          <root url="file://E:/Programmer/CLionLibraries/jsoncpp/include" />
         </SOURCES>
       </library>
     </orderEntry>

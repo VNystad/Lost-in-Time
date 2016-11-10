@@ -12,7 +12,7 @@ Machine::Machine()
     running = true;
 
     // Start in mainmenu
-    state = StateId::TEST;
+    state = StateId::MAINMENU;
 
     // Add all states to the map
     states.emplace(StateId::GAME, new StateGame());

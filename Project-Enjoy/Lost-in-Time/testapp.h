@@ -26,10 +26,10 @@ protected:
     bool running;
 
     //Dependensies
-    Config& config;
+    Config* config;
     sf::RenderWindow* window;
     sf::Clock* clock;
 };
 
 
-#endif //LOST_IN_TIME_TESTAPP_H
+#endif

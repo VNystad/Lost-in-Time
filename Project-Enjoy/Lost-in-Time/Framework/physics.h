@@ -14,12 +14,7 @@ public:
 
 protected:
 
-
-
-
-
     // player variables
-
 
     /***************
      * Dependencies
@@ -28,4 +23,4 @@ protected:
 };
 
 
-#endif //LOST_IN_TIME_PHYSICS_H
+#endif

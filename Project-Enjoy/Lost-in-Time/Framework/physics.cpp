@@ -1,4 +1,5 @@
 #include "physics.h"
+
 void Physics::Gravity(PlayerTest* p, TestCollidablePlatform* platform1, TestCollidablePlatform* platform2, float delta)
 {
     //Gravity Start-----------------------------------------------------------------------------------------------------
@@ -29,6 +30,16 @@ void Physics::Gravity(PlayerTest* p, TestCollidablePlatform* platform1, TestColl
     {
         p->SetJumpCheck(true);
         p->SetApexCheck(false);
+
+        p->character->setTexture(&p->PlayerTextureJump);
+
+        if (p->rectSourceCharacter->left == 136)
+            p->rectSourceCharacter->left -= 34;
+
+        else if (p->rectSourceCharacter->left == 0)
+            p->rectSourceCharacter->left += 34;
+
+        p->character->setTextureRect(*p->rectSourceCharacter);
     }
 
     //Functionality for ascending or falling when the object is marked as airborne (jumpcheck).
@@ -95,23 +106,72 @@ void Physics::Movement(PlayerTest* p, TestCollidablePlatform* platform1, TestCol
     //which it is limited by, and also gradually slow down at different rates wether one tries to move the
     //object to the other direction or not.
 
+    // If standing still, play idle animation
+    if (p->GetMovDir() == 2)
+    {
+        p->character->setTexture(&p->PlayerTextureIdle);
+
+        if (p->rectSourceCharacter->left == 136)
+            p->rectSourceCharacter->left -= 34;
+
+        else if (p->rectSourceCharacter->left == 0)
+            p->rectSourceCharacter->left += 34;
+
+        p->character->setTextureRect(*p->rectSourceCharacter);
+    }
+
     if (Grounded(p, platform1, platform2)) {
         p->SetHoriCollCD(0);
-    } else
+    }
+    else
         p->SetHoriCollCD(p->GetHoriCollCD() + delta);
 
     //Checks for trying to move to the left
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
         p->SetMovDir(0); //Means to the left
         p->SetSlowDownL(false);
-    } else
+
+        p->character->setTexture(&p->PlayerTextureWalkflipped);
+
+        if (p->rectSourceCharacter->left == 136)
+            p->rectSourceCharacter->left -= 34;
+
+        else if (p->rectSourceCharacter->left == 0)
+            p->rectSourceCharacter->left += 34;
+
+        p->character->setTextureRect(*p->rectSourceCharacter);
+    }
+    else
         p->SetSlowDownL(true); //Object does not accelerate to left, should slow down if moving to left
 
     //Check for trying to move to the right
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
         p->SetMovDir(1); //Means to the right
         p->SetSlowDownR(false);
-    } else
+
+        p->character->setTexture(&p->PlayerTextureWalk);
+
+        if (delta > 1.0f)
+        {
+            if (p->rectSourceCharacter->left == 0) {
+                // Move the frame to the left
+                for (int j = 0; j < 0; j = j + 34) {
+                    if (p->rectSourceCharacter->left == j)
+                        p->rectSourceCharacter->left = j + 34;
+                }
+            }
+
+            if (p->rectSourceCharacter->left == 136) {
+                // If the frame is to the right, move it back to the left
+                for (int i = 136; i > 0; i = i - 34) {
+                    if (p->rectSourceCharacter->left == i)
+                        p->rectSourceCharacter->left = i - 34;
+                }
+            }
+        }
+        p->character->setTextureRect(*p->rectSourceCharacter);
+    }
+    else
         //Object does not accelerate to the right, should slow down if moving to the right
         p->SetSlowDownR(true);
 
@@ -120,27 +180,35 @@ void Physics::Movement(PlayerTest* p, TestCollidablePlatform* platform1, TestCol
 
     if (p->GetMovDir() == 0 || p->GetMoveSpeedL() > 0) {
         if (p->GetSlowDownL()) {
-            if (p->GetMoveSpeedL() >= p->GetMovePower() * p->GetHorBrake() && p->GetMovDir() == 0) {
+            if (p->GetMoveSpeedL() >= p->GetMovePower() * p->GetHorBrake() && p->GetMovDir() == 0)
+            {
                 //Trying to move the opposite direction of currently move direction, slows down pretty fast
                 p->SetMoveSpeedL(p->GetMoveSpeedL() - p->GetMovePower() * p->GetHorBrake());
-            } else if (p->GetMoveSpeedL() >= p->GetMovePower() * p->GetRegularBrake()) {
+            }
+            else if (p->GetMoveSpeedL() >= p->GetMovePower() * p->GetRegularBrake())
+            {
                 //Not accelerating nor trying to stop, slows down slowly
                 p->SetMoveSpeedL(p->GetMoveSpeedL() - p->GetMovePower() * p->GetRegularBrake());
-            } else
+            }
+            else
                 //Prevents the object from moving in the opposite direction if it tries to stop
                 p->SetMoveSpeedL(0);
-        } else if (p->GetMoveSpeedL() < p->GetMaxMoveSpeed())
+        }
+        else if (p->GetMoveSpeedL() < p->GetMaxMoveSpeed())
             //The current speed is increased if the object has not yet reached its max speed
             p->SetMoveSpeedL(p->GetMoveSpeedL() + p->GetMovePower());
 
         //The object is actually being moved
         float pixelstomove = p->GetMoveSpeedL() * delta;
 
-        for (float i = pixelstomove; i >= 0; i -= 1) {
-            if (Grounded(p, platform1, platform2) && p->GetHoriCollCD() >= delta) {
+        for (float i = pixelstomove; i >= 0; i -= 1)
+        {
+            if (Grounded(p, platform1, platform2) && p->GetHoriCollCD() >= delta)
+            {
                 i = -1;
                 p->SetPositionX(p->GetPositionX() + 1);
-            } else if (i != 0)
+            }
+            else if (i != 0)
                 p->SetPositionX(p->GetPositionX() - 1);
             p->DrawMe();
         }
@@ -148,29 +216,39 @@ void Physics::Movement(PlayerTest* p, TestCollidablePlatform* platform1, TestCol
 
     //Right speed handler
     //If the object is moving to the right OR the movespeed to the right is greater than zero
-    if (p->GetMovDir() == 1 || p->GetMoveSpeedR() > 0) {
-        if (p->GetSlowDownR()) {
-            if (p->GetMoveSpeedR() >= p->GetMovePower() * p->GetHorBrake() && p->GetMovDir() == 0) {
+    if (p->GetMovDir() == 1 || p->GetMoveSpeedR() > 0)
+    {
+        if (p->GetSlowDownR())
+        {
+            if (p->GetMoveSpeedR() >= p->GetMovePower() * p->GetHorBrake() && p->GetMovDir() == 0)
+            {
                 //Trying to move the opposite direction of currently move direction, slows down pretty fast
                 p->SetMoveSpeedR(p->GetMoveSpeedR() - p->GetMovePower() * p->GetHorBrake());
-            } else if (p->GetMoveSpeedR() >= p->GetMovePower() * p->GetRegularBrake()) {
+            }
+            else if (p->GetMoveSpeedR() >= p->GetMovePower() * p->GetRegularBrake())
+            {
                 //Not accelerating nor trying to stop, slows down slowly
                 p->SetMoveSpeedR(p->GetMoveSpeedR() - p->GetMovePower() * p->GetRegularBrake());
-            } else
+            }
+            else
                 //Prevents the object from moving in the opposite direction if it tries to stop
                 p->SetMoveSpeedR(0);
-        } else if (p->GetMoveSpeedR() < p->GetMaxMoveSpeed())
+        }
+        else if (p->GetMoveSpeedR() < p->GetMaxMoveSpeed())
             //The current speed is increased if the object has not yet reached its max speed
             p->SetMoveSpeedR(p->GetMoveSpeedR() + p->GetMovePower());
 
         //The object is actually being moved
         float pixelstomove = p->GetMoveSpeedR() * delta;
 
-        for (float i = pixelstomove; i >= 0; i -= 1) {
-            if (Grounded(p, platform1, platform2) && p->GetHoriCollCD() >= delta) {
+        for (float i = pixelstomove; i >= 0; i -= 1)
+        {
+            if (Grounded(p, platform1, platform2) && p->GetHoriCollCD() >= delta)
+            {
                 i = -1;
                 p->SetPositionX(p->GetPositionX() - 1);
-            } else if (i != 0)
+            }
+            else if (i != 0)
                 p->SetPositionX(p->GetPositionX() + 1);
             p->DrawMe();
         }
@@ -185,6 +263,7 @@ bool Physics::Grounded(PlayerTest* p, TestCollidablePlatform* platform1, TestCol
     {
         return true;
     }
+
     else
     {
         return false;

@@ -10,7 +10,7 @@ struct Player
     const int size = 16;
 
     float gravity = 9;
-    float jumppower = 400;
+    float jumppower = 1000;
     const int orgjumpspeed = 15;
     float jumpspeed = orgjumpspeed;
 

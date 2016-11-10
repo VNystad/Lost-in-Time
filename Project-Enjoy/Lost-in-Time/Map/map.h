@@ -22,7 +22,8 @@ public:
 	// Load map from Tiled JSON file
 	static bool load(std::string filename, std::list<Object*>& objects);
 
-protected:
+private:
+
 
 	// Handles regular layers
 	static void loadLayer(Json::Value& layer, std::list<Object*>& objects, TileSize tileSize);

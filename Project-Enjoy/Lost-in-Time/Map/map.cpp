@@ -19,14 +19,14 @@ bool Map::load(std::string filename, std::list<Object*>& objects)
 
 	// Read data from file into root object
 	bool parsingSuccessful = reader.parse(file, root);
-    if (parsingSuccessful == true)
+    if (parsingSuccessful)
         std::cout << "Succesfully read from file into root object." << std::endl << std::endl;
 
 	// Get tile size information
 	TileSize tileSize;
-	tileSize.x = root["tilesets"][0u]["tilewidth"].asInt();
-	tileSize.y = root["tilesets"][0u]["tileheight"].asInt();
-	tileSize.s = root["tilesets"][0u]["spacing"].asInt();
+    tileSize.x = root["tilesets"][0u]["tilewidth"].asInt();
+    tileSize.y = root["tilesets"][0u]["tileheight"].asInt();
+    tileSize.s = root["tilesets"][0u]["spacing"].asInt();
 
 	// Read in each layer
 	for (Json::Value& layer: root["layers"])
@@ -58,18 +58,18 @@ void Map::loadLayer(Json::Value& layer, std::list<Object*>& objects, TileSize ti
 
 	// Clear tilemap
 	memset(tmp->tilemap, 0, sizeof(tmp->tilemap));
+    memset(tmp->temptilemap, 0, sizeof(tmp->temptilemap));
 
 	// Read in tilemap
 	for (size_t i = 0; i < layer["data"].size(); i++)
-		tmp->tilemap[i % tmp->width][i / tmp->width] = layer["data"][(int)i].asInt();
+    {
+        tmp->tilemap[i % tmp->width][i / tmp->width] = layer["data"][(int) i].asInt();
+        tmp->tilemap[i % tmp->width][i / tmp->width] = layer["data"][(int) i].asInt();
 
-    // If layer is foreground, this happens aswell
+    }
     if((layer["name"].asString() == "foreground"))
     {
-        // Clear tilemap for collision tiles
-        memset(tmp->collidable, 0, sizeof(tmp->collidable));
-
-        // Read in tilemap for collision tiles
+        // Read in tilemap
         for (size_t i = 0; i < layer["data"].size(); i++)
             tmp->collidable[i % tmp->width][i / tmp->width] = layer["data"][(int)i].asInt();
 

@@ -34,6 +34,7 @@ set(SOURCE_FILES
         Map/object.h
         Map/sprite.cpp
         Map/sprite.h
+        Map/tile.h
 
         Player
         Player/player.cpp
@@ -61,7 +62,9 @@ set(SOURCE_FILES
         data/Character-Animation/characterdeath.png
         data/Character-Animation/characteridle.png
         data/Character-Animation/characterjump.png
+        data/Character-Animation/characterjumpflipped.png
         data/Character-Animation/charactermove.png
+        data/Character-Animation/charactermoveflipped.png
         data/main-menu/backgroundmainmenu.png
         data/main-menu/ExitGame.png
         data/main-menu/ExitGameSelected.png

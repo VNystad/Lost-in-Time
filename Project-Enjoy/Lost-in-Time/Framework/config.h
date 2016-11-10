@@ -4,6 +4,10 @@
 class Config
 {
 public:
+    int GetScreenWidth() const { return screenWidth; }
+    int GetScreenHeight() const { return screenHeight; }
+
+protected:
     // Screen dimensions
     const int screenWidth = 1024;
     const int screenHeight = 576;

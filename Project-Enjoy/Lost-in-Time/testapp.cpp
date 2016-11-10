@@ -6,15 +6,15 @@ TestApp::TestApp() : config(config), window(window)
 {
     //Create window
     window = new sf::RenderWindow;
-    window->create(sf::VideoMode(800, 600), "Test game with animation");
+    window->create(sf::VideoMode(1024/*config->GetScreenWidth()*/, 576/*config->GetScreenHeight()*/), "Test game with animation");
     window->setVerticalSyncEnabled(true);
 
     //Create player
-    p = new PlayerTest(180, 250, config, window);
+    p = new PlayerTest(180, 250, *config, window);
 
     //Create platforms
-    platform1 = new TestCollidablePlatform(200, 200, config, window);
-    platform2 = new TestCollidablePlatform(100, 300, config, window);
+    platform1 = new TestCollidablePlatform(200, 200, *config, window);
+    platform2 = new TestCollidablePlatform(100, 300, *config, window);
 
     clock = new sf::Clock;
     clock->restart();
@@ -32,7 +32,6 @@ bool TestApp::Tick()
         if (event.type == sf::Event::Closed)
         {
             window->close();
-
             return false;
         }
     }
@@ -41,6 +40,14 @@ bool TestApp::Tick()
     {
         window->close();
         return false;
+    }
+
+    /* If player hits the floor,
+     * the player's lifepoint is reduced to 0 and player death function is called */
+    if (p->GetPositionY() >= 576/*config->GetScreenHeight()*/ - p->GetSizeHeight())
+    {
+        p->SetLifepoints(0);
+        p->PlayerDead();
     }
 
     Move(delta);
@@ -66,10 +73,10 @@ void TestApp::Move(float delta)
 
     // Keep the box within screen borders
     p->SetPositionX(std::max(p->GetPositionX(), 0.f));
-    p->SetPositionX(std::min(p->GetPositionX(), (float) (800 - p->GetSize())));
+    p->SetPositionX(std::min(p->GetPositionX(), (float) (1024/*config->GetScreenWidth()*/ - p->GetSizeWidth())));
     //p->SetPositionX(std::min(p->GetPositionX(), (float) (config.screenWidth - p->GetSize())));
     p->SetPositionY(std::max(p->GetPositionY(), 0.f));
-    p->SetPositionY(std::min(p->GetPositionY(), (float) (600 - p->GetSize())));
+    p->SetPositionY(std::min(p->GetPositionY(), (float) (576/*config->GetScreenHeight()*/ - p->GetSizeHeight())));
     //p->SetPositionY(std::min(p->GetPositionY(), (float) (config.screenHeight - p->GetSize())));
 }
 

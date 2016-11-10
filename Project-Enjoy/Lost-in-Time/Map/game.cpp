@@ -4,6 +4,8 @@
 
 bool Game::init()
 {
+    collidabletiles = new std::map<int, Tile*>;
+
     // Load map information from JSON into object list
     if (!Map::load("data/map.json", objects))
     {
@@ -11,10 +13,8 @@ bool Game::init()
         return false;
     }
 
-    objects.back();
-
     // Standard SFML setup
-    window.create(sf::VideoMode(config.screenWidth, config.screenHeight), "Lost in Time");
+    window.create(sf::VideoMode(config.GetScreenWidth(), config.GetScreenHeight()), "Lost in Time");
 
     // Double the size of the screen
     sf::View view = window.getDefaultView();
@@ -26,6 +26,10 @@ bool Game::init()
     window.setVerticalSyncEnabled(true);
     window.setMouseCursorVisible(false);
     window.setFramerateLimit(60);
+
+    playergroundbox.character.setFillColor(sf::Color::Transparent);
+    playervisbox.character.setFillColor(sf::Color::Red);
+
 
     return true;
 }
@@ -41,6 +45,8 @@ void Game::run()
         deltaTime = clock.getElapsedTime().asSeconds();
         clock.restart();
     }
+
+
 }
 
 // Process and draws one frame of the game
@@ -54,8 +60,7 @@ bool Game::gameTick(sf::RenderWindow& window, std::list<Object*>& objects, float
         switch (event.type)
         {
             case sf::Event::Closed:
-                window.close();
-                return true;
+                exit(0);
 
             case sf::Event::KeyReleased:
                 // Reload map on F5
@@ -69,9 +74,9 @@ bool Game::gameTick(sf::RenderWindow& window, std::list<Object*>& objects, float
                         return true;
                     }
                 }
-                // If player press esc, window will close
+                // If playergroundbox press esc, window will close
                 if (event.key.code == sf::Keyboard::Escape)
-                    window.close();
+                    exit(0);
 
                 break;
 
@@ -88,13 +93,14 @@ bool Game::gameTick(sf::RenderWindow& window, std::list<Object*>& objects, float
     window.clear(sf::Color::Black);
 
     // Process and render each object
-    for (Object* object : objects)
+    for (Object *object : objects)
     {
-        object->process(deltaTime);
-        object->draw(window);
+        //object->process(deltaTime);
+        object->draw(window, collidabletiles);
     }
 
-    player.draw();
+    playergroundbox.draw();
+    playervisbox.draw();
 
     window.display();
 
@@ -110,10 +116,12 @@ void Game::move(float delta)
     gravity(delta);
 
     // Keep the box within screen borders
-    player.x = std::max(player.x, 0);
-    player.x = std::min(player.x, (config.screenWidth - player.size));
-    player.y = std::max(player.y, 0);
-    player.y = std::min(player.y, (config.screenHeight - player.size));
+    /*
+    playergroundbox.x = std::max(playergroundbox.x, 0);
+    playergroundbox.x = std::min(playergroundbox.x, (config.screenWidth - playergroundbox.size));
+    playergroundbox.y = std::max(playergroundbox.y, 0);
+    playergroundbox.y = std::min(playergroundbox.y, (config.screenHeight - playergroundbox.size));
+     */
 }
 
 void Game::movement(float delta)
@@ -125,77 +133,79 @@ void Game::movement(float delta)
     //Checks for trying to move to the left
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
     {
-        player.movedirection = 0; //Means to the left
-        player.slowingdownleft = false;
+        playergroundbox.movedirection = 0; //Means to the left
+        playergroundbox.slowingdownleft = false;
     }
     else
-        player.slowingdownleft = true; //Object does not accelerate to left, should slow down if moving to left
+        playergroundbox.slowingdownleft = true; //Object does not accelerate to left, should slow down if moving to left
 
     //Check for trying to move to the right
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
     {
-        player.movedirection = 1; //Means to the right
-        player.slowingdownright = false;
+        playergroundbox.movedirection = 1; //Means to the right
+        playergroundbox.slowingdownright = false;
     }
     else
-        player.slowingdownright = true; //Object does not accelerate to the right, should slow down if moving to the right
+        playergroundbox.slowingdownright = true; //Object does not accelerate to the right, should slow down if moving to the right
 
     //Left speed handler
     //If the object is moving to the left OR the movespeed to the left is greater than zero
-    if(player.movedirection == 0 || player.movespeedleft > 0)
+    if(playergroundbox.movedirection == 0 || playergroundbox.movespeedleft > 0)
     {
-        if(player.slowingdownleft == true)
+        if(playergroundbox.slowingdownleft == true)
         {
-            if(player.movespeedleft >= player.movepower*2 && player.movedirection == 1)
+            if(playergroundbox.movespeedleft >= playergroundbox.movepower*2 && playergroundbox.movedirection == 1)
             {
                 //Trying to move the opposite direction of currently move direction, slows down pretty fast
-                player.movespeedleft -= player.movepower*2;
+                playergroundbox.movespeedleft -= playergroundbox.movepower*2;
             }
-            else if(player.movespeedleft >= player.movepower/2)
+            else if(playergroundbox.movespeedleft >= playergroundbox.movepower/2)
             {
                 //Not accelerating nor trying to stop, slows down slowly
-                player.movespeedleft -= player.movepower/2;
+                playergroundbox.movespeedleft -= playergroundbox.movepower/2;
             }
             else
             {
                 //Prevents the object from moving in the opposite direction if it tries to stop
-                player.movespeedleft = 0;
+                playergroundbox.movespeedleft = 0;
             }
         }
-        else if(player.movespeedleft < player.maxmovespeed)
+        else if(playergroundbox.movespeedleft < playergroundbox.maxmovespeed)
             //The current speed is increased if the object has not yet reached its max speed
-            player.movespeedleft += player.movepower;
+            playergroundbox.movespeedleft += playergroundbox.movepower;
 
         //The object is actually being moved
-        player.x -= player.movespeedleft * delta;
+        playergroundbox.x -= playergroundbox.movespeedleft * delta;
+        playervisbox.x -= playergroundbox.movespeedleft * delta;
     }
 
     //Right speed handler
     //If the object is moving to the right OR the movespeed to the right is greater than zero
-    if(player.movedirection == 1 || player.movespeedright > 0)
+    if(playergroundbox.movedirection == 1 || playergroundbox.movespeedright > 0)
     {
-        if(player.slowingdownright == true)
+        if(playergroundbox.slowingdownright == true)
         {
-            if(player.movespeedright >= player.movepower*2 && player.movedirection == 0)
+            if(playergroundbox.movespeedright >= playergroundbox.movepower*2 && playergroundbox.movedirection == 0)
             {
                 //Trying to move the opposite direction of currently move direction, slows down pretty fast
-                player.movespeedright -= player.movepower*2;
+                playergroundbox.movespeedright -= playergroundbox.movepower*2;
             }
-            else if(player.movespeedright >= player.movepower/2)
+            else if(playergroundbox.movespeedright >= playergroundbox.movepower/2)
             {
                 //Not accelerating nor trying to stop, slows down slowly
-                player.movespeedright -= player.movepower/2;
+                playergroundbox.movespeedright -= playergroundbox.movepower/2;
             }
             else
                 //Prevents the object from moving in the opposite direction if it tries to stop
-                player.movespeedright = 0;
+                playergroundbox.movespeedright = 0;
         }
-        else if(player.movespeedright < player.maxmovespeed)
+        else if(playergroundbox.movespeedright < playergroundbox.maxmovespeed)
             //The current speed is increased if the object has not yet reached its max speed
-            player.movespeedright += player.movepower;
+            playergroundbox.movespeedright += playergroundbox.movepower;
 
         //The object is actually being moved
-        player.x += player.movespeedright * delta;
+        playergroundbox.x += playergroundbox.movespeedright * delta;
+        playervisbox.x += playergroundbox.movespeedright * delta;
     }
 }
 
@@ -206,82 +216,99 @@ void Game::gravity(float delta)
     //Checks if object is in contact with platform,
     //then marks the object as not airborne(jumpcheck) and current fallspeed as 0.
     //Jumpspeed are also resetted for later use.
-    if(colliding() == true)
+    if(grounded())
     {
-        player.jumpcheck = 0;
-        player.fallspeed = 0;
-        player.jumpspeed = player.orgjumpspeed;
+        playergroundbox.jumpcheck = 0;
+        playergroundbox.fallspeed = 0;
+        playergroundbox.jumpspeed = playergroundbox.orgjumpspeed;
     }
 
         //Check if falling off a platform
         // If the object is not in contact with a platform, and it was not caused by jumping, the object is marked
         // as airborne (jumpcheck) and falling (apexcheck, reached the apex, on the way down).
-    else if(player.jumpcheck != true)
+    else if(!playergroundbox.jumpcheck)
     {
-        player.jumpcheck = true;
-        player.apexcheck = true;
+        playergroundbox.jumpcheck = true;
+        playergroundbox.apexcheck = true;
     }
 
     //Tries to make the object jump when Up key is pressed,
     //but only succeeds if the object is not already airborne (jumpcheck).
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && player.jumpcheck == 0)
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && playergroundbox.jumpcheck == 0)
     {
-        player.jumpcheck = true;
-        player.apexcheck = false;
+        playergroundbox.jumpcheck = true;
+        playergroundbox.apexcheck = false;
     }
 
     //Functionality for ascending or falling when the object is marked as airborne (jumpcheck).
-    if(player.jumpcheck == true)
+    if(playergroundbox.jumpcheck)
     {
         //The Object ascends at a decreasing rate when the object is marked as ascending (apexcheck).
-        if(player.jumpspeed >= 0 && player.apexcheck == false)
+        if(playergroundbox.jumpspeed >= 0 && !playergroundbox.apexcheck)
         {
-            player.y -= ((player.jumppower*player.jumpspeed)/player.gravity)*(delta);
-            player.jumpspeed -= 1;
+            playergroundbox.y -= ((playergroundbox.jumppower*playergroundbox.jumpspeed)/((playergroundbox.gravity*playergroundbox.gravity)/2))*(delta);
+            playervisbox.y -= ((playergroundbox.jumppower*playergroundbox.jumpspeed)/((playergroundbox.gravity*playergroundbox.gravity)/2))*(delta);
+            playergroundbox.jumpspeed -= 1;
         }
             //The Object is descending (apexcheck) as well ass airborne (jumpcheck),
             //and therefore descends at an increasing rate because of how gravity works.
         else
         {
-            player.apexcheck = true;
-            float pixelstomove = ((player.jumppower*player.fallspeed)/player.gravity)*(delta);
+            playergroundbox.apexcheck = true;
+            float pixelstomove = ((playergroundbox.fallspeed)*playergroundbox.gravity*playergroundbox.gravity/2)*(delta);
 
-            //Meant to improve collision detection, but colliding seems to be false all the time.
-            //For some reason, the colliding check earlier in the code checks instead which makes the object
+            //Meant to improve collision detection, but grounded seems to be false all the time.
+            //For some reason, the grounded check earlier in the code checks instead which makes the object
             //move inside the platform a little bit.
             for(float i = pixelstomove; i >= 0; i -= 1 )
             {
-                if(colliding() == true)
+                if(grounded())
                 {
                     i = -1;
+                    //playergroundbox.y -= playergroundbox.size*0.75;
                 }
 
                 else
-                    player.y += 1;
+                {
+                    playergroundbox.y += 1;
+                    playervisbox.y += 1;
+                }
+
+                //playergroundbox.draw();
             }
 
             //Fallspeed cannot exceed the max fallspeed, the real life equivalent of wind resistance limiting
             //a falling objects fallspeed.
-            if(player.fallspeed < player.maxfallspeed)
+            if(playergroundbox.fallspeed < playergroundbox.maxfallspeed)
             {
-                player.fallspeed += 1;
+                playergroundbox.fallspeed += 1;
             }
         }
     }
     //Gravity End-------------------------------------------------------------------------------------------------------
 }
 
-bool Game::colliding()
+bool Game::grounded()
 {
-    tileSize.x = 32;
-    tileSize.y = 32;
-    tileSize.s = 0;
-    Layer tempLayer(tileSize);
+    //Layer tempLayer(tileSize);
 
-    //if (player.y > 150 && player.y < 250)
-    //if (tempLayer.collidable[player.x][player.y] != 0) // Gives error when running
-        //return true;
+    for (auto x : *collidabletiles )
+    {
+        //std::cout << "playergroundbox x, playergroundbox y: " << playergroundbox.x / 32 << " " << playergroundbox.y % 32 << std::endl;
+        //std::cout << "x , y: " << x.second->GetXCoord() << " " << x.second->GetYCoord() << std::endl;
 
-    //else
-        return false;
+        if((playergroundbox.x / 32) == x.second->GetXCoord()  && (playergroundbox.y / 32) == (x.second->GetYCoord()))
+        {
+            std::cout << "playergroundbox x, playergroundbox y: " << playergroundbox.x  << " " << playergroundbox.y  << std::endl;
+            std::cout << "x , y: " << x.second->GetXCoord() * 32 << " " << x.second->GetYCoord() * 32 << std::endl;
+
+            //std::cout << "COLLISION" << std::endl;
+            return true;
+        }
+    }
+    /*if (playergroundbox.y > 150 && playergroundbox.y < 250) // Gives error when running
+    if (tempLayer.collidable[playergroundbox.x][playergroundbox.y] != 0)
+    else
+      //  return true;*/
+    return false;
 }

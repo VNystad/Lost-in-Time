@@ -13,19 +13,25 @@ class Object;
 class Game {
 public:
     // Constructor
-    Game() : player(200, 200, config, window) {}
+    Game() : playergroundbox(200, 200, config, window), playervisbox(200, 200 - playergroundbox.size, config, window) {}
 
     bool init();
     void run();
 
     void move(float delta);
-    bool colliding();
+    bool grounded();
     void movement(float delta);
     void gravity(float delta);
 
 protected:
     bool gameTick(sf::RenderWindow& window, std::list<Object*>& objects, float deltaTime);
-    Player player;
+    bool objectsareplaced = false;
+
+    std::map<int, Tile*> *collidabletiles;
+
+    Player playergroundbox;
+    Player playervisbox;
+
     TileSize tileSize;
     Config config;
     std::list<Object*> objects;

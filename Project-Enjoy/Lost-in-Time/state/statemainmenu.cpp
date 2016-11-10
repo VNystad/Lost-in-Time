@@ -47,8 +47,8 @@ void StateMainMenu::GoNext(Machine &machine)
     sf::Sprite backgroundSprite;
     backgroundSprite.setTexture(*BackgroundTexture);
     backgroundSprite.setScale(
-            config.screenWidth / backgroundSprite.getLocalBounds().width,
-            config.screenHeight / backgroundSprite.getLocalBounds().height);
+            config.GetScreenWidth() / backgroundSprite.getLocalBounds().width,
+            config.GetScreenHeight() / backgroundSprite.getLocalBounds().height);
 
     sf::Sprite newGameSprite;
     newGameSprite.setTexture(*NewGameTexture);
@@ -70,7 +70,7 @@ void StateMainMenu::GoNext(Machine &machine)
     exitGameSelectedSprite.setPosition(-70, 400);
 
     sf::RenderWindow MainMenuWindow;
-    MainMenuWindow.create(sf::VideoMode(config.screenWidth, config.screenHeight,32), "Lost in Time demo v01");
+    MainMenuWindow.create(sf::VideoMode(config.GetScreenWidth(), config.GetScreenHeight(),32), "Lost in Time demo v01");
     MainMenuWindow.setMouseCursorVisible(false);
 
 

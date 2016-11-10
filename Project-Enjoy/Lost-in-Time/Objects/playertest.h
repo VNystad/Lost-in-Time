@@ -11,16 +11,45 @@ class PlayerTest
 public:
     PlayerTest(float x, float y, const Config& config, sf::RenderWindow* window);
 
+    sf::RectangleShape* character;
+    sf::IntRect* rectSourceCharacter;
+
+    // Textures for animation
+    sf::Texture PlayerTextureJump;
+    sf::Texture PlayerTextureIdle;
+    sf::Texture PlayerTextureWalk;
+    sf::Texture PlayerTextureDeath;
+
+    // Textures for flipped animations
+    sf::Texture PlayerTextureJumpflipped;
+    sf::Texture PlayerTextureWalkflipped;
+
+    /* ******************************************** */
+    //                  FUNCTIONS                   //
+    /* ******************************************** */
+
     void DrawMe();
 
-    int GetSize() const { return size; };
+    int GetSizeWidth() const { return sizeWidth; };
+    int GetSizeHeight() const { return sizeHeight; };
 
     float GetPositionX();
     float GetPositionY();
-    void SetPosition(float x, float y);
     void SetPositionX(float x);
     void SetPositionY(float y);
 
+    float GetOriginalX();
+    float GetOriginalY();
+    void SetOriginalX(float x);
+    void SetOriginalY(float y);
+
+    void Reset2OriginalX(float x);
+    void Reset2OriginalY(float y);
+
+    int GetLifepoints();
+    void SetLifepoints(int lifepoint);
+
+    void PlayerDead();
 
     //Checks object collision cd
     void SetVertiCollCD(float verticalcollisioncooldown) { this->verticalcollisioncooldown = verticalcollisioncooldown; }
@@ -76,11 +105,10 @@ public:
     void SetJumpPower(float jumppower ) { this->jumppower = jumppower; }
     float GetJumpPower() const { return jumppower; }
 
-
-
 protected:
 
-    const int size = 50;
+    const int sizeWidth = 34;
+    const int sizeHeight = 50;
 
     //Timer for collision, it basically allows the object to land, but not move through the roof
     float verticalcollisioncooldown = 0;
@@ -89,7 +117,6 @@ protected:
     //Horisontal braking speeds
     float brakehorslowdown = 2;
     float regularhorslowdown = 1.5;
-
 
     //Horisontal
     const float maxmovespeed = 400;
@@ -107,10 +134,7 @@ protected:
     float jumppower = 250;
     float jumpspeed = 15;
 
-
-
-
-    float movepower = 50;
+    float movepower = 100;
 
     float movespeedleft = 0;
     float movespeedright = 0;
@@ -126,15 +150,20 @@ protected:
     bool jumpcheck = true;
     bool apexcheck = true;
 
+    // Original Player Position
+    float OriginalX = 180;
+    float OriginalY = 250;
+
     //Player position
-    float positionX = 180;
-    float positionY = 250;
+    float positionX = OriginalX;
+    float positionY = OriginalY;
+
+    int lifepoints = 100;
+    //int experience = 0;
 
     const Config& config;
-    sf::RectangleShape* character;
     sf::RenderWindow* window;
-    sf::Texture texture;
 };
 
 
-#endif //LOST_IN_TIME_PLAYER_H
+#endif

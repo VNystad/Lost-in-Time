@@ -69,7 +69,7 @@ set(SOURCE_FILES
         data/main-menu/NewGame.png
         data/main-menu/NewGameSelected.png
 
-)
+        Framework/Camera.h)
 
 add_executable(Lost-in-Time ${SOURCE_FILES})
 

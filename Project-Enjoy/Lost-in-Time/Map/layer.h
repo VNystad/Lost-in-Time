@@ -18,13 +18,13 @@ public:
 
 	int collidableID;
 
-	int collidable[100][100];
+	int collidable[1000][1000];
 
 protected:
 	int count = 0;
     // Lazy, but ram is cheap!
-    int tilemap[100][100];
-	int *temptilemap[100][100];
+    int tilemap[1000][1000];
+	int *temptilemap[1000][1000];
 
     // Size in tiles
     int width, height;

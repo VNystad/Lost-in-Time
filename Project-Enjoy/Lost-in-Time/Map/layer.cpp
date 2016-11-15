@@ -23,7 +23,7 @@ void Layer::draw(sf::RenderWindow& window, std::map<int, Tile*>* collidabletiles
 			getTileCoords(tileid, tilex, tiley);
 
 
-            if(count < 100)
+            if(count < 10000)
             {
                 ++count;
                 collidabletiles->emplace(count, new Tile(x, y));

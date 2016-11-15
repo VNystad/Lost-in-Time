@@ -1,4 +1,6 @@
+
 #include <iostream>
+#include <map>
 #include "physics.h"
 
 void Physics::Gravity(PlayerTest* p, std::map<int, Tile*>* collidabletiles, float delta)
@@ -33,7 +35,7 @@ void Physics::Gravity(PlayerTest* p, std::map<int, Tile*>* collidabletiles, floa
         p->SetApexCheck(false);
 
         p->character->setTexture(&p->PlayerTextureJump);
-
+        //ANIMATION
         if (p->rectSourceCharacter->left == 136)
             p->rectSourceCharacter->left -= 34;
 
@@ -41,38 +43,22 @@ void Physics::Gravity(PlayerTest* p, std::map<int, Tile*>* collidabletiles, floa
             p->rectSourceCharacter->left += 34;
 
         p->character->setTextureRect(*p->rectSourceCharacter);
+        //ANIMATION
     }
 
     //Functionality for ascending or falling when the object is marked as airborne (jumpcheck).
     if(p->GetJumpCheck())
     {
-        if(p->GetVertiCollCD() <= delta)
-            p->SetVertiCollCD(p->GetVertiCollCD() + delta);
         //The Object ascends at a decreasing rate when the object is marked as ascending (apexcheck).
         if(p->GetJumpSpeed() >= 0 && !p->GetApexCheck())
         {
-            float pixelstomove = (( p->GetJumpPower() * p->GetJumpSpeed() ) / p->GetGravity() ) * (delta);
+            p->SetPositionY(p->GetPositionY() - (( p->GetJumpPower() * p->GetJumpSpeed() ) / p->GetGravity() ) * (delta));
             p->SetJumpSpeed(p->GetJumpSpeed() - 1);
-
-            for(float i = pixelstomove; i >= 0; i -= 1 )
-            {
-                if(Grounded(p, collidabletiles) && p->GetVertiCollCD() > delta)
-                {
-                    i = -1;
-                    p->SetPositionY(p->GetPositionY() + 1);
-                    p->SetApexCheck(true);
-                }
-
-                else
-                    p->SetPositionY(p->GetPositionY() - 1);
-                p->DrawMe();
-            }
         }
             //The Object is descending (apexcheck) as well ass airborne (jumpcheck),
             //and therefore descends at an increasing rate because of how gravity works.
         else
         {
-            p->SetVertiCollCD(0);
             p->SetApexCheck(true);
             float pixelstomove = (p->GetJumpPower() * p->GetFallSpeed() / p->GetGravity() * (delta));
 
@@ -121,11 +107,6 @@ void Physics::Movement(PlayerTest* p, std::map<int, Tile*>* collidabletiles, flo
         p->character->setTextureRect(*p->rectSourceCharacter);
     }
 
-    if (Grounded(p, collidabletiles)) {
-        p->SetHoriCollCD(0);
-    }
-    else
-        p->SetHoriCollCD(p->GetHoriCollCD() + delta);
 
     //Checks for trying to move to the left
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
@@ -202,19 +183,8 @@ void Physics::Movement(PlayerTest* p, std::map<int, Tile*>* collidabletiles, flo
             p->SetMoveSpeedL(p->GetMoveSpeedL() + p->GetMovePower());
 
         //The object is actually being moved
-        float pixelstomove = p->GetMoveSpeedL() * delta;
+        p->SetPositionX(p->GetPositionX() - p->GetMoveSpeedL() * delta);
 
-        for (float i = pixelstomove; i >= 0; i -= 1)
-        {
-            if (Grounded(p, collidabletiles) && p->GetHoriCollCD() >= delta)
-            {
-                i = -1;
-                p->SetPositionX(p->GetPositionX() + 1);
-            }
-            else if (i != 0)
-                p->SetPositionX(p->GetPositionX() - 1);
-            p->DrawMe();
-        }
     }
 
     /*********************
@@ -244,34 +214,30 @@ void Physics::Movement(PlayerTest* p, std::map<int, Tile*>* collidabletiles, flo
             p->SetMoveSpeedR(p->GetMoveSpeedR() + p->GetMovePower());
 
         //The object is actually being moved
-        float pixelstomove = p->GetMoveSpeedR() * delta;
+        p->SetPositionX(p->GetPositionX() + p->GetMoveSpeedR() * delta);
 
-        for (float i = pixelstomove; i >= 0; i -= 1)
-        {
-            if (Grounded(p, collidabletiles) && p->GetHoriCollCD() >= delta)
-            {
-                i = -1;
-                p->SetPositionX(p->GetPositionX() - 1);
-            }
-            else if (i != 0)
-                p->SetPositionX(p->GetPositionX() + 1);
-            p->DrawMe();
-        }
     }
 }
-
 bool Physics::Grounded(PlayerTest* p, std::map<int, Tile*>* collidabletiles)
 {
     //Simply checks if the object is currently on the ground
     // by iterating through the collidabletiles map and checking
     // if player is in contact with the ground
-    //std::cout << "player x y: " << p->GetPositionX() / 34 << " " << p->GetPositionY() / 50 << std::endl;
+    int playerX = p->GetPositionX();
+    int playerY = p->GetPositionY();
+    //std::cout << "player x: " << (p->GetPositionX()) << " - " << p->GetPositionX() + 34 << std::endl;
+    //std::cout << "player y: " << (p->GetPositionY()) << " - " << p->GetPositionY() + 50 << std::endl;
     for (auto x : *collidabletiles )
     {
-        //std::cout << "tile x y: " << x.second->GetXCoord() << " " << x.second->GetYCoord() << std::endl;
-        if((p->GetPositionX() / 32) == x.second->GetXCoord()  && ((p->GetPositionY() -50) / 32) == (x.second->GetYCoord()))
+
+        //std::cout << "tile x: " << x.second->GetXCoord() * 32 << " - " << (x.second->GetXCoord() * 32) + 31 << std::endl;
+        //std::cout << "tile y: " << x.second->GetYCoord() * 32 << " - " << (x.second->GetYCoord() * 32) +31 << std::endl;
+        if(playerX >= (x.second->GetXCoord()* 32)  && playerX <(x.second->GetXCoord()* 32) + 32 &&
+           ((playerY)) == (x.second->GetYCoord() * 32) - 50)
         {
             //std::cout << "COLLISION" << std::endl;
+            //std::cout << "tile x: " << x.second->GetXCoord() * 32 << " - " << (x.second->GetXCoord() * 32) + 31 << std::endl;
+            //std::cout << "tile y: " << x.second->GetYCoord() * 32 << " - " << (x.second->GetYCoord() * 32) +31 << std::endl;
             return true;
         }
     }

@@ -7,6 +7,8 @@
 #include "../Framework/config.h"
 #include "../Player/player.h"
 #include "map.h"
+#include "../Framework/Camera.h"
+#include "../Framework/physics.h"
 
 class Object;
 
@@ -32,11 +34,14 @@ protected:
     Player playergroundbox;
     Player playervisbox;
 
+    Camera camera;
+
     TileSize tileSize;
     Config config;
     std::list<Object*> objects;
     sf::Clock clock;
     sf::RenderWindow window;
+
 };
 
 #endif

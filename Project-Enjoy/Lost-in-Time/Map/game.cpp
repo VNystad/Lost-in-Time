@@ -2,6 +2,7 @@
 #include <SFML/Window.hpp>
 #include "game.h"
 
+
 bool Game::init()
 {
     collidabletiles = new std::map<int, Tile*>;
@@ -98,9 +99,19 @@ bool Game::gameTick(sf::RenderWindow& window, std::list<Object*>& objects, float
         //object->process(deltaTime);
         object->draw(window, collidabletiles);
     }
+    //Camera Movement
+    if(playergroundbox.x != camera.PositionX)
+    {
+        std::cout << "Jeg er en pik";
+        sf::View view2 = window.getDefaultView();
+        view2.setCenter(playergroundbox.x, playergroundbox.y);
+        window.setView(view2);
+    }
 
     playergroundbox.draw();
     playervisbox.draw();
+
+
 
     window.display();
 
@@ -109,19 +120,10 @@ bool Game::gameTick(sf::RenderWindow& window, std::list<Object*>& objects, float
 
 void Game::move(float delta)
 {
-    // This function will make the object able to move and fall, with correlation to any hinderings such as gravity.
-    // The delta float is there for smoothness.
 
     movement(delta);
     gravity(delta);
 
-    // Keep the box within screen borders
-    /*
-    playergroundbox.x = std::max(playergroundbox.x, 0);
-    playergroundbox.x = std::min(playergroundbox.x, (config.screenWidth - playergroundbox.size));
-    playergroundbox.y = std::max(playergroundbox.y, 0);
-    playergroundbox.y = std::min(playergroundbox.y, (config.screenHeight - playergroundbox.size));
-     */
 }
 
 void Game::movement(float delta)

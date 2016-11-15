@@ -9,6 +9,7 @@
 #include "Framework/config.h"
 #include "Objects/playertest.h"
 #include "Map/map.h"
+#include "Framework/Camera.h"
 
 class TestApp
 {
@@ -31,6 +32,8 @@ protected:
     std::list<Object*> objects;
     sf::RenderWindow* window;
     sf::Clock* clock;
+
+    Camera camera;
 };
 
 

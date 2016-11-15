@@ -1,6 +1,7 @@
 #include <iostream>
 #include "testapp.h"
 #include "Framework/physics.h"
+#include "Framework/Camera.h"
 
 TestApp::TestApp() : config(config), window(window)
 {
@@ -17,6 +18,12 @@ TestApp::TestApp() : config(config), window(window)
     window = new sf::RenderWindow;
     window->create(sf::VideoMode(1024/*config->GetScreenWidth()*/, 576/*config->GetScreenHeight()*/), "Test game with animation");
     window->setVerticalSyncEnabled(true);
+
+    //
+    sf::View view = window->getDefaultView();
+    view.setSize(view.getSize().x, view.getSize().y);
+    view.setCenter(view.getCenter().x, view.getCenter().y);
+    window->setView(view);
 
     //Create player
     p = new PlayerTest(180, 200, *config, window);
@@ -37,6 +44,7 @@ bool TestApp::Tick()
         if (event.type == sf::Event::Closed)
         {
             window->close();
+            exit(0);
             return false;
         }
     }
@@ -44,6 +52,7 @@ bool TestApp::Tick()
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
     {
         window->close();
+        exit(0);
         return false;
     }
 
@@ -69,6 +78,15 @@ bool TestApp::Tick()
 
     p->DrawMe();
     window->display();
+
+    if(p->GetPositionX() != camera.PositionX) {
+
+        sf::View view2 = window->getDefaultView();
+
+        view2.setCenter(p->GetPositionX(), p->GetPositionY() );
+        window->setView(view2);
+    }
+
 
     return true;
 }

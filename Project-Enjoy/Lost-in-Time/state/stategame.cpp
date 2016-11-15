@@ -1,23 +1,10 @@
-#include <iostream>
-#include <SFML/Graphics.hpp>
 #include "stategame.h"
 #include "machine.h"
-#include "../Map/game.h"
+#include "../testapp.h"
 
 void StateGame::GoNext(Machine &machine)
-{/*
-    Game game;
+{
+    TestApp testapp;
 
-    std::cout << "Game Window!" << std::endl;
-
-    if (!game.init())
-    {
-        std::cout << "Failed to initialize the game. Quitting." << std::endl;
-        return;
-    }
-    while(1)
-    {
-        game.run();
-    }
-*/
+    while(testapp.Tick());
 }

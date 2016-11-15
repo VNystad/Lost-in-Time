@@ -20,8 +20,6 @@ set(SOURCE_FILES
         state/statemainmenu.h
         state/statepause.h
         state/statepause.cpp
-        state/teststate.cpp
-        state/teststate.h
 
         Map
         Map/layer.cpp
@@ -42,10 +40,15 @@ set(SOURCE_FILES
 
         Framework
         Framework/config.h
+        Framework/Camera.h
         Framework/physics.cpp
         Framework/physics.h
+        Framework/animation.cpp
+        Framework/animation.h
 
         Interface
+        Interface/health.cpp
+        Interface/health.h
 
         Objects
         Objects/playertest.cpp
@@ -68,8 +71,7 @@ set(SOURCE_FILES
         data/main-menu/LoadGameSelected.png
         data/main-menu/NewGame.png
         data/main-menu/NewGameSelected.png
-
-        Framework/Camera.h)
+        )
 
 add_executable(Lost-in-Time ${SOURCE_FILES})
 

@@ -6,23 +6,17 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include "../Framework/config.h"
+#include "../Framework/animation.h"
+
 class PlayerTest
 {
 public:
     PlayerTest(float x, float y, const Config& config, sf::RenderWindow* window);
 
     sf::RectangleShape* character;
-    sf::IntRect* rectSourceCharacter;
+    Animation* animation;
 
-    // Textures for animation
-    sf::Texture PlayerTextureJump;
-    sf::Texture PlayerTextureIdle;
-    sf::Texture PlayerTextureWalk;
-    sf::Texture PlayerTextureDeath;
-
-    // Textures for flipped animations
-    sf::Texture PlayerTextureJumpflipped;
-    sf::Texture PlayerTextureWalkflipped;
+    //Health* health;
 
     /* ******************************************** */
     //                  FUNCTIONS                   //
@@ -45,9 +39,6 @@ public:
 
     void Reset2OriginalX(float x);
     void Reset2OriginalY(float y);
-
-    int GetLifepoints();
-    void SetLifepoints(int lifepoint);
 
     void PlayerDead();
 
@@ -157,9 +148,6 @@ protected:
     //Player position
     int positionX = OriginalX;
     int positionY = OriginalY;
-
-    int lifepoints = 100;
-    //int experience = 0;
 
     const Config& config;
     sf::RenderWindow* window;

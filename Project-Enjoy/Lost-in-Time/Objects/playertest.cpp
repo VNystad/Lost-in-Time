@@ -3,39 +3,14 @@
 
 PlayerTest::PlayerTest(float positionX, float positionY, const Config& config, sf::RenderWindow* window) : config(config), window(window)
 {
-    this->positionX = 180;
-    this->positionY = 250;
+    this->positionX = OriginalX;
+    this->positionY = OriginalY;
     character = new sf::RectangleShape;
     character->setSize(sf::Vector2f(sizeWidth,sizeHeight));
+    //animation->PlayerIdle(character);
 
-    // Load the animation textures
-    if (!PlayerTextureWalk.loadFromFile("data/Character-Animation/charactermove.png"))
-        std::cout << "Failed to load data/Character-Animation/charactermove.png" << std::endl << std::endl;
-
-    // Load the animation textures
-    if (!PlayerTextureWalkflipped.loadFromFile("data/Character-Animation/charactermoveflipped.png"))
-        std::cout << "Failed to load data/Character-Animation/charactermoveflipped.png" << std::endl << std::endl;
-
-    // Load the animation textures
-    if (!PlayerTextureIdle.loadFromFile("data/Character-Animation/characteridle.png"))
-        std::cout << "Failed to load data/Character-Animation/characteridle.png" << std::endl << std::endl;
-
-    // Load the animation textures
-    if (!PlayerTextureJump.loadFromFile("data/Character-Animation/characterjump.png"))
-        std::cout << "Failed to load data/Character-Animation/characterjump.png" << std::endl << std::endl;
-
-    // Load the animation textures
-    if (!PlayerTextureJumpflipped.loadFromFile("data/Character-Animation/characterjumpflipped.png"))
-        std::cout << "Failed to load data/Character-Animation/characterjumpflipped.png" << std::endl << std::endl;
-
-    // Load the animation textures
-    if (!PlayerTextureDeath.loadFromFile("data/Character-Animation/characterdeath.png"))
-        std::cout << "Failed to load data/Character-Animation/characterdeath.png" << std::endl << std::endl;
-
-    rectSourceCharacter = new sf::IntRect(0,0,sizeWidth,sizeHeight);
-
-    character->setTexture(&PlayerTextureIdle);
-    character->setTextureRect(*rectSourceCharacter);
+    //health->SetActualLifePoints(100);
+    //health->SetVisibleLifePoints(100);
 }
 
 int PlayerTest::GetPositionX()
@@ -85,24 +60,16 @@ void PlayerTest::Reset2OriginalY(float y)
     y = this->OriginalY;
 }
 
-int PlayerTest::GetLifepoints()
-{
-    return lifepoints;
-}
-
-void PlayerTest::SetLifepoints(int lifepoint)
-{
-    this->lifepoints = lifepoint;
-}
-
 void PlayerTest::PlayerDead()
 {
-    // If player is dead, 0 lifepoints, reset to original spawn point
+    //health->SetActualLifePoints(100);
+    //health->SetVisibleLifePoints(100);
     jumpspeed = origjumpspeed;
     fallspeed = 0;
+    movedirection = 2;
     positionX = OriginalX;
     positionY = OriginalY;
-    lifepoints = 100;
+    std::cout << "Oh deer, you died!" << std::endl;
 }
 
 void PlayerTest::DrawMe()

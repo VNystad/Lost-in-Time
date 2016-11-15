@@ -45,7 +45,6 @@ bool TestApp::Tick()
         {
             window->close();
             exit(0);
-            return false;
         }
     }
 
@@ -53,7 +52,6 @@ bool TestApp::Tick()
     {
         window->close();
         exit(0);
-        return false;
     }
 
     /* If player hits the floor,
@@ -61,7 +59,8 @@ bool TestApp::Tick()
     if (p->GetPositionY() >= 576/*config->GetScreenHeight()*/ - p->GetSizeHeight())
     {
         p->SetFallSpeed(0);
-        p->SetLifepoints(0);
+        //p->health->SetActualLifePoints(0);
+        //p->health->SetVisibleLifePoints(0);
         p->PlayerDead();
     }
 

@@ -9,7 +9,7 @@ class Machine
 {
 public:
     // Different states
-    enum class StateId { MAINMENU, GAME, PAUSE, TEST };
+    enum class StateId { MAINMENU, GAME, PAUSE};
 
     Machine();
     ~Machine();

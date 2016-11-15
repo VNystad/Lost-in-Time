@@ -33,17 +33,6 @@ void Physics::Gravity(PlayerTest* p, std::map<int, Tile*>* collidabletiles, floa
     {
         p->SetJumpCheck(true);
         p->SetApexCheck(false);
-
-        p->character->setTexture(&p->PlayerTextureJump);
-        //ANIMATION
-        if (p->rectSourceCharacter->left == 136)
-            p->rectSourceCharacter->left -= 34;
-
-        else if (p->rectSourceCharacter->left == 0)
-            p->rectSourceCharacter->left += 34;
-
-        p->character->setTextureRect(*p->rectSourceCharacter);
-        //ANIMATION
     }
 
     //Functionality for ascending or falling when the object is marked as airborne (jumpcheck).
@@ -93,35 +82,10 @@ void Physics::Movement(PlayerTest* p, std::map<int, Tile*>* collidabletiles, flo
     //which it is limited by, and also gradually slow down at different rates wether one tries to move the
     //object to the other direction or not.
 
-    // If standing still, play idle animation
-    if (p->GetMovDir() == 2)
-    {
-        p->character->setTexture(&p->PlayerTextureIdle);
-
-        if (p->rectSourceCharacter->left == 136)
-            p->rectSourceCharacter->left -= 34;
-
-        else if (p->rectSourceCharacter->left == 0)
-            p->rectSourceCharacter->left += 34;
-
-        p->character->setTextureRect(*p->rectSourceCharacter);
-    }
-
-
     //Checks for trying to move to the left
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
         p->SetMovDir(0); //Means to the left
         p->SetSlowDownL(false);
-
-        p->character->setTexture(&p->PlayerTextureWalkflipped);
-
-        if (p->rectSourceCharacter->left == 136)
-            p->rectSourceCharacter->left -= 34;
-
-        else if (p->rectSourceCharacter->left == 0)
-            p->rectSourceCharacter->left += 34;
-
-        p->character->setTextureRect(*p->rectSourceCharacter);
     }
     else
         p->SetSlowDownL(true); //Object does not accelerate to left, should slow down if moving to left
@@ -130,28 +94,6 @@ void Physics::Movement(PlayerTest* p, std::map<int, Tile*>* collidabletiles, flo
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
         p->SetMovDir(1); //Means to the right
         p->SetSlowDownR(false);
-
-        p->character->setTexture(&p->PlayerTextureWalk);
-
-        if (delta > 1.0f)
-        {
-            if (p->rectSourceCharacter->left == 0) {
-                // Move the frame to the left
-                for (int j = 0; j < 0; j = j + 34) {
-                    if (p->rectSourceCharacter->left == j)
-                        p->rectSourceCharacter->left = j + 34;
-                }
-            }
-
-            if (p->rectSourceCharacter->left == 136) {
-                // If the frame is to the right, move it back to the left
-                for (int i = 136; i > 0; i = i - 34) {
-                    if (p->rectSourceCharacter->left == i)
-                        p->rectSourceCharacter->left = i - 34;
-                }
-            }
-        }
-        p->character->setTextureRect(*p->rectSourceCharacter);
     }
     else
         //Object does not accelerate to the right, should slow down if moving to the right

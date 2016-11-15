@@ -1,13 +1,14 @@
+#include <iostream>
 #include "physics.h"
 
-void Physics::Gravity(PlayerTest* p, TestCollidablePlatform* platform1, TestCollidablePlatform* platform2, float delta)
+void Physics::Gravity(PlayerTest* p, std::map<int, Tile*>* collidabletiles, float delta)
 {
     //Gravity Start-----------------------------------------------------------------------------------------------------
 
     //Checks if object is in contact with platform,
     //then marks the object as not airborne(jumpcheck) and current fallspeed as 0.
     //Jumpspeed are also resetted for later use.
-    if(Grounded(p, platform1, platform2))
+    if(Grounded(p , collidabletiles))
     {
         p->SetJumpCheck(false);
         p->SetFallSpeed(0);
@@ -55,7 +56,7 @@ void Physics::Gravity(PlayerTest* p, TestCollidablePlatform* platform1, TestColl
 
             for(float i = pixelstomove; i >= 0; i -= 1 )
             {
-                if(Grounded(p, platform1, platform2) && p->GetVertiCollCD() > delta)
+                if(Grounded(p, collidabletiles) && p->GetVertiCollCD() > delta)
                 {
                     i = -1;
                     p->SetPositionY(p->GetPositionY() + 1);
@@ -80,7 +81,7 @@ void Physics::Gravity(PlayerTest* p, TestCollidablePlatform* platform1, TestColl
             //  Bug: It might move 1 pixel into the ground, must investigate
             for(float i = pixelstomove; i >= 0; i -= 1)
             {
-                if(Grounded(p, platform1, platform2))
+                if(Grounded(p, collidabletiles))
                 {
                     i = -1;
                 }
@@ -101,7 +102,7 @@ void Physics::Gravity(PlayerTest* p, TestCollidablePlatform* platform1, TestColl
     //Gravity End-------------------------------------------------------------------------------------------------------
 }
 
-void Physics::Movement(PlayerTest* p, TestCollidablePlatform* platform1, TestCollidablePlatform* platform2, float delta) {
+void Physics::Movement(PlayerTest* p, std::map<int, Tile*>* collidabletiles, float delta) {
     //This function handles movement to the left or to the right. The object will gradually reach its max velocity
     //which it is limited by, and also gradually slow down at different rates wether one tries to move the
     //object to the other direction or not.
@@ -120,7 +121,7 @@ void Physics::Movement(PlayerTest* p, TestCollidablePlatform* platform1, TestCol
         p->character->setTextureRect(*p->rectSourceCharacter);
     }
 
-    if (Grounded(p, platform1, platform2)) {
+    if (Grounded(p, collidabletiles)) {
         p->SetHoriCollCD(0);
     }
     else
@@ -175,7 +176,9 @@ void Physics::Movement(PlayerTest* p, TestCollidablePlatform* platform1, TestCol
         //Object does not accelerate to the right, should slow down if moving to the right
         p->SetSlowDownR(true);
 
-    //Left speed handler
+    /*********************
+     * Left speed handler
+     *********************/
     //If the object is moving to the left OR the movespeed to the left is greater than zero
 
     if (p->GetMovDir() == 0 || p->GetMoveSpeedL() > 0) {
@@ -203,7 +206,7 @@ void Physics::Movement(PlayerTest* p, TestCollidablePlatform* platform1, TestCol
 
         for (float i = pixelstomove; i >= 0; i -= 1)
         {
-            if (Grounded(p, platform1, platform2) && p->GetHoriCollCD() >= delta)
+            if (Grounded(p, collidabletiles) && p->GetHoriCollCD() >= delta)
             {
                 i = -1;
                 p->SetPositionX(p->GetPositionX() + 1);
@@ -214,7 +217,9 @@ void Physics::Movement(PlayerTest* p, TestCollidablePlatform* platform1, TestCol
         }
     }
 
-    //Right speed handler
+    /*********************
+     * Right speed handler
+     *********************/
     //If the object is moving to the right OR the movespeed to the right is greater than zero
     if (p->GetMovDir() == 1 || p->GetMoveSpeedR() > 0)
     {
@@ -243,7 +248,7 @@ void Physics::Movement(PlayerTest* p, TestCollidablePlatform* platform1, TestCol
 
         for (float i = pixelstomove; i >= 0; i -= 1)
         {
-            if (Grounded(p, platform1, platform2) && p->GetHoriCollCD() >= delta)
+            if (Grounded(p, collidabletiles) && p->GetHoriCollCD() >= delta)
             {
                 i = -1;
                 p->SetPositionX(p->GetPositionX() - 1);
@@ -255,17 +260,19 @@ void Physics::Movement(PlayerTest* p, TestCollidablePlatform* platform1, TestCol
     }
 }
 
-bool Physics::Grounded(PlayerTest* p, TestCollidablePlatform* platform1, TestCollidablePlatform* platform2)
+bool Physics::Grounded(PlayerTest* p, std::map<int, Tile*>* collidabletiles)
 {
     //Simply checks if the object is currently on the ground
-    if(p->GetCharacter().getGlobalBounds().intersects(platform1->GetPlatform().getGlobalBounds())
-       || p->GetCharacter().getGlobalBounds().intersects(platform2->GetPlatform().getGlobalBounds()))
+    // by iterating through the collidabletiles map and checking
+    // if player is in contact with the ground
+    //std::cout << "player x y: " << p->GetPositionX() / 34 << " " << p->GetPositionY() / 50 << std::endl;
+    for (auto x : *collidabletiles )
     {
-        return true;
-    }
-
-    else
-    {
-        return false;
+        //std::cout << "tile x y: " << x.second->GetXCoord() << " " << x.second->GetYCoord() << std::endl;
+        if((p->GetPositionX() / 32) == x.second->GetXCoord()  && ((p->GetPositionY() -50) / 32) == (x.second->GetYCoord()))
+        {
+            //std::cout << "COLLISION" << std::endl;
+            return true;
+        }
     }
 }

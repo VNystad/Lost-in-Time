@@ -33,15 +33,15 @@ public:
     int GetSizeWidth() const { return sizeWidth; };
     int GetSizeHeight() const { return sizeHeight; };
 
-    float GetPositionX();
-    float GetPositionY();
-    void SetPositionX(float x);
-    void SetPositionY(float y);
+    int GetPositionX();
+    int GetPositionY();
+    void SetPositionX(int x);
+    void SetPositionY(int y);
 
-    float GetOriginalX();
-    float GetOriginalY();
-    void SetOriginalX(float x);
-    void SetOriginalY(float y);
+    int GetOriginalX();
+    int GetOriginalY();
+    void SetOriginalX(int x);
+    void SetOriginalY(int y);
 
     void Reset2OriginalX(float x);
     void Reset2OriginalY(float y);
@@ -151,12 +151,12 @@ protected:
     bool apexcheck = true;
 
     // Original Player Position
-    float OriginalX = 180;
-    float OriginalY = 250;
+    int OriginalX = 180;
+    int OriginalY = 200;
 
     //Player position
-    float positionX = OriginalX;
-    float positionY = OriginalY;
+    int positionX = OriginalX;
+    int positionY = OriginalY;
 
     int lifepoints = 100;
     //int experience = 0;

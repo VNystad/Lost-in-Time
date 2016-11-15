@@ -3,23 +3,16 @@
 
 #include "../Objects/playertest.h"
 #include "../Objects/testcollidableplatform.h"
+#include "../Map/tile.h"
 
 class Physics
 {
 public:
-    static void Gravity(PlayerTest* p, TestCollidablePlatform* platform1, TestCollidablePlatform* platform2, float delta);
-    static void Movement(PlayerTest* p, TestCollidablePlatform* platform1, TestCollidablePlatform* platform2, float delta);
-    static bool Grounded(PlayerTest* p, TestCollidablePlatform* platform1, TestCollidablePlatform* platform2);
+    static void Gravity(PlayerTest* p, std::map<int, Tile*>* collidabletiles, float delta);
+    static void Movement(PlayerTest* p, std::map<int, Tile*>* collidabletiles, float delta);
+    static bool Grounded(PlayerTest* p, std::map<int, Tile*>* collidabletiles);
 
 
-protected:
-
-    // player variables
-
-    /***************
-     * Dependencies
-     **************/
-    TestCollidablePlatform* platform;
 };
 
 

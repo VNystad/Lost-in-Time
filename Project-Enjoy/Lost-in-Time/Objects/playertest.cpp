@@ -38,39 +38,39 @@ PlayerTest::PlayerTest(float positionX, float positionY, const Config& config, s
     character->setTextureRect(*rectSourceCharacter);
 }
 
-float PlayerTest::GetPositionX()
+int PlayerTest::GetPositionX()
 {
     return positionX;
 }
-float PlayerTest::GetPositionY()
+int PlayerTest::GetPositionY()
 {
     return positionY;
 }
-void PlayerTest::SetPositionX(float x)
+void PlayerTest::SetPositionX(int x)
 {
     this->positionX = x;
 }
-void PlayerTest::SetPositionY(float y)
+void PlayerTest::SetPositionY(int y)
 {
     this->positionY = y;
 }
 
-float PlayerTest::GetOriginalX()
+int PlayerTest::GetOriginalX()
 {
     return OriginalX;
 }
 
-float PlayerTest::GetOriginalY()
+int PlayerTest::GetOriginalY()
 {
     return OriginalY;
 }
 
-void PlayerTest::SetOriginalX(float x)
+void PlayerTest::SetOriginalX(int x)
 {
     this->OriginalX = x;
 }
 
-void PlayerTest::SetOriginalY(float y)
+void PlayerTest::SetOriginalY(int y)
 {
     this->OriginalY = y;
 }
@@ -98,11 +98,11 @@ void PlayerTest::SetLifepoints(int lifepoint)
 void PlayerTest::PlayerDead()
 {
     // If player is dead, 0 lifepoints, reset to original spawn point
-    if (lifepoints <= 0)
-    {
-        positionX = OriginalX;
-        positionY = OriginalY;
-    }
+    jumpspeed = origjumpspeed;
+    fallspeed = 0;
+    positionX = OriginalX;
+    positionY = OriginalY;
+    lifepoints = 100;
 }
 
 void PlayerTest::DrawMe()

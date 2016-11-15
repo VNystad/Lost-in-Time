@@ -4,17 +4,22 @@
 
 TestApp::TestApp() : config(config), window(window)
 {
+
+    collidabletiles = new std::map<int, Tile*>;
+
+    // Load map information from JSON into object list
+    if (!Map::load("data/map.json", objects))
+    {
+        std::cout << "Failed to load map data." << std::endl << std::endl;
+    }
+
     //Create window
     window = new sf::RenderWindow;
     window->create(sf::VideoMode(1024/*config->GetScreenWidth()*/, 576/*config->GetScreenHeight()*/), "Test game with animation");
     window->setVerticalSyncEnabled(true);
 
     //Create player
-    p = new PlayerTest(180, 250, *config, window);
-
-    //Create platforms
-    platform1 = new TestCollidablePlatform(200, 200, *config, window);
-    platform2 = new TestCollidablePlatform(100, 300, *config, window);
+    p = new PlayerTest(180, 200, *config, window);
 
     clock = new sf::Clock;
     clock->restart();
@@ -46,6 +51,7 @@ bool TestApp::Tick()
      * the player's lifepoint is reduced to 0 and player death function is called */
     if (p->GetPositionY() >= 576/*config->GetScreenHeight()*/ - p->GetSizeHeight())
     {
+        p->SetFallSpeed(0);
         p->SetLifepoints(0);
         p->PlayerDead();
     }
@@ -54,10 +60,14 @@ bool TestApp::Tick()
 
     window->clear(sf::Color::Black);
 
-    p->DrawMe();
-    platform1->DrawMe();
-    platform2->DrawMe();
+    // Process and render each object
+    for (Object *object : objects)
+    {
+        //object->process(deltaTime);
+        object->draw(*window, collidabletiles);
+    }
 
+    p->DrawMe();
     window->display();
 
     return true;
@@ -67,17 +77,8 @@ void TestApp::Move(float delta)
 {
     //This function will make the object able to move and fall, with correlation to any hinderings such as gravity.
     //The delta float is there for smoothness.
-
-    Physics::Movement(p, platform1, platform2,delta);
-    Physics::Gravity(p, platform1, platform2, delta);
-
-    // Keep the box within screen borders
-    p->SetPositionX(std::max(p->GetPositionX(), 0.f));
-    p->SetPositionX(std::min(p->GetPositionX(), (float) (1024/*config->GetScreenWidth()*/ - p->GetSizeWidth())));
-    //p->SetPositionX(std::min(p->GetPositionX(), (float) (config.screenWidth - p->GetSize())));
-    p->SetPositionY(std::max(p->GetPositionY(), 0.f));
-    p->SetPositionY(std::min(p->GetPositionY(), (float) (576/*config->GetScreenHeight()*/ - p->GetSizeHeight())));
-    //p->SetPositionY(std::min(p->GetPositionY(), (float) (config.screenHeight - p->GetSize())));
+    Physics::Movement(p, collidabletiles, delta);
+    Physics::Gravity(p, collidabletiles, delta);
 }
 
 

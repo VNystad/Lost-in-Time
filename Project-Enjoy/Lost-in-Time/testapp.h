@@ -3,21 +3,20 @@
 
 
 #include "Objects/playertest.h"
-#include "Objects/testcollidableplatform.h"
+#include <list>
+#include <SFML/System/Clock.hpp>
+#include <SFML/Graphics.hpp>
+#include "Framework/config.h"
+#include "Objects/playertest.h"
+#include "Map/map.h"
 
 class TestApp
 {
 public:
     TestApp();
     bool Tick();
-    bool Grounded();
     void Move(float delta);
-    void Movement(float delta);
 protected:
-    //Pointers to different objects
-    PlayerTest* p;
-    TestCollidablePlatform* platform1;
-    TestCollidablePlatform* platform2;
 
     //Init success flag
     bool success;
@@ -26,7 +25,10 @@ protected:
     bool running;
 
     //Dependensies
+    PlayerTest* p;
+    std::map<int, Tile*> *collidabletiles;
     Config* config;
+    std::list<Object*> objects;
     sf::RenderWindow* window;
     sf::Clock* clock;
 };

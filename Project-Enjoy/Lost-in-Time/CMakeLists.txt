@@ -24,8 +24,6 @@ set(SOURCE_FILES
         state/teststate.h
 
         Map
-        Map/game.cpp
-        Map/game.h
         Map/layer.cpp
         Map/layer.h
         Map/map.cpp
@@ -52,8 +50,6 @@ set(SOURCE_FILES
         Objects
         Objects/playertest.cpp
         Objects/playertest.h
-        Objects/testcollidableplatform.cpp
-        Objects/testcollidableplatform.h
 
         data
         data/map.json

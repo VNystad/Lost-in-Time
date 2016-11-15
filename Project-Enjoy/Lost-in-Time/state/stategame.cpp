@@ -5,7 +5,7 @@
 #include "../Map/game.h"
 
 void StateGame::GoNext(Machine &machine)
-{
+{/*
     Game game;
 
     std::cout << "Game Window!" << std::endl;
@@ -19,5 +19,5 @@ void StateGame::GoNext(Machine &machine)
     {
         game.run();
     }
-
+*/
 }

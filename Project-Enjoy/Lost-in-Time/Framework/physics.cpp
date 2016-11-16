@@ -3,81 +3,7 @@
 #include <map>
 #include "physics.h"
 
-void Physics::Gravity(PlayerTest* p, std::map<int, Tile*>* collidabletiles, float delta)
-{
-    //Gravity Start-----------------------------------------------------------------------------------------------------
-
-    //Checks if object is in contact with platform,
-    //then marks the object as not airborne(jumpcheck) and current fallspeed as 0.
-    //Jumpspeed are also resetted for later use.
-    if(Grounded(p , collidabletiles))
-    {
-        p->SetJumpCheck(false);
-        p->SetFallSpeed(0);
-        float temp = p->GetOrigJumpSpeed();
-        p->SetJumpSpeed(temp);
-    }
-
-        //Check if falling off a platform
-        // If the object is not in contact with a platform, and it was not caused by jumping, the object is marked
-        // as airborne (jumpcheck) and falling (apexcheck, reached the apex, on the way down).
-    else if(!p->GetJumpCheck())
-    {
-        p->SetJumpCheck(true);
-        p->SetApexCheck(true);
-    }
-
-    //Tries to make the object jump when Up key is pressed,
-    //but only succeeds if the object is not already airborne (jumpcheck).
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !p->GetJumpCheck())
-    {
-        p->SetJumpCheck(true);
-        p->SetApexCheck(false);
-    }
-
-    //Functionality for ascending or falling when the object is marked as airborne (jumpcheck).
-    if(p->GetJumpCheck())
-    {
-        //The Object ascends at a decreasing rate when the object is marked as ascending (apexcheck).
-        if(p->GetJumpSpeed() >= 0 && !p->GetApexCheck())
-        {
-            p->SetPositionY(p->GetPositionY() - (( p->GetJumpPower() * p->GetJumpSpeed() ) / p->GetGravity() ) * (delta));
-            p->SetJumpSpeed(p->GetJumpSpeed() - 1);
-        }
-            //The Object is descending (apexcheck) as well ass airborne (jumpcheck),
-            //and therefore descends at an increasing rate because of how gravity works.
-        else
-        {
-            p->SetApexCheck(true);
-            float pixelstomove = (p->GetJumpPower() * p->GetFallSpeed() / p->GetGravity() * (delta));
-
-            //Martins carefull movement mechanism:
-            //  -Makes the object check every pixel it moves for collision, prevents object in falling through the ground
-            //  Bug: It might move 1 pixel into the ground, must investigate
-            for(float i = pixelstomove; i >= 0; i -= 1)
-            {
-                if(Grounded(p, collidabletiles))
-                {
-                    i = -1;
-                }
-
-                else
-                    p->SetPositionY(p->GetPositionY() + 1);
-                p->DrawMe();
-            }
-
-            //Fallspeed cannot exceed the max fallspeed, the real life equivalent of wind resistance limiting
-            //a falling objects fallspeed.
-            if(p->GetFallSpeed() < p->GetMaxFallSpeed())
-            {
-                p->SetFallSpeed(p->GetFallSpeed() + 1);
-            }
-        }
-    }
-    //Gravity End-------------------------------------------------------------------------------------------------------
-}
-
-void Physics::Movement(PlayerTest* p, std::map<int, Tile*>* collidabletiles, float delta) {
+void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
     //This function handles movement to the left or to the right. The object will gradually reach its max velocity
     //which it is limited by, and also gradually slow down at different rates wether one tries to move the
     //object to the other direction or not.
@@ -117,16 +43,45 @@ void Physics::Movement(PlayerTest* p, std::map<int, Tile*>* collidabletiles, flo
                 p->SetMoveSpeedL(p->GetMoveSpeedL() - p->GetMovePower() * p->GetRegularBrake());
             }
             else
-                //Prevents the object from moving in the opposite direction if it tries to stop
+            {
                 p->SetMoveSpeedL(0);
+            }
+            //Prevents the object from moving in the opposite direction if it tries to stop
         }
         else if (p->GetMoveSpeedL() < p->GetMaxMoveSpeed())
             //The current speed is increased if the object has not yet reached its max speed
             p->SetMoveSpeedL(p->GetMoveSpeedL() + p->GetMovePower());
 
         //The object is actually being moved
-        p->SetPositionX(p->GetPositionX() - p->GetMoveSpeedL() * delta);
 
+        /*
+        if(HorisontalCollision(p, collidabletiles))
+        {
+            p->SetMoveSpeedL(0);
+            p->SetPositionX(p->GetPositionX() + p->GetMoveSpeedL() * delta);
+        }
+        else
+            p->SetPositionX(p->GetPositionX() - p->GetMoveSpeedL() * delta);
+        std::cout << p->GetMoveSpeedL() << std::endl;
+*/
+
+        int pixelstomove = p->GetMoveSpeedL() * delta;
+        if(pixelstomove > 1)
+        {
+            for(int i = pixelstomove; i >= 0; i -= 1)
+            {
+                if(HorisontalCollision(p, collidableArray))
+                {
+                    i = -1;
+                    p->SetMoveSpeedL(0);
+                    p->SetPositionX(p->GetPositionX() + 1);
+                }
+
+                else
+                    p->SetPositionX(p->GetPositionX() - 1);
+                //p->DrawMe();
+            }
+        }
     }
 
     /*********************
@@ -156,31 +111,181 @@ void Physics::Movement(PlayerTest* p, std::map<int, Tile*>* collidabletiles, flo
             p->SetMoveSpeedR(p->GetMoveSpeedR() + p->GetMovePower());
 
         //The object is actually being moved
-        p->SetPositionX(p->GetPositionX() + p->GetMoveSpeedR() * delta);
+        /*
+        if(HorisontalCollision(p, collidabletiles))
+        {
+            p->SetMoveSpeedL(0);
+            p->SetPositionX(p->GetPositionX() - 5);
+        }
+        else
+            p->SetPositionX(p->GetPositionX() + p->GetMoveSpeedR() * delta);
+*/
 
+
+        int pixelstomove = p->GetMoveSpeedR() * delta ;
+        //std::cout << pixelstomove << std::endl;
+        if(pixelstomove > 1)
+        {
+            for(int i = pixelstomove; i >= 0; i -= 1)
+            {
+                if(HorisontalCollision(p, collidableArray))
+                {
+                    i = -1;
+                    p->SetMoveSpeedR(0);
+                    p->SetPositionX(p->GetPositionX() - 1);
+                }
+
+                else
+                    p->SetPositionX(p->GetPositionX() + 1);
+                //p->DrawMe();
+            }
+        }
     }
 }
-bool Physics::Grounded(PlayerTest* p, std::map<int, Tile*>* collidabletiles)
-{
-    //Simply checks if the object is currently on the ground
-    // by iterating through the collidabletiles map and checking
-    // if player is in contact with the ground
-    int playerX = p->GetPositionX();
-    int playerY = p->GetPositionY();
-    //std::cout << "player x: " << (p->GetPositionX()) << " - " << p->GetPositionX() + 34 << std::endl;
-    //std::cout << "player y: " << (p->GetPositionY()) << " - " << p->GetPositionY() + 50 << std::endl;
-    for (auto x : *collidabletiles )
-    {
 
-        //std::cout << "tile x: " << x.second->GetXCoord() * 32 << " - " << (x.second->GetXCoord() * 32) + 31 << std::endl;
-        //std::cout << "tile y: " << x.second->GetYCoord() * 32 << " - " << (x.second->GetYCoord() * 32) +31 << std::endl;
-        if(playerX >= (x.second->GetXCoord()* 32)  && playerX <(x.second->GetXCoord()* 32) + 32 &&
-           ((playerY)) == (x.second->GetYCoord() * 32) - 50)
+void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
+{
+    //Gravity Start-----------------------------------------------------------------------------------------------------
+
+    //Checks if object is in contact with platform,
+    //then marks the object as not airborne(jumpcheck) and current fallspeed as 0.
+    //Jumpspeed are also resetted for later use.
+    if(Grounded(p, collidableArray))
+    {
+        p->SetJumpCheck(false);
+        p->SetFallSpeed(0);
+        float temp = p->GetOrigJumpSpeed();
+        p->SetJumpSpeed(temp);
+    }
+
+        //Check if falling off a platform
+        // If the object is not in contact with a platform, and it was not caused by jumping, the object is marked
+        // as airborne (jumpcheck) and falling (apexcheck, reached the apex, on the way down).
+    else if(!p->GetJumpCheck())
+    {
+        p->SetJumpCheck(true);
+        p->SetApexCheck(true);
+    }
+
+    //Tries to make the object jump when Up key is pressed,
+    //but only succeeds if the object is not already airborne (jumpcheck).
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !p->GetJumpCheck())
+    {
+        p->SetJumpCheck(true);
+        p->SetApexCheck(false);
+    }
+
+    //Functionality for ascending or falling when the object is marked as airborne (jumpcheck).
+    if(p->GetJumpCheck())
+    {
+        //The Object ascends at a decreasing rate when the object is marked as ascending (apexcheck).
+        if(p->GetJumpSpeed() >= 0 && !p->GetApexCheck())
         {
-            //std::cout << "COLLISION" << std::endl;
-            //std::cout << "tile x: " << x.second->GetXCoord() * 32 << " - " << (x.second->GetXCoord() * 32) + 31 << std::endl;
-            //std::cout << "tile y: " << x.second->GetYCoord() * 32 << " - " << (x.second->GetYCoord() * 32) +31 << std::endl;
-            return true;
+
+            float pixelstomove = ((( p->GetJumpPower() * p->GetJumpSpeed() ) / p->GetGravity() ) * (delta));
+            p->SetJumpSpeed(p->GetJumpSpeed() - 1);
+            //Martins carefull movement mechanism:
+            //  -Makes the object check every pixel it moves for collision, prevents object in falling through the ground
+            //  Bug: It might move 1 pixel into the ground, must investigate
+            for(float i = pixelstomove; i >= 0; i -= 1)
+            {
+                if(Roofed(p, collidableArray))
+                {
+                    i = -1;
+                    p->SetApexCheck(true);
+                }
+
+                else
+                    p->SetPositionY(p->GetPositionY() - 1);
+                //p->DrawMe();
+            }
         }
+            //The Object is descending (apexcheck) as well ass airborne (jumpcheck),
+            //and therefore descends at an increasing rate because of how gravity works.
+        else
+        {
+            p->SetApexCheck(true);
+            float pixelstomove = (p->GetJumpPower() * p->GetFallSpeed() / p->GetGravity() * (delta));
+
+            //Martins carefull movement mechanism:
+            //  -Makes the object check every pixel it moves for collision, prevents object in falling through the ground
+            //  Bug: It might move 1 pixel into the ground, must investigate
+            for(float i = pixelstomove; i >= 0; i -= 1)
+            {
+                if(Grounded(p, collidableArray))
+                {
+                    i = -1;
+                }
+
+                else
+                    p->SetPositionY(p->GetPositionY() + 1);
+                //p->DrawMe();
+            }
+
+            //Fallspeed cannot exceed the max fallspeed, the real life equivalent of wind resistance limiting
+            //a falling objects fallspeed.
+            if(p->GetFallSpeed() < p->GetMaxFallSpeed())
+            {
+                p->SetFallSpeed(p->GetFallSpeed() + 1);
+            }
+        }
+    }
+    //Gravity End-------------------------------------------------------------------------------------------------------
+}
+
+
+/**
+ * Function that checks if there is a horisontal collision
+ * @param p the player
+ * @param collidabletiles Map with all collidable tiles
+ * @return True if there is a block infront of player, false if not
+ */
+bool Physics::HorisontalCollision(PlayerTest* p, int** collidableArray)
+{
+    int upperPlayerYArrayCoord = p->GetPositionY() / 32;
+    int lowerPlayerArrayCoord = upperPlayerYArrayCoord +1;
+    int playerWestCoord = (p->GetPositionX() / 32) -1;
+    int playerEastCoord = playerWestCoord +1;
+
+
+    if(collidableArray[upperPlayerYArrayCoord][playerWestCoord] || collidableArray[upperPlayerYArrayCoord][playerEastCoord] ||
+        collidableArray[lowerPlayerArrayCoord][playerWestCoord] || collidableArray[lowerPlayerArrayCoord][playerEastCoord])
+    {
+        return true;
+    }
+}
+
+
+/*************************************************************
+ * checks if player is in touch with a collidable tile beneath
+ * @param p the player
+ * @param collidableArray 2d array with all collidable tiles
+ * @return true if on top of a tile, else false
+ */
+bool Physics::Grounded(PlayerTest* p, int** collidableArray)
+{
+    int playerArrayCoordX = p->GetPositionX() / 32;
+    int playerSouthCoord = (p->GetPositionY()+50) / 32;
+
+    if(collidableArray[playerSouthCoord][playerArrayCoordX] != 0)
+    {
+        return true;
+    }
+}
+
+/*******************************************************
+ * Checks if player "head" is in touch with a tile above
+ * @param p the player
+ * @param collidableArray 2d array with all collidable tiles
+ * @return true if in touch with tile above, else false
+ */
+bool Physics::Roofed(PlayerTest* p, int** collidableArray)
+{
+    int playerArrayCoordX = p->GetPositionX() / 32;
+    int playerNorthCoord = (p->GetPositionY()) / 32;
+
+    if(collidableArray[playerNorthCoord -1][playerArrayCoordX] != 0)
+    {
+        return true;
     }
 }

@@ -122,7 +122,7 @@ protected:
     float fallspeed;
     float maxfallspeed = 800;
 
-    float jumppower = 250;
+    float jumppower = 400;
     float jumpspeed = 15;
 
     float movepower = 100;

@@ -25,6 +25,11 @@ protected:
     //running flag
     bool running;
 
+    const int ArraySize = 1000;
+    const int X = 38;
+    const int Y = 108;
+    int** collidableArray;
+
     //Dependensies
     PlayerTest* p;
     std::map<int, Tile*> *collidabletiles;

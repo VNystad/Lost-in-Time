@@ -7,10 +7,12 @@
 class Physics
 {
 public:
-    static void Gravity(PlayerTest* p, std::map<int, Tile*>* collidabletiles, float delta);
-    static void Movement(PlayerTest* p, std::map<int, Tile*>* collidabletiles, float delta);
-    static bool Grounded(PlayerTest* p, std::map<int, Tile*>* collidabletiles);
+    static void Movement(PlayerTest* p, int** collidableArray, float delta);
+    static bool HorisontalCollision(PlayerTest* p, int** collidableArray);
 
+    static void Gravity(PlayerTest* p, int** collidableArray, float delta);
+    static bool Grounded(PlayerTest* p, int** collidableArray);
+    static bool Roofed(PlayerTest* p, int** collidableArray);
 
 };
 

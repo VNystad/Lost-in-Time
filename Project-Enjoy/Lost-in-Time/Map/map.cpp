@@ -58,7 +58,6 @@ void Map::loadLayer(Json::Value& layer, std::list<Object*>& objects, TileSize ti
 
 	// Clear tilemap
 	memset(tmp->tilemap, 0, sizeof(tmp->tilemap));
-    memset(tmp->temptilemap, 0, sizeof(tmp->temptilemap));
 
 	// Read in tilemap
 	for (size_t i = 0; i < layer["data"].size(); i++)

@@ -32,10 +32,6 @@ set(SOURCE_FILES
         Map/sprite.h
         Map/tile.h
 
-        Player
-        Player/player.cpp
-        Player/player.h
-
         Enemy
 
         Framework

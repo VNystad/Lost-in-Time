@@ -3,29 +3,28 @@
 
 #include "layer.h"
 
-void Layer::draw(sf::RenderWindow& window, std::map<int, Tile*>* collidabletiles)
+void Layer::draw(sf::RenderWindow& window, std::map<int, Tile*>* collidabletiles, int** collidableArray)
 {
-
     //std::cout << "Counter = " << count << std::endl;
 	// Render each tile
 	for (int y = 0; y < height; y++)
 	{
 		for (int x = 0; x < width; x++)
 		{
-			int tileid = tilemap[x][y];
-            //std::cout << tileid << std::endl;
-			// Skip empty tiles
+            // Skip empty tiles
 			if (tilemap[x][y] == 0)
 				continue;
+
+			int tileid = tilemap[x][y];
 
 			// Texture coordinates
 			int tilex, tiley;
 			getTileCoords(tileid, tilex, tiley);
 
-
-            if(count < 10000)
+            if(count < height * width)
             {
                 ++count;
+                collidableArray[y][x] = tileid;
                 collidabletiles->emplace(count, new Tile(x, y));
             }
 

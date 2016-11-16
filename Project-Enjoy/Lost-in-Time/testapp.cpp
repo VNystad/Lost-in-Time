@@ -24,8 +24,6 @@ TestApp::TestApp() : config(config), window(window)
         std::cout << "Failed to load map data." << std::endl << std::endl;
     }
 
-
-
     /*****************************************
      * Create Window
      ****************************************/
@@ -86,8 +84,8 @@ bool TestApp::Tick()
     if (p->GetPositionY() >= 576/*config->GetScreenHeight()*/ - p->GetSizeHeight())
     {
         p->SetFallSpeed(0);
-        //p->health->SetActualLifePoints(0);
-        //p->health->SetVisibleLifePoints(0);
+        p->health.SetActualLifePoints(0);
+        p->health.SetVisibleLifePoints(0);
         p->PlayerDead();
     }
 
@@ -101,7 +99,7 @@ bool TestApp::Tick()
         //object->process(deltaTime);
         object->draw(*window, collidabletiles, collidableArray);
     }
-
+    p->health.DrawMe();
     p->DrawMe();
     window->display();
 

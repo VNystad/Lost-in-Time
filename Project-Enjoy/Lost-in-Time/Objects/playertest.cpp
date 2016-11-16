@@ -7,10 +7,13 @@ PlayerTest::PlayerTest(float positionX, float positionY, const Config& config, s
     this->positionY = OriginalY;
     character = new sf::RectangleShape;
     character->setSize(sf::Vector2f(sizeWidth,sizeHeight));
-    //animation->PlayerIdle(character);
 
-    //health->SetActualLifePoints(100);
-    //health->SetVisibleLifePoints(100);
+    animation.init();
+    animation.PlayerIdle(character);
+
+    health.init();
+    health.SetActualLifePoints(100);
+    health.SetVisibleLifePoints(100);
 }
 
 int PlayerTest::GetPositionX()
@@ -62,14 +65,30 @@ void PlayerTest::Reset2OriginalY(float y)
 
 void PlayerTest::PlayerDead()
 {
-    //health->SetActualLifePoints(100);
-    //health->SetVisibleLifePoints(100);
+    health.SetActualLifePoints(100);
+    health.SetVisibleLifePoints(100);
     jumpspeed = origjumpspeed;
     fallspeed = 0;
     movedirection = 2;
     positionX = OriginalX;
     positionY = OriginalY;
     std::cout << "Oh deer, you died!" << std::endl;
+    std::cout << "     (      )\n"
+            "     ))    ((\n"
+            "    //      \\\\\n"
+            "   | \\\\____// |\n"
+            "  \\~/ ~    ~\\/~~/\n"
+            "   (|    _/o  ~~\n"
+            "    /  /     ,|\n"
+            "   (~~~)__.-\\ |\n"
+            "    ``~~    | |\n"
+            "     |      | |\n"
+            "     |        |\n"
+            "    /          \\\n"
+            "   `\\          /'\n"
+            "     `\\_    _/'\n"
+            "        ~~~~" << std::endl << std::endl;
+
 }
 
 void PlayerTest::DrawMe()

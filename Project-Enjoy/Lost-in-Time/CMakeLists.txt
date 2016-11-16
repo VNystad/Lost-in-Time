@@ -8,20 +8,20 @@ set(SOURCE_FILES
         testapp.cpp
         testapp.h
 
-        state
-        state/state.h
-        state/machine.cpp
-        state/machine.h
-        state/loadgamestate.cpp
-        state/loadgamestate.h
-        state/stategame.cpp
-        state/stategame.h
-        state/statemainmenu.cpp
-        state/statemainmenu.h
-        state/statepause.h
-        state/statepause.cpp
+        Enemy
 
-        Map
+        Framework
+        Framework/config.h
+        Framework/Camera.h
+        Framework/animation.cpp
+        Framework/animation.h
+        Framework/physics.cpp
+        Framework/physics.h
+
+        Interface
+        Interface/health.cpp
+        Interface/health.h
+
         Map/layer.cpp
         Map/layer.h
         Map/map.cpp
@@ -32,23 +32,22 @@ set(SOURCE_FILES
         Map/sprite.h
         Map/tile.h
 
-        Enemy
-
-        Framework
-        Framework/config.h
-        Framework/Camera.h
-        Framework/physics.cpp
-        Framework/physics.h
-        Framework/animation.cpp
-        Framework/animation.h
-
-        Interface
-        Interface/health.cpp
-        Interface/health.h
-
         Objects
         Objects/playertest.cpp
         Objects/playertest.h
+
+        state
+        state/loadgamestate.cpp
+        state/loadgamestate.h
+        state/machine.cpp
+        state/machine.h
+        state/state.h
+        state/stategame.cpp
+        state/stategame.h
+        state/statemainmenu.cpp
+        state/statemainmenu.h
+        state/statepause.cpp
+        state/statepause.h
 
         data
         data/map.json
@@ -67,6 +66,11 @@ set(SOURCE_FILES
         data/main-menu/LoadGameSelected.png
         data/main-menu/NewGame.png
         data/main-menu/NewGameSelected.png
+        data/HUD
+        data/HUD/Health
+        data/HUD/Health/Lost-in-Time_health-bar-border.png
+        data/HUD/Health/Lost-in-Time_health-bar-green.png
+        data/HUD/Health/Lost-in-Time_health-bar-red.png
         )
 
 add_executable(Lost-in-Time ${SOURCE_FILES})

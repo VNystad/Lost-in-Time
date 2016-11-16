@@ -7,6 +7,7 @@
 #include <SFML/Graphics/Texture.hpp>
 #include "../Framework/config.h"
 #include "../Framework/animation.h"
+#include "../Interface/health.h"
 
 class PlayerTest
 {
@@ -14,9 +15,9 @@ public:
     PlayerTest(float x, float y, const Config& config, sf::RenderWindow* window);
 
     sf::RectangleShape* character;
-    Animation* animation;
+    Animation animation;
 
-    //Health* health;
+    Health health;
 
     /* ******************************************** */
     //                  FUNCTIONS                   //

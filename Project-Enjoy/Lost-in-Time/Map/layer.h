@@ -14,11 +14,12 @@ public:
     // Constructor
 	Layer(TileSize tileSize) : Object(tileSize) { }
 
-	void draw(sf::RenderWindow& window, std::map<int, Tile*> *collidabletiles, int** collidableArray);
+	void draw(sf::RenderWindow& window);
 
 	int collidableID;
 
-	int collidable[1000][1000];
+	bool collidable = false;
+
 
 protected:
 	int count = 0;

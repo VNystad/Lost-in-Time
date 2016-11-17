@@ -3,7 +3,7 @@
 
 #include "layer.h"
 
-void Layer::draw(sf::RenderWindow& window, std::map<int, Tile*>* collidabletiles, int** collidableArray)
+void Layer::draw(sf::RenderWindow& window)
 {
     //std::cout << "Counter = " << count << std::endl;
 	// Render each tile
@@ -24,8 +24,7 @@ void Layer::draw(sf::RenderWindow& window, std::map<int, Tile*>* collidabletiles
             if(count < height * width)
             {
                 ++count;
-                collidableArray[y][x] = tileid;
-                collidabletiles->emplace(count, new Tile(x, y));
+                //collidableArray[y][x] = tileid;
             }
 
 			// Using vertex arrays or permanent sprites would be faster

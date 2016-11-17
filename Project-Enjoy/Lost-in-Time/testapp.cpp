@@ -19,7 +19,7 @@ TestApp::TestApp() : config(config), window(window)
     /*************************************************
      * Load map information from JSON into object list
      ************************************************/
-    if (!Map::load("data/map.json", objects))
+    if (!Map::load("data/map.json", objects, collidableArray))
     {
         std::cout << "Failed to load map data." << std::endl << std::endl;
     }
@@ -83,13 +83,13 @@ bool TestApp::Tick()
 
     /* If player hits the bottom of map,
      * the player's lifepoint is reduced to 0 and player death function is called */
-    if (p->GetPositionY() >= 576/*config->GetScreenHeight()*/ - p->GetSizeHeight())
+    /*if (p->GetPositionY() >= 576/*config->GetScreenHeight() - p->GetSizeHeight())
     {
         p->SetFallSpeed(0);
         p->health.SetActualLifePoints(0);
         p->health.SetVisibleLifePoints(0);
         p->PlayerDead();
-    }
+    }*/
 
     p->PlayerAnimation();
     Move(delta);
@@ -100,7 +100,7 @@ bool TestApp::Tick()
     for (Object *object : objects)
     {
         //object->process(deltaTime);
-        object->draw(*window, collidabletiles, collidableArray);
+        object->draw(*window);
     }
     p->DrawMe();
     p->health.DrawMe();

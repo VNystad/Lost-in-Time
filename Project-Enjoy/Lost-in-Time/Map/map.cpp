@@ -6,7 +6,7 @@
 #include "map.h"
 #include "sprite.h"
 
-bool Map::load(std::string filename, std::list<Object*>& objects)
+bool Map::load(std::string filename, std::list<Object*>& objects, int** collidableArray)
 {
 	// Will contain the data we read in
 	Json::Value root;
@@ -32,7 +32,7 @@ bool Map::load(std::string filename, std::list<Object*>& objects)
 	for (Json::Value& layer: root["layers"])
 	{
 		if (layer["name"].asString() != "objects")
-			loadLayer(layer, objects, tileSize);
+			loadLayer(layer, objects, tileSize, collidableArray);
         else
 			loadObjects(root, layer, objects, tileSize);
 	}
@@ -48,7 +48,7 @@ bool Map::load(std::string filename, std::list<Object*>& objects)
 	return true;
 }
 
-void Map::loadLayer(Json::Value& layer, std::list<Object*>& objects, TileSize tileSize)
+void Map::loadLayer(Json::Value& layer, std::list<Object*>& objects, TileSize tileSize, int** collidableArray)
 {
 	Layer* tmp = new Layer(tileSize);
 
@@ -63,7 +63,22 @@ void Map::loadLayer(Json::Value& layer, std::list<Object*>& objects, TileSize ti
 	for (size_t i = 0; i < layer["data"].size(); i++)
     {
         tmp->tilemap[i % tmp->width][i / tmp->width] = layer["data"][(int) i].asInt();
-        tmp->tilemap[i % tmp->width][i / tmp->width] = layer["data"][(int) i].asInt();
+
+    }
+
+	if((layer["name"].asString() == "foreground"))
+    {
+		int count = 0;
+
+		// Add tile id to array from layer"data"
+        for (int y = 0; y < tmp->height; y++)
+        {
+            for (int x = 0; x < tmp->width; x++)
+            {
+				collidableArray[y][x] = layer["data"][count].asInt();
+				count++;
+            }
+        }
     }
 
 	objects.push_back(tmp);

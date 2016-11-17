@@ -20,13 +20,13 @@ public:
     Map() { }
 
 	// Load map from Tiled JSON file
-	static bool load(std::string filename, std::list<Object*>& objects);
+	static bool load(std::string filename, std::list<Object*>& objects, int** collidableArray);
 
 private:
 
 
 	// Handles regular layers
-	static void loadLayer(Json::Value& layer, std::list<Object*>& objects, TileSize tileSize);
+	static void loadLayer(Json::Value& layer, std::list<Object*>& objects, TileSize tileSize, int** collidableArray);
 
 	// Handles object layers
 	static void loadObjects(Json::Value& root, Json::Value& layer, std::list<Object*>& objects, TileSize tileSize);

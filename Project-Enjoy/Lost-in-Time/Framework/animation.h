@@ -17,7 +17,8 @@ public:
     void PlayerWalkRight(sf::RectangleShape* character);
     void PlayerWalkLeft(sf::RectangleShape* character);
     void PlayerIdle(sf::RectangleShape* character);
-    void PlayerJump(sf::RectangleShape* character);
+    void PlayerJumpRight(sf::RectangleShape* character);
+    void PlayerJumpLeft(sf::RectangleShape* character);
     void PlayerDie(sf::RectangleShape* character);
 
 protected:

@@ -43,6 +43,8 @@ public:
 
     void PlayerDead();
 
+    void PlayerAnimation();
+
     //Checks object collision cd
     void SetVertiCollCD(float verticalcollisioncooldown) { this->verticalcollisioncooldown = verticalcollisioncooldown; }
     void SetHoriCollCD(float horisontalcollisioncooldown) { this->horisontalcollisioncooldown = horisontalcollisioncooldown; }
@@ -72,6 +74,10 @@ public:
     //Checks for move direction, 0=Left, 1=Right, 2=Stopped
     void SetMovDir(int movedirection) { this->movedirection = movedirection; };
     int GetMovDir() const { return movedirection; }
+
+    //Getters and Setters for last move direction
+    void SetLastMoveDirection(int movedirection) { this->lastmovedirection = movedirection; }
+    int GetLastMoveDirection() const { return lastmovedirection; }
 
     float GetGravity() const { return gravity; }
 
@@ -149,6 +155,9 @@ protected:
     //Player position
     int positionX = OriginalX;
     int positionY = OriginalY;
+
+    int counter = 0; // Counter for animation
+    int lastmovedirection = 2;
 
     const Config& config;
     sf::RenderWindow* window;

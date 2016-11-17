@@ -1,5 +1,3 @@
-
-#include <iostream>
 #include <map>
 #include "physics.h"
 
@@ -46,6 +44,7 @@ void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
             {
                 p->SetMoveSpeedL(0);
                 p->SetMovDir(2);
+                p->SetLastMoveDirection(0);
             }
             //Prevents the object from moving in the opposite direction if it tries to stop
         }
@@ -54,46 +53,8 @@ void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
             p->SetMoveSpeedL(p->GetMoveSpeedL() + p->GetMovePower());
 
         //The object is actually being moved
-
-        /*
-        if(HorisontalCollision(p, collidabletiles))
-        {
-            p->SetMoveSpeedL(0);
-            p->SetPositionX(p->GetPositionX() + p->GetMoveSpeedL() * delta);
-        }
-        else
-            p->SetPositionX(p->GetPositionX() - p->GetMoveSpeedL() * delta);
-        std::cout << p->GetMoveSpeedL() << std::endl;
-*/
-/*
-        int pixelstomove = p->GetMoveSpeedL() * delta;
-        for(int i = pixelstomove; i >= 0; i -= 1)
-        {
-            if(HorisontalCollision(p, collidableArray))
-            {
-                i = -1;
-                p->SetMoveSpeedL(0);
-                p->SetPositionX(p->GetPositionX() + 1);
-            }
-
-            else
-                p->SetPositionX(p->GetPositionX() - 1);
-            //p->DrawMe();
-        }
-        */
-/*
-        if(!HorisontalCollision(p, collidableArray))
-        {
-
-        }
-        */
-
         if(!HorisontalCollision(p, collidableArray))
             p->SetPositionX(p->GetPositionX() - p->GetMoveSpeedL() * delta);
-        //if(HorisontalCollision(p, collidableArray))
-          //  p->SetPositionX(p->GetPositionX() + p->GetMoveSpeedL() * delta);
-
-
     }
 
     /*********************
@@ -118,6 +79,7 @@ void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
             {
                 p->SetMoveSpeedR(0);
                 p->SetMovDir(2);
+                p->SetLastMoveDirection(1);
             }
                 //Prevents the object from moving in the opposite direction if it tries to stop
         }
@@ -126,44 +88,8 @@ void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
             p->SetMoveSpeedR(p->GetMoveSpeedR() + p->GetMovePower());
 
         //The object is actually being moved
-        /*
-        if(HorisontalCollision(p, collidabletiles))
-        {
-            p->SetMoveSpeedL(0);
-            p->SetPositionX(p->GetPositionX() - 5);
-        }
-        else
-            p->SetPositionX(p->GetPositionX() + p->GetMoveSpeedR() * delta);
-*/
-
-/*
-        int pixelstomove = p->GetMoveSpeedR() * delta ;
-        //std::cout << pixelstomove << std::endl;
-        for(int i = pixelstomove; i >= 0; i -= 1)
-        {
-            if(HorisontalCollision(p, collidableArray))
-            {
-                i = -1;
-                p->SetMoveSpeedR(0);
-                p->SetPositionX(p->GetPositionX() - 1);
-            }
-
-            else
-                p->SetPositionX(p->GetPositionX() + 1);
-            //p->DrawMe();
-        }
-        */
-        /*
-        if(!HorisontalCollision(p, collidableArray))
-        {
-
-        }
-         */
         if(!HorisontalCollision(p, collidableArray))
             p->SetPositionX(p->GetPositionX() + p->GetMoveSpeedR() * delta);
-        //if(HorisontalCollision(p, collidableArray))
-           // p->SetPositionX(p->GetPositionX() - p->GetMoveSpeedR() * delta);
-
     }
 }
 
@@ -221,7 +147,6 @@ void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
 
                 else
                     p->SetPositionY(p->GetPositionY() - 1);
-                //p->DrawMe();
             }
         }
             //The Object is descending (apexcheck) as well ass airborne (jumpcheck),
@@ -243,7 +168,6 @@ void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
 
                 else
                     p->SetPositionY(p->GetPositionY() + 1);
-                //p->DrawMe();
             }
 
             //Fallspeed cannot exceed the max fallspeed, the real life equivalent of wind resistance limiting
@@ -306,8 +230,6 @@ bool Physics::Grounded(PlayerTest* p, int** collidableArray)
 bool Physics::Roofed(PlayerTest* p, int** collidableArray)
 {
     int playerArrayCoordX = p->GetPositionX() / 32;
-    //int playerNorthCoord = (p->GetPositionY()) / 32;
-    //Experimental bug fix
     int playerNorthCoord = (p->GetPositionY() / 32)>0?p->GetPositionY()/32 -1:0;
 
     if(collidableArray[playerNorthCoord][playerArrayCoordX] != 0)

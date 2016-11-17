@@ -64,26 +64,6 @@ void Map::loadLayer(Json::Value& layer, std::list<Object*>& objects, TileSize ti
     {
         tmp->tilemap[i % tmp->width][i / tmp->width] = layer["data"][(int) i].asInt();
         tmp->tilemap[i % tmp->width][i / tmp->width] = layer["data"][(int) i].asInt();
-
-    }
-    if((layer["name"].asString() == "foreground"))
-    {
-        // Read in tilemap
-        for (size_t i = 0; i < layer["data"].size(); i++)
-            tmp->collidable[i % tmp->width][i / tmp->width] = layer["data"][(int)i].asInt();
-
-        // Render each tile
-        for (int y = 0; y < tmp->height; y++)
-        {
-            for (int x = 0; x < tmp->width; x++)
-            {
-                tmp->collidableID = tmp->collidable[x][y];
-
-                // Skip empty tiles
-                if (tmp->collidableID == 0)
-                    continue;
-            }
-        }
     }
 
 	objects.push_back(tmp);

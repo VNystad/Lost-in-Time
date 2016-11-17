@@ -26,12 +26,12 @@ public:
     float GetHeight() { return height; }
     void SetHeight(float height) { this->height = height; }
 
-    sf::Texture GetgreenHealth() { return greenHealth; }
-    void SetgreenHealth(sf::Texture texture) { this->greenHealth = texture; }
-    sf::Texture GetredHealth() { return redHealth; }
-    void SetredHealth(sf::Texture texture) { this->redHealth = texture; }
-    sf::Texture GetHealthBorder() { return HealthBorder; }
-    void SetHealthBorder(sf::Texture texture) { this->HealthBorder = texture; }
+    sf::Texture GetgreenHealthTexture() { return greenHealthTexture; }
+    void SetgreenHealthTexture(sf::Texture texture) { this->greenHealthTexture = texture; }
+    sf::Texture GetredHealthTexture() { return redHealthTexture; }
+    void SetredHealthTexture(sf::Texture texture) { this->redHealthTexture = texture; }
+    sf::Texture GetHealthBorderTexture() { return HealthBorderTexture; }
+    void SetHealthBorderTexture(sf::Texture texture) { this->HealthBorderTexture = texture; }
 
     sf::RectangleShape GetgreenHealthbar() { return greenHealthbar; }
     void SetgreenHealthbar(sf::RectangleShape healthbar) { this->greenHealthbar = healthbar; }
@@ -52,15 +52,15 @@ protected:
     float visiblelifepoints;
     float originalhealth;
 
-    sf::Texture greenHealth;
+    sf::Texture greenHealthTexture;
     sf::RectangleShape greenHealthbar;
     sf::IntRect *greenHealthbarFrame;
 
-    sf::Texture redHealth;
+    sf::Texture redHealthTexture;
     sf::RectangleShape redHealthbar;
     sf::IntRect *redHealthbarFrame;
 
-    sf::Texture HealthBorder;
+    sf::Texture HealthBorderTexture;
     sf::RectangleShape HealthbarBorder;
     sf::IntRect *HealthbarBorderFrame;
 

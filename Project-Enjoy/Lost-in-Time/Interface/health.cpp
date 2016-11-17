@@ -3,19 +3,28 @@
 
 void Health::init()
 {
-    if (!greenHealth.loadFromFile("data/HUD/Health/Lost-in-Time_health-bar-green.png"))
+    if (!greenHealthTexture.loadFromFile("data/HUD/Health/Lost-in-Time_health-bar-green.png"))
         std::cerr << "Could not load file: data/HUD/Health/Lost-in-Time_health-bar-green.png" << std::endl;
-    if (!redHealth.loadFromFile("data/HUD/Health/Lost-in-Time_health-bar-red.png"))
+    if (!redHealthTexture.loadFromFile("data/HUD/Health/Lost-in-Time_health-bar-red.png"))
         std::cerr << "Could not load file: data/HUD/Health/Lost-in-Time_health-bar-red.png" << std::endl;
-    if (!HealthBorder.loadFromFile("data/HUD/Health/Lost-in-Time_health-bar-border.png"))
+    if (!HealthBorderTexture.loadFromFile("data/HUD/Health/Lost-in-Time_health-bar-border.png"))
         std::cerr << "Could not load file: data/HUD/Health/Lost-in-Time_health-bar-border.png" << std::endl;
 
-    greenHealthbar.setTexture(&greenHealth);
-    greenHealthbarFrame = new sf::IntRect(0,0,width,height);
-    redHealthbar.setTexture(&redHealth);
-    redHealthbarFrame = new sf::IntRect(0,0,width,height);
-    HealthbarBorder.setTexture(&HealthBorder);
-    HealthbarBorderFrame = new sf::IntRect(0,0,width,height);
+    greenHealthbar.setTexture(&greenHealthTexture);
+    greenHealthbarFrame = new sf::IntRect(0,0,GetWidth(),GetHeight());
+    greenHealthbar.setTextureRect(*greenHealthbarFrame);
+
+    redHealthbar.setTexture(&redHealthTexture);
+    redHealthbarFrame = new sf::IntRect(0,0,GetWidth(),GetHeight());
+    redHealthbar.setTextureRect(*redHealthbarFrame);
+
+    HealthbarBorder.setTexture(&HealthBorderTexture);
+    HealthbarBorderFrame = new sf::IntRect(0,0,GetWidth(),GetHeight());
+    HealthbarBorder.setTextureRect(*HealthbarBorderFrame);
+
+    greenHealthbar.setPosition(10,10);
+    redHealthbar.setPosition(10,10);
+    HealthbarBorder.setPosition(10,10);
 
 }
 
@@ -67,8 +76,12 @@ void Health::Hit(int damage)
 void Health::DrawMe()
 {
     float fullWidth = 100;
-    //greenHealthbarFrame->left = (actuallifepoints / 100) * fullWidth;
-    //redHealthbarFrame->left = (visiblelifepoints / 100) * fullWidth;
+
+    greenHealthbarFrame->left = (actuallifepoints / 100) * fullWidth;
+    greenHealthbar.setTextureRect(*greenHealthbarFrame);
+    redHealthbarFrame->left = (visiblelifepoints / 100) * fullWidth;
+    redHealthbar.setTextureRect(*redHealthbarFrame);
+
     window.draw(greenHealthbar);
     window.draw(redHealthbar);
     window.draw(HealthbarBorder);

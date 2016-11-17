@@ -12,6 +12,7 @@ PlayerTest::PlayerTest(float positionX, float positionY, const Config& config, s
     animation.PlayerIdle(character);
 
     health.init();
+    health.SetOriginalLifePoints(100);
     health.SetActualLifePoints(100);
     health.SetVisibleLifePoints(100);
 }
@@ -61,6 +62,48 @@ void PlayerTest::Reset2OriginalX(float x)
 void PlayerTest::Reset2OriginalY(float y)
 {
     y = this->OriginalY;
+}
+
+void PlayerTest::PlayerAnimation()
+{
+    counter++;
+    if (counter >= 5)
+    {
+        counter = 0;
+        if (jumpcheck == true && movedirection == 1) // If jumping to the right
+        {
+            animation.PlayerJumpRight(character);
+            lastmovedirection = 1;
+        }
+        else if (jumpcheck == true && movedirection == 0) // If jumping to the left
+        {
+            animation.PlayerJumpLeft(character);
+            lastmovedirection = 0;
+        }
+        else if (jumpcheck == true) //If jumping upwards.
+        {
+            if (lastmovedirection == 1)
+                animation.PlayerJumpRight(character);
+            else
+                animation.PlayerJumpLeft(character);
+        }
+
+        else
+        {
+            if (movedirection == 0) // If moving to left, play left animation
+            {
+                animation.PlayerWalkLeft(character);
+            }
+            if (movedirection == 1) // If moving to right, play right animation
+            {
+                animation.PlayerWalkRight(character);
+            }
+            if (movedirection == 2) // If movement stopped, play idle animation
+            {
+                animation.PlayerIdle(character);
+            }
+        }
+    }
 }
 
 void PlayerTest::PlayerDead()

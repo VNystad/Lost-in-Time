@@ -28,8 +28,10 @@ TestApp::TestApp() : config(config), window(window)
      * Create Window
      ****************************************/
     window = new sf::RenderWindow;
-    window->create(sf::VideoMode(1024/*config->GetScreenWidth()*/, 576/*config->GetScreenHeight()*/), "Test game with animation");
+    window->create(sf::VideoMode(1024/*config->GetScreenWidth()*/, 576/*config->GetScreenHeight()*/), "Lost in Time");
     window->setVerticalSyncEnabled(true);
+    window->setFramerateLimit(60);
+    window->setMouseCursorVisible(false);
 
     /*****************************************
      * Set camera position in middle of screen
@@ -89,6 +91,7 @@ bool TestApp::Tick()
         p->PlayerDead();
     }
 
+    p->PlayerAnimation();
     Move(delta);
 
     window->clear(sf::Color::Black);
@@ -99,8 +102,8 @@ bool TestApp::Tick()
         //object->process(deltaTime);
         object->draw(*window, collidabletiles, collidableArray);
     }
-    p->health.DrawMe();
     p->DrawMe();
+    p->health.DrawMe();
     window->display();
 
     /*****************************************
@@ -128,5 +131,3 @@ void TestApp::Move(float delta)
     Physics::Movement(p, collidableArray, delta);
     Physics::Gravity(p, collidableArray, delta);
 }
-
-

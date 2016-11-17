@@ -46,9 +46,13 @@ void Animation::PlayerWalkLeft(sf::RectangleShape* character)
 {
     character->setTexture(&PlayerTextureWalkflipped);
     if (frameSelected->left >= 0 && frameSelected->left < 102)
+    {
         frameSelected->left += 34;
+    }
     else
+    {
         frameSelected->left = 0;
+    }
     character->setTextureRect(*frameSelected);
 }
 
@@ -62,9 +66,19 @@ void Animation::PlayerIdle(sf::RectangleShape* character)
     character->setTextureRect(*frameSelected);
 }
 
-void Animation::PlayerJump(sf::RectangleShape* character)
+void Animation::PlayerJumpRight(sf::RectangleShape* character)
 {
     character->setTexture(&PlayerTextureJump);
+    if (frameSelected->left >= 0 && frameSelected->left < 136)
+        frameSelected->left += 34;
+    else
+        frameSelected->left = 0;
+    character->setTextureRect(*frameSelected);
+}
+
+void Animation::PlayerJumpLeft(sf::RectangleShape* character)
+{
+    character->setTexture(&PlayerTextureJumpflipped);
     if (frameSelected->left >= 0 && frameSelected->left < 136)
         frameSelected->left += 34;
     else

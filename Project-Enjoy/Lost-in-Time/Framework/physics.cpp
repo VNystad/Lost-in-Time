@@ -9,7 +9,7 @@ void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
     //object to the other direction or not.
 
     //Checks for trying to move to the left
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
         p->SetMovDir(0); //Means to the left
         p->SetSlowDownL(false);
     }
@@ -17,7 +17,7 @@ void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
         p->SetSlowDownL(true); //Object does not accelerate to left, should slow down if moving to left
 
     //Check for trying to move to the right
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
         p->SetMovDir(1); //Means to the right
         p->SetSlowDownR(false);
     }
@@ -87,9 +87,11 @@ void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
 
         }
         */
-        p->SetPositionX(p->GetPositionX() - p->GetMoveSpeedL() * delta);
-        while(HorisontalCollision(p, collidableArray))
-            p->SetPositionX(p->GetPositionX() + p->GetMoveSpeedL() * delta);
+
+        if(!HorisontalCollision(p, collidableArray))
+            p->SetPositionX(p->GetPositionX() - p->GetMoveSpeedL() * delta);
+        //if(HorisontalCollision(p, collidableArray))
+          //  p->SetPositionX(p->GetPositionX() + p->GetMoveSpeedL() * delta);
 
 
     }
@@ -157,9 +159,10 @@ void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
 
         }
          */
-        p->SetPositionX(p->GetPositionX() + p->GetMoveSpeedR() * delta);
-        while(HorisontalCollision(p, collidableArray))
-            p->SetPositionX(p->GetPositionX() - p->GetMoveSpeedR() * delta);
+        if(!HorisontalCollision(p, collidableArray))
+            p->SetPositionX(p->GetPositionX() + p->GetMoveSpeedR() * delta);
+        //if(HorisontalCollision(p, collidableArray))
+           // p->SetPositionX(p->GetPositionX() - p->GetMoveSpeedR() * delta);
 
     }
 }
@@ -269,8 +272,8 @@ bool Physics::HorisontalCollision(PlayerTest* p, int** collidableArray)
     int playerEastCoord = playerWestCoord +1;
 
 
-    if(collidableArray[upperPlayerYArrayCoord][playerWestCoord] || collidableArray[upperPlayerYArrayCoord][playerEastCoord] ||
-        collidableArray[lowerPlayerArrayCoord][playerWestCoord] || collidableArray[lowerPlayerArrayCoord][playerEastCoord])
+    if(p->GetMovDir() == 0 && (collidableArray[upperPlayerYArrayCoord][playerWestCoord] || collidableArray[lowerPlayerArrayCoord][playerWestCoord])
+           || p->GetMovDir() == 1 && (collidableArray[upperPlayerYArrayCoord][playerEastCoord] || collidableArray[lowerPlayerArrayCoord][playerEastCoord]))
     {
         return true;
     }

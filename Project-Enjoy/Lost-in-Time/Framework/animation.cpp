@@ -35,54 +35,136 @@ void Animation::init()
 void Animation::PlayerWalkRight(sf::RectangleShape* character)
 {
     character->setTexture(&PlayerTextureWalk);
-    if (frameSelected->left >= 0 && frameSelected->left < 102)
-        frameSelected->left += 34;
+    if(animationdir == 1)
+    {
+        if (frameSelected->left < 102)
+            frameSelected->left += 34;
+        else
+        {
+            frameSelected->left -= 34;
+            animationdir = 0;
+        }
+    }
     else
-        frameSelected->left = 0;
+    {
+        if (frameSelected->left > 0)
+            frameSelected->left -= 34;
+        else
+        {
+            frameSelected->left += 34;
+            animationdir = 1;
+        }
+    }
+
     character->setTextureRect(*frameSelected);
 }
 
 void Animation::PlayerWalkLeft(sf::RectangleShape* character)
 {
     character->setTexture(&PlayerTextureWalkflipped);
-    if (frameSelected->left >= 0 && frameSelected->left < 102)
+    if(animationdir == 1)
     {
-        frameSelected->left += 34;
+        if (frameSelected->left < 102)
+            frameSelected->left += 34;
+        else
+        {
+            frameSelected->left -= 34;
+            animationdir = 0;
+        }
     }
     else
     {
-        frameSelected->left = 0;
+        if (frameSelected->left > 0)
+            frameSelected->left -= 34;
+        else
+        {
+            frameSelected->left += 34;
+            animationdir = 1;
+        }
     }
+
     character->setTextureRect(*frameSelected);
 }
 
 void Animation::PlayerIdle(sf::RectangleShape* character)
 {
     character->setTexture(&PlayerTextureIdle);
-    if (frameSelected->left >= 0 && frameSelected->left < 102)
-        frameSelected->left += 34;
+    if(animationdir == 1)
+    {
+        if (frameSelected->left < 102)
+            frameSelected->left += 34;
+        else
+        {
+            frameSelected->left -= 34;
+            animationdir = 0;
+        }
+    }
     else
-        frameSelected->left = 0;
+    {
+        if (frameSelected->left > 0)
+            frameSelected->left -= 34;
+        else
+        {
+            frameSelected->left += 34;
+            animationdir = 1;
+        }
+
+    }
+
     character->setTextureRect(*frameSelected);
 }
 
 void Animation::PlayerJumpRight(sf::RectangleShape* character)
 {
     character->setTexture(&PlayerTextureJump);
-    if (frameSelected->left >= 0 && frameSelected->left < 136)
-        frameSelected->left += 34;
+    if(animationdir == 1)
+    {
+        if (frameSelected->left < 102)
+            frameSelected->left += 34;
+        else
+        {
+            frameSelected->left -= 34;
+            animationdir = 0;
+        }
+    }
     else
-        frameSelected->left = 0;
+    {
+        if (frameSelected->left > 0)
+            frameSelected->left -= 34;
+        else
+        {
+            frameSelected->left += 34;
+            animationdir = 1;
+        }
+    }
+
     character->setTextureRect(*frameSelected);
 }
 
 void Animation::PlayerJumpLeft(sf::RectangleShape* character)
 {
     character->setTexture(&PlayerTextureJumpflipped);
-    if (frameSelected->left >= 0 && frameSelected->left < 136)
-        frameSelected->left += 34;
+    if(animationdir == 1)
+    {
+        if (frameSelected->left < 102)
+            frameSelected->left += 34;
+        else
+        {
+            frameSelected->left -= 34;
+            animationdir = 0;
+        }
+    }
     else
-        frameSelected->left = 0;
+    {
+        if (frameSelected->left > 0)
+            frameSelected->left -= 34;
+        else
+        {
+            frameSelected->left += 34;
+            animationdir = 1;
+        }
+    }
+
     character->setTextureRect(*frameSelected);
 }
 

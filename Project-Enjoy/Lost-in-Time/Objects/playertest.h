@@ -117,7 +117,7 @@ protected:
     float regularhorslowdown = 1.5;
 
     //Horisontal
-    const float maxmovespeed = 400;
+    const float maxmovespeed = 250;
 
     /**********************
      * Vertical variables

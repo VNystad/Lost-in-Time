@@ -25,6 +25,7 @@ protected:
 
     int PlayersizeWidth = 34;
     int PlayersizeHeight = 50;
+    int animationdir = 1;
 
     // Choose starting frame in texture picture
     sf::IntRect *frameSelected;

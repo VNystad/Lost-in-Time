@@ -215,8 +215,8 @@ void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
             {
                 if(Roofed(p, collidableArray))
                 {
-                    i = -1;
                     p->SetApexCheck(true);
+                    break;
                 }
 
                 else
@@ -238,7 +238,7 @@ void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
             {
                 if(Grounded(p, collidableArray))
                 {
-                    i = -1;
+                    break;
                 }
 
                 else
@@ -291,7 +291,7 @@ bool Physics::Grounded(PlayerTest* p, int** collidableArray)
     int playerArrayCoordX = p->GetPositionX() / 32;
     int playerSouthCoord = (p->GetPositionY()+50) / 32;
 
-    if(collidableArray[playerSouthCoord][playerArrayCoordX] != 0)
+    if(p->GetApexCheck() == 1 && collidableArray[playerSouthCoord][playerArrayCoordX] != 0)
     {
         return true;
     }

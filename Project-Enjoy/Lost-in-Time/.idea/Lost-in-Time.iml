@@ -2,78 +2,42 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Enemy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/testapp.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Objects/playertest.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Objects/playertest.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/data" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/state/statepause.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/state/statepause.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/state/machine.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/state/stategame.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/state/stategame.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/state/state.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/state/loadgamestate.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/state/statemainmenu.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/state/machine.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/state/statemainmenu.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/state/loadgamestate.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Framework/animation.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Framework/Camera.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Framework/font.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Framework/animation.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Framework/physics.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Framework/physics.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Framework/config.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Framework/font.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/main-menu/backgroundmainmenu.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/main-menu/ExitGame.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/main-menu/NewGame.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/main-menu/LoadGameSelected.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/main-menu/ExitGameSelected.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/main-menu/LoadGame.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/main-menu/NewGameSelected.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/Character-Animation/characteridle.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/Character-Animation/characterdeath.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/Character-Animation/characterjump.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/Character-Animation/characterjumpflipped.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/Character-Animation/charactermoveflipped.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/Character-Animation/charactermove.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/map.json" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/tileset.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/HUD/Health/Lost-in-Time_health-bar-green.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/HUD/Health/Lost-in-Time_health-bar-red.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/HUD/Health/Lost-in-Time_health-bar-border.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data/Font/BitMapFont.TTF" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Objects" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Interface" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/state" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/testapp.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Framework" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Map/map.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Map/map.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Map/tile.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Map/object.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Map/object.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Map/map.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Map/layer.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Map/tile.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Map/layer.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Map/sprite.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Map/sprite.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Interface/health.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Interface/health.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Interface/deathscreen.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Interface/deathscreen.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
-          <root url="file:///usr/include" />
-          <root url="file:///usr/local/include" />
+          <root url="file://E:/Programmer/TheMinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include" />
+          <root url="file://E:/Programmer/TheMinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include-fixed" />
+          <root url="file://E:/Programmer/TheMinGW64/mingw64/x86_64-w64-mingw32/include" />
+          <root url="file://E:/Programmer/CLionLibraries/SFML/include" />
+          <root url="file://E:/Programmer/CLionLibraries/jsoncpp/include" />
         </CLASSES>
         <SOURCES>
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
-          <root url="file:///usr/include" />
-          <root url="file:///usr/local/include" />
+          <root url="file://E:/Programmer/TheMinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include" />
+          <root url="file://E:/Programmer/TheMinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/6.1.0/include-fixed" />
+          <root url="file://E:/Programmer/TheMinGW64/mingw64/x86_64-w64-mingw32/include" />
+          <root url="file://E:/Programmer/CLionLibraries/SFML/include" />
+          <root url="file://E:/Programmer/CLionLibraries/jsoncpp/include" />
         </SOURCES>
       </library>
     </orderEntry>

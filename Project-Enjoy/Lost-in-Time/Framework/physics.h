@@ -2,17 +2,34 @@
 #define LOST_IN_TIME_PHYSICS_H
 
 #include "../Objects/playertest.h"
+#include "../Enemy/AIEnemies.h"
 #include "../Map/tile.h"
 
 class Physics
 {
 public:
     static void Movement(PlayerTest* p, int** collidableArray, float delta);
-    static bool HorisontalCollision(PlayerTest* p, int** collidableArray);
-
     static void Gravity(PlayerTest* p, int** collidableArray, float delta);
+
+    static bool HorisontalCollision(PlayerTest* p, int** collidableArray);
     static bool Grounded(PlayerTest* p, int** collidableArray);
     static bool Roofed(PlayerTest* p, int** collidableArray);
+
+
+    static void AIMovement(AIEnemies* e, PlayerTest* p, int** collidableArray, float delta);
+    static void AIGravity(AIEnemies* e, int** collidableArray, float delta);
+
+    static bool AIHorisontalCollision(AIEnemies* e, int** collidableArray);
+    static bool AIGrounded(AIEnemies* e, int** collidableArray);
+    static bool AIRoofed(AIEnemies* e, int** collidableArray);
+
+
+    static void Hurt(PlayerTest* p, AIEnemies* e);
+
+
+private:
+
+
 
 };
 

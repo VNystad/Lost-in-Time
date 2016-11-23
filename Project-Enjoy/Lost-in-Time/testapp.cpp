@@ -42,10 +42,16 @@ TestApp::TestApp() : config(config), window(window)
     view.setCenter(view.getCenter().x, view.getCenter().y);
     window->setView(view);
 
-    /********************
+    /********************|
      * Create the player
      *******************/
-    p = new PlayerTest(180, 200, *config, window);
+    p = new PlayerTest(180, 1, *config, window);
+    AIVector.push_back(new AIEnemies(1003, 694, 25, *config, window));
+    AIVector.push_back(new AIEnemies(354, 1230, 200, *config, window));
+    AIVector.push_back(new AIEnemies(360, 1230, 200, *config, window));
+    AIVector.push_back(new AIEnemies(1003, 694, 25, *config, window));
+    AIVector.push_back(new AIEnemies(2830, 500, 100, *config, window));
+    AIVector.push_back(new AIEnemies(1671, 150, 60, *config, window));
 
     /********************
      * Create the clock
@@ -80,6 +86,8 @@ bool TestApp::Tick()
         window->close();
         exit(0);
     }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
+        std::cout << p->GetPositionX() << " " << p->GetPositionY() << std::endl;
 
     /* If player hits the bottom of map,
      * the player's lifepoint is reduced to 0 and player death function is called */
@@ -92,6 +100,7 @@ bool TestApp::Tick()
     }*/
 
     p->PlayerAnimation();
+
     Move(delta);
 
     window->clear(sf::Color::Black);
@@ -104,6 +113,9 @@ bool TestApp::Tick()
     }
     p->DrawMe();
     p->health.DrawMe();
+
+    AIHandler(delta);
+
     window->display();
 
     /*****************************************
@@ -130,4 +142,22 @@ void TestApp::Move(float delta)
 {
     Physics::Movement(p, collidableArray, delta);
     Physics::Gravity(p, collidableArray, delta);
+}
+
+/**
+ * AIHandler handles all the AI, and sends each of them
+ * through the same process as the player(animation, drawing, physics
+ * and AI ofcourse).
+ * @param delta
+ */
+void TestApp::AIHandler(float delta)
+{
+    for(int i = 0; i < AIVector.size(); i++)
+    {
+        AIVector[i]->Animation();
+        AIVector[i]->DrawMe();
+        AIVector[i]->MonkeyAI1(AIVector[i], p);
+        Physics::AIMovement(AIVector[i] , p, collidableArray, delta);
+        Physics::AIGravity(AIVector[i], collidableArray, delta);
+    }
 }

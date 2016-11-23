@@ -1,10 +1,8 @@
 #include <iostream>
-#include "playertest.h"
+#include "AI.h"
 
-PlayerTest::PlayerTest(float positionX, float positionY, const Config& config, sf::RenderWindow* window) : config(config), window(window)
+AI::AI(float positionX, float positionY, const Config& config, sf::RenderWindow* window) : config(config), window(window)
 {
-    this->OriginalX = positionX;
-    this->OriginalY = positionY;
     this->positionX = OriginalX;
     this->positionY = OriginalY;
     character = new sf::RectangleShape;
@@ -19,54 +17,54 @@ PlayerTest::PlayerTest(float positionX, float positionY, const Config& config, s
     health.SetVisibleLifePoints(100);
 }
 
-int PlayerTest::GetPositionX()
+int AI::GetPositionX()
 {
     return positionX;
 }
-int PlayerTest::GetPositionY()
+int AI::GetPositionY()
 {
     return positionY;
 }
-void PlayerTest::SetPositionX(int x)
+void AI::SetPositionX(int x)
 {
     this->positionX = x;
 }
-void PlayerTest::SetPositionY(int y)
+void AI::SetPositionY(int y)
 {
     this->positionY = y;
 }
 
-int PlayerTest::GetOriginalX()
+int AI::GetOriginalX()
 {
     return OriginalX;
 }
 
-int PlayerTest::GetOriginalY()
+int AI::GetOriginalY()
 {
     return OriginalY;
 }
 
-void PlayerTest::SetOriginalX(int x)
+void AI::SetOriginalX(int x)
 {
     this->OriginalX = x;
 }
 
-void PlayerTest::SetOriginalY(int y)
+void AI::SetOriginalY(int y)
 {
     this->OriginalY = y;
 }
 
-void PlayerTest::Reset2OriginalX(float x)
+void AI::Reset2OriginalX(float x)
 {
     x = this->OriginalX;
 }
 
-void PlayerTest::Reset2OriginalY(float y)
+void AI::Reset2OriginalY(float y)
 {
     y = this->OriginalY;
 }
 
-void PlayerTest::PlayerAnimation()
+void AI::Animation()
 {
     counter++;
     if (counter >= 5)
@@ -108,35 +106,13 @@ void PlayerTest::PlayerAnimation()
     }
 }
 
-void PlayerTest::PlayerDead()
+void AI::Death()
 {
-    health.SetActualLifePoints(100);
-    health.SetVisibleLifePoints(100);
-    jumpspeed = origjumpspeed;
-    fallspeed = 0;
-    movedirection = 2;
-    positionX = OriginalX;
-    positionY = OriginalY;
-    std::cout << "Oh deer, you died!" << std::endl;
-    std::cout << "     (      )\n"
-            "     ))    ((\n"
-            "    //      \\\\\n"
-            "   | \\\\____// |\n"
-            "  \\~/ ~    ~\\/~~/\n"
-            "   (|    _/o  ~~\n"
-            "    /  /     ,|\n"
-            "   (~~~)__.-\\ |\n"
-            "    ``~~    | |\n"
-            "     |      | |\n"
-            "     |        |\n"
-            "    /          \\\n"
-            "   `\\          /'\n"
-            "     `\\_    _/'\n"
-            "        ~~~~" << std::endl << std::endl;
+//Delete AI
 
 }
 
-void PlayerTest::DrawMe()
+void AI::DrawMe()
 {
     // Position the rectangle used to draw the square
     character->setPosition(positionX, positionY);

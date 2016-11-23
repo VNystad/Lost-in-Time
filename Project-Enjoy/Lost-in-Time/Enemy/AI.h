@@ -1,5 +1,5 @@
-#ifndef LOST_IN_TIME_PLAYER_H
-#define LOST_IN_TIME_PLAYER_H
+#ifndef LOST_IN_TIME_AI_H
+#define LOST_IN_TIME_AI_H
 
 
 #include <SFML/Graphics/RectangleShape.hpp>
@@ -9,10 +9,10 @@
 #include "../Framework/animation.h"
 #include "../Interface/health.h"
 
-class PlayerTest
+class AI
 {
 public:
-    PlayerTest(float x, float y, const Config& config, sf::RenderWindow* window);
+    AI(float x, float y, const Config& config, sf::RenderWindow* window);
 
     sf::RectangleShape* character;
     Animation animation;
@@ -25,11 +25,9 @@ public:
 
     void DrawMe();
 
+
     int GetSizeWidth() const { return sizeWidth; };
     int GetSizeHeight() const { return sizeHeight; };
-
-    void SetPlayerHurt(int playerhurt) { this->playerhurt = playerhurt; };
-    int GetPlayerHurt() const { return playerhurt; }
 
     int GetPositionX();
     int GetPositionY();
@@ -44,9 +42,50 @@ public:
     void Reset2OriginalX(float x);
     void Reset2OriginalY(float y);
 
-    void PlayerDead();
+    void Death();
 
-    void PlayerAnimation();
+    void Animation();
+
+
+    /**********************
+    * AI
+    * *******************/
+
+    void AIPatrol();
+    void AIEnraged();
+
+    void SetLeftKey(bool leftkey) { this->leftkey = leftkey; }
+    bool GetLeftKey() const { return leftkey; }
+    void SetRightKey(bool rightkey) { this->rightkey = rightkey; }
+    bool GetRightKey() const { return rightkey; }
+    void SetUpKey(bool upkey) { this->upkey = upkey; }
+    bool GetUpKey() const { return upkey; }
+
+    void SetEnraged(bool enraged) { this->enraged = enraged; }
+    bool GetEnraged() const { return enraged; }
+
+    int GetEnrageRange() const { return enragerange; }
+    int GetEnrageDuration() const { return enrageduration; }
+
+    void SetEnrageCountdown(int enragecountdown) { this->enragecountdown = enragecountdown; };
+    int GetEnrageCountdown() const { return enragecountdown; }
+
+    void SetEnragedSpeed(int enragedspeed) { this->enragedspeed = enragedspeed; };
+    int GetEnragedSpeed() const { return enragedspeed; }
+
+    void SetCalmSpeed(int calmspeed) { this->calmspeed = calmspeed; };
+    int GetCalmSpeed() const { return calmspeed; }
+
+    void SetPatrolLeft(int patrolleft) { this->patrolleft = patrolleft; };
+    int GetPatrolLeft() const { return patrolleft; }
+
+    void SetPatrolRight(int patrolright) { this->patrolright = patrolright; };
+    int GetPatrolRight() const { return patrolright; }
+
+
+    /***************************************
+     * MOVEMENT STUFF FUNCTIONS
+    ***************************************/
 
 
     //Checks if object is slowing down
@@ -66,6 +105,7 @@ public:
     float GetRegularBrake() const { return regularhorslowdown; }
 
     //Get max movement speed and movement power
+    void SetMaxMoveSpeed(float maxmovespeed) { this->maxmovespeed = maxmovespeed; }
     float GetMaxMoveSpeed() const { return maxmovespeed; }
     float GetMovePower() const { return movepower; }
 
@@ -101,21 +141,35 @@ public:
     void SetJumpPower(float jumppower ) { this->jumppower = jumppower; }
     float GetJumpPower() const { return jumppower; }
 
+
+
 protected:
 
     const int sizeWidth = 34;
     const int sizeHeight = 50;
 
 
-    /*
- * If player is being hurt, playerhurt will be:
- *  5 = Unharmed
- *  0 = From the left
- *  1 = From the right
- *  2 = From above
- *  3 = From beneath
- */
-    int playerhurt = 5;
+    /**********************
+     * AI Control
+    * *******************/
+
+    bool leftkey = true;
+    bool rightkey = false;
+    bool upkey = false;
+
+
+    /**********************
+    * AI Behaviour
+    * *******************/
+    bool enraged = false;
+    int enragerange = 100;
+    int enrageduration = 1000;
+    int enragecountdown = enrageduration;
+    int enragedspeed = 100;
+    int calmspeed = 100;
+
+    int patrolleft;
+    int patrolright;
 
 
     /**********************
@@ -126,7 +180,7 @@ protected:
     float regularhorslowdown = 1.5;
 
     //Horisontal
-    const float maxmovespeed = 250;
+    float maxmovespeed = 250;
     float movepower = 20;
 
     float movespeedleft = 0;
@@ -147,7 +201,7 @@ protected:
 
     const int origjumpspeed = 15;
     float fallspeed;
-    float maxfallspeed = 40;
+    float maxfallspeed = 50;
 
     float jumppower = 400;
     float jumpspeed = 15;
@@ -171,7 +225,9 @@ protected:
 
     const Config& config;
     sf::RenderWindow* window;
+
+
 };
 
 
-#endif
+#endif //LOST_IN_TIME_AI_H

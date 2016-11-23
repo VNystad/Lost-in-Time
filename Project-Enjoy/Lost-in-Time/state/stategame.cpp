@@ -7,7 +7,4 @@ void StateGame::GoNext(Machine &machine)
     TestApp testapp;
 
     while(testapp.Tick());
-
-    // When game application closes, change to main menu state
-    machine.SetState(Machine::StateId::MAINMENU);
 }

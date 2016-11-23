@@ -10,6 +10,7 @@
 #include "Objects/playertest.h"
 #include "Map/map.h"
 #include "Framework/Camera.h"
+#include "Enemy/AIEnemies.h"
 
 class TestApp
 {
@@ -17,6 +18,7 @@ public:
     TestApp();
     bool Tick();
     void Move(float delta);
+    void AIHandler(float delta);
 protected:
 
     //Init success flag
@@ -32,6 +34,11 @@ protected:
 
     //Dependensies
     PlayerTest* p;
+
+    std::vector<AIEnemies*> AIVector;
+
+
+
     std::map<int, Tile*> *collidabletiles;
     Config* config;
     std::list<Object*> objects;

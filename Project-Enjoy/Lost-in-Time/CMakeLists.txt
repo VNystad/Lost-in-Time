@@ -1,37 +1,20 @@
 cmake_minimum_required(VERSION 3.6)
 project(Lost-in-Time)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -pedantic")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -Wall -pedantic")
 
 set(SOURCE_FILES
         main.cpp
-        testapp.h
         testapp.cpp
+        testapp.h
 
-        data/Character-Animation/characterdeath.png
-        data/Character-Animation/characteridle.png
-        data/Character-Animation/characterjump.png
-        data/Character-Animation/characterjumpflipped.png
-        data/Character-Animation/charactermove.png
-        data/Character-Animation/charactermoveflipped.png
+        Enemy
+        Enemy/AI.cpp
+        Enemy/AI.h
+        Enemy/AIEnemies.cpp
+        Enemy/AIEnemies.h
 
-        data/Font/BitMapFont.TTF
-
-        data/HUD/Health/Lost-in-Time_health-bar-red.png
-        data/HUD/Health/Lost-in-Time_health-bar-green.png
-        data/HUD/Health/Lost-in-Time_health-bar-border.png
-
-        data/main-menu/backgroundmainmenu.png
-        data/main-menu/ExitGame.png
-        data/main-menu/ExitGameSelected.png
-        data/main-menu/LoadGame.png
-        data/main-menu/LoadGameSelected.png
-        data/main-menu/NewGame.png
-        data/main-menu/NewGameSelected.png
-
-        data/map.json
-        data/tileset.png
-
+        Framework
         Framework/animation.cpp
         Framework/animation.h
         Framework/Camera.h
@@ -41,10 +24,9 @@ set(SOURCE_FILES
         Framework/font.cpp
         Framework/font.h
 
+        Interface
         Interface/health.cpp
         Interface/health.h
-        Interface/deathscreen.cpp
-        Interface/deathscreen.h
 
         Map/layer.cpp
         Map/layer.h
@@ -56,9 +38,11 @@ set(SOURCE_FILES
         Map/sprite.h
         Map/tile.h
 
+        Objects
         Objects/playertest.cpp
         Objects/playertest.h
 
+        state
         state/loadgamestate.cpp
         state/loadgamestate.h
         state/machine.cpp
@@ -70,7 +54,30 @@ set(SOURCE_FILES
         state/statemainmenu.h
         state/statepause.cpp
         state/statepause.h
-        )
+
+        data
+        data/map.json
+        data/tileset.png
+        data/Character-Animation
+        data/Character-Animation/characterdeath.png
+        data/Character-Animation/characteridle.png
+        data/Character-Animation/characterjump.png
+        data/Character-Animation/characterjumpflipped.png
+        data/Character-Animation/charactermove.png
+        data/Character-Animation/charactermoveflipped.png
+        data/main-menu/backgroundmainmenu.png
+        data/main-menu/ExitGame.png
+        data/main-menu/ExitGameSelected.png
+        data/main-menu/LoadGame.png
+        data/main-menu/LoadGameSelected.png
+        data/main-menu/NewGame.png
+        data/main-menu/NewGameSelected.png
+        data/HUD
+        data/HUD/Health
+        data/HUD/Health/Lost-in-Time_health-bar-border.png
+        data/HUD/Health/Lost-in-Time_health-bar-green.png
+        data/HUD/Health/Lost-in-Time_health-bar-red.png
+        Enemy/AI.cpp Enemy/AI.h Enemy/AIEnemies.cpp Enemy/AIEnemies.h)
 
 add_executable(Lost-in-Time ${SOURCE_FILES})
 

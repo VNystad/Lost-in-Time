@@ -16,7 +16,6 @@ public:
 
     sf::RectangleShape* character;
     Animation animation;
-
     Health health;
 
     /* ******************************************** */

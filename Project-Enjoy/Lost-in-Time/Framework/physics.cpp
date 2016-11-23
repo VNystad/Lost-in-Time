@@ -192,7 +192,7 @@ bool Physics::HorisontalCollision(PlayerTest* p, int** collidableArray)
 {
     int upperPlayerYArrayCoord = (p->GetPositionY() / 32) >0? p->GetPositionY()/32 :0; //Experimental bug fix
     int lowerPlayerArrayCoord = upperPlayerYArrayCoord +1;
-    int playerWestCoord = (p->GetPositionX() / 32) -1;
+    int playerWestCoord = (p->GetPositionX() / 32);
     int playerEastCoord = playerWestCoord +1;
 
 

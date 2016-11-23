@@ -1,4 +1,3 @@
-#include <iostream>
 #include "playertest.h"
 
 PlayerTest::PlayerTest(float positionX, float positionY, const Config& config, sf::RenderWindow* window) : config(config), window(window)
@@ -115,22 +114,6 @@ void PlayerTest::PlayerDead()
     movedirection = 2;
     positionX = OriginalX;
     positionY = OriginalY;
-    std::cout << "Oh deer, you died!" << std::endl;
-    std::cout << "     (      )\n"
-            "     ))    ((\n"
-            "    //      \\\\\n"
-            "   | \\\\____// |\n"
-            "  \\~/ ~    ~\\/~~/\n"
-            "   (|    _/o  ~~\n"
-            "    /  /     ,|\n"
-            "   (~~~)__.-\\ |\n"
-            "    ``~~    | |\n"
-            "     |      | |\n"
-            "     |        |\n"
-            "    /          \\\n"
-            "   `\\          /'\n"
-            "     `\\_    _/'\n"
-            "        ~~~~" << std::endl << std::endl;
 
 }
 

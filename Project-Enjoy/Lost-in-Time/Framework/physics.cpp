@@ -24,12 +24,14 @@ void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
         else if(p->GetPlayerHurt() == 0)
         {
             p->SetMoveSpeedR(0);
-            p->SetMoveSpeedL(200);
+            p->SetMoveSpeedL(400);
+            p->health.Hit(50);
         }
         else if(p->GetPlayerHurt() == 1)
         {
             p->SetMoveSpeedL(0);
-            p->SetMoveSpeedR(200);
+            p->SetMoveSpeedR(400);
+            p->health.Hit(50);
         }
         p->SetPlayerHurt(5);
     }
@@ -112,7 +114,7 @@ void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
                 p->SetMovDir(2);
                 p->SetLastMoveDirection(1);
             }
-                //Prevents the object from moving in the opposite direction if it tries to stop
+            //Prevents the object from moving in the opposite direction if it tries to stop
         }
         else if (p->GetMoveSpeedR() < p->GetMaxMoveSpeed())
             //The current speed is increased if the object has not yet reached its max speed
@@ -287,13 +289,35 @@ bool Physics::Roofed(PlayerTest* p, int** collidableArray)
 
 
 //Horisontal movement for AI
-void Physics::AIMovement(AIEnemies* e, PlayerTest* p, int** collidableArray, float delta) {
+void Physics::AIMovement(AIEnemies* e, PlayerTest* p, std::vector<AIEnemies*>* AIVector, int* i, int** collidableArray, float delta) {
     //This function handles movement to the left or to the right. The object will gradually reach its max velocity
     //which it is limited by, and also gradually slow down at different rates wether one tries to move the
     //object to the other direction or not.
 
     //Checks if player should be hurt or not
-    Hurt(p, e);
+    Hurt(p, e, i, AIVector);
+
+    if(e->GetAIColliding() != 5)
+    {
+        if(e->GetAIColliding() == 2)
+        {
+
+            e->SetApexCheck(false);
+            e->SetJumpSpeed(10);
+            e->SetFallSpeed(0);
+        }
+        else if(e->GetAIColliding() == 0)
+        {
+            e->SetMoveSpeedR(0);
+            e->SetMoveSpeedL(200);
+        }
+        else if(e->GetAIColliding() == 1)
+        {
+            e->SetMoveSpeedL(0);
+            e->SetMoveSpeedR(200);
+        }
+        e->SetAIColliding(5);
+    }
 
     //Checks for trying to move to the left
     if (e->GetLeftKey()) {
@@ -540,15 +564,24 @@ bool Physics::AIRoofed(AIEnemies* e, int** collidableArray)
     }
 }
 
-/*
- * If player is being hurt, playerhurt will be:
+
+/**
+ * The AI currently running physics checks wether it hurts the player or not.
+ * The playerhurt variable will then be set appropriately as shown below.
+ * It will then check if it collides with other AI.
+ *
+ *  * If player is being hurt, playerhurt will be:
  *  5 = Unharmed
  *  0 = From the left
  *  1 = From the right
  *  2 = From above
  *  3 = From beneath
+ * @param p Player
+ * @param e Selected AI
+ * @param i The index of the selected AI(to hinder self colliding)
+ * @param AIVector The whole vector of all the AI
  */
-void Physics::Hurt(PlayerTest* p, AIEnemies* e)
+void Physics::Hurt(PlayerTest*p, AIEnemies* e, int* i, std::vector<AIEnemies*>* AIVector)
 {
     int px = p->GetPositionX() + p->GetSizeWidth()/2;
     int py = p->GetPositionY() + p->GetSizeHeight()/2;
@@ -565,11 +598,59 @@ void Physics::Hurt(PlayerTest* p, AIEnemies* e)
         else if(px > ex && px - ex > ey - py)
             p->SetPlayerHurt(1);
         else if(py < ey)
+        {
             p->SetPlayerHurt(2);
-        /*
+            e->health.Hit(e->health.GetOriginalLifePoints());
+        }
+
         else
             p->SetPlayerHurt(3);
-            */
+
+    }
+    AISelfCollision(e, i, AIVector);
+}
+
+/**
+ * AI checks wether it collides with another AI or not.
+ * If AI collides with other character, AIColliding will be:
+ *  5 = Not colliding
+ *  0 = From the left
+ *  1 = From the right
+ *  2 = From above
+ *  3 = From beneath
+ * @param e Selected AI
+ * @param i The index of the selected AI(to hinder self colliding)
+ * @param AIVector The whole vector of all the AI
+ */
+void Physics::AISelfCollision(AIEnemies* e, int* i, std::vector<AIEnemies*>* AIVector)
+{
+    int ex = e->GetPositionX() + e->GetSizeWidth()/2;
+    int ey = e->GetPositionY() + e->GetSizeHeight()/2;
+
+    for(int a = 0; a < AIVector->size(); a++)
+    {
+        if(!i == a)
+        {
+            int cx = AIVector->at(a)->GetPositionX() + AIVector->at(a)->GetSizeWidth()/2;
+            int cy = AIVector->at(a)->GetPositionY() + AIVector->at(a)->GetSizeHeight()/2;
+
+            if((ex - cx < e->GetSizeWidth() && ex - cx > -e->GetSizeWidth()) &&
+               (ey - cy < e->GetSizeHeight() && ey - cy > -e->GetSizeHeight()))
+            {
+                {
+                    if(ex < cx &&  cx - ex > cy - ey)
+                        e->SetAIColliding(0);
+                    else if(ex > cx && ex - cx > cy - ey)
+                        e->SetAIColliding(1);
+                    else if(ey < cy)
+                        e->SetAIColliding(2);
+                    /*
+                    else
+                        e->SetAIColliding(3);
+                        */
+                }
+            }
+        }
     }
 
 }

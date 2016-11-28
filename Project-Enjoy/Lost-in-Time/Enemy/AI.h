@@ -29,6 +29,9 @@ public:
     int GetSizeWidth() const { return sizeWidth; };
     int GetSizeHeight() const { return sizeHeight; };
 
+    void SetAIColliding(int aicolliding) { this->aicolliding = aicolliding; };
+    int GetAIColliding() const { return aicolliding; }
+
     int GetPositionX();
     int GetPositionY();
     void SetPositionX(int x);
@@ -147,6 +150,18 @@ protected:
 
     const int sizeWidth = 34;
     const int sizeHeight = 50;
+
+
+
+    /*
+* If AI collides with other character, AIColliding will be:
+*  5 = Not colliding
+*  0 = From the left
+*  1 = From the right
+*  2 = From above
+*  3 = From beneath
+*/
+    int aicolliding = 5;
 
 
     /**********************

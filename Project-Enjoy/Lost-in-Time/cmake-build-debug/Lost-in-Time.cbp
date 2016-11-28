@@ -8,218 +8,214 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
+				<Option working_dir="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lost-in-Time">
-				<Option output="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Lost-in-Time" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
+				<Option output="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Lost-in-Time.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="E:/Programmer/TheMinGW64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/include"/>
+					<Add directory="E:/Programmer/TheMinGW64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/include-fixed"/>
+					<Add directory="E:/Programmer/TheMinGW64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="E:/Programmer/TheMinGW64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/include/c++"/>
+					<Add directory="E:/Programmer/TheMinGW64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="E:/Programmer/TheMinGW64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/include/c++/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lost-in-Time"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lost-in-Time"/>
+					<CompileFile command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lost-in-Time/fast">
-				<Option output="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Lost-in-Time" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
+				<Option output="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Lost-in-Time.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="E:/Programmer/TheMinGW64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/include"/>
+					<Add directory="E:/Programmer/TheMinGW64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/include-fixed"/>
+					<Add directory="E:/Programmer/TheMinGW64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="E:/Programmer/TheMinGW64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/include/c++"/>
+					<Add directory="E:/Programmer/TheMinGW64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="E:/Programmer/TheMinGW64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/include/c++/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lost-in-Time/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lost-in-Time/fast"/>
+					<CompileFile command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Programmer/TheMinGW64/mingw64/bin/mingw32-make.exe -f &quot;E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/Camera.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/Camera.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/animation.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/animation.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/animation.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/animation.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/config.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/config.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/font.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/font.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/font.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/font.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/physics.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/physics.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/deathscreen.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/deathscreen.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/deathscreen.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/deathscreen.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/health.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/health.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/health.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/health.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/timer.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/timer.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/timer.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/timer.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/layer.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/layer.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/layer.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/layer.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/map.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/map.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/map.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/map.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/object.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/object.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/object.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/object.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/sprite.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/sprite.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/sprite.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/sprite.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/tile.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/tile.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/data">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/data">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/main.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/main.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/machine.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/machine.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/machine.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/machine.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/state.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/state.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/stategame.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/stategame.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/stategame.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/stategame.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statepause.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/statepause.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statepause.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/statepause.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/testapp.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/testapp.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/testapp.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/testapp.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/CMakeLists.txt">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

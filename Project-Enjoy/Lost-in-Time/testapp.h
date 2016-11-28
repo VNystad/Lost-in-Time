@@ -35,6 +35,7 @@ protected:
     //Dependensies
     PlayerTest* p;
 
+    std::vector<AIEnemies*>* AIVectorPointer = &AIVector;
     std::vector<AIEnemies*> AIVector;
 
     std::map<int, Tile*> *collidabletiles;

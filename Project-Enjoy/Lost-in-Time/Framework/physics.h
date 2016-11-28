@@ -4,6 +4,8 @@
 #include "../Objects/playertest.h"
 #include "../Enemy/AIEnemies.h"
 #include "../Map/tile.h"
+#include <vector>
+
 
 class Physics
 {
@@ -16,7 +18,7 @@ public:
     static bool Roofed(PlayerTest* p, int** collidableArray);
 
 
-    static void AIMovement(AIEnemies* e, PlayerTest* p, int** collidableArray, float delta);
+    static void AIMovement(AIEnemies* e, PlayerTest* p, std::vector<AIEnemies*>* AIVector, int* i, int** collidableArray, float delta);
     static void AIGravity(AIEnemies* e, int** collidableArray, float delta);
 
     static bool AIHorisontalCollision(AIEnemies* e, int** collidableArray);
@@ -24,7 +26,8 @@ public:
     static bool AIRoofed(AIEnemies* e, int** collidableArray);
 
 
-    static void Hurt(PlayerTest* p, AIEnemies* e);
+    static void Hurt(PlayerTest* p, AIEnemies* e, int* i, std::vector<AIEnemies*>* AIVector);
+    static void AISelfCollision(AIEnemies* e, int* i, std::vector<AIEnemies*>* AIVector);
 
 
 private:

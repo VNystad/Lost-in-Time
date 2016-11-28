@@ -46,12 +46,12 @@ TestApp::TestApp() : config(config), window(window)
      * Create the player
      *******************/
     p = new PlayerTest(180, 1, *config, window);
-    AIVector.push_back(new AIEnemies(1003, 694, 25, *config, window));
-    AIVector.push_back(new AIEnemies(354, 1230, 200, *config, window));
-    AIVector.push_back(new AIEnemies(360, 1230, 200, *config, window));
-    AIVector.push_back(new AIEnemies(1003, 694, 25, *config, window));
-    AIVector.push_back(new AIEnemies(2830, 500, 100, *config, window));
-    AIVector.push_back(new AIEnemies(1671, 150, 60, *config, window));
+    AIVectorPointer->push_back(new AIEnemies(1003, 694, 25, *config, window));
+    AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, *config, window));
+    //AIVectorPointer->push_back(new AIEnemies(360, 1230, 200, *config, window));
+    //AIVectorPointer->push_back(new AIEnemies(1003, 694, 25, *config, window));
+    AIVectorPointer->push_back(new AIEnemies(2830, 500, 100, *config, window));
+    AIVectorPointer->push_back(new AIEnemies(1671, 150, 60, *config, window));
 
     /********************
      * Create the clock
@@ -166,10 +166,24 @@ void TestApp::AIHandler(float delta)
 {
     for(int i = 0; i < AIVector.size(); i++)
     {
-        AIVector[i]->AnimationAI();
-        AIVector[i]->DrawMe();
-        AIVector[i]->MonkeyAI1(AIVector[i], p);
-        Physics::AIMovement(AIVector[i] , p, collidableArray, delta);
-        Physics::AIGravity(AIVector[i], collidableArray, delta);
+        /* If AI hits the bottom of map,
+        * the AI's lifepoint is reduced to 0 and AI death function is called */
+        if (AIVectorPointer->at(i)->GetPositionY() >= 2500)
+        {
+            AIVectorPointer->at(i)->health.Hit(AIVectorPointer->at(i)->health.GetOriginalLifePoints());
+        }
+
+        if (AIVectorPointer->at(i)->health.Dead() == true)
+        {
+            AIVectorPointer->at(i)->health.DeathHandle();
+            //AIVectorPointer->at(i)->Death();
+            AIVectorPointer->erase(AIVectorPointer->begin() + i);
+        }
+        AIVectorPointer->at(i)->AnimationAI();
+        AIVectorPointer->at(i)->DrawMe();
+        AIVectorPointer->at(i)->MonkeyAI1(AIVectorPointer->at(i), p);
+        int* ipointer = (int*)i;
+        Physics::AIMovement(AIVectorPointer->at(i), p, AIVectorPointer, ipointer, collidableArray, delta);
+        Physics::AIGravity(AIVectorPointer->at(i), collidableArray, delta);
     }
 }

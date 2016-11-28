@@ -191,7 +191,7 @@ void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
         else
         {
             p->SetApexCheck(true);
-            float pixelstomove = (p->GetJumpPower() * p->GetFallSpeed() / p->GetGravity() * (delta));
+            float pixelstomove = (p->GetFallPower() * p->GetFallSpeed() / p->GetGravity() * (delta));
 
             //Martins carefull movement mechanism:
             //  -Makes the object check every pixel it moves for collision, prevents object in falling through the ground

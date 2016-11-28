@@ -13,6 +13,8 @@ void Animation::init()
         std::cout << "Failed to load data/Character-Animation/charactermoveflipped.png" << std::endl << std::endl;
     if (!PlayerTextureIdle.loadFromFile("data/Character-Animation/characteridle.png"))
         std::cout << "Failed to load data/Character-Animation/characteridle.png" << std::endl << std::endl;
+    if (!PlayerTextureIdleFlipped.loadFromFile("data/Character-Animation/characteridleflipped.png"))
+        std::cout << "Failed to load data/Character-Animation/characteridleflipped.png" << std::endl << std::endl;
     if (!PlayerTextureJump.loadFromFile("data/Character-Animation/characterjump.png"))
         std::cout << "Failed to load data/Character-Animation/characterjump.png" << std::endl << std::endl;
     if (!PlayerTextureJumpflipped.loadFromFile("data/Character-Animation/characterjumpflipped.png"))
@@ -81,6 +83,34 @@ void Animation::PlayerWalkLeft(sf::RectangleShape* character)
             frameSelected->left += 34;
             animationdir = 1;
         }
+    }
+
+    character->setTextureRect(*frameSelected);
+}
+
+void Animation::PlayerIdleLeft(sf::RectangleShape* character)
+{
+    character->setTexture(&PlayerTextureIdleFlipped);
+    if(animationdir == 1)
+    {
+        if (frameSelected->left < 102)
+            frameSelected->left += 34;
+        else
+        {
+            frameSelected->left -= 34;
+            animationdir = 0;
+        }
+    }
+    else
+    {
+        if (frameSelected->left > 0)
+            frameSelected->left -= 34;
+        else
+        {
+            frameSelected->left += 34;
+            animationdir = 1;
+        }
+
     }
 
     character->setTextureRect(*frameSelected);

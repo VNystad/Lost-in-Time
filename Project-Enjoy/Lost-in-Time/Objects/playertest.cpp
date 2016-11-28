@@ -102,7 +102,11 @@ void PlayerTest::PlayerAnimation()
             }
             if (movedirection == 2) // If movement stopped, play idle animation
             {
-                animation.PlayerIdle(character);
+                if(lastmovedirection == 0)
+                    animation.PlayerIdleLeft(character);
+                else
+                    animation.PlayerIdle(character);
+
             }
         }
     }

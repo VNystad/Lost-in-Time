@@ -100,6 +100,9 @@ public:
     void SetJumpPower(float jumppower ) { this->jumppower = jumppower; }
     float GetJumpPower() const { return jumppower; }
 
+    void SetFallPower(float fallpower ) { this->fallpower = fallpower; }
+    float GetFallPower() const { return fallpower; }
+
 protected:
 
     const int sizeWidth = 34;
@@ -147,8 +150,10 @@ protected:
     float fallspeed;
     float maxfallspeed = 40;
 
-    float jumppower = 400;
-    float jumpspeed = 15;
+    float jumppower = 550;
+    float fallpower = 250;
+    float jumpspeed = 0;
+
 
     //Checks for airborne and wether the jump or fall have reached its apex.
     bool jumpcheck = true;

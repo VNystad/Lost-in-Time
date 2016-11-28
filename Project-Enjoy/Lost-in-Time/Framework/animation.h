@@ -16,6 +16,7 @@ public:
 
     void PlayerWalkRight(sf::RectangleShape* character);
     void PlayerWalkLeft(sf::RectangleShape* character);
+    void PlayerIdleLeft(sf::RectangleShape* character);
     void PlayerIdle(sf::RectangleShape* character);
     void PlayerJumpRight(sf::RectangleShape* character);
     void PlayerJumpLeft(sf::RectangleShape* character);
@@ -37,6 +38,7 @@ protected:
     sf::Texture PlayerTextureDeath;
 
     // Textures for flipped animations
+    sf::Texture PlayerTextureIdleFlipped;
     sf::Texture PlayerTextureJumpflipped;
     sf::Texture PlayerTextureWalkflipped;
 };

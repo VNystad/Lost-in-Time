@@ -144,6 +144,9 @@ public:
     void SetJumpPower(float jumppower ) { this->jumppower = jumppower; }
     float GetJumpPower() const { return jumppower; }
 
+    void SetFallPower(float fallpower ) { this->fallpower = fallpower; }
+    float GetFallPower() const { return fallpower; }
+
 
 
 protected:
@@ -218,8 +221,9 @@ protected:
     float fallspeed;
     float maxfallspeed = 50;
 
-    float jumppower = 400;
-    float jumpspeed = 15;
+    float jumppower = 300;
+    float fallpower = 300;
+    float jumpspeed = 0;
 
 
 

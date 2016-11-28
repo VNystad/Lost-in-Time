@@ -1,32 +1,32 @@
 cmake_minimum_required(VERSION 3.6)
 project(Lost-in-Time)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -Wall -pedantic")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -pedantic")
 
 set(SOURCE_FILES
-        main.cpp
-        testapp.cpp
-        testapp.h
+        cmake-build-debug
+        data
 
-        Enemy
         Enemy/AI.cpp
         Enemy/AI.h
         Enemy/AIEnemies.cpp
         Enemy/AIEnemies.h
 
-        Framework
         Framework/animation.cpp
         Framework/animation.h
         Framework/Camera.h
         Framework/config.h
-        Framework/physics.cpp
-        Framework/physics.h
         Framework/font.cpp
         Framework/font.h
+        Framework/physics.cpp
+        Framework/physics.h
 
-        Interface
+        Interface/deathscreen.cpp
+        Interface/deathscreen.h
         Interface/health.cpp
         Interface/health.h
+        Interface/timer.cpp
+        Interface/timer.h
 
         Map/layer.cpp
         Map/layer.h
@@ -38,11 +38,9 @@ set(SOURCE_FILES
         Map/sprite.h
         Map/tile.h
 
-        Objects
         Objects/playertest.cpp
         Objects/playertest.h
 
-        state
         state/loadgamestate.cpp
         state/loadgamestate.h
         state/machine.cpp
@@ -55,29 +53,12 @@ set(SOURCE_FILES
         state/statepause.cpp
         state/statepause.h
 
-        data
-        data/map.json
-        data/tileset.png
-        data/Character-Animation
-        data/Character-Animation/characterdeath.png
-        data/Character-Animation/characteridle.png
-        data/Character-Animation/characterjump.png
-        data/Character-Animation/characterjumpflipped.png
-        data/Character-Animation/charactermove.png
-        data/Character-Animation/charactermoveflipped.png
-        data/main-menu/backgroundmainmenu.png
-        data/main-menu/ExitGame.png
-        data/main-menu/ExitGameSelected.png
-        data/main-menu/LoadGame.png
-        data/main-menu/LoadGameSelected.png
-        data/main-menu/NewGame.png
-        data/main-menu/NewGameSelected.png
-        data/HUD
-        data/HUD/Health
-        data/HUD/Health/Lost-in-Time_health-bar-border.png
-        data/HUD/Health/Lost-in-Time_health-bar-green.png
-        data/HUD/Health/Lost-in-Time_health-bar-red.png
-        Enemy/AI.cpp Enemy/AI.h Enemy/AIEnemies.cpp Enemy/AIEnemies.h)
+        main.cpp
+        testapp.cpp
+        testapp.h
+
+
+        )
 
 add_executable(Lost-in-Time ${SOURCE_FILES})
 

@@ -44,7 +44,7 @@ public:
 
     void Death();
 
-    void Animation();
+    void AnimationAI();
 
 
     /**********************

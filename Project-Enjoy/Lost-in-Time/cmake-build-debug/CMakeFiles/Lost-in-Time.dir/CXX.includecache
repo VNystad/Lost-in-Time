@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.cpp
 iostream
 -
 AI.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.h
 SFML/Graphics/RectangleShape.hpp
 -
 SFML/Graphics/RenderWindow.hpp
@@ -20,89 +20,107 @@ SFML/Graphics/RenderWindow.hpp
 SFML/Graphics/Texture.hpp
 -
 ../Framework/config.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
 ../Framework/animation.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/animation.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/animation.h
 ../Interface/health.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Interface/health.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/health.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.cpp
 AIEnemies.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
 iostream
 -
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
 AI.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.h
 ../Objects/playertest.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/Camera.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/Camera.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/animation.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/animation.cpp
 iostream
 -
 animation.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/animation.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/animation.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/animation.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/animation.h
 SFML/Graphics.hpp
 -
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/font.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/font.cpp
 iostream
 -
 font.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/font.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/font.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/font.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/font.h
 SFML/Graphics/Font.hpp
 -
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/physics.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/physics.cpp
 map
 -
 physics.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h
 iostream
 -
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h
 ../Objects/playertest.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
 ../Enemy/AIEnemies.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
 ../Map/tile.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/tile.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/tile.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Interface/health.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/deathscreen.cpp
+sstream
+-
+deathscreen.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/deathscreen.h
+
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/deathscreen.h
+SFML/Graphics.hpp
+-
+../Framework/font.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/font.h
+
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/health.cpp
 iostream
 -
 health.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Interface/health.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/health.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Interface/health.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/health.h
 SFML/Graphics.hpp
 -
 ../Framework/config.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/layer.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/timer.cpp
+timer.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/timer.h
+
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/timer.h
+
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/layer.cpp
 SFML/Graphics.hpp
 -
 iostream
 -
 layer.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/layer.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/layer.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/layer.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/layer.h
 object.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/object.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/object.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/map.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/map.cpp
 fstream
 -
 cstring
@@ -114,11 +132,11 @@ SFML/Graphics.hpp
 iostream
 -
 map.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/map.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/map.h
 sprite.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/sprite.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/sprite.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/map.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/map.h
 string
 -
 list
@@ -126,41 +144,41 @@ list
 map
 -
 object.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/object.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/object.h
 layer.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/layer.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/layer.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/object.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/object.cpp
 SFML/Graphics.hpp
 -
 object.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/object.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/object.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/object.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/object.h
 tile.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/tile.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/tile.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/sprite.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/sprite.cpp
 SFML/Graphics.hpp
 -
 sprite.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/sprite.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/sprite.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/sprite.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/sprite.h
 SFML/System/Clock.hpp
 -
 object.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/object.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/object.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/tile.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/tile.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.cpp
 iostream
 -
 playertest.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
 SFML/Graphics/RectangleShape.hpp
 -
 SFML/Graphics/RenderWindow.hpp
@@ -168,95 +186,95 @@ SFML/Graphics/RenderWindow.hpp
 SFML/Graphics/Texture.hpp
 -
 ../Framework/config.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
 ../Framework/animation.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/animation.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/animation.h
 ../Interface/health.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Interface/health.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/health.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/main.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/main.cpp
 state/machine.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/machine.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/machine.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.cpp
 loadgamestate.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.h
 state.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/state.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/state.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/machine.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/machine.cpp
 machine.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/machine.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/machine.h
 state.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/state.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/state.h
 statemainmenu.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.h
 statepause.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/statepause.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statepause.h
 stategame.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/stategame.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/stategame.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/machine.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/machine.h
 map
 -
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/state.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/state.h
 SFML/Graphics.hpp
 -
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/stategame.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/stategame.cpp
 stategame.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/stategame.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/stategame.h
 machine.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/machine.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/machine.h
 ../testapp.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/testapp.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/testapp.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/stategame.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/stategame.h
 state.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/state.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/state.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.cpp
 iostream
 -
 statemainmenu.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.h
 machine.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/machine.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/machine.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.h
 state.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/state.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/state.h
 ../Framework/config.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/statepause.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statepause.cpp
 iostream
 -
 SFML/Window/Keyboard.hpp
 -
 statepause.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/statepause.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statepause.h
 machine.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/machine.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/machine.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/statepause.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statepause.h
 state.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/state.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/state.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/testapp.cpp
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/testapp.cpp
 iostream
 -
 testapp.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/testapp.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/testapp.h
 Framework/physics.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h
 
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/testapp.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/testapp.h
 Objects/playertest.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
 list
 -
 SFML/System/Clock.hpp
@@ -264,13 +282,13 @@ SFML/System/Clock.hpp
 SFML/Graphics.hpp
 -
 Framework/config.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
 Objects/playertest.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
 Map/map.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/map.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/map.h
 Framework/Camera.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/Camera.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/Camera.h
 Enemy/AIEnemies.h
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
+/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
 

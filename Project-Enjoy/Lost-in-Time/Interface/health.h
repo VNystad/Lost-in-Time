@@ -7,7 +7,7 @@
 
 class Health {
 public:
-    Health() : config(config) { };
+    Health() : config(config){ };
     void init();
 
     float GetActualLifePoints();
@@ -17,8 +17,12 @@ public:
     float GetOriginalLifePoints();
     void SetOriginalLifePoints(int value);
 
+    void DeathHandle();
+    bool Dead();
+    void UpdateHealth();
     void ResetHealth();
     void Hit(int damage);
+    void Healed(int health);
     void DrawMe();
 
     float GetWidth() { return width; }
@@ -48,9 +52,9 @@ public:
     void SetHealthBorderbar(sf::IntRect *frame) { this->HealthbarBorderFrame = frame; }
 
 protected:
-    float actuallifepoints;
-    float visiblelifepoints;
-    float originalhealth;
+    float actuallifepoints = 100;
+    float visiblelifepoints = 100;
+    float originalhealth = 100;
 
     sf::Texture greenHealthTexture;
     sf::RectangleShape greenHealthbar;

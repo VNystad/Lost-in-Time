@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
+				<Option working_dir="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
+				<Option working_dir="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
+				<Option working_dir="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lost-in-Time">
-				<Option output="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Lost-in-Time" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
+				<Option output="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Lost-in-Time" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lost-in-Time"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lost-in-Time"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lost-in-Time/fast">
-				<Option output="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Lost-in-Time" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
+				<Option output="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Lost-in-Time" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,212 +77,149 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lost-in-Time/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lost-in-Time/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Enemy">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.cpp">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.h">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.cpp">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/Camera.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/animation.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/Camera.h">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/animation.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/animation.cpp">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/config.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/animation.h">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/font.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/config.h">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/font.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/font.cpp">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/physics.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/font.h">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/physics.cpp">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/deathscreen.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/deathscreen.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Interface">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/health.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Interface/health.cpp">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/health.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Interface/health.h">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/timer.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/layer.cpp">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Interface/timer.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/layer.h">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/layer.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/map.cpp">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/layer.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/map.h">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/map.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/object.cpp">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/map.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/object.h">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/object.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/sprite.cpp">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/object.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/sprite.h">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/sprite.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Map/tile.h">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/sprite.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Objects">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Map/tile.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.cpp">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/Character-Animation">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/data">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/Character-Animation/characterdeath.png">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/main.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/Character-Animation/characteridle.png">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/Character-Animation/characterjump.png">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/Character-Animation/characterjumpflipped.png">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/machine.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/Character-Animation/charactermove.png">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/machine.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/Character-Animation/charactermoveflipped.png">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/state.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/HUD">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/stategame.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/HUD/Health">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/stategame.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/HUD/Health/Lost-in-Time_health-bar-border.png">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/HUD/Health/Lost-in-Time_health-bar-green.png">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/HUD/Health/Lost-in-Time_health-bar-red.png">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statepause.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/main-menu/ExitGame.png">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/state/statepause.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/main-menu/ExitGameSelected.png">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/testapp.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/main-menu/LoadGame.png">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/testapp.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/main-menu/LoadGameSelected.png">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/main-menu/NewGame.png">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/main-menu/NewGameSelected.png">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/main-menu/backgroundmainmenu.png">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/map.json">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/data/tileset.png">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/main.cpp">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.cpp">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.h">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/machine.cpp">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/machine.h">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/state.h">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/stategame.cpp">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/stategame.h">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.cpp">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.h">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/statepause.cpp">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/state/statepause.h">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/testapp.cpp">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/testapp.h">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/CMakeLists.txt">
+		<Unit filename="/home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

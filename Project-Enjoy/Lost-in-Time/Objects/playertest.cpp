@@ -108,10 +108,15 @@ void PlayerTest::PlayerAnimation()
     }
 }
 
+/**
+ * When player is dead this function is called.
+ * Reset variables that need reseted.
+ * Call to health reset function.
+ * Set player position back to spawn position.
+ * TODO: Draw deathscreen, atm: print out deathmessage
+ */
 void PlayerTest::PlayerDead()
 {
-    health.SetActualLifePoints(100);
-    health.SetVisibleLifePoints(100);
     jumpspeed = origjumpspeed;
     fallspeed = 0;
     movedirection = 2;
@@ -132,10 +137,15 @@ void PlayerTest::PlayerDead()
             "    /          \\\n"
             "   `\\          /'\n"
             "     `\\_    _/'\n"
-            "        ~~~~" << std::endl << std::endl;
+            "        ~~~~"
+              << std::endl << std::endl;
 
 }
 
+/**
+ * Set the position for the character at PositionX and Y
+ * Draw the character to the window.
+ */
 void PlayerTest::DrawMe()
 {
     // Position the rectangle used to draw the square

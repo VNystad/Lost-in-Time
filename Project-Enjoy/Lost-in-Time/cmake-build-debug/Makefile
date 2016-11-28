@@ -48,10 +48,10 @@ RM = /home/kristoffer/Downloads/clion-2016.2.1/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time
+CMAKE_SOURCE_DIR = /home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug
+CMAKE_BINARY_DIR = /home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles /home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles /home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kristoffer/Dropbox/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -258,6 +258,33 @@ Framework/physics.cpp.s:
 	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.s
 .PHONY : Framework/physics.cpp.s
 
+Interface/deathscreen.o: Interface/deathscreen.cpp.o
+
+.PHONY : Interface/deathscreen.o
+
+# target to build an object file
+Interface/deathscreen.cpp.o:
+	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.o
+.PHONY : Interface/deathscreen.cpp.o
+
+Interface/deathscreen.i: Interface/deathscreen.cpp.i
+
+.PHONY : Interface/deathscreen.i
+
+# target to preprocess a source file
+Interface/deathscreen.cpp.i:
+	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.i
+.PHONY : Interface/deathscreen.cpp.i
+
+Interface/deathscreen.s: Interface/deathscreen.cpp.s
+
+.PHONY : Interface/deathscreen.s
+
+# target to generate assembly for a file
+Interface/deathscreen.cpp.s:
+	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.s
+.PHONY : Interface/deathscreen.cpp.s
+
 Interface/health.o: Interface/health.cpp.o
 
 .PHONY : Interface/health.o
@@ -284,6 +311,33 @@ Interface/health.s: Interface/health.cpp.s
 Interface/health.cpp.s:
 	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.s
 .PHONY : Interface/health.cpp.s
+
+Interface/timer.o: Interface/timer.cpp.o
+
+.PHONY : Interface/timer.o
+
+# target to build an object file
+Interface/timer.cpp.o:
+	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.o
+.PHONY : Interface/timer.cpp.o
+
+Interface/timer.i: Interface/timer.cpp.i
+
+.PHONY : Interface/timer.i
+
+# target to preprocess a source file
+Interface/timer.cpp.i:
+	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.i
+.PHONY : Interface/timer.cpp.i
+
+Interface/timer.s: Interface/timer.cpp.s
+
+.PHONY : Interface/timer.s
+
+# target to generate assembly for a file
+Interface/timer.cpp.s:
+	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.s
+.PHONY : Interface/timer.cpp.s
 
 Map/layer.o: Map/layer.cpp.o
 
@@ -633,9 +687,15 @@ help:
 	@echo "... Framework/physics.o"
 	@echo "... Framework/physics.i"
 	@echo "... Framework/physics.s"
+	@echo "... Interface/deathscreen.o"
+	@echo "... Interface/deathscreen.i"
+	@echo "... Interface/deathscreen.s"
 	@echo "... Interface/health.o"
 	@echo "... Interface/health.i"
 	@echo "... Interface/health.s"
+	@echo "... Interface/timer.o"
+	@echo "... Interface/timer.i"
+	@echo "... Interface/timer.s"
 	@echo "... Map/layer.o"
 	@echo "... Map/layer.i"
 	@echo "... Map/layer.s"

@@ -89,15 +89,27 @@ bool TestApp::Tick()
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
         std::cout << p->GetPositionX() << " " << p->GetPositionY() << std::endl;
 
+    // When player presses G, player character is damaged. For testing purposes
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::G) && p->health.GetActualLifePoints() > 0)
+        p->health.Hit(5);
+
+    // When player presses G, player character is damaged. For testing purposes
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::H) && p->health.GetActualLifePoints() < 100)
+        p->health.Healed(5);
+
     /* If player hits the bottom of map,
      * the player's lifepoint is reduced to 0 and player death function is called */
-    /*if (p->GetPositionY() >= 576/*config->GetScreenHeight() - p->GetSizeHeight())
+    if (p->GetPositionY() >= 2500)
     {
-        p->SetFallSpeed(0);
-        p->health.SetActualLifePoints(0);
-        p->health.SetVisibleLifePoints(0);
+        p->health.DeathHandle();
         p->PlayerDead();
-    }*/
+    }
+
+    if (p->health.Dead() == true)
+    {
+        p->health.DeathHandle();
+        p->PlayerDead();
+    }
 
     p->PlayerAnimation();
 
@@ -111,6 +123,7 @@ bool TestApp::Tick()
         //object->process(deltaTime);
         object->draw(*window);
     }
+
     p->DrawMe();
     p->health.DrawMe();
 
@@ -129,14 +142,13 @@ bool TestApp::Tick()
         window->setView(view2);
     }
 
-
     return true;
 }
     /*****************************************************
      * This function will make the object able
      * to move and fall,
      * with correlation to any hinderings such as gravity.
-     * The delta float is there for smoothness
+     * The delta| float is there for smoothness
      ****************************************************/
 void TestApp::Move(float delta)
 {
@@ -154,7 +166,7 @@ void TestApp::AIHandler(float delta)
 {
     for(int i = 0; i < AIVector.size(); i++)
     {
-        AIVector[i]->Animation();
+        AIVector[i]->AnimationAI();
         AIVector[i]->DrawMe();
         AIVector[i]->MonkeyAI1(AIVector[i], p);
         Physics::AIMovement(AIVector[i] , p, collidableArray, delta);

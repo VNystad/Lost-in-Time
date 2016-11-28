@@ -37,8 +37,6 @@ protected:
 
     std::vector<AIEnemies*> AIVector;
 
-
-
     std::map<int, Tile*> *collidabletiles;
     Config* config;
     std::list<Object*> objects;

@@ -64,7 +64,7 @@ void AI::Reset2OriginalY(float y)
     y = this->OriginalY;
 }
 
-void AI::Animation()
+void AI::AnimationAI()
 {
     counter++;
     if (counter >= 5)

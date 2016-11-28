@@ -31,9 +31,16 @@ CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.o: ../Interface/health.h
 CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.o: ../Map/tile.h
 CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.o: ../Objects/playertest.h
 
+CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.o: ../Framework/font.h
+CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.o: ../Interface/deathscreen.cpp
+CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.o: ../Interface/deathscreen.h
+
 CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.o: ../Framework/config.h
 CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.o: ../Interface/health.cpp
 CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.o: ../Interface/health.h
+
+CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.o: ../Interface/timer.cpp
+CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.o: ../Interface/timer.h
 
 CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.o: ../Map/layer.cpp
 CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.o: ../Map/layer.h

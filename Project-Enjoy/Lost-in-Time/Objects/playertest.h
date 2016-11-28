@@ -48,7 +48,6 @@ public:
 
     void PlayerAnimation();
 
-
     //Checks if object is slowing down
     void SetSlowDownR(bool slowingdownright) { this->slowingdownright = slowingdownright; }
     void SetSlowDownL(bool slowingdownleft) { this->slowingdownleft = slowingdownleft; }
@@ -117,7 +116,6 @@ protected:
  */
     int playerhurt = 5;
 
-
     /**********************
      * Horisontal variables
     * *******************/
@@ -151,8 +149,6 @@ protected:
 
     float jumppower = 400;
     float jumpspeed = 15;
-
-
 
     //Checks for airborne and wether the jump or fall have reached its apex.
     bool jumpcheck = true;

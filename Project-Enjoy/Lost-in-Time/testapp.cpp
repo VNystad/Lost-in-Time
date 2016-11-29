@@ -51,7 +51,7 @@ TestApp::TestApp() : config(config), window(window)
     //AIVectorPointer->push_back(new AIEnemies(360, 1230, 200, *config, window));
     //AIVectorPointer->push_back(new AIEnemies(1003, 694, 25, *config, window));
     AIVectorPointer->push_back(new AIEnemies(2830, 500, 100, *config, window));
-    AIVectorPointer->push_back(new AIEnemies(1671, 150, 60, *config, window));
+    //AIVectorPointer->push_back(new AIEnemies(1671, 150, 60, *config, window));
 
     /********************
      * Create the clock
@@ -179,11 +179,14 @@ void TestApp::AIHandler(float delta)
             //AIVectorPointer->at(i)->Death();
             AIVectorPointer->erase(AIVectorPointer->begin() + i);
         }
-        AIVectorPointer->at(i)->AnimationAI();
-        AIVectorPointer->at(i)->DrawMe();
-        AIVectorPointer->at(i)->MonkeyAI1(AIVectorPointer->at(i), p);
-        int* ipointer = (int*)i;
-        Physics::AIMovement(AIVectorPointer->at(i), p, AIVectorPointer, ipointer, collidableArray, delta);
-        Physics::AIGravity(AIVectorPointer->at(i), collidableArray, delta);
+        else
+        {
+            AIVectorPointer->at(i)->AnimationAI();
+            AIVectorPointer->at(i)->DrawMe();
+            AIVectorPointer->at(i)->MonkeyAI1(AIVectorPointer->at(i), p);
+            int* ipointer = (int*)i;
+            Physics::AIMovement(AIVectorPointer->at(i), p, AIVectorPointer, ipointer, collidableArray, delta);
+            Physics::AIGravity(AIVectorPointer->at(i), collidableArray, delta);
+        }
     }
 }

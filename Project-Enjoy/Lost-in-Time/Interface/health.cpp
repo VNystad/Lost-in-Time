@@ -114,8 +114,8 @@ bool Health::Dead()
 {
     if (actuallifepoints <= 0)
         return true;
-    else
-        return false;
+
+    return false;
 }
 
 /**

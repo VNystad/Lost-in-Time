@@ -21,15 +21,7 @@ public:
     void AIHandler(float delta);
 protected:
 
-    //Init success flag
-    bool success;
-
-    //running flag
-    bool running;
-
     const int ArraySize = 1000;
-    const int X = 38;
-    const int Y = 108;
     int** collidableArray;
 
     //Dependensies
@@ -38,11 +30,15 @@ protected:
     std::vector<AIEnemies*>* AIVectorPointer = &AIVector;
     std::vector<AIEnemies*> AIVector;
 
-    std::map<int, Tile*> *collidabletiles;
     Config* config;
     std::list<Object*> objects;
     sf::RenderWindow* window;
     sf::Clock* clock;
+
+    // Stuff for timer
+    sf::Clock* timer;
+    sf::Text* timerInText;
+    int penaltyTime = 0;
 
     Camera camera;
 };

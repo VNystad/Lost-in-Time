@@ -7,7 +7,7 @@
 
 class Health {
 public:
-    Health() : config(config){ };
+    Health(){ this->config = config; };
     void init();
 
     float GetActualLifePoints();
@@ -71,7 +71,7 @@ protected:
     float width = 100;
     float height = 20;
 
-    const Config& config;
+    const Config* config;
     sf::RenderWindow window;
 };
 

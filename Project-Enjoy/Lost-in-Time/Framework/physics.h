@@ -18,7 +18,7 @@ public:
     static bool Roofed(PlayerTest* p, int** collidableArray);
 
 
-    static void AIMovement(AIEnemies* e, PlayerTest* p, std::vector<AIEnemies*>* AIVector, int* i, int** collidableArray, float delta);
+    static void AIMovement(AIEnemies* e, PlayerTest* p, std::vector<AIEnemies*>* AIVector, int i, int** collidableArray, float delta);
     static void AIGravity(AIEnemies* e, int** collidableArray, float delta);
 
     static bool AIHorisontalCollision(AIEnemies* e, int** collidableArray);

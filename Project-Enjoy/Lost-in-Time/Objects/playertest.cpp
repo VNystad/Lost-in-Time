@@ -19,39 +19,39 @@ PlayerTest::PlayerTest(float positionX, float positionY, const Config& config, s
     health.SetVisibleLifePoints(100);
 }
 
-int PlayerTest::GetPositionX()
+float PlayerTest::GetPositionX()
 {
     return positionX;
 }
-int PlayerTest::GetPositionY()
+float PlayerTest::GetPositionY()
 {
     return positionY;
 }
-void PlayerTest::SetPositionX(int x)
+void PlayerTest::SetPositionX(float x)
 {
     this->positionX = x;
 }
-void PlayerTest::SetPositionY(int y)
+void PlayerTest::SetPositionY(float y)
 {
     this->positionY = y;
 }
 
-int PlayerTest::GetOriginalX()
+float PlayerTest::GetOriginalX()
 {
     return OriginalX;
 }
 
-int PlayerTest::GetOriginalY()
+float PlayerTest::GetOriginalY()
 {
     return OriginalY;
 }
 
-void PlayerTest::SetOriginalX(int x)
+void PlayerTest::SetOriginalX(float x)
 {
     this->OriginalX = x;
 }
 
-void PlayerTest::SetOriginalY(int y)
+void PlayerTest::SetOriginalY(float y)
 {
     this->OriginalY = y;
 }
@@ -72,17 +72,17 @@ void PlayerTest::PlayerAnimation()
     if (counter >= 5)
     {
         counter = 0;
-        if (jumpcheck == true && movedirection == 1) // If jumping to the right
+        if (jumpcheck && movedirection == 1) // If jumping to the right
         {
             animation.PlayerJumpRight(character);
             lastmovedirection = 1;
         }
-        else if (jumpcheck == true && movedirection == 0) // If jumping to the left
+        else if (jumpcheck && movedirection == 0) // If jumping to the left
         {
             animation.PlayerJumpLeft(character);
             lastmovedirection = 0;
         }
-        else if (jumpcheck == true) //If jumping upwards.
+        else if (jumpcheck) //If jumping upwards.
         {
             if (lastmovedirection == 1)
                 animation.PlayerJumpRight(character);

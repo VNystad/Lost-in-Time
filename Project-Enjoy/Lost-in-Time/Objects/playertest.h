@@ -31,15 +31,15 @@ public:
     void SetPlayerHurt(int playerhurt) { this->playerhurt = playerhurt; };
     int GetPlayerHurt() const { return playerhurt; }
 
-    int GetPositionX();
-    int GetPositionY();
-    void SetPositionX(int x);
-    void SetPositionY(int y);
+    float GetPositionX();
+    float GetPositionY();
+    void SetPositionX(float x);
+    void SetPositionY(float y);
 
-    int GetOriginalX();
-    int GetOriginalY();
-    void SetOriginalX(int x);
-    void SetOriginalY(int y);
+    float GetOriginalX();
+    float GetOriginalY();
+    void SetOriginalX(float x);
+    void SetOriginalY(float y);
 
     void Reset2OriginalX(float x);
     void Reset2OriginalY(float y);
@@ -160,12 +160,12 @@ protected:
     bool apexcheck = true;
 
     // Original Player Position
-    int OriginalX;
-    int OriginalY;
+    float OriginalX;
+    float OriginalY;
 
     //Player position
-    int positionX = OriginalX;
-    int positionY = OriginalY;
+    float positionX = OriginalX;
+    float positionY = OriginalY;
 
     int counter = 0; // Counter for animation
     int lastmovedirection = 2;

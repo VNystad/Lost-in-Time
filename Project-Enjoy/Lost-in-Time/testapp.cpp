@@ -66,6 +66,15 @@ TestApp::TestApp()
     clock = new sf::Clock;
     clock->restart();
 
+
+
+    /********************
+     * Play Music
+     *******************/
+    music = new Music();
+    music->music.setLoop(true);
+    music->playMusic("/Jungle Theme 2.ogg");
+
     /***********************************
      * Creating Timer and text for timer
      **********************************/
@@ -81,13 +90,6 @@ TestApp::TestApp()
     timerInText->setOutlineColor(sf::Color::Green);
     timerInText->setOutlineThickness(2);
     timerInText->setString("Hi");
-
-    /********************
-     * Play Music
-     *******************/
-    music = new Music();
-    music->playMusic("/Jungle Theme 2.ogg");
-
 
 
 }
@@ -235,12 +237,12 @@ bool TestApp::Tick()
     }
     return true;
 }
-    /*****************************************************
-     * This function will make the object able
-     * to move and fall,
-     * with correlation to any hinderings such as gravity.
-     * The delta| float is there for smoothness
-     ****************************************************/
+/*****************************************************
+ * This function will make the object able
+ * to move and fall,
+ * with correlation to any hinderings such as gravity.
+ * The delta| float is there for smoothness
+ ****************************************************/
 void TestApp::Move(float delta)
 {
     Physics::Movement(p, collidableArray, delta);

@@ -535,7 +535,7 @@ bool Physics::AIHorisontalCollision(AIEnemies* e, int** collidableArray)
 bool Physics::AIGrounded(AIEnemies* e, int** collidableArray)
 {
     int playerArrayCoordX = (e->GetPositionX() + 17) / 32;
-    int playerSouthCoord = (e->GetPositionY()+50) / 32 ;
+    int playerSouthCoord = (e->GetPositionY()) / 32 ;
 
     if(e->GetApexCheck() == 1 && collidableArray[playerSouthCoord][playerArrayCoordX] != 0)
     {

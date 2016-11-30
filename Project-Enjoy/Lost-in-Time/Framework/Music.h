@@ -1,7 +1,3 @@
-//
-// Created by Vetle Norman on 30/11/16.
-//
-
 #ifndef LOST_IN_TIME_MUSIC_H
 #define LOST_IN_TIME_MUSIC_H
 

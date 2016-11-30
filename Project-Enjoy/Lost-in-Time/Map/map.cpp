@@ -1,6 +1,6 @@
 #include <fstream>
 #include <cstring>
-#include <json/json.h>
+#include <jsoncpp/json/json.h>
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "map.h"
@@ -62,7 +62,7 @@ void Map::loadLayer(Json::Value& layer, std::list<Object*>& objects, TileSize ti
 	// Read in tilemap
 	for (size_t i = 0; i < layer["data"].size(); i++)
     {
-        tmp->tilemap[i % tmp->width][i / tmp->width] = layer["data"][(int) i].asInt();
+		tmp->tilemap[i % tmp->width][i / tmp->width] = layer["data"][(int) i].asInt();
 
     }
 

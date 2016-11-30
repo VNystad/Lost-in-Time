@@ -1,7 +1,3 @@
-//
-// Created by Vetle Norman on 30/11/16.
-//
-
 #include <iostream>
 #include <SFML/Audio.hpp>
 #include "Music.h"
@@ -19,8 +15,6 @@ bool Music::playMusic(const std::string& filename) {
     }
 
     music.play();
-
-    music.setLoop(true);
 
     return true;
 }

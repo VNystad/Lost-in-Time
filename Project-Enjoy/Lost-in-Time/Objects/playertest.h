@@ -127,7 +127,7 @@ protected:
     float regularhorslowdown = 1.5;
 
     //Horisontal
-    const float maxmovespeed = 250;
+    const float maxmovespeed = 350;
     float movepower = 20;
 
     float movespeedleft = 0;
@@ -150,7 +150,7 @@ protected:
     float fallspeed;
     float maxfallspeed = 40;
 
-    float jumppower = 550;
+    float jumppower = 650;
     float fallpower = 250;
     float jumpspeed = 0;
 

@@ -69,13 +69,20 @@ TestApp::TestApp()
     /***********************************
      * Creating Timer and text for timer
      **********************************/
+    sf::Font font;
+    if(!font.loadFromFile("data/TNRfont.ttf"))
+        std::cout << "Could not load font from directory 'data/font.ttf'" << std::endl;
+
     timer = new sf::Clock();
     timerInText = new sf::Text;
-    timerInText->setCharacterSize(20);
+    timerInText->setCharacterSize(50);
+    //timerInText->setFont(font);
     timerInText->setStyle(sf::Text::Bold);
     timerInText->setFillColor(sf::Color::Red);
     timerInText->setOutlineColor(sf::Color::Green);
     timerInText->setOutlineThickness(2);
+    timerInText->setString("Hi");
+
 
 }
 

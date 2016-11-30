@@ -20,5 +20,7 @@ bool Music::playMusic(const std::string& filename) {
 
     music.play();
 
+    music.setLoop(true);
+
     return true;
 }

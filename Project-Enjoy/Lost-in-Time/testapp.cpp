@@ -72,13 +72,6 @@ TestApp::TestApp()
     sf::Font font;
     if(!font.loadFromFile("data/TNRfont.ttf"))
         std::cout << "Could not load font from directory 'data/font.ttf'" << std::endl;
-
-    /********************
-     * Play Music
-     *******************/
-    music = new Music();
-    music->playMusic("/Jungle Theme 2.ogg");
-
     timer = new sf::Clock();
     timerInText = new sf::Text;
     timerInText->setCharacterSize(50);
@@ -88,6 +81,13 @@ TestApp::TestApp()
     timerInText->setOutlineColor(sf::Color::Green);
     timerInText->setOutlineThickness(2);
     timerInText->setString("Hi");
+
+    /********************
+     * Play Music
+     *******************/
+    music = new Music();
+    music->playMusic("/Jungle Theme 2.ogg");
+
 
 
 }

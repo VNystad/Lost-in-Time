@@ -9,7 +9,7 @@ AI::AI(float positionX, float positionY, const Config& config, sf::RenderWindow*
     character->setSize(sf::Vector2f(sizeWidth,sizeHeight));
 
     animation.init();
-    animation.PlayerIdle(character);
+    animation.AIWalkLeft(character);
 
     health.init();
     health.SetOriginalLifePoints(100);
@@ -70,37 +70,41 @@ void AI::AnimationAI()
     if (counter >= 5)
     {
         counter = 0;
-        if (jumpcheck == true && movedirection == 1) // If jumping to the right
+        if (jumpcheck && movedirection == 1) // If jumping to the right
         {
-            animation.PlayerJumpRight(character);
+            animation.AIWalkRight(character);
             lastmovedirection = 1;
         }
-        else if (jumpcheck == true && movedirection == 0) // If jumping to the left
+        else if (jumpcheck && movedirection == 0) // If jumping to the left
         {
-            animation.PlayerJumpLeft(character);
+            animation.AIWalkLeft(character);
             lastmovedirection = 0;
         }
-        else if (jumpcheck == true) //If jumping upwards.
+        else if (jumpcheck) //If jumping upwards.
         {
             if (lastmovedirection == 1)
-                animation.PlayerJumpRight(character);
+                animation.AIWalkRight(character);
             else
-                animation.PlayerJumpLeft(character);
+                animation.AIWalkLeft(character);
         }
 
         else
         {
             if (movedirection == 0) // If moving to left, play left animation
             {
-                animation.PlayerWalkLeft(character);
+                animation.AIWalkLeft(character);
             }
             if (movedirection == 1) // If moving to right, play right animation
             {
-                animation.PlayerWalkRight(character);
+                animation.AIWalkRight(character);
             }
             if (movedirection == 2) // If movement stopped, play idle animation
             {
-                animation.PlayerIdle(character);
+                if(lastmovedirection == 0)
+                    animation.AIWalkLeft(character);
+                else
+                    animation.AIWalkRight(character);
+
             }
         }
     }

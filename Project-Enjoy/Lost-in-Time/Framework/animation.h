@@ -22,6 +22,10 @@ public:
     void PlayerJumpLeft(sf::RectangleShape* character);
     void PlayerDie(sf::RectangleShape* character);
 
+    void AIWalkRight(sf::RectangleShape* character);
+    void AIWalkLeft(sf::RectangleShape* character);
+
+
 protected:
     int IdleCount = 0;
     int PlayersizeWidth = 34;
@@ -41,6 +45,10 @@ protected:
     sf::Texture PlayerTextureIdleFlipped;
     sf::Texture PlayerTextureJumpflipped;
     sf::Texture PlayerTextureWalkflipped;
+
+    // AI Textures
+    sf::Texture AITextureWalkRight;
+    sf::Texture AITextureWalkLeft;
 };
 
 

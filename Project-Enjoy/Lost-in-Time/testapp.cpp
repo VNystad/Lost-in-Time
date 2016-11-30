@@ -57,7 +57,7 @@ TestApp::TestApp()
     //AIVectorPointer->push_back(new AIEnemies(360, 1230, 200, *config, window));
     //AIVectorPointer->push_back(new AIEnemies(1003, 694, 25, *config, window));
     AIVectorPointer->push_back(new AIEnemies(2830, 500, 100, *config, window));
-    //AIVectorPointer->push_back(new AIEnemies(1671, 150, 60, *config, window));
+    AIVectorPointer->push_back(new AIEnemies(500, 150, 60, *config, window));
 
     /********************
      * Create the clock

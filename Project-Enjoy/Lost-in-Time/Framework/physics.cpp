@@ -254,7 +254,7 @@ bool Physics::HorisontalCollision(PlayerTest* p, int** collidableArray)
 bool Physics::Grounded(PlayerTest* p, int** collidableArray)
 {
     int playerArrayCoordX = (p->GetPositionX() + 17) / 32;
-    int playerSouthCoord = (p->GetPositionY()+50) / 32;
+    int playerSouthCoord = (p->GetPositionY() / 32)>0? (p->GetPositionY()+50) / 32 :0;
 
     return p->GetApexCheck() && collidableArray[playerSouthCoord][playerArrayCoordX];
     /*if(p->GetApexCheck()&& collidableArray[playerSouthCoord][playerArrayCoordX])
@@ -313,6 +313,14 @@ void Physics::AIMovement(AIEnemies* e, PlayerTest* p, std::vector<AIEnemies*>* A
         {
             e->SetMoveSpeedL(0);
             e->SetMoveSpeedR(200);
+        }
+        else
+        {
+            e->SetApexCheck(false);
+            e->SetJumpSpeed(10);
+            e->SetFallSpeed(0);
+            e->SetMoveSpeedR(0);
+            e->SetMoveSpeedL(200);
         }
         e->SetAIColliding(5);
     }
@@ -509,14 +517,14 @@ void Physics::AIGravity(AIEnemies* e, int** collidableArray, float delta)
  */
 bool Physics::AIHorisontalCollision(AIEnemies* e, int** collidableArray)
 {
-    int upperPlayerYArrayCoord = (e->GetPositionY() / 32) >0? (e->GetPositionY()+17)/32 :0; //Experimental bug fix
+    int upperPlayerYArrayCoord = (e->GetPositionY() / 32) >0? (e->GetPositionY()-15)/32 :0; //Experimental bug fix
     int lowerPlayerArrayCoord = upperPlayerYArrayCoord +1;
     int playerWestCoord = (e->GetPositionX() / 32);
     int playerEastCoord = playerWestCoord +1;
 
 
-    if((e->GetMoveSpeedL() > 0 && collidableArray[upperPlayerYArrayCoord][playerWestCoord]) || collidableArray[lowerPlayerArrayCoord][playerWestCoord]
-       || (e->GetMoveSpeedR() > 0 && collidableArray[upperPlayerYArrayCoord][playerEastCoord]) || collidableArray[lowerPlayerArrayCoord][playerEastCoord])
+    if((e->GetMoveSpeedL() > 0 && (collidableArray[upperPlayerYArrayCoord][playerWestCoord] || collidableArray[lowerPlayerArrayCoord][playerWestCoord]))
+       || (e->GetMoveSpeedR() > 0 && (collidableArray[upperPlayerYArrayCoord][playerEastCoord] || collidableArray[lowerPlayerArrayCoord][playerEastCoord])))
     {
         e->SetUpKey(true);
         return true;
@@ -533,8 +541,8 @@ bool Physics::AIHorisontalCollision(AIEnemies* e, int** collidableArray)
  */
 bool Physics::AIGrounded(AIEnemies* e, int** collidableArray)
 {
-    int playerArrayCoordX = (e->GetPositionX() + 17) / 32;
-    int playerSouthCoord = (e->GetPositionY()+50) / 32;
+    int playerArrayCoordX = (e->GetPositionX() + 16) / 32;
+    int playerSouthCoord = (e->GetPositionY()+18) / 32;
 
     if(e->GetApexCheck() == 1 && collidableArray[playerSouthCoord][playerArrayCoordX] != 0)
     {
@@ -626,7 +634,7 @@ void Physics::AISelfCollision(AIEnemies* e, int* i, std::vector<AIEnemies*>* AIV
 
     for(unsigned int a = 0; a < AIVector->size(); a++)
     {
-        if(a == !i)
+        if(!(*i==a))
         {
             int cx = AIVector->at(a)->GetPositionX() + AIVector->at(a)->GetSizeWidth()/2;
             int cy = AIVector->at(a)->GetPositionY() + AIVector->at(a)->GetSizeHeight()/2;
@@ -636,18 +644,26 @@ void Physics::AISelfCollision(AIEnemies* e, int* i, std::vector<AIEnemies*>* AIV
             {
                 {
                     if(ex < cx &&  cx - ex > cy - ey)
+                    {
                         e->SetAIColliding(0);
+                        AIVector->at(a)->SetAIColliding(1);
+                    }
+
                     else if(ex > cx && ex - cx > cy - ey)
+                    {
                         e->SetAIColliding(1);
+                        AIVector->at(a)->SetAIColliding(0);
+                    }
+
                     else if(ey < cy)
+                    {
                         e->SetAIColliding(2);
-                    /*
+                        AIVector->at(a)->SetAIColliding(3);
+                    }
                     else
                         e->SetAIColliding(3);
-                        */
                 }
             }
         }
     }
-
 }

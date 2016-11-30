@@ -11,6 +11,7 @@
 #include "Map/map.h"
 #include "Framework/Camera.h"
 #include "Enemy/AIEnemies.h"
+#include "Framework/Music.h"
 
 class TestApp
 {
@@ -41,6 +42,7 @@ protected:
     int penaltyTime = 0;
 
     Camera camera;
+    Music* music;
 };
 
 

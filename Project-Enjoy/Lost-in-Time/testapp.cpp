@@ -73,6 +73,12 @@ TestApp::TestApp()
     if(!font.loadFromFile("data/TNRfont.ttf"))
         std::cout << "Could not load font from directory 'data/font.ttf'" << std::endl;
 
+    /********************
+     * Play Music
+     *******************/
+    music = new Music();
+    music->playMusic("/Jungle Theme 2.ogg");
+
     timer = new sf::Clock();
     timerInText = new sf::Text;
     timerInText->setCharacterSize(50);
@@ -180,14 +186,53 @@ bool TestApp::Tick()
     /*****************************************
      * Set camera to follow player position
      ****************************************/
-    if(p->GetPositionX() != camera.PositionX) {
 
-        sf::View view2 = window->getDefaultView();
-
-        view2.setCenter(p->GetPositionX()+17, p->GetPositionY()+ 25);
-        window->setView(view2);
+    if (p->GetPositionX() >= 512)
+    {
+        if (p->GetPositionY() <= 1290)
+        {
+            sf::View view2 = window->getDefaultView();
+            view2.setCenter(p->GetPositionX(), p->GetPositionY());
+            window->setView(view2);
+        }
     }
+    if (p->GetPositionX() <=  512)
+    {
+        if (p->GetPositionY() <= 1290)
+        {
+            sf::View view3 = window->getDefaultView();
+            view3.setCenter(512, p->GetPositionY());
+            window->setView(view3);
+        }
+    }
+    if(p->GetPositionX() <=  512)
+    {
+        if (p->GetPositionY() >= 1290)
+        {
+            sf::View view3 = window->getDefaultView();
+            view3.setCenter(512, 1290);
+            window->setView(view3);
+        }
+    }
+    if(p->GetPositionX() >= 512)
+    {
+        if(p->GetPositionY() >= 1290)
+        {
+            sf::View view2 = window->getDefaultView();
+            view2.setCenter(p->GetPositionX(), 1290);
+            window->setView(view2);
+        }
+    }
+    if(p->GetPositionX() >= 3650)
+    {
+        if(p->GetPositionY() <=1500 )
+        {
+            sf::View view2 = window->getDefaultView();
+            view2.setCenter(3650, p->GetPositionY());
+            window->setView(view2);
+        }
 
+    }
     return true;
 }
     /*****************************************************

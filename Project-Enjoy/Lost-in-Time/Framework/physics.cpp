@@ -517,7 +517,7 @@ void Physics::AIGravity(AIEnemies* e, int** collidableArray, float delta)
  */
 bool Physics::AIHorisontalCollision(AIEnemies* e, int** collidableArray)
 {
-    int upperPlayerYArrayCoord = (e->GetPositionY() / 32) >0? (e->GetPositionY()+17)/32 :0; //Experimental bug fix
+    int upperPlayerYArrayCoord = (e->GetPositionY() / 32) >0? (e->GetPositionY()-15)/32 :0; //Experimental bug fix
     int lowerPlayerArrayCoord = upperPlayerYArrayCoord +1;
     int playerWestCoord = (e->GetPositionX() / 32);
     int playerEastCoord = playerWestCoord +1;
@@ -541,8 +541,8 @@ bool Physics::AIHorisontalCollision(AIEnemies* e, int** collidableArray)
  */
 bool Physics::AIGrounded(AIEnemies* e, int** collidableArray)
 {
-    int playerArrayCoordX = (e->GetPositionX() + 17) / 32;
-    int playerSouthCoord = (e->GetPositionY()+50) / 32;
+    int playerArrayCoordX = (e->GetPositionX() + 16) / 32;
+    int playerSouthCoord = (e->GetPositionY()+18) / 32;
 
     if(e->GetApexCheck() == 1 && collidableArray[playerSouthCoord][playerArrayCoordX] != 0)
     {

@@ -151,8 +151,8 @@ public:
 
 protected:
 
-    const int sizeWidth = 34;
-    const int sizeHeight = 50;
+    const int sizeWidth = 37;
+    const int sizeHeight = 32;
 
 
 
@@ -221,8 +221,8 @@ protected:
     float fallspeed;
     float maxfallspeed = 50;
 
-    float jumppower = 300;
-    float fallpower = 300;
+    float jumppower = 200;
+    float fallpower = 400;
     float jumpspeed = 0;
 
 

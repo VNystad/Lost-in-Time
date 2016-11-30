@@ -230,21 +230,21 @@ void Animation::PlayerDie(sf::RectangleShape* character)
         character->setTexture(&AITextureWalkRight);
         if(animationdir == 1)
         {
-            if (frameSelected->left < 240)
-                frameSelected->left += 40;
+            if (frameSelected->left < 216)
+                frameSelected->left += 36;
             else
             {
-                frameSelected->left -= 40;
+                frameSelected->left -= 216;
                 animationdir = 0;
             }
         }
         else
         {
             if (frameSelected->left > 0)
-                frameSelected->left -= 40;
+                frameSelected->left -= 36;
             else
             {
-                frameSelected->left += 40;
+                frameSelected->left += 36;
                 animationdir = 1;
             }
         }
@@ -257,21 +257,21 @@ void Animation::AIWalkLeft(sf::RectangleShape* character)
     character->setTexture(&AITextureWalkLeft);
     if(animationdir == 1)
     {
-        if (frameSelected->left < 240)
-            frameSelected->left += 40;
+        if (frameSelected->left < 216)
+            frameSelected->left += 36;
         else
         {
-            frameSelected->left -= 40;
+            frameSelected->left -= 36;
             animationdir = 0;
         }
     }
     else
     {
         if (frameSelected->left > 0)
-            frameSelected->left -= 40;
+            frameSelected->left -= 36;
         else
         {
-            frameSelected->left += 40;
+            frameSelected->left += 36;
             animationdir = 1;
         }
     }

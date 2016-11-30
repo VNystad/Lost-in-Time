@@ -35,7 +35,7 @@ CMAKE_COLOR_MAKEFILE:BOOL=ON
 CMAKE_CXX_COMPILER:FILEPATH=E:/Programmer/TheMinGW64/mingw64/bin/g++.exe
 
 //Flags used by the compiler during all build types.
-CMAKE_CXX_FLAGS:STRING=-IE:/Programmer/CLionLibraries/SFML/include -LE:/Programmer/CLionLibraries/SFML/lib -IE:/Programmer/CLionLibraries/jsoncpp/include -LE:/Programmer/CLionLibraries/jsoncpp/lib
+CMAKE_CXX_FLAGS:STRING= -IE:/Programmer/CLionLibraries/SFML/include -LE:/Programmer/CLionLibraries/SFML/lib -IE:/Programmer/CLionLibraries/jsoncpp/include -LE:/Programmer/CLionLibraries/jsoncpp/lib
 
 //Flags used by the compiler during debug builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-g

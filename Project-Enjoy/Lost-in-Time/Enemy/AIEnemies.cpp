@@ -15,7 +15,7 @@ AIEnemies::AIEnemies(float x, float y, float patrol, const Config &config, sf::R
     character->setSize(sf::Vector2f(sizeWidth,sizeHeight));
 
     animation.init();
-    animation.PlayerIdle(character);
+    animation.AIWalkRight(character);
 
     health.init();
     health.SetOriginalLifePoints(100);

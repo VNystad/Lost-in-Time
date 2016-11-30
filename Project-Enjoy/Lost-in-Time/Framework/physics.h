@@ -27,7 +27,7 @@ public:
 
 
     static void Hurt(PlayerTest* p, AIEnemies* e, int* i, std::vector<AIEnemies*>* AIVector);
-    static void AISelfCollision(AIEnemies* e, int* i, std::vector<AIEnemies*>* AIVector);
+    static void AISelfCollision(AIEnemies* e,  int* i, std::vector<AIEnemies*>* AIVector);
 
 
 private:

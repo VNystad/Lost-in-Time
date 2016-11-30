@@ -23,7 +23,7 @@ public:
     void PlayerDie(sf::RectangleShape* character);
 
 protected:
-
+    int IdleCount = 0;
     int PlayersizeWidth = 34;
     int PlayersizeHeight = 50;
     int animationdir = 1;

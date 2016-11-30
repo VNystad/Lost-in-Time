@@ -93,24 +93,33 @@ void Animation::PlayerIdleLeft(sf::RectangleShape* character)
     character->setTexture(&PlayerTextureIdleFlipped);
     if(animationdir == 1)
     {
-        if (frameSelected->left < 102)
+        if (frameSelected->left < 102 && IdleCount>=2)
+        {
             frameSelected->left += 34;
-        else
+            IdleCount = 0;
+        }
+        else if(IdleCount >= 2)
         {
             frameSelected->left -= 34;
             animationdir = 0;
+            IdleCount = 0;
         }
+        IdleCount++;
     }
     else
     {
-        if (frameSelected->left > 0)
+        if (frameSelected->left > 0&& IdleCount>=2)
+        {
             frameSelected->left -= 34;
-        else
+            IdleCount = 0;
+        }
+        else if(IdleCount >= 2)
         {
             frameSelected->left += 34;
             animationdir = 1;
+            IdleCount = 0;
         }
-
+        IdleCount++;
     }
 
     character->setTextureRect(*frameSelected);
@@ -121,24 +130,33 @@ void Animation::PlayerIdle(sf::RectangleShape* character)
     character->setTexture(&PlayerTextureIdle);
     if(animationdir == 1)
     {
-        if (frameSelected->left < 102)
+        if (frameSelected->left < 102 && IdleCount>=2)
+        {
             frameSelected->left += 34;
-        else
+            IdleCount = 0;
+        }
+        else if(IdleCount>=2)
         {
             frameSelected->left -= 34;
             animationdir = 0;
+            IdleCount = 0;
         }
+        IdleCount++;
     }
     else
     {
-        if (frameSelected->left > 0)
+        if (frameSelected->left > 0 && IdleCount>=2)
+        {
             frameSelected->left -= 34;
-        else
+            IdleCount = 0;
+        }
+        else if(IdleCount>=2)
         {
             frameSelected->left += 34;
             animationdir = 1;
+            IdleCount = 0;
         }
-
+        IdleCount++;
     }
 
     character->setTextureRect(*frameSelected);

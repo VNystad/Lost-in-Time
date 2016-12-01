@@ -517,7 +517,7 @@ void Physics::AIGravity(AIEnemies* e, int** collidableArray, float delta)
  */
 bool Physics::AIHorisontalCollision(AIEnemies* e, int** collidableArray)
 {
-    int upperPlayerYArrayCoord = (e->GetPositionY() / 32) >0? (e->GetPositionY()-15)/32 :0; //Experimental bug fix
+    int upperPlayerYArrayCoord = (e->GetPositionY() / 32) >0? (e->GetPositionY()-5)/32 :0; //Experimental bug fix
     int lowerPlayerArrayCoord = upperPlayerYArrayCoord +1;
     int playerWestCoord = (e->GetPositionX() / 32);
     int playerEastCoord = playerWestCoord +1;
@@ -542,7 +542,7 @@ bool Physics::AIHorisontalCollision(AIEnemies* e, int** collidableArray)
 bool Physics::AIGrounded(AIEnemies* e, int** collidableArray)
 {
     int playerArrayCoordX = (e->GetPositionX() + 16) / 32;
-    int playerSouthCoord = (e->GetPositionY()+18) / 32;
+    int playerSouthCoord = (e->GetPositionY() + e->GetSizeHeight()/2 +3) / 32;
 
     if(e->GetApexCheck() == 1 && collidableArray[playerSouthCoord][playerArrayCoordX] != 0)
     {
@@ -551,7 +551,7 @@ bool Physics::AIGrounded(AIEnemies* e, int** collidableArray)
     return false;
 }
 
-/*******************************************************
+/*******************************************************||
  * Checks if player "head" is in touch with a tile above
  * @param e the player
  * @param collidableArray 2d array with all collidable tiles

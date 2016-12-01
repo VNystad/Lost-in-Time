@@ -152,7 +152,7 @@ public:
 protected:
 
     const int sizeWidth = 37;
-    const int sizeHeight = 32;
+    const int sizeHeight = 50;
 
 
 

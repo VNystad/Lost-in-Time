@@ -15,6 +15,9 @@ CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.obj: ../Framework/config.h
 CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.obj: ../Interface/health.h
 CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.obj: ../Objects/playertest.h
 
+CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj: ../Framework/Music.cpp
+CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj: ../Framework/Music.h
+
 CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.obj: ../Framework/animation.cpp
 CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.obj: ../Framework/animation.h
 
@@ -87,6 +90,7 @@ CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../state/statepause.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Enemy/AI.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Enemy/AIEnemies.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Framework/Camera.h
+CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Framework/Music.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Framework/animation.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Framework/config.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Interface/health.h
@@ -115,6 +119,7 @@ CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj: ../state/statepause.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Enemy/AI.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Enemy/AIEnemies.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Framework/Camera.h
+CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Framework/Music.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Framework/animation.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Framework/config.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Framework/physics.h

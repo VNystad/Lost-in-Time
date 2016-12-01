@@ -176,6 +176,33 @@ Enemy/AIEnemies.cpp.s:
 	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.s
 .PHONY : Enemy/AIEnemies.cpp.s
 
+Framework/Music.obj: Framework/Music.cpp.obj
+
+.PHONY : Framework/Music.obj
+
+# target to build an object file
+Framework/Music.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj
+.PHONY : Framework/Music.cpp.obj
+
+Framework/Music.i: Framework/Music.cpp.i
+
+.PHONY : Framework/Music.i
+
+# target to preprocess a source file
+Framework/Music.cpp.i:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.i
+.PHONY : Framework/Music.cpp.i
+
+Framework/Music.s: Framework/Music.cpp.s
+
+.PHONY : Framework/Music.s
+
+# target to generate assembly for a file
+Framework/Music.cpp.s:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.s
+.PHONY : Framework/Music.cpp.s
+
 Framework/animation.obj: Framework/animation.cpp.obj
 
 .PHONY : Framework/animation.obj
@@ -677,6 +704,9 @@ help:
 	@echo ... Enemy/AIEnemies.obj
 	@echo ... Enemy/AIEnemies.i
 	@echo ... Enemy/AIEnemies.s
+	@echo ... Framework/Music.obj
+	@echo ... Framework/Music.i
+	@echo ... Framework/Music.s
 	@echo ... Framework/animation.obj
 	@echo ... Framework/animation.i
 	@echo ... Framework/animation.s

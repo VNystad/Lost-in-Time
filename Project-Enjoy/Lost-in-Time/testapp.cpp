@@ -98,7 +98,6 @@ bool TestApp::Tick()
     std::string tempForTime = std::to_string(timeelapsed);
     timerInText->setString(tempForTime);
     // Positioning the timerInText on upper right corner of player
-    // Now just for testing above player to the right
     timerInText->setPosition(p->GetPositionX() + 50,p->GetPositionY() - 50);
 
     // Get events from OS
@@ -114,6 +113,11 @@ bool TestApp::Tick()
         }
     }
 
+    /************************
+     * If player press Escape
+     * Exit game
+     * should be fixed so a menu pops up
+     ***********************/
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
     {
         delete[] collidableArray[0];
@@ -121,6 +125,19 @@ bool TestApp::Tick()
         window->close();
         exit(0);
     }
+
+    /********************************
+     * If player press P Pause game
+     * If player press R Resume game
+     *******************************/
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+    {
+        while(!sf::Keyboard::isKeyPressed(sf::Keyboard::R))
+        {
+            clock->restart();
+        }
+    }
+    // For testing only, prints out player position
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
         std::cout << p->GetPositionX() << " " << p->GetPositionY() << std::endl;
 
@@ -188,8 +205,14 @@ bool TestApp::Tick()
             view2.setCenter(p->GetPositionX(), p->GetPositionY());
             window->setView(view2);
         }
+        else if(p->GetPositionY() >= 1290)
+        {
+            sf::View view2 = window->getDefaultView();
+            view2.setCenter(p->GetPositionX(), 1290);
+            window->setView(view2);
+        }
     }
-    if (p->GetPositionX() <=  512)
+    else if (p->GetPositionX() <=  512)
     {
         if (p->GetPositionY() <= 1290)
         {
@@ -197,26 +220,14 @@ bool TestApp::Tick()
             view3.setCenter(512, p->GetPositionY());
             window->setView(view3);
         }
-    }
-    if(p->GetPositionX() <=  512)
-    {
-        if (p->GetPositionY() >= 1290)
+        else if (p->GetPositionY() >= 1290)
         {
             sf::View view3 = window->getDefaultView();
             view3.setCenter(512, 1290);
             window->setView(view3);
         }
     }
-    if(p->GetPositionX() >= 512)
-    {
-        if(p->GetPositionY() >= 1290)
-        {
-            sf::View view2 = window->getDefaultView();
-            view2.setCenter(p->GetPositionX(), 1290);
-            window->setView(view2);
-        }
-    }
-    if(p->GetPositionX() >= 3650)
+    else if(p->GetPositionX() >= 3650)
     {
         if(p->GetPositionY() <=1500 )
         {

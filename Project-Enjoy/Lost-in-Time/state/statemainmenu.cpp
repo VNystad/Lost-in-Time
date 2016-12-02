@@ -38,7 +38,7 @@ bool StateMainMenu::loadMedia()
     return success;
 }
 
-void StateMainMenu::GoNext(Machine &machine)
+void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window)
 {
     //Key pressed flag off
     keypressed = false;
@@ -69,18 +69,16 @@ void StateMainMenu::GoNext(Machine &machine)
     exitGameSelectedSprite.setTexture(*ExitGameSelectedTexture);
     exitGameSelectedSprite.setPosition(-70, 400);
 
-    sf::RenderWindow MainMenuWindow;
-    MainMenuWindow.create(sf::VideoMode(config.GetScreenWidth(), config.GetScreenHeight(),32), "Lost in Time demo v01");
-    MainMenuWindow.setMouseCursorVisible(false);
+
 
 
     while (machine.GetRunning()) {
 
-        while (MainMenuWindow.pollEvent(event)) {
+        while (window.pollEvent(event)) {
             //If X clicked on window
             if (event.type == sf::Event::Closed)
             {
-                MainMenuWindow.close();
+                window.close();
                 machine.SetRunning(false);
             }
         }
@@ -88,7 +86,7 @@ void StateMainMenu::GoNext(Machine &machine)
         //If Escape pressed on keyboard
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
         {
-            MainMenuWindow.close();
+            window.close();
             machine.SetRunning(false);
         }
 
@@ -117,25 +115,25 @@ void StateMainMenu::GoNext(Machine &machine)
          * and draw new picture
          *****************************/
 
-        MainMenuWindow.clear(sf::Color::Black);
-        MainMenuWindow.draw(backgroundSprite);
+        window.clear(sf::Color::Black);
+        window.draw(backgroundSprite);
         if(menu == 1)
         {
-            MainMenuWindow.draw(newGameSelectedSprite);
-            MainMenuWindow.draw(loadGameSprite);
-            MainMenuWindow.draw(exitGameSprite);
+            window.draw(newGameSelectedSprite);
+            window.draw(loadGameSprite);
+            window.draw(exitGameSprite);
         }
         if(menu == 2)
         {
-            MainMenuWindow.draw(newGameSprite);
-            MainMenuWindow.draw(loadGameSelectedSprite);
-            MainMenuWindow.draw(exitGameSprite);
+            window.draw(newGameSprite);
+            window.draw(loadGameSelectedSprite);
+            window.draw(exitGameSprite);
         }
         if(menu == 3)
         {
-            MainMenuWindow.draw(newGameSprite);
-            MainMenuWindow.draw(loadGameSprite);
-            MainMenuWindow.draw(exitGameSelectedSprite);
+            window.draw(newGameSprite);
+            window.draw(loadGameSprite);
+            window.draw(exitGameSelectedSprite);
         }
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
@@ -152,7 +150,7 @@ void StateMainMenu::GoNext(Machine &machine)
             }
             if(menu == 3)
             {
-                MainMenuWindow.close();
+                window.close();
                 machine.SetRunning(false);
             }
         }
@@ -160,7 +158,7 @@ void StateMainMenu::GoNext(Machine &machine)
         /********************************
          * Display window with new content
          ********************************/
-        MainMenuWindow.display();
+        window.display();
     }
 
 }

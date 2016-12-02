@@ -6,7 +6,7 @@
 class StatePause : public State
 {
 public:
-    void GoNext(Machine &machine);
+    void GoNext(Machine &machine, sf::RenderWindow& window);
 };
 
 

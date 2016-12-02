@@ -2,6 +2,7 @@
 #define LOST_IN_TIME_MACHINE_H
 
 #include <map>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 class State;
 
@@ -15,7 +16,7 @@ public:
     ~Machine();
 
     // Function that goes to the next state
-    void GoNext();
+    void GoNext(sf::RenderWindow& window);
 
     // Sets the new state
     void SetState(StateId state);

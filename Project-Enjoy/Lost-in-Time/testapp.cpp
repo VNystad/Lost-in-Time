@@ -2,10 +2,10 @@
 #include "testapp.h"
 #include "Framework/physics.h"
 
-TestApp::TestApp()
+TestApp::TestApp(sf::RenderWindow& window)
 {
     this->config = config;
-    this->window = window;
+    this->window = &window;
 
     /*************************************************
      * Making 2D array for collidable tiles
@@ -26,38 +26,29 @@ TestApp::TestApp()
     }
 
     /*****************************************
-     * Create Window
-     ****************************************/
-    window = new sf::RenderWindow;
-    window->create(sf::VideoMode(1024/*config->GetScreenWidth()*/, 576/*config->GetScreenHeight()*/), "Lost in Time");
-    window->setVerticalSyncEnabled(true);
-    window->setFramerateLimit(60);
-    window->setMouseCursorVisible(false);
-
-    /*****************************************
      * Set camera position in middle of screen
      ****************************************/
 
-    sf::View view = window->getDefaultView();
+    sf::View view = window.getDefaultView();
     view.setSize(view.getSize().x, view.getSize().y);
     view.setCenter(view.getCenter().x, view.getCenter().y);
-    window->setView(view);
+    window.setView(view);
 
     /********************|
      * Create the player
      *******************/
-    p = new PlayerTest(180, 1, *config, window);
+    p = new PlayerTest(180, 1, *config, &window);
 
     /***********************************
      * Creating AI
      * Using vector to keep track on AIs
      **********************************/
-    AIVectorPointer->push_back(new AIEnemies(1003, 694, 25, *config, window));
-    AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, *config, window));
-    //AIVectorPointer->push_back(new AIEnemies(360, 1230, 200, *config, window));
-    AIVectorPointer->push_back(new AIEnemies(3100, 600, 100, *config, window));
-    AIVectorPointer->push_back(new AIEnemies(3774, 1270, 100, *config, window));
-    AIVectorPointer->push_back(new AIEnemies(810, 600, 100, *config, window));
+    AIVectorPointer->push_back(new AIEnemies(1003, 694, 25, *config, &window));
+    AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, *config, &window));
+    //AIVectorPointer->push_back(new AIEnemies(360, 1230, 200, *config, &window));
+    AIVectorPointer->push_back(new AIEnemies(3100, 600, 100, *config, &window));
+    AIVectorPointer->push_back(new AIEnemies(3774, 1270, 100, *config, &window));
+    AIVectorPointer->push_back(new AIEnemies(810, 600, 100, *config, &window));
 
     /********************
      * Create the clock

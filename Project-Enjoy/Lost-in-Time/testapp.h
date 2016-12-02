@@ -16,7 +16,7 @@
 class TestApp
 {
 public:
-    TestApp();
+    TestApp(sf::RenderWindow& window);
     bool Tick();
     void Move(float delta);
     void AIHandler(float delta);
@@ -33,8 +33,8 @@ protected:
 
     Config* config;
     std::list<Object*> objects;
-    sf::RenderWindow* window;
     sf::Clock* clock;
+    sf::RenderWindow* window;
 
     // Stuff for timer
     sf::Clock* timer;

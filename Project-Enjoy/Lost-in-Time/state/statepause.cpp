@@ -3,7 +3,7 @@
 #include "statepause.h"
 #include "machine.h"
 
-void StatePause::GoNext(Machine &machine)
+void StatePause::GoNext(Machine &machine, sf::RenderWindow& window)
 {
     std::cout << "Paused" << std::endl;
     while(1)

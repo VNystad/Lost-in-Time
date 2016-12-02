@@ -30,9 +30,9 @@ Machine::~Machine()
 }
 
 // Go to next state
-void Machine::GoNext()
+void Machine::GoNext(sf::RenderWindow& window)
 {
-    states[state]->GoNext(*this);
+    states[state]->GoNext(*this, window);
 }
 
 // Sets state

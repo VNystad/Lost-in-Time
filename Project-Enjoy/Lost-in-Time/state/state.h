@@ -10,7 +10,7 @@ class State
 public:
     State() {}
     virtual ~State() {};
-    virtual void GoNext(Machine &context) = 0;
+    virtual void GoNext(Machine &context, sf::RenderWindow& window) = 0;
 
     sf::Event event;
 

@@ -10,7 +10,7 @@ class Machine
 {
 public:
     // Different states
-    enum class StateId { MAINMENU, GAME, PAUSE};
+    enum class StateId { MAINMENU, LOAD, GAME, PAUSE};
 
     Machine();
     ~Machine();
@@ -25,6 +25,7 @@ public:
     void SetRunning(bool running) { this->running = running; }
 
 protected:
+
     bool running;
     StateId state;
     std::map<StateId, State*> states;

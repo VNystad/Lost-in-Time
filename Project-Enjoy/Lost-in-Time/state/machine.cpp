@@ -3,6 +3,7 @@
 #include "statemainmenu.h"
 #include "statepause.h"
 #include "stategame.h"
+#include "stateloadgame.h"
 
 // Creating machine
 Machine::Machine()
@@ -16,6 +17,7 @@ Machine::Machine()
     // Add all states to the map
     states.emplace(StateId::GAME, new StateGame());
     states.emplace(StateId::MAINMENU, new StateMainMenu());
+    states.emplace(StateId::LOAD, new StateLoadGame());
     states.emplace(StateId::PAUSE, new StatePause());
 }
 

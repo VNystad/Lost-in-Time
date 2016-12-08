@@ -16,19 +16,20 @@ public:
 protected:
     int menuAmount = 0;
     int menu = 1;
+    bool mainmenu = false;
     bool success;
     bool keypressed;
 
     Config config;
 
     //Pointer to different images
-    sf::Texture *BackgroundTexture = NULL;
-    sf::Texture *NewGameTexture = NULL;
-    sf::Texture *NewGameSelectedTexture = NULL;
-    sf::Texture *LoadGameTexture = NULL;
-    sf::Texture *LoadGameSelectedTexture = NULL;
-    sf::Texture *ExitGameTexture = NULL;
-    sf::Texture *ExitGameSelectedTexture = NULL;
+    sf::Texture *BackgroundTexture = nullptr;
+    sf::Texture *NewGameTexture = nullptr;
+    sf::Texture *NewGameSelectedTexture = nullptr;
+    sf::Texture *LoadGameTexture = nullptr;
+    sf::Texture *LoadGameSelectedTexture = nullptr;
+    sf::Texture *ExitGameTexture = nullptr;
+    sf::Texture *ExitGameSelectedTexture = nullptr;
 };
 
 

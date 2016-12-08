@@ -41,8 +41,8 @@ set(SOURCE_FILES
         Objects/playertest.cpp
         Objects/playertest.h
 
-        state/loadgamestate.cpp
-        state/loadgamestate.h
+        State/stateloadgame.cpp
+        State/stateloadgame.h
         state/machine.cpp
         state/machine.h
         state/state.h

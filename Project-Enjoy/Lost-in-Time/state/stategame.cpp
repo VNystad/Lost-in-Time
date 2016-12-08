@@ -6,5 +6,5 @@ void StateGame::GoNext(Machine &machine, sf::RenderWindow& window)
 {
     TestApp testapp(window);
 
-    while(testapp.Tick());
+    while(testapp.Tick(machine));
 }

@@ -1,0 +1,13 @@
+Player name
+
+Player HP
+100
+Player position
+248.097,398
+Player elapsed time
+17.5818
+Enemy positions separated with new line
+1257,644
+3002,829
+614,1380
+1541,1124

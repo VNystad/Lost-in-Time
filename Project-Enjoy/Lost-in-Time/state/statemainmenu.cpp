@@ -87,6 +87,7 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window)
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
         {
             window.close();
+            mainmenu = false;
             machine.SetRunning(false);
         }
 
@@ -141,16 +142,19 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window)
             if(menu == 1)
             {
                 machine.SetState(Machine::StateId::GAME);
+                mainmenu = false;
                 return;
             }
             if(menu == 2)
             {
-                //machine.SetState(Machine::StateId::LOAD);
+                machine.SetState(Machine::StateId::LOAD);
+                mainmenu = false;
                 return;
             }
             if(menu == 3)
             {
                 window.close();
+                mainmenu = false;
                 machine.SetRunning(false);
             }
         }

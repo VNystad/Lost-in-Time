@@ -64,6 +64,7 @@ void Map::loadLayer(Json::Value& layer, std::list<Object*>& objects, TileSize ti
     {
 		tmp->tilemap[i % tmp->width][i / tmp->width] = layer["data"][(int) i].asInt();
 
+
     }
 
 	if((layer["name"].asString() == "foreground"))

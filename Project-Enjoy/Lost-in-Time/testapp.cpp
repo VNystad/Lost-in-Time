@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "testapp.h"
 #include "Framework/physics.h"
 
@@ -6,6 +7,11 @@ TestApp::TestApp(sf::RenderWindow& window)
 {
     this->config = config;
     this->window = &window;
+
+    /*****************
+     * Load in images
+     ****************/
+    LoadImages();
 
     /*************************************************
      * Making 2D array for collidable tiles
@@ -57,6 +63,8 @@ TestApp::TestApp(sf::RenderWindow& window)
     clock = new sf::Clock;
     clock->restart();
 
+    //TEST
+    currentView = new sf::View;
 
 
     /********************
@@ -85,7 +93,7 @@ TestApp::TestApp(sf::RenderWindow& window)
 
 }
 
-bool TestApp::Tick()
+bool TestApp::Tick(Machine& machine)
 {
     sf::Event event;
     float delta = clock->restart().asSeconds();
@@ -94,7 +102,7 @@ bool TestApp::Tick()
      * Gets time elapsed and
      * place it in text form
      ***********************/
-    int timeelapsed = timer->getElapsedTime().asSeconds() + penaltyTime;
+    int timeelapsed = timer->getElapsedTime().asSeconds() + penaltyTime - EscMenuTime;
     std::string tempForTime = std::to_string(timeelapsed);
     timerInText->setString(tempForTime);
     // Positioning the timerInText on upper right corner of player
@@ -109,50 +117,60 @@ bool TestApp::Tick()
             delete[] collidableArray[0];
             delete[] collidableArray;
             window->close();
-            exit(0);
+            machine.SetRunning(false);
         }
     }
 
-    /************************
-     * If player press Escape
-     * Exit game
-     * should be fixed so a menu pops up
-     ***********************/
+    /*****************************************************************
+     *        KEYBOARD EVENTS ( but not for physical actions )
+     ****************************************************************/
+
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
     {
-        delete[] collidableArray[0];
-        delete[] collidableArray;
-        window->close();
-        exit(0);
+        int tempTime = timer->getElapsedTime().asSeconds();
+        EscMenu(machine);
+        EscMenuTime = EscMenuTime + timer->getElapsedTime().asSeconds() - tempTime;
     }
 
     /********************************
      * If player press P Pause game
      * If player press R Resume game
      *******************************/
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
     {
+        music->music.pause();
         while(!sf::Keyboard::isKeyPressed(sf::Keyboard::R))
         {
             clock->restart();
         }
+        music->music.play();
     }
     // For testing only, prints out player position
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
         std::cout << p->GetPositionX() << " " << p->GetPositionY() << std::endl;
 
     // When player presses G, player character is damaged. For testing purposes
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::G) && p->health.GetActualLifePoints() > 0)
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::G) && p->health.GetActualLifePoints() > 0)
         p->health.Hit(5);
 
     // When player presses H, player character is healed. For testing purposes
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::H) && p->health.GetActualLifePoints() < 100)
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H) && p->health.GetActualLifePoints() < 100)
         p->health.Healed(5);
+
+    // If player press M, mute music
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
+    {
+        music->music.pause();
+    }
+    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::T))
+        std::cout << timeelapsed << std::endl;
 
     /* If player hits the bottom of map,
      * the player's lifepoint is reduced to 0 and player death function is called */
     if (p->GetPositionY() >= 2500)
     {
+
+
         penaltyTime = penaltyTime + 20;
         p->health.DeathHandle();
         p->PlayerDead();
@@ -166,6 +184,7 @@ bool TestApp::Tick()
         p->PlayerDead();
         timer->restart();
     }
+
 
     p->PlayerAnimation();
 
@@ -188,6 +207,8 @@ bool TestApp::Tick()
     p->DrawMe();
     p->health.DrawMe();
     window->draw(*timerInText);
+    timerInText->~Drawable();
+
 
     AIHandler(delta);
 
@@ -203,12 +224,14 @@ bool TestApp::Tick()
         {
             sf::View view2 = window->getDefaultView();
             view2.setCenter(p->GetPositionX(), p->GetPositionY());
+            *currentView = view2;
             window->setView(view2);
         }
         else if(p->GetPositionY() >= 1290)
         {
             sf::View view2 = window->getDefaultView();
             view2.setCenter(p->GetPositionX(), 1290);
+            *currentView = view2;
             window->setView(view2);
         }
     }
@@ -218,12 +241,14 @@ bool TestApp::Tick()
         {
             sf::View view3 = window->getDefaultView();
             view3.setCenter(512, p->GetPositionY());
+            *currentView = view3;
             window->setView(view3);
         }
         else if (p->GetPositionY() >= 1290)
         {
             sf::View view3 = window->getDefaultView();
             view3.setCenter(512, 1290);
+            *currentView = view3;
             window->setView(view3);
         }
     }
@@ -233,6 +258,7 @@ bool TestApp::Tick()
         {
             sf::View view2 = window->getDefaultView();
             view2.setCenter(3650, p->GetPositionY());
+            *currentView = view2;
             window->setView(view2);
         }
 
@@ -283,4 +309,207 @@ void TestApp::AIHandler(float delta)
             Physics::AIGravity(AIVectorPointer->at(i), collidableArray, delta);
         }
     }
+}
+/**
+ * Menu for pressing Esc
+ * Options:
+ * ResumeGame: Resumes the game
+ * SaveGame: Opens new window with saves
+ * MainMenu: Returns to mainmenu
+ * ExitGame: Exits the game
+ * @param machine so we can handle the machine
+ *          if you go back to mainmenu og exit game
+ */
+void TestApp::EscMenu(Machine& machine)
+{
+    music->music.pause();
+    // Show up a menu
+
+    int selected = menuSelected("EscMenu");
+
+    std::cout << "Selected: " << selected << std::endl;
+
+    // Resume game
+    if(selected == 1)
+    {
+        music->music.play();
+        return;
+    }
+
+        // Save game
+    else if(selected == 2)
+    {
+        selected = menuSelected("SaveGameMenu");
+        SaveGame(selected);
+    }
+
+    else if(selected == 3)
+    {
+        machine.SetState(Machine::StateId::MAINMENU);
+        return;
+    }
+
+        // Exit game
+    else if(selected == 4)
+    {
+        delete[] collidableArray[0];
+        delete[] collidableArray;
+        window->close();
+        machine.SetRunning(false);
+    }
+    clock->restart();
+    music->music.play();
+}
+
+bool TestApp::SaveGame(int selectedSave)
+{
+    std::string name;
+    std::cout << "Please type name" << std::endl;
+    int enemyCount = (AIVector.size());
+
+
+    std::ofstream savefile;
+    if(selectedSave == 1)
+        savefile.open("SaveFiles/save1.txt");
+    else if(selectedSave == 2)
+        savefile.open("SaveFiles/save2.txt");
+    else if(selectedSave == 3)
+        savefile.open("SaveFiles/save3.txt");
+
+    savefile << "Player name" << std::endl;
+    savefile << name << std::endl;
+    savefile << "Player HP" << std::endl;
+    savefile << p->health.GetActualLifePoints() << std::endl;
+    savefile << "Player position" << std::endl;
+    savefile << p->GetPositionX() << "," << p->GetPositionY() << std::endl;
+    savefile << "Player elapsed time" << std::endl;
+    savefile << timer->getElapsedTime().asSeconds() + penaltyTime << std::endl;
+    savefile << "Enemy positions separated with new line" << std::endl;
+    while(enemyCount != 0)
+    {
+        int positionX = AIVectorPointer->at(enemyCount-1)->GetPositionX();
+        int positionY = AIVectorPointer->at(enemyCount-1)->GetPositionY();
+        savefile << positionX << "," << positionY << std::endl;
+        enemyCount--;
+    }
+    savefile.close();
+    return true;
+}
+
+int TestApp::menuSelected(std::string menu)
+{
+    // Go until Return is not pressed, to prevent program going through several "Menuselected" functions on 1 return press
+    while(sf::Keyboard::isKeyPressed(sf::Keyboard::Return));
+    int amountOfChoices = 0;
+    int choice = 1;
+    int MenuPositionX = p->GetPositionX() -200;
+    int MenuPositionY = p->GetPositionY() - 200;
+
+    while(1){
+    if(!menu.compare("EscMenu"))
+    {
+
+        resumeGameSprite.setPosition(MenuPositionX, MenuPositionY);
+        saveGameSprite.setPosition(MenuPositionX, MenuPositionY + 100);
+        mainMenuSprite.setPosition(MenuPositionX, MenuPositionY + 200);
+        exitGameSprite.setPosition(MenuPositionX, MenuPositionY + 300);
+        window->clear(sf::Color::Black);
+        // Load images for esc menu
+        window->draw(resumeGameSprite);
+        window->draw(saveGameSprite);
+        window->draw(mainMenuSprite);
+        window->draw(exitGameSprite);
+        amountOfChoices = amountOfEscOptions;
+    }
+
+    else if(!menu.compare("SaveGameMenu")) // If menu equals "SaveGameMenu";
+    {
+        window->clear(sf::Color::Black);
+        save1Sprite.setPosition(MenuPositionX, MenuPositionY);
+        save2Sprite.setPosition(MenuPositionX, MenuPositionY + 100);
+        save3Sprite.setPosition(MenuPositionX, MenuPositionY + 200);
+        // Load images for savegame menu
+        window->draw(save1Sprite);
+        window->draw(save2Sprite);
+        window->draw(save3Sprite);
+        amountOfChoices = amountOfSaves;
+    }
+
+
+        if(!keyPressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+            choice++;
+            if (choice > amountOfChoices)
+                choice = 1;
+            keyPressed = true;
+            std::cout << choice << std::endl;
+        }
+        else if(!keyPressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+            choice--;
+            if (choice <= 0)
+                choice = amountOfChoices;
+            keyPressed = true;
+            std::cout << choice << std::endl;
+        }
+        else if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+            keyPressed = false;
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+                return choice;
+
+        selectedSprite.setPosition(p->GetPositionX() + 250, p->GetPositionY() - 300 + choice*100);
+        window->draw(selectedSprite);
+        window->display();
+        if(amountOfChoices == amountOfEscOptions)
+        {
+            // Handle esc options
+        }
+        else if (amountOfChoices == amountOfSaves)
+        {
+            // Handle save options
+        }
+    }
+}
+
+void TestApp::LoadImages()
+{
+    int nothing;
+    /*
+     * TIL VETLE!!!
+     * du gjør nesten akkurat som på skolen, men legger inn ", nothing" bak pathen
+     * background1 = LoadTexture("pathen", nothing)
+     */
+    save1 = LoadTexture("data/loadgame/save1.png", amountOfSaves);
+    save2 = LoadTexture("data/loadgame/save2.png", amountOfSaves);
+    save3 = LoadTexture("data/loadgame/save3.png", amountOfSaves);
+
+    selected = LoadTexture("data/EscMenu/selected.png", nothing);
+
+    resumeGame = LoadTexture("data/EscMenu/resume.png", amountOfEscOptions);
+    mainMenu = LoadTexture("data/EscMenu/mainmenu.png", amountOfEscOptions);
+    saveGame = LoadTexture("data/EscMenu/savegame.png", amountOfEscOptions);
+    exitGame = LoadTexture("data/EscMenu/exitgame.png", amountOfEscOptions);
+
+    save1Sprite.setTexture(*save1);
+    save2Sprite.setTexture(*save2);
+    save3Sprite.setTexture(*save3);
+
+    selectedSprite.setTexture(*selected);
+    resumeGameSprite.setTexture(*resumeGame);
+    saveGameSprite.setTexture(*saveGame);
+    mainMenuSprite.setTexture(*mainMenu);
+    exitGameSprite.setTexture(*exitGame);
+
+}
+
+sf::Texture *TestApp::LoadTexture(std::string path, int &menuAmount)
+{
+    //temp texture
+    sf::Texture *newTexture = new sf::Texture();
+    //newTexture->loadFromFile(path);
+
+    if(!newTexture->loadFromFile(path))
+    {
+        std::cout << "Could not load image on path: " << path << std::endl;
+    }
+    menuAmount++;
+    return newTexture;
 }

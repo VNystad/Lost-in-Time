@@ -139,6 +139,8 @@ void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
     //Jumpspeed are also resetted for later use.
     if(Grounded(p, collidableArray))
     {
+        if(p->GetFallSpeed() > p->GetMaxFallSpeed()/2.4)
+            p->health.Hit(p->GetFallSpeed()*1.4);
         p->SetJumpCheck(false);
         p->SetFallSpeed(0);
         float temp = p->GetOrigJumpSpeed();

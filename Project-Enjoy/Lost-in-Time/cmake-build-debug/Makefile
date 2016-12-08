@@ -527,33 +527,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-state/loadgamestate.obj: state/loadgamestate.cpp.obj
-
-.PHONY : state/loadgamestate.obj
-
-# target to build an object file
-state/loadgamestate.cpp.obj:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/state/loadgamestate.cpp.obj
-.PHONY : state/loadgamestate.cpp.obj
-
-state/loadgamestate.i: state/loadgamestate.cpp.i
-
-.PHONY : state/loadgamestate.i
-
-# target to preprocess a source file
-state/loadgamestate.cpp.i:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/state/loadgamestate.cpp.i
-.PHONY : state/loadgamestate.cpp.i
-
-state/loadgamestate.s: state/loadgamestate.cpp.s
-
-.PHONY : state/loadgamestate.s
-
-# target to generate assembly for a file
-state/loadgamestate.cpp.s:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/state/loadgamestate.cpp.s
-.PHONY : state/loadgamestate.cpp.s
-
 state/machine.obj: state/machine.cpp.obj
 
 .PHONY : state/machine.obj
@@ -607,6 +580,33 @@ state/stategame.s: state/stategame.cpp.s
 state/stategame.cpp.s:
 	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.s
 .PHONY : state/stategame.cpp.s
+
+state/stateloadgame.obj: state/stateloadgame.cpp.obj
+
+.PHONY : state/stateloadgame.obj
+
+# target to build an object file
+state/stateloadgame.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.obj
+.PHONY : state/stateloadgame.cpp.obj
+
+state/stateloadgame.i: state/stateloadgame.cpp.i
+
+.PHONY : state/stateloadgame.i
+
+# target to preprocess a source file
+state/stateloadgame.cpp.i:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.i
+.PHONY : state/stateloadgame.cpp.i
+
+state/stateloadgame.s: state/stateloadgame.cpp.s
+
+.PHONY : state/stateloadgame.s
+
+# target to generate assembly for a file
+state/stateloadgame.cpp.s:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.s
+.PHONY : state/stateloadgame.cpp.s
 
 state/statemainmenu.obj: state/statemainmenu.cpp.obj
 
@@ -743,15 +743,15 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... state/loadgamestate.obj
-	@echo ... state/loadgamestate.i
-	@echo ... state/loadgamestate.s
 	@echo ... state/machine.obj
 	@echo ... state/machine.i
 	@echo ... state/machine.s
 	@echo ... state/stategame.obj
 	@echo ... state/stategame.i
 	@echo ... state/stategame.s
+	@echo ... state/stateloadgame.obj
+	@echo ... state/stateloadgame.i
+	@echo ... state/stateloadgame.s
 	@echo ... state/statemainmenu.obj
 	@echo ... state/statemainmenu.i
 	@echo ... state/statemainmenu.s

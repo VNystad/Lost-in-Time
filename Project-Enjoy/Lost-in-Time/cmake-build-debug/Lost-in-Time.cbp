@@ -182,12 +182,6 @@
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/main.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.cpp">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/loadgamestate.h">
-			<Option target="Lost-in-Time"/>
-		</Unit>
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/machine.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
@@ -201,6 +195,12 @@
 			<Option target="Lost-in-Time"/>
 		</Unit>
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/stategame.h">
+			<Option target="Lost-in-Time"/>
+		</Unit>
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/stateloadgame.cpp">
+			<Option target="Lost-in-Time"/>
+		</Unit>
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/stateloadgame.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.cpp">

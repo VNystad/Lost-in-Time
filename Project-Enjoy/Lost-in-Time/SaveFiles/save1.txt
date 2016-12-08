@@ -3,11 +3,10 @@ Player name
 Player HP
 100
 Player position
-248.097,398
+654.534,622
 Player elapsed time
-17.5818
+16.64
 Enemy positions separated with new line
-1257,644
-3002,829
-614,1380
-1541,1124
+3007,802
+220,1244
+781,694

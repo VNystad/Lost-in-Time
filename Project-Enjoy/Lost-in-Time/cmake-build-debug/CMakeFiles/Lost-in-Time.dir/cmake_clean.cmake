@@ -12,7 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lost-in-Time.dir/Map/object.cpp.obj"
   "CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.obj"
   "CMakeFiles/Lost-in-Time.dir/Objects/playertest.cpp.obj"
-  "CMakeFiles/Lost-in-Time.dir/state/loadgamestate.cpp.obj"
+  "CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.obj"
   "CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj"
   "CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj"
   "CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj"

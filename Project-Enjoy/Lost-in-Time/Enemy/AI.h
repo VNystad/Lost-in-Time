@@ -219,7 +219,7 @@ protected:
 
     const int origjumpspeed = 15;
     float fallspeed;
-    float maxfallspeed = 50;
+    float maxfallspeed = 80;
 
     float jumppower = 200;
     float fallpower = 400;

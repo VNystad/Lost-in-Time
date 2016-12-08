@@ -431,6 +431,8 @@ void Physics::AIGravity(AIEnemies* e, int** collidableArray, float delta)
     //Jumpspeed are also reseted for later use.
     if(AIGrounded(e, collidableArray))
     {
+        if(e->GetFallSpeed() > e->GetMaxFallSpeed()/2.4)
+            e->health.Hit(e->GetFallSpeed()*1.4);
         e->SetJumpCheck(false);
         e->SetFallSpeed(0);
         float temp = e->GetOrigJumpSpeed();

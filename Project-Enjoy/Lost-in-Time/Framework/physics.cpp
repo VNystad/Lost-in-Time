@@ -139,8 +139,9 @@ void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
     //Jumpspeed are also resetted for later use.
     if(Grounded(p, collidableArray))
     {
-        if(p->GetFallSpeed() > p->GetMaxFallSpeed()/2.4)
-            p->health.Hit(p->GetFallSpeed()*1.4);
+        //Checks if object is landing at a harmfull velocity, if so, harms it.
+        if(p->GetFallSpeed() > p->GetMaxFallSpeed()/2.5)
+            p->health.Hit(p->GetFallSpeed()*1.2);
         p->SetJumpCheck(false);
         p->SetFallSpeed(0);
         float temp = p->GetOrigJumpSpeed();
@@ -172,7 +173,7 @@ void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
         {
 
             float pixelstomove = ((( p->GetJumpPower() * p->GetJumpSpeed() ) / p->GetGravity() ) * (delta));
-            p->SetJumpSpeed(p->GetJumpSpeed() - 1);
+            p->SetJumpSpeed(p->GetJumpSpeed() - 50*delta);
             //Martins carefull movement mechanism:
             //  -Makes the object check every pixel it moves for collision, prevents object in falling through the ground
             //  Bug: It might move 1 pixel into the ground, must investigate
@@ -213,7 +214,7 @@ void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
             //a falling objects fallspeed.
             if(p->GetFallSpeed() < p->GetMaxFallSpeed())
             {
-                p->SetFallSpeed(p->GetFallSpeed() + 1);
+                p->SetFallSpeed(p->GetFallSpeed() + 50*delta);
             }
         }
     }
@@ -431,6 +432,7 @@ void Physics::AIGravity(AIEnemies* e, int** collidableArray, float delta)
     //Jumpspeed are also reseted for later use.
     if(AIGrounded(e, collidableArray))
     {
+        //Checks if object is landing at a harmfull velocity, if so, harms it.
         if(e->GetFallSpeed() > e->GetMaxFallSpeed()/2.4)
             e->health.Hit(e->GetFallSpeed()*1.4);
         e->SetJumpCheck(false);
@@ -464,7 +466,7 @@ void Physics::AIGravity(AIEnemies* e, int** collidableArray, float delta)
         {
 
             float pixelstomove = ((( e->GetJumpPower() * e->GetJumpSpeed() ) / e->GetGravity() ) * (delta));
-            e->SetJumpSpeed(e->GetJumpSpeed() - 1);
+            e->SetJumpSpeed(e->GetJumpSpeed() - 50*delta);
             //Martins carefull movement mechanism:
             //  -Makes the object check every pixel it moves for collision, prevents object in falling through the ground
             //  Bug: It might move 1 pixel into the ground, must investigate
@@ -505,7 +507,7 @@ void Physics::AIGravity(AIEnemies* e, int** collidableArray, float delta)
             //a falling objects fallspeed.
             if(e->GetFallSpeed() < e->GetMaxFallSpeed())
             {
-                e->SetFallSpeed(e->GetFallSpeed() + 1);
+                e->SetFallSpeed(e->GetFallSpeed() + 50*delta);
             }
         }
     }

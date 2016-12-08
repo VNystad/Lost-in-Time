@@ -109,26 +109,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="physics.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="physics.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Framework/physics.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="432" column="5" lean-forward="true" selection-start-line="432" selection-start-column="5" selection-end-line="432" selection-end-column="5" />
+            <state relative-caret-position="349">
+              <caret line="510" column="13" lean-forward="true" selection-start-line="510" selection-start-column="13" selection-end-line="510" selection-end-column="13" />
               <folding>
-                <element signature="e#8621#9876#0" expanded="false" />
-                <element signature="e#10576#11158#0" expanded="false" />
-                <element signature="e#11257#16212#0" expanded="false" />
-                <element signature="e#22039#23416#0" expanded="false" />
+                <element signature="e#8714#9969#0" expanded="false" />
+                <element signature="e#10669#11251#0" expanded="false" />
+                <element signature="e#11350#16305#0" expanded="false" />
+                <element signature="e#22225#23602#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AI.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AI.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Enemy/AI.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="226" column="0" lean-forward="true" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+            <state relative-caret-position="125">
+              <caret line="214" column="25" lean-forward="true" selection-start-line="214" selection-start-column="25" selection-end-line="214" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -198,8 +198,8 @@
         <option value="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
         <option value="$PROJECT_DIR$/Objects/playertest.h" />
         <option value="$PROJECT_DIR$/testapp.cpp" />
-        <option value="$PROJECT_DIR$/Framework/physics.cpp" />
         <option value="$PROJECT_DIR$/Enemy/AI.h" />
+        <option value="$PROJECT_DIR$/Framework/physics.cpp" />
       </list>
     </option>
   </component>
@@ -587,12 +587,12 @@
       <workItem from="1481017162131" duration="22137000" />
       <workItem from="1481108468021" duration="10184000" />
       <workItem from="1481192461070" duration="1202000" />
-      <workItem from="1481194637583" duration="2992000" />
+      <workItem from="1481194637583" duration="5783000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306764000" />
+    <option name="totallyTimeSpent" value="309555000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -934,24 +934,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Framework/physics.cpp">
+    <entry file="file://$PROJECT_DIR$/Enemy/AI.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="432" column="5" lean-forward="true" selection-start-line="432" selection-start-column="5" selection-end-line="432" selection-end-column="5" />
-          <folding>
-            <element signature="e#8621#9876#0" expanded="false" />
-            <element signature="e#10576#11158#0" expanded="false" />
-            <element signature="e#11257#16212#0" expanded="false" />
-            <element signature="e#22039#23416#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="125">
+          <caret line="214" column="25" lean-forward="true" selection-start-line="214" selection-start-column="25" selection-end-line="214" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Enemy/AI.h">
+    <entry file="file://$PROJECT_DIR$/Framework/physics.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="226" column="0" lean-forward="true" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="349">
+          <caret line="510" column="13" lean-forward="true" selection-start-line="510" selection-start-column="13" selection-end-line="510" selection-end-column="13" />
+          <folding>
+            <element signature="e#8714#9969#0" expanded="false" />
+            <element signature="e#10669#11251#0" expanded="false" />
+            <element signature="e#11350#16305#0" expanded="false" />
+            <element signature="e#22225#23602#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,12 +1,20 @@
-Player name
-
-Player HP
-100
-Player position
-1222.5,494
-Player elapsed time
-21.9416
-Enemy positions separated with new line
-3006,814
-415,1284
-989,1348
+Martin
+41
+59.6574
+142
+16.5343
+1202
+516
+1202
+2575
+292
+2575
+1888
+1265
+1888
+226
+1284
+226
+424
+639
+425

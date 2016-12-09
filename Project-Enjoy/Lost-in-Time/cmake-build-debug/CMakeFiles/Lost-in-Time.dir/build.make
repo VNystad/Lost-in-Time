@@ -464,33 +464,9 @@ CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj.provides: CMakeFiles/Los
 CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj.provides.build: CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj
 
 
-CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj: CMakeFiles/Lost-in-Time.dir/flags.make
-CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj: ../state/statepause.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj"
-	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lost-in-Time.dir\state\statepause.cpp.obj -c "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\state\statepause.cpp"
-
-CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.i"
-	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\state\statepause.cpp" > CMakeFiles\Lost-in-Time.dir\state\statepause.cpp.i
-
-CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.s"
-	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\state\statepause.cpp" -o CMakeFiles\Lost-in-Time.dir\state\statepause.cpp.s
-
-CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj.requires:
-
-.PHONY : CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj.requires
-
-CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj.provides: CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj.provides.build
-.PHONY : CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj.provides
-
-CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj.provides.build: CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj
-
-
 CMakeFiles/Lost-in-Time.dir/main.cpp.obj: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Lost-in-Time.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Lost-in-Time.dir/main.cpp.obj"
 	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lost-in-Time.dir\main.cpp.obj -c "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\main.cpp"
 
 CMakeFiles/Lost-in-Time.dir/main.cpp.i: cmake_force
@@ -514,7 +490,7 @@ CMakeFiles/Lost-in-Time.dir/main.cpp.obj.provides.build: CMakeFiles/Lost-in-Time
 
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../testapp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj"
 	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lost-in-Time.dir\testapp.cpp.obj -c "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\testapp.cpp"
 
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.i: cmake_force
@@ -538,7 +514,7 @@ CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj.provides.build: CMakeFiles/Lost-in-T
 
 CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj: ../Framework/Music.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj"
 	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lost-in-Time.dir\Framework\Music.cpp.obj -c "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\Framework\Music.cpp"
 
 CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.i: cmake_force
@@ -560,6 +536,30 @@ CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj.provides: CMakeFiles/Lost-in
 CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj.provides.build: CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj
 
 
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj: CMakeFiles/Lost-in-Time.dir/flags.make
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj: ../Objects/savedobject.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj"
+	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lost-in-Time.dir\Objects\savedobject.cpp.obj -c "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\Objects\savedobject.cpp"
+
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.i"
+	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\Objects\savedobject.cpp" > CMakeFiles\Lost-in-Time.dir\Objects\savedobject.cpp.i
+
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.s"
+	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\Objects\savedobject.cpp" -o CMakeFiles\Lost-in-Time.dir\Objects\savedobject.cpp.s
+
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj.requires:
+
+.PHONY : CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj.requires
+
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj.provides: CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj.provides.build
+.PHONY : CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj.provides
+
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj.provides.build: CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj
+
+
 # Object files for target Lost-in-Time
 Lost__in__Time_OBJECTS = \
 "CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.obj" \
@@ -579,10 +579,10 @@ Lost__in__Time_OBJECTS = \
 "CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj" \
 "CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj" \
 "CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj" \
-"CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj" \
 "CMakeFiles/Lost-in-Time.dir/main.cpp.obj" \
 "CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj" \
-"CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj"
+"CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj" \
+"CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj"
 
 # External object files for target Lost-in-Time
 Lost__in__Time_EXTERNAL_OBJECTS =
@@ -604,10 +604,10 @@ Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.obj
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj
-Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/main.cpp.obj
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj
+Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/build.make
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/linklibs.rsp
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/objects1.rsp
@@ -637,10 +637,10 @@ CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/state/stateloa
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj.requires
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj.requires
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj.requires
-CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj.requires
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/main.cpp.obj.requires
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj.requires
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj.requires
+CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj.requires
 
 .PHONY : CMakeFiles/Lost-in-Time.dir/requires
 

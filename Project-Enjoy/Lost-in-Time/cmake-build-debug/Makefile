@@ -500,6 +500,33 @@ Objects/playertest.cpp.s:
 	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/playertest.cpp.s
 .PHONY : Objects/playertest.cpp.s
 
+Objects/savedobject.obj: Objects/savedobject.cpp.obj
+
+.PHONY : Objects/savedobject.obj
+
+# target to build an object file
+Objects/savedobject.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj
+.PHONY : Objects/savedobject.cpp.obj
+
+Objects/savedobject.i: Objects/savedobject.cpp.i
+
+.PHONY : Objects/savedobject.i
+
+# target to preprocess a source file
+Objects/savedobject.cpp.i:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.i
+.PHONY : Objects/savedobject.cpp.i
+
+Objects/savedobject.s: Objects/savedobject.cpp.s
+
+.PHONY : Objects/savedobject.s
+
+# target to generate assembly for a file
+Objects/savedobject.cpp.s:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.s
+.PHONY : Objects/savedobject.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -635,33 +662,6 @@ state/statemainmenu.cpp.s:
 	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.s
 .PHONY : state/statemainmenu.cpp.s
 
-state/statepause.obj: state/statepause.cpp.obj
-
-.PHONY : state/statepause.obj
-
-# target to build an object file
-state/statepause.cpp.obj:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj
-.PHONY : state/statepause.cpp.obj
-
-state/statepause.i: state/statepause.cpp.i
-
-.PHONY : state/statepause.i
-
-# target to preprocess a source file
-state/statepause.cpp.i:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.i
-.PHONY : state/statepause.cpp.i
-
-state/statepause.s: state/statepause.cpp.s
-
-.PHONY : state/statepause.s
-
-# target to generate assembly for a file
-state/statepause.cpp.s:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.s
-.PHONY : state/statepause.cpp.s
-
 testapp.obj: testapp.cpp.obj
 
 .PHONY : testapp.obj
@@ -740,6 +740,9 @@ help:
 	@echo ... Objects/playertest.obj
 	@echo ... Objects/playertest.i
 	@echo ... Objects/playertest.s
+	@echo ... Objects/savedobject.obj
+	@echo ... Objects/savedobject.i
+	@echo ... Objects/savedobject.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
@@ -755,9 +758,6 @@ help:
 	@echo ... state/statemainmenu.obj
 	@echo ... state/statemainmenu.i
 	@echo ... state/statemainmenu.s
-	@echo ... state/statepause.obj
-	@echo ... state/statepause.i
-	@echo ... state/statepause.s
 	@echo ... testapp.obj
 	@echo ... testapp.i
 	@echo ... testapp.s

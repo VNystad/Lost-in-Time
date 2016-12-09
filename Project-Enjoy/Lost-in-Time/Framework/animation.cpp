@@ -33,6 +33,16 @@ void Animation::init()
     if (!AITextureWalkLeft.loadFromFile("data/Character-Animation/apemoveleft.png"))
         std::cout << "Failed to load data/Character-Animation/apemoveleft.png" << std::endl << std::endl;
 
+
+    /* **********************************
+        MINIBOSS CHARACTER
+    ********************************** */
+    if (!AIMiniBossTextureWalkRight.loadFromFile("data/Character-Animation/minibossapemoveright.png"))
+        std::cout << "Failed to load data/Character-Animation/minibossapemoveright.png" << std::endl << std::endl;
+    if (!AIMiniBossTextureWalkLeft.loadFromFile("data/Character-Animation/minibossapemoveleft.png"))
+        std::cout << "Failed to load data/Character-Animation/minibossapemoveleft.png" << std::endl << std::endl;
+
+
     /* **********************************
                 BOSS CHARACTER
      ********************************** */
@@ -255,6 +265,61 @@ void Animation::AIWalkRight(sf::RectangleShape* character)
 void Animation::AIWalkLeft(sf::RectangleShape* character)
 {
     character->setTexture(&AITextureWalkLeft);
+    if(animationdir == 1)
+    {
+        if (frameSelected->left < 216)
+            frameSelected->left += 36;
+        else
+        {
+            frameSelected->left -= 36;
+            animationdir = 0;
+        }
+    }
+    else
+    {
+        if (frameSelected->left > 0)
+            frameSelected->left -= 36;
+        else
+        {
+            frameSelected->left += 36;
+            animationdir = 1;
+        }
+    }
+
+    character->setTextureRect(*frameSelected);
+}
+
+
+void Animation::AIMiniBossWalkRight(sf::RectangleShape* character)
+{
+    character->setTexture(&AIMiniBossTextureWalkRight);
+    if(animationdir == 1)
+    {
+        if (frameSelected->left < 216)
+            frameSelected->left += 36;
+        else
+        {
+            frameSelected->left -= 216;
+            animationdir = 0;
+        }
+    }
+    else
+    {
+        if (frameSelected->left > 0)
+            frameSelected->left -= 36;
+        else
+        {
+            frameSelected->left += 36;
+            animationdir = 1;
+        }
+    }
+
+    character->setTextureRect(*frameSelected);
+}
+
+void Animation::AIMiniBossWalkLeft(sf::RectangleShape* character)
+{
+    character->setTexture(&AIMiniBossTextureWalkLeft);
     if(animationdir == 1)
     {
         if (frameSelected->left < 216)

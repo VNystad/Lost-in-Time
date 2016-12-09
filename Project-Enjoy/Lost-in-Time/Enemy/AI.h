@@ -48,7 +48,7 @@ public:
     void Death();
 
     void AnimationAI();
-
+    void AnimationAIMiniBoss();
 
     /**********************
     * AI
@@ -63,6 +63,9 @@ public:
     bool GetRightKey() const { return rightkey; }
     void SetUpKey(bool upkey) { this->upkey = upkey; }
     bool GetUpKey() const { return upkey; }
+
+    void SetMiniBoss(bool miniboss) { this->miniboss = miniboss; }
+    bool GetMiniBoss() const { return miniboss; }
 
     void SetEnraged(bool enraged) { this->enraged = enraged; }
     bool GetEnraged() const { return enraged; }
@@ -179,11 +182,12 @@ protected:
     /**********************
     * AI Behaviour
     * *******************/
+    bool miniboss = false;
     bool enraged = false;
     int enragerange = 100;
     int enrageduration = 1000;
     int enragecountdown = enrageduration;
-    int enragedspeed = 100;
+    int enragedspeed = 120;
     int calmspeed = 100;
 
     int patrolleft;
@@ -199,7 +203,7 @@ protected:
 
     //Horisontal
     float maxmovespeed = 250;
-    float movepower = 20;
+    float movepower = 40;
 
     float movespeedleft = 0;
     float movespeedright = 0;
@@ -221,8 +225,8 @@ protected:
     float fallspeed;
     float maxfallspeed = 80;
 
-    float jumppower = 200;
-    float fallpower = 400;
+    float jumppower = 250;
+    float fallpower = 280;
     float jumpspeed = 0;
 
 

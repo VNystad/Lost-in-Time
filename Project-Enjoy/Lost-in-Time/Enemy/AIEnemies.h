@@ -4,6 +4,7 @@
 
 #include "AI.h"
 #include "../Objects/playertest.h"
+#include <stdlib.h>
 
 class AIEnemies: public AI {
 public:
@@ -20,8 +21,7 @@ private:
     int patrolleft;
     int patrolright;
 
-    int enragerange = 100;
-
+    int enragerange = 150;
 };
 
 

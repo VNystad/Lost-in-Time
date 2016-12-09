@@ -516,7 +516,7 @@ void Physics::AIGravity(AIEnemies* e, int** collidableArray, float delta)
 }
 
 /**
- * Function that checks if there is a horisontal collision
+ * Function that checks if there is a horisontal collision, it also makes ai jump and informs miniboss of nearby pits.
  * @param e the player
  * @param collidabletiles Map with all collidable tiles
  * @return True if there is a block infront of player, false if not

@@ -9,18 +9,38 @@ AIEnemies::AIEnemies(float x, float y, float patrol, sf::RenderWindow *window) :
     this->OriginalY = y;
     this->positionX = this->OriginalX;
     this->positionY = this->OriginalY;
-    this->patrolleft = x - patrol;
-    this->patrolright = x + patrol;
+    if(rand() % 100 < 20)
+        this->SetMiniBoss(true);
+
+
+
     character = new sf::RectangleShape;
     character->setSize(sf::Vector2f(sizeWidth,sizeHeight));
-
     animation.init();
-    animation.AIWalkRight(character);
-
     health.init();
-    health.SetOriginalLifePoints(100);
-    health.SetActualLifePoints(100);
-    health.SetVisibleLifePoints(100);
+
+    if(this->GetMiniBoss() == true)
+    {
+        this->patrolleft = x - patrol;
+        this->patrolright = x + patrol;
+        animation.AIMiniBossWalkRight(character);
+        health.SetOriginalLifePoints(300);
+        health.SetActualLifePoints(300);
+        health.SetVisibleLifePoints(300);
+        this->SetRightKey(true);
+        this->SetLeftKey(false);
+        this->enragerange = 200;
+        this->SetEnragedSpeed(250);
+    }
+    else
+    {
+        this->patrolleft = x - patrol;
+        this->patrolright = x + patrol;
+        animation.AIWalkLeft(character);
+        health.SetOriginalLifePoints(100);
+        health.SetActualLifePoints(100);
+        health.SetVisibleLifePoints(100);
+    }
 }
 
 
@@ -28,7 +48,11 @@ void AIEnemies::MonkeyAI1(AIEnemies* e,PlayerTest* p)
 {
     if((p->GetPositionX() - e->GetPositionX() < this->enragerange && p->GetPositionX() - e->GetPositionX() > -this->enragerange) &&
        (p->GetPositionY() - e->GetPositionY() <  this->enragerange && p->GetPositionY() - e->GetPositionY() > -this->enragerange))
+    {
         e->SetEnraged(true);
+        e->SetEnrageCountdown(e->GetEnrageDuration());
+    }
+
 
 
     // Common enraged behaviour for all AI
@@ -40,12 +64,15 @@ void AIEnemies::MonkeyAI1(AIEnemies* e,PlayerTest* p)
             e->SetEnrageCountdown(e->GetEnrageDuration());
             e->SetEnraged(false);
         }
+        if(e->GetMiniBoss() && rand() % 100 > 80)
+            this->SetUpKey(true);
+
     }
     else
         e->SetMaxMoveSpeed(e->GetCalmSpeed());
 
 
-    // Specific enraged behaviour for creepy stalking minion
+    // Specific enraged behaviour for creepy stalking minion, normal as of now.
     if(e->GetEnraged()) {
         //std::cout << "Super Angry" << std::endl;
         if (p->GetPositionX() < e->GetPositionX())

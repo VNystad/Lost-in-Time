@@ -51,11 +51,11 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
          * Creating AI
          * Using vector to keep track on AIs
          **********************************/
-        AIVectorPointer->push_back(new AIEnemies(630, 660, 300, &window));
+        AIVectorPointer->push_back(new AIEnemies(730, 671, 300, &window));
         AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, &window));
         AIVectorPointer->push_back(new AIEnemies(1950, 1220, 150, &window));
         AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, &window));
-        //AIVectorPointer->push_back(new AIEnemies(3774, 1270, 100, &window));
+        //AIVectorPointer->push_back(new AIEnemies(3774, 1270, 100, *config, &window));
         AIVectorPointer->push_back(new AIEnemies(1530, 510, 400, &window));
 
         /********************

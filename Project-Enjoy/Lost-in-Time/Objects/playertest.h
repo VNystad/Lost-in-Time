@@ -104,8 +104,6 @@ public:
     float GetFallPower() const { return fallpower; }
 
 protected:
-    std::string playerName;
-
     const int sizeWidth = 34;
     const int sizeHeight = 50;
 
@@ -149,7 +147,7 @@ protected:
 
     const int origjumpspeed = 15;
     float fallspeed;
-    float maxfallspeed = 40;
+    float maxfallspeed = 80;
 
     float jumppower = 650;
     float fallpower = 250;

@@ -72,18 +72,38 @@ CMakeFiles/Lost-in-Time.dir/Objects/playertest.cpp.obj: ../Interface/health.h
 CMakeFiles/Lost-in-Time.dir/Objects/playertest.cpp.obj: ../Objects/playertest.cpp
 CMakeFiles/Lost-in-Time.dir/Objects/playertest.cpp.obj: ../Objects/playertest.h
 
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj: ../Enemy/AI.h
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj: ../Enemy/AIEnemies.h
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj: ../Framework/animation.h
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj: ../Framework/config.h
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj: ../Interface/health.h
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj: ../Objects/playertest.h
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj: ../Objects/savedobject.cpp
+CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj: ../Objects/savedobject.h
+
+CMakeFiles/Lost-in-Time.dir/main.cpp.obj: ../Enemy/AI.h
+CMakeFiles/Lost-in-Time.dir/main.cpp.obj: ../Enemy/AIEnemies.h
+CMakeFiles/Lost-in-Time.dir/main.cpp.obj: ../Framework/animation.h
 CMakeFiles/Lost-in-Time.dir/main.cpp.obj: ../Framework/config.h
+CMakeFiles/Lost-in-Time.dir/main.cpp.obj: ../Interface/health.h
+CMakeFiles/Lost-in-Time.dir/main.cpp.obj: ../Objects/playertest.h
+CMakeFiles/Lost-in-Time.dir/main.cpp.obj: ../Objects/savedobject.h
 CMakeFiles/Lost-in-Time.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/Lost-in-Time.dir/main.cpp.obj: ../state/machine.h
 
+CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../Enemy/AI.h
+CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../Enemy/AIEnemies.h
+CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../Framework/animation.h
 CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../Framework/config.h
+CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../Interface/health.h
+CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../Objects/playertest.h
+CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../Objects/savedobject.h
 CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../state/machine.cpp
 CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../state/machine.h
 CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../state/state.h
 CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../state/stategame.h
 CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../state/stateloadgame.h
 CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../state/statemainmenu.h
-CMakeFiles/Lost-in-Time.dir/state/machine.cpp.obj: ../state/statepause.h
 
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Enemy/AI.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Enemy/AIEnemies.h
@@ -97,6 +117,7 @@ CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Map/map.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Map/object.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Map/tile.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Objects/playertest.h
+CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Objects/savedobject.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../State/machine.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../state/machine.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../state/state.h
@@ -104,21 +125,29 @@ CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../state/stategame.cpp
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../state/stategame.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../testapp.h
 
+CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.obj: ../Enemy/AI.h
+CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.obj: ../Enemy/AIEnemies.h
+CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.obj: ../Framework/animation.h
+CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.obj: ../Framework/config.h
+CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.obj: ../Interface/health.h
+CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.obj: ../Objects/playertest.h
+CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.obj: ../Objects/savedobject.h
 CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.obj: ../state/machine.h
 CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.obj: ../state/state.h
 CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.obj: ../state/stateloadgame.cpp
 CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.obj: ../state/stateloadgame.h
 
+CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj: ../Enemy/AI.h
+CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj: ../Enemy/AIEnemies.h
+CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj: ../Framework/animation.h
 CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj: ../Framework/config.h
+CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj: ../Interface/health.h
+CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj: ../Objects/playertest.h
+CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj: ../Objects/savedobject.h
 CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj: ../state/machine.h
 CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj: ../state/state.h
 CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj: ../state/statemainmenu.cpp
 CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj: ../state/statemainmenu.h
-
-CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj: ../state/machine.h
-CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj: ../state/state.h
-CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj: ../state/statepause.cpp
-CMakeFiles/Lost-in-Time.dir/state/statepause.cpp.obj: ../state/statepause.h
 
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Enemy/AI.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Enemy/AIEnemies.h
@@ -133,6 +162,7 @@ CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Map/map.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Map/object.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Map/tile.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Objects/playertest.h
+CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Objects/savedobject.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../State/machine.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../testapp.cpp
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../testapp.h

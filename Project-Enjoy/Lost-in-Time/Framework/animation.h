@@ -25,6 +25,9 @@ public:
     void AIWalkRight(sf::RectangleShape* character);
     void AIWalkLeft(sf::RectangleShape* character);
 
+    void AIMiniBossWalkRight(sf::RectangleShape* character);
+    void AIMiniBossWalkLeft(sf::RectangleShape* character);
+
 
 protected:
     int IdleCount = 0;
@@ -49,6 +52,9 @@ protected:
     // AI Textures
     sf::Texture AITextureWalkRight;
     sf::Texture AITextureWalkLeft;
+
+    sf::Texture AIMiniBossTextureWalkRight;
+    sf::Texture AIMiniBossTextureWalkLeft;
 };
 
 

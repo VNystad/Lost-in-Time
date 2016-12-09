@@ -405,7 +405,10 @@ void TestApp::AIHandler(float delta)
         }
         else
         {
-            AIVectorPointer->at(i)->AnimationAI();
+            if(AIVectorPointer->at(i)->GetMiniBoss())
+                AIVectorPointer->at(i)->AnimationAIMiniBoss();
+            else
+                AIVectorPointer->at(i)->AnimationAI();
             AIVectorPointer->at(i)->DrawMe();
             AIVectorPointer->at(i)->MonkeyAI1(AIVectorPointer->at(i), p);
             Physics::AIMovement(AIVectorPointer->at(i), p, AIVectorPointer, i, collidableArray, delta);

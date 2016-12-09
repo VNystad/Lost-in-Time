@@ -9,6 +9,7 @@ AIEnemies::AIEnemies(float x, float y, float patrol, sf::RenderWindow *window) :
     this->OriginalY = y;
     this->positionX = this->OriginalX;
     this->positionY = this->OriginalY;
+    this->SetMiniBoss(true);
     if(rand() % 100 < 20)
         this->SetMiniBoss(true);
 

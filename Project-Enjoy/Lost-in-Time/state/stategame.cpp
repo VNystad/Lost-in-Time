@@ -2,9 +2,10 @@
 #include "machine.h"
 #include "../testapp.h"
 
-void StateGame::GoNext(Machine &machine, sf::RenderWindow& window)
+void StateGame::GoNext(Machine &machine, sf::RenderWindow& window, SavedObject& so)
 {
-    TestApp testapp(window);
+    TestApp testapp(window, so);
+
 
     while(testapp.Tick(machine));
 }

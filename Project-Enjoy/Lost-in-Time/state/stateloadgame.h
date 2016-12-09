@@ -3,6 +3,8 @@
 
 
 #include "state.h"
+#include "../Enemy/AIEnemies.h"
+#include "../Objects/savedobject.h"
 
 class StateLoadGame : public State
 {
@@ -11,11 +13,14 @@ public:
     sf::Texture *LoadTexture( std::string path);
     bool loadMedia();
 
-    void LoadGame(int selected);
+    void LoadGame(int selected, sf::RenderWindow& window, SavedObject&);
 
-    void GoNext(Machine &machine, sf::RenderWindow& window);
+    void GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&);
+
+
 
 protected:
+
     // Flag for keypressed
     bool keyPressed = false;
     // Flag for while loop
@@ -30,9 +35,12 @@ protected:
     sf::Texture* save1 = nullptr;
     sf::Texture* save2 = nullptr;
     sf::Texture* save3 = nullptr;
+    sf::Texture* selectedTexture = nullptr;
+
     sf::Sprite* save1Sprite = nullptr;
     sf::Sprite* save2Sprite = nullptr;
     sf::Sprite* save3Sprite = nullptr;
+    sf::Sprite* selectedSprite = nullptr;
 };
 
 

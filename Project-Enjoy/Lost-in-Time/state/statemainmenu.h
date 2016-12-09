@@ -11,7 +11,7 @@ public:
     sf::Texture *LoadTexture( std::string path);
     bool loadMedia();
 
-    void GoNext(Machine &machine, sf::RenderWindow& window);
+    void GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&);
 
 protected:
     int menuAmount = 0;

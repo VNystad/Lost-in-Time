@@ -1,7 +1,6 @@
 #include "machine.h"
 #include "state.h"
 #include "statemainmenu.h"
-#include "statepause.h"
 #include "stategame.h"
 #include "stateloadgame.h"
 
@@ -18,7 +17,6 @@ Machine::Machine()
     states.emplace(StateId::GAME, new StateGame());
     states.emplace(StateId::MAINMENU, new StateMainMenu());
     states.emplace(StateId::LOAD, new StateLoadGame());
-    states.emplace(StateId::PAUSE, new StatePause());
 }
 
 // Destructing machine
@@ -32,9 +30,9 @@ Machine::~Machine()
 }
 
 // Go to next state
-void Machine::GoNext(sf::RenderWindow& window)
+void Machine::GoNext(sf::RenderWindow& window, SavedObject& SO)
 {
-    states[state]->GoNext(*this, window);
+    states[state]->GoNext(*this, window, SO);
 }
 
 // Sets state

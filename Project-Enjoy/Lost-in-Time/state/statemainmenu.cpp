@@ -38,7 +38,7 @@ bool StateMainMenu::loadMedia()
     return success;
 }
 
-void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window)
+void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&)
 {
     //Key pressed flag off
     keypressed = false;

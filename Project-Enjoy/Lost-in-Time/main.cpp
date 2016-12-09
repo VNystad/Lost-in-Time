@@ -1,6 +1,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include "state/machine.h"
 #include "Framework/config.h"
+#include "Objects/savedobject.h"
 
 int main()
 {
@@ -15,9 +16,11 @@ int main()
     window->setFramerateLimit(60);
     window->setMouseCursorVisible(false);
 
+    SavedObject savedObject;
+
     // run until running flag is false
     while(machine.GetRunning())
-        machine.GoNext(*window);
+        machine.GoNext(*window, savedObject);
 
     return 0;
 }

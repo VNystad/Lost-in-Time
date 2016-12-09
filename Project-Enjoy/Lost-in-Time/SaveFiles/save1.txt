@@ -1,12 +1,20 @@
-Player name
-
-Player HP
-100
-Player position
-654.534,622
-Player elapsed time
-16.64
-Enemy positions separated with new line
-3007,802
-220,1244
-781,694
+vebis
+32
+501.165
+526
+10.1182
+1156
+516
+1156
+2176
+260
+2139064320
+1888
+1283
+1888
+273
+1232
+273
+383
+708
+383

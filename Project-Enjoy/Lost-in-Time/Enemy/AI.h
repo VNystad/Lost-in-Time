@@ -12,7 +12,7 @@
 class AI
 {
 public:
-    AI(float x, float y, const Config& config, sf::RenderWindow* window);
+    AI(float x, float y, sf::RenderWindow* window);
 
     sf::RectangleShape* character;
     Animation animation;
@@ -242,7 +242,6 @@ protected:
     int counter = 0; // Counter for animation
     int lastmovedirection = 2;
 
-    const Config& config;
     sf::RenderWindow* window;
 
 

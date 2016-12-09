@@ -50,15 +50,13 @@ set(SOURCE_FILES
         state/stategame.h
         state/statemainmenu.cpp
         state/statemainmenu.h
-        state/statepause.cpp
-        state/statepause.h
 
         main.cpp
         testapp.cpp
         testapp.h
 
 
-        Framework/music.cpp Framework/music.h)
+        Framework/music.cpp Framework/music.h Objects/savedobject.cpp Objects/savedobject.h)
 
 add_executable(Lost-in-Time ${SOURCE_FILES})
 

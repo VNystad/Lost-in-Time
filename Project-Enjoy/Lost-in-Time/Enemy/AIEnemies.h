@@ -7,7 +7,7 @@
 
 class AIEnemies: public AI {
 public:
-    AIEnemies(float x, float y, float patrol, const Config &config, sf::RenderWindow *window);
+    AIEnemies(float x, float y, float patrol, sf::RenderWindow *window);
 
     void MonkeyAI1(AIEnemies* e, PlayerTest* p);
 

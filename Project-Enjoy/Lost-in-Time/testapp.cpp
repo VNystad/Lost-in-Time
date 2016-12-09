@@ -3,94 +3,197 @@
 #include "testapp.h"
 #include "Framework/physics.h"
 
-TestApp::TestApp(sf::RenderWindow& window)
+TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
 {
-    this->config = config;
-    this->window = &window;
-
-    /*****************
-     * Load in images
-     ****************/
-    LoadImages();
-
-    /*************************************************
-     * Making 2D array for collidable tiles
-     ************************************************/
-    collidableArray = new int*[ArraySize];
-    collidableArray[0] = new int[ArraySize * ArraySize];
-    for (int i = 1; i < ArraySize; i++)
+    if(!so.LoadFromSave())
     {
-        collidableArray[i] = collidableArray[i - 1] + ArraySize;
-    }
+        this->config = config;
+        this->window = &window;
 
-    /*************************************************
-     * Load map information from JSON into object list
-     ************************************************/
-    if (!Map::load("data/map.json", objects, collidableArray))
+        /*****************
+         * Load in images
+         ****************/
+        LoadImages();
+
+        /*************************************************
+         * Making 2D array for collidable tiles
+         ************************************************/
+        collidableArray = new int*[ArraySize];
+        collidableArray[0] = new int[ArraySize * ArraySize];
+        for (int i = 1; i < ArraySize; i++)
+        {
+            collidableArray[i] = collidableArray[i - 1] + ArraySize;
+        }
+
+        /*************************************************
+         * Load map information from JSON into object list
+         ************************************************/
+        if (!Map::load("data/map.json", objects, collidableArray))
+        {
+            std::cout << "Failed to load map data." << std::endl << std::endl;
+        }
+
+        /*****************************************
+         * Set camera position in middle of screen
+         ****************************************/
+
+        sf::View view = window.getDefaultView();
+        view.setSize(view.getSize().x, view.getSize().y);
+        view.setCenter(view.getCenter().x, view.getCenter().y);
+        window.setView(view);
+
+        /********************|
+         * Create the player
+         *******************/
+        p = new PlayerTest(180, 1, *config, &window);
+
+        /***********************************
+         * Creating AI
+         * Using vector to keep track on AIs
+         **********************************/
+        AIVectorPointer->push_back(new AIEnemies(630, 660, 300, &window));
+        AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, &window));
+        AIVectorPointer->push_back(new AIEnemies(1950, 1220, 150, &window));
+        AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, &window));
+        //AIVectorPointer->push_back(new AIEnemies(3774, 1270, 100, &window));
+        AIVectorPointer->push_back(new AIEnemies(1530, 510, 400, &window));
+
+        /********************
+         * Create the clock
+         * Used to find delta
+         *******************/
+        clock = new sf::Clock;
+        clock->restart();
+
+        //TEST
+        currentView = new sf::View;
+
+
+        /********************
+         * Play Music
+         *******************/
+        music = new Music();
+        music->music.setLoop(true);
+        music->playMusic("/Jungle Theme 2.ogg");
+
+        /***********************************
+         * Creating Timer and text for timer
+         **********************************/
+        sf::Font font;
+        if(!font.loadFromFile("data/TNRfont.ttf"))
+            std::cout << "Could not load font from directory 'data/font.ttf'" << std::endl;
+        timer = new sf::Clock();
+        timerInText = new sf::Text;
+        timerInText->setCharacterSize(50);
+        //timerInText->setFont(font);
+        timerInText->setStyle(sf::Text::Bold);
+        timerInText->setColor(sf::Color::Red);
+        timerInText->setOutlineColor(sf::Color::Green);
+        timerInText->setOutlineThickness(2);
+        timerInText->setString("Hi");
+
+    }
+        /****************************************************************************
+         *                   LOADED FROM SAVE
+         ***************************************************************************/
+    else
     {
-        std::cout << "Failed to load map data." << std::endl << std::endl;
+        this->config = config;
+        this->window = &window;
+
+        /*****************
+         * Load in images
+         ****************/
+        LoadImages();
+
+        /*************************************************
+         * Making 2D array for collidable tiles
+         ************************************************/
+        collidableArray = new int*[ArraySize];
+        collidableArray[0] = new int[ArraySize * ArraySize];
+        for (int i = 1; i < ArraySize; i++)
+        {
+            collidableArray[i] = collidableArray[i - 1] + ArraySize;
+        }
+
+        /*************************************************
+         * Load map information from JSON into object list
+         ************************************************/
+        if (!Map::load("data/map.json", objects, collidableArray))
+        {
+            std::cout << "Failed to load map data." << std::endl << std::endl;
+        }
+
+        /*****************************************
+         * Set camera position in middle of screen
+         ****************************************/
+
+        sf::View view = window.getDefaultView();
+        view.setSize(view.getSize().x, view.getSize().y);
+        view.setCenter(view.getCenter().x, view.getCenter().y);
+        window.setView(view);
+
+        /********************|
+         * Create the player
+         *******************/
+        p = new PlayerTest(so.GetPlayerX(), so.GetPlayerY(), *config, &window);
+        p->health.SetActualLifePoints(so.GetPlayerHP());
+
+
+        /***********************************
+         * Creating AI
+         * Using vector to keep track on AIs
+         **********************************/
+        for(int i = 0; i<so.GetAIVectorPointer()->size(); i++)
+        {
+            int x = so.GetAIVectorPointer()->at(i)->GetPositionX();
+            int y = so.GetAIVectorPointer()->at(i)->GetPositionY();
+            int patrol = so.GetAIVectorPointer()->at(i)->GetPositionX()-so.GetAIVectorPointer()->at(i)->GetPatrolLeft();
+            AIVectorPointer->push_back(new AIEnemies(x, y, patrol, &window));
+        }
+        /*AIVectorPointer->push_back(new AIEnemies(630, 660, 300, &window));
+        AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, &window));
+        AIVectorPointer->push_back(new AIEnemies(1950, 1220, 150, &window));
+        AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, &window));
+        //AIVectorPointer->push_back(new AIEnemies(3774, 1270, 100, &window));
+        AIVectorPointer->push_back(new AIEnemies(1530, 510, 400, &window));*/
+
+        /********************
+         * Create the clock
+         * Used to find delta
+         *******************/
+        clock = new sf::Clock;
+        clock->restart();
+
+        //TEST
+        currentView = new sf::View;
+
+
+        /********************
+         * Play Music
+         *******************/
+        music = new Music();
+        music->music.setLoop(true);
+        music->playMusic("/Jungle Theme 2.ogg");
+
+        /***********************************
+         * Creating Timer and text for timer
+         **********************************/
+        sf::Font font;
+        if(!font.loadFromFile("data/TNRfont.ttf"))
+            std::cout << "Could not load font from directory 'data/font.ttf'" << std::endl;
+        timer = new sf::Clock();
+        timerInText = new sf::Text;
+        timerInText->setCharacterSize(50);
+        //timerInText->setFont(font);
+        timerInText->setStyle(sf::Text::Bold);
+        timerInText->setColor(sf::Color::Red);
+        timerInText->setOutlineColor(sf::Color::Green);
+        timerInText->setOutlineThickness(2);
+        timerInText->setString("Hi");
+
+        penaltyTime = so.GetTimeElapsed();
     }
-
-    /*****************************************
-     * Set camera position in middle of screen
-     ****************************************/
-
-    sf::View view = window.getDefaultView();
-    view.setSize(view.getSize().x, view.getSize().y);
-    view.setCenter(view.getCenter().x, view.getCenter().y);
-    window.setView(view);
-
-    /********************|
-     * Create the player
-     *******************/
-    p = new PlayerTest(180, 1, *config, &window);
-
-    /***********************************
-     * Creating AI
-     * Using vector to keep track on AIs
-     **********************************/
-    AIVectorPointer->push_back(new AIEnemies(630, 660, 300, *config, &window));
-    AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, *config, &window));
-    AIVectorPointer->push_back(new AIEnemies(1950, 1220, 150, *config, &window));
-    AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, *config, &window));
-    //AIVectorPointer->push_back(new AIEnemies(3774, 1270, 100, *config, &window));
-    AIVectorPointer->push_back(new AIEnemies(1530, 510, 400, *config, &window));
-
-    /********************
-     * Create the clock
-     * Used to find delta
-     *******************/
-    clock = new sf::Clock;
-    clock->restart();
-
-    //TEST
-    currentView = new sf::View;
-
-
-    /********************
-     * Play Music
-     *******************/
-    music = new Music();
-    music->music.setLoop(true);
-    music->playMusic("/Jungle Theme 2.ogg");
-
-    /***********************************
-     * Creating Timer and text for timer
-     **********************************/
-    sf::Font font;
-    if(!font.loadFromFile("data/TNRfont.ttf"))
-        std::cout << "Could not load font from directory 'data/font.ttf'" << std::endl;
-    timer = new sf::Clock();
-    timerInText = new sf::Text;
-    timerInText->setCharacterSize(50);
-    //timerInText->setFont(font);
-    timerInText->setStyle(sf::Text::Bold);
-    timerInText->setFillColor(sf::Color::Red);
-    timerInText->setOutlineColor(sf::Color::Green);
-    timerInText->setOutlineThickness(2);
-    timerInText->setString("Hi");
-
-
 }
 
 bool TestApp::Tick(Machine& machine)
@@ -132,10 +235,10 @@ bool TestApp::Tick(Machine& machine)
         EscMenuTime = EscMenuTime + timer->getElapsedTime().asSeconds() - tempTime;
     }
 
-    /********************************
-     * If player press P Pause game
-     * If player press R Resume game
-     *******************************/
+        /********************************
+         * If player press P Pause game
+         * If player press R Resume game
+         *******************************/
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
     {
         music->music.pause();
@@ -145,19 +248,19 @@ bool TestApp::Tick(Machine& machine)
         }
         music->music.play();
     }
-    // For testing only, prints out player position
+        // For testing only, prints out player position
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
         std::cout << p->GetPositionX() << " " << p->GetPositionY() << std::endl;
 
-    // When player presses G, player character is damaged. For testing purposes
+        // When player presses G, player character is damaged. For testing purposes
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::G) && p->health.GetActualLifePoints() > 0)
         p->health.Hit(5);
 
-    // When player presses H, player character is healed. For testing purposes
+        // When player presses H, player character is healed. For testing purposes
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H) && p->health.GetActualLifePoints() < 100)
         p->health.Healed(5);
 
-    // If player press M, mute music
+        // If player press M, mute music
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
     {
         music->music.pause();
@@ -365,7 +468,9 @@ bool TestApp::SaveGame(int selectedSave)
 {
     std::string name;
     std::cout << "Please type name" << std::endl;
+    std::getline(std::cin , name);
     int enemyCount = (AIVector.size());
+    enemyCount = AIVectorPointer->size();
 
 
     std::ofstream savefile;
@@ -376,20 +481,20 @@ bool TestApp::SaveGame(int selectedSave)
     else if(selectedSave == 3)
         savefile.open("SaveFiles/save3.txt");
 
-    savefile << "Player name" << std::endl;
     savefile << name << std::endl;
-    savefile << "Player HP" << std::endl;
     savefile << p->health.GetActualLifePoints() << std::endl;
-    savefile << "Player position" << std::endl;
-    savefile << p->GetPositionX() << "," << p->GetPositionY() << std::endl;
-    savefile << "Player elapsed time" << std::endl;
-    savefile << timer->getElapsedTime().asSeconds() + penaltyTime << std::endl;
-    savefile << "Enemy positions separated with new line" << std::endl;
+    savefile << p->GetPositionX() << std::endl;
+    savefile << p->GetPositionY() << std::endl;
+    savefile << timer->getElapsedTime().asSeconds() + penaltyTime;
     while(enemyCount != 0)
     {
+        //int positionX = AIVector->at(enemyCount-1)->GetOriginalX();
         int positionX = AIVectorPointer->at(enemyCount-1)->GetPositionX();
         int positionY = AIVectorPointer->at(enemyCount-1)->GetPositionY();
-        savefile << positionX << "," << positionY << std::endl;
+        int patrol = AIVectorPointer->at(enemyCount-1)->GetPositionX() - AIVectorPointer->at(enemyCount-1)->GetPatrolRight();
+        savefile << std::endl << positionX;
+        savefile << std::endl << positionY;
+        savefile << std::endl << patrol;
         enemyCount--;
     }
     savefile.close();
@@ -406,34 +511,34 @@ int TestApp::menuSelected(std::string menu)
     int MenuPositionY = p->GetPositionY() - 200;
 
     while(1){
-    if(!menu.compare("EscMenu"))
-    {
+        if(!menu.compare("EscMenu"))
+        {
 
-        resumeGameSprite.setPosition(MenuPositionX, MenuPositionY);
-        saveGameSprite.setPosition(MenuPositionX, MenuPositionY + 100);
-        mainMenuSprite.setPosition(MenuPositionX, MenuPositionY + 200);
-        exitGameSprite.setPosition(MenuPositionX, MenuPositionY + 300);
-        window->clear(sf::Color::Black);
-        // Load images for esc menu
-        window->draw(resumeGameSprite);
-        window->draw(saveGameSprite);
-        window->draw(mainMenuSprite);
-        window->draw(exitGameSprite);
-        amountOfChoices = amountOfEscOptions;
-    }
+            resumeGameSprite.setPosition(MenuPositionX, MenuPositionY);
+            saveGameSprite.setPosition(MenuPositionX, MenuPositionY + 100);
+            mainMenuSprite.setPosition(MenuPositionX, MenuPositionY + 200);
+            exitGameSprite.setPosition(MenuPositionX, MenuPositionY + 300);
+            window->clear(sf::Color::Black);
+            // Load images for esc menu
+            window->draw(resumeGameSprite);
+            window->draw(saveGameSprite);
+            window->draw(mainMenuSprite);
+            window->draw(exitGameSprite);
+            amountOfChoices = amountOfEscOptions;
+        }
 
-    else if(!menu.compare("SaveGameMenu")) // If menu equals "SaveGameMenu";
-    {
-        window->clear(sf::Color::Black);
-        save1Sprite.setPosition(MenuPositionX, MenuPositionY);
-        save2Sprite.setPosition(MenuPositionX, MenuPositionY + 100);
-        save3Sprite.setPosition(MenuPositionX, MenuPositionY + 200);
-        // Load images for savegame menu
-        window->draw(save1Sprite);
-        window->draw(save2Sprite);
-        window->draw(save3Sprite);
-        amountOfChoices = amountOfSaves;
-    }
+        else if(!menu.compare("SaveGameMenu")) // If menu equals "SaveGameMenu";
+        {
+            window->clear(sf::Color::Black);
+            save1Sprite.setPosition(MenuPositionX, MenuPositionY);
+            save2Sprite.setPosition(MenuPositionX, MenuPositionY + 100);
+            save3Sprite.setPosition(MenuPositionX, MenuPositionY + 200);
+            // Load images for savegame menu
+            window->draw(save1Sprite);
+            window->draw(save2Sprite);
+            window->draw(save3Sprite);
+            amountOfChoices = amountOfSaves;
+        }
 
 
         if(!keyPressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
@@ -453,7 +558,7 @@ int TestApp::menuSelected(std::string menu)
         else if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
             keyPressed = false;
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
-                return choice;
+            return choice;
 
         selectedSprite.setPosition(p->GetPositionX() + 250, p->GetPositionY() - 300 + choice*100);
         window->draw(selectedSprite);

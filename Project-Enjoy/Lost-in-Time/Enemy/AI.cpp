@@ -1,7 +1,7 @@
 #include <iostream>
 #include "AI.h"
 
-AI::AI(float positionX, float positionY, const Config& config, sf::RenderWindow* window) : config(config), window(window)
+AI::AI(float positionX, float positionY, sf::RenderWindow* window) : window(window)
 {
     this->positionX = OriginalX;
     this->positionY = OriginalY;

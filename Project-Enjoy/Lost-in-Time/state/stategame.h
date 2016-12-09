@@ -6,7 +6,7 @@
 class StateGame : public State
 {
 public:
-    void GoNext(Machine &machine, sf::RenderWindow& window);
+    void GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&);
 };
 
 

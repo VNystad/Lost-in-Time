@@ -17,7 +17,7 @@
 class TestApp
 {
 public:
-    TestApp(sf::RenderWindow& window);
+    TestApp(sf::RenderWindow& window, SavedObject);
     bool Tick(Machine& machine);
     void Move(float delta);
     void AIHandler(float delta);

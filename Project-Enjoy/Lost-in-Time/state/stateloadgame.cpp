@@ -22,6 +22,7 @@ bool StateLoadGame::loadMedia()
     save1 = LoadTexture("data/loadgame/save1.png");
     save2 = LoadTexture("data/loadgame/save2.png");
     save3 = LoadTexture("data/loadgame/save3.png");
+    selectedTexture = LoadTexture("data/EscMenu/selected.png");
 
     save1Sprite = new sf::Sprite;
     save1Sprite->setTexture(*save1);
@@ -32,81 +33,74 @@ bool StateLoadGame::loadMedia()
     save3Sprite = new sf::Sprite;
     save3Sprite->setTexture(*save3);
     save3Sprite->setPosition(-70, 180);
+    selectedSprite = new sf::Sprite;
+    selectedSprite->setTexture(*selectedTexture);
 
     return true;
 }
 /**
  * Loads the selected game:
  * Player name
- * Player position
  * Player hp
+ * Player position
  * Player elapsed time
- * Score?
  * Alive enemies position
  * @param selected The selected int value of a save
  */
-void StateLoadGame::LoadGame(int selected)
+void StateLoadGame::LoadGame(int selected, sf::RenderWindow& window, SavedObject& so)
 {
     std::ifstream saveFile;
-    std::string test;
-    if(selected == 1) // Selected save 1
-    {
-        // Open save file 1
+    std::string temp;
+    std::string playerName;
+    int playerHP;
+    int playerX;
+    int playerY;
+    int timeElapsed;
+    if(selected == 1)
         saveFile.open("SaveFiles/save1.txt");
+    else if(selected == 2)
+        saveFile.open("SaveFiles/save2.txt");
+    else if(selected == 3)
+        saveFile.open("SaveFiles/save3.txt");
 
-        // Read information from file
-        if(saveFile.is_open())
-            // While saveFile end of file flag not set
-            while(!saveFile.eof())
-            {
-                std::getline(saveFile, test);
-                std::cout << test << std::endl;
-            }
-        saveFile.close();
-        std::cout << "Loaded save file 1" << std::endl;
 
-        // Place player on saved location
-        // Load player HP
-
-        // Place alive enemies on saved location
-        // Load score
-        // Load time elapsed
-
-        // Start up game 1
-    }
-    else if(selected == 2) // Selected save 2
+    // Read information from file
+    if(saveFile.is_open())
     {
-        //saveFile.open("SaveFiles/save2.txt");
-        // Read information from file save 2
-        // Place player on saved location
-        // Place alive enemies on saved location
-        // Load score
-        // Load time elapsed
 
-        // Start up game 2
-    }
-    else if(selected == 3) // Selected save 3
-    {
-        //saveFile.open("SaveFiles/save2.txt");
-        // Read information from file save 3
-        // Place player on saved location
-        // Place alive enemies on saved location
-        // Load score
-        // Load time elapsed
+        // Load player first
+        std::getline(saveFile, playerName);
+        std::getline(saveFile, temp);
+        std::cout << temp << std::endl;
+        playerHP = std::stoul(temp);
+        std::getline(saveFile, temp);
+        playerX = std::stoul(temp);
+        std::getline(saveFile, temp);
+        playerY = std::stoul(temp);
+        std::getline(saveFile, temp);
+        timeElapsed = std::stoul(temp);
+        so.LoadPlayer(playerName, playerHP, playerX, playerY, timeElapsed);
 
-        // Start up game 3
+        // Then load AI
+        while(!saveFile.eof())
+        {
+            std::getline(saveFile, temp);
+            int x = std::stoul(temp);
+            std::getline(saveFile, temp);
+            int y = std::stoul(temp);
+            std::getline(saveFile, temp);
+            int patrol = std::stoul(temp);
+            so.LoadAI(x, y, patrol, window);
+        }
     }
+    saveFile.close();
+    std::cout << "Loaded save file 1" << std::endl;
 }
 
-void StateLoadGame::GoNext(Machine &machine, sf::RenderWindow& window)
+void StateLoadGame::GoNext(Machine &machine, sf::RenderWindow& window, SavedObject& so)
 {
     loadMedia();
-
-
-
     while (inLoad) {
-
-
         while (window.pollEvent(event)) {
             //If X clicked on window
             if (event.type == sf::Event::Closed) {
@@ -143,30 +137,21 @@ void StateLoadGame::GoNext(Machine &machine, sf::RenderWindow& window)
         // Clear window
         window.clear(sf::Color::Black);
 
-        if(selected == 1)
-        {
-            window.draw(*save1Sprite); // Change to save1SpriteSelected later
-            window.draw(*save2Sprite);
-            window.draw(*save3Sprite);
-        }
-        else if(selected == 2)
-        {
-            window.draw(*save1Sprite);
-            window.draw(*save2Sprite); // Change to save2SpriteSelected later
-            window.draw(*save3Sprite);
-        }
-        else if(selected == 3)
-        {
-            window.draw(*save1Sprite);
-            window.draw(*save2Sprite);
-            window.draw(*save3Sprite); // Change to save3SpriteSelected later
-        }
+        window.draw(*save1Sprite); // Change to save1SpriteSelected later
+        window.draw(*save2Sprite);
+        window.draw(*save3Sprite);
 
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return) && keyPressed)
+        selectedSprite->setPosition(300, -20 + (selected-1) * 100);
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return) && !keyPressed)
         {
-            LoadGame(selected);
+            LoadGame(selected, window, so);
+            machine.SetState(Machine::StateId::GAME);
+            return;
         }
+        window.draw(*selectedSprite);
 
         window.display();
     }
 }
+

@@ -3,7 +3,7 @@
 #include <iostream>
 
 
-AIEnemies::AIEnemies(float x, float y, float patrol, const Config &config, sf::RenderWindow *window) : AI(x, y, config, window)
+AIEnemies::AIEnemies(float x, float y, float patrol, sf::RenderWindow *window) : AI(x, y, window)
 {
     this->OriginalX = x;
     this->OriginalY = y;

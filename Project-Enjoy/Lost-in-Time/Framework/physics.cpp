@@ -25,13 +25,13 @@ void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
         {
             p->SetMoveSpeedR(0);
             p->SetMoveSpeedL(400);
-            p->health.Hit(50);
+            p->health.Hit(10);
         }
         else if(p->GetPlayerHurt() == 1)
         {
             p->SetMoveSpeedL(0);
             p->SetMoveSpeedR(400);
-            p->health.Hit(50);
+            p->health.Hit(10);
         }
         p->SetPlayerHurt(5);
     }
@@ -141,7 +141,7 @@ void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
     {
         //Checks if object is landing at a harmfull velocity, if so, harms it.
         if(p->GetFallSpeed() > p->GetMaxFallSpeed()/2.5)
-            p->health.Hit(p->GetFallSpeed()*1.2);
+            p->health.Hit(p->GetFallSpeed()*0.2);
         p->SetJumpCheck(false);
         p->SetFallSpeed(0);
         float temp = p->GetOrigJumpSpeed();

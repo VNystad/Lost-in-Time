@@ -1,6 +1,6 @@
 
+#include <stdlib.h>
 #include "AIEnemies.h"
-#include <iostream>
 
 
 AIEnemies::AIEnemies(float x, float y, float patrol, sf::RenderWindow *window) : AI(x, y, window)

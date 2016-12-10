@@ -46,7 +46,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         /********************|
          * Create the player
          *******************/
-        p = new PlayerTest(180, 1, *config, &window);
+        p = new PlayerTest(180, 206, *config, &window);
 
         /***********************************
          * Creating AI
@@ -115,6 +115,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
     timerInText->setCharacterSize(30);
     timerInText->setStyle(sf::Text::Regular);
     timerInText->setColor(sf::Color::White);
+
 }
 
 bool TestApp::Tick(Machine& machine)
@@ -133,6 +134,13 @@ bool TestApp::Tick(Machine& machine)
     timerInText->setString(tempForTime);
     // Positioning the timerInText on upper right corner of player
     timerInText->setPosition(timerX, timerY);
+
+    /********************
+     * POSITION HEALTHBAR
+     *******************/
+    //p->health.SetPosition(currentView->getCenter().x, timerY + 250);
+    p->health.SetPosition(currentView->getCenter().x - 70, p->GetPositionY() - 230);
+
 
 
     // Get events from OS
@@ -232,9 +240,12 @@ bool TestApp::Tick(Machine& machine)
     }
 
     p->DrawMe();
-    p->health.DrawMe();
+
     AIHandler(delta);
     window->draw(*timerInText);
+    // Update health before displaying it ( Will not be in use in this version )
+    // p->health.UpdateHealth();
+    p->health.DrawMe(*window);
 
     window->display();
 
@@ -521,6 +532,7 @@ void TestApp::LoadImages()
     save1Sprite.setTexture(*save1);
     save2Sprite.setTexture(*save2);
     save3Sprite.setTexture(*save3);
+
 
     selectedSprite.setTexture(*selected);
     resumeGameSprite.setTexture(*resumeGame);

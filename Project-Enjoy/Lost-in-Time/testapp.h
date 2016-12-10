@@ -29,6 +29,7 @@ public:
     void LoadImages();
     sf::Texture* LoadTexture( std::string path, int &menuAmount); // Function to load in textures
 protected:
+    int count;
     bool keyPressed = false;
     bool saveMenuUp = false;
     bool menuUp = false;

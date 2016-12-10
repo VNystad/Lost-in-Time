@@ -20,7 +20,9 @@ bool Map::load(std::string filename, std::list<Object*>& objects, int** collidab
 	// Read data from file into root object
 	bool parsingSuccessful = reader.parse(file, root);
     if (parsingSuccessful)
+	{
         std::cout << "Succesfully read from file into root object." << std::endl << std::endl;
+	}
 
 	// Get tile size information
 	TileSize tileSize;

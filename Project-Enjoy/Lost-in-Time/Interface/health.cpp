@@ -10,29 +10,36 @@
  */
 void Health::init()
 {
-    if (!greenHealthTexture.loadFromFile("data/HUD/Health/Lost-in-Time_health-bar-green.png"))
+    greenHealthTexture = new sf::Texture;
+    redHealthTexture = new sf::Texture;
+    HealthBorderTexture = new sf::Texture;
+    if (!greenHealthTexture->loadFromFile("data/HUD/Health/Lost-in-Time_health-bar-green.png"))
         std::cerr << "Could not load file: data/HUD/Health/Lost-in-Time_health-bar-green.png" << std::endl;
-    if (!redHealthTexture.loadFromFile("data/HUD/Health/Lost-in-Time_health-bar-red.png"))
+    if (!redHealthTexture->loadFromFile("data/HUD/Health/Lost-in-Time_health-bar-red.png"))
         std::cerr << "Could not load file: data/HUD/Health/Lost-in-Time_health-bar-red.png" << std::endl;
-    if (!HealthBorderTexture.loadFromFile("data/HUD/Health/Lost-in-Time_health-bar-border.png"))
+    if (!HealthBorderTexture->loadFromFile("data/HUD/Health/Lost-in-Time_health-bar-border.png"))
         std::cerr << "Could not load file: data/HUD/Health/Lost-in-Time_health-bar-border.png" << std::endl;
 
-    greenHealthbar.setTexture(&greenHealthTexture);
-    greenHealthbarFrame = new sf::IntRect(0,0,width,height);
-    greenHealthbar.setTextureRect(*greenHealthbarFrame);
+    greenHealthFrame = new sf::IntRect(0,0,width,height);
+    greenHealthSprite = new sf::Sprite;
+    greenHealthSprite->setTexture(*greenHealthTexture);
 
-    redHealthbar.setTexture(&redHealthTexture);
-    redHealthbarFrame = new sf::IntRect(0,0,width,height);
-    redHealthbar.setTextureRect(*redHealthbarFrame);
+    redHealthFrame = new sf::IntRect(0,0,width,height);
+    redHealthSprite = new sf::Sprite;
+    redHealthSprite->setTexture(*redHealthTexture);
 
-    HealthbarBorder.setTexture(&HealthBorderTexture);
-    HealthbarBorderFrame = new sf::IntRect(0,0,width,height);
-    HealthbarBorder.setTextureRect(*HealthbarBorderFrame);
+    HealthBorderSprite = new sf::Sprite;
+    HealthBorderSprite->setTexture(*HealthBorderTexture);
 
-    greenHealthbar.setPosition(10,10);
-    redHealthbar.setPosition(10,10);
-    HealthbarBorder.setPosition(10,10);
+}
 
+void Health::SetPosition(int x, int y)
+{
+    greenHealthSprite->setPosition(x, y);
+    redHealthSprite->setPosition(x, y);
+    HealthBorderSprite->setPosition(x, y);
+    this->x = x;
+    this->y = y;
 }
 
 float Health::GetOriginalLifePoints()
@@ -158,17 +165,17 @@ void Health::Healed(int health)
 // health:  50 => (50 / 100) * fullWidth  = 0.5  * fullWidth
 // health:  75 => (75 / 100) * fullWidth  = 0.75 * fullWidth
 // health: 100 => (100 / 100) * fullWidth = 1    * fullWidth = fullWidth
-void Health::DrawMe()
+void Health::DrawMe(sf::RenderWindow& window)
 {
-    float fullWidth = 100;
+    int fullWidth = 100;
 
-    greenHealthbarFrame->left = (actuallifepoints / 100) * fullWidth;
-    greenHealthbar.setTextureRect(*greenHealthbarFrame);
-    redHealthbarFrame->left = (visiblelifepoints / 100) * fullWidth;
-    redHealthbar.setTextureRect(*redHealthbarFrame);
+    greenHealthFrame->width = (actuallifepoints / 100) * fullWidth;
+    greenHealthSprite->setTextureRect(*greenHealthFrame);
+    redHealthFrame->width = (visiblelifepoints / 100) * fullWidth;
+    redHealthSprite->setTextureRect(*redHealthFrame);
 
-    window.draw(greenHealthbar);
-    window.draw(redHealthbar);
-    window.draw(HealthbarBorder);
-    window.display();
+    //window.draw(*greenHealthbar);
+    window.draw(*HealthBorderSprite);
+    window.draw(*redHealthSprite);
+    window.draw(*greenHealthSprite);
 }

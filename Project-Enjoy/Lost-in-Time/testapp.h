@@ -84,6 +84,9 @@ protected:
     // Stuff for timer
     sf::Clock* timer;
     sf::Text* timerInText;
+    sf::Font* font;
+    int timerX;
+    int timerY;
     int penaltyTime = 0;
     int EscMenuTime = 0;
 

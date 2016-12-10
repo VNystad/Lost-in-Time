@@ -5,43 +5,44 @@
 
 TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
 {
-    if(!so.LoadFromSave())
+
+    this->config = config;
+    this->window = &window;
+
+    /*****************
+     * Load in images
+     ****************/
+    LoadImages();
+
+    /****************************************************************************
+     *                            LOADED FROM SAVE
+     ***************************************************************************/
+    if(so.LoadFromSave())
     {
-        this->config = config;
-        this->window = &window;
+        /********************|
+         * Create the player
+         *******************/
+        p = new PlayerTest(so.GetPlayerX(), so.GetPlayerY(), *config, &window);
+        p->health.SetActualLifePoints(so.GetPlayerHP());
 
-        /*****************
-         * Load in images
-         ****************/
-        LoadImages();
-
-        /*************************************************
-         * Making 2D array for collidable tiles
-         ************************************************/
-        collidableArray = new int*[ArraySize];
-        collidableArray[0] = new int[ArraySize * ArraySize];
-        for (int i = 1; i < ArraySize; i++)
+        /***********************************
+         * Creating AI
+         * Using vector to keep track on AIs
+         **********************************/
+        for(int i = 0; i<so.GetAIVectorPointer()->size(); i++)
         {
-            collidableArray[i] = collidableArray[i - 1] + ArraySize;
+            int x = so.GetAIVectorPointer()->at(i)->GetPositionX();
+            int y = so.GetAIVectorPointer()->at(i)->GetPositionY();
+            int patrol = so.GetAIVectorPointer()->at(i)->GetPositionX()-so.GetAIVectorPointer()->at(i)->GetPatrolLeft();
+            AIVectorPointer->push_back(new AIEnemies(x, y, patrol, &window));
         }
 
-        /*************************************************
-         * Load map information from JSON into object list
-         ************************************************/
-        if (!Map::load("data/map.json", objects, collidableArray))
-        {
-            std::cout << "Failed to load map data." << std::endl << std::endl;
-        }
-
-        /*****************************************
-         * Set camera position in middle of screen
-         ****************************************/
-
-        sf::View view = window.getDefaultView();
-        view.setSize(view.getSize().x, view.getSize().y);
-        view.setCenter(view.getCenter().x, view.getCenter().y);
-        window.setView(view);
-
+    }
+    /****************************************************************************
+     *                             NEW GAME
+     ***************************************************************************/
+    else
+    {
         /********************|
          * Create the player
          *******************/
@@ -57,143 +58,63 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, &window));
         //AIVectorPointer->push_back(new AIEnemies(3774, 1270, 100, *config, &window));
         AIVectorPointer->push_back(new AIEnemies(1530, 510, 400, &window));
-
-        /********************
-         * Create the clock
-         * Used to find delta
-         *******************/
-        clock = new sf::Clock;
-        clock->restart();
-
-        //TEST
-        currentView = new sf::View;
-
-
-        /********************
-         * Play Music
-         *******************/
-        music = new Music();
-        music->music.setLoop(true);
-        music->playMusic("/Jungle Theme 2.ogg");
-
-        /***********************************
-         * Creating Timer and text for timer
-         **********************************/
-        sf::Font font;
-        if(!font.loadFromFile("data/TNRfont.ttf"))
-            std::cout << "Could not load font from directory 'data/font.ttf'" << std::endl;
-        timer = new sf::Clock();
-        timerInText = new sf::Text;
-        timerInText->setCharacterSize(50);
-        //timerInText->setFont(font);
-        timerInText->setStyle(sf::Text::Bold);
-        timerInText->setColor(sf::Color::Red);
-        timerInText->setOutlineColor(sf::Color::Green);
-        timerInText->setOutlineThickness(2);
-        timerInText->setString("Hi");
-
     }
-        /****************************************************************************
-         *                   LOADED FROM SAVE
-         ***************************************************************************/
-    else
+
+    /*************************************************
+     * Making 2D array for collidable tiles
+     ************************************************/
+    collidableArray = new int*[ArraySize];
+    collidableArray[0] = new int[ArraySize * ArraySize];
+    for (int i = 1; i < ArraySize; i++)
     {
-        this->config = config;
-        this->window = &window;
-
-        /*****************
-         * Load in images
-         ****************/
-        LoadImages();
-
-        /*************************************************
-         * Making 2D array for collidable tiles
-         ************************************************/
-        collidableArray = new int*[ArraySize];
-        collidableArray[0] = new int[ArraySize * ArraySize];
-        for (int i = 1; i < ArraySize; i++)
-        {
-            collidableArray[i] = collidableArray[i - 1] + ArraySize;
-        }
-
-        /*************************************************
-         * Load map information from JSON into object list
-         ************************************************/
-        if (!Map::load("data/map.json", objects, collidableArray))
-        {
-            std::cout << "Failed to load map data." << std::endl << std::endl;
-        }
-
-        /*****************************************
-         * Set camera position in middle of screen
-         ****************************************/
-
-        sf::View view = window.getDefaultView();
-        view.setSize(view.getSize().x, view.getSize().y);
-        view.setCenter(view.getCenter().x, view.getCenter().y);
-        window.setView(view);
-
-        /********************|
-         * Create the player
-         *******************/
-        p = new PlayerTest(so.GetPlayerX(), so.GetPlayerY(), *config, &window);
-        p->health.SetActualLifePoints(so.GetPlayerHP());
-
-
-        /***********************************
-         * Creating AI
-         * Using vector to keep track on AIs
-         **********************************/
-        for(int i = 0; i<so.GetAIVectorPointer()->size(); i++)
-        {
-            int x = so.GetAIVectorPointer()->at(i)->GetPositionX();
-            int y = so.GetAIVectorPointer()->at(i)->GetPositionY();
-            int patrol = so.GetAIVectorPointer()->at(i)->GetPositionX()-so.GetAIVectorPointer()->at(i)->GetPatrolLeft();
-            AIVectorPointer->push_back(new AIEnemies(x, y, patrol, &window));
-        }
-        /*AIVectorPointer->push_back(new AIEnemies(630, 660, 300, &window));
-        AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, &window));
-        AIVectorPointer->push_back(new AIEnemies(1950, 1220, 150, &window));
-        AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, &window));
-        //AIVectorPointer->push_back(new AIEnemies(3774, 1270, 100, &window));
-        AIVectorPointer->push_back(new AIEnemies(1530, 510, 400, &window));*/
-
-        /********************
-         * Create the clock
-         * Used to find delta
-         *******************/
-        clock = new sf::Clock;
-        clock->restart();
-
-        //TEST
-        currentView = new sf::View;
-
-
-        /********************
-         * Play Music
-         *******************/
-        music = new Music();
-        music->music.setLoop(true);
-        music->playMusic("/Jungle Theme 2.ogg");
-
-        /***********************************
-         * Creating Timer and text for timer
-         **********************************/
-        sf::Font font;
-        if(!font.loadFromFile("data/TNRfont.ttf"))
-            std::cout << "Could not load font from directory 'data/font.ttf'" << std::endl;
-        timer = new sf::Clock();
-        timerInText = new sf::Text;
-        timerInText->setCharacterSize(50);
-        //timerInText->setFont(font);
-        timerInText->setStyle(sf::Text::Bold);
-        timerInText->setColor(sf::Color::Red);
-        timerInText->setOutlineColor(sf::Color::Green);
-        timerInText->setOutlineThickness(2);
-        timerInText->setString("Hi");
-
-        penaltyTime = so.GetTimeElapsed();
+        collidableArray[i] = collidableArray[i - 1] + ArraySize;
     }
+
+    /*************************************************
+     * Load map information from JSON into object list
+     ************************************************/
+    if (!Map::load("data/map.json", objects, collidableArray))
+    {
+        std::cout << "Failed to load map data." << std::endl << std::endl;
+    }
+
+    /*****************************************
+     * Set camera position in middle of screen
+     ****************************************/
+    sf::View view = window.getDefaultView();
+    view.setSize(view.getSize().x, view.getSize().y);
+    view.setCenter(view.getCenter().x, view.getCenter().y);
+    window.setView(view);
+
+    /********************
+        * Create the clock
+        * Used to find delta
+        *******************/
+    clock = new sf::Clock;
+    clock->restart();
+
+    //TEST
+    currentView = new sf::View;
+
+
+    /********************
+     * Play Music
+     *******************/
+    music = new Music();
+    music->music.setLoop(true);
+    music->playMusic("/Jungle Theme 2.ogg");
+
+    /***********************************
+     * Creating Timer and text for timer
+     **********************************/
+    font = new sf::Font;
+    if(!font->loadFromFile("data/Fonts/Arial/arial.ttf"))
+        std::cout << "Could not load font from directory 'data/font.ttf'" << std::endl;
+    timer = new sf::Clock();
+    timerInText = new sf::Text("hi", *font);
+    timerInText->setCharacterSize(30);
+    timerInText->setStyle(sf::Text::Regular);
+    timerInText->setColor(sf::Color::White);
 }
 
 bool TestApp::Tick(Machine& machine)
@@ -205,11 +126,14 @@ bool TestApp::Tick(Machine& machine)
      * Gets time elapsed and
      * place it in text form
      ***********************/
+    timerX = currentView->getCenter().x + 450;
+    timerY = currentView->getCenter().y + 250;
     int timeelapsed = timer->getElapsedTime().asSeconds() + penaltyTime - EscMenuTime;
     std::string tempForTime = std::to_string(timeelapsed);
     timerInText->setString(tempForTime);
     // Positioning the timerInText on upper right corner of player
-    timerInText->setPosition(p->GetPositionX() + 50,p->GetPositionY() - 50);
+    timerInText->setPosition(timerX, timerY);
+
 
     // Get events from OS
     while (window->pollEvent(event))
@@ -309,11 +233,8 @@ bool TestApp::Tick(Machine& machine)
 
     p->DrawMe();
     p->health.DrawMe();
-    window->draw(*timerInText);
-    timerInText->~Drawable();
-
-
     AIHandler(delta);
+    window->draw(*timerInText);
 
     window->display();
 
@@ -462,6 +383,7 @@ void TestApp::EscMenu(Machine& machine)
         delete[] collidableArray;
         window->close();
         machine.SetRunning(false);
+        exit(0);
     }
     clock->restart();
     music->music.play();

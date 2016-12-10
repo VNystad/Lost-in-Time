@@ -165,6 +165,7 @@ bool TestApp::Tick(Machine& machine)
         int tempTime = timer->getElapsedTime().asSeconds();
         EscMenu(machine);
         EscMenuTime = EscMenuTime + timer->getElapsedTime().asSeconds() - tempTime;
+        clock->restart();
     }
 
         /********************************
@@ -402,9 +403,47 @@ void TestApp::EscMenu(Machine& machine)
 
 bool TestApp::SaveGame(int selectedSave)
 {
+    keyPressed = true;
+    sf::Event event;
     std::string name;
-    std::cout << "Please type name" << std::endl;
-    std::getline(std::cin , name);
+    window->clear(sf::Color::Black);
+    saveName = new sf::Text("Please type in name", *font);
+    saveName->setCharacterSize(50);
+    saveName->setStyle(sf::Text::Regular);
+    saveName->setColor(sf::Color::White);
+    saveName->setPosition(250, 150);
+    window->draw(*saveName);
+    window->display();
+    while(1)
+    {
+        if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Return) && !sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace))
+            keyPressed = false;
+
+        while(window->pollEvent(event))
+        {
+            if(event.type == sf::Event::TextEntered)
+            {
+                if(event.text.unicode < 123 && event.text.unicode >47 )
+                {
+                    name += static_cast<char>(event.text.unicode);
+                    saveName->setString(name);
+                }
+            }
+        }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace) && !keyPressed)
+        {
+            name = name.substr(0,name.size()-1);
+            keyPressed = true;
+            saveName->setString(name);
+        }
+        window->draw(*saveName);
+        window->display();
+        window->clear(sf::Color::Black);
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return) && !keyPressed)
+            break;
+
+    }
     int enemyCount = (AIVector.size());
     enemyCount = AIVectorPointer->size();
 
@@ -417,7 +456,7 @@ bool TestApp::SaveGame(int selectedSave)
     else if(selectedSave == 3)
         savefile.open("SaveFiles/save3.txt");
 
-    savefile << name << std::endl;
+    savefile << saveName << std::endl;
     savefile << p->health.GetActualLifePoints() << std::endl;
     savefile << p->GetPositionX() << std::endl;
     savefile << p->GetPositionY() << std::endl;

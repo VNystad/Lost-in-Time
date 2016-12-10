@@ -38,6 +38,8 @@ protected:
     /***********************
      * Variables for EscMenu
      **********************/
+    // Text for name
+    sf::Text* saveName;
     // The amount of saves
     int amountOfSaves = 0;
     // The amount of options in EscMenu

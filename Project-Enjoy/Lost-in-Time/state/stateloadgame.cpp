@@ -23,7 +23,7 @@ bool StateLoadGame::loadMedia()
     save2 = LoadTexture("data/loadgame/save2.png");
     save3 = LoadTexture("data/loadgame/save3.png");
     selectedTexture = LoadTexture("data/EscMenu/selected.png");
-
+    menuAmount -= 1;
     save1Sprite = new sf::Sprite;
     save1Sprite->setTexture(*save1);
     save1Sprite->setPosition(-70, -20);
@@ -99,6 +99,7 @@ void StateLoadGame::LoadGame(int selected, sf::RenderWindow& window, SavedObject
 
 void StateLoadGame::GoNext(Machine &machine, sf::RenderWindow& window, SavedObject& so)
 {
+    while(sf::Keyboard::isKeyPressed(sf::Keyboard::Return));
     loadMedia();
     while (inLoad) {
         while (window.pollEvent(event)) {

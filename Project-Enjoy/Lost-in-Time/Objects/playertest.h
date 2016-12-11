@@ -49,6 +49,8 @@ public:
 
     void PlayerAnimation();
 
+    void PlayerSoundJump();
+
     //Checks if object is slowing down
     void SetSlowDownR(bool slowingdownright) { this->slowingdownright = slowingdownright; }
     void SetSlowDownL(bool slowingdownleft) { this->slowingdownleft = slowingdownleft; }
@@ -103,6 +105,7 @@ public:
 
     void SetFallPower(float fallpower ) { this->fallpower = fallpower; }
     float GetFallPower() const { return fallpower; }
+
 
 protected:
     const int sizeWidth = 34;
@@ -168,7 +171,6 @@ protected:
     float positionY = OriginalY;
 
     int counter = 0; // Counter for animation
-    int jumpsoundplayed = false; // Check for wether the sound effect for jump have been played or not
     int lastmovedirection = 2;
 
     const Config& config;

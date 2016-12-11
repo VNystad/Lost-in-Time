@@ -163,6 +163,7 @@ void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
     {
         p->SetJumpCheck(true);
         p->SetApexCheck(false);
+        p->PlayerSoundJump();
     }
 
     //Functionality for ascending or falling when the object is marked as airborne (jumpcheck).

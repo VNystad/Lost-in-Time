@@ -76,15 +76,11 @@ void PlayerTest::PlayerAnimation()
         {
             animation.PlayerJumpRight(character);
             lastmovedirection = 1;
-            //VETLE AKTIVERER LYD FOR HOPP
-            jumpsoundplayed = true;
         }
         else if (jumpcheck && movedirection == 0) // If jumping to the left
         {
             animation.PlayerJumpLeft(character);
             lastmovedirection = 0;
-            //VETLE AKTIVERER LYD FOR HOPP
-            jumpsoundplayed = true;
         }
         else if (jumpcheck) //If jumping upwards.
         {
@@ -92,13 +88,10 @@ void PlayerTest::PlayerAnimation()
                 animation.PlayerJumpRight(character);
             else
                 animation.PlayerJumpLeft(character);
-            //VETLE AKTIVERER LYD FOR HOPP
-            jumpsoundplayed = true;
         }
 
         else
         {
-            jumpsoundplayed = false;
             if (movedirection == 0) // If moving to left, play left animation
             {
                 animation.PlayerWalkLeft(character);
@@ -113,10 +106,16 @@ void PlayerTest::PlayerAnimation()
                     animation.PlayerIdleLeft(character);
                 else
                     animation.PlayerIdle(character);
-
             }
         }
     }
+}
+
+
+void PlayerTest::PlayerSoundJump()
+{
+    sound = new Sounds();
+    sound->playSound("/Jump.wav");
 }
 
 /**
@@ -128,6 +127,8 @@ void PlayerTest::PlayerAnimation()
  */
 void PlayerTest::PlayerDead()
 {
+    this->jumpcheck = true;
+    this->apexcheck = true;
     jumpspeed = origjumpspeed;
     fallspeed = 0;
     movedirection = 2;

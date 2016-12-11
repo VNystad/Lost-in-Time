@@ -20,6 +20,10 @@ set(SOURCE_FILES
         Framework/font.h
         Framework/physics.cpp
         Framework/physics.h
+        Framework/Music.cpp
+        Framework/Music.h
+        Framework/Sounds.cpp
+        Framework/Sounds.h
 
         Interface/deathscreen.cpp
         Interface/deathscreen.h
@@ -40,23 +44,25 @@ set(SOURCE_FILES
 
         Objects/playertest.cpp
         Objects/playertest.h
+        Objects/savedobject.cpp
+        Objects/savedobject.h
 
-        State/stateloadgame.cpp
-        State/stateloadgame.h
+        SaveFiles
+
         state/machine.cpp
         state/machine.h
         state/state.h
         state/stategame.cpp
         state/stategame.h
+        state/stateloadgame.cpp
+        state/stateloadgame.h
         state/statemainmenu.cpp
         state/statemainmenu.h
 
         main.cpp
         testapp.cpp
         testapp.h
-
-
-        Framework/music.cpp Framework/music.h Objects/savedobject.cpp Objects/savedobject.h Framework/Sounds.cpp Framework/Sounds.h)
+        )
 
 add_executable(Lost-in-Time ${SOURCE_FILES})
 

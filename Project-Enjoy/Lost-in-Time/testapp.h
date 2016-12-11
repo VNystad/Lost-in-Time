@@ -12,7 +12,7 @@
 #include "Framework/Camera.h"
 #include "Enemy/AIEnemies.h"
 #include "Framework/Music.h"
-#include "State/machine.h"
+#include "state/machine.h"
 
 class TestApp
 {

@@ -40,6 +40,7 @@ protected:
 
     // Choose starting frame in texture picture
     sf::IntRect *frameSelected;
+    sf::IntRect *frameSelectedBoss;
 
     // Textures for animation
     sf::Texture PlayerTextureJump;

@@ -17,8 +17,8 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
 
     if(boss)
     {
-        this->SetSizeHeight(49);
-        this->SetSizeWidth(47);
+        this->SetSizeHeight(44);
+        this->SetSizeWidth(55);
         this->patrolleft = x - patrol;
         this->patrolright = x + patrol;
         animation.AIBossWalkRight(character);

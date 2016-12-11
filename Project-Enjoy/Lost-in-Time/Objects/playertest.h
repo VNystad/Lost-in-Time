@@ -168,6 +168,7 @@ protected:
     float positionY = OriginalY;
 
     int counter = 0; // Counter for animation
+    int jumpsoundplayed = false; // Check for wether the sound effect for jump have been played or not
     int lastmovedirection = 2;
 
     const Config& config;

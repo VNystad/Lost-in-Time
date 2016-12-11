@@ -101,6 +101,12 @@
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/Music.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/Sounds.cpp">
+			<Option target="Lost-in-Time"/>
+		</Unit>
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/Sounds.h">
+			<Option target="Lost-in-Time"/>
+		</Unit>
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/animation.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>

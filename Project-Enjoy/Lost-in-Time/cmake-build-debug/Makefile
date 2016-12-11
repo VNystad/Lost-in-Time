@@ -203,6 +203,33 @@ Framework/Music.cpp.s:
 	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.s
 .PHONY : Framework/Music.cpp.s
 
+Framework/Sounds.obj: Framework/Sounds.cpp.obj
+
+.PHONY : Framework/Sounds.obj
+
+# target to build an object file
+Framework/Sounds.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.obj
+.PHONY : Framework/Sounds.cpp.obj
+
+Framework/Sounds.i: Framework/Sounds.cpp.i
+
+.PHONY : Framework/Sounds.i
+
+# target to preprocess a source file
+Framework/Sounds.cpp.i:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.i
+.PHONY : Framework/Sounds.cpp.i
+
+Framework/Sounds.s: Framework/Sounds.cpp.s
+
+.PHONY : Framework/Sounds.s
+
+# target to generate assembly for a file
+Framework/Sounds.cpp.s:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.s
+.PHONY : Framework/Sounds.cpp.s
+
 Framework/animation.obj: Framework/animation.cpp.obj
 
 .PHONY : Framework/animation.obj
@@ -707,6 +734,9 @@ help:
 	@echo ... Framework/Music.obj
 	@echo ... Framework/Music.i
 	@echo ... Framework/Music.s
+	@echo ... Framework/Sounds.obj
+	@echo ... Framework/Sounds.i
+	@echo ... Framework/Sounds.s
 	@echo ... Framework/animation.obj
 	@echo ... Framework/animation.i
 	@echo ... Framework/animation.s

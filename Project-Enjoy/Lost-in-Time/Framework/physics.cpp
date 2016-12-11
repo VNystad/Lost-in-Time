@@ -599,7 +599,7 @@ void Physics::Hurt(PlayerTest*p, AIEnemies* e, int* i, std::vector<AIEnemies*>* 
     int py = p->GetPositionY() + p->GetSizeHeight()/2;
 
     int ex = e->GetPositionX() + e->GetSizeWidth()/2;
-    int ey = e->GetPositionY() + e->GetSizeHeight()/2;
+    int ey = e->GetPositionY() + e->GetSizeHeight()/10;
 
 
     if((px - ex < p->GetSizeWidth() && px - ex > -p->GetSizeWidth()) &&
@@ -613,6 +613,7 @@ void Physics::Hurt(PlayerTest*p, AIEnemies* e, int* i, std::vector<AIEnemies*>* 
         {
             p->SetPlayerHurt(2);
             e->health.Hit(e->health.GetOriginalLifePoints());
+            e->GotHurt(e, p);
         }
 
         else

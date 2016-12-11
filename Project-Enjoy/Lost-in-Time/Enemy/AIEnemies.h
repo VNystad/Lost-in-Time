@@ -8,9 +8,11 @@
 
 class AIEnemies: public AI {
 public:
-    AIEnemies(float x, float y, float patrol, sf::RenderWindow *window);
+    AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow *window);
 
     void MonkeyAI1(AIEnemies* e, PlayerTest* p);
+    void MonkeyAI2(AIEnemies* e,PlayerTest* p);
+    void GotHurt(AIEnemies* e, PlayerTest* p);
 
 private:
     //const int sizeWidth = 34;

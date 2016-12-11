@@ -151,7 +151,6 @@ void AI::AnimationAIMiniBoss()
                     animation.AIMiniBossWalkLeft(character);
                 else
                     animation.AIMiniBossWalkRight(character);
-
             }
         }
     }
@@ -160,7 +159,7 @@ void AI::AnimationAIMiniBoss()
 void AI::Death()
 {
 //Delete AI
-    this->health.Hit(1000);
+    this->health.Hit(this->health.GetOriginalLifePoints());
 
 }
 

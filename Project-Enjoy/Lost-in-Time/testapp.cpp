@@ -34,7 +34,8 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
             int x = so.GetAIVectorPointer()->at(i)->GetPositionX();
             int y = so.GetAIVectorPointer()->at(i)->GetPositionY();
             int patrol = so.GetAIVectorPointer()->at(i)->GetPositionX()-so.GetAIVectorPointer()->at(i)->GetPatrolLeft();
-            AIVectorPointer->push_back(new AIEnemies(x, y, patrol, &window));
+            bool boss = so.GetAIVectorPointer()->at(i)->GetBoss();
+            AIVectorPointer->push_back(new AIEnemies(x, y, patrol, boss, &window));
         }
 
     }
@@ -52,12 +53,13 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
          * Creating AI
          * Using vector to keep track on AIs
          **********************************/
-        AIVectorPointer->push_back(new AIEnemies(730, 671, 300, &window));
-        AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, &window));
-        AIVectorPointer->push_back(new AIEnemies(1950, 1220, 150, &window));
-        AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, &window));
-        //AIVectorPointer->push_back(new AIEnemies(3774, 1270, 100, *config, &window));
-        AIVectorPointer->push_back(new AIEnemies(1530, 510, 400, &window));
+        AIVectorPointer->push_back(new AIEnemies(730, 671, 300, false, &window));
+        AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, false, &window));
+        AIVectorPointer->push_back(new AIEnemies(1950, 1220, 150, false, &window));
+        AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, false, &window));
+        //AIVectorPointer->push_back(new AIEnemies(Start X, Start Y, Patrol Each Way From Start, IsBoss?, *config, &window));
+        AIVectorPointer->push_back(new AIEnemies(1530, 510, 400, false, &window));
+
     }
 
     /*************************************************
@@ -403,12 +405,17 @@ void TestApp::AIHandler(float delta)
         }
         else
         {
-            if(AIVectorPointer->at(i)->GetMiniBoss())
+            if(AIVectorPointer->at(i)->GetBoss())
+                AIVectorPointer->(i)->AnimationBoss();
+            else if(AIVectorPointer->at(i)->GetMiniBoss())
                 AIVectorPointer->at(i)->AnimationAIMiniBoss();
             else
                 AIVectorPointer->at(i)->AnimationAI();
             AIVectorPointer->at(i)->DrawMe();
-            AIVectorPointer->at(i)->MonkeyAI1(AIVectorPointer->at(i), p);
+            if(AIVectorPointer->at(i)->GetBoss())
+                AIVectorPointer->at(i)->MonkeyAI2(AIVectorPointer->at(i), p);
+            else
+                AIVectorPointer->at(i)->MonkeyAI1(AIVectorPointer->at(i), p);
             Physics::AIMovement(AIVectorPointer->at(i), p, AIVectorPointer, i, collidableArray, delta);
             Physics::AIGravity(AIVectorPointer->at(i), collidableArray, delta);
         }

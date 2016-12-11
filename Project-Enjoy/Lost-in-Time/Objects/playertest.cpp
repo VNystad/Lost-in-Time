@@ -132,6 +132,8 @@ void PlayerTest::PlayerDead()
     jumpspeed = origjumpspeed;
     fallspeed = 0;
     movedirection = 2;
+    movespeedleft = 0;
+    movespeedright = 0;
     positionX = OriginalX;
     positionY = OriginalY;
     sound = new Sounds();

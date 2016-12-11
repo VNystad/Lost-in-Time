@@ -46,6 +46,12 @@ void Animation::init()
     /* **********************************
                 BOSS CHARACTER
      ********************************** */
+    if (!AIBossTextureWalkRight.loadFromFile("data/Character-Animation/gorillamoveright.png"))
+        std::cout << "Failed to load data/Character-Animation/gorillamoveright.png" << std::endl << std::endl;
+    if (!AIBossTextureWalkLeft.loadFromFile("data/Character-Animation/gorillamoveleft.png"))
+        std::cout << "Failed to load data/Character-Animation/gorillamoveleft.png" << std::endl << std::endl;
+
+
 }
 
 void Animation::PlayerWalkRight(sf::RectangleShape* character)
@@ -320,6 +326,63 @@ void Animation::AIMiniBossWalkRight(sf::RectangleShape* character)
 void Animation::AIMiniBossWalkLeft(sf::RectangleShape* character)
 {
     character->setTexture(&AIMiniBossTextureWalkLeft);
+    if(animationdir == 1)
+    {
+        if (frameSelected->left < 216)
+            frameSelected->left += 36;
+        else
+        {
+            frameSelected->left -= 36;
+            animationdir = 0;
+        }
+    }
+    else
+    {
+        if (frameSelected->left > 0)
+            frameSelected->left -= 36;
+        else
+        {
+            frameSelected->left += 36;
+            animationdir = 1;
+        }
+    }
+
+    character->setTextureRect(*frameSelected);
+}
+
+
+
+
+void Animation::AIBossWalkRight(sf::RectangleShape* character)
+{
+    character->setTexture(&AIBossTextureWalkRight);
+    if(animationdir == 1)
+    {
+        if (frameSelected->left < 216)
+            frameSelected->left += 36;
+        else
+        {
+            frameSelected->left -= 216;
+            animationdir = 0;
+        }
+    }
+    else
+    {
+        if (frameSelected->left > 0)
+            frameSelected->left -= 36;
+        else
+        {
+            frameSelected->left += 36;
+            animationdir = 1;
+        }
+    }
+
+    character->setTextureRect(*frameSelected);
+}
+
+void Animation::AIBossWalkLeft(sf::RectangleShape* character)
+{
+    character->setTexture(&AIBossTextureWalkLeft);
     if(animationdir == 1)
     {
         if (frameSelected->left < 216)

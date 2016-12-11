@@ -25,8 +25,9 @@ public:
 
     void DrawMe();
 
-
+    void SetSizeWidth(int sizewidth) { this->sizeWidth = sizewidth; };
     int GetSizeWidth() const { return sizeWidth; };
+    void SetSizeHeight(int sizeheight) { this->sizeHeight = sizeheight; };
     int GetSizeHeight() const { return sizeHeight; };
 
     void SetAIColliding(int aicolliding) { this->aicolliding = aicolliding; };
@@ -66,6 +67,9 @@ public:
 
     void SetMiniBoss(bool miniboss) { this->miniboss = miniboss; }
     bool GetMiniBoss() const { return miniboss; }
+
+    void SetBoss(bool boss) { this->boss = boss; }
+    bool GetBoss() const { return boss; }
 
     void SetEnraged(bool enraged) { this->enraged = enraged; }
     bool GetEnraged() const { return enraged; }
@@ -154,8 +158,8 @@ public:
 
 protected:
 
-    const int sizeWidth = 37;
-    const int sizeHeight = 50;
+    int sizeWidth = 37;
+    int sizeHeight = 50;
 
 
 
@@ -183,6 +187,7 @@ protected:
     * AI Behaviour
     * *******************/
     bool miniboss = false;
+    bool boss = false;
     bool enraged = false;
     int enragerange = 100;
     int enrageduration = 1000;

@@ -160,6 +160,7 @@ void AI::AnimationAIMiniBoss()
 void AI::Death()
 {
 //Delete AI
+    this->health.Hit(1000);
 
 }
 

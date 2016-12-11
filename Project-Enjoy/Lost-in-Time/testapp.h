@@ -22,6 +22,8 @@ public:
     void Move(float delta);
     void AIHandler(float delta);
 
+    void VictoryHandler();
+
 
     void EscMenu(Machine& machine); // Menu when u press Esc
     bool SaveGame(int selectedSave); // Function under the Esc menu, savegame
@@ -29,11 +31,17 @@ public:
     void LoadImages();
     sf::Texture* LoadTexture( std::string path, int &menuAmount); // Function to load in textures
 protected:
-    int count;
     bool keyPressed = false;
     bool saveMenuUp = false;
     bool menuUp = false;
 
+    /****************
+     *  Victory stuff
+     ****************/
+    // princess?
+    sf::Text* victoryText;
+    sf::Texture* heart = nullptr;
+    sf::Sprite heartSprite;
 
     /***********************
      * Variables for EscMenu

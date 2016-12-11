@@ -31,7 +31,9 @@ void Health::init()
     HealthBorderSprite = new sf::Sprite;
     HealthBorderSprite->setTexture(*HealthBorderTexture);
 
+
 }
+
 
 void Health::SetPosition(int x, int y)
 {

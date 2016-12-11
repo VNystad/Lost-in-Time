@@ -141,6 +141,24 @@ bool TestApp::Tick(Machine& machine)
     //p->health.SetPosition(currentView->getCenter().x, timerY + 250);
     p->health.SetPosition(currentView->getCenter().x - 70, p->GetPositionY() - 230);
 
+    /*************
+     * KILL ALL AI
+     ************/
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::K))
+    {   int count = AIVectorPointer->size();
+
+        while(count != 0)
+        {
+            AIVectorPointer->at(count-1)->Death();
+            count--;
+        }
+        while(sf::Keyboard::isKeyPressed(sf::Keyboard::K));
+    }
+
+    /*********************
+     * CHECK IF PLAYER WON
+     ********************/
+    VictoryHandler();
 
 
     // Get events from OS
@@ -156,6 +174,8 @@ bool TestApp::Tick(Machine& machine)
         }
     }
 
+
+
     /*****************************************************************
      *        KEYBOARD EVENTS ( but not for physical actions )
      ****************************************************************/
@@ -167,7 +187,6 @@ bool TestApp::Tick(Machine& machine)
         EscMenuTime = EscMenuTime + timer->getElapsedTime().asSeconds() - tempTime;
         clock->restart();
     }
-
         /********************************
          * If player press P Pause game
          * If player press R Resume game
@@ -349,6 +368,83 @@ void TestApp::AIHandler(float delta)
         }
     }
 }
+
+void TestApp::VictoryHandler()
+{
+    if( AIVectorPointer->size() == 0/*BOSS DEAD*/)
+    {
+        window->clear(sf::Color::Black);
+        // Process and render each object
+        for (Object *object : objects)
+        {
+            //object->process(deltaTime);
+            object->draw(*window);
+        }
+        sf::View victoryView = window->getDefaultView();
+
+        sf::Clock end;
+        p->SetPositionX(2250);
+        p->SetPositionY(270);
+        p->SetMovDir(0);
+        victoryView.setCenter(p->GetPositionX()+ 200, p->GetPositionY());
+        *currentView = victoryView;
+        window->setView(*currentView);
+
+        // Int to make heart fly
+        int makeLoveFly = 0;
+        // just a helper to make things go slow
+        int count = 0;
+        sf::Vector2f scale = heartSprite.getScale();
+        p->DrawMe();
+        // MAKE PRINCESS SHOW UP
+        window->display();
+        // if player nearby princess
+        if(1)
+        {
+            // True love never ends when finally found the perfect girl
+            bool truelove = true;
+            // Victory speach
+            // Then make a heart come up from hell
+            while (truelove)
+            {
+                end.restart();
+                if(heartSprite.getPosition().y == p->GetPositionY() - 290)
+                {
+                    heartSprite.scale(scale.x * 1.01, scale.y * 1.01);
+                    if(end.getElapsedTime().asSeconds() == 3)
+                    {
+                        // Save highscore
+                        // end game
+                        std::cout << "WIN" << std::endl;
+                        while(1);
+                    }
+                }
+                else
+                {
+                    count++;
+                    if(count == 5)
+                    {
+                        count = 0;
+                        makeLoveFly++;
+                        heartSprite.setPosition(currentView->getCenter().x - 510, currentView->getCenter().y + 350 - makeLoveFly);
+                    }
+                }
+                window->clear(sf::Color::Black);
+                // Process and render each object
+                for (Object *object : objects)
+                {
+                    //object->process(deltaTime);
+                    object->draw(*window);
+                }
+                window->draw(heartSprite);
+                p->DrawMe();
+                window->display();
+            }
+        }
+
+    }
+}
+
 /**
  * Menu for pressing Esc
  * Options:
@@ -557,6 +653,8 @@ void TestApp::LoadImages()
      * du gjør nesten akkurat som på skolen, men legger inn ", nothing" bak pathen
      * background1 = LoadTexture("pathen", nothing)
      */
+    heart = LoadTexture("data/victory/heart.png",nothing);
+
     save1 = LoadTexture("data/loadgame/save1.png", amountOfSaves);
     save2 = LoadTexture("data/loadgame/save2.png", amountOfSaves);
     save3 = LoadTexture("data/loadgame/save3.png", amountOfSaves);
@@ -568,10 +666,11 @@ void TestApp::LoadImages()
     saveGame = LoadTexture("data/EscMenu/savegame.png", amountOfEscOptions);
     exitGame = LoadTexture("data/EscMenu/exitgame.png", amountOfEscOptions);
 
+    heartSprite.setTexture(*heart);
+
     save1Sprite.setTexture(*save1);
     save2Sprite.setTexture(*save2);
     save3Sprite.setTexture(*save3);
-
 
     selectedSprite.setTexture(*selected);
     resumeGameSprite.setTexture(*resumeGame);

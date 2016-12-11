@@ -22,7 +22,7 @@ public:
     void Move(float delta);
     void AIHandler(float delta);
 
-    void VictoryHandler();
+    bool VictoryHandler();
 
 
     void EscMenu(Machine& machine); // Menu when u press Esc
@@ -42,6 +42,7 @@ protected:
     sf::Text* victoryText;
     sf::Texture* heart = nullptr;
     sf::Sprite heartSprite;
+    int winTime = 0;
 
     /***********************
      * Variables for EscMenu

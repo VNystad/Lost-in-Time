@@ -115,6 +115,10 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
     timerInText->setCharacterSize(30);
     timerInText->setStyle(sf::Text::Regular);
     timerInText->setColor(sf::Color::White);
+    victoryText = new sf::Text("Score: ", *font);
+    victoryText->setCharacterSize(70);
+    victoryText->setStyle(sf::Text::Regular);
+    victoryText->setColor(sf::Color::White);
 
 }
 
@@ -130,6 +134,7 @@ bool TestApp::Tick(Machine& machine)
     timerX = currentView->getCenter().x + 450;
     timerY = currentView->getCenter().y + 250;
     int timeelapsed = timer->getElapsedTime().asSeconds() + penaltyTime - EscMenuTime;
+    winTime = timer->getElapsedTime().asSeconds() + penaltyTime - EscMenuTime;
     std::string tempForTime = std::to_string(timeelapsed);
     timerInText->setString(tempForTime);
     // Positioning the timerInText on upper right corner of player
@@ -158,7 +163,15 @@ bool TestApp::Tick(Machine& machine)
     /*********************
      * CHECK IF PLAYER WON
      ********************/
-    VictoryHandler();
+    if(VictoryHandler())
+    {
+        sf::View mainMenuView = window->getDefaultView();
+        mainMenuView.setCenter(512, 290);
+        *currentView = mainMenuView;
+        window->setView(mainMenuView);
+        machine.SetState(Machine::StateId::MAINMENU);
+        return false;
+    }
 
 
     // Get events from OS
@@ -369,7 +382,7 @@ void TestApp::AIHandler(float delta)
     }
 }
 
-void TestApp::VictoryHandler()
+bool TestApp::VictoryHandler()
 {
     if( AIVectorPointer->size() == 0/*BOSS DEAD*/)
     {
@@ -389,6 +402,13 @@ void TestApp::VictoryHandler()
         victoryView.setCenter(p->GetPositionX()+ 200, p->GetPositionY());
         *currentView = victoryView;
         window->setView(*currentView);
+
+
+        int score = 1000 / winTime;
+        std::string tempForScore = std::to_string(score);
+        victoryText->setString(victoryText->getString() + tempForScore);
+        victoryText->setPosition(p->GetPositionX(), p->GetPositionY() - 200);
+
 
         // Int to make heart fly
         int makeLoveFly = 0;
@@ -411,18 +431,20 @@ void TestApp::VictoryHandler()
                 if(heartSprite.getPosition().y == p->GetPositionY() - 290)
                 {
                     heartSprite.scale(scale.x * 1.01, scale.y * 1.01);
-                    if(end.getElapsedTime().asSeconds() == 3)
+                    if(count == 100)
                     {
                         // Save highscore
                         // end game
                         std::cout << "WIN" << std::endl;
-                        while(1);
+                        return true;
+
                     }
+                    count++;
                 }
                 else
                 {
                     count++;
-                    if(count == 5)
+                    if(count == 4)
                     {
                         count = 0;
                         makeLoveFly++;
@@ -438,11 +460,13 @@ void TestApp::VictoryHandler()
                 }
                 window->draw(heartSprite);
                 p->DrawMe();
+                window->draw(*victoryText);
                 window->display();
             }
         }
 
     }
+    return false;
 }
 
 /**

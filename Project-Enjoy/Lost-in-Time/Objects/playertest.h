@@ -8,6 +8,7 @@
 #include "../Framework/config.h"
 #include "../Framework/animation.h"
 #include "../Interface/health.h"
+#include "../Framework/Sounds.h"
 
 class PlayerTest
 {
@@ -171,6 +172,8 @@ protected:
 
     const Config& config;
     sf::RenderWindow* window;
+
+    Sounds* sound;
 };
 
 

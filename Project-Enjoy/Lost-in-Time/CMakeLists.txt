@@ -56,7 +56,7 @@ set(SOURCE_FILES
         testapp.h
 
 
-        Framework/music.cpp Framework/music.h Objects/savedobject.cpp Objects/savedobject.h)
+        Framework/music.cpp Framework/music.h Objects/savedobject.cpp Objects/savedobject.h Framework/Sounds.cpp Framework/Sounds.h)
 
 add_executable(Lost-in-Time ${SOURCE_FILES})
 

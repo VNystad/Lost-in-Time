@@ -262,7 +262,19 @@ bool TestApp::Tick(Machine& machine)
      **********************/
     Move(delta);
 
+
+
+    /***********************
+     * Draws background images
+     **********************/
+
     window->clear(sf::Color::Black);
+
+    window->draw(Junglebackground1Sprite);
+    window->draw(Cavebackground1Sprite);
+    window->draw(Cavebackground2Sprite);
+    window->draw(Cavebackground3Sprite);
+    window->draw(Treebackground1Sprite);
 
 
     // Process and render each object
@@ -294,13 +306,36 @@ bool TestApp::Tick(Machine& machine)
             view2.setCenter(p->GetPositionX(), p->GetPositionY());
             *currentView = view2;
             window->setView(view2);
+
+            // Positions background movement
+            Junglebackground1Sprite.setPosition((p->GetPositionX()*1.5/8)-195,-300);
+            Cavebackground2Sprite.setPosition((p->GetPositionX()*1.5/8)-195,600);
+
+        }
+
+        if (p->GetPositionX() >= 5238)
+        {
+            if (p->GetPositionY() <= 1290) {
+                sf::View view5 = window->getDefaultView();
+                view5.setCenter(5238, p->GetPositionY());
+                *currentView = view5;
+                window->setView(view5);
+
+            }
+
         }
         else if(p->GetPositionY() >= 1290)
         {
+
             sf::View view2 = window->getDefaultView();
             view2.setCenter(p->GetPositionX(), 1290);
             *currentView = view2;
             window->setView(view2);
+
+            // Positions background movement
+            Cavebackground2Sprite.setPosition((p->GetPositionX()*1.5/8)-195,600);
+            Junglebackground6Sprite.setPosition(p->GetPositionX()*1.5/8,200);
+
         }
     }
     else if (p->GetPositionX() <=  512)
@@ -311,6 +346,11 @@ bool TestApp::Tick(Machine& machine)
             view3.setCenter(512, p->GetPositionY());
             *currentView = view3;
             window->setView(view3);
+
+            // Positions background movement
+            Junglebackground1Sprite.setPosition(-100,-300);
+            Cavebackground2Sprite.setPosition(-100,600);
+
         }
         else if (p->GetPositionY() >= 1290)
         {
@@ -318,19 +358,12 @@ bool TestApp::Tick(Machine& machine)
             view3.setCenter(512, 1290);
             *currentView = view3;
             window->setView(view3);
-        }
-    }
-    else if(p->GetPositionX() >= 3650)
-    {
-        if(p->GetPositionY() <=1500 )
-        {
-            sf::View view2 = window->getDefaultView();
-            view2.setCenter(3650, p->GetPositionY());
-            *currentView = view2;
-            window->setView(view2);
-        }
 
+            // Positions background movement
+            Cavebackground2Sprite.setPosition(-100,600);
+        }
     }
+
     return true;
 }
 /*****************************************************
@@ -701,6 +734,22 @@ void TestApp::LoadImages()
     saveGameSprite.setTexture(*saveGame);
     mainMenuSprite.setTexture(*mainMenu);
     exitGameSprite.setTexture(*exitGame);
+
+    Junglebackground1 = LoadTexture("data/Backgrounds/Jungle10.png", nothing);
+    Cavebackground1 = LoadTexture("data/Backgrounds/Cave3.png", nothing);
+    Treebackground1 = LoadTexture("data/Backgrounds/Tree.png", nothing);
+
+    Cavebackground1Sprite.setTexture(*Cavebackground1);
+    Cavebackground1Sprite.setPosition(0,600);
+
+    Cavebackground2Sprite.setTexture(*Cavebackground1);
+    Cavebackground2Sprite.setPosition(1200,600);
+
+    Treebackground1Sprite.setTexture(*Treebackground1);
+    Treebackground1Sprite.setPosition(3150,-10);
+
+    Junglebackground1Sprite.setTexture(*Junglebackground1);
+    Junglebackground1Sprite.setPosition(0,-300);
 
 }
 

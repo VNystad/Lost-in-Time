@@ -76,7 +76,26 @@ protected:
     sf::Sprite mainMenuSprite;
     sf::Sprite exitGameSprite;
 
+
+    /***********************
+     * Variables for Background
+     **********************/
+
+    sf::Texture* Junglebackground1 = nullptr;
+    sf::Texture* Cavebackground1 = nullptr;
+    sf::Texture* Treebackground1 = nullptr;
+
+    sf::Sprite Junglebackground1Sprite;
+    sf::Sprite Junglebackground6Sprite;
+    sf::Sprite Cavebackground1Sprite;
+    sf::Sprite Cavebackground2Sprite;
+    sf::Sprite Cavebackground3Sprite;
+    sf::Sprite Treebackground1Sprite;
+
+
     /**********************/
+
+
 
 
     const int ArraySize = 1000;

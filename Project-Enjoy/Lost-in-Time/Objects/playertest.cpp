@@ -126,6 +126,8 @@ void PlayerTest::PlayerDead()
     movedirection = 2;
     positionX = OriginalX;
     positionY = OriginalY;
+    sound = new Sounds();
+    sound->playSound("/Death.wav");
     std::cout << "Oh deer, you died!" << std::endl;
     std::cout << "     (      )\n"
             "     ))    ((\n"

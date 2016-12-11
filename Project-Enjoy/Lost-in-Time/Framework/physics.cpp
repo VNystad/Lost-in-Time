@@ -1,7 +1,7 @@
 #include <map>
 #include "physics.h"
 #include <iostream>
-
+#include <stdlib.h>
 
 
 //Horisontal movement for player
@@ -613,6 +613,24 @@ void Physics::Hurt(PlayerTest*p, AIEnemies* e, int* i, std::vector<AIEnemies*>* 
         {
             p->SetPlayerHurt(2);
             e->health.Hit(e->health.GetOriginalLifePoints());
+            if(e->GetBoss())
+            {
+                /****************************
+                 * BOSS THROW DEFENSIVE MOVE
+                 ***********************'***/
+                if((rand() % 3) + 1 == 3)
+                {
+                    p->SetJumpCheck(true);
+                    p->SetApexCheck(false);
+                    p->SetJumpSpeed(100);
+                    if(e->GetMovDir() == 1)
+                        p->SetMoveSpeedR(1000);
+                    else
+                        p->SetMoveSpeedL(1000);
+                }
+
+            }
+
             e->GotHurt(e, p);
         }
 

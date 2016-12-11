@@ -1,7 +1,7 @@
 #include <map>
 #include "physics.h"
 #include <iostream>
-#include <stdlib.h>
+
 
 
 //Horisontal movement for player
@@ -525,6 +525,8 @@ void Physics::AIGravity(AIEnemies* e, int** collidableArray, float delta)
 bool Physics::AIHorisontalCollision(AIEnemies* e, int** collidableArray)
 {
     int upperPlayerYArrayCoord = (e->GetPositionY() / 32) >0? (e->GetPositionY()-5)/32 :0; //Experimental bug fix
+    if(e->GetBoss())
+        upperPlayerYArrayCoord = (e->GetPositionY() / 32) >0? (e->GetPositionY()-30)/32 :0; //Experimental bug fix
     int lowerPlayerArrayCoord = upperPlayerYArrayCoord +1;
     int playerWestCoord = (e->GetPositionX() / 32);
     int playerEastCoord = playerWestCoord +1;
@@ -550,6 +552,13 @@ bool Physics::AIGrounded(AIEnemies* e, int** collidableArray)
 {
     int playerArrayCoordX = (e->GetPositionX() + 16) / 32;
     int playerSouthCoord = (e->GetPositionY() + e->GetSizeHeight()/2 +3) / 32;
+
+    if(e->GetBoss())
+    {
+        playerArrayCoordX = (e->GetPositionX() + 19) / 32;
+        playerSouthCoord = (e->GetPositionY() + 20) / 32;
+    }
+
 
     if(e->GetApexCheck() == 1 && collidableArray[playerSouthCoord][playerArrayCoordX] != 0)
     {
@@ -613,24 +622,6 @@ void Physics::Hurt(PlayerTest*p, AIEnemies* e, int* i, std::vector<AIEnemies*>* 
         {
             p->SetPlayerHurt(2);
             e->health.Hit(e->health.GetOriginalLifePoints());
-            if(e->GetBoss())
-            {
-                /****************************
-                 * BOSS THROW DEFENSIVE MOVE
-                 ***********************'***/
-                if((rand() % 3) + 1 == 3)
-                {
-                    p->SetJumpCheck(true);
-                    p->SetApexCheck(false);
-                    p->SetJumpSpeed(100);
-                    if(e->GetMovDir() == 1)
-                        p->SetMoveSpeedR(1000);
-                    else
-                        p->SetMoveSpeedL(1000);
-                }
-
-            }
-
             e->GotHurt(e, p);
         }
 

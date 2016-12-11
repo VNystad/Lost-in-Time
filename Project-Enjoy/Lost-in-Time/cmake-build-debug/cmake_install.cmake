@@ -1,4 +1,4 @@
-# Install script for directory: E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time
+# Install script for directory: E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Local Project Enjoy/11.12.2016 3/pe/Project-Enjoy/Lost-in-Time
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Local Project Enjoy/11.12.2016 3/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

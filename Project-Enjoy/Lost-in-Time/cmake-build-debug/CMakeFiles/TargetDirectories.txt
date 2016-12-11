@@ -1,3 +1,3 @@
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles/Lost-in-Time.dir
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Local Project Enjoy/11.12.2016 3/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles/Lost-in-Time.dir
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Local Project Enjoy/11.12.2016 3/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Local Project Enjoy/11.12.2016 3/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles/rebuild_cache.dir

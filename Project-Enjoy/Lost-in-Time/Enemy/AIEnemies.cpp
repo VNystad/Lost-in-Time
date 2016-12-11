@@ -9,10 +9,6 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
     this->OriginalY = y;
     this->positionX = this->OriginalX;
     this->positionY = this->OriginalY;
-    if(rand() % 100 < 20)
-        this->SetMiniBoss(true);
-
-
 
     character = new sf::RectangleShape;
     character->setSize(sf::Vector2f(sizeWidth,sizeHeight));
@@ -31,14 +27,15 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
         health.SetVisibleLifePoints(3000);
         this->SetRightKey(true);
         this->SetLeftKey(false);
-        this->enragerange = 300;
+        this->enragerange = 100;
         this->SetEnragedSpeed(190);
         this->boss = true;
         this->SetMiniBoss(false);
     }
 
-    else if(this->GetMiniBoss() == true)
+    else if(rand() % 100 <20)
     {
+        this->SetMiniBoss(true);
         this->patrolleft = x - patrol;
         this->patrolright = x + patrol;
         animation.AIMiniBossWalkRight(character);
@@ -160,8 +157,8 @@ void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerTest* p)
             e->SetMaxMoveSpeed(e->GetCalmSpeed());
             e->SetEnraged(false);
         }
-        if (rand() % 100 > 60)
-            this->SetUpKey(true);
+        //if (rand() % 100 > 60)
+        //    this->SetUpKey(true);
 
         if (p->GetPositionX() < e->GetPositionX())
         {
@@ -205,19 +202,32 @@ void AIEnemies::GotHurt(AIEnemies *e, PlayerTest *p)
     }
     if(rand() % 100 < 80)
     {
-        if(p->GetLastMoveDirection() == 0)
+        if(p->GetLastMoveDirection() == 1)
         {
-            e->SetMoveSpeedL(200);
+            e->SetMoveSpeedL(700);
             e->SetRightKey(false);
             e->SetLeftKey(true);
             e->SetUpKey(true);
         }
-        else if(p->GetLastMoveDirection() == 1)
+        else if(p->GetLastMoveDirection() == 0)
         {
-            e->SetMoveSpeedR(200);
+            e->SetMoveSpeedR(700);
             e->SetRightKey(true);
             e->SetLeftKey(false);
             e->SetUpKey(true);
         }
+    }
+    /****************************
+     * BOSS THROW DEFENSIVE MOVE
+     ***********************'***/
+    if((rand() % 3) + 1 == 3)
+    {
+        p->SetJumpCheck(true);
+        p->SetApexCheck(false);
+        p->SetJumpSpeed(100);
+        if(e->GetMovDir() == 1)
+            p->SetMoveSpeedR(1000);
+        else
+            p->SetMoveSpeedL(1000);
     }
 }

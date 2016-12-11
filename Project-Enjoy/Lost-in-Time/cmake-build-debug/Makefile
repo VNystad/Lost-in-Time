@@ -47,10 +47,10 @@ RM = "E:\Programmer\CLion\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time"
+CMAKE_SOURCE_DIR = "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Local Project Enjoy\11.12.2016 3\pe\Project-Enjoy\Lost-in-Time"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug"
+CMAKE_BINARY_DIR = "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Local Project Enjoy\11.12.2016 3\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Local Project Enjoy\11.12.2016 3\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Local Project Enjoy\11.12.2016 3\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Local Project Enjoy\11.12.2016 3\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target

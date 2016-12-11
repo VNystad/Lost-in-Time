@@ -1,4 +1,4 @@
-"E:\Programmer\CLion\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time"
+"E:\Programmer\CLion\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Local Project Enjoy\11.12.2016 3\pe\Project-Enjoy\Lost-in-Time"
 -- The C compiler identification is GNU 6.1.0
 -- The CXX compiler identification is GNU 6.1.0
 -- Check for working C compiler: E:/Programmer/TheMinGW64/mingw64/bin/gcc.exe
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug
+-- Build files have been written to: E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Local Project Enjoy/11.12.2016 3/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug

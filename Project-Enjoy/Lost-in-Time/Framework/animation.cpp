@@ -50,8 +50,6 @@ void Animation::init()
         std::cout << "Failed to load data/Character-Animation/gorillamoveright.png" << std::endl << std::endl;
     if (!AIBossTextureWalkLeft.loadFromFile("data/Character-Animation/gorillamoveleft.png"))
         std::cout << "Failed to load data/Character-Animation/gorillamoveleft.png" << std::endl << std::endl;
-
-
 }
 
 void Animation::PlayerWalkRight(sf::RectangleShape* character)

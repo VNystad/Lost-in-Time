@@ -12,7 +12,9 @@ public:
     bool LoadFromSave() const {return savedObject; }
 
     void LoadPlayer(std::string name, int hp, int x, int y, int timeElapsed);
-    void LoadAI(int enemyX, int enemyY, int patrole, sf::RenderWindow& window);
+    void LoadAI(int enemyX, int enemyY, int patrole, bool boss, sf::RenderWindow& window);
+
+    bool GetAIInfo() const {return boss; }
 
     std::string GetPlayerName() const {return playerName; }
     int GetPlayerHP() const {return playerHP; }
@@ -24,6 +26,7 @@ public:
 
 protected:
     bool savedObject = false;
+    bool boss = false;
 
     std::string playerName;
     int playerHP;

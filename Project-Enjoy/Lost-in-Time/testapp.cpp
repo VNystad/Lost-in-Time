@@ -59,6 +59,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, false, &window));
         //AIVectorPointer->push_back(new AIEnemies(Start X, Start Y, Patrol Each Way From Start, IsBoss?, *config, &window));
         AIVectorPointer->push_back(new AIEnemies(1530, 510, 400, false, &window));
+        AIVectorPointer->push_back(new AIEnemies(762, 622, 100, true, &window));
 
     }
 
@@ -406,7 +407,7 @@ void TestApp::AIHandler(float delta)
         else
         {
             if(AIVectorPointer->at(i)->GetBoss())
-                AIVectorPointer->(i)->AnimationBoss();
+                AIVectorPointer->at(i)->AnimationBoss();
             else if(AIVectorPointer->at(i)->GetMiniBoss())
                 AIVectorPointer->at(i)->AnimationAIMiniBoss();
             else
@@ -627,9 +628,11 @@ bool TestApp::SaveGame(int selectedSave)
         int positionX = AIVectorPointer->at(enemyCount-1)->GetPositionX();
         int positionY = AIVectorPointer->at(enemyCount-1)->GetPositionY();
         int patrol = AIVectorPointer->at(enemyCount-1)->GetPositionX() - AIVectorPointer->at(enemyCount-1)->GetPatrolRight();
+        bool boss = AIVectorPointer->at(enemyCount-1)->GetBoss();
         savefile << std::endl << positionX;
         savefile << std::endl << positionY;
         savefile << std::endl << patrol;
+        savefile << std::endl << boss;
         enemyCount--;
     }
     savefile.close();

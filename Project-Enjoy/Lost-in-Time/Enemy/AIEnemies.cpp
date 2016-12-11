@@ -19,7 +19,7 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
     animation.init();
     health.init();
 
-    if(boss == true)
+    if(boss)
     {
         this->SetSizeHeight(49);
         this->SetSizeWidth(47);
@@ -33,6 +33,8 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
         this->SetLeftKey(false);
         this->enragerange = 300;
         this->SetEnragedSpeed(190);
+        this->boss = true;
+        this->SetMiniBoss(false);
     }
 
     else if(this->GetMiniBoss() == true)

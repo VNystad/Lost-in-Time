@@ -50,6 +50,7 @@ public:
 
     void AnimationAI();
     void AnimationAIMiniBoss();
+    void AnimationBoss();
 
     /**********************
     * AI

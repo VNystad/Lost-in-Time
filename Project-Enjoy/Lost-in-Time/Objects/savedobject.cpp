@@ -12,7 +12,7 @@ void SavedObject::LoadPlayer(std::string name, int hp, int x, int y, int timeEla
     std::cout << "Created SavedObject" << std::endl;
 }
 
-void SavedObject::LoadAI(int enemyX, int enemyY, int patrol, boss, sf::RenderWindow& window)
+void SavedObject::LoadAI(int enemyX, int enemyY, int patrol, bool boss, sf::RenderWindow& window)
 {
     AIVectorPointer->push_back(new AIEnemies(enemyX, enemyY, patrol, boss, &window));
 }

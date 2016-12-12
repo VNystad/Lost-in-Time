@@ -51,6 +51,12 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         //4450, 558
         p = new PlayerTest(160, 398, *config, &window);
 
+        /********************|
+        * Create the player
+        *******************/
+
+        c = new PrincessObject(800, 400, 100, *config, &window);
+
         /***********************************
          * Creating AI
          * Using vector to keep track on AIs
@@ -261,6 +267,7 @@ bool TestApp::Tick(Machine& machine)
     }
 
     p->PlayerAnimation();
+    c->PrincessAnimation();
 
     /***********************
      * Handles player and AI
@@ -289,11 +296,14 @@ bool TestApp::Tick(Machine& machine)
     }
 
     p->DrawMe();
+    c->DrawMe();
     /***********************
      * Draws HUD sprite
      **********************/
     window->draw(HudSprite);
     p->health.DrawMe(*window);
+
+
     AIHandler(delta);
     window->draw(*timerInText);
 
@@ -380,6 +390,9 @@ void TestApp::Move(float delta)
 {
     Physics::Movement(p, collidableArray, delta);
     Physics::Gravity(p, collidableArray, delta);
+    c->PrincessAI(c,p);
+    Physics::PrincessMovement(c, collidableArray, delta);
+    Physics::PrincessGravity(c, collidableArray, delta);
 }
 
 /**

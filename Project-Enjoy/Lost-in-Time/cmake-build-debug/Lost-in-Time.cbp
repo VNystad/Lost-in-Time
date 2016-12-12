@@ -179,6 +179,12 @@
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princess.cpp">
+			<Option target="Lost-in-Time"/>
+		</Unit>
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princess.h">
+			<Option target="Lost-in-Time"/>
+		</Unit>
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/savedobject.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>

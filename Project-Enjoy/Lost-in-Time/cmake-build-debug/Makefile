@@ -527,6 +527,33 @@ Objects/playertest.cpp.s:
 	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/playertest.cpp.s
 .PHONY : Objects/playertest.cpp.s
 
+Objects/princess.obj: Objects/princess.cpp.obj
+
+.PHONY : Objects/princess.obj
+
+# target to build an object file
+Objects/princess.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/princess.cpp.obj
+.PHONY : Objects/princess.cpp.obj
+
+Objects/princess.i: Objects/princess.cpp.i
+
+.PHONY : Objects/princess.i
+
+# target to preprocess a source file
+Objects/princess.cpp.i:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/princess.cpp.i
+.PHONY : Objects/princess.cpp.i
+
+Objects/princess.s: Objects/princess.cpp.s
+
+.PHONY : Objects/princess.s
+
+# target to generate assembly for a file
+Objects/princess.cpp.s:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/princess.cpp.s
+.PHONY : Objects/princess.cpp.s
+
 Objects/savedobject.obj: Objects/savedobject.cpp.obj
 
 .PHONY : Objects/savedobject.obj
@@ -770,6 +797,9 @@ help:
 	@echo ... Objects/playertest.obj
 	@echo ... Objects/playertest.i
 	@echo ... Objects/playertest.s
+	@echo ... Objects/princess.obj
+	@echo ... Objects/princess.i
+	@echo ... Objects/princess.s
 	@echo ... Objects/savedobject.obj
 	@echo ... Objects/savedobject.i
 	@echo ... Objects/savedobject.s

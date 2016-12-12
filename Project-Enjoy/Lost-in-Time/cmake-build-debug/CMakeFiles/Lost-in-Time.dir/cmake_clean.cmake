@@ -21,6 +21,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.obj"
   "CMakeFiles/Lost-in-Time.dir/main.cpp.obj"
   "CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj"
+  "CMakeFiles/Lost-in-Time.dir/Objects/princess.cpp.obj"
   "Lost-in-Time.pdb"
   "Lost-in-Time.exe"
   "Lost-in-Time.exe.manifest"

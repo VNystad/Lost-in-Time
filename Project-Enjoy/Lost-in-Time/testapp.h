@@ -2,12 +2,12 @@
 #define LOST_IN_TIME_TESTAPP_H
 
 
-#include "Objects/playertest.h"
 #include <list>
 #include <SFML/System/Clock.hpp>
 #include <SFML/Graphics.hpp>
 #include "Framework/config.h"
 #include "Objects/playertest.h"
+#include "Objects/princess.h"
 #include "Map/map.h"
 #include "Framework/Camera.h"
 #include "Enemy/AIEnemies.h"
@@ -102,6 +102,8 @@ protected:
 
     //Dependensies
     PlayerTest* p;
+
+    PrincessObject* c;
 
     std::vector<AIEnemies*>* AIVectorPointer = &AIVector;
     std::vector<AIEnemies*> AIVector;

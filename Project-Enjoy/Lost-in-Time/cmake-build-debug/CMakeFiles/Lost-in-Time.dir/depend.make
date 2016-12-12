@@ -38,6 +38,7 @@ CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.obj: ../Framework/physics.h
 CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.obj: ../Interface/health.h
 CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.obj: ../Map/tile.h
 CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.obj: ../Objects/playertest.h
+CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.obj: ../Objects/princess.h
 
 CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.obj: ../Framework/font.h
 CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.obj: ../Interface/deathscreen.cpp
@@ -77,6 +78,14 @@ CMakeFiles/Lost-in-Time.dir/Objects/playertest.cpp.obj: ../Framework/config.h
 CMakeFiles/Lost-in-Time.dir/Objects/playertest.cpp.obj: ../Interface/health.h
 CMakeFiles/Lost-in-Time.dir/Objects/playertest.cpp.obj: ../Objects/playertest.cpp
 CMakeFiles/Lost-in-Time.dir/Objects/playertest.cpp.obj: ../Objects/playertest.h
+
+CMakeFiles/Lost-in-Time.dir/Objects/princess.cpp.obj: ../Framework/Sounds.h
+CMakeFiles/Lost-in-Time.dir/Objects/princess.cpp.obj: ../Framework/animation.h
+CMakeFiles/Lost-in-Time.dir/Objects/princess.cpp.obj: ../Framework/config.h
+CMakeFiles/Lost-in-Time.dir/Objects/princess.cpp.obj: ../Interface/health.h
+CMakeFiles/Lost-in-Time.dir/Objects/princess.cpp.obj: ../Objects/playertest.h
+CMakeFiles/Lost-in-Time.dir/Objects/princess.cpp.obj: ../Objects/princess.cpp
+CMakeFiles/Lost-in-Time.dir/Objects/princess.cpp.obj: ../Objects/princess.h
 
 CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj: ../Enemy/AI.h
 CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.obj: ../Enemy/AIEnemies.h
@@ -127,6 +136,7 @@ CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Map/map.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Map/object.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Map/tile.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Objects/playertest.h
+CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Objects/princess.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Objects/savedobject.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../state/machine.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../state/state.h
@@ -174,6 +184,7 @@ CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Map/map.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Map/object.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Map/tile.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Objects/playertest.h
+CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Objects/princess.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../Objects/savedobject.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../state/machine.h
 CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj: ../testapp.cpp

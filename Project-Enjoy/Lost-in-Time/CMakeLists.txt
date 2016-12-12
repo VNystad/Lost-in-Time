@@ -62,7 +62,7 @@ set(SOURCE_FILES
         main.cpp
         testapp.cpp
         testapp.h
-        )
+        Objects/princess.cpp Objects/princess.h)
 
 add_executable(Lost-in-Time ${SOURCE_FILES})
 

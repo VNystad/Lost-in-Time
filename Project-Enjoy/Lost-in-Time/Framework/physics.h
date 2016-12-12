@@ -3,6 +3,7 @@
 
 #include "../Objects/playertest.h"
 #include "../Enemy/AIEnemies.h"
+#include "../Objects/princess.h"
 #include "../Map/tile.h"
 #include <vector>
 
@@ -25,9 +26,18 @@ public:
     static bool AIGrounded(AIEnemies* e, int** collidableArray);
     static bool AIRoofed(AIEnemies* e, int** collidableArray);
 
-
     static void Hurt(PlayerTest* p, AIEnemies* e, int* i, std::vector<AIEnemies*>* AIVector);
     static void AISelfCollision(AIEnemies* e,  int* i, std::vector<AIEnemies*>* AIVector);
+
+    //Special for special princess
+    static void PrincessMovement(PrincessObject* p, int** collidableArray, float delta);
+    static void PrincessGravity(PrincessObject* p, int** collidableArray, float delta);
+    static bool PrincessHorisontalCollision(PrincessObject* p, int** collidableArray);
+    static bool PrincessGrounded(PrincessObject* p, int** collidableArray);
+    static bool PrincessRoofed(PrincessObject* p, int** collidableArray);
+
+
+
 
 
 private:

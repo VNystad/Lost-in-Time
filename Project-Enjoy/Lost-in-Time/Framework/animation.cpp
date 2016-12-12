@@ -51,6 +51,15 @@ void Animation::init()
         std::cout << "Failed to load data/Character-Animation/gorillamoveright.png" << std::endl << std::endl;
     if (!AIBossTextureWalkLeft.loadFromFile("data/Character-Animation/gorillamoveleft.png"))
         std::cout << "Failed to load data/Character-Animation/gorillamoveleft.png" << std::endl << std::endl;
+
+    /* **********************************
+                PRINCESS CHARACTER
+     ********************************** */
+
+    if (!PrincessTextureWalkRight.loadFromFile("data/Character-Animation/princessidleright.png"))
+        std::cout << "Failed to load data/Character-Animation/princessidleright.png" << std::endl << std::endl;
+    if (!PrincessTextureWalkLeft.loadFromFile("data/Character-Animation/princessidleleft.png"))
+        std::cout << "Failed to load data/Character-Animation/princessidleleft.png" << std::endl << std::endl;
 }
 
 void Animation::PlayerWalkRight(sf::RectangleShape* character)
@@ -402,4 +411,59 @@ void Animation::AIBossWalkLeft(sf::RectangleShape* character)
     }
 
     character->setTextureRect(*frameSelectedBoss);
+}
+
+
+void Animation::PrincessWalkRight(sf::RectangleShape* character)
+{
+    character->setTexture(&PrincessTextureWalkRight);
+    if(animationdir == 1)
+    {
+        if (frameSelected->left < 68)
+            frameSelected->left += 34;
+        else
+        {
+            frameSelected->left -= 34;
+            animationdir = 0;
+        }
+    }
+    else
+    {
+        if (frameSelected->left > 0)
+            frameSelected->left -= 34;
+        else
+        {
+            frameSelected->left += 34;
+            animationdir = 1;
+        }
+    }
+
+    character->setTextureRect(*frameSelected);
+}
+
+void Animation::PrincessWalkLeft(sf::RectangleShape* character)
+{
+    character->setTexture(&PrincessTextureWalkLeft);
+    if(animationdir == 1)
+    {
+        if (frameSelected->left < 102)
+            frameSelected->left += 34;
+        else
+        {
+            frameSelected->left -= 34;
+            animationdir = 0;
+        }
+    }
+    else
+    {
+        if (frameSelected->left > 34)
+            frameSelected->left -= 34;
+        else
+        {
+            frameSelected->left += 34;
+            animationdir = 1;
+        }
+    }
+
+    character->setTextureRect(*frameSelected);
 }

@@ -69,17 +69,13 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
     collidableArray = new int*[ArraySize];
     collidableArray[0] = new int[ArraySize * ArraySize];
     for (int i = 1; i < ArraySize; i++)
-    {
         collidableArray[i] = collidableArray[i - 1] + ArraySize;
-    }
 
     /*************************************************
      * Load map information from JSON into object list
      ************************************************/
     if (!Map::load("data/map.json", objects, collidableArray))
-    {
         std::cout << "Failed to load map data." << std::endl << std::endl;
-    }
 
     /*****************************************
      * Set camera position in middle of screen
@@ -219,9 +215,7 @@ bool TestApp::Tick(Machine& machine)
     {
         music->music.pause();
         while(!sf::Keyboard::isKeyPressed(sf::Keyboard::R))
-        {
             clock->restart();
-        }
         music->music.play();
     }
         // For testing only, prints out player position
@@ -248,8 +242,6 @@ bool TestApp::Tick(Machine& machine)
      * the player's lifepoint is reduced to 0 and player death function is called */
     if (p->GetPositionY() >= 2500)
     {
-
-
         penaltyTime = penaltyTime + 20;
         p->health.DeathHandle();
         p->PlayerDead();
@@ -264,7 +256,6 @@ bool TestApp::Tick(Machine& machine)
         timer->restart();
     }
 
-
     p->PlayerAnimation();
 
     /***********************
@@ -272,8 +263,6 @@ bool TestApp::Tick(Machine& machine)
      * movements
      **********************/
     Move(delta);
-
-
 
     /***********************
      * Draws background images
@@ -326,7 +315,6 @@ bool TestApp::Tick(Machine& machine)
             // Positions background movement
             Junglebackground1Sprite.setPosition((p->GetPositionX()*1.5/8)-195,-300);
             Cavebackground2Sprite.setPosition((p->GetPositionX()*1.5/8)-195,600);
-
         }
 
         if (p->GetPositionX() >= 5238)
@@ -336,13 +324,10 @@ bool TestApp::Tick(Machine& machine)
                 view5.setCenter(5238, p->GetPositionY());
                 *currentView = view5;
                 window->setView(view5);
-
             }
-
         }
         else if(p->GetPositionY() >= 1290)
         {
-
             sf::View view2 = window->getDefaultView();
             view2.setCenter(p->GetPositionX(), 1290);
             *currentView = view2;
@@ -351,7 +336,6 @@ bool TestApp::Tick(Machine& machine)
             // Positions background movement
             Cavebackground2Sprite.setPosition((p->GetPositionX()*1.5/8)-195,600);
             Junglebackground6Sprite.setPosition(p->GetPositionX()*1.5/8,200);
-
         }
     }
     else if (p->GetPositionX() <=  512)
@@ -489,7 +473,6 @@ bool TestApp::VictoryHandler()
                     {
                         // Save highscore
                         // end game
-                        std::cout << "WIN" << std::endl;
                         return true;
 
                     }
@@ -616,7 +599,6 @@ bool TestApp::SaveGame(int selectedSave)
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return) && !keyPressed)
             break;
-
     }
     int enemyCount = (AIVector.size());
     enemyCount = AIVectorPointer->size();
@@ -664,7 +646,6 @@ int TestApp::menuSelected(std::string menu)
     while(1){
         if(!menu.compare("EscMenu"))
         {
-
             resumeGameSprite.setPosition(MenuPositionX, MenuPositionY);
             saveGameSprite.setPosition(MenuPositionX, MenuPositionY + 100);
             mainMenuSprite.setPosition(MenuPositionX, MenuPositionY + 200);
@@ -697,14 +678,12 @@ int TestApp::menuSelected(std::string menu)
             if (choice > amountOfChoices)
                 choice = 1;
             keyPressed = true;
-            std::cout << choice << std::endl;
         }
         else if(!keyPressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
             choice--;
             if (choice <= 0)
                 choice = amountOfChoices;
             keyPressed = true;
-            std::cout << choice << std::endl;
         }
         else if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
             keyPressed = false;
@@ -787,9 +766,7 @@ sf::Texture *TestApp::LoadTexture(std::string path, int &menuAmount)
     //newTexture->loadFromFile(path);
 
     if(!newTexture->loadFromFile(path))
-    {
         std::cout << "Could not load image on path: " << path << std::endl;
-    }
     menuAmount++;
     return newTexture;
 }

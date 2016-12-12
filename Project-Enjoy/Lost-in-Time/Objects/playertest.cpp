@@ -138,24 +138,6 @@ void PlayerTest::PlayerDead()
     positionY = OriginalY;
     sound = new Sounds();
     sound->playSound("/Death.wav");
-    std::cout << "Oh deer, you died!" << std::endl;
-    std::cout << "     (      )\n"
-            "     ))    ((\n"
-            "    //      \\\\\n"
-            "   | \\\\____// |\n"
-            "  \\~/ ~    ~\\/~~/\n"
-            "   (|    _/o  ~~\n"
-            "    /  /     ,|\n"
-            "   (~~~)__.-\\ |\n"
-            "    ``~~    | |\n"
-            "     |      | |\n"
-            "     |        |\n"
-            "    /          \\\n"
-            "   `\\          /'\n"
-            "     `\\_    _/'\n"
-            "        ~~~~"
-              << std::endl << std::endl;
-
 }
 
 /**

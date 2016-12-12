@@ -110,7 +110,7 @@ void Health::DeathHandle()
 {
     actuallifepoints = 0;
     visiblelifepoints = 0;
-    UpdateHealth();
+    //UpdateHealth();
     ResetHealth();
 }
 
@@ -134,8 +134,7 @@ bool Health::Dead()
 void Health::ResetHealth()
 {
     this->visiblelifepoints = this->actuallifepoints = this->originalhealth;
-    std::cout << "actual: " << actuallifepoints << " visible: " << visiblelifepoints << std::endl;
-    UpdateHealth();
+    //UpdateHealth();
 }
 
 /**
@@ -146,8 +145,7 @@ void Health::ResetHealth()
 void Health::Hit(int damage)
 {
     this->actuallifepoints -= damage;
-    std::cout << this->actuallifepoints << std::endl;
-    UpdateHealth();
+    //UpdateHealth();
 }
 
 /**
@@ -158,8 +156,7 @@ void Health::Hit(int damage)
 void Health::Healed(int health)
 {
     this->actuallifepoints += health;
-    std::cout << this->actuallifepoints << std::endl;
-    UpdateHealth();
+    //UpdateHealth();
 }
 
 // health:   0 => (0 / 100) * fullWidth   = 0    * fullWidth = 0

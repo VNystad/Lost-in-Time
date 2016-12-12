@@ -937,6 +937,7 @@ void Physics::PrincessGravity(PrincessObject* p, int** collidableArray, float de
             }
         }
     }
+    p->SetUpKey(false);
     //Gravity End-------------------------------------------------------------------------------------------------------
 }
 
@@ -955,8 +956,13 @@ bool Physics::PrincessHorisontalCollision(PrincessObject* p, int** collidableArr
     int playerWestCoord = (p->GetPositionX() / 32);
     int playerEastCoord = playerWestCoord +1;
 
-    return (p->GetMoveSpeedL() > 0 && (collidableArray[upperPlayerYArrayCoord][playerWestCoord] || collidableArray[lowerPlayerArrayCoord][playerWestCoord]))
-           || (p->GetMoveSpeedR() > 0 && (collidableArray[upperPlayerYArrayCoord][playerEastCoord] || collidableArray[lowerPlayerArrayCoord][playerEastCoord]));
+    if((p->GetMoveSpeedL() > 0 && (collidableArray[upperPlayerYArrayCoord][playerWestCoord] || collidableArray[lowerPlayerArrayCoord][playerWestCoord]))
+           || (p->GetMoveSpeedR() > 0 && (collidableArray[upperPlayerYArrayCoord][playerEastCoord] || collidableArray[lowerPlayerArrayCoord][playerEastCoord])))
+    {
+        p->SetUpKey(true);
+        return true;
+    }
+    return false;
     /*
     if((p->GetMoveSpeedL() > 0 && (collidableArray[upperPlayerYArrayCoord][playerWestCoord] || collidableArray[lowerPlayerArrayCoord][playerWestCoord]))
        || (p->GetMoveSpeedR() > 0 && (collidableArray[upperPlayerYArrayCoord][playerEastCoord] || collidableArray[lowerPlayerArrayCoord][playerEastCoord])))

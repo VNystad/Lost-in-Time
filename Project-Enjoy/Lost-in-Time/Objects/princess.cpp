@@ -4,10 +4,10 @@
 
 PrincessObject::PrincessObject(float x, float y, float patrol, const Config& config, sf::RenderWindow* window) : config(config), window(window)
 {
-    this->OriginalX = positionX;
-    this->OriginalY = positionY;
-    this->positionX = OriginalX;
-    this->positionY = OriginalY;
+    this->OriginalX = x;
+    this->OriginalY = y;
+    this->positionX = x;
+    this->positionY = y;
     character = new sf::RectangleShape;
     character->setSize(sf::Vector2f(sizeWidth,sizeHeight));
 

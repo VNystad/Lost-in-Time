@@ -2,12 +2,12 @@
 #include "playertest.h"
 #include <stdlib.h>
 
-PlayerTest::PlayerTest(float positionX, float positionY, const Config& config, sf::RenderWindow* window) : config(config), window(window)
+PlayerTest::PlayerTest(float x, float y, const Config& config, sf::RenderWindow* window) : config(config), window(window)
 {
-    this->OriginalX = positionX;
-    this->OriginalY = positionY;
-    this->positionX = OriginalX;
-    this->positionY = OriginalY;
+    this->OriginalX = x;
+    this->OriginalY = y;
+    this->positionX = x;
+    this->positionY = y;
     character = new sf::RectangleShape;
     character->setSize(sf::Vector2f(sizeWidth,sizeHeight));
 

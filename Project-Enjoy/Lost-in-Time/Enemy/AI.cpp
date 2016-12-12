@@ -204,7 +204,7 @@ void AI::AnimationBoss()
 void AI::Death()
 {
 //Delete AI
-    this->health.Hit(this->health.GetOriginalLifePoints());
+    this->health.Hit(100000000000);
 
 }
 

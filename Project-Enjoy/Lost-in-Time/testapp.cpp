@@ -47,13 +47,13 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         /********************|
          * Create the player
          *******************/
-        p = new PlayerTest(180, 206, *config, &window);
+        p = new PlayerTest(4050, 558, *config, &window);
 
         /***********************************
          * Creating AI
          * Using vector to keep track on AIs
          **********************************/
-        AIVectorPointer->push_back(new AIEnemies(720, 640, 200, true, &window));
+        AIVectorPointer->push_back(new AIEnemies(4450, 558, 400, true, &window));
         AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, false, &window));
         AIVectorPointer->push_back(new AIEnemies(1950, 1220, 150, false, &window));
         AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, false, &window));
@@ -115,9 +115,9 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         std::cout << "Could not load font from directory 'data/font.ttf'" << std::endl;
     timer = new sf::Clock();
     timerInText = new sf::Text("hi", *font);
-    timerInText->setCharacterSize(30);
+    timerInText->setCharacterSize(20);
     timerInText->setStyle(sf::Text::Regular);
-    timerInText->setColor(sf::Color::White);
+    timerInText->setColor(sf::Color::Black);
     victoryText = new sf::Text("Score: ", *font);
     victoryText->setCharacterSize(70);
     victoryText->setStyle(sf::Text::Regular);
@@ -134,8 +134,14 @@ bool TestApp::Tick(Machine& machine)
      * Gets time elapsed and
      * place it in text form
      ***********************/
-    timerX = currentView->getCenter().x + 450;
-    timerY = currentView->getCenter().y + 250;
+
+    if(winTime > 9)
+        timerX = currentView->getCenter().x + 157;
+    else if(winTime > 99)
+        timerX = currentView->getCenter().x + 143;
+    else
+        timerX = currentView->getCenter().x + 163;
+    timerY = currentView->getCenter().y - 229;
     int timeelapsed = timer->getElapsedTime().asSeconds() + penaltyTime - EscMenuTime;
     winTime = timer->getElapsedTime().asSeconds() + penaltyTime - EscMenuTime;
     std::string tempForTime = std::to_string(timeelapsed);
@@ -147,8 +153,8 @@ bool TestApp::Tick(Machine& machine)
      * POSITION HEALTHBAR
      *******************/
     //p->health.SetPosition(currentView->getCenter().x, timerY + 250);
-    p->health.SetPosition(currentView->getCenter().x - 70, p->GetPositionY() - 230);
-    HudSprite.setPosition(currentView->getCenter().x - 119, p->GetPositionY() - 268);
+    p->health.SetPosition(currentView->getCenter().x - 70, currentView->getCenter().y - 231);
+    HudSprite.setPosition(currentView->getCenter().x - 119, currentView->getCenter().y - 268);
 
     /*************
      * KILL ALL AI
@@ -191,7 +197,8 @@ bool TestApp::Tick(Machine& machine)
         }
     }
 
-
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::L))
+        penaltyTime += 10;
 
     /*****************************************************************
      *        KEYBOARD EVENTS ( but not for physical actions )
@@ -289,17 +296,17 @@ bool TestApp::Tick(Machine& machine)
     }
 
     p->DrawMe();
-
     /***********************
      * Draws HUD sprite
      **********************/
     window->draw(HudSprite);
-
+    p->health.DrawMe(*window);
     AIHandler(delta);
     window->draw(*timerInText);
+
     // Update health before displaying it ( Will not be in use in this version )
     // p->health.UpdateHealth();
-    p->health.DrawMe(*window);
+
 
     window->display();
 
@@ -751,7 +758,7 @@ void TestApp::LoadImages()
     mainMenuSprite.setTexture(*mainMenu);
     exitGameSprite.setTexture(*exitGame);
 
-    Junglebackground1 = LoadTexture("data/Backgrounds/Jungle10.png", nothing);
+    Junglebackground1 = LoadTexture("data/Backgrounds/Jungle11.png", nothing);
     Cavebackground1 = LoadTexture("data/Backgrounds/Cave3.png", nothing);
     Treebackground1 = LoadTexture("data/Backgrounds/Tree.png", nothing);
     Hud = LoadTexture("data/Backgrounds/Hud.png", nothing);

@@ -196,7 +196,7 @@ void Animation::PlayerJumpRight(sf::RectangleShape* character)
     }
     else
     {
-        if (frameSelected->left > 0)
+        if (frameSelected->left > 64)
             frameSelected->left -= 34;
         else
         {

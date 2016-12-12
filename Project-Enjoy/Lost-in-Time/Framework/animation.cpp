@@ -23,7 +23,7 @@ void Animation::init()
         std::cout << "Failed to load data/Character-Animation/characterdeath.png" << std::endl << std::endl;
 
     frameSelected = new sf::IntRect(0,0,GetSizeWidth(),GetSizeHeight());
-    frameSelectedBoss = new sf::IntRect(0,0,55,44);
+    frameSelectedBoss = new sf::IntRect(0,0,110,44);
 
     /* **********************************
            MINION CHARACTER
@@ -357,21 +357,21 @@ void Animation::AIBossWalkRight(sf::RectangleShape* character)
     character->setTexture(&AIBossTextureWalkRight);
     if(animationdir == 1)
     {
-        if (frameSelectedBoss->left < 605)
-            frameSelectedBoss->left += 55;
+        if (frameSelectedBoss->left < 1362)
+            frameSelectedBoss->left += 110;
         else
         {
-            frameSelectedBoss->left -= 55;
+            frameSelectedBoss->left -= 110;
             animationdir = 0;
         }
     }
     else
     {
         if (frameSelectedBoss->left > 0)
-            frameSelectedBoss->left -= 55;
+            frameSelectedBoss->left -= 110;
         else
         {
-            frameSelectedBoss->left += 55;
+            frameSelectedBoss->left += 110;
             animationdir = 1;
         }
     }
@@ -384,21 +384,21 @@ void Animation::AIBossWalkLeft(sf::RectangleShape* character)
     character->setTexture(&AIBossTextureWalkLeft);
     if(animationdir == 1)
     {
-        if (frameSelectedBoss->left < 605)
-            frameSelectedBoss->left += 55;
+        if (frameSelectedBoss->left < 1362)
+            frameSelectedBoss->left += 110;
         else
         {
-            frameSelectedBoss->left -= 55;
+            frameSelectedBoss->left -= 110;
             animationdir = 0;
         }
     }
     else
     {
         if (frameSelectedBoss->left > 0)
-            frameSelectedBoss->left -= 55;
+            frameSelectedBoss->left -= 110;
         else
         {
-            frameSelectedBoss->left += 55;
+            frameSelectedBoss->left += 110;
             animationdir = 1;
         }
     }

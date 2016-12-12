@@ -128,6 +128,14 @@ void PlayerTest:: PlayerSoundHurt()
         sound->playSound("/manhurt2.wav", 100);
 }
 
+
+void PlayerTest:: PlayerSoundEnemyLanded()
+{
+    sound = new Sounds();
+    sound->playSound("/jumpedonenemy.wav", 100);
+}
+
+
 /**
  * When player is dead this function is called.
  * Reset variables that need reseted.

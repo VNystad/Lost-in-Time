@@ -64,6 +64,8 @@ void Animation::init()
 
 void Animation::PlayerWalkRight(sf::RectangleShape* character)
 {
+    if(frameSelected->left > 102)
+        frameSelected->left = 0;
     character->setTexture(&PlayerTextureWalk);
     if(animationdir == 1)
     {
@@ -91,6 +93,8 @@ void Animation::PlayerWalkRight(sf::RectangleShape* character)
 
 void Animation::PlayerWalkLeft(sf::RectangleShape* character)
 {
+    if(frameSelected->left > 102)
+        frameSelected->left = 0;
     character->setTexture(&PlayerTextureWalkflipped);
     if(animationdir == 1)
     {
@@ -118,6 +122,8 @@ void Animation::PlayerWalkLeft(sf::RectangleShape* character)
 
 void Animation::PlayerIdleLeft(sf::RectangleShape* character)
 {
+    if(frameSelected->left > 102)
+        frameSelected->left = 0;
     character->setTexture(&PlayerTextureIdleFlipped);
     if(animationdir == 1)
     {
@@ -155,6 +161,8 @@ void Animation::PlayerIdleLeft(sf::RectangleShape* character)
 
 void Animation::PlayerIdle(sf::RectangleShape* character)
 {
+    if(frameSelected->left > 102)
+        frameSelected->left = 0;
     character->setTexture(&PlayerTextureIdle);
     if(animationdir == 1)
     {
@@ -192,6 +200,8 @@ void Animation::PlayerIdle(sf::RectangleShape* character)
 
 void Animation::PlayerJumpRight(sf::RectangleShape* character)
 {
+    if(frameSelected->left > 136)
+        frameSelected->left = 0;
     character->setTexture(&PlayerTextureJump);
     if(animationdir == 1)
     {
@@ -205,7 +215,7 @@ void Animation::PlayerJumpRight(sf::RectangleShape* character)
     }
     else
     {
-        if (frameSelected->left > 64)
+        if (frameSelected->left > 68)
             frameSelected->left -= 34;
         else
         {
@@ -219,6 +229,8 @@ void Animation::PlayerJumpRight(sf::RectangleShape* character)
 
 void Animation::PlayerJumpLeft(sf::RectangleShape* character)
 {
+    if(frameSelected->left > 136)
+        frameSelected->left = 0;
     character->setTexture(&PlayerTextureJumpflipped);
     if(animationdir == 1)
     {
@@ -251,6 +263,8 @@ void Animation::PlayerDie(sf::RectangleShape* character)
 
 void Animation::AIWalkRight(sf::RectangleShape* character)
 {
+    if(frameSelected->left > 216)
+        frameSelected->left = 0;
     character->setTexture(&AITextureWalkRight);
     if(animationdir == 1)
     {
@@ -278,6 +292,8 @@ void Animation::AIWalkRight(sf::RectangleShape* character)
 
 void Animation::AIWalkLeft(sf::RectangleShape* character)
 {
+    if(frameSelected->left > 216)
+        frameSelected->left = 0;
     character->setTexture(&AITextureWalkLeft);
     if(animationdir == 1)
     {
@@ -306,6 +322,8 @@ void Animation::AIWalkLeft(sf::RectangleShape* character)
 
 void Animation::AIMiniBossWalkRight(sf::RectangleShape* character)
 {
+    if(frameSelected->left > 216)
+        frameSelected->left = 0;
     character->setTexture(&AIMiniBossTextureWalkRight);
     if(animationdir == 1)
     {
@@ -333,6 +351,8 @@ void Animation::AIMiniBossWalkRight(sf::RectangleShape* character)
 
 void Animation::AIMiniBossWalkLeft(sf::RectangleShape* character)
 {
+    if(frameSelected->left > 216)
+        frameSelected->left = 0;
     character->setTexture(&AIMiniBossTextureWalkLeft);
     if(animationdir == 1)
     {
@@ -361,6 +381,8 @@ void Animation::AIMiniBossWalkLeft(sf::RectangleShape* character)
 
 void Animation::AIBossWalkRight(sf::RectangleShape* character)
 {
+    if(frameSelected->left > 605)
+        frameSelected->left = 0;
     character->setTexture(&AIBossTextureWalkRight);
     if(animationdir == 1)
     {
@@ -388,6 +410,8 @@ void Animation::AIBossWalkRight(sf::RectangleShape* character)
 
 void Animation::AIBossWalkLeft(sf::RectangleShape* character)
 {
+    if(frameSelected->left > 605)
+        frameSelected->left = 0;
     character->setTexture(&AIBossTextureWalkLeft);
     if(animationdir == 1)
     {
@@ -416,6 +440,8 @@ void Animation::AIBossWalkLeft(sf::RectangleShape* character)
 
 void Animation::PrincessWalkRight(sf::RectangleShape* character)
 {
+    if(frameSelected->left > 68)
+        frameSelected->left = 0;
     character->setTexture(&PrincessTextureWalkRight);
     if(animationdir == 1)
     {
@@ -443,6 +469,8 @@ void Animation::PrincessWalkRight(sf::RectangleShape* character)
 
 void Animation::PrincessWalkLeft(sf::RectangleShape* character)
 {
+    if(frameSelected->left > 102)
+        frameSelected->left = 34;
     character->setTexture(&PrincessTextureWalkLeft);
     if(animationdir == 1)
     {

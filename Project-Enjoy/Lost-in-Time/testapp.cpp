@@ -49,7 +49,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
          *******************/
         // 160, 398
         //4450, 558
-        p = new PlayerTest(160, 398, *config, &window);
+        p = new PlayerTest(4450, 558, *config, &window);
 
         /********************|
         * Create the player

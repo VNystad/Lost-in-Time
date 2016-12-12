@@ -143,7 +143,10 @@ void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
     {
         //Checks if object is landing at a harmfull velocity, if so, harms it.
         if(p->GetFallSpeed() > p->GetMaxFallSpeed()/2.5)
+        {
             p->health.Hit(p->GetFallSpeed()*0.2);
+            p->PlayerSoundHurt();
+        }
         p->SetJumpCheck(false);
         p->SetFallSpeed(0);
         float temp = p->GetOrigJumpSpeed();
@@ -559,8 +562,8 @@ bool Physics::AIGrounded(AIEnemies* e, int** collidableArray)
 
     if(e->GetBoss())
     {
-        playerArrayCoordX = (e->GetPositionX() + 16) / 32;
-        playerSouthCoord = (e->GetPositionY() + 18) / 32;
+        playerArrayCoordX = (e->GetPositionX() + (e->GetSizeWidth()/2)) / 32;
+        playerSouthCoord = (e->GetPositionY() + 100) / 32;
         //player southcord: +43 is underground, +44 is above ground. Need float.
     }
 
@@ -630,6 +633,7 @@ void Physics::Hurt(PlayerTest*p, AIEnemies* e, int* i, std::vector<AIEnemies*>* 
                 p->SetPlayerHurt(1);
             else if(py < ey)
             {
+                p->PlayerSoundEnemyLanded();
                 p->SetPlayerHurt(2);
                 e->health.Hit(e->health.GetOriginalLifePoints());
                 e->GotHurt(e, p);
@@ -881,7 +885,6 @@ void Physics::PrincessGravity(PrincessObject* p, int** collidableArray, float de
     {
         p->SetJumpCheck(true);
         p->SetApexCheck(false);
-        p->PlayerSoundJump();
     }
 
     //Functionality for ascending or falling when the object is marked as airborne (jumpcheck).

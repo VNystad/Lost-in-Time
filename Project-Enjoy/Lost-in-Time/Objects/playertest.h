@@ -52,6 +52,7 @@ public:
 
     void PlayerSoundJump();
     void PlayerSoundHurt();
+    void PlayerSoundEnemyLanded();
 
     //Checks if object is slowing down
     void SetSlowDownR(bool slowingdownright) { this->slowingdownright = slowingdownright; }

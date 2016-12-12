@@ -4,6 +4,7 @@
 #include <map>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include "../Objects/savedobject.h"
+#include "../Interface/highscore.h"
 
 class State;
 
@@ -17,7 +18,7 @@ public:
     ~Machine();
 
     // Function that goes to the next state
-    void GoNext(sf::RenderWindow& window, SavedObject&);
+    void GoNext(sf::RenderWindow& window, SavedObject&, Highscore&);
 
     // Sets the new state
     void SetState(StateId state);

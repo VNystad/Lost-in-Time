@@ -92,7 +92,7 @@ void StateLoadGame::LoadGame(int selected, sf::RenderWindow& window, SavedObject
             int patrol = std::stoul(temp);
             std::getline(saveFile, temp);
             bool boss = false;
-            if(temp.compare("boss"))
+            if(!temp.compare("boss"))
                 boss = true;
             so.LoadAI(x, y, patrol, boss, window);
         }
@@ -101,7 +101,7 @@ void StateLoadGame::LoadGame(int selected, sf::RenderWindow& window, SavedObject
     std::cout << "Loaded save file 1" << std::endl;
 }
 
-void StateLoadGame::GoNext(Machine &machine, sf::RenderWindow& window, SavedObject& so)
+void StateLoadGame::GoNext(Machine &machine, sf::RenderWindow& window, SavedObject& so, Highscore&)
 {
     while(sf::Keyboard::isKeyPressed(sf::Keyboard::Return));
     loadMedia();

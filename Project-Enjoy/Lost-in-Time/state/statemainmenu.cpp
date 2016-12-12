@@ -38,8 +38,9 @@ bool StateMainMenu::loadMedia()
     return success;
 }
 
-void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&)
+void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&, Highscore&)
 {
+    while(sf::Keyboard::isKeyPressed(sf::Keyboard::Return));
     //Key pressed flag off
     keypressed = false;
     // Loads media

@@ -36,13 +36,7 @@ public:
     static bool PrincessGrounded(PrincessObject* p, int** collidableArray);
     static bool PrincessRoofed(PrincessObject* p, int** collidableArray);
 
-
-
-
-
 private:
-
-
 
 };
 

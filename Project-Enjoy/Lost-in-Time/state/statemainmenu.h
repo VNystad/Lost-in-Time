@@ -3,6 +3,7 @@
 
 #include "state.h"
 #include "../Framework/config.h"
+#include "../Interface/highscore.h"
 
 class StateMainMenu : public State
 {
@@ -11,7 +12,7 @@ public:
     sf::Texture *LoadTexture( std::string path);
     bool loadMedia();
 
-    void GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&);
+    void GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&, Highscore&);
 
 protected:
     int menuAmount = 0;

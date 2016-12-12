@@ -1,7 +1,5 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include "state/machine.h"
-#include "Framework/config.h"
-#include "Objects/savedobject.h"
 
 int main()
 {
@@ -17,10 +15,11 @@ int main()
     window->setMouseCursorVisible(false);
 
     SavedObject savedObject;
+    Highscore highscore;
 
     // run until running flag is false
     while(machine.GetRunning())
-        machine.GoNext(*window, savedObject);
+        machine.GoNext(*window, savedObject, highscore);
 
     return 0;
 }

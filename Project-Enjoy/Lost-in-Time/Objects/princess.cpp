@@ -2,7 +2,7 @@
 #include "princess.h"
 #include <stdlib.h>
 
-PrincessObject::PrincessObject(float x, float y, float patrol, const Config& config, sf::RenderWindow* window) : config(config), window(window)
+PrincessObject::PrincessObject(float x, float y, float patrol, sf::RenderWindow* window) : window(window)
 {
     this->OriginalX = x;
     this->OriginalY = y;
@@ -144,7 +144,7 @@ void PrincessObject::Reset2OriginalY(float y)
 void PrincessObject::PrincessAnimation()
 {
     counter++;
-    if (counter >= 5)
+    if (counter >= 10)
     {
         counter = 0;
 

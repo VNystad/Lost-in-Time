@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "../Objects/savedobject.h"
+#include "../Interface/highscore.h"
 
 class Machine;
 
@@ -11,7 +12,7 @@ class State
 public:
     State() {}
     virtual ~State() {};
-    virtual void GoNext(Machine &context, sf::RenderWindow& window, SavedObject&) = 0;
+    virtual void GoNext(Machine &context, sf::RenderWindow& window, SavedObject&, Highscore&) = 0;
 
     sf::Event event;
 

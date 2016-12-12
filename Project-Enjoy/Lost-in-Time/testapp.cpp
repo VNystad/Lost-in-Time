@@ -22,8 +22,15 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         /********************|
          * Create the player
          *******************/
-        p = new PlayerTest(so.GetPlayerX(), so.GetPlayerY(), *config, &window);
-        p->health.SetActualLifePoints(so.GetPlayerHP());
+        player = new PlayerTest(so.GetPlayerX(), so.GetPlayerY(), &window);
+        player->health.SetActualLifePoints(so.GetPlayerHP());
+        playerName = so.GetPlayerName();
+        playerNamed = true;
+
+        /***********************
+         *  Create the princess
+         **********************/
+        princess = new PrincessObject(4862, 558, 50, &window);
 
         /***********************************
          * Creating AI
@@ -37,6 +44,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
             bool boss = so.GetAIVectorPointer()->at(i)->GetBoss();
             AIVectorPointer->push_back(new AIEnemies(x, y, patrol, boss, &window));
         }
+        music->playMusic("/Jungle Theme 2.ogg");
 
     }
     /****************************************************************************
@@ -49,19 +57,18 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
          *******************/
         // 160, 398
         //4450, 558
-        p = new PlayerTest(4450, 558, *config, &window);
+        player = new PlayerTest(4000, 558, &window);
 
-        /********************|
-        * Create the player
-        *******************/
-
-        c = new PrincessObject(800, 400, 100, *config, &window);
+        /***********************
+         *  Create the princess
+         **********************/
+        princess = new PrincessObject(4862, 558, 50, &window);
 
         /***********************************
          * Creating AI
          * Using vector to keep track on AIs
          **********************************/
-        AIVectorPointer->push_back(new AIEnemies(4450, 510, 400, true, &window));
+        AIVectorPointer->push_back(new AIEnemies(4450, 500, 400, true, &window));
         AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, false, &window));
         AIVectorPointer->push_back(new AIEnemies(1950, 1220, 150, false, &window));
         AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, false, &window));
@@ -111,7 +118,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
      *******************/
     music = new Music();
     music->music.setLoop(true);
-    music->playMusic("/Jungle Theme 2.ogg");
+
 
     /***********************************
      * Creating Timer and text for timer
@@ -125,14 +132,67 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
     timerInText->setStyle(sf::Text::Regular);
     timerInText->setColor(sf::Color::Black);
     victoryText = new sf::Text("Score: ", *font);
-    victoryText->setCharacterSize(70);
+    victoryText->setCharacterSize(50);
     victoryText->setStyle(sf::Text::Regular);
-    victoryText->setColor(sf::Color::White);
+    victoryText->setColor(sf::Color::Red);
+    victoryText->setOutlineThickness(4);
+    victoryText->setOutlineColor(sf::Color::Black);
 
 }
 
-bool TestApp::Tick(Machine& machine)
+bool TestApp::Tick(Machine& machine, Highscore& highscore)
 {
+    while(!playerNamed)
+    {
+        keyPressed = true;
+        sf::Event event;
+        std::string nameString;
+        window->clear(sf::Color::Black);
+        name = new sf::Text("Please type in name", *font);
+        name->setCharacterSize(50);
+        name->setStyle(sf::Text::Regular);
+        name->setColor(sf::Color::White);
+        name->setPosition(250, 150);
+        window->draw(*name);
+        window->display();
+        while(1)
+        {
+            if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Return) && !sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace))
+                keyPressed = false;
+
+            while(window->pollEvent(event))
+            {
+                if(event.type == sf::Event::TextEntered)
+                {
+                    if(event.text.unicode < 123 && event.text.unicode >47 )
+                    {
+                        nameString += static_cast<char>(event.text.unicode);
+                        name->setString(nameString);
+                    }
+                }
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace) && !keyPressed)
+            {
+                nameString = nameString.substr(0,nameString.size()-1);
+                keyPressed = true;
+                name->setString(nameString);
+            }
+            window->draw(*name);
+            window->display();
+            window->clear(sf::Color::Black);
+
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return) && !keyPressed)
+            {
+                playerName = nameString;
+                playerNamed = true;
+                break;
+            }
+        }
+        clock->restart();
+        timer->restart();
+        music->playMusic("/Jungle Theme 2.ogg");
+    }
+
     sf::Event event;
     float delta = clock->restart().asSeconds();
 
@@ -152,15 +212,9 @@ bool TestApp::Tick(Machine& machine)
     winTime = timer->getElapsedTime().asSeconds() + penaltyTime - EscMenuTime;
     std::string tempForTime = std::to_string(timeelapsed);
     timerInText->setString(tempForTime);
-    // Positioning the timerInText on upper right corner of player
     timerInText->setPosition(timerX, timerY);
 
-    /********************
-     * POSITION HEALTHBAR
-     *******************/
-    //p->health.SetPosition(currentView->getCenter().x, timerY + 250);
-    p->health.SetPosition(currentView->getCenter().x - 70, currentView->getCenter().y - 231);
-    HudSprite.setPosition(currentView->getCenter().x - 119, currentView->getCenter().y - 268);
+
 
     /*************
      * KILL ALL AI
@@ -179,12 +233,19 @@ bool TestApp::Tick(Machine& machine)
     /*********************
      * CHECK IF PLAYER WON
      ********************/
-    if(VictoryHandler())
+    if(princessSpawn &&
+            player->GetPositionY() == princess->GetPositionY() &&
+            player->GetPositionX() - princess->GetPositionX() >= 30 &&
+            player->GetPositionX() - princess->GetPositionX() <= 50)
     {
+        int score = 1000 / winTime;
+        VictoryHandler(highscore, score);
+
         sf::View mainMenuView = window->getDefaultView();
         mainMenuView.setCenter(512, 290);
         *currentView = mainMenuView;
         window->setView(mainMenuView);
+        music->music.stop();
         machine.SetState(Machine::StateId::MAINMENU);
         return false;
     }
@@ -213,7 +274,17 @@ bool TestApp::Tick(Machine& machine)
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
     {
         int tempTime = timer->getElapsedTime().asSeconds();
-        EscMenu(machine);
+        if(!EscMenu(machine))
+        {
+            sf::View mainMenuView = window->getDefaultView();
+            mainMenuView.setCenter(512, 290);
+            *currentView = mainMenuView;
+            window->setView(mainMenuView);
+            music->music.stop();
+            machine.SetState(Machine::StateId::MAINMENU);
+            return false;
+        }
+
         EscMenuTime = EscMenuTime + timer->getElapsedTime().asSeconds() - tempTime;
         clock->restart();
     }
@@ -230,15 +301,15 @@ bool TestApp::Tick(Machine& machine)
     }
         // For testing only, prints out player position
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
-        std::cout << p->GetPositionX() << " " << p->GetPositionY() << std::endl;
+        std::cout << player->GetPositionX() << " " << player->GetPositionY() << std::endl;
 
         // When player presses G, player character is damaged. For testing purposes
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::G) && p->health.GetActualLifePoints() > 0)
-        p->health.Hit(5);
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::G) && player->health.GetActualLifePoints() > 0)
+        player->health.Hit(5);
 
         // When player presses H, player character is healed. For testing purposes
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H) && p->health.GetActualLifePoints() < 100)
-        p->health.Healed(5);
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H) && player->health.GetActualLifePoints() < 100)
+        player->health.Healed(5);
 
         // If player press M, mute music
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
@@ -250,30 +321,37 @@ bool TestApp::Tick(Machine& machine)
 
     /* If player hits the bottom of map,
      * the player's lifepoint is reduced to 0 and player death function is called */
-    if (p->GetPositionY() >= 2500)
+    if (player->GetPositionY() >= 2500)
     {
         penaltyTime = penaltyTime + 20;
-        p->health.DeathHandle();
-        p->PlayerDead();
+        player->health.DeathHandle();
+        player->PlayerDead();
         timer->restart();
     }
 
-    if (p->health.Dead())
+    if (player->health.Dead())
     {
         penaltyTime = penaltyTime + 20;
-        p->health.DeathHandle();
-        p->PlayerDead();
+        player->health.DeathHandle();
+        player->PlayerDead();
         timer->restart();
     }
 
-    p->PlayerAnimation();
-    c->PrincessAnimation();
+    player->PlayerAnimation();
+    if(princessSpawn)
+        princess->PrincessAnimation();
 
     /***********************
      * Handles player and AI
      * movements
      **********************/
     Move(delta);
+
+    /********************
+     * POSITION HEALTHBAR
+     *******************/
+    player->health.SetPosition(currentView->getCenter().x - 70, currentView->getCenter().y - 231);
+    HudSprite.setPosition(currentView->getCenter().x - 119, currentView->getCenter().y - 268);
 
     /***********************
      * Draws background images
@@ -288,20 +366,21 @@ bool TestApp::Tick(Machine& machine)
     window->draw(Treebackground1Sprite);
 
 
-    // Process and render each object
+    // Draw the map
     for (Object *object : objects)
     {
         //object->process(deltaTime);
         object->draw(*window);
     }
 
-    p->DrawMe();
-    c->DrawMe();
+    player->DrawMe();
+    if(princessSpawn)
+        princess->DrawMe();
     /***********************
      * Draws HUD sprite
      **********************/
     window->draw(HudSprite);
-    p->health.DrawMe(*window);
+    player->health.DrawMe(*window);
 
 
     AIHandler(delta);
@@ -317,47 +396,47 @@ bool TestApp::Tick(Machine& machine)
      * Set camera to follow player position
      ****************************************/
 
-    if (p->GetPositionX() >= 512)
+    if (player->GetPositionX() >= 512)
     {
-        if (p->GetPositionY() <= 1290)
+        if (player->GetPositionY() <= 1290)
         {
             sf::View view2 = window->getDefaultView();
-            view2.setCenter(p->GetPositionX(), p->GetPositionY());
+            view2.setCenter(player->GetPositionX(), player->GetPositionY());
             *currentView = view2;
             window->setView(view2);
 
             // Positions background movement
-            Junglebackground1Sprite.setPosition((p->GetPositionX()*1.5/8)-195,-300);
-            Cavebackground2Sprite.setPosition((p->GetPositionX()*1.5/8)-195,600);
+            Junglebackground1Sprite.setPosition((player->GetPositionX()*1.5/8)-195,-300);
+            Cavebackground2Sprite.setPosition((player->GetPositionX()*1.5/8)-195,600);
         }
 
-        if (p->GetPositionX() >= 5238)
+        if (player->GetPositionX() >= 5238)
         {
-            if (p->GetPositionY() <= 1290) {
+            if (player->GetPositionY() <= 1290) {
                 sf::View view5 = window->getDefaultView();
-                view5.setCenter(5238, p->GetPositionY());
+                view5.setCenter(5238, player->GetPositionY());
                 *currentView = view5;
                 window->setView(view5);
             }
         }
-        else if(p->GetPositionY() >= 1290)
+        else if(player->GetPositionY() >= 1290)
         {
             sf::View view2 = window->getDefaultView();
-            view2.setCenter(p->GetPositionX(), 1290);
+            view2.setCenter(player->GetPositionX(), 1290);
             *currentView = view2;
             window->setView(view2);
 
             // Positions background movement
-            Cavebackground2Sprite.setPosition((p->GetPositionX()*1.5/8)-195,600);
-            Junglebackground6Sprite.setPosition(p->GetPositionX()*1.5/8,200);
+            Cavebackground2Sprite.setPosition((player->GetPositionX()*1.5/8)-195,600);
+            Junglebackground6Sprite.setPosition(player->GetPositionX()*1.5/8,200);
         }
     }
-    else if (p->GetPositionX() <=  512)
+    else if (player->GetPositionX() <=  512)
     {
-        if (p->GetPositionY() <= 1290)
+        if (player->GetPositionY() <= 1290)
         {
             sf::View view3 = window->getDefaultView();
-            view3.setCenter(512, p->GetPositionY());
+            view3.setCenter(512, player->GetPositionY());
             *currentView = view3;
             window->setView(view3);
 
@@ -366,7 +445,7 @@ bool TestApp::Tick(Machine& machine)
             Cavebackground2Sprite.setPosition(-100,600);
 
         }
-        else if (p->GetPositionY() >= 1290)
+        else if (player->GetPositionY() >= 1290)
         {
             sf::View view3 = window->getDefaultView();
             view3.setCenter(512, 1290);
@@ -388,11 +467,11 @@ bool TestApp::Tick(Machine& machine)
  ****************************************************/
 void TestApp::Move(float delta)
 {
-    Physics::Movement(p, collidableArray, delta);
-    Physics::Gravity(p, collidableArray, delta);
-    c->PrincessAI(c,p);
-    Physics::PrincessMovement(c, collidableArray, delta);
-    Physics::PrincessGravity(c, collidableArray, delta);
+    Physics::Movement(player, collidableArray, delta);
+    Physics::Gravity(player, collidableArray, delta);
+    princess->PrincessAI(princess,player);
+    Physics::PrincessMovement(princess, collidableArray, delta);
+    Physics::PrincessGravity(princess, collidableArray, delta);
 }
 
 /**
@@ -416,6 +495,8 @@ void TestApp::AIHandler(float delta)
 
         if (AIVectorPointer->at(i)->health.GetActualLifePoints() <= 0)//Dead())
         {
+            if(AIVectorPointer->at(i)->GetBoss())
+                princessSpawn = true;
             AIVectorPointer->at(i)->health.DeathHandle();
             AIVectorPointer->erase(AIVectorPointer->begin() + i);
         }
@@ -429,20 +510,21 @@ void TestApp::AIHandler(float delta)
                 AIVectorPointer->at(i)->AnimationAI();
             AIVectorPointer->at(i)->DrawMe();
             if(AIVectorPointer->at(i)->GetBoss())
-                AIVectorPointer->at(i)->MonkeyAI2(AIVectorPointer->at(i), p);
+                AIVectorPointer->at(i)->MonkeyAI2(AIVectorPointer->at(i), player);
             else
-                AIVectorPointer->at(i)->MonkeyAI1(AIVectorPointer->at(i), p);
-            Physics::AIMovement(AIVectorPointer->at(i), p, AIVectorPointer, i, collidableArray, delta);
+                AIVectorPointer->at(i)->MonkeyAI1(AIVectorPointer->at(i), player);
+            Physics::AIMovement(AIVectorPointer->at(i), player, AIVectorPointer, i, collidableArray, delta);
             Physics::AIGravity(AIVectorPointer->at(i), collidableArray, delta);
         }
     }
 }
 
-bool TestApp::VictoryHandler()
+bool TestApp::VictoryHandler(Highscore& highscore, int score)
 {
     if( AIVectorPointer->size() == 0/*BOSS DEAD*/)
     {
         window->clear(sf::Color::Black);
+        window->draw(Treebackground1Sprite);
         // Process and render each object
         for (Object *object : objects)
         {
@@ -452,26 +534,29 @@ bool TestApp::VictoryHandler()
         sf::View victoryView = window->getDefaultView();
 
         sf::Clock end;
-        p->SetPositionX(2250);
-        p->SetPositionY(270);
-        p->SetMovDir(0);
-        victoryView.setCenter(p->GetPositionX()+ 200, p->GetPositionY());
+        victoryView.setCenter(player->GetPositionX() - 200, player->GetPositionY());
         *currentView = victoryView;
         window->setView(*currentView);
 
-
-        int score = 1000 / winTime;
+        victoryText = highscore.SaveNewHighscore(playerName, score);
+        std::string temp = victoryText->getString();
         std::string tempForScore = std::to_string(score);
-        victoryText->setString(victoryText->getString() + tempForScore);
-        victoryText->setPosition(p->GetPositionX(), p->GetPositionY() - 200);
+        if(!temp.compare("high"))
+            victoryText->setString(victoryText->getString() + " New score: " + tempForScore);
+        else if(!temp.compare("new"))
+            victoryText->setString("Welcome newcomer! Score: " + tempForScore);
+        else
+            victoryText->setString("Score: " + tempForScore);
 
+        victoryText->setPosition(player->GetPositionX() - 500, player->GetPositionY() - 200);
 
         // Int to make heart fly
         int makeLoveFly = 0;
         // just a helper to make things go slow
         int count = 0;
         sf::Vector2f scale = heartSprite.getScale();
-        p->DrawMe();
+        player->DrawMe();
+        princess->DrawMe();
         // MAKE PRINCESS SHOW UP
         window->display();
         // if player nearby princess
@@ -483,8 +568,10 @@ bool TestApp::VictoryHandler()
             // Then make a heart come up from hell
             while (truelove)
             {
+                princess->PrincessAnimation();
+                player->PlayerAnimation();
                 end.restart();
-                if(heartSprite.getPosition().y == p->GetPositionY() - 290)
+                if(heartSprite.getPosition().y == player->GetPositionY() - 290)
                 {
                     heartSprite.scale(scale.x * 1.01, scale.y * 1.01);
                     if(count == 100)
@@ -499,7 +586,7 @@ bool TestApp::VictoryHandler()
                 else
                 {
                     count++;
-                    if(count == 4)
+                    if(count == 1)
                     {
                         count = 0;
                         makeLoveFly++;
@@ -507,6 +594,7 @@ bool TestApp::VictoryHandler()
                     }
                 }
                 window->clear(sf::Color::Black);
+                window->draw(Treebackground1Sprite);
                 // Process and render each object
                 for (Object *object : objects)
                 {
@@ -514,7 +602,8 @@ bool TestApp::VictoryHandler()
                     object->draw(*window);
                 }
                 window->draw(heartSprite);
-                p->DrawMe();
+                player->DrawMe();
+                princess->DrawMe();
                 window->draw(*victoryText);
                 window->display();
             }
@@ -534,7 +623,7 @@ bool TestApp::VictoryHandler()
  * @param machine so we can handle the machine
  *          if you go back to mainmenu og exit game
  */
-void TestApp::EscMenu(Machine& machine)
+bool TestApp::EscMenu(Machine& machine)
 {
     music->music.pause();
     // Show up a menu
@@ -547,7 +636,7 @@ void TestApp::EscMenu(Machine& machine)
     if(selected == 1)
     {
         music->music.play();
-        return;
+        return true;
     }
 
         // Save game
@@ -559,8 +648,8 @@ void TestApp::EscMenu(Machine& machine)
 
     else if(selected == 3)
     {
-        machine.SetState(Machine::StateId::MAINMENU);
-        return;
+        music->music.stop();
+        return false;
     }
 
         // Exit game
@@ -574,50 +663,12 @@ void TestApp::EscMenu(Machine& machine)
     }
     clock->restart();
     music->music.play();
+    return true;
 }
 
 bool TestApp::SaveGame(int selectedSave)
 {
-    keyPressed = true;
-    sf::Event event;
-    std::string name;
-    window->clear(sf::Color::Black);
-    saveName = new sf::Text("Please type in name", *font);
-    saveName->setCharacterSize(50);
-    saveName->setStyle(sf::Text::Regular);
-    saveName->setColor(sf::Color::White);
-    saveName->setPosition(250, 150);
-    window->draw(*saveName);
-    window->display();
-    while(1)
-    {
-        if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Return) && !sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace))
-            keyPressed = false;
 
-        while(window->pollEvent(event))
-        {
-            if(event.type == sf::Event::TextEntered)
-            {
-                if(event.text.unicode < 123 && event.text.unicode >47 )
-                {
-                    name += static_cast<char>(event.text.unicode);
-                    saveName->setString(name);
-                }
-            }
-        }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace) && !keyPressed)
-        {
-            name = name.substr(0,name.size()-1);
-            keyPressed = true;
-            saveName->setString(name);
-        }
-        window->draw(*saveName);
-        window->display();
-        window->clear(sf::Color::Black);
-
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return) && !keyPressed)
-            break;
-    }
     int enemyCount = (AIVector.size());
     enemyCount = AIVectorPointer->size();
 
@@ -630,10 +681,10 @@ bool TestApp::SaveGame(int selectedSave)
     else if(selectedSave == 3)
         savefile.open("SaveFiles/save3.txt");
 
-    savefile << saveName << std::endl;
-    savefile << p->health.GetActualLifePoints() << std::endl;
-    savefile << p->GetPositionX() << std::endl;
-    savefile << p->GetPositionY() << std::endl;
+    savefile << playerName << std::endl;
+    savefile << player->health.GetActualLifePoints() << std::endl;
+    savefile << player->GetPositionX() << std::endl;
+    savefile << player->GetPositionY() << std::endl;
     savefile << timer->getElapsedTime().asSeconds() + penaltyTime;
     while(enemyCount != 0)
     {
@@ -658,8 +709,8 @@ int TestApp::menuSelected(std::string menu)
     while(sf::Keyboard::isKeyPressed(sf::Keyboard::Return));
     int amountOfChoices = 0;
     int choice = 1;
-    int MenuPositionX = p->GetPositionX() -200;
-    int MenuPositionY = p->GetPositionY() - 200;
+    int MenuPositionX = player->GetPositionX() -200;
+    int MenuPositionY = player->GetPositionY() - 200;
 
     while(1){
         if(!menu.compare("EscMenu"))
@@ -708,7 +759,7 @@ int TestApp::menuSelected(std::string menu)
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
             return choice;
 
-        selectedSprite.setPosition(p->GetPositionX() + 250, p->GetPositionY() - 300 + choice*100);
+        selectedSprite.setPosition(player->GetPositionX() + 250, player->GetPositionY() - 300 + choice*100);
         window->draw(selectedSprite);
         window->display();
         if(amountOfChoices == amountOfEscOptions)

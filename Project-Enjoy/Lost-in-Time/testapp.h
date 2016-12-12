@@ -18,37 +18,40 @@ class TestApp
 {
 public:
     TestApp(sf::RenderWindow& window, SavedObject);
-    bool Tick(Machine& machine);
+    bool Tick(Machine& machine, Highscore& highscore);
     void Move(float delta);
     void AIHandler(float delta);
 
-    bool VictoryHandler();
+    bool VictoryHandler(Highscore& highscore, int score);
 
 
-    void EscMenu(Machine& machine); // Menu when u press Esc
+    bool EscMenu(Machine& machine); // Menu when u press Esc
     bool SaveGame(int selectedSave); // Function under the Esc menu, savegame
     int menuSelected(std::string menu); // Function to choose in menus
     void LoadImages();
     sf::Texture* LoadTexture( std::string path, int &menuAmount); // Function to load in textures
 protected:
     bool keyPressed = false;
-    bool saveMenuUp = false;
+    bool playerNamed = false;
     bool menuUp = false;
 
     /****************
      *  Victory stuff
      ****************/
     // princess?
+    bool princessSpawn = false;
     sf::Text* victoryText;
     sf::Texture* heart = nullptr;
     sf::Sprite heartSprite;
     int winTime = 0;
 
+    std::string playerName;
+
     /***********************
      * Variables for EscMenu
      **********************/
     // Text for name
-    sf::Text* saveName;
+    sf::Text* name;
     // The amount of saves
     int amountOfSaves = 0;
     // The amount of options in EscMenu
@@ -101,9 +104,9 @@ protected:
     int** collidableArray;
 
     //Dependensies
-    PlayerTest* p;
+    PlayerTest* player;
 
-    PrincessObject* c;
+    PrincessObject* princess;
 
     std::vector<AIEnemies*>* AIVectorPointer = &AIVector;
     std::vector<AIEnemies*> AIVector;

@@ -2,7 +2,7 @@
 #include "playertest.h"
 #include <stdlib.h>
 
-PlayerTest::PlayerTest(float x, float y, const Config& config, sf::RenderWindow* window) : config(config), window(window)
+PlayerTest::PlayerTest(float x, float y, sf::RenderWindow* window) : window(window)
 {
     this->OriginalX = x;
     this->OriginalY = y;
@@ -132,7 +132,7 @@ void PlayerTest:: PlayerSoundHurt()
 void PlayerTest:: PlayerSoundEnemyLanded()
 {
     sound = new Sounds();
-    sound->playSound("/jumpedonenemy.wav", 100);
+    sound->playSound("/jumpedonenemy.aiff", 100);
 }
 
 

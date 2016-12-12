@@ -31,6 +31,8 @@ set(SOURCE_FILES
         Interface/health.h
         Interface/timer.cpp
         Interface/timer.h
+        Interface/highscore.cpp
+        Interface/highscore.h
 
         Map/layer.cpp
         Map/layer.h

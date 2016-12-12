@@ -17,7 +17,7 @@
 
 class PrincessObject {
 public:
-    PrincessObject(float x, float y, float patrol, const Config& config, sf::RenderWindow* window);
+    PrincessObject(float x, float y, float patrol, sf::RenderWindow* window);
 
     void PrincessAI(PrincessObject* e, PlayerTest* p);
     sf::RectangleShape* character;
@@ -237,7 +237,6 @@ protected:
     int counter = 0; // Counter for animation
     int lastmovedirection = 2;
 
-    const Config& config;
     sf::RenderWindow* window;
 
     Sounds* sound;

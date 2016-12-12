@@ -625,7 +625,7 @@ void Physics::Hurt(PlayerTest*p, AIEnemies* e, int* i, std::vector<AIEnemies*>* 
         ey = e->GetPositionY() + e->GetSizeHeight()/2;
 
         if((px - exleft < p->GetSizeWidth() && px - exleft > -p->GetSizeWidth()) &&
-                (py - ey < p->GetSizeHeight() && py - ey > -p->GetSizeHeight()))
+           (py - ey < p->GetSizeHeight() && py - ey > -p->GetSizeHeight()))
         {
             if(px < ex &&  ex - px > ey - py)
                 p->SetPlayerHurt(0);
@@ -644,7 +644,7 @@ void Physics::Hurt(PlayerTest*p, AIEnemies* e, int* i, std::vector<AIEnemies*>* 
 
         }
         else if((px - exright < p->GetSizeWidth() && px - exright > -p->GetSizeWidth()) &&
-           (py - ey < p->GetSizeHeight() && py - ey > -p->GetSizeHeight()))
+                (py - ey < p->GetSizeHeight() && py - ey > -p->GetSizeHeight()))
         {
             if(px < ex &&  ex - px > ey - py)
                 p->SetPlayerHurt(0);
@@ -665,7 +665,7 @@ void Physics::Hurt(PlayerTest*p, AIEnemies* e, int* i, std::vector<AIEnemies*>* 
 
 
     else if((px - ex < p->GetSizeWidth() && px - ex > -p->GetSizeWidth()) &&
-       (py - ey < p->GetSizeHeight() && py - ey > -p->GetSizeHeight()))
+            (py - ey < p->GetSizeHeight() && py - ey > -p->GetSizeHeight()))
     {
         if(px < ex &&  ex - px > ey - py)
             p->SetPlayerHurt(0);
@@ -960,7 +960,7 @@ bool Physics::PrincessHorisontalCollision(PrincessObject* p, int** collidableArr
     int playerEastCoord = playerWestCoord +1;
 
     if((p->GetMoveSpeedL() > 0 && (collidableArray[upperPlayerYArrayCoord][playerWestCoord] || collidableArray[lowerPlayerArrayCoord][playerWestCoord]))
-           || (p->GetMoveSpeedR() > 0 && (collidableArray[upperPlayerYArrayCoord][playerEastCoord] || collidableArray[lowerPlayerArrayCoord][playerEastCoord])))
+       || (p->GetMoveSpeedR() > 0 && (collidableArray[upperPlayerYArrayCoord][playerEastCoord] || collidableArray[lowerPlayerArrayCoord][playerEastCoord])))
     {
         p->SetUpKey(true);
         return true;

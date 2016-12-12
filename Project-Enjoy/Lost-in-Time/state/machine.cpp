@@ -30,9 +30,9 @@ Machine::~Machine()
 }
 
 // Go to next state
-void Machine::GoNext(sf::RenderWindow& window, SavedObject& SO)
+void Machine::GoNext(sf::RenderWindow& window, SavedObject& SO, Highscore& highscore)
 {
-    states[state]->GoNext(*this, window, SO);
+    states[state]->GoNext(*this, window, SO, highscore);
 }
 
 // Sets state

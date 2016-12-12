@@ -5,6 +5,7 @@
 #include "state.h"
 #include "../Enemy/AIEnemies.h"
 #include "../Objects/savedobject.h"
+#include "../Interface/highscore.h"
 
 class StateLoadGame : public State
 {
@@ -15,7 +16,7 @@ public:
 
     void LoadGame(int selected, sf::RenderWindow& window, SavedObject&);
 
-    void GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&);
+    void GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&, Highscore&);
 
 
 

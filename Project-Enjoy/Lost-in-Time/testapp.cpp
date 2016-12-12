@@ -47,7 +47,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         /********************|
          * Create the player
          *******************/
-        p = new PlayerTest(4050, 558, *config, &window);
+        p = new PlayerTest(160, 398, *config, &window);
 
         /***********************************
          * Creating AI
@@ -59,7 +59,9 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, false, &window));
         //AIVectorPointer->push_back(new AIEnemies(Start X, Start Y, Patrol Each Way From Start, IsBoss?, *config, &window));
         AIVectorPointer->push_back(new AIEnemies(1530, 510, 400, false, &window));
-        //AIVectorPointer->push_back(new AIEnemies(762, 622, 100, true, &window));
+        AIVectorPointer->push_back(new AIEnemies(4562, 878, 10, false, &window));
+        AIVectorPointer->push_back(new AIEnemies(4917, 1134, 2, false, &window));
+        AIVectorPointer->push_back(new AIEnemies(4157, 1358, 0, false, &window));
 
     }
 

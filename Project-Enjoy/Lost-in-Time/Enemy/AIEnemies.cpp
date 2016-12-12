@@ -17,6 +17,9 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
 
     if(boss)
     {
+        sf::Vector2f scale = character->getScale();
+        character->scale(scale.x*3.5, scale.y*2);
+
         this->SetSizeHeight(74);
         this->SetSizeWidth(55);
         this->patrolleft = x - patrol;

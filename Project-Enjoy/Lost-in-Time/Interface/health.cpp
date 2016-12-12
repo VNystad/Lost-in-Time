@@ -82,6 +82,7 @@ void Health::SetVisibleLifePoints(int value)
  */
 void Health::UpdateHealth()
 {
+    // We are not going to use this in our current version of health.
     if (actuallifepoints < visiblelifepoints)
         visiblelifepoints -= 1;
     else if (actuallifepoints != visiblelifepoints)
@@ -174,7 +175,7 @@ void Health::DrawMe(sf::RenderWindow& window)
     redHealthSprite->setTextureRect(*redHealthFrame);
 
     //window.draw(*greenHealthbar);
-    window.draw(*HealthBorderSprite);
+    //window.draw(*HealthBorderSprite);
     window.draw(*redHealthSprite);
     window.draw(*greenHealthSprite);
 }

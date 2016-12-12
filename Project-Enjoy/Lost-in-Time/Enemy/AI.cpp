@@ -159,7 +159,7 @@ void AI::AnimationAIMiniBoss()
 void AI::AnimationBoss()
 {
     counter++;
-    if (counter >= 5)
+    if (counter >= 7)
     {
         counter = 0;
         if (jumpcheck && movedirection == 1) // If jumping to the right

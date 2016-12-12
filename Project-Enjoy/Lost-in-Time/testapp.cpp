@@ -47,7 +47,8 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         /********************|
          * Create the player
          *******************/
-        p = new PlayerTest(160, 398, *config, &window);
+        // 160, 398
+        p = new PlayerTest(4450, 558, *config, &window);
 
         /***********************************
          * Creating AI

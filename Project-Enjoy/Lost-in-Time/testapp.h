@@ -94,10 +94,7 @@ protected:
     sf::Sprite Treebackground1Sprite;
     sf::Sprite HudSprite;
 
-
     /**********************/
-
-
 
 
     const int ArraySize = 1000;

@@ -20,8 +20,8 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
         sf::Vector2f scale = character->getScale();
         character->scale(scale.x*3.5, scale.y*2);
 
-        this->SetSizeHeight(74);
-        this->SetSizeWidth(55);
+        this->SetSizeHeight(44*2);
+        this->SetSizeWidth(55*3.5);
         this->patrolleft = x - patrol;
         this->patrolright = x + patrol;
         animation.AIBossWalkRight(character);
@@ -30,7 +30,7 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
         health.SetVisibleLifePoints(3000);
         this->SetRightKey(true);
         this->SetLeftKey(false);
-        this->enragerange = 100;
+        this->enragerange = 200;
         this->SetCalmSpeed(50);
         this->SetEnragedSpeed(190);
         this->boss = true;
@@ -162,8 +162,8 @@ void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerTest* p)
             e->SetMaxMoveSpeed(e->GetCalmSpeed());
             e->SetEnraged(false);
         }
-        if (rand() % 100 > 60)
-            this->SetUpKey(true);
+        //if (rand() % 100 > 1)
+          //  this->SetUpKey(true);
 
         if(!(e->GetPositionX() > this->patrolright) && !(e->GetPositionX() < this->patrolleft))
         {

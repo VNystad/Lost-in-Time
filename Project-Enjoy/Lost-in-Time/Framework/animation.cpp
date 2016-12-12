@@ -186,7 +186,7 @@ void Animation::PlayerJumpRight(sf::RectangleShape* character)
     character->setTexture(&PlayerTextureJump);
     if(animationdir == 1)
     {
-        if (frameSelected->left < 102)
+        if (frameSelected->left < 136)
             frameSelected->left += 34;
         else
         {
@@ -213,7 +213,7 @@ void Animation::PlayerJumpLeft(sf::RectangleShape* character)
     character->setTexture(&PlayerTextureJumpflipped);
     if(animationdir == 1)
     {
-        if (frameSelected->left < 102)
+        if (frameSelected->left < 136)
             frameSelected->left += 34;
         else
         {
@@ -223,7 +223,7 @@ void Animation::PlayerJumpLeft(sf::RectangleShape* character)
     }
     else
     {
-        if (frameSelected->left > 0)
+        if (frameSelected->left > 68)
             frameSelected->left -= 34;
         else
         {

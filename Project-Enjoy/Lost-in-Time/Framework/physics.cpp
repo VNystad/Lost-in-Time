@@ -527,7 +527,7 @@ bool Physics::AIHorisontalCollision(AIEnemies* e, int** collidableArray)
     int upperPlayerYArrayCoord = ((e->GetPositionY() -5) / 32) >0? (e->GetPositionY()-5)/32 :0; //Experimental bug fix
     if(e->GetBoss())
     {
-        upperPlayerYArrayCoord = ((e->GetPositionY() +10) / 32) >0? (e->GetPositionY() +10)/32 :0; //Experimental bug fix
+        upperPlayerYArrayCoord = ((e->GetPositionY() +5) / 32) >0? (e->GetPositionY() +5)/32 :0; //Experimental bug fix
     }
     int lowerPlayerArrayCoord = upperPlayerYArrayCoord +1;
     int playerWestCoord = (e->GetPositionX() / 32);
@@ -557,8 +557,8 @@ bool Physics::AIGrounded(AIEnemies* e, int** collidableArray)
 
     if(e->GetBoss())
     {
-        playerArrayCoordX = (e->GetPositionX() + 27) / 32;
-        playerSouthCoord = (e->GetPositionY() + 43) / 32;
+        playerArrayCoordX = (e->GetPositionX() + 16) / 32;
+        playerSouthCoord = (e->GetPositionY() + 18) / 32;
         //player southcord: +43 is underground, +44 is above ground. Need float.
     }
 
@@ -580,7 +580,7 @@ bool Physics::AIGrounded(AIEnemies* e, int** collidableArray)
 bool Physics::AIRoofed(AIEnemies* e, int** collidableArray)
 {
     int playerArrayCoordX = (e->GetPositionX() + 17) / 32;
-    int playerNorthCoord = (e->GetPositionY() / 32)>0?(e->GetPositionY()+30)/32 -1:0;
+    int playerNorthCoord = (e->GetPositionY()+30 / 32)>0?(e->GetPositionY()+30)/32 -1:0;
 
     if(collidableArray[playerNorthCoord][playerArrayCoordX] != 0)
     {
@@ -613,9 +613,52 @@ void Physics::Hurt(PlayerTest*p, AIEnemies* e, int* i, std::vector<AIEnemies*>* 
 
     int ex = e->GetPositionX() + e->GetSizeWidth()/2;
     int ey = e->GetPositionY() + e->GetSizeHeight()/10;
+    if(e->GetBoss())
+    {
+        int exright= e->GetPositionX() + e->GetSizeWidth()/2;
+        int exleft = exright -e->GetSizeWidth()/4;
+        ey = e->GetPositionY() + e->GetSizeHeight()/2;
+
+        if((px - exleft < p->GetSizeWidth() && px - exleft > -p->GetSizeWidth()) &&
+                (py - ey < p->GetSizeHeight() && py - ey > -p->GetSizeHeight()))
+        {
+            if(px < ex &&  ex - px > ey - py)
+                p->SetPlayerHurt(0);
+            else if(px > ex && px - ex > ey - py)
+                p->SetPlayerHurt(1);
+            else if(py < ey)
+            {
+                p->SetPlayerHurt(2);
+                e->health.Hit(e->health.GetOriginalLifePoints());
+                e->GotHurt(e, p);
+            }
+
+            else
+                p->SetPlayerHurt(3);
+
+        }
+        else if((px - exright < p->GetSizeWidth() && px - exright > -p->GetSizeWidth()) &&
+           (py - ey < p->GetSizeHeight() && py - ey > -p->GetSizeHeight()))
+        {
+            if(px < ex &&  ex - px > ey - py)
+                p->SetPlayerHurt(0);
+            else if(px > ex && px - ex > ey - py)
+                p->SetPlayerHurt(1);
+            else if(py < ey)
+            {
+                p->SetPlayerHurt(2);
+                e->health.Hit(e->health.GetOriginalLifePoints());
+                e->GotHurt(e, p);
+            }
+
+            else
+                p->SetPlayerHurt(3);
+
+        }
+    }
 
 
-    if((px - ex < p->GetSizeWidth() && px - ex > -p->GetSizeWidth()) &&
+    else if((px - ex < p->GetSizeWidth() && px - ex > -p->GetSizeWidth()) &&
        (py - ey < p->GetSizeHeight() && py - ey > -p->GetSizeHeight()))
     {
         if(px < ex &&  ex - px > ey - py)

@@ -1,18 +1,18 @@
-/home/kristoffer/Downloads/clion-2016.2.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time
--- The C compiler identification is GNU 5.4.0
--- The CXX compiler identification is GNU 5.4.0
--- Check for working C compiler: /usr/bin/cc
--- Check for working C compiler: /usr/bin/cc -- works
+"E:\Programmer\CLion\CLion 2016.2.2\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time"
+-- The C compiler identification is GNU 6.1.0
+-- The CXX compiler identification is GNU 6.1.0
+-- Check for working C compiler: E:/Programmer/TheMinGW64/mingw64/bin/gcc.exe
+-- Check for working C compiler: E:/Programmer/TheMinGW64/mingw64/bin/gcc.exe -- works
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Check for working CXX compiler: /usr/bin/c++
--- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Check for working CXX compiler: E:/Programmer/TheMinGW64/mingw64/bin/g++.exe
+-- Check for working CXX compiler: E:/Programmer/TheMinGW64/mingw64/bin/g++.exe -- works
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug
+-- Build files have been written to: E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug

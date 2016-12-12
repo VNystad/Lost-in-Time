@@ -17,7 +17,7 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
 
     if(boss)
     {
-        this->SetSizeHeight(44);
+        this->SetSizeHeight(74);
         this->SetSizeWidth(55);
         this->patrolleft = x - patrol;
         this->patrolright = x + patrol;
@@ -28,6 +28,7 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
         this->SetRightKey(true);
         this->SetLeftKey(false);
         this->enragerange = 100;
+        this->SetCalmSpeed(50);
         this->SetEnragedSpeed(190);
         this->boss = true;
         this->SetMiniBoss(false);
@@ -56,6 +57,7 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
         health.SetActualLifePoints(100);
         health.SetVisibleLifePoints(100);
     }
+    this->SetMaxMoveSpeed(this->GetCalmSpeed());
 }
 
 /**
@@ -157,25 +159,31 @@ void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerTest* p)
             e->SetMaxMoveSpeed(e->GetCalmSpeed());
             e->SetEnraged(false);
         }
-        //if (rand() % 100 > 60)
-        //    this->SetUpKey(true);
+        if (rand() % 100 > 60)
+            this->SetUpKey(true);
 
-        if (p->GetPositionX() < e->GetPositionX())
+        if(!(e->GetPositionX() > this->patrolright) && !(e->GetPositionX() < this->patrolleft))
         {
-            e->SetLeftKey(true);
-            e->SetRightKey(false);
+            if (p->GetPositionX() < e->GetPositionX())
+            {
+                e->SetLeftKey(true);
+                e->SetRightKey(false);
+            }
+            else if(p->GetPositionX() > e->GetPositionX())
+            {
+                e->SetRightKey(true);
+                e->SetLeftKey(false);
+            }
         }
-        else if(p->GetPositionX() > e->GetPositionX())
-        {
-            e->SetRightKey(true);
-            e->SetLeftKey(false);
-        }
-
         else
         {
-            e->SetLeftKey(false);
-            e->SetRightKey(false);
+            e->SetEnrageCountdown(e->GetEnrageDuration());
+            e->SetMaxMoveSpeed(e->GetCalmSpeed());
+            e->SetEnraged(false);
         }
+
+
+
     }
 
         // Common patrol behaviour

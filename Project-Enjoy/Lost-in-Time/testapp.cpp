@@ -393,12 +393,13 @@ void TestApp::AIHandler(float delta)
         if (AIVectorPointer->at(i)->GetPositionY() >= 2500)
         {
             AIVectorPointer->at(i)->health.Hit(AIVectorPointer->at(i)->health.GetOriginalLifePoints());
+            AIVectorPointer->at(i)->health.DeathHandle();
+            AIVectorPointer->erase(AIVectorPointer->begin() + i);
         }
 
         if (AIVectorPointer->at(i)->health.GetActualLifePoints() <= 0)//Dead())
         {
             AIVectorPointer->at(i)->health.DeathHandle();
-            //AIVectorPointer->at(i)->Death();
             AIVectorPointer->erase(AIVectorPointer->begin() + i);
         }
         else

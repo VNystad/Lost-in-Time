@@ -524,9 +524,11 @@ void Physics::AIGravity(AIEnemies* e, int** collidableArray, float delta)
  */
 bool Physics::AIHorisontalCollision(AIEnemies* e, int** collidableArray)
 {
-    int upperPlayerYArrayCoord = (e->GetPositionY() / 32) >0? (e->GetPositionY()-5)/32 :0; //Experimental bug fix
+    int upperPlayerYArrayCoord = ((e->GetPositionY() -5) / 32) >0? (e->GetPositionY()-5)/32 :0; //Experimental bug fix
     if(e->GetBoss())
-        upperPlayerYArrayCoord = (e->GetPositionY() / 32) >0? (e->GetPositionY()-30)/32 :0; //Experimental bug fix
+    {
+        upperPlayerYArrayCoord = ((e->GetPositionY() +10) / 32) >0? (e->GetPositionY() +10)/32 :0; //Experimental bug fix
+    }
     int lowerPlayerArrayCoord = upperPlayerYArrayCoord +1;
     int playerWestCoord = (e->GetPositionX() / 32);
     int playerEastCoord = playerWestCoord +1;
@@ -555,9 +557,11 @@ bool Physics::AIGrounded(AIEnemies* e, int** collidableArray)
 
     if(e->GetBoss())
     {
-        playerArrayCoordX = (e->GetPositionX() + 19) / 32;
-        playerSouthCoord = (e->GetPositionY() + 20) / 32;
+        playerArrayCoordX = (e->GetPositionX() + 27) / 32;
+        playerSouthCoord = (e->GetPositionY() + 43) / 32;
+        //player southcord: +43 is underground, +44 is above ground. Need float.
     }
+
 
 
     if(e->GetApexCheck() == 1 && collidableArray[playerSouthCoord][playerArrayCoordX] != 0)

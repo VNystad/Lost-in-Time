@@ -11,7 +11,8 @@ public:
     sf::SoundBuffer Buffer;
     sf::Sound sound;
 
-    bool playSound(const std::string& filename);
+    bool playSound(const std::string& filename, int volume);
+
 
 };
 

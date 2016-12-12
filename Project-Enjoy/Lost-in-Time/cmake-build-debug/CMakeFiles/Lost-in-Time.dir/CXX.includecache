@@ -27,8 +27,6 @@ E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lo
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/health.h
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.cpp
-stdlib.h
--
 AIEnemies.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
 
@@ -205,6 +203,8 @@ iostream
 -
 playertest.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
+stdlib.h
+-
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
 SFML/Graphics/RectangleShape.hpp
@@ -221,6 +221,8 @@ E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lo
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/health.h
 ../Framework/Sounds.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/Sounds.h
+stdlib.h
+-
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/savedobject.cpp
 iostream

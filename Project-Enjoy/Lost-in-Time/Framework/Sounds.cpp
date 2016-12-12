@@ -1,6 +1,6 @@
 #include "Sounds.h"
 
-bool Sounds::playSound(const std::string& filename) {
+bool Sounds::playSound(const std::string& filename, int volume) {
 
     if (!Buffer.loadFromFile("data/Sounds" + filename))
     {
@@ -8,7 +8,7 @@ bool Sounds::playSound(const std::string& filename) {
         return false;
     }
 
-
+    sound.setVolume(volume);
     sound.setBuffer(Buffer);
     sound.play();
 

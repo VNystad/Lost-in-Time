@@ -1,5 +1,6 @@
 #include <iostream>
 #include "playertest.h"
+#include <stdlib.h>
 
 PlayerTest::PlayerTest(float positionX, float positionY, const Config& config, sf::RenderWindow* window) : config(config), window(window)
 {
@@ -115,7 +116,16 @@ void PlayerTest::PlayerAnimation()
 void PlayerTest::PlayerSoundJump()
 {
     sound = new Sounds();
-    sound->playSound("/Jump.wav");
+    sound->playSound("/Jump.wav", 100);
+}
+
+void PlayerTest:: PlayerSoundHurt()
+{
+    sound = new Sounds();
+    if(rand() % 20 < 10)
+        sound->playSound("/manhurt1.wav", 100);
+    else
+        sound->playSound("/manhurt2.wav", 100);
 }
 
 /**
@@ -137,7 +147,7 @@ void PlayerTest::PlayerDead()
     positionX = OriginalX;
     positionY = OriginalY;
     sound = new Sounds();
-    sound->playSound("/Death.wav");
+    sound->playSound("/Death.wav", 100);
 }
 
 /**

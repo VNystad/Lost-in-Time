@@ -32,6 +32,7 @@ void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
             p->SetMoveSpeedL(0);
             p->SetMoveSpeedR(400);
             p->health.Hit(10);
+            p->PlayerSoundHurt();
         }
         p->SetPlayerHurt(5);
     }

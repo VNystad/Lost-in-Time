@@ -9,6 +9,7 @@
 #include "../Framework/animation.h"
 #include "../Interface/health.h"
 #include "../Framework/Sounds.h"
+#include <stdlib.h>
 
 class PlayerTest
 {
@@ -50,6 +51,7 @@ public:
     void PlayerAnimation();
 
     void PlayerSoundJump();
+    void PlayerSoundHurt();
 
     //Checks if object is slowing down
     void SetSlowDownR(bool slowingdownright) { this->slowingdownright = slowingdownright; }

@@ -13,7 +13,7 @@ bool Music::playMusic(const std::string& filename) {
 
         return false;
     }
-
+    music.setVolume(60);
     music.play();
 
     return true;

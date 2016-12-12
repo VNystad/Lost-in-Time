@@ -84,6 +84,7 @@ protected:
     sf::Texture* Junglebackground1 = nullptr;
     sf::Texture* Cavebackground1 = nullptr;
     sf::Texture* Treebackground1 = nullptr;
+    sf::Texture* Hud = nullptr;
 
     sf::Sprite Junglebackground1Sprite;
     sf::Sprite Junglebackground6Sprite;
@@ -91,6 +92,7 @@ protected:
     sf::Sprite Cavebackground2Sprite;
     sf::Sprite Cavebackground3Sprite;
     sf::Sprite Treebackground1Sprite;
+    sf::Sprite HudSprite;
 
 
     /**********************/

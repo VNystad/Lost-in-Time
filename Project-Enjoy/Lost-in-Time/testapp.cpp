@@ -148,6 +148,7 @@ bool TestApp::Tick(Machine& machine)
      *******************/
     //p->health.SetPosition(currentView->getCenter().x, timerY + 250);
     p->health.SetPosition(currentView->getCenter().x - 70, p->GetPositionY() - 230);
+    HudSprite.setPosition(currentView->getCenter().x - 119, p->GetPositionY() - 268);
 
     /*************
      * KILL ALL AI
@@ -288,6 +289,11 @@ bool TestApp::Tick(Machine& machine)
     }
 
     p->DrawMe();
+
+    /***********************
+     * Draws HUD sprite
+     **********************/
+    window->draw(HudSprite);
 
     AIHandler(delta);
     window->draw(*timerInText);
@@ -748,6 +754,7 @@ void TestApp::LoadImages()
     Junglebackground1 = LoadTexture("data/Backgrounds/Jungle10.png", nothing);
     Cavebackground1 = LoadTexture("data/Backgrounds/Cave3.png", nothing);
     Treebackground1 = LoadTexture("data/Backgrounds/Tree.png", nothing);
+    Hud = LoadTexture("data/Backgrounds/Hud.png", nothing);
 
     Cavebackground1Sprite.setTexture(*Cavebackground1);
     Cavebackground1Sprite.setPosition(0,600);
@@ -760,6 +767,9 @@ void TestApp::LoadImages()
 
     Junglebackground1Sprite.setTexture(*Junglebackground1);
     Junglebackground1Sprite.setPosition(0,-300);
+
+    HudSprite.setTexture(*Hud);
+    HudSprite.setPosition(0,300);
 
 }
 

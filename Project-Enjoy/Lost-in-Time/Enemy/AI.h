@@ -12,7 +12,7 @@
 class AI
 {
 public:
-    AI(int x, int y, sf::RenderWindow* window);
+    AI(int x, int y, int patrol, sf::RenderWindow* window);
 
     sf::RectangleShape* character;
     Animation animation;
@@ -196,6 +196,7 @@ protected:
     int enragedspeed = 120;
     int calmspeed = 100;
 
+    int patrol;
     int patrolleft;
     int patrolright;
 

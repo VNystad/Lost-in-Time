@@ -24,6 +24,7 @@ public:
 
     bool VictoryHandler(Highscore& highscore, float delta);
 
+    bool LoadedEmptySave() const { return emptySave; };
 
     bool EscMenu(Machine& machine); // Menu when u press Esc
     bool SaveGame(int selectedSave); // Function under the Esc menu, savegame
@@ -33,7 +34,7 @@ public:
 protected:
     bool keyPressed = false;
     bool playerNamed = false;
-    bool menuUp = false;
+    bool emptySave = false;
 
     /****************
      *  Victory stuff
@@ -45,7 +46,7 @@ protected:
     sf::Texture* heart = nullptr;
     sf::Sprite heartSprite;
     int winTime = 0;
-
+    int timeFromLoad = 0;
     std::string playerName;
 
     /***********************

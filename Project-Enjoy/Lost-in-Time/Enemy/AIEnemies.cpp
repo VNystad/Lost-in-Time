@@ -2,7 +2,7 @@
 #include "AIEnemies.h"
 
 
-AIEnemies::AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *window) : AI(x, y, window)
+AIEnemies::AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *window) : AI(x, y, patrol, window)
 {
     this->positionX = x;
     this->positionY = y;
@@ -21,8 +21,6 @@ AIEnemies::AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *wind
 
         this->sizeWidth = 55*3.5;
         this->sizeHeight = 44*2;
-        this->patrolleft = x - patrol;
-        this->patrolright = x + patrol;
         animation.AIBossWalkRight(character);
         health.SetOriginalLifePoints(1000);
         health.SetActualLifePoints(1000);
@@ -39,8 +37,6 @@ AIEnemies::AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *wind
     else if(rand() % 100 <20)
     {
         this->miniboss = true;
-        this->patrolleft = x - patrol;
-        this->patrolright = x + patrol;
         animation.AIMiniBossWalkRight(character);
         health.SetOriginalLifePoints(300);
         health.SetActualLifePoints(300);
@@ -52,8 +48,7 @@ AIEnemies::AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *wind
     }
     else
     {
-        this->patrolleft = x - patrol;
-        this->patrolright = x + patrol;
+
         animation.AIWalkLeft(character);
         health.SetOriginalLifePoints(100);
         health.SetActualLifePoints(100);

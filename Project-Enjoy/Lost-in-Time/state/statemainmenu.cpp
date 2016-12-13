@@ -168,8 +168,8 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
             }
             else if(menu == 2)
             {
-                /*machine.SetState(Machine::StateId::LOAD);
-                mainmenu = false;*/
+                machine.SetState(Machine::StateId::LOAD);
+                return;
             }
             else if(menu == 3)
             {

@@ -22,8 +22,10 @@ bool StateLoadGame::loadMedia()
     save1 = LoadTexture("data/loadgame/save1.png");
     save2 = LoadTexture("data/loadgame/save2.png");
     save3 = LoadTexture("data/loadgame/save3.png");
-    selectedTexture = LoadTexture("data/EscMenu/selected.png");
-    menuAmount -= 1;
+    save1Selected = LoadTexture("data/loadgame/save1selected.png");
+    save2Selected = LoadTexture("data/loadgame/save2selected.png");
+    save3Selected = LoadTexture("data/loadgame/save3selected.png");
+    menuAmount -= 3;
     save1Sprite = new sf::Sprite;
     save1Sprite->setTexture(*save1);
     save1Sprite->setPosition(-70, -20);
@@ -33,8 +35,16 @@ bool StateLoadGame::loadMedia()
     save3Sprite = new sf::Sprite;
     save3Sprite->setTexture(*save3);
     save3Sprite->setPosition(-70, 180);
-    selectedSprite = new sf::Sprite;
-    selectedSprite->setTexture(*selectedTexture);
+    save1SelectedSprite = new sf::Sprite;
+    save1SelectedSprite->setTexture(*save1Selected);
+    save1SelectedSprite->setPosition(-70, -20);
+    save2SelectedSprite = new sf::Sprite;
+    save2SelectedSprite->setTexture(*save2Selected);
+    save2SelectedSprite->setPosition(-70, 80);
+    save3SelectedSprite = new sf::Sprite;
+    save3SelectedSprite->setTexture(*save3Selected);
+    save3SelectedSprite->setPosition(-70, 180);
+
 
     return true;
 }
@@ -146,7 +156,14 @@ void StateLoadGame::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
         window.draw(*save2Sprite);
         window.draw(*save3Sprite);
 
-        selectedSprite->setPosition(300, -20 + (selected-1) * 100);
+        if(selected == 1)
+            window.draw(*save1SelectedSprite);
+        else if(selected == 2)
+            window.draw(*save2SelectedSprite);
+        else if(selected == 3)
+            window.draw(*save3SelectedSprite);
+
+        window.display();
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return) && !keyPressed)
         {
@@ -154,9 +171,7 @@ void StateLoadGame::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
             machine.SetState(Machine::StateId::GAME);
             return;
         }
-        window.draw(*selectedSprite);
 
-        window.display();
     }
 }
 

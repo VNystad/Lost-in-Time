@@ -144,7 +144,7 @@ void PrincessObject::Reset2OriginalY(float y)
 void PrincessObject::PrincessAnimation(float delta)
 {
     counter += delta;
-    if (counter >= 0.07)
+    if (counter >= 0.2)
     {
         counter = 0;
 

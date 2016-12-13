@@ -36,12 +36,17 @@ protected:
     sf::Texture* save1 = nullptr;
     sf::Texture* save2 = nullptr;
     sf::Texture* save3 = nullptr;
-    sf::Texture* selectedTexture = nullptr;
+    sf::Texture* save1Selected = nullptr;
+    sf::Texture* save2Selected = nullptr;
+    sf::Texture* save3Selected = nullptr;
 
     sf::Sprite* save1Sprite = nullptr;
     sf::Sprite* save2Sprite = nullptr;
     sf::Sprite* save3Sprite = nullptr;
-    sf::Sprite* selectedSprite = nullptr;
+    sf::Sprite* save1SelectedSprite = nullptr;
+    sf::Sprite* save2SelectedSprite = nullptr;
+    sf::Sprite* save3SelectedSprite = nullptr;
+
 };
 
 

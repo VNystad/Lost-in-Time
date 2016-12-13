@@ -19,7 +19,7 @@ public:
 protected:
     sf::Font* font = nullptr;
     sf::Text* highscoreText = nullptr;
-    std::map <int, std::string> *highscoreMap = new std::map<int, std::string>;
+    std::map <int, std::string> *highscoreMap;
 };
 
 

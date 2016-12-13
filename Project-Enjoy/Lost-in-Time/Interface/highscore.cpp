@@ -9,8 +9,7 @@ Highscore::Highscore()
     highscoreText->setCharacterSize(50);
     highscoreText->setStyle(sf::Text::Regular);
     highscoreText->setColor(sf::Color::White);
-    highscoreText->setOutlineThickness(4);
-    highscoreText->setOutlineColor(sf::Color::Black);
+    highscoreMap = new std::map<int, std::string>;
     LoadHighScore();
 }
 

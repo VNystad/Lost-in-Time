@@ -70,7 +70,7 @@ void PlayerObject::Reset2OriginalY(float y)
 void PlayerObject::PlayerAnimation(float delta)
 {
     counter += delta;
-    if (counter >= 0.07)
+    if (counter >= 0.15)
     {
         counter = 0;
         if (jumpcheck && movedirection == 1) // If jumping to the right

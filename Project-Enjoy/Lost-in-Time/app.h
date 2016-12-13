@@ -60,24 +60,34 @@ protected:
     sf::Texture* save1 = nullptr;
     sf::Texture* save2 = nullptr;
     sf::Texture* save3 = nullptr;
-
-    sf::Texture* selected = nullptr;
+    sf::Texture* save1Selected = nullptr;
+    sf::Texture* save2Selected = nullptr;
+    sf::Texture* save3Selected = nullptr;
 
     sf::Texture* resumeGame = nullptr;
+    sf::Texture* resumeGameSelected = nullptr;
     sf::Texture* saveGame = nullptr;
+    sf::Texture* saveGameSelected = nullptr;
     sf::Texture* mainMenu = nullptr;
+    sf::Texture* mainMenuSelected = nullptr;
     sf::Texture* exitGame = nullptr;
+    sf::Texture* exitGameSelected = nullptr;
 
     sf::Sprite save1Sprite;
     sf::Sprite save2Sprite;
     sf::Sprite save3Sprite;
-
-    sf::Sprite selectedSprite;
+    sf::Sprite save1SelectedSprite;
+    sf::Sprite save2SelectedSprite;
+    sf::Sprite save3SelectedSprite;
 
     sf::Sprite resumeGameSprite;
+    sf::Sprite resumeGameSelectedSprite;
     sf::Sprite saveGameSprite;
+    sf::Sprite saveGameSelectedSprite;
     sf::Sprite mainMenuSprite;
+    sf::Sprite mainMenuSelectedSprite;
     sf::Sprite exitGameSprite;
+    sf::Sprite exitGameSelectedSprite;
 
 
     /***********************

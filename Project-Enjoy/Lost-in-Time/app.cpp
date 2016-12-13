@@ -62,7 +62,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         /***********************
          *  Create the princess
          **********************/
-        princess = new PrincessObject(4862, 558, 50, &window);
+        princess = new PrincessObject(4862, 550, 50, &window);
 
         /***********************************
          * Creating AI
@@ -135,8 +135,6 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
     victoryText->setCharacterSize(50);
     victoryText->setStyle(sf::Text::Regular);
     victoryText->setColor(sf::Color::Red);
-    victoryText->setOutlineThickness(4);
-    victoryText->setOutlineColor(sf::Color::Black);
 
 }
 
@@ -538,13 +536,17 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
         *currentView = victoryView;
         window->setView(*currentView);
 
+        player->SetMoveSpeedL(0);
+        player->SetMoveSpeedR(0);
+        player->SetFallSpeed(0);
+        player->SetJumpSpeed(0);
         victoryText = highscore.SaveNewHighscore(playerName, score);
         std::string temp = victoryText->getString();
         std::string tempForScore = std::to_string(score);
         if(!temp.compare("high"))
             victoryText->setString(victoryText->getString() + " New score: " + tempForScore);
         else if(!temp.compare("new"))
-            victoryText->setString("Welcome newcomer! Score: " + tempForScore);
+            victoryText->setString("Welcome " + playerName + "! Score: " + tempForScore);
         else
             victoryText->setString("Score: " + tempForScore);
 
@@ -711,14 +713,19 @@ int TestApp::menuSelected(std::string menu)
     int choice = 1;
     int MenuPositionX = player->GetPositionX() -200;
     int MenuPositionY = player->GetPositionY() - 200;
+    bool save = false;
 
     while(1){
         if(!menu.compare("EscMenu"))
         {
             resumeGameSprite.setPosition(MenuPositionX, MenuPositionY);
+            resumeGameSelectedSprite.setPosition(MenuPositionX, MenuPositionY);
             saveGameSprite.setPosition(MenuPositionX, MenuPositionY + 100);
+            saveGameSelectedSprite.setPosition(MenuPositionX, MenuPositionY + 100);
             mainMenuSprite.setPosition(MenuPositionX, MenuPositionY + 200);
+            mainMenuSelectedSprite.setPosition(MenuPositionX, MenuPositionY + 200);
             exitGameSprite.setPosition(MenuPositionX, MenuPositionY + 300);
+            exitGameSelectedSprite.setPosition(MenuPositionX, MenuPositionY + 300);
             window->clear(sf::Color::Black);
             // Load images for esc menu
             window->draw(resumeGameSprite);
@@ -730,10 +737,14 @@ int TestApp::menuSelected(std::string menu)
 
         else if(!menu.compare("SaveGameMenu")) // If menu equals "SaveGameMenu";
         {
+            save = true;
             window->clear(sf::Color::Black);
             save1Sprite.setPosition(MenuPositionX, MenuPositionY);
+            save1SelectedSprite.setPosition(MenuPositionX, MenuPositionY);
             save2Sprite.setPosition(MenuPositionX, MenuPositionY + 100);
+            save2SelectedSprite.setPosition(MenuPositionX, MenuPositionY + 100);
             save3Sprite.setPosition(MenuPositionX, MenuPositionY + 200);
+            save3SelectedSprite.setPosition(MenuPositionX, MenuPositionY + 200);
             // Load images for savegame menu
             window->draw(save1Sprite);
             window->draw(save2Sprite);
@@ -741,7 +752,36 @@ int TestApp::menuSelected(std::string menu)
             amountOfChoices = amountOfSaves;
         }
 
+        if(save)
+        {
+            if(choice == 1)
+                window->draw(save1SelectedSprite);
+            else if(choice == 2)
+                window->draw(save2SelectedSprite);
+            else if(choice == 3)
+                window->draw(save3SelectedSprite);
+        }
+        else
+        {
+            if(choice == 1)
+            {
+                window->draw(resumeGameSelectedSprite);
+            }
 
+            else if(choice == 2)
+            {
+                window->draw(saveGameSelectedSprite);
+            }
+            else if(choice == 3)
+            {
+                window->draw(mainMenuSelectedSprite);
+            }
+            else if(choice == 4)
+            {
+                window->draw(exitGameSelectedSprite);
+            }
+        }
+        window->display();
         if(!keyPressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
             choice++;
             if (choice > amountOfChoices)
@@ -759,54 +799,51 @@ int TestApp::menuSelected(std::string menu)
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
             return choice;
 
-        selectedSprite.setPosition(player->GetPositionX() + 250, player->GetPositionY() - 300 + choice*100);
-        window->draw(selectedSprite);
-        window->display();
-        if(amountOfChoices == amountOfEscOptions)
-        {
-            // Handle esc options
-        }
-        else if (amountOfChoices == amountOfSaves)
-        {
-            // Handle save options
-        }
+
+
     }
 }
 
 void TestApp::LoadImages()
 {
     int nothing;
-    /*
-     * TIL VETLE!!!
-     * du gjør nesten akkurat som på skolen, men legger inn ", nothing" bak pathen
-     * background1 = LoadTexture("pathen", nothing)
-     */
     heart = LoadTexture("data/victory/heart.png",nothing);
 
     save1 = LoadTexture("data/loadgame/save1.png", amountOfSaves);
     save2 = LoadTexture("data/loadgame/save2.png", amountOfSaves);
     save3 = LoadTexture("data/loadgame/save3.png", amountOfSaves);
-
-    selected = LoadTexture("data/EscMenu/selected.png", nothing);
+    save1Selected = LoadTexture("data/loadgame/save1selected.png", nothing);
+    save2Selected = LoadTexture("data/loadgame/save2selected.png", nothing);
+    save3Selected = LoadTexture("data/loadgame/save3selected.png", nothing);
 
     resumeGame = LoadTexture("data/EscMenu/ResumeGame.png", amountOfEscOptions);
+    resumeGameSelected = LoadTexture("data/EscMenu/ResumeGameSelected.png", nothing);
     mainMenu = LoadTexture("data/EscMenu/MainMenu.png", amountOfEscOptions);
+    mainMenuSelected = LoadTexture("data/EscMenu/MainMenuSelected.png", nothing);
     saveGame = LoadTexture("data/EscMenu/SaveGame.png", amountOfEscOptions);
-    exitGame = LoadTexture("data/EscMenu/ExitGame.png", amountOfEscOptions);
+    saveGameSelected = LoadTexture("data/EscMenu/SaveGameSelected.png", nothing);
+    exitGame = LoadTexture("data/main-menu/ExitGame.png", amountOfEscOptions);
+    exitGameSelected = LoadTexture("data/main-menu/ExitGameSelected.png", nothing);
 
     heartSprite.setTexture(*heart);
 
     save1Sprite.setTexture(*save1);
     save2Sprite.setTexture(*save2);
     save3Sprite.setTexture(*save3);
+    save1SelectedSprite.setTexture(*save1Selected);
+    save2SelectedSprite.setTexture(*save2Selected);
+    save3SelectedSprite.setTexture(*save3Selected);
 
-    selectedSprite.setTexture(*selected);
     resumeGameSprite.setTexture(*resumeGame);
+    resumeGameSelectedSprite.setTexture(*resumeGameSelected);
     saveGameSprite.setTexture(*saveGame);
+    saveGameSelectedSprite.setTexture(*saveGameSelected);
     mainMenuSprite.setTexture(*mainMenu);
+    mainMenuSelectedSprite.setTexture(*mainMenuSelected);
     exitGameSprite.setTexture(*exitGame);
+    exitGameSelectedSprite.setTexture(*exitGameSelected);
 
-    Junglebackground1 = LoadTexture("data/Backgrounds/Jungle10.png", nothing);
+    Junglebackground1 = LoadTexture("data/Backgrounds/Jungle11.png", nothing);
     Cavebackground1 = LoadTexture("data/Backgrounds/Cave3.png", nothing);
     Treebackground1 = LoadTexture("data/Backgrounds/Tree.png", nothing);
     Hud = LoadTexture("data/Backgrounds/Hud.png", nothing);

@@ -239,7 +239,7 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
             player->GetPositionX() - princess->GetPositionX() <= 50)
     {
         int score = 1000 / winTime;
-        VictoryHandler(highscore, score);
+        VictoryHandler(highscore, score, delta);
 
         sf::View mainMenuView = window->getDefaultView();
         mainMenuView.setCenter(512, 290);
@@ -337,9 +337,9 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
         timer->restart();
     }
 
-    player->PlayerAnimation();
+    player->PlayerAnimation(delta);
     if(princessSpawn)
-        princess->PrincessAnimation();
+        princess->PrincessAnimation(delta);
 
     /***********************
      * Handles player and AI
@@ -503,11 +503,11 @@ void TestApp::AIHandler(float delta)
         else
         {
             if(AIVectorPointer->at(i)->GetBoss())
-                AIVectorPointer->at(i)->AnimationBoss();
+                AIVectorPointer->at(i)->AnimationBoss(delta);
             else if(AIVectorPointer->at(i)->GetMiniBoss())
-                AIVectorPointer->at(i)->AnimationAIMiniBoss();
+                AIVectorPointer->at(i)->AnimationAIMiniBoss(delta);
             else
-                AIVectorPointer->at(i)->AnimationAI();
+                AIVectorPointer->at(i)->AnimationAI(delta);
             AIVectorPointer->at(i)->DrawMe();
             if(AIVectorPointer->at(i)->GetBoss())
                 AIVectorPointer->at(i)->MonkeyAI2(AIVectorPointer->at(i), player);
@@ -519,7 +519,7 @@ void TestApp::AIHandler(float delta)
     }
 }
 
-bool TestApp::VictoryHandler(Highscore& highscore, int score)
+bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
 {
     if( AIVectorPointer->size() == 0/*BOSS DEAD*/)
     {
@@ -568,8 +568,8 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score)
             // Then make a heart come up from hell
             while (truelove)
             {
-                princess->PrincessAnimation();
-                player->PlayerAnimation();
+                princess->PrincessAnimation(delta);
+                player->PlayerAnimation(delta);
                 end.restart();
                 if(heartSprite.getPosition().y == player->GetPositionY() - 290)
                 {

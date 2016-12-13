@@ -141,10 +141,10 @@ void PrincessObject::Reset2OriginalY(float y)
     y = this->OriginalY;
 }
 
-void PrincessObject::PrincessAnimation()
+void PrincessObject::PrincessAnimation(float delta)
 {
-    counter++;
-    if (counter >= 10)
+    counter += delta;
+    if (counter >= 0.07)
     {
         counter = 0;
 

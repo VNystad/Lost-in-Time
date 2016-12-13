@@ -80,7 +80,7 @@ public:
 
     void PlayerDead();
 
-    void PrincessAnimation();
+    void PrincessAnimation(float delta);
 
     void PrincessSoundHurt();
 
@@ -233,7 +233,7 @@ protected:
     float positionX = OriginalX;
     float positionY = OriginalY;
 
-    int counter = 0; // Counter for animation
+    float counter = 0; // Counter for animation
     int lastmovedirection = 2;
 
     sf::RenderWindow* window;

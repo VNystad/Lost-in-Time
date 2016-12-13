@@ -48,7 +48,7 @@ public:
 
     void PlayerDead();
 
-    void PlayerAnimation();
+    void PlayerAnimation(float delta);
 
     void PlayerSoundJump();
     void PlayerSoundHurt();
@@ -173,7 +173,7 @@ protected:
     float positionX = OriginalX;
     float positionY = OriginalY;
 
-    int counter = 0; // Counter for animation
+    float counter = 0; // Counter for animation
     int lastmovedirection = 2;
 
     sf::RenderWindow* window;

@@ -48,9 +48,9 @@ public:
 
     void Death();
 
-    void AnimationAI();
-    void AnimationAIMiniBoss();
-    void AnimationBoss();
+    void AnimationAI(float delta);
+    void AnimationAIMiniBoss(float delta);
+    void AnimationBoss(float delta);
 
     /**********************
     * AI
@@ -249,7 +249,7 @@ protected:
     int positionX = OriginalX;
     int positionY = OriginalY;
 
-    int counter = 0; // Counter for animation
+    float counter = 0; // Counter for animation
     int lastmovedirection = 2;
 
     sf::RenderWindow* window;

@@ -64,10 +64,10 @@ void AI::Reset2OriginalY(float y)
     y = this->OriginalY;
 }
 
-void AI::AnimationAI()
+void AI::AnimationAI(float delta)
 {
-    counter++;
-    if (counter >= 5)
+    counter += delta;
+    if (counter >= 0.1)
     {
         counter = 0;
         if (jumpcheck && movedirection == 1) // If jumping to the right
@@ -111,10 +111,10 @@ void AI::AnimationAI()
 }
 
 
-void AI::AnimationAIMiniBoss()
+void AI::AnimationAIMiniBoss(float delta)
 {
-    counter++;
-    if (counter >= 5)
+    counter += delta;
+    if (counter >= 0.1)
     {
         counter = 0;
         if (jumpcheck && movedirection == 1) // If jumping to the right
@@ -156,10 +156,10 @@ void AI::AnimationAIMiniBoss()
     }
 }
 
-void AI::AnimationBoss()
+void AI::AnimationBoss(float delta)
 {
-    counter++;
-    if (counter >= 7)
+    counter += delta;
+    if (counter >= 0.1)
     {
         counter = 0;
         if (jumpcheck && movedirection == 1) // If jumping to the right

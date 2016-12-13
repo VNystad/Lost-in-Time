@@ -365,6 +365,33 @@ Interface/health.cpp.s:
 	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.s
 .PHONY : Interface/health.cpp.s
 
+Interface/highscore.obj: Interface/highscore.cpp.obj
+
+.PHONY : Interface/highscore.obj
+
+# target to build an object file
+Interface/highscore.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.obj
+.PHONY : Interface/highscore.cpp.obj
+
+Interface/highscore.i: Interface/highscore.cpp.i
+
+.PHONY : Interface/highscore.i
+
+# target to preprocess a source file
+Interface/highscore.cpp.i:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.i
+.PHONY : Interface/highscore.cpp.i
+
+Interface/highscore.s: Interface/highscore.cpp.s
+
+.PHONY : Interface/highscore.s
+
+# target to generate assembly for a file
+Interface/highscore.cpp.s:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.s
+.PHONY : Interface/highscore.cpp.s
+
 Interface/timer.obj: Interface/timer.cpp.obj
 
 .PHONY : Interface/timer.obj
@@ -500,59 +527,59 @@ Map/sprite.cpp.s:
 	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.s
 .PHONY : Map/sprite.cpp.s
 
-Objects/playertest.obj: Objects/playertest.cpp.obj
+Objects/playerobject.obj: Objects/playerobject.cpp.obj
 
-.PHONY : Objects/playertest.obj
-
-# target to build an object file
-Objects/playertest.cpp.obj:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/playertest.cpp.obj
-.PHONY : Objects/playertest.cpp.obj
-
-Objects/playertest.i: Objects/playertest.cpp.i
-
-.PHONY : Objects/playertest.i
-
-# target to preprocess a source file
-Objects/playertest.cpp.i:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/playertest.cpp.i
-.PHONY : Objects/playertest.cpp.i
-
-Objects/playertest.s: Objects/playertest.cpp.s
-
-.PHONY : Objects/playertest.s
-
-# target to generate assembly for a file
-Objects/playertest.cpp.s:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/playertest.cpp.s
-.PHONY : Objects/playertest.cpp.s
-
-Objects/princess.obj: Objects/princess.cpp.obj
-
-.PHONY : Objects/princess.obj
+.PHONY : Objects/playerobject.obj
 
 # target to build an object file
-Objects/princess.cpp.obj:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/princess.cpp.obj
-.PHONY : Objects/princess.cpp.obj
+Objects/playerobject.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.obj
+.PHONY : Objects/playerobject.cpp.obj
 
-Objects/princess.i: Objects/princess.cpp.i
+Objects/playerobject.i: Objects/playerobject.cpp.i
 
-.PHONY : Objects/princess.i
+.PHONY : Objects/playerobject.i
 
 # target to preprocess a source file
-Objects/princess.cpp.i:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/princess.cpp.i
-.PHONY : Objects/princess.cpp.i
+Objects/playerobject.cpp.i:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.i
+.PHONY : Objects/playerobject.cpp.i
 
-Objects/princess.s: Objects/princess.cpp.s
+Objects/playerobject.s: Objects/playerobject.cpp.s
 
-.PHONY : Objects/princess.s
+.PHONY : Objects/playerobject.s
 
 # target to generate assembly for a file
-Objects/princess.cpp.s:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/princess.cpp.s
-.PHONY : Objects/princess.cpp.s
+Objects/playerobject.cpp.s:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.s
+.PHONY : Objects/playerobject.cpp.s
+
+Objects/princessobject.obj: Objects/princessobject.cpp.obj
+
+.PHONY : Objects/princessobject.obj
+
+# target to build an object file
+Objects/princessobject.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/princessobject.cpp.obj
+.PHONY : Objects/princessobject.cpp.obj
+
+Objects/princessobject.i: Objects/princessobject.cpp.i
+
+.PHONY : Objects/princessobject.i
+
+# target to preprocess a source file
+Objects/princessobject.cpp.i:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/princessobject.cpp.i
+.PHONY : Objects/princessobject.cpp.i
+
+Objects/princessobject.s: Objects/princessobject.cpp.s
+
+.PHONY : Objects/princessobject.s
+
+# target to generate assembly for a file
+Objects/princessobject.cpp.s:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/princessobject.cpp.s
+.PHONY : Objects/princessobject.cpp.s
 
 Objects/savedobject.obj: Objects/savedobject.cpp.obj
 
@@ -580,6 +607,33 @@ Objects/savedobject.s: Objects/savedobject.cpp.s
 Objects/savedobject.cpp.s:
 	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.s
 .PHONY : Objects/savedobject.cpp.s
+
+app.obj: app.cpp.obj
+
+.PHONY : app.obj
+
+# target to build an object file
+app.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/app.cpp.obj
+.PHONY : app.cpp.obj
+
+app.i: app.cpp.i
+
+.PHONY : app.i
+
+# target to preprocess a source file
+app.cpp.i:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/app.cpp.i
+.PHONY : app.cpp.i
+
+app.s: app.cpp.s
+
+.PHONY : app.s
+
+# target to generate assembly for a file
+app.cpp.s:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/app.cpp.s
+.PHONY : app.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -716,33 +770,6 @@ state/statemainmenu.cpp.s:
 	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.s
 .PHONY : state/statemainmenu.cpp.s
 
-testapp.obj: testapp.cpp.obj
-
-.PHONY : testapp.obj
-
-# target to build an object file
-testapp.cpp.obj:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/testapp.cpp.obj
-.PHONY : testapp.cpp.obj
-
-testapp.i: testapp.cpp.i
-
-.PHONY : testapp.i
-
-# target to preprocess a source file
-testapp.cpp.i:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/testapp.cpp.i
-.PHONY : testapp.cpp.i
-
-testapp.s: testapp.cpp.s
-
-.PHONY : testapp.s
-
-# target to generate assembly for a file
-testapp.cpp.s:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/testapp.cpp.s
-.PHONY : testapp.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -779,6 +806,9 @@ help:
 	@echo ... Interface/health.obj
 	@echo ... Interface/health.i
 	@echo ... Interface/health.s
+	@echo ... Interface/highscore.obj
+	@echo ... Interface/highscore.i
+	@echo ... Interface/highscore.s
 	@echo ... Interface/timer.obj
 	@echo ... Interface/timer.i
 	@echo ... Interface/timer.s
@@ -794,15 +824,18 @@ help:
 	@echo ... Map/sprite.obj
 	@echo ... Map/sprite.i
 	@echo ... Map/sprite.s
-	@echo ... Objects/playertest.obj
-	@echo ... Objects/playertest.i
-	@echo ... Objects/playertest.s
-	@echo ... Objects/princess.obj
-	@echo ... Objects/princess.i
-	@echo ... Objects/princess.s
+	@echo ... Objects/playerobject.obj
+	@echo ... Objects/playerobject.i
+	@echo ... Objects/playerobject.s
+	@echo ... Objects/princessobject.obj
+	@echo ... Objects/princessobject.i
+	@echo ... Objects/princessobject.s
 	@echo ... Objects/savedobject.obj
 	@echo ... Objects/savedobject.i
 	@echo ... Objects/savedobject.s
+	@echo ... app.obj
+	@echo ... app.i
+	@echo ... app.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
@@ -818,9 +851,6 @@ help:
 	@echo ... state/statemainmenu.obj
 	@echo ... state/statemainmenu.i
 	@echo ... state/statemainmenu.s
-	@echo ... testapp.obj
-	@echo ... testapp.i
-	@echo ... testapp.s
 .PHONY : help
 
 

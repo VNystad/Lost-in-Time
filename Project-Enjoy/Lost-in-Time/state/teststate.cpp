@@ -1,6 +1,6 @@
 #include <iostream>
 #include "teststate.h"
-#include "../testapp.h"
+#include "../app.h"
 
 
 void TestState::GoNext(Machine &machine)

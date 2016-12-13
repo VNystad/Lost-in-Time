@@ -44,8 +44,8 @@ set(SOURCE_FILES
         Map/sprite.h
         Map/tile.h
 
-        Objects/playertest.cpp
-        Objects/playertest.h
+        Objects/playerobject.cpp
+        Objects/playerobject.h
         Objects/savedobject.cpp
         Objects/savedobject.h
 
@@ -62,9 +62,9 @@ set(SOURCE_FILES
         state/statemainmenu.h
 
         main.cpp
-        testapp.cpp
-        testapp.h
-        Objects/princess.cpp Objects/princess.h)
+        app.cpp
+        app.h
+        Objects/princessobject.cpp Objects/princessobject.h)
 
 add_executable(Lost-in-Time ${SOURCE_FILES})
 

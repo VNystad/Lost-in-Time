@@ -69,7 +69,7 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
  * @param e The AI character.
  * @param p The player character.
  */
-void AIEnemies::MonkeyAI1(AIEnemies* e,PlayerTest* p)
+void AIEnemies::MonkeyAI1(AIEnemies* e,PlayerObject* p)
 {
     if((p->GetPositionX() - e->GetPositionX() < this->enragerange && p->GetPositionX() - e->GetPositionX() > -this->enragerange) &&
        (p->GetPositionY() - e->GetPositionY() <  this->enragerange && p->GetPositionY() - e->GetPositionY() > -this->enragerange))
@@ -141,7 +141,7 @@ void AIEnemies::MonkeyAI1(AIEnemies* e,PlayerTest* p)
  * @param e The AI character.
  * @param p The Player character.
  */
-void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerTest* p)
+void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerObject* p)
 {
     if((p->GetPositionX() - e->GetPositionX() < this->enragerange && p->GetPositionX() - e->GetPositionX() > -this->enragerange) &&
        (p->GetPositionY() - e->GetPositionY() <  this->enragerange && p->GetPositionY() - e->GetPositionY() > -this->enragerange))
@@ -204,7 +204,7 @@ void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerTest* p)
     }
 }
 
-void AIEnemies::GotHurt(AIEnemies *e, PlayerTest *p)
+void AIEnemies::GotHurt(AIEnemies *e, PlayerObject *p)
 {
     if(!e->boss)
     {

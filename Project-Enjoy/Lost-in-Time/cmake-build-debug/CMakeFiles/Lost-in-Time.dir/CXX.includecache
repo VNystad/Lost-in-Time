@@ -33,8 +33,8 @@ E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lo
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
 AI.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.h
-../Objects/playertest.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
+../Objects/playerobject.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playerobject.h
 stdlib.h
 -
 
@@ -95,12 +95,12 @@ iostream
 -
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h
-../Objects/playertest.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
+../Objects/playerobject.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playerobject.h
 ../Enemy/AIEnemies.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
-../Objects/princess.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princess.h
+../Objects/princessobject.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princessobject.h
 ../Map/tile.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/tile.h
 vector
@@ -129,6 +129,20 @@ SFML/Graphics.hpp
 -
 ../Framework/config.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
+
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/highscore.cpp
+highscore.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/highscore.h
+
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/highscore.h
+iostream
+-
+map
+-
+fstream
+-
+SFML/Graphics/Text.hpp
+-
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/timer.cpp
 timer.h
@@ -200,15 +214,15 @@ E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lo
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/tile.h
 
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.cpp
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playerobject.cpp
 iostream
 -
-playertest.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
+playerobject.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playerobject.h
 stdlib.h
 -
 
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playerobject.h
 SFML/Graphics/RectangleShape.hpp
 -
 SFML/Graphics/RenderWindow.hpp
@@ -226,17 +240,17 @@ E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lo
 stdlib.h
 -
 
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princess.cpp
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princessobject.cpp
 iostream
 -
-princess.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princess.h
+princessobject.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princessobject.h
 stdlib.h
 -
 
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princess.h
-../Objects/playertest.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princessobject.h
+playerobject.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playerobject.h
 SFML/Graphics/RectangleShape.hpp
 -
 SFML/Graphics/RenderWindow.hpp
@@ -264,15 +278,45 @@ E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lo
 ../Enemy/AIEnemies.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
 
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/app.cpp
+iostream
+-
+fstream
+-
+app.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/app.h
+Framework/physics.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h
+
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/app.h
+list
+-
+SFML/System/Clock.hpp
+-
+SFML/Graphics.hpp
+-
+Framework/config.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
+Objects/playerobject.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playerobject.h
+Objects/princessobject.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princessobject.h
+Map/map.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/map.h
+Framework/Camera.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/Camera.h
+Enemy/AIEnemies.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
+Framework/Music.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/Music.h
+state/machine.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/machine.h
+
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/main.cpp
 SFML/Graphics/RenderWindow.hpp
 -
 state/machine.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/machine.h
-Framework/config.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
-Objects/savedobject.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/savedobject.h
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/machine.cpp
 machine.h
@@ -293,24 +337,30 @@ SFML/Graphics/RenderWindow.hpp
 -
 ../Objects/savedobject.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/savedobject.h
+../Interface/highscore.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/highscore.h
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/state.h
 SFML/Graphics.hpp
 -
 ../Objects/savedobject.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/savedobject.h
+../Interface/highscore.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/highscore.h
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/stategame.cpp
 stategame.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/stategame.h
 machine.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/machine.h
-../testapp.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/testapp.h
+../app.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/app.h
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/stategame.h
 state.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/state.h
+../Interface/highscore.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/highscore.h
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/stateloadgame.cpp
 iostream
@@ -329,6 +379,8 @@ E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lo
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
 ../Objects/savedobject.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/savedobject.h
+../Interface/highscore.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/highscore.h
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.cpp
 iostream
@@ -343,38 +395,6 @@ state.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/state.h
 ../Framework/config.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
-
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/testapp.cpp
-iostream
--
-fstream
--
-testapp.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/testapp.h
-Framework/physics.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h
-
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/testapp.h
-list
--
-SFML/System/Clock.hpp
--
-SFML/Graphics.hpp
--
-Framework/config.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/config.h
-Objects/playertest.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h
-Objects/princess.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princess.h
-Map/map.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/map.h
-Framework/Camera.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/Camera.h
-Enemy/AIEnemies.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.h
-Framework/Music.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/Music.h
-state/machine.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/machine.h
+../Interface/highscore.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/highscore.h
 

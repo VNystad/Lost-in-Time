@@ -3,16 +3,16 @@
 #define LOST_IN_TIME_AIMONKEY_H
 
 #include "AI.h"
-#include "../Objects/playertest.h"
+#include "../Objects/playerobject.h"
 #include <stdlib.h>
 
 class AIEnemies: public AI {
 public:
     AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow *window);
 
-    void MonkeyAI1(AIEnemies* e, PlayerTest* p);
-    void MonkeyAI2(AIEnemies* e,PlayerTest* p);
-    void GotHurt(AIEnemies* e, PlayerTest* p);
+    void MonkeyAI1(AIEnemies* e, PlayerObject* p);
+    void MonkeyAI2(AIEnemies* e,PlayerObject* p);
+    void GotHurt(AIEnemies* e, PlayerObject* p);
 
 private:
     //const int sizeWidth = 34;

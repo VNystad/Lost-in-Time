@@ -5,7 +5,7 @@
 
 
 //Horisontal movement for player
-void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
+void Physics::Movement(PlayerObject* p, int** collidableArray, float delta) {
     //This function handles movement to the left or to the right. The object will gradually reach its max velocity
     //which it is limited by, and also gradually slow down at different rates wether one tries to move the
     //object to the other direction or not.
@@ -132,7 +132,7 @@ void Physics::Movement(PlayerTest* p, int** collidableArray, float delta) {
 
 
 //Gravity for player
-void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
+void Physics::Gravity(PlayerObject* p, int** collidableArray, float delta)
 {
     //Gravity Start-----------------------------------------------------------------------------------------------------
 
@@ -235,7 +235,7 @@ void Physics::Gravity(PlayerTest* p, int** collidableArray, float delta)
  * @param collidableArray 2D array with all collidable tiles
  * @return True if there is a block infront of player, false if not
  */
-bool Physics::HorisontalCollision(PlayerTest* p, int** collidableArray)
+bool Physics::HorisontalCollision(PlayerObject* p, int** collidableArray)
 {
     int upperPlayerYArrayCoord = (p->GetPositionY() / 32) >0? (p->GetPositionY()+17)/32 :0; //Experimental bug fix
     int lowerPlayerArrayCoord = upperPlayerYArrayCoord +1;
@@ -260,7 +260,7 @@ bool Physics::HorisontalCollision(PlayerTest* p, int** collidableArray)
  * @param collidableArray 2d array with all collidable tiles
  * @return true if on top of a tile, else false
  */
-bool Physics::Grounded(PlayerTest* p, int** collidableArray)
+bool Physics::Grounded(PlayerObject* p, int** collidableArray)
 {
     int playerArrayCoordX = (p->GetPositionX() + 17) / 32;
     int playerSouthCoord = (p->GetPositionY() / 32)>0? (p->GetPositionY()+50) / 32 :0;
@@ -279,7 +279,7 @@ bool Physics::Grounded(PlayerTest* p, int** collidableArray)
  * @param collidableArray 2d array with all collidable tiles
  * @return true if in touch with tile above, else false
  */
-bool Physics::Roofed(PlayerTest* p, int** collidableArray)
+bool Physics::Roofed(PlayerObject* p, int** collidableArray)
 {
     int playerArrayCoordX = (p->GetPositionX() +17) / 32;
     int playerNorthCoord = (p->GetPositionY() / 32)>0?(p->GetPositionY()+30)/32 -1:0;
@@ -296,7 +296,7 @@ bool Physics::Roofed(PlayerTest* p, int** collidableArray)
 ***************************************/
 
 //Horisontal movement for AI
-void Physics::AIMovement(AIEnemies* e, PlayerTest* p, std::vector<AIEnemies*>* AIVector, int i, int** collidableArray, float delta) {
+void Physics::AIMovement(AIEnemies* e, PlayerObject* p, std::vector<AIEnemies*>* AIVector, int i, int** collidableArray, float delta) {
     //This function handles movement to the left or to the right. The object will gradually reach its max velocity
     //which it is limited by, and also gradually slow down at different rates wether one tries to move the
     //object to the other direction or not.
@@ -611,7 +611,7 @@ bool Physics::AIRoofed(AIEnemies* e, int** collidableArray)
  * @param i The index of the selected AI(to hinder self colliding)
  * @param AIVector The whole vector of all the AI
  */
-void Physics::Hurt(PlayerTest*p, AIEnemies* e, int* i, std::vector<AIEnemies*>* AIVector)
+void Physics::Hurt(PlayerObject*p, AIEnemies* e, int* i, std::vector<AIEnemies*>* AIVector)
 {
     int px = p->GetPositionX() + p->GetSizeWidth()/2;
     int py = p->GetPositionY() + p->GetSizeHeight()/2;
@@ -652,6 +652,7 @@ void Physics::Hurt(PlayerTest*p, AIEnemies* e, int* i, std::vector<AIEnemies*>* 
                 p->SetPlayerHurt(1);
             else if(py < ey)
             {
+                p->PlayerSoundEnemyLanded();
                 p->SetPlayerHurt(2);
                 e->health.Hit(e->health.GetOriginalLifePoints());
                 e->GotHurt(e, p);
@@ -673,6 +674,7 @@ void Physics::Hurt(PlayerTest*p, AIEnemies* e, int* i, std::vector<AIEnemies*>* 
             p->SetPlayerHurt(1);
         else if(py < ey)
         {
+            p->PlayerSoundEnemyLanded();
             p->SetPlayerHurt(2);
             e->health.Hit(e->health.GetOriginalLifePoints());
             e->GotHurt(e, p);

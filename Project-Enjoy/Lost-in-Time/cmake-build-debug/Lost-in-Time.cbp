@@ -140,6 +140,12 @@
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/health.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/highscore.cpp">
+			<Option target="Lost-in-Time"/>
+		</Unit>
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/highscore.h">
+			<Option target="Lost-in-Time"/>
+		</Unit>
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/timer.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
@@ -173,16 +179,16 @@
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/tile.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playerobject.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playertest.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playerobject.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princess.cpp">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princessobject.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
-		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princess.h">
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princessobject.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/savedobject.cpp">
@@ -192,6 +198,12 @@
 			<Option target="Lost-in-Time"/>
 		</Unit>
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/SaveFiles">
+			<Option target="Lost-in-Time"/>
+		</Unit>
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/app.cpp">
+			<Option target="Lost-in-Time"/>
+		</Unit>
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/app.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/cmake-build-debug">
@@ -228,12 +240,6 @@
 			<Option target="Lost-in-Time"/>
 		</Unit>
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/statemainmenu.h">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/testapp.cpp">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/testapp.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/CMakeLists.txt">

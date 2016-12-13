@@ -13,6 +13,7 @@ public:
     bool loadMedia();
 
     void ShowHighscore(sf::RenderWindow& window, Highscore& highscore);
+    void ShowHowToPlay(sf::RenderWindow& window);
 
     void GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&, Highscore&);
 
@@ -22,7 +23,6 @@ protected:
 
     std::map<int, std::string>* highscoreMap;
 
-    bool inHighscore = true;
     bool keypressed;
 
     Config config;
@@ -35,17 +35,21 @@ protected:
     sf::Texture* NewGameSelectedTexture = nullptr;
     sf::Texture* LoadGameTexture = nullptr;
     sf::Texture* LoadGameSelectedTexture = nullptr;
+    sf::Texture* HighscoreTexture = nullptr;
+    sf::Texture* HighscoreSelectedTexture = nullptr;
+    sf::Texture* HowToPlayPictureTexture = nullptr;
+    sf::Texture* HowToPlaySelectedTexture = nullptr;
     sf::Texture* ExitGameTexture = nullptr;
     sf::Texture* ExitGameSelectedTexture = nullptr;
     sf::Texture* HowToPlayTexture = nullptr;
-    sf::Texture* HowToPlayPictureTexture = nullptr;
-    sf::Texture* HowToPlaySelectedTexture = nullptr;
 
     sf::Sprite backgroundSprite;
-    sf::Sprite newGameSprite;
-    sf::Sprite newGameSelectedSprite;
-    sf::Sprite loadGameSprite;
-    sf::Sprite loadGameSelectedSprite;
+    sf::Sprite NewGameSprite;
+    sf::Sprite NewGameSelectedSprite;
+    sf::Sprite LoadGameSprite;
+    sf::Sprite LoadGameSelectedSprite;
+    sf::Sprite HighscoreSprite;
+    sf::Sprite HighscoreSelectedSprite;
     sf::Sprite HowToPlaySprite;
     sf::Sprite HowToPlaySelectedSprite;
     sf::Sprite HowToPlayPictureSprite;

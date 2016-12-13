@@ -15,29 +15,28 @@ void StateMainMenu::ShowHighscore(sf::RenderWindow& window, Highscore& highscore
     highscoreText.setCharacterSize(30);
     highscoreText.setColor(sf::Color::White);
     highscoreText.setString("Highscores: ");
-/*
-    highscoreMap->emplace(1, "vebis");
-    highscoreMap->emplace(43, "vebis");
-    highscoreMap->emplace(8786, "Marte");
-    highscoreMap->emplace(3432, "Vebis");
-    highscoreMap->emplace(54, "Martin");
-    highscoreMap->emplace(2, "helo");
-    highscoreMap->emplace(3, "gfdsgi");
-    highscoreMap->emplace(765, "YESSS");
-*/
+
     for(auto iter = highscoreMap->rbegin(); iter != highscoreMap->rend(); ++iter)
     {
         score = std::to_string(iter->first);
         highscoreText.setString(highscoreText.getString() + "\n" + iter->second + ": " + score);
     }
 
-    while(inHighscore)
+    while(!sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
     {
         window.clear(sf::Color::Black);
         window.draw(highscoreText);
         window.display();
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-            inHighscore = false;
+    }
+}
+
+void StateMainMenu::ShowHowToPlay(sf::RenderWindow& window)
+{
+    while(!sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+    {
+        window.clear(sf::Color::Black);
+        window.draw(HowToPlayPictureSprite);
+        window.display();
     }
 }
 
@@ -65,19 +64,51 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
          ****************************/
         if(!keypressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
         {
-            menu ++;
-            if(menu > 4)
+            keypressed = true;
+            if(menu == 4)
+                menu = 5;
+            else if(menu == 5)
                 menu = 1;
-            keypressed = true;
+            else
+            {
+                menu += 2;
+            }
+
         }
-        if(!keypressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+        else if(!keypressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
         {
-            menu --;
-            if(menu <= 0)
-                menu = 4;
             keypressed = true;
+            if(menu == 1 || menu == 2)
+                menu = 5;
+            else
+            {
+                menu -= 2;
+            }
         }
-        if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+        else if(!keypressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+        {
+            keypressed = true;
+            if(menu == 5);
+            else if(menu % 2 == 1)
+            {
+                menu += 1;
+            }
+            else
+                menu -= 1;
+        }
+        else if(!keypressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+        {
+            keypressed = true;
+            if(menu == 5);
+            else if(menu % 2 == 0)
+            {
+                menu -= 1;
+            }
+            else
+                menu += 1;
+        }
+        else if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Up) &&
+                !sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
             keypressed = false;
 
         /******************************
@@ -89,29 +120,41 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
         window.draw(backgroundSprite);
         if(menu == 1)
         {
-            window.draw(newGameSelectedSprite);
-            window.draw(loadGameSprite);
+            window.draw(NewGameSelectedSprite);
+            window.draw(LoadGameSprite);
+            window.draw(HighscoreSprite);
             window.draw(HowToPlaySprite);
             window.draw(exitGameSprite);
         }
         if(menu == 2)
         {
-            window.draw(newGameSprite);
-            window.draw(loadGameSelectedSprite);
+            window.draw(NewGameSprite);
+            window.draw(LoadGameSelectedSprite);
+            window.draw(HighscoreSprite);
             window.draw(HowToPlaySprite);
             window.draw(exitGameSprite);
         }
         if(menu == 3)
         {
-            window.draw(newGameSprite);
-            window.draw(loadGameSprite);
-            window.draw(HowToPlaySelectedSprite);
+            window.draw(NewGameSprite);
+            window.draw(LoadGameSprite);
+            window.draw(HighscoreSelectedSprite);
+            window.draw(HowToPlaySprite);
             window.draw(exitGameSprite);
         }
         else if(menu == 4)
         {
-            window.draw(newGameSprite);
-            window.draw(loadGameSprite);
+            window.draw(NewGameSprite);
+            window.draw(LoadGameSprite);
+            window.draw(HighscoreSprite);
+            window.draw(HowToPlaySelectedSprite);
+            window.draw(exitGameSprite);
+        }
+        else if(menu == 5)
+        {
+            window.draw(NewGameSprite);
+            window.draw(LoadGameSprite);
+            window.draw(HighscoreSprite);
             window.draw(HowToPlaySprite);
             window.draw(exitGameSelectedSprite);
         }
@@ -127,19 +170,16 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
             {
                 /*machine.SetState(Machine::StateId::LOAD);
                 mainmenu = false;*/
-                ShowHighscore(window, highscore);
-                return;
             }
             else if(menu == 3)
             {
-                while(!sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
-                {
-                    window.clear(sf::Color::Black);
-                    window.draw(HowToPlayPictureSprite);
-                    window.display();
-                }
+                ShowHighscore(window, highscore);
             }
             else if(menu == 4)
+            {
+                ShowHowToPlay(window);
+            }
+            else if(menu == 5)
             {
                 window.close();
                 machine.SetRunning(false);
@@ -189,6 +229,9 @@ bool StateMainMenu::loadMedia()
     LoadGameTexture = LoadTexture("data/main-menu/LoadGame.png");
     LoadGameSelectedTexture = LoadTexture("data/main-menu/LoadGameSelected.png");
 
+    HighscoreTexture = LoadTexture("data/main-menu/Highscore.png");
+    HighscoreSelectedTexture = LoadTexture("data/main-menu/HighscoreSelected.png");
+
     HowToPlayTexture = LoadTexture("data/main-menu/HowToPlay2.png");
     HowToPlaySelectedTexture = LoadTexture("data/main-menu/HowToPlaySelected.png");
     HowToPlayPictureTexture = LoadTexture("data/main-menu/HowToPlaySprite.png");
@@ -200,28 +243,30 @@ bool StateMainMenu::loadMedia()
     backgroundSprite.setTexture(*BackgroundTexture);
     backgroundSprite.setPosition(100,0);
 
-    newGameSprite.setTexture(*NewGameTexture);
-    newGameSprite.setPosition(250, 230);
+    NewGameSprite.setTexture(*NewGameTexture);
+    NewGameSprite.setPosition(25, 230);
+    NewGameSelectedSprite.setTexture(*NewGameSelectedTexture);
+    NewGameSelectedSprite.setPosition(25, 230);
 
-    newGameSelectedSprite.setTexture(*NewGameSelectedTexture);
-    newGameSelectedSprite.setPosition(250, 230);
+    LoadGameSprite.setTexture(*LoadGameTexture);
+    LoadGameSprite.setPosition(500, 230);
+    LoadGameSelectedSprite.setTexture(*LoadGameSelectedTexture);
+    LoadGameSelectedSprite.setPosition(500, 230);
 
-    loadGameSprite.setTexture(*LoadGameTexture);
-    loadGameSprite.setPosition(240, 295);
-
-    loadGameSelectedSprite.setTexture(*LoadGameSelectedTexture);
-    loadGameSelectedSprite.setPosition(240, 295);
+    HighscoreSprite.setTexture(*HighscoreTexture);
+    HighscoreSprite.setPosition(25, 320);
+    HighscoreSelectedSprite.setTexture(*HighscoreSelectedTexture);
+    HighscoreSelectedSprite.setPosition(25, 320);
 
     HowToPlaySprite.setTexture(*HowToPlayTexture);
-    HowToPlaySprite.setPosition(240, 360);
+    HowToPlaySprite.setPosition(500, 307);
     HowToPlaySelectedSprite.setTexture(*HowToPlaySelectedTexture);
-    HowToPlaySelectedSprite.setPosition(240, 360);
+    HowToPlaySelectedSprite.setPosition(500, 307);
     HowToPlayPictureSprite.setTexture(*HowToPlayPictureTexture);
-    HowToPlayPictureSprite.setPosition(250,250);
+    HowToPlayPictureSprite.setPosition(0,0);
 
     exitGameSprite.setTexture(*ExitGameTexture);
     exitGameSprite.setPosition(250, 425);
-
     exitGameSelectedSprite.setTexture(*ExitGameSelectedTexture);
     exitGameSelectedSprite.setPosition(250, 425);
 

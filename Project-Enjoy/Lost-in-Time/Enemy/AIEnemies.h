@@ -8,7 +8,7 @@
 
 class AIEnemies: public AI {
 public:
-    AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow *window);
+    AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *window);
 
     void MonkeyAI1(AIEnemies* e, PlayerObject* p);
     void MonkeyAI2(AIEnemies* e,PlayerObject* p);

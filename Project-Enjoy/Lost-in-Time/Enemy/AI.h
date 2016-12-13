@@ -12,7 +12,7 @@
 class AI
 {
 public:
-    AI(float x, float y, sf::RenderWindow* window);
+    AI(int x, int y, sf::RenderWindow* window);
 
     sf::RectangleShape* character;
     Animation animation;
@@ -246,8 +246,8 @@ protected:
     int OriginalY;
 
     //Player position
-    int positionX = OriginalX;
-    int positionY = OriginalY;
+    int positionX;
+    int positionY;
 
     float counter = 0; // Counter for animation
     int lastmovedirection = 2;

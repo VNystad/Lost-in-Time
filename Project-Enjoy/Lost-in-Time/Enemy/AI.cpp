@@ -1,10 +1,12 @@
 #include <iostream>
 #include "AI.h"
 
-AI::AI(float positionX, float positionY, sf::RenderWindow* window) : window(window)
+AI::AI(int x, int y, sf::RenderWindow* window) : window(window)
 {
-    this->positionX = OriginalX;
-    this->positionY = OriginalY;
+    this->positionX = x;
+    this->positionY = y;
+    this->OriginalX = x;
+    this->OriginalY = y;
     character = new sf::RectangleShape;
     character->setSize(sf::Vector2f(sizeWidth,sizeHeight));
 

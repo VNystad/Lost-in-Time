@@ -2,12 +2,12 @@
 #include "AIEnemies.h"
 
 
-AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow *window) : AI(x, y, window)
+AIEnemies::AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *window) : AI(x, y, window)
 {
+    this->positionX = x;
+    this->positionY = y;
     this->OriginalX = x;
     this->OriginalY = y;
-    this->positionX = this->OriginalX;
-    this->positionY = this->OriginalY;
 
     character = new sf::RectangleShape;
     character->setSize(sf::Vector2f(sizeWidth,sizeHeight));
@@ -19,36 +19,36 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
         sf::Vector2f scale = character->getScale();
         character->scale(scale.x*3.5, scale.y*2);
 
-        this->SetSizeHeight(44*2);
-        this->SetSizeWidth(55*3.5);
+        this->sizeWidth = 55*3.5;
+        this->sizeHeight = 44*2;
         this->patrolleft = x - patrol;
         this->patrolright = x + patrol;
         animation.AIBossWalkRight(character);
         health.SetOriginalLifePoints(1000);
         health.SetActualLifePoints(1000);
         health.SetVisibleLifePoints(1000);
-        this->SetRightKey(true);
-        this->SetLeftKey(false);
+        this->rightkey = true;
+        this->leftkey = false;
         this->enragerange = 150;
-        this->SetCalmSpeed(50);
-        this->SetEnragedSpeed(190);
+        this->calmspeed = 50;
+        this->enragedspeed = 190;
         this->boss = true;
-        this->SetMiniBoss(false);
+        this->miniboss = false;
     }
 
     else if(rand() % 100 <20)
     {
-        this->SetMiniBoss(true);
+        this->miniboss = true;
         this->patrolleft = x - patrol;
         this->patrolright = x + patrol;
         animation.AIMiniBossWalkRight(character);
         health.SetOriginalLifePoints(300);
         health.SetActualLifePoints(300);
         health.SetVisibleLifePoints(300);
-        this->SetRightKey(true);
-        this->SetLeftKey(false);
+        this->rightkey = true;
+        this->leftkey = false;
         this->enragerange = 200;
-        this->SetEnragedSpeed(250);
+        this->enragedspeed = 250;
     }
     else
     {
@@ -59,7 +59,7 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
         health.SetActualLifePoints(100);
         health.SetVisibleLifePoints(100);
     }
-    this->SetMaxMoveSpeed(this->GetCalmSpeed());
+    this->maxmovespeed = calmspeed;
 }
 
 /**

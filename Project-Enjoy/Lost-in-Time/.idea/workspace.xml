@@ -34,8 +34,62 @@
       <file leaf-file-name="app.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2414">
-              <caret line="649" column="17" selection-start-line="649" selection-start-column="17" selection-end-line="649" selection-end-column="17" />
+            <state relative-caret-position="34">
+              <caret line="737" column="41" selection-start-line="737" selection-start-column="41" selection-end-line="737" selection-end-column="41" />
+              <folding>
+                <element signature="e#26679#30678#0" expanded="false" />
+                <element signature="e#30680#33530#0" expanded="false" />
+                <element signature="e#33532#34212#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stateloadgame.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/State/stateloadgame.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="99" column="37" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AI.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Enemy/AI.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AI.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Enemy/AI.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4080">
+              <caret line="245" column="18" selection-start-line="245" selection-start-column="18" selection-end-line="245" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AIEnemies.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Enemy/AIEnemies.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="206" column="38" selection-start-line="206" selection-start-column="38" selection-end-line="206" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AIEnemies.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Enemy/AIEnemies.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -51,12 +105,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="statemainmenu.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="statemainmenu.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/State/statemainmenu.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
-              <folding />
+            <state relative-caret-position="272">
+              <caret line="200" column="58" selection-start-line="200" selection-start-column="58" selection-end-line="200" selection-end-column="58" />
+              <folding>
+                <element signature="e#70#1003#0" expanded="false" />
+                <element signature="e#1005#1252#0" expanded="false" />
+                <element signature="e#1254#5727#0" expanded="false" />
+                <element signature="e#5729#6238#0" expanded="false" />
+                <element signature="e#6239#8652#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,7 +158,6 @@
         <option value="$PROJECT_DIR$/state/state.h" />
         <option value="$PROJECT_DIR$/state/machine.cpp" />
         <option value="$PROJECT_DIR$/Interface/health.h" />
-        <option value="$PROJECT_DIR$/Enemy/AIEnemies.h" />
         <option value="$PROJECT_DIR$/Objects/savedobject.cpp" />
         <option value="$PROJECT_DIR$/Objects/savedobject.h" />
         <option value="$PROJECT_DIR$/state/stateloadgame.cpp" />
@@ -124,23 +183,24 @@
         <option value="$PROJECT_DIR$/Objects/princess.h" />
         <option value="$PROJECT_DIR$/Objects/princess.cpp" />
         <option value="$PROJECT_DIR$/Objects/playertest.cpp" />
-        <option value="$PROJECT_DIR$/Enemy/AI.h" />
-        <option value="$PROJECT_DIR$/Enemy/AI.cpp" />
         <option value="$PROJECT_DIR$/state/statemainmenu.cpp" />
         <option value="$PROJECT_DIR$/Objects/playerobject.h" />
         <option value="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
         <option value="$PROJECT_DIR$/Map/map.cpp" />
         <option value="$PROJECT_DIR$/Objects/playerobject.cpp" />
         <option value="$PROJECT_DIR$/Framework/physics.cpp" />
-        <option value="$PROJECT_DIR$/Enemy/AIEnemies.cpp" />
         <option value="$PROJECT_DIR$/Interface/highscore.h" />
         <option value="$PROJECT_DIR$/Interface/highscore.cpp" />
         <option value="$PROJECT_DIR$/app.h" />
         <option value="$PROJECT_DIR$/Objects/princessobject.h" />
         <option value="$PROJECT_DIR$/Objects/princessobject.cpp" />
         <option value="$PROJECT_DIR$/app.cpp" />
-        <option value="$PROJECT_DIR$/State/statemainmenu.cpp" />
         <option value="$PROJECT_DIR$/State/statemainmenu.h" />
+        <option value="$PROJECT_DIR$/State/statemainmenu.cpp" />
+        <option value="$PROJECT_DIR$/Enemy/AI.h" />
+        <option value="$PROJECT_DIR$/Enemy/AIEnemies.h" />
+        <option value="$PROJECT_DIR$/Enemy/AI.cpp" />
+        <option value="$PROJECT_DIR$/Enemy/AIEnemies.cpp" />
       </list>
     </option>
   </component>
@@ -650,12 +710,12 @@
       <workItem from="1481618060869" duration="153000" />
       <workItem from="1481618300168" duration="1586000" />
       <workItem from="1481630313902" duration="5539000" />
-      <workItem from="1481640180481" duration="16766000" />
+      <workItem from="1481640180481" duration="18047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="419075000" />
+    <option name="totallyTimeSpent" value="420356000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -723,7 +783,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="315" />
+      <option name="time" value="317" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -835,14 +895,6 @@
     <entry file="file://E:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/6.2.0/include/c++/bits/stl_function.h" />
     <entry file="file://E:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/6.2.0/include/c++/bits/move.h" />
     <entry file="file://E:/mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/6.2.0/include/c++/bits/stl_tree.h" />
-    <entry file="file://$PROJECT_DIR$/State/stateloadgame.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="888">
-          <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Framework/animation.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8432">
@@ -861,29 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Enemy/AI.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3810">
-          <caret line="254" column="29" selection-start-line="254" selection-start-column="29" selection-end-line="254" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Enemy/AIEnemies.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Enemy/AI.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1972">
-          <caret line="116" column="22" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,14 +959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Enemy/AIEnemies.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3706">
-          <caret line="218" column="32" selection-start-line="218" selection-start-column="32" selection-end-line="218" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1047,19 +1068,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2414">
-          <caret line="649" column="17" selection-start-line="649" selection-start-column="17" selection-end-line="649" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/State/statemainmenu.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="200" column="58" selection-start-line="200" selection-start-column="58" selection-end-line="200" selection-end-column="58" />
+          <folding>
+            <element signature="e#70#1003#0" expanded="false" />
+            <element signature="e#1005#1252#0" expanded="false" />
+            <element signature="e#1254#5727#0" expanded="false" />
+            <element signature="e#5729#6238#0" expanded="false" />
+            <element signature="e#6239#8652#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1071,10 +1098,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/State/statemainmenu.cpp">
+    <entry file="file://$PROJECT_DIR$/app.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+        <state relative-caret-position="34">
+          <caret line="737" column="41" selection-start-line="737" selection-start-column="41" selection-end-line="737" selection-end-column="41" />
+          <folding>
+            <element signature="e#26679#30678#0" expanded="false" />
+            <element signature="e#30680#33530#0" expanded="false" />
+            <element signature="e#33532#34212#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/State/stateloadgame.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="99" column="37" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Enemy/AI.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4080">
+          <caret line="245" column="18" selection-start-line="245" selection-start-column="18" selection-end-line="245" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Enemy/AIEnemies.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Enemy/AI.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Enemy/AIEnemies.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="206" column="38" selection-start-line="206" selection-start-column="38" selection-end-line="206" selection-end-column="38" />
           <folding />
         </state>
       </provider>

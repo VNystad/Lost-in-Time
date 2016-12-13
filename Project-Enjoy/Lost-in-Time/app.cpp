@@ -57,7 +57,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
          *******************/
         // 160, 398
         //4450, 558
-        player = new PlayerObject(4000, 558, &window);
+        player = new PlayerObject(4450, 558, &window);
 
         /***********************
          *  Create the princess
@@ -236,8 +236,8 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     /*********************
      * CHECK IF PLAYER WON
      ********************/
-    if((princess->GetPositionX() - player->GetPositionX() < 50 && princess->GetPositionX() - player->GetPositionX() > -50) &&
-       (princess->GetPositionY() - player->GetPositionY() <  50 && princess->GetPositionY() - player->GetPositionY() > -50))
+    if((princessSpawn == true) &&((princess->GetPositionX() - player->GetPositionX() < 50 && princess->GetPositionX() - player->GetPositionX() > -50) &&
+       (princess->GetPositionY() - player->GetPositionY() <  50 && princess->GetPositionY() - player->GetPositionY() > -50)))
     {
         int score = 1000 / winTime;
         VictoryHandler(highscore, score, delta);
@@ -380,7 +380,12 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
 
     player->DrawMe();
     if(princessSpawn)
+    {
+        princess->PrincessAI(princess,player);
+        Physics::PrincessMovement(princess, collidableArray, delta);
+        Physics::PrincessGravity(princess, collidableArray, delta);
         princess->DrawMe();
+    }
     /***********************
      * Draws HUD sprite
      **********************/
@@ -474,9 +479,6 @@ void TestApp::Move(float delta)
 {
     Physics::Movement(player, collidableArray, delta);
     Physics::Gravity(player, collidableArray, delta);
-    princess->PrincessAI(princess,player);
-    Physics::PrincessMovement(princess, collidableArray, delta);
-    Physics::PrincessGravity(princess, collidableArray, delta);
 }
 
 /**
@@ -526,7 +528,7 @@ void TestApp::AIHandler(float delta)
 
 bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
 {
-    if( AIVectorPointer->size() == 0/*BOSS DEAD*/)
+    if(true)
     {
         music->music.stop();
         window->clear(sf::Color::Black);
@@ -597,7 +599,8 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
                     secretText->setString("OMG \n you just slapped the Princess! \n You earn additional points!");
                 }
 
-                princess->PrincessAnimation(delta);
+                princess->PrincessCutsceneAnimation(delta);
+                princess->SetActivated(false);
                 player->PlayerCutsceneAnimation(delta);
                 if(heartSprite.getPosition().y == player->GetPositionY() - 290)
                 {

@@ -145,6 +145,17 @@ void PrincessObject::Reset2OriginalY(float y)
     y = this->OriginalY;
 }
 
+void PrincessObject::PrincessCutsceneAnimation(float delta)
+{
+    counter += delta;
+    if(counter >= 0.1)
+    {
+        counter = 0;
+        animation.PrincessWalkLeft(character);
+    }
+}
+
+
 void PrincessObject::PrincessAnimation(float delta)
 {
     counter += delta;

@@ -24,9 +24,9 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
         this->patrolleft = x - patrol;
         this->patrolright = x + patrol;
         animation.AIBossWalkRight(character);
-        health.SetOriginalLifePoints(200);
-        health.SetActualLifePoints(200);
-        health.SetVisibleLifePoints(200);
+        health.SetOriginalLifePoints(1000);
+        health.SetActualLifePoints(1000);
+        health.SetVisibleLifePoints(1000);
         this->SetRightKey(true);
         this->SetLeftKey(false);
         this->enragerange = 150;
@@ -210,7 +210,7 @@ void AIEnemies::GotHurt(AIEnemies *e, PlayerObject *p)
     {
         return;
     }
-    if(rand() % 100 < 80)
+    if((rand() % 100 < 80) && (!(e->GetPositionX() > this->patrolright) && !(e->GetPositionX() < this->patrolleft)))
     {
         if(p->GetLastMoveDirection() == 1)
         {

@@ -83,6 +83,7 @@ public:
 
     void PlayerDead();
 
+    void PrincessCutsceneAnimation(float delta);
     void PrincessAnimation(float delta);
 
     void PrincessSoundHurt();

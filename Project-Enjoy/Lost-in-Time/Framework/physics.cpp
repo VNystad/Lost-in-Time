@@ -24,14 +24,16 @@ void Physics::Movement(PlayerObject* p, int** collidableArray, float delta) {
         else if(p->GetPlayerHurt() == 0)
         {
             p->SetMoveSpeedR(0);
-            p->SetMoveSpeedL(400);
+            if(!HorisontalCollision(p, collidableArray))
+                p->SetMoveSpeedL(400);
             p->health.Hit(10);
             p->PlayerSoundHurt();
         }
         else if(p->GetPlayerHurt() == 1)
         {
             p->SetMoveSpeedL(0);
-            p->SetMoveSpeedR(400);
+            if(!HorisontalCollision(p, collidableArray))
+                p->SetMoveSpeedR(400);
             p->health.Hit(10);
             p->PlayerSoundHurt();
         }
@@ -440,7 +442,7 @@ void Physics::AIGravity(AIEnemies* e, int** collidableArray, float delta)
     {
         //Checks if object is landing at a harmfull velocity, if so, harms it.
         if(e->GetFallSpeed() > e->GetMaxFallSpeed()/2.4)
-            e->health.Hit(e->health.GetOriginalLifePoints());
+            e->health.Hit(e->health.GetOriginalLifePoints()/2);
         e->SetJumpCheck(false);
         e->SetFallSpeed(0);
         float temp = e->GetOrigJumpSpeed();

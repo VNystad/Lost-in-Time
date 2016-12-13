@@ -14,11 +14,26 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
      ****************/
     LoadImages();
 
+    /********************
+     * Load up music
+     *******************/
+    music = new Music();
+    music->music.setLoop(true);
+    music->music.setVolume(20);
+
     /****************************************************************************
      *                            LOADED FROM SAVE
      ***************************************************************************/
     if(so.LoadFromSave())
     {
+        /******************************
+         * If savename equals EmptySave
+         * Go back to main menu
+         *****************************/
+        if(!so.GetPlayerName().compare("EmptySave"))
+        {
+            emptySave = true;
+        }
         /********************|
          * Create the player
          *******************/
@@ -26,6 +41,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         player->health.SetActualLifePoints(so.GetPlayerHP());
         playerName = so.GetPlayerName();
         playerNamed = true;
+        timeFromLoad = so.GetTimeElapsed();
 
         /***********************
          *  Create the princess
@@ -36,14 +52,15 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
          * Creating AI
          * Using vector to keep track on AIs
          **********************************/
-        for(int i = 0; i<so.GetAIVectorPointer()->size(); i++)
+        for(std::vector<AIEnemies*>::iterator it = so.GetAIVectorPointer()->begin(); it != so.GetAIVectorPointer()->end(); ++it)
         {
-            int x = so.GetAIVectorPointer()->at(i)->GetPositionX();
-            int y = so.GetAIVectorPointer()->at(i)->GetPositionY();
-            int patrol = so.GetAIVectorPointer()->at(i)->GetPositionX()-so.GetAIVectorPointer()->at(i)->GetPatrolLeft();
-            bool boss = so.GetAIVectorPointer()->at(i)->GetBoss();
+            int x = (*it)->GetOriginalX();
+            int y = (*it)->GetOriginalY();
+            int patrol = (*it)->GetOriginalX() - (*it)->GetPatrolLeft();
+            bool boss = (*it)->GetBoss();
             AIVectorPointer->push_back(new AIEnemies(x, y, patrol, boss, &window));
         }
+
         music->playMusic("/Jungle Theme 2.ogg");
 
     }
@@ -111,14 +128,6 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
 
     //TEST
     currentView = new sf::View;
-
-
-    /********************
-     * Play Music
-     *******************/
-    music = new Music();
-    music->music.setLoop(true);
-    music->music.setVolume(20);
 
 
     /***********************************
@@ -213,9 +222,8 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     else
         timerX = currentView->getCenter().x + 163;
     timerY = currentView->getCenter().y - 229;
-    int timeelapsed = timer->getElapsedTime().asSeconds() + penaltyTime - EscMenuTime;
-    winTime = timer->getElapsedTime().asSeconds() + penaltyTime - EscMenuTime;
-    std::string tempForTime = std::to_string(timeelapsed);
+    winTime = timer->getElapsedTime().asSeconds() + timeFromLoad+ penaltyTime - EscMenuTime;
+    std::string tempForTime = std::to_string(winTime);
     timerInText->setString(tempForTime);
     timerInText->setPosition(timerX, timerY);
 
@@ -249,6 +257,7 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
         {
             delete[] collidableArray[0];
             delete[] collidableArray;
+            music->music.stop();
             window->close();
             machine.SetRunning(false);
         }
@@ -713,6 +722,7 @@ bool TestApp::EscMenu(Machine& machine)
         // Exit game
     else if(selected == 4)
     {
+        music->music.stop();
         delete[] collidableArray[0];
         delete[] collidableArray;
         window->close();
@@ -725,19 +735,14 @@ bool TestApp::EscMenu(Machine& machine)
 }
 
 /***********************************************
- * Save Game function (Not in use, fully functional)
+ * Save Game function
  * @param selectedSave:
  *      Selected save from menuSelected function
- * @return true if it saved (not used)
+ * @return true if it saved
  *          false if something went wrong (not implemented)
  **********************************************/
 bool TestApp::SaveGame(int selectedSave)
 {
-
-    /*int enemyCount = (AIVector.size());
-    enemyCount = AIVectorPointer->size();
-
-
     std::ofstream savefile;
     if(selectedSave == 1)
         savefile.open("SaveFiles/save1.txt");
@@ -750,21 +755,19 @@ bool TestApp::SaveGame(int selectedSave)
     savefile << player->health.GetActualLifePoints() << std::endl;
     savefile << player->GetPositionX() << std::endl;
     savefile << player->GetPositionY() << std::endl;
-    savefile << timer->getElapsedTime().asSeconds() + penaltyTime;
-    while(enemyCount != 0)
+    savefile << winTime;
+
+    for(std::vector<AIEnemies*>::iterator it = AIVectorPointer->begin(); it != AIVectorPointer->end(); ++it)
     {
-        //int positionX = AIVector->at(enemyCount-1)->GetOriginalX();
-        int positionX = AIVectorPointer->at(enemyCount-1)->GetPositionX();
-        int positionY = AIVectorPointer->at(enemyCount-1)->GetPositionY();
-        int patrol = AIVectorPointer->at(enemyCount-1)->GetPositionX() - AIVectorPointer->at(enemyCount-1)->GetPatrolRight();
-        bool boss = AIVectorPointer->at(enemyCount-1)->GetBoss();
-        savefile << std::endl << positionX;
-        savefile << std::endl << positionY;
-        savefile << std::endl << patrol;
-        savefile << std::endl << boss;
-        enemyCount--;
+        savefile << std::endl << (*it)->GetOriginalX();
+        savefile << std::endl << (*it)->GetOriginalY();
+        savefile << std::endl << (*it)->GetOriginalX() - (*it)->GetPatrolLeft();
+        bool boss = (*it)->GetBoss();
+        savefile << std::endl << (*it)->GetBoss();
+
+        std::cout << "Break";
     }
-    savefile.close();*/
+    savefile.close();
     return true;
 }
 

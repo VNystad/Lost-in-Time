@@ -14,12 +14,13 @@ public:
     void SaveToFile();
 
     sf::Text* SaveNewHighscore(std::string name, int score);
+    std::map<int, std::string>* GetHighscoreMap() const { return highscoreMap; };
     void LoadHighScore();
 
 protected:
     sf::Font* font = nullptr;
     sf::Text* highscoreText = nullptr;
-    std::map <int, std::string> *highscoreMap;
+    std::map<int, std::string>* highscoreMap;
 };
 
 

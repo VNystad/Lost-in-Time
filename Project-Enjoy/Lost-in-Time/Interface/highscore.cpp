@@ -1,5 +1,8 @@
 #include "highscore.h"
 
+/***********************
+ * Highscore constructor
+ **********************/
 Highscore::Highscore()
 {
     font = new sf::Font;
@@ -12,13 +15,13 @@ Highscore::Highscore()
     highscoreMap = new std::map<int, std::string>;
     LoadHighScore();
 }
-
+/********************************************
+ * Saves all highscores from map back to file
+ *******************************************/
 void Highscore::SaveToFile()
 {
     std::ofstream savefile;
     savefile.open("data/highscore.txt");
-
-    savefile << "HighScores: ";
 
     for(auto x: *highscoreMap)
     {
@@ -27,12 +30,19 @@ void Highscore::SaveToFile()
     }
     savefile.close();
 }
-
+/**
+ * Adds highscore or a new players score to map, returns string depending on score and player
+ * @param name playername
+ * @param score score of the player
+ * @return returns a Text with "new" if new player,
+ *          returns "high" if new highscore of excisting player
+ *          returns empty string if excisting player but no highscore
+ */
 sf::Text* Highscore::SaveNewHighscore(std::string name, int score)
 {
     for(auto x : *highscoreMap)
     {
-        if(x.second.compare(name))
+        if(!x.second.compare(name))
         {
             if(x.first < score)
             {
@@ -52,16 +62,17 @@ sf::Text* Highscore::SaveNewHighscore(std::string name, int score)
     SaveToFile();
     return highscoreText;
 }
-
+/**********************************
+ * Loads highscore from file to map
+ *********************************/
 void Highscore::LoadHighScore()
 {
     std::ifstream highscoreFile;
     std::string temp;
     std::string playerName;
     int playerScore;
-    highscoreFile.open("data/Highscore/highscore.txt");
+    highscoreFile.open("data/highscore.txt");
 
-    // Reading an empty line
     std::getline(highscoreFile, temp);
 
     // Read information from file

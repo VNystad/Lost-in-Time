@@ -1,100 +1,53 @@
 #include <iostream>
 #include "statemainmenu.h"
 #include "machine.h"
-/****************************************
- * Loads images from path into temp texture
- * @param path = file path where image is
- ****************************************/
-sf::Texture *StateMainMenu::LoadTexture( std::string path)
-{
-    //temp texture
-    sf::Texture *newTexture = new sf::Texture();
-    //newTexture->loadFromFile(path);
 
-    if(!newTexture->loadFromFile(path))
+
+void StateMainMenu::ShowHighscore(sf::RenderWindow& window, Highscore& highscore)
+{
+    highscoreMap = highscore.GetHighscoreMap();
+    std::string score;
+    sf::Text highscoreText;
+    font = new sf::Font;
+    if(!font->loadFromFile("data/Fonts/Arial/arial.ttf"))
+        std::cout << "Could not load font from directory 'data/font.ttf'" << std::endl;
+    highscoreText.setFont(*font);
+    highscoreText.setCharacterSize(30);
+    highscoreText.setColor(sf::Color::White);
+    highscoreText.setString("Highscores: ");
+/*
+    highscoreMap->emplace(1, "vebis");
+    highscoreMap->emplace(43, "vebis");
+    highscoreMap->emplace(8786, "Marte");
+    highscoreMap->emplace(3432, "Vebis");
+    highscoreMap->emplace(54, "Martin");
+    highscoreMap->emplace(2, "helo");
+    highscoreMap->emplace(3, "gfdsgi");
+    highscoreMap->emplace(765, "YESSS");
+*/
+    for(auto iter = highscoreMap->rbegin(); iter != highscoreMap->rend(); ++iter)
     {
-        std::cout << "Could not load image on path: " << path << std::endl;
+        score = std::to_string(iter->first);
+        highscoreText.setString(highscoreText.getString() + "\n" + iter->second + ": " + score);
     }
-    menuAmount++;
-    return newTexture;
-}
-/***********************************
- * Loads texture pointers
- * using the function above, making sprites
- * of them
- **********************************/
-bool StateMainMenu::loadMedia()
-{
-    //Load success flag
-    bool success = true;
 
-    BackgroundTexture = LoadTexture("data/main-menu/backgroundmainmenu.png");
-
-    NewGameTexture = LoadTexture("data/main-menu/NewGame.png");
-    NewGameSelectedTexture = LoadTexture("data/main-menu/NewGameSelected.png");
-
-    LoadGameTexture = LoadTexture("data/main-menu/LoadGame.png");
-    LoadGameSelectedTexture = LoadTexture("data/main-menu/LoadGameSelected.png");
-
-    HowToPlayTexture = LoadTexture("data/main-menu/HowToPlay2.png");
-    HowToPlaySelectedTexture = LoadTexture("data/main-menu/HowToPlaySelected.png");
-    HowToPlayPictureTexture = LoadTexture("data/main-menu/HowToPlaySprite.png");
-
-    ExitGameTexture = LoadTexture("data/main-menu/ExitGame.png");
-    ExitGameSelectedTexture = LoadTexture("data/main-menu/ExitGameSelected.png");
-
-    return success;
+    while(inHighscore)
+    {
+        window.clear(sf::Color::Black);
+        window.draw(highscoreText);
+        window.display();
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+            inHighscore = false;
+    }
 }
 
-void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&, Highscore&)
+void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&, Highscore& highscore)
 {
     while(sf::Keyboard::isKeyPressed(sf::Keyboard::Return));
     //Key pressed flag off
     keypressed = false;
     // Loads media
     loadMedia();
-
-
-    sf::Sprite backgroundSprite;
-    backgroundSprite.setTexture(*BackgroundTexture);
-    backgroundSprite.setPosition(100,0);
-
-    sf::Sprite newGameSprite;
-    newGameSprite.setTexture(*NewGameTexture);
-    newGameSprite.setPosition(250, 230);
-
-    sf::Sprite newGameSelectedSprite;
-    newGameSelectedSprite.setTexture(*NewGameSelectedTexture);
-    newGameSelectedSprite.setPosition(250, 230);
-
-    sf::Sprite loadGameSprite;
-    loadGameSprite.setTexture(*LoadGameTexture);
-    loadGameSprite.setPosition(240, 295);
-
-    sf::Sprite loadGameSelectedSprite;
-    loadGameSelectedSprite.setTexture(*LoadGameSelectedTexture);
-    loadGameSelectedSprite.setPosition(240, 295);
-
-    sf::Sprite HowToPlaySprite;
-    HowToPlaySprite.setTexture(*HowToPlayTexture);
-    HowToPlaySprite.setPosition(240, 360);
-    sf::Sprite HowToPlaySelectedSprite;
-    HowToPlaySelectedSprite.setTexture(*HowToPlaySelectedTexture);
-    HowToPlaySelectedSprite.setPosition(240, 360);
-    sf::Sprite HowToPlayPictureSprite;
-    HowToPlayPictureSprite.setTexture(*HowToPlayPictureTexture);
-    HowToPlayPictureSprite.setPosition(250,250);
-
-    sf::Sprite exitGameSprite;
-    exitGameSprite.setTexture(*ExitGameTexture);
-    exitGameSprite.setPosition(250, 425);
-
-    sf::Sprite exitGameSelectedSprite;
-    exitGameSelectedSprite.setTexture(*ExitGameSelectedTexture);
-    exitGameSelectedSprite.setPosition(250, 425);
-
-
-
 
     while (machine.GetRunning()) {
 
@@ -105,14 +58,6 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
                 window.close();
                 machine.SetRunning(false);
             }
-        }
-
-        //If Escape pressed on keyboard
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-        {
-            window.close();
-            mainmenu = false;
-            machine.SetRunning(false);
         }
 
         /*****************************
@@ -176,13 +121,13 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
             if(menu == 1)
             {
                 machine.SetState(Machine::StateId::GAME);
-                mainmenu = false;
                 return;
             }
             else if(menu == 2)
             {
                 /*machine.SetState(Machine::StateId::LOAD);
                 mainmenu = false;*/
+                ShowHighscore(window, highscore);
                 return;
             }
             else if(menu == 3)
@@ -197,7 +142,6 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
             else if(menu == 4)
             {
                 window.close();
-                mainmenu = false;
                 machine.SetRunning(false);
             }
         }
@@ -208,4 +152,78 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
         window.display();
     }
 
+}
+
+/****************************************
+ * Loads images from path into temp texture
+ * @param path = file path where image is
+ ****************************************/
+sf::Texture *StateMainMenu::LoadTexture( std::string path)
+{
+    //temp texture
+    sf::Texture *newTexture = new sf::Texture();
+    //newTexture->loadFromFile(path);
+
+    if(!newTexture->loadFromFile(path))
+    {
+        std::cout << "Could not load image on path: " << path << std::endl;
+    }
+    menuAmount++;
+    return newTexture;
+}
+/***********************************
+ * Loads texture pointers
+ * using the function above, making sprites
+ * of them
+ **********************************/
+bool StateMainMenu::loadMedia()
+{
+    //Load success flag
+    bool success = true;
+
+    BackgroundTexture = LoadTexture("data/main-menu/backgroundmainmenu.png");
+
+    NewGameTexture = LoadTexture("data/main-menu/NewGame.png");
+    NewGameSelectedTexture = LoadTexture("data/main-menu/NewGameSelected.png");
+
+    LoadGameTexture = LoadTexture("data/main-menu/LoadGame.png");
+    LoadGameSelectedTexture = LoadTexture("data/main-menu/LoadGameSelected.png");
+
+    HowToPlayTexture = LoadTexture("data/main-menu/HowToPlay2.png");
+    HowToPlaySelectedTexture = LoadTexture("data/main-menu/HowToPlaySelected.png");
+    HowToPlayPictureTexture = LoadTexture("data/main-menu/HowToPlaySprite.png");
+
+    ExitGameTexture = LoadTexture("data/main-menu/ExitGame.png");
+    ExitGameSelectedTexture = LoadTexture("data/main-menu/ExitGameSelected.png");
+
+
+    backgroundSprite.setTexture(*BackgroundTexture);
+    backgroundSprite.setPosition(100,0);
+
+    newGameSprite.setTexture(*NewGameTexture);
+    newGameSprite.setPosition(250, 230);
+
+    newGameSelectedSprite.setTexture(*NewGameSelectedTexture);
+    newGameSelectedSprite.setPosition(250, 230);
+
+    loadGameSprite.setTexture(*LoadGameTexture);
+    loadGameSprite.setPosition(240, 295);
+
+    loadGameSelectedSprite.setTexture(*LoadGameSelectedTexture);
+    loadGameSelectedSprite.setPosition(240, 295);
+
+    HowToPlaySprite.setTexture(*HowToPlayTexture);
+    HowToPlaySprite.setPosition(240, 360);
+    HowToPlaySelectedSprite.setTexture(*HowToPlaySelectedTexture);
+    HowToPlaySelectedSprite.setPosition(240, 360);
+    HowToPlayPictureSprite.setTexture(*HowToPlayPictureTexture);
+    HowToPlayPictureSprite.setPosition(250,250);
+
+    exitGameSprite.setTexture(*ExitGameTexture);
+    exitGameSprite.setPosition(250, 425);
+
+    exitGameSelectedSprite.setTexture(*ExitGameSelectedTexture);
+    exitGameSelectedSprite.setPosition(250, 425);
+
+    return success;
 }

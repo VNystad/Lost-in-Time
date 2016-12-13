@@ -12,16 +12,22 @@ public:
     sf::Texture *LoadTexture( std::string path);
     bool loadMedia();
 
+    void ShowHighscore(sf::RenderWindow& window, Highscore& highscore);
+
     void GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&, Highscore&);
 
 protected:
     int menuAmount = 0;
     int menu = 1;
-    bool mainmenu = false;
-    bool success;
+
+    std::map<int, std::string>* highscoreMap;
+
+    bool inHighscore = true;
     bool keypressed;
 
     Config config;
+
+    sf::Font* font;
 
     //Pointer to different images
     sf::Texture* BackgroundTexture = nullptr;
@@ -34,6 +40,17 @@ protected:
     sf::Texture* HowToPlayTexture = nullptr;
     sf::Texture* HowToPlayPictureTexture = nullptr;
     sf::Texture* HowToPlaySelectedTexture = nullptr;
+
+    sf::Sprite backgroundSprite;
+    sf::Sprite newGameSprite;
+    sf::Sprite newGameSelectedSprite;
+    sf::Sprite loadGameSprite;
+    sf::Sprite loadGameSelectedSprite;
+    sf::Sprite HowToPlaySprite;
+    sf::Sprite HowToPlaySelectedSprite;
+    sf::Sprite HowToPlayPictureSprite;
+    sf::Sprite exitGameSprite;
+    sf::Sprite exitGameSelectedSprite;
 };
 
 

@@ -22,7 +22,7 @@ public:
     void Move(float delta);
     void AIHandler(float delta);
 
-    bool VictoryHandler(Highscore& highscore, int score, float delta);
+    bool VictoryHandler(Highscore& highscore, float delta);
 
 
     bool EscMenu(Machine& machine); // Menu when u press Esc

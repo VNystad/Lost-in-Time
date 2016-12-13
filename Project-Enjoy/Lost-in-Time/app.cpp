@@ -145,6 +145,9 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
 
 bool TestApp::Tick(Machine& machine, Highscore& highscore)
 {
+    /***********************
+     * Lets player type name
+     **********************/
     while(!playerNamed)
     {
         keyPressed = true;
@@ -203,7 +206,6 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
      * Gets time elapsed and
      * place it in text form
      ***********************/
-
     if(winTime > 9)
         timerX = currentView->getCenter().x + 157;
     else if(winTime > 99)
@@ -219,28 +221,15 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
 
 
 
-    /*************
-     * KILL ALL AI
-     ************/
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::K))
-    {   int count = AIVectorPointer->size();
 
-        while(count != 0)
-        {
-            AIVectorPointer->at(count-1)->Death();
-            count--;
-        }
-        while(sf::Keyboard::isKeyPressed(sf::Keyboard::K));
-    }
 
     /*********************
      * CHECK IF PLAYER WON
      ********************/
-    if((princessSpawn == true) &&((princess->GetPositionX() - player->GetPositionX() < 50 && princess->GetPositionX() - player->GetPositionX() > -50) &&
+    if((princessSpawn) &&((princess->GetPositionX() - player->GetPositionX() < 50 && princess->GetPositionX() - player->GetPositionX() > -50) &&
        (princess->GetPositionY() - player->GetPositionY() <  50 && princess->GetPositionY() - player->GetPositionY() > -50)))
     {
-        int score = 1000 / winTime;
-        VictoryHandler(highscore, score, delta);
+        VictoryHandler(highscore, delta);
 
         sf::View mainMenuView = window->getDefaultView();
         mainMenuView.setCenter(512, 290);
@@ -265,11 +254,8 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
         }
     }
 
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::L))
-        penaltyTime += 10;
-
     /*****************************************************************
-     *        KEYBOARD EVENTS ( but not for physical actions )
+     *        KEYBOARD EVENTS ( but not for physical player actions )
      ****************************************************************/
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
@@ -289,17 +275,20 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
         EscMenuTime = EscMenuTime + timer->getElapsedTime().asSeconds() - tempTime;
         clock->restart();
     }
-        /********************************
-         * If player press P Pause game
-         * If player press R Resume game
-         *******************************/
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+    /*************
+    * KILL ALL AI
+    ************/
+    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::K))
     {
-        music->music.pause();
-        while(!sf::Keyboard::isKeyPressed(sf::Keyboard::R))
-            clock->restart();
-        music->music.play();
+        int count = AIVectorPointer->size();
+        while(count != 0)
+        {
+            AIVectorPointer->at(count-1)->Death();
+            count--;
+        }
+        while(sf::Keyboard::isKeyPressed(sf::Keyboard::K));
     }
+
         // For testing only, prints out player position
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
         std::cout << player->GetPositionX() << " " << player->GetPositionY() << std::endl;
@@ -317,11 +306,11 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     {
         music->music.pause();
     }
-    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::T))
-        std::cout << timeelapsed << std::endl;
 
-    /* If player hits the bottom of map,
-     * the player's lifepoint is reduced to 0 and player death function is called */
+    /******************************************************
+     * If player hits the bottom of map,
+     * player lifepoints = 0, player death function called
+     *****************************************************/
     if (player->GetPositionY() >= 2500)
     {
         penaltyTime = penaltyTime + 20;
@@ -330,6 +319,9 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
         timer->restart();
     }
 
+    /*****************
+     * if player dead
+     ****************/
     if (player->health.Dead())
     {
         penaltyTime = penaltyTime + 20;
@@ -338,7 +330,13 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
         timer->restart();
     }
 
+    // Player player animation
     player->PlayerAnimation(delta);
+
+    /*************************
+     * if princess spawned
+     * play princess animation
+     ************************/
     if(princessSpawn)
     {
         princess->PrincessAnimation(delta);
@@ -346,10 +344,9 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     }
 
 
-    /***********************
-     * Handles player and AI
-     * movements
-     **********************/
+    /***************************
+     * Handles player movements
+     **************************/
     Move(delta);
 
     /********************
@@ -359,11 +356,10 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     HudSprite.setPosition(currentView->getCenter().x - 119, currentView->getCenter().y - 268);
 
     /***********************
+     * Clearing old window
      * Draws background images
      **********************/
-
     window->clear(sf::Color::Black);
-
     window->draw(Junglebackground1Sprite);
     window->draw(Cavebackground1Sprite);
     window->draw(Cavebackground2Sprite);
@@ -371,17 +367,28 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     window->draw(Treebackground1Sprite);
 
 
-    // Draw the map
+    /***************
+     * Draw the map
+     * ( each tile )
+     **************/
     for (Object *object : objects)
     {
         //object->process(deltaTime);
         object->draw(*window);
     }
 
+    // Draw player
     player->DrawMe();
+
+    /*********************
+     * if princess spawned
+     * handle movements
+     * draw her
+     ********************/
     if(princessSpawn)
     {
-        princess->PrincessAI(princess,player);
+        // checks if player is nearby? if so handle it
+        princess->PrincessAI(player);
         Physics::PrincessMovement(princess, collidableArray, delta);
         Physics::PrincessGravity(princess, collidableArray, delta);
         princess->DrawMe();
@@ -525,8 +532,15 @@ void TestApp::AIHandler(float delta)
         }
     }
 }
-
-bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
+/*****************************************************************
+ * What happens when player wins the level (game for now)
+ * @param highscore adress of highscore so we can save new
+ * @param score: score of player
+ * @param delta: to make thing go with same speed on all computers
+ * @return true: go to next lvl as a nice man (not implemented)
+ *          false: go to next lvl as an evil man (not implemented
+ ****************************************************************/
+bool TestApp::VictoryHandler(Highscore& highscore, float delta)
 {
     if(true)
     {
@@ -550,6 +564,15 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
         player->SetMoveSpeedR(0);
         player->SetFallSpeed(0);
         player->SetJumpSpeed(0);
+
+        int score = 1000 / winTime;
+
+        /*************************************
+         * Handle score
+         * If player got new highscore
+         * if new player
+         * or not new player no new highscore
+         ************************************/
         victoryText = highscore.SaveNewHighscore(playerName, score);
         std::string temp = victoryText->getString();
         std::string tempForScore = std::to_string(score);
@@ -560,19 +583,25 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
         else
             victoryText->setString("Score: " + tempForScore);
 
+
+        /********************************************
+         * Position victory texts that pops up at end
+         *******************************************/
         victoryText->setPosition(player->GetPositionX() - 500, player->GetPositionY() - 200);
-        secretText->setPosition(player->GetPositionX() - 500, player->GetPositionY()- 100);
+        secretText->setPosition(player->GetPositionX() - 600, player->GetPositionY()- 100);
 
         // Int to make heart fly
         int makeLoveFly = 0;
-        // just a helper to make things go slow
-        int count = 0;
         sf::Vector2f scale = heartSprite.getScale();
+
+        // Count to end the game
+        int count = 0;
+
+        // Draw player and princess
         player->DrawMe();
         princess->DrawMe();
-        // MAKE PRINCESS SHOW UP
+
         window->display();
-        // if player nearby princess
         if(1)
         {
             // True love never ends when finally found the perfect girl
@@ -586,7 +615,13 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
 
             while (truelove)
             {
-
+                /********************************************
+                 * Secret attack ( for now )
+                 * If player hits princess
+                 * true love SHOULD end
+                 * rough love is on
+                 * Should activate "evil" player for next lvl
+                 *******************************************/
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::A) && slapped <= 5)
                 {
                     while(sf::Keyboard::isKeyPressed(sf::Keyboard::A));
@@ -605,23 +640,18 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
                 if(heartSprite.getPosition().y == player->GetPositionY() - 290)
                 {
                     heartSprite.scale(scale.x * 1.01, scale.y * 1.01);
-                    if(count == 100)
+                    if(count == 500)
                     {
-                        // Save highscore
-                        // end game
+                        if(roughLove)
+                            highscore.SaveNewHighscore(playerName, score);
                         return true;
                     }
                     count++;
                 }
                 else
                 {
-                    count++;
-                    if(count == 1)
-                    {
-                        count = 0;
-                        makeLoveFly += delta*100;
-                        heartSprite.setPosition(currentView->getCenter().x - 510, currentView->getCenter().y + 350 - makeLoveFly);
-                    }
+                    makeLoveFly += delta*100;
+                    heartSprite.setPosition(currentView->getCenter().x - 510, currentView->getCenter().y + 350 - makeLoveFly);
                 }
                 window->clear(sf::Color::Black);
                 window->draw(Treebackground1Sprite);
@@ -640,28 +670,25 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
                 window->display();
             }
         }
-
     }
-    return false;
 }
-/**
+/**************************************************
  * Menu for pressing Esc
  * Options:
  * ResumeGame: Resumes the game
- * SaveGame: Opens new window with saves
+ * SaveGame: Opens new menu with saves
  * MainMenu: Returns to mainmenu
  * ExitGame: Exits the game
  * @param machine so we can handle the machine
  *          if you go back to mainmenu og exit game
- */
+ * @return true if to continue playing
+ *          false if to quit
+ ************************************************/
 bool TestApp::EscMenu(Machine& machine)
 {
     music->music.pause();
-    // Show up a menu
 
     int selected = menuSelected("EscMenu");
-
-    std::cout << "Selected: " << selected << std::endl;
 
     // Resume game
     if(selected == 1)
@@ -676,7 +703,7 @@ bool TestApp::EscMenu(Machine& machine)
         selected = menuSelected("SaveGameMenu");
         SaveGame(selected);
     }
-
+    // Back to mainmenu
     else if(selected == 3)
     {
         music->music.stop();
@@ -697,6 +724,13 @@ bool TestApp::EscMenu(Machine& machine)
     return true;
 }
 
+/***********************************************
+ * Save Game function (Not in use, fully functional)
+ * @param selectedSave:
+ *      Selected save from menuSelected function
+ * @return true if it saved (not used)
+ *          false if something went wrong (not implemented)
+ **********************************************/
 bool TestApp::SaveGame(int selectedSave)
 {
 
@@ -734,6 +768,11 @@ bool TestApp::SaveGame(int selectedSave)
     return true;
 }
 
+/************************************************************
+ * Universal(almost) function used to choose options in menus
+ * @param menu: the menu you want to use function for
+ * @return returns the choice player chose
+ ***********************************************************/
 int TestApp::menuSelected(std::string menu)
 {
     // Go until Return is not pressed, to prevent program going through several "Menuselected" functions on 1 return press
@@ -833,6 +872,11 @@ int TestApp::menuSelected(std::string menu)
     }
 }
 
+/***********************************
+ * Loads texture pointers
+ * using the function LoadTexture
+ * Placing all textures into sprites
+ **********************************/
 void TestApp::LoadImages()
 {
     int nothing;
@@ -894,6 +938,14 @@ void TestApp::LoadImages()
 
 }
 
+/**********************************************
+ * Loads image from file into texture
+ * @param path: where file is placed
+ * @param menuAmount: int counter to easy find
+ *          the amount of options on a menu
+ *          (ONLY USED FOR ESC & SAVE MENU)
+ * @return returns the texture loaded
+ *********************************************/
 sf::Texture *TestApp::LoadTexture(std::string path, int &menuAmount)
 {
     //temp texture

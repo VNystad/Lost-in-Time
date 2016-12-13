@@ -19,7 +19,7 @@ class PrincessObject {
 public:
     PrincessObject(float x, float y, float patrol, sf::RenderWindow* window);
 
-    void PrincessAI(PrincessObject* e, PlayerObject* p);
+    void PrincessAI(PlayerObject* p);
     sf::RectangleShape* character;
     Animation animation;
 
@@ -40,26 +40,26 @@ public:
     void SetActivated(bool activated) { this->activated = activated; }
     bool GetActivated() const { return activated; }
 
-    void SetLeftKey(bool leftkey) { this->leftkey = leftkey; }
-    bool GetLeftKey() const { return leftkey; }
-    void SetRightKey(bool rightkey) { this->rightkey = rightkey; }
-    bool GetRightKey() const { return rightkey; }
+    void SetLeftKey(bool leftkey) { this->leftKey = leftkey; }
+    bool GetLeftKey() const { return leftKey; }
+    void SetRightKey(bool rightkey) { this->rightKey = rightkey; }
+    bool GetRightKey() const { return rightKey; }
     void SetUpKey(bool upkey) { this->upkey = upkey; }
     bool GetUpKey() const { return upkey; }
     void SetEnraged(bool enraged) { this->enraged = enraged; }
     bool GetEnraged() const { return enraged; }
 
     int GetEnrageRange() const { return enragerange; }
-    int GetEnrageDuration() const { return enrageduration; }
+    int GetEnrageDuration() const { return enrageDuration; }
 
-    void SetEnrageCountdown(int enragecountdown) { this->enragecountdown = enragecountdown; };
-    int GetEnrageCountdown() const { return enragecountdown; }
+    void SetEnrageCountdown(int enragecountdown) { this->enrageCountdown = enragecountdown; };
+    int GetEnrageCountdown() const { return enrageCountdown; }
 
-    void SetEnragedSpeed(int enragedspeed) { this->enragedspeed = enragedspeed; };
-    int GetEnragedSpeed() const { return enragedspeed; }
+    void SetEnragedSpeed(int enragedspeed) { this->enrageSpeed = enragedspeed; };
+    int GetEnragedSpeed() const { return enrageSpeed; }
 
-    void SetCalmSpeed(int calmspeed) { this->calmspeed = calmspeed; };
-    int GetCalmSpeed() const { return calmspeed; }
+    void SetCalmSpeed(int calmspeed) { this->calmSpeed = calmspeed; };
+    int GetCalmSpeed() const { return calmSpeed; }
 
     void SetPatrolLeft(int patrolleft) { this->patrolleft = patrolleft; };
     int GetPatrolLeft() const { return patrolleft; }
@@ -105,8 +105,8 @@ public:
     float GetRegularBrake() const { return regularhorslowdown; }
 
     //Get max movement speed and movement power
-    void SetMaxMoveSpeed(int maxmovespeed) { this->maxmovespeed = maxmovespeed; };
-    float GetMaxMoveSpeed() const { return maxmovespeed; }
+    void SetMaxMoveSpeed(int maxmovespeed) { this->maxMoveSpeed = maxmovespeed; };
+    float GetMaxMoveSpeed() const { return maxMoveSpeed; }
     float GetMovePower() const { return movepower; }
 
     //Checks for move direction, 0=Left, 1=Right, 2=Stopped
@@ -166,8 +166,8 @@ protected:
     * AI Control
     * *******************/
 
-    bool leftkey = true;
-    bool rightkey = false;
+    bool leftKey = true;
+    bool rightKey = false;
     bool upkey = false;
 
 
@@ -176,10 +176,10 @@ protected:
     * *******************/
     bool enraged = false;
     int enragerange = 70;
-    int enrageduration = 1000;
-    int enragecountdown = enrageduration;
-    int enragedspeed = 120;
-    int calmspeed = 100;
+    int enrageDuration = 1000;
+    int enrageCountdown = enrageDuration;
+    int enrageSpeed = 120;
+    int calmSpeed = 100;
 
     int patrolleft;
     int patrolright;
@@ -197,7 +197,7 @@ protected:
     float regularhorslowdown = 1.5;
 
     //Horisontal
-    float maxmovespeed = 350;
+    float maxMoveSpeed = 350;
     float movepower = 20;
 
     float movespeedleft = 0;

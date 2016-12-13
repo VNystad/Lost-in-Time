@@ -8,15 +8,16 @@ PrincessObject::PrincessObject(float x, float y, float patrol, sf::RenderWindow*
     this->OriginalY = y;
     this->positionX = x;
     this->positionY = y;
+
+    this->patrolleft = x - patrol;
+    this->patrolright = x + patrol;
+    this->maxMoveSpeed = calmSpeed;
+
     character = new sf::RectangleShape;
     character->setSize(sf::Vector2f(sizeWidth,sizeHeight));
 
     animation.init();
     animation.PrincessWalkLeft(character);
-
-    this->patrolleft = x - patrol;
-    this->patrolright = x + patrol;
-    this->SetMaxMoveSpeed(this->GetCalmSpeed());
 
     health.init();
     health.SetOriginalLifePoints(100);
@@ -24,58 +25,57 @@ PrincessObject::PrincessObject(float x, float y, float patrol, sf::RenderWindow*
     health.SetVisibleLifePoints(100);
 
     sound = new Sounds();
-
-
-
 }
 
 
 //AI
 
-void PrincessObject::PrincessAI(PrincessObject* e,PlayerObject* p)
+void PrincessObject::PrincessAI(PlayerObject* p)
 {
-    if(e->activated == true)
+    if(activated)
     {
-        if((p->GetPositionX() - e->GetPositionX() < this->enragerange && p->GetPositionX() - e->GetPositionX() > -this->enragerange) &&
-           (p->GetPositionY() - e->GetPositionY() <  this->enragerange && p->GetPositionY() - e->GetPositionY() > -this->enragerange))
+        if((p->GetPositionX() - positionX < enragerange && p->GetPositionX() - positionY > -enragerange) &&
+           (p->GetPositionY() - positionX <  enragerange && p->GetPositionY() - positionY > -enragerange))
         {
-            e->SetEnraged(true);
-            e->SetEnrageCountdown(e->GetEnrageDuration());
+            enraged = true;
+            enrageCountdown = enrageDuration;
         }
 
 
 
         // Common enraged behaviour for all AI
-        if(e->GetEnraged())
+        if(enraged)
         {
-            e->SetMaxMoveSpeed(e->GetEnragedSpeed());
-            e->SetEnrageCountdown(e->GetEnrageCountdown()-1);
-            if(e->GetEnrageCountdown() <= 0){
-                e->SetEnrageCountdown(e->GetEnrageDuration());
-                e->SetMaxMoveSpeed(e->GetCalmSpeed());
-                e->SetEnraged(false);
+            maxMoveSpeed = enrageSpeed;
+            enrageCountdown = enrageCountdown -1;
+            if(enrageCountdown <= 0)
+            {
+                enrageCountdown = enrageDuration;
+                maxMoveSpeed = calmSpeed;
+                enraged = false;
             }
+
         }
 
 
         // Specific enraged behaviour for creepy stalking minion, normal as of now.
-        if(e->GetEnraged()) {
+        if(enraged) {
             //std::cout << "Super Angry" << std::endl;
-            if (p->GetPositionX() < e->GetPositionX())
+            if (p->GetPositionX() < positionX)
             {
-                e->SetLeftKey(true);
-                e->SetRightKey(false);
+                leftKey = true;
+                rightKey = false;
             }
-            else if(p->GetPositionX() > e->GetPositionX())
+            else if(p->GetPositionX() > positionX)
             {
-                e->SetRightKey(true);
-                e->SetLeftKey(false);
+                rightKey = true;
+                leftKey = false;
             }
 
             else
             {
-                e->SetLeftKey(false);
-                e->SetRightKey(false);
+                rightKey = false;
+                leftKey = false;
             }
 
         }
@@ -83,15 +83,15 @@ void PrincessObject::PrincessAI(PrincessObject* e,PlayerObject* p)
             // Common patrol behaviour
         else
         {
-            if(e->GetPositionX() > this->patrolright)
+            if(positionX > patrolright)
             {
-                e->SetLeftKey(true);
-                e->SetRightKey(false);
+                leftKey = true;
+                rightKey = false;
             }
-            else if(e->GetPositionX() < this->patrolleft)
+            else if(positionX < patrolleft)
             {
-                e->SetLeftKey(false);
-                e->SetRightKey(true);
+                leftKey = false;
+                rightKey = true;
             }
         }
     }
@@ -148,7 +148,7 @@ void PrincessObject::Reset2OriginalY(float y)
 void PrincessObject::PrincessCutsceneAnimation(float delta)
 {
     counter += delta;
-    if(counter >= 0.1)
+    if(counter >= 0.2)
     {
         counter = 0;
         animation.PrincessWalkLeft(character);
@@ -192,7 +192,7 @@ void PrincessObject:: PrincessSoundHurt()
 */}
 
 /**
- * When player is dead this function is called.
+ * When princess is dead this function is called.
  * Reset variables that need reseted.
  * Call to health reset function.
  * Set player position back to spawn position.
@@ -209,7 +209,6 @@ void PrincessObject::PlayerDead()
     movespeedright = 0;
     positionX = OriginalX;
     positionY = OriginalY;
-    sound = new Sounds();
     sound->playSound("/Death.wav", 100);
 }
 

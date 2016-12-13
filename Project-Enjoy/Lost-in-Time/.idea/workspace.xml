@@ -54,8 +54,8 @@
       <file leaf-file-name="app.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="799" column="35" selection-start-line="799" selection-start-column="35" selection-end-line="799" selection-end-column="35" />
+            <state relative-caret-position="-147">
+              <caret line="808" column="62" selection-start-line="808" selection-start-column="62" selection-end-line="808" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -686,12 +686,12 @@
       <workItem from="1481612655077" duration="1459000" />
       <workItem from="1481614542106" duration="2184000" />
       <workItem from="1481618060869" duration="153000" />
-      <workItem from="1481618300168" duration="1586000" />
+      <workItem from="1481618300168" duration="3400000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="396770000" />
+    <option name="totallyTimeSpent" value="398584000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -704,9 +704,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="714" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17890625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17890625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27906978" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32492113" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1108,8 +1108,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="799" column="35" selection-start-line="799" selection-start-column="35" selection-end-line="799" selection-end-column="35" />
+        <state relative-caret-position="-147">
+          <caret line="808" column="62" selection-start-line="808" selection-start-column="62" selection-end-line="808" selection-end-column="62" />
           <folding />
         </state>
       </provider>

@@ -806,7 +806,7 @@ void TestApp::LoadImages()
     mainMenuSprite.setTexture(*mainMenu);
     exitGameSprite.setTexture(*exitGame);
 
-    Junglebackground1 = LoadTexture("data/Backgrounds/Jungle11.png", nothing);
+    Junglebackground1 = LoadTexture("data/Backgrounds/Jungle10.png", nothing);
     Cavebackground1 = LoadTexture("data/Backgrounds/Cave3.png", nothing);
     Treebackground1 = LoadTexture("data/Backgrounds/Tree.png", nothing);
     Hud = LoadTexture("data/Backgrounds/Hud.png", nothing);

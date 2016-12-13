@@ -23,6 +23,7 @@ PrincessObject::PrincessObject(float x, float y, float patrol, sf::RenderWindow*
     health.SetActualLifePoints(100);
     health.SetVisibleLifePoints(100);
 
+    sound = new Sounds();
 
 
 
@@ -169,12 +170,12 @@ void PrincessObject::PrincessAnimation(float delta)
 
 void PrincessObject:: PrincessSoundHurt()
 {
-    sound = new Sounds();
-    if(rand() % 20 < 10)
-        sound->playSound("/princesslap1.wav", 100);
+    sound->playSound("/princesslap2.wav", 100);
+    /*if(rand() % 20 < 10)
+
     else
         sound->playSound("/princesslap2.wav", 100);
-}
+*/}
 
 /**
  * When player is dead this function is called.

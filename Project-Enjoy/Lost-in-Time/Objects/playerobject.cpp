@@ -18,6 +18,8 @@ PlayerObject::PlayerObject(float x, float y, sf::RenderWindow* window) : window(
     health.SetOriginalLifePoints(100);
     health.SetActualLifePoints(100);
     health.SetVisibleLifePoints(100);
+
+    sound = new Sounds();
 }
 
 float PlayerObject::GetPositionX()
@@ -115,13 +117,11 @@ void PlayerObject::PlayerAnimation(float delta)
 
 void PlayerObject::PlayerSoundJump()
 {
-    sound = new Sounds();
     sound->playSound("/Jump.wav", 100);
 }
 
 void PlayerObject:: PlayerSoundHurt()
 {
-    sound = new Sounds();
     if(rand() % 20 < 10)
         sound->playSound("/manhurt1.wav", 100);
     else
@@ -131,7 +131,6 @@ void PlayerObject:: PlayerSoundHurt()
 
 void PlayerObject:: PlayerSoundEnemyLanded()
 {
-    sound = new Sounds();
     sound->playSound("/jumpedonenemy.wav", 100);
 }
 
@@ -154,7 +153,6 @@ void PlayerObject::PlayerDead()
     movespeedright = 0;
     positionX = OriginalX;
     positionY = OriginalY;
-    sound = new Sounds();
     sound->playSound("/Death.wav", 100);
 }
 

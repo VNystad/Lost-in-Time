@@ -41,6 +41,7 @@ protected:
     // princess?
     bool princessSpawn = false;
     sf::Text* victoryText;
+    sf::Text* secretText;
     sf::Texture* heart = nullptr;
     sf::Sprite heartSprite;
     int winTime = 0;

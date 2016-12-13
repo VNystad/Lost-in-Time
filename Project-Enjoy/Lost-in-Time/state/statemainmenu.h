@@ -24,13 +24,16 @@ protected:
     Config config;
 
     //Pointer to different images
-    sf::Texture *BackgroundTexture = nullptr;
-    sf::Texture *NewGameTexture = nullptr;
-    sf::Texture *NewGameSelectedTexture = nullptr;
-    sf::Texture *LoadGameTexture = nullptr;
-    sf::Texture *LoadGameSelectedTexture = nullptr;
-    sf::Texture *ExitGameTexture = nullptr;
-    sf::Texture *ExitGameSelectedTexture = nullptr;
+    sf::Texture* BackgroundTexture = nullptr;
+    sf::Texture* NewGameTexture = nullptr;
+    sf::Texture* NewGameSelectedTexture = nullptr;
+    sf::Texture* LoadGameTexture = nullptr;
+    sf::Texture* LoadGameSelectedTexture = nullptr;
+    sf::Texture* ExitGameTexture = nullptr;
+    sf::Texture* ExitGameSelectedTexture = nullptr;
+    sf::Texture* HowToPlayTexture = nullptr;
+    sf::Texture* HowToPlayPictureTexture = nullptr;
+    sf::Texture* HowToPlaySelectedTexture = nullptr;
 };
 
 

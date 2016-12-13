@@ -118,6 +118,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
      *******************/
     music = new Music();
     music->music.setLoop(true);
+    music->music.setVolume(20);
 
 
     /***********************************
@@ -135,6 +136,10 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
     victoryText->setCharacterSize(50);
     victoryText->setStyle(sf::Text::Regular);
     victoryText->setColor(sf::Color::Red);
+    secretText = new sf::Text("Holyshit", *font);
+    secretText->setCharacterSize(70);
+    secretText->setStyle(sf::Text::Underlined);
+    secretText->setColor(sf::Color::Red);
 
 }
 
@@ -521,6 +526,7 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
 {
     if( AIVectorPointer->size() == 0/*BOSS DEAD*/)
     {
+        music->music.stop();
         window->clear(sf::Color::Black);
         window->draw(Treebackground1Sprite);
         // Process and render each object
@@ -551,6 +557,7 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
             victoryText->setString("Score: " + tempForScore);
 
         victoryText->setPosition(player->GetPositionX() - 500, player->GetPositionY() - 200);
+        secretText->setPosition(player->GetPositionX() - 500, player->GetPositionY()- 100);
 
         // Int to make heart fly
         int makeLoveFly = 0;
@@ -566,13 +573,30 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
         {
             // True love never ends when finally found the perfect girl
             bool truelove = true;
+            bool roughLove = false;
             // Victory speach
             // Then make a heart come up from hell
+            //Making character stand still
+            end.restart();
+            int slapped = 0;
+
             while (truelove)
             {
+
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::A) && slapped <= 5)
+                {
+                    while(sf::Keyboard::isKeyPressed(sf::Keyboard::A));
+                    slapped += 1;
+                    roughLove = true;
+                    princess->PrincessSoundHurt();
+                    score += 1000/end.getElapsedTime().asSeconds();
+                    tempForScore = std::to_string(score);
+                    victoryText->setString("Score: " + tempForScore);
+                    secretText->setString("OMG \n you just slapped the Princess! \n You earn additional points!");
+                }
+
                 princess->PrincessAnimation(delta);
                 player->PlayerAnimation(delta);
-                end.restart();
                 if(heartSprite.getPosition().y == player->GetPositionY() - 290)
                 {
                     heartSprite.scale(scale.x * 1.01, scale.y * 1.01);
@@ -581,7 +605,6 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
                         // Save highscore
                         // end game
                         return true;
-
                     }
                     count++;
                 }
@@ -603,6 +626,8 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
                     //object->process(deltaTime);
                     object->draw(*window);
                 }
+                if(roughLove)
+                    window->draw(*secretText);
                 window->draw(heartSprite);
                 player->DrawMe();
                 princess->DrawMe();
@@ -614,7 +639,6 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
     }
     return false;
 }
-
 /**
  * Menu for pressing Esc
  * Options:
@@ -671,7 +695,7 @@ bool TestApp::EscMenu(Machine& machine)
 bool TestApp::SaveGame(int selectedSave)
 {
 
-    int enemyCount = (AIVector.size());
+    /*int enemyCount = (AIVector.size());
     enemyCount = AIVectorPointer->size();
 
 
@@ -701,7 +725,7 @@ bool TestApp::SaveGame(int selectedSave)
         savefile << std::endl << boss;
         enemyCount--;
     }
-    savefile.close();
+    savefile.close();*/
     return true;
 }
 

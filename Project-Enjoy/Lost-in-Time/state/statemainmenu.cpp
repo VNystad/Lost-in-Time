@@ -27,11 +27,15 @@ bool StateMainMenu::loadMedia()
 {
     //Load success flag
     bool success = true;
+
     BackgroundTexture = LoadTexture("data/main-menu/backgroundmainmenu.png");
+
     NewGameTexture = LoadTexture("data/main-menu/NewGame.png");
     NewGameSelectedTexture = LoadTexture("data/main-menu/NewGameSelected.png");
+
     LoadGameTexture = LoadTexture("data/main-menu/LoadGame.png");
     LoadGameSelectedTexture = LoadTexture("data/main-menu/LoadGameSelected.png");
+
     ExitGameTexture = LoadTexture("data/main-menu/ExitGame.png");
     ExitGameSelectedTexture = LoadTexture("data/main-menu/ExitGameSelected.png");
 
@@ -45,30 +49,35 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
     keypressed = false;
     // Loads media
     loadMedia();
+
+
     sf::Sprite backgroundSprite;
     backgroundSprite.setTexture(*BackgroundTexture);
-    backgroundSprite.setScale(
-            config.GetScreenWidth() / backgroundSprite.getLocalBounds().width,
-            config.GetScreenHeight() / backgroundSprite.getLocalBounds().height);
+    backgroundSprite.setPosition(100,0);
 
     sf::Sprite newGameSprite;
     newGameSprite.setTexture(*NewGameTexture);
-    newGameSprite.setPosition(-70, -20);
+    newGameSprite.setPosition(250, 250);
+
     sf::Sprite newGameSelectedSprite;
     newGameSelectedSprite.setTexture(*NewGameSelectedTexture);
-    newGameSelectedSprite.setPosition(-70, -20);
+    newGameSelectedSprite.setPosition(250, 250);
+
     sf::Sprite loadGameSprite;
     loadGameSprite.setTexture(*LoadGameTexture);
-    loadGameSprite.setPosition(-70, 180);
+    loadGameSprite.setPosition(240, 325);
+
     sf::Sprite loadGameSelectedSprite;
     loadGameSelectedSprite.setTexture(*LoadGameSelectedTexture);
-    loadGameSelectedSprite.setPosition(-70, 180);
+    loadGameSelectedSprite.setPosition(240, 325);
+
     sf::Sprite exitGameSprite;
     exitGameSprite.setTexture(*ExitGameTexture);
-    exitGameSprite.setPosition(-70, 400);
+    exitGameSprite.setPosition(250, 400);
+
     sf::Sprite exitGameSelectedSprite;
     exitGameSelectedSprite.setTexture(*ExitGameSelectedTexture);
-    exitGameSelectedSprite.setPosition(-70, 400);
+    exitGameSelectedSprite.setPosition(250, 400);
 
 
 

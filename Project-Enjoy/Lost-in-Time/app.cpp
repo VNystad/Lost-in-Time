@@ -789,10 +789,10 @@ void TestApp::LoadImages()
 
     selected = LoadTexture("data/EscMenu/selected.png", nothing);
 
-    resumeGame = LoadTexture("data/EscMenu/resume.png", amountOfEscOptions);
-    mainMenu = LoadTexture("data/EscMenu/mainmenu.png", amountOfEscOptions);
-    saveGame = LoadTexture("data/EscMenu/savegame.png", amountOfEscOptions);
-    exitGame = LoadTexture("data/EscMenu/exitgame.png", amountOfEscOptions);
+    resumeGame = LoadTexture("data/EscMenu/ResumeGame.png", amountOfEscOptions);
+    mainMenu = LoadTexture("data/EscMenu/MainMenu.png", amountOfEscOptions);
+    saveGame = LoadTexture("data/EscMenu/SaveGame.png", amountOfEscOptions);
+    exitGame = LoadTexture("data/EscMenu/ExitGame.png", amountOfEscOptions);
 
     heartSprite.setTexture(*heart);
 

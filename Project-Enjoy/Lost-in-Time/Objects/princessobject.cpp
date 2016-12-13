@@ -34,62 +34,65 @@ PrincessObject::PrincessObject(float x, float y, float patrol, sf::RenderWindow*
 
 void PrincessObject::PrincessAI(PrincessObject* e,PlayerObject* p)
 {
-    if((p->GetPositionX() - e->GetPositionX() < this->enragerange && p->GetPositionX() - e->GetPositionX() > -this->enragerange) &&
-       (p->GetPositionY() - e->GetPositionY() <  this->enragerange && p->GetPositionY() - e->GetPositionY() > -this->enragerange))
+    if(e->activated == true)
     {
-        e->SetEnraged(true);
-        e->SetEnrageCountdown(e->GetEnrageDuration());
-    }
-
-
-
-    // Common enraged behaviour for all AI
-    if(e->GetEnraged())
-    {
-        e->SetMaxMoveSpeed(e->GetEnragedSpeed());
-        e->SetEnrageCountdown(e->GetEnrageCountdown()-1);
-        if(e->GetEnrageCountdown() <= 0){
+        if((p->GetPositionX() - e->GetPositionX() < this->enragerange && p->GetPositionX() - e->GetPositionX() > -this->enragerange) &&
+           (p->GetPositionY() - e->GetPositionY() <  this->enragerange && p->GetPositionY() - e->GetPositionY() > -this->enragerange))
+        {
+            e->SetEnraged(true);
             e->SetEnrageCountdown(e->GetEnrageDuration());
-            e->SetMaxMoveSpeed(e->GetCalmSpeed());
-            e->SetEnraged(false);
         }
-    }
 
 
-    // Specific enraged behaviour for creepy stalking minion, normal as of now.
-    if(e->GetEnraged()) {
-        //std::cout << "Super Angry" << std::endl;
-        if (p->GetPositionX() < e->GetPositionX())
+
+        // Common enraged behaviour for all AI
+        if(e->GetEnraged())
         {
-            e->SetLeftKey(true);
-            e->SetRightKey(false);
-        }
-        else if(p->GetPositionX() > e->GetPositionX())
-        {
-            e->SetRightKey(true);
-            e->SetLeftKey(false);
+            e->SetMaxMoveSpeed(e->GetEnragedSpeed());
+            e->SetEnrageCountdown(e->GetEnrageCountdown()-1);
+            if(e->GetEnrageCountdown() <= 0){
+                e->SetEnrageCountdown(e->GetEnrageDuration());
+                e->SetMaxMoveSpeed(e->GetCalmSpeed());
+                e->SetEnraged(false);
+            }
         }
 
+
+        // Specific enraged behaviour for creepy stalking minion, normal as of now.
+        if(e->GetEnraged()) {
+            //std::cout << "Super Angry" << std::endl;
+            if (p->GetPositionX() < e->GetPositionX())
+            {
+                e->SetLeftKey(true);
+                e->SetRightKey(false);
+            }
+            else if(p->GetPositionX() > e->GetPositionX())
+            {
+                e->SetRightKey(true);
+                e->SetLeftKey(false);
+            }
+
+            else
+            {
+                e->SetLeftKey(false);
+                e->SetRightKey(false);
+            }
+
+        }
+
+            // Common patrol behaviour
         else
         {
-            e->SetLeftKey(false);
-            e->SetRightKey(false);
-        }
-
-    }
-
-        // Common patrol behaviour
-    else
-    {
-        if(e->GetPositionX() > this->patrolright)
-        {
-            e->SetLeftKey(true);
-            e->SetRightKey(false);
-        }
-        else if(e->GetPositionX() < this->patrolleft)
-        {
-            e->SetLeftKey(false);
-            e->SetRightKey(true);
+            if(e->GetPositionX() > this->patrolright)
+            {
+                e->SetLeftKey(true);
+                e->SetRightKey(false);
+            }
+            else if(e->GetPositionX() < this->patrolleft)
+            {
+                e->SetLeftKey(false);
+                e->SetRightKey(true);
+            }
         }
     }
 }

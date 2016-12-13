@@ -68,7 +68,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
          * Creating AI
          * Using vector to keep track on AIs
          **********************************/
-        AIVectorPointer->push_back(new AIEnemies(4450, 500, 400, true, &window));
+        AIVectorPointer->push_back(new AIEnemies(4420, 500, 400, true, &window));
         AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, false, &window));
         AIVectorPointer->push_back(new AIEnemies(1950, 1220, 150, false, &window));
         AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, false, &window));
@@ -236,10 +236,8 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     /*********************
      * CHECK IF PLAYER WON
      ********************/
-    if(princessSpawn &&
-            player->GetPositionY() == princess->GetPositionY() &&
-            player->GetPositionX() - princess->GetPositionX() >= 30 &&
-            player->GetPositionX() - princess->GetPositionX() <= 50)
+    if((princess->GetPositionX() - player->GetPositionX() < 50 && princess->GetPositionX() - player->GetPositionX() > -50) &&
+       (princess->GetPositionY() - player->GetPositionY() <  50 && princess->GetPositionY() - player->GetPositionY() > -50))
     {
         int score = 1000 / winTime;
         VictoryHandler(highscore, score, delta);
@@ -342,7 +340,11 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
 
     player->PlayerAnimation(delta);
     if(princessSpawn)
+    {
         princess->PrincessAnimation(delta);
+        princess->SetActivated(true);
+    }
+
 
     /***********************
      * Handles player and AI
@@ -596,7 +598,7 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
                 }
 
                 princess->PrincessAnimation(delta);
-                player->PlayerAnimation(delta);
+                player->PlayerCutsceneAnimation(delta);
                 if(heartSprite.getPosition().y == player->GetPositionY() - 290)
                 {
                     heartSprite.scale(scale.x * 1.01, scale.y * 1.01);
@@ -614,7 +616,7 @@ bool TestApp::VictoryHandler(Highscore& highscore, int score, float delta)
                     if(count == 1)
                     {
                         count = 0;
-                        makeLoveFly++;
+                        makeLoveFly += delta*100;
                         heartSprite.setPosition(currentView->getCenter().x - 510, currentView->getCenter().y + 350 - makeLoveFly);
                     }
                 }

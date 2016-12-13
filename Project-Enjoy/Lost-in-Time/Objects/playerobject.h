@@ -48,6 +48,7 @@ public:
 
     void PlayerDead();
 
+    void PlayerCutsceneAnimation(float delta);
     void PlayerAnimation(float delta);
 
     void PlayerSoundJump();

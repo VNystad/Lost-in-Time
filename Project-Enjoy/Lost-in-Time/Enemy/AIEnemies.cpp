@@ -24,12 +24,12 @@ AIEnemies::AIEnemies(float x, float y, float patrol, bool boss, sf::RenderWindow
         this->patrolleft = x - patrol;
         this->patrolright = x + patrol;
         animation.AIBossWalkRight(character);
-        health.SetOriginalLifePoints(3000);
-        health.SetActualLifePoints(3000);
-        health.SetVisibleLifePoints(3000);
+        health.SetOriginalLifePoints(200);
+        health.SetActualLifePoints(200);
+        health.SetVisibleLifePoints(200);
         this->SetRightKey(true);
         this->SetLeftKey(false);
-        this->enragerange = 200;
+        this->enragerange = 150;
         this->SetCalmSpeed(50);
         this->SetEnragedSpeed(190);
         this->boss = true;

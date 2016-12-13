@@ -440,7 +440,7 @@ void Physics::AIGravity(AIEnemies* e, int** collidableArray, float delta)
     {
         //Checks if object is landing at a harmfull velocity, if so, harms it.
         if(e->GetFallSpeed() > e->GetMaxFallSpeed()/2.4)
-            e->health.Hit(e->GetFallSpeed()*1.4);
+            e->health.Hit(e->health.GetOriginalLifePoints());
         e->SetJumpCheck(false);
         e->SetFallSpeed(0);
         float temp = e->GetOrigJumpSpeed();

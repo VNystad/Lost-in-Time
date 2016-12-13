@@ -37,6 +37,9 @@ public:
     void SetPlayerHurt(int playerhurt) { this->playerhurt = playerhurt; };
     int GetPlayerHurt() const { return playerhurt; }
 
+    void SetActivated(bool activated) { this->activated = activated; }
+    bool GetActivated() const { return activated; }
+
     void SetLeftKey(bool leftkey) { this->leftkey = leftkey; }
     bool GetLeftKey() const { return leftkey; }
     void SetRightKey(bool rightkey) { this->rightkey = rightkey; }
@@ -156,7 +159,7 @@ protected:
  */
     int playerhurt = 5;
 
-
+    bool activated = false;
 
     /**********************
     * AI Control
@@ -171,7 +174,7 @@ protected:
     * AI Behaviour
     * *******************/
     bool enraged = false;
-    int enragerange = 100;
+    int enragerange = 70;
     int enrageduration = 1000;
     int enragecountdown = enrageduration;
     int enragedspeed = 120;

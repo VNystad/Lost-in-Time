@@ -69,6 +69,16 @@ void PlayerObject::Reset2OriginalY(float y)
     y = this->OriginalY;
 }
 
+void PlayerObject::PlayerCutsceneAnimation(float delta)
+{
+    counter += delta;
+    if(counter >= 0.1)
+    {
+        counter = 0;
+        animation.PlayerIdle(character);
+    }
+}
+
 void PlayerObject::PlayerAnimation(float delta)
 {
     counter += delta;

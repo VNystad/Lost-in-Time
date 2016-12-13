@@ -102,7 +102,7 @@ void StateLoadGame::LoadGame(int selected, sf::RenderWindow& window, SavedObject
             int patrol = std::stoul(temp);
             std::getline(saveFile, temp);
             bool boss = false;
-            if(!temp.compare("boss"))
+            if(!temp.compare("1"))
                 boss = true;
             so.LoadAI(x, y, patrol, boss, window);
         }

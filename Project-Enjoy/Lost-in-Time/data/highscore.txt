@@ -1,8 +1,6 @@
 
 vetle
 1
-Tjukkeballlersomhengeropp
-9
 Ja
 22
 joachim
@@ -11,16 +9,6 @@ vebisvebisvebis
 50
 johannes
 76
-pp
-90
-hjgf
-200
-ll
-250
-Jajaja
-262
-jhg
-333
 vebis
 334
 Fisk
@@ -31,7 +19,5 @@ Kristoffer
 601
 Martin
 702
-Jesus
-703
-
-6173
+TjukkeBalllersomhengeropp
+900

@@ -25,9 +25,9 @@ AIEnemies::AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *wind
         this->sizeWidth = 55*3.5;
         this->sizeHeight = 44*2;
         animation.AIBossWalkRight(character);
-        health.SetOriginalLifePoints(1000);
-        health.SetActualLifePoints(1000);
-        health.SetVisibleLifePoints(1000);
+        health.SetOriginalLifePoints(2000);
+        health.SetActualLifePoints(2000);
+        health.SetVisibleLifePoints(2000);
         this->rightkey = true;
         this->leftkey = false;
         this->enragerange = 150;

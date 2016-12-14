@@ -72,9 +72,9 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         /********************|
          * Create the player
          *******************/
-        // 160, 398
-        //4450, 558
-        player = new PlayerObject(4450, 558, &window);
+        // 160, 398 Start
+        //4450, 558 Harambe
+        player = new PlayerObject(160, 398, &window);
 
         /***********************
          *  Create the princess

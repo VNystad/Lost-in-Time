@@ -260,10 +260,10 @@ void Animation::PlayerIdle(sf::RectangleShape* character)
  */
 void Animation::PlayerJumpRight(sf::RectangleShape* character)
 {
-    if(lastplayeranimationplayed != 0)
+    if(lastplayeranimationplayed != 1)
     {
         frameSelected->left = 0;
-        lastplayeranimationplayed = 0;
+        lastplayeranimationplayed = 1;
     }
     else if(frameSelected->left > 136)
         frameSelected->left = 0;

@@ -19,7 +19,7 @@ class PrincessObject {
 public:
     PrincessObject(float x, float y, float patrol, sf::RenderWindow* window);
 
-    void PrincessAI(PlayerObject* p);
+    void PrincessAI(PrincessObject* e, PlayerObject* p);
     sf::RectangleShape* character;
     Animation animation;
 
@@ -83,7 +83,8 @@ public:
 
     void PlayerDead();
 
-    void PrincessCutsceneAnimation(float delta);
+    void PrincessCutsceneAnimationLeft(float delta);
+    void PrincessCutsceneAnimationRight(float delta);
     void PrincessAnimation(float delta);
 
     void PrincessSoundHurt();
@@ -175,7 +176,7 @@ protected:
     * AI Behaviour
     * *******************/
     bool enraged = false;
-    int enragerange = 70;
+    int enragerange = 10;
     int enrageDuration = 1000;
     int enrageCountdown = enrageDuration;
     int enrageSpeed = 120;

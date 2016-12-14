@@ -394,10 +394,10 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
      * handle movements
      * draw her
      ********************/
-    if(princessSpawn)
+    if(princessSpawn == true)
     {
         // checks if player is nearby? if so handle it
-        princess->PrincessAI(player);
+        princess->PrincessAI(princess, player);
         Physics::PrincessMovement(princess, collidableArray, delta);
         Physics::PrincessGravity(princess, collidableArray, delta);
         princess->DrawMe();
@@ -621,7 +621,7 @@ bool TestApp::VictoryHandler(Highscore& highscore, float delta)
             //Making character stand still
             end.restart();
             int slapped = 0;
-
+            princess->SetActivated(false);
             while (truelove)
             {
                 /********************************************
@@ -643,9 +643,16 @@ bool TestApp::VictoryHandler(Highscore& highscore, float delta)
                     secretText->setString("OMG \n you just slapped the Princess! \n You earn additional points!");
                 }
 
-                princess->PrincessCutsceneAnimation(delta);
-                princess->SetActivated(false);
-                player->PlayerCutsceneAnimation(delta);
+                if(princess->GetPositionX() < player->GetPositionX())
+                {
+                    player->PlayerCutsceneAnimationLeft(delta);
+                    princess->PrincessCutsceneAnimationRight(delta);
+                }
+                else
+                {
+                    player->PlayerCutsceneAnimationRight(delta);
+                    princess->PrincessCutsceneAnimationLeft(delta);
+                }
                 if(heartSprite.getPosition().y == player->GetPositionY() - 290)
                 {
                     heartSprite.scale(scale.x * 1.01, scale.y * 1.01);

@@ -30,52 +30,50 @@ PrincessObject::PrincessObject(float x, float y, float patrol, sf::RenderWindow*
 
 //AI
 
-void PrincessObject::PrincessAI(PlayerObject* p)
+void PrincessObject::PrincessAI(PrincessObject* e,PlayerObject* p)
 {
-    if(activated)
+    if(e->activated == true)
     {
-        if((p->GetPositionX() - positionX < enragerange && p->GetPositionX() - positionY > -enragerange) &&
-           (p->GetPositionY() - positionX <  enragerange && p->GetPositionY() - positionY > -enragerange))
+        if((p->GetPositionX() - e->GetPositionX() < this->enragerange && p->GetPositionX() - e->GetPositionX() > -this->enragerange) &&
+           (p->GetPositionY() - e->GetPositionY() <  this->enragerange && p->GetPositionY() - e->GetPositionY() > -this->enragerange))
         {
-            enraged = true;
-            enrageCountdown = enrageDuration;
+            e->SetEnraged(true);
+            e->SetEnrageCountdown(e->GetEnrageDuration());
         }
 
 
 
         // Common enraged behaviour for all AI
-        if(enraged)
+        if(e->GetEnraged())
         {
-            maxMoveSpeed = enrageSpeed;
-            enrageCountdown = enrageCountdown -1;
-            if(enrageCountdown <= 0)
-            {
-                enrageCountdown = enrageDuration;
-                maxMoveSpeed = calmSpeed;
-                enraged = false;
+            e->SetMaxMoveSpeed(e->GetEnragedSpeed());
+            e->SetEnrageCountdown(e->GetEnrageCountdown()-1);
+            if(e->GetEnrageCountdown() <= 0){
+                e->SetEnrageCountdown(e->GetEnrageDuration());
+                e->SetMaxMoveSpeed(e->GetCalmSpeed());
+                e->SetEnraged(false);
             }
-
         }
 
 
         // Specific enraged behaviour for creepy stalking minion, normal as of now.
-        if(enraged) {
+        if(e->GetEnraged()) {
             //std::cout << "Super Angry" << std::endl;
-            if (p->GetPositionX() < positionX)
+            if (p->GetPositionX() < e->GetPositionX())
             {
-                leftKey = true;
-                rightKey = false;
+                e->SetLeftKey(true);
+                e->SetRightKey(false);
             }
-            else if(p->GetPositionX() > positionX)
+            else if(p->GetPositionX() > e->GetPositionX())
             {
-                rightKey = true;
-                leftKey = false;
+                e->SetRightKey(true);
+                e->SetLeftKey(false);
             }
 
             else
             {
-                rightKey = false;
-                leftKey = false;
+                e->SetLeftKey(false);
+                e->SetRightKey(false);
             }
 
         }
@@ -83,15 +81,15 @@ void PrincessObject::PrincessAI(PlayerObject* p)
             // Common patrol behaviour
         else
         {
-            if(positionX > patrolright)
+            if(e->GetPositionX() > this->patrolright)
             {
-                leftKey = true;
-                rightKey = false;
+                e->SetLeftKey(true);
+                e->SetRightKey(false);
             }
-            else if(positionX < patrolleft)
+            else if(e->GetPositionX() < this->patrolleft)
             {
-                leftKey = false;
-                rightKey = true;
+                e->SetLeftKey(false);
+                e->SetRightKey(true);
             }
         }
     }
@@ -145,13 +143,23 @@ void PrincessObject::Reset2OriginalY(float y)
     y = this->OriginalY;
 }
 
-void PrincessObject::PrincessCutsceneAnimation(float delta)
+void PrincessObject::PrincessCutsceneAnimationLeft(float delta)
 {
     counter += delta;
     if(counter >= 0.2)
     {
         counter = 0;
         animation.PrincessWalkLeft(character);
+    }
+}
+
+void PrincessObject::PrincessCutsceneAnimationRight(float delta)
+{
+    counter += delta;
+    if(counter >= 0.2)
+    {
+        counter = 0;
+        animation.PrincessWalkRight(character);
     }
 }
 

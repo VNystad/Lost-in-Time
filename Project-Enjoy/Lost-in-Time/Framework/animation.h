@@ -41,6 +41,18 @@ protected:
     int PlayersizeHeight = 50;
     int animationdir = 1;
 
+    /**
+    * Special for smooth PlayerAnimation:
+    * The last animation that was played:
+    * 0 = jumpright
+    * 1 = jumpleft
+    * 2 = walkleft
+    * 3 = walkright
+    * 4 = idleleft
+    * 5 = idleright
+    */
+    int lastplayeranimationplayed = 0;
+
     // Choose starting frame in texture picture
     sf::IntRect *frameSelected;
     sf::IntRect *frameSelectedBoss;

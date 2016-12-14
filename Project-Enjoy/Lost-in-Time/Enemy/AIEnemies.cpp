@@ -14,6 +14,9 @@ AIEnemies::AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *wind
     animation.init();
     health.init();
 
+    this->patrolleft = x - patrol;
+    this->patrolright = x + patrol;
+
     if(boss)
     {
         sf::Vector2f scale = character->getScale();

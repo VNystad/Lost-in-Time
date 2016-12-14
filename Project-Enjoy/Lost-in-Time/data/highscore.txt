@@ -16,16 +16,16 @@ ll
 jhg
 333
 vebis
-543
+334
 Fisk
-551
-Vebistest2
-1761
-Vebistest
-2501
+355
+Vebjørn
+400
+Kristoffer
+601
 Martin
-4177
-marte
-4325
+702
+Jesus
+703
 
 6173

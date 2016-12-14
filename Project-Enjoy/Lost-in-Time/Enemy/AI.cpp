@@ -7,9 +7,9 @@ AI::AI(int x, int y, int patrol, sf::RenderWindow* window) : window(window)
     this->positionY = y;
     this->OriginalX = x;
     this->OriginalY = y;
-    this->patrol = patrol;
-    this->patrolleft = x - patrol;
-    this->patrolright = x + patrol;
+    //this->patrol = patrol;
+    //this->patrolleft = x - patrol;
+    //this->patrolright = x + patrol;
     character = new sf::RectangleShape;
     character->setSize(sf::Vector2f(sizeWidth,sizeHeight));
 

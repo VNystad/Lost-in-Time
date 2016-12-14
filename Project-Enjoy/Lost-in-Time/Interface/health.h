@@ -32,19 +32,6 @@ public:
     float GetHeight() { return height; }
     void SetHeight(float height) { this->height = height; }
 
-    /*sf::Texture GetgreenHealthTexture() { return greenHealthTexture; }
-    void SetgreenHealthTexture(sf::Texture texture) { this->greenHealthTexture = texture; }
-    sf::Texture GetredHealthTexture() { return redHealthTexture; }
-    void SetredHealthTexture(sf::Texture texture) { this->redHealthTexture = texture; }
-    sf::Texture GetHealthBorderTexture() { return HealthBorderTexture; }
-    void SetHealthBorderTexture(sf::Texture texture) { this->HealthBorderTexture = texture; }
-*/
-/*
-    sf::RectangleShape GetgreenHealthbar() { return greenHealthbar; }
-    void SetgreenHealthbar(sf::RectangleShape healthbar) { this->greenHealthbar = healthbar; }
-    sf::RectangleShape GetredHealthbar() { return redHealthbar; }
-    void SetredHealthbar(sf::RectangleShape healthbar) { this->redHealthbar = healthbar; }*/
-
     sf::IntRect GetgreenHealthbarFrame() { return *greenHealthFrame; }
     void SetgreenHealthbar(sf::IntRect *frame) { this->greenHealthFrame = frame; }
     sf::IntRect GetredHealthbarFrame() { return *redHealthFrame; }

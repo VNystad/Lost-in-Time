@@ -13,6 +13,7 @@
 #include "Enemy/AIEnemies.h"
 #include "Framework/Music.h"
 #include "state/machine.h"
+#include "Interface/Dialogue.h"
 
 class TestApp
 {
@@ -137,9 +138,13 @@ protected:
     int penaltyTime = 0;
     int EscMenuTime = 0;
 
+    // Clock for DialogDuration
+    sf::Clock* DialogueDuration;
+
     sf::View* currentView;
     Camera camera;
     Music* music;
+    Dialogue dialogue;
 };
 
 

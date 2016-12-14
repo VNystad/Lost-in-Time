@@ -64,7 +64,7 @@ set(SOURCE_FILES
         main.cpp
         app.cpp
         app.h
-        Objects/princessobject.cpp Objects/princessobject.h)
+        Objects/princessobject.cpp Objects/princessobject.h Interface/Dialogue.cpp Interface/Dialogue.h)
 
 add_executable(Lost-in-Time ${SOURCE_FILES})
 

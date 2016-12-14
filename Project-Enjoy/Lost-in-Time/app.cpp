@@ -150,6 +150,11 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
     secretText->setStyle(sf::Text::Underlined);
     secretText->setColor(sf::Color::Red);
 
+
+    DialogueDuration = new sf::Clock;
+    DialogueDuration->restart();
+    dialogue.LoadImages();
+
 }
 
 bool TestApp::Tick(Machine& machine, Highscore& highscore)
@@ -408,6 +413,12 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     window->draw(HudSprite);
     player->health.DrawMe(*window);
 
+    /****************
+     * Draws Dialogue
+     ****************/
+
+    dialogue.DrawDialogue(player,*window,*currentView, *DialogueDuration);
+
 
     AIHandler(delta);
     window->draw(*timerInText);
@@ -621,6 +632,8 @@ bool TestApp::VictoryHandler(Highscore& highscore, float delta)
             //Making character stand still
             end.restart();
             int slapped = 0;
+            DialogueDuration = new sf::Clock;
+            DialogueDuration->restart();
             princess->SetActivated(false);
             while (truelove)
             {
@@ -682,6 +695,7 @@ bool TestApp::VictoryHandler(Highscore& highscore, float delta)
                 window->draw(heartSprite);
                 player->DrawMe();
                 princess->DrawMe();
+                dialogue.DrawVictoryDialogue(player,princess,*window,*currentView, *DialogueDuration);
                 window->draw(*victoryText);
                 window->display();
             }

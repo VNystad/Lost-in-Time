@@ -27,10 +27,10 @@ set(SOURCE_FILES
 
         Interface/deathscreen.cpp
         Interface/deathscreen.h
+        Interface/Dialogue.cpp
+        Interface/Dialogue.h
         Interface/health.cpp
         Interface/health.h
-        Interface/timer.cpp
-        Interface/timer.h
         Interface/highscore.cpp
         Interface/highscore.h
 
@@ -64,7 +64,7 @@ set(SOURCE_FILES
         main.cpp
         app.cpp
         app.h
-        Objects/princessobject.cpp Objects/princessobject.h Interface/Dialogue.cpp Interface/Dialogue.h)
+        Objects/princessobject.cpp Objects/princessobject.h)
 
 add_executable(Lost-in-Time ${SOURCE_FILES})
 

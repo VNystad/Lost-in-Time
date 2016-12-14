@@ -68,7 +68,10 @@ void PlayerObject::Reset2OriginalY(float y)
 {
     y = this->OriginalY;
 }
-
+/**
+ * Cutscene animation for player facing left.
+ * @param delta
+ */
 void PlayerObject::PlayerCutsceneAnimationLeft(float delta)
 {
     counter += delta;
@@ -78,7 +81,10 @@ void PlayerObject::PlayerCutsceneAnimationLeft(float delta)
         animation.PlayerIdleLeft(character);
     }
 }
-
+/**
+ * Cutscene animation for player facing right.
+ * @param delta
+ */
 void PlayerObject::PlayerCutsceneAnimationRight(float delta)
 {
     counter += delta;
@@ -90,7 +96,12 @@ void PlayerObject::PlayerCutsceneAnimationRight(float delta)
 }
 
 
-
+/**
+ * The function that is responsible to call each of
+ * the player character's animations. All animations switch
+ * frames based on a delta timer.
+ * @param delta
+ */
 void PlayerObject::PlayerAnimation(float delta)
 {
     counter += delta;
@@ -136,12 +147,17 @@ void PlayerObject::PlayerAnimation(float delta)
     }
 }
 
-
+/**
+ * The sound to be played when the player character jumps.
+ */
 void PlayerObject::PlayerSoundJump()
 {
     sound->playSound("/Jump.wav", 100);
 }
-
+/**
+ * The sounds to be played if the player character were to be harmed.
+ * There is about 50% for each of the sounds to be played.
+ */
 void PlayerObject:: PlayerSoundHurt()
 {
     if(rand() % 20 < 10)
@@ -150,7 +166,10 @@ void PlayerObject:: PlayerSoundHurt()
         sound->playSound("/manhurt2.wav", 100);
 }
 
-
+/**
+ * The sound to be played if the player character were to
+ * succeed on harming an enemy by jumping on it.
+ */
 void PlayerObject:: PlayerSoundEnemyLanded()
 {
     sound->playSound("/jumpedonenemy.wav", 100);

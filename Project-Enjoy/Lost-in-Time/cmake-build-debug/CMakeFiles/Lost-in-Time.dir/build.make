@@ -248,9 +248,33 @@ CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.obj.provides: CMakeFiles/L
 CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.obj.provides.build: CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.obj
 
 
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj: CMakeFiles/Lost-in-Time.dir/flags.make
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj: ../Interface/Dialogue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj"
+	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lost-in-Time.dir\Interface\Dialogue.cpp.obj -c "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\Interface\Dialogue.cpp"
+
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.i"
+	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\Interface\Dialogue.cpp" > CMakeFiles\Lost-in-Time.dir\Interface\Dialogue.cpp.i
+
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.s"
+	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\Interface\Dialogue.cpp" -o CMakeFiles\Lost-in-Time.dir\Interface\Dialogue.cpp.s
+
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj.requires:
+
+.PHONY : CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj.requires
+
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj.provides: CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj.provides.build
+.PHONY : CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj.provides
+
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj.provides.build: CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj
+
+
 CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.obj: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.obj: ../Interface/health.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.obj"
 	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lost-in-Time.dir\Interface\health.cpp.obj -c "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\Interface\health.cpp"
 
 CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.i: cmake_force
@@ -270,30 +294,6 @@ CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.obj.provides: CMakeFiles/Lost-i
 .PHONY : CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.obj.provides
 
 CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.obj.provides.build: CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.obj
-
-
-CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj: CMakeFiles/Lost-in-Time.dir/flags.make
-CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj: ../Interface/timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj"
-	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lost-in-Time.dir\Interface\timer.cpp.obj -c "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\Interface\timer.cpp"
-
-CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.i"
-	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\Interface\timer.cpp" > CMakeFiles\Lost-in-Time.dir\Interface\timer.cpp.i
-
-CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.s"
-	E:\Programmer\TheMinGW64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\Dokumenter\Skole\UiA\Dat220\GIT Repository\Clone from git\pe\Project-Enjoy\Lost-in-Time\Interface\timer.cpp" -o CMakeFiles\Lost-in-Time.dir\Interface\timer.cpp.s
-
-CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj.requires:
-
-.PHONY : CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj.requires
-
-CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj.provides: CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj.provides.build
-.PHONY : CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj.provides
-
-CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj.provides.build: CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj
 
 
 CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.obj: CMakeFiles/Lost-in-Time.dir/flags.make
@@ -642,8 +642,8 @@ Lost__in__Time_OBJECTS = \
 "CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj" \
 "CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.obj" \
 "CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.obj" \
+"CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj" \
 "CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.obj" \
-"CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj" \
 "CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.obj" \
 "CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.obj" \
 "CMakeFiles/Lost-in-Time.dir/Map/map.cpp.obj" \
@@ -670,8 +670,8 @@ Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.obj
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.obj
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.obj
+Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.obj
-Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.obj
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.obj
 Lost-in-Time.exe: CMakeFiles/Lost-in-Time.dir/Map/map.cpp.obj
@@ -706,8 +706,8 @@ CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/Framework/phys
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.obj.requires
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.obj.requires
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.obj.requires
+CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj.requires
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.obj.requires
-CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj.requires
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.obj.requires
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.obj.requires
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/Map/map.cpp.obj.requires

@@ -311,6 +311,33 @@ Framework/physics.cpp.s:
 	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.s
 .PHONY : Framework/physics.cpp.s
 
+Interface/Dialogue.obj: Interface/Dialogue.cpp.obj
+
+.PHONY : Interface/Dialogue.obj
+
+# target to build an object file
+Interface/Dialogue.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj
+.PHONY : Interface/Dialogue.cpp.obj
+
+Interface/Dialogue.i: Interface/Dialogue.cpp.i
+
+.PHONY : Interface/Dialogue.i
+
+# target to preprocess a source file
+Interface/Dialogue.cpp.i:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.i
+.PHONY : Interface/Dialogue.cpp.i
+
+Interface/Dialogue.s: Interface/Dialogue.cpp.s
+
+.PHONY : Interface/Dialogue.s
+
+# target to generate assembly for a file
+Interface/Dialogue.cpp.s:
+	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.s
+.PHONY : Interface/Dialogue.cpp.s
+
 Interface/deathscreen.obj: Interface/deathscreen.cpp.obj
 
 .PHONY : Interface/deathscreen.obj
@@ -391,33 +418,6 @@ Interface/highscore.s: Interface/highscore.cpp.s
 Interface/highscore.cpp.s:
 	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.s
 .PHONY : Interface/highscore.cpp.s
-
-Interface/timer.obj: Interface/timer.cpp.obj
-
-.PHONY : Interface/timer.obj
-
-# target to build an object file
-Interface/timer.cpp.obj:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj
-.PHONY : Interface/timer.cpp.obj
-
-Interface/timer.i: Interface/timer.cpp.i
-
-.PHONY : Interface/timer.i
-
-# target to preprocess a source file
-Interface/timer.cpp.i:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.i
-.PHONY : Interface/timer.cpp.i
-
-Interface/timer.s: Interface/timer.cpp.s
-
-.PHONY : Interface/timer.s
-
-# target to generate assembly for a file
-Interface/timer.cpp.s:
-	$(MAKE) -f CMakeFiles\Lost-in-Time.dir\build.make CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.s
-.PHONY : Interface/timer.cpp.s
 
 Map/layer.obj: Map/layer.cpp.obj
 
@@ -800,6 +800,9 @@ help:
 	@echo ... Framework/physics.obj
 	@echo ... Framework/physics.i
 	@echo ... Framework/physics.s
+	@echo ... Interface/Dialogue.obj
+	@echo ... Interface/Dialogue.i
+	@echo ... Interface/Dialogue.s
 	@echo ... Interface/deathscreen.obj
 	@echo ... Interface/deathscreen.i
 	@echo ... Interface/deathscreen.s
@@ -809,9 +812,6 @@ help:
 	@echo ... Interface/highscore.obj
 	@echo ... Interface/highscore.i
 	@echo ... Interface/highscore.s
-	@echo ... Interface/timer.obj
-	@echo ... Interface/timer.i
-	@echo ... Interface/timer.s
 	@echo ... Map/layer.obj
 	@echo ... Map/layer.i
 	@echo ... Map/layer.s

@@ -7,8 +7,6 @@
 #IncludeRegexTransform: 
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.cpp
-iostream
--
 AI.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Enemy/AI.h
 
@@ -91,8 +89,6 @@ map
 -
 physics.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h
-iostream
--
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h
 ../Objects/playerobject.h
@@ -105,6 +101,22 @@ E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lo
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/tile.h
 vector
 -
+
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/Dialogue.cpp
+Dialogue.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/Dialogue.h
+
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/Dialogue.h
+SFML/System/Clock.hpp
+-
+SFML/Graphics.hpp
+-
+list
+-
+../Objects/playerobject.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/playerobject.h
+../Objects/princessobject.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Objects/princessobject.h
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/deathscreen.cpp
 sstream
@@ -143,12 +155,6 @@ fstream
 -
 SFML/Graphics/Text.hpp
 -
-
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/timer.cpp
-timer.h
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/timer.h
-
-E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/timer.h
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/layer.cpp
 SFML/Graphics.hpp
@@ -311,6 +317,8 @@ Framework/Music.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/Music.h
 state/machine.h
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/state/machine.h
+Interface/Dialogue.h
+E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/Dialogue.h
 
 E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/main.cpp
 SFML/Graphics/RenderWindow.hpp

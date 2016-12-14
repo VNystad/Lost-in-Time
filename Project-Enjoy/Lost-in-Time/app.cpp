@@ -85,7 +85,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
          * Creating AI
          * Using vector to keep track on AIs
          **********************************/
-        AIVectorPointer->push_back(new AIEnemies(4420, 500, 400, true, &window));
+        AIVectorPointer->push_back(new AIEnemies(4410, 400, 460, true, &window));
         AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, false, &window));
         AIVectorPointer->push_back(new AIEnemies(1950, 1220, 150, false, &window));
         AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, false, &window));
@@ -149,7 +149,6 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
     secretText->setCharacterSize(70);
     secretText->setStyle(sf::Text::Underlined);
     secretText->setColor(sf::Color::Red);
-
 
     DialogueDuration = new sf::Clock;
     DialogueDuration->restart();
@@ -309,11 +308,13 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
 
         // When player presses G, player character is damaged. For testing purposes
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::G) && player->health.GetActualLifePoints() > 0)
-        player->health.Hit(5);
+        player->health.Hit(player->health.GetOriginalLifePoints());
 
+        /*
         // When player presses H, player character is healed. For testing purposes
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H) && player->health.GetActualLifePoints() < 100)
         player->health.Healed(5);
+         */
 
         // If player press M, mute music
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
@@ -325,7 +326,7 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
      * If player hits the bottom of map,
      * player lifepoints = 0, player death function called
      *****************************************************/
-    if (player->GetPositionY() >= 2500)
+    if (player->GetPositionY() >= 1870)
     {
         penaltyTime = penaltyTime + 20;
         player->health.DeathHandle();
@@ -415,7 +416,7 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
 
     /****************
      * Draws Dialogue
-     ****************/
+    ****************/
 
     dialogue.DrawDialogue(player,*window,*currentView, *DialogueDuration);
 
@@ -506,6 +507,12 @@ void TestApp::Move(float delta)
 {
     Physics::Movement(player, collidableArray, delta);
     Physics::Gravity(player, collidableArray, delta);
+    if(player->health.GetActualLifePoints() > player->health.GetOriginalLifePoints())
+    {
+        player->health.SetOriginalLifePoints(100);
+        player->health.SetActualLifePoints(100);
+        player->health.SetVisibleLifePoints(100);
+    }
 }
 
 /**
@@ -520,12 +527,38 @@ void TestApp::AIHandler(float delta)
     {
         /* If AI hits the bottom of map,
         * the AI's lifepoint is reduced to 0 and AI death function is called */
-        if (AIVectorPointer->at(i)->GetPositionY() >= 2500)
+        if (AIVectorPointer->at(i)->GetPositionY() >= 1860)
         {
             AIVectorPointer->at(i)->health.Hit(AIVectorPointer->at(i)->health.GetOriginalLifePoints());
             AIVectorPointer->at(i)->health.DeathHandle();
             AIVectorPointer->erase(AIVectorPointer->begin() + i);
         }
+        //Meant for fixing invincible AI bug, but Boss get Invincible with this code.
+        /*
+        if(AIVectorPointer->at(i)->health.GetActualLifePoints() > 2*(AIVectorPointer->at(i)->health.GetOriginalLifePoints()))
+        {
+
+            if(AIVectorPointer->at(i)->GetBoss())
+            {
+                AIVectorPointer->at(i)->health.SetOriginalLifePoints(1000);
+                AIVectorPointer->at(i)->health.SetActualLifePoints(1000);
+                AIVectorPointer->at(i)->health.SetVisibleLifePoints(1000);
+            }
+
+            else if(AIVectorPointer->at(i)->GetMiniBoss())
+            {
+                AIVectorPointer->at(i)->health.SetOriginalLifePoints(300);
+                AIVectorPointer->at(i)->health.SetActualLifePoints(300);
+                AIVectorPointer->at(i)->health.SetVisibleLifePoints(300);
+            }
+            else
+            {
+                AIVectorPointer->at(i)->health.SetOriginalLifePoints(100);
+                AIVectorPointer->at(i)->health.SetActualLifePoints(100);
+                AIVectorPointer->at(i)->health.SetVisibleLifePoints(100);
+            }
+        }
+         */
 
         if (AIVectorPointer->at(i)->health.GetActualLifePoints() <= 0)//Dead())
         {
@@ -610,8 +643,6 @@ bool TestApp::VictoryHandler(Highscore& highscore, float delta)
         victoryText->setPosition(player->GetPositionX() - 500, player->GetPositionY() - 200);
         secretText->setPosition(player->GetPositionX() - 600, player->GetPositionY()- 100);
 
-        // Int to make heart fly
-        int makeLoveFly = 0;
         sf::Vector2f scale = heartSprite.getScale();
 
         // Count to end the game
@@ -628,7 +659,6 @@ bool TestApp::VictoryHandler(Highscore& highscore, float delta)
             bool truelove = true;
             bool roughLove = false;
             // Victory speach
-            // Then make a heart come up from hell
             //Making character stand still
             end.restart();
             int slapped = 0;
@@ -666,22 +696,13 @@ bool TestApp::VictoryHandler(Highscore& highscore, float delta)
                     player->PlayerCutsceneAnimationRight(delta);
                     princess->PrincessCutsceneAnimationLeft(delta);
                 }
-                if(heartSprite.getPosition().y == player->GetPositionY() - 290)
+                if(end.getElapsedTime().asSeconds() >= 20)
                 {
-                    heartSprite.scale(scale.x * 1.01, scale.y * 1.01);
-                    if(count == 500)
-                    {
-                        if(roughLove)
-                            highscore.SaveNewHighscore(playerName, score);
-                        return true;
-                    }
-                    count++;
+                    if(roughLove)
+                        highscore.SaveNewHighscore(playerName, score);
+                    return true;
                 }
-                else
-                {
-                    makeLoveFly += delta*100;
-                    heartSprite.setPosition(currentView->getCenter().x - 510, currentView->getCenter().y + 350 - makeLoveFly);
-                }
+
                 window->clear(sf::Color::Black);
                 window->draw(Treebackground1Sprite);
                 // Process and render each object
@@ -692,7 +713,6 @@ bool TestApp::VictoryHandler(Highscore& highscore, float delta)
                 }
                 if(roughLove)
                     window->draw(*secretText);
-                window->draw(heartSprite);
                 player->DrawMe();
                 princess->DrawMe();
                 dialogue.DrawVictoryDialogue(player,princess,*window,*currentView, *DialogueDuration);
@@ -785,8 +805,6 @@ bool TestApp::SaveGame(int selectedSave)
         savefile << std::endl << (*it)->GetOriginalX() - (*it)->GetPatrolLeft();
         bool boss = (*it)->GetBoss();
         savefile << std::endl << (*it)->GetBoss();
-
-        std::cout << "Break";
     }
     savefile.close();
     return true;
@@ -803,8 +821,8 @@ int TestApp::menuSelected(std::string menu)
     while(sf::Keyboard::isKeyPressed(sf::Keyboard::Return));
     int amountOfChoices = 0;
     int choice = 1;
-    int MenuPositionX = player->GetPositionX() -200;
-    int MenuPositionY = player->GetPositionY() - 200;
+    int MenuPositionX = currentView->getCenter().x -250;
+    int MenuPositionY = currentView->getCenter().y -230;
     bool save = false;
 
     while(1){

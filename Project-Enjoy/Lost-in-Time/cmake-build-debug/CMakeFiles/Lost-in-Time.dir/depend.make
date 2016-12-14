@@ -40,6 +40,15 @@ CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.obj: ../Map/tile.h
 CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.obj: ../Objects/playerobject.h
 CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.obj: ../Objects/princessobject.h
 
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj: ../Framework/Sounds.h
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj: ../Framework/animation.h
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj: ../Framework/config.h
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj: ../Interface/Dialogue.cpp
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj: ../Interface/Dialogue.h
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj: ../Interface/health.h
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj: ../Objects/playerobject.h
+CMakeFiles/Lost-in-Time.dir/Interface/Dialogue.cpp.obj: ../Objects/princessobject.h
+
 CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.obj: ../Framework/font.h
 CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.obj: ../Interface/deathscreen.cpp
 CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.obj: ../Interface/deathscreen.h
@@ -50,9 +59,6 @@ CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.obj: ../Interface/health.h
 
 CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.obj: ../Interface/highscore.cpp
 CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.obj: ../Interface/highscore.h
-
-CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj: ../Interface/timer.cpp
-CMakeFiles/Lost-in-Time.dir/Interface/timer.cpp.obj: ../Interface/timer.h
 
 CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.obj: ../Map/layer.cpp
 CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.obj: ../Map/layer.h
@@ -108,6 +114,7 @@ CMakeFiles/Lost-in-Time.dir/app.cpp.obj: ../Framework/Sounds.h
 CMakeFiles/Lost-in-Time.dir/app.cpp.obj: ../Framework/animation.h
 CMakeFiles/Lost-in-Time.dir/app.cpp.obj: ../Framework/config.h
 CMakeFiles/Lost-in-Time.dir/app.cpp.obj: ../Framework/physics.h
+CMakeFiles/Lost-in-Time.dir/app.cpp.obj: ../Interface/Dialogue.h
 CMakeFiles/Lost-in-Time.dir/app.cpp.obj: ../Interface/health.h
 CMakeFiles/Lost-in-Time.dir/app.cpp.obj: ../Interface/highscore.h
 CMakeFiles/Lost-in-Time.dir/app.cpp.obj: ../Map/layer.h
@@ -156,6 +163,7 @@ CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Framework/Music.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Framework/Sounds.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Framework/animation.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Framework/config.h
+CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Interface/Dialogue.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Interface/health.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Interface/highscore.h
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.obj: ../Map/layer.h

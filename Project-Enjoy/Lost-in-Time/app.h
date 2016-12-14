@@ -140,7 +140,6 @@ protected:
 
     // Clock for DialogDuration
     sf::Clock* DialogueDuration;
-
     sf::View* currentView;
     Camera camera;
     Music* music;

@@ -128,6 +128,12 @@
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Framework/physics.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/Dialogue.cpp">
+			<Option target="Lost-in-Time"/>
+		</Unit>
+		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/Dialogue.h">
+			<Option target="Lost-in-Time"/>
+		</Unit>
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/deathscreen.cpp">
 			<Option target="Lost-in-Time"/>
 		</Unit>
@@ -144,12 +150,6 @@
 			<Option target="Lost-in-Time"/>
 		</Unit>
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/highscore.h">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/timer.cpp">
-			<Option target="Lost-in-Time"/>
-		</Unit>
-		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Interface/timer.h">
 			<Option target="Lost-in-Time"/>
 		</Unit>
 		<Unit filename="E:/Dokumenter/Skole/UiA/Dat220/GIT Repository/Clone from git/pe/Project-Enjoy/Lost-in-Time/Map/layer.cpp">

@@ -1,4 +1,4 @@
-#include <iostream>
+
 #include "AI.h"
 
 AI::AI(int x, int y, int patrol, sf::RenderWindow* window) : window(window)

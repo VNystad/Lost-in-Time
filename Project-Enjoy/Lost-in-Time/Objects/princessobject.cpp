@@ -29,7 +29,14 @@ PrincessObject::PrincessObject(float x, float y, float patrol, sf::RenderWindow*
 
 
 //AI
-
+/**
+ * PrincessAI is a copy of MonkeyAI1, so she does what the monkeys do:
+ * Patrol her territory until she finds the player. Then she will
+ * follow the player until the enrageduration has passed, and will
+ * then return back home.
+ * @param e Princess character
+ * @param p Player character
+ */
 void PrincessObject::PrincessAI(PrincessObject* e,PlayerObject* p)
 {
     if(e->activated == true)
@@ -143,6 +150,10 @@ void PrincessObject::Reset2OriginalY(float y)
     y = this->OriginalY;
 }
 
+/**
+ *Cutscene animation for Princess, facing left.
+ * @param delta
+ */
 void PrincessObject::PrincessCutsceneAnimationLeft(float delta)
 {
     counter += delta;
@@ -152,7 +163,9 @@ void PrincessObject::PrincessCutsceneAnimationLeft(float delta)
         animation.PrincessWalkLeft(character);
     }
 }
-
+/*
+ * Cutscene animation for Princess, facing right.
+ */
 void PrincessObject::PrincessCutsceneAnimationRight(float delta)
 {
     counter += delta;
@@ -163,7 +176,12 @@ void PrincessObject::PrincessCutsceneAnimationRight(float delta)
     }
 }
 
-
+/**
+ * The function that is responsible to call each of
+ * the princess' animations. All animations switch
+ * frames based on a delta timer.
+ * @param delta
+ */
 void PrincessObject::PrincessAnimation(float delta)
 {
     counter += delta;
@@ -189,7 +207,9 @@ void PrincessObject::PrincessAnimation(float delta)
     }
 }
 
-
+/**
+ * The sound to be played if the player were to harm the princess.
+ */
 void PrincessObject:: PrincessSoundHurt()
 {
     sound->playSound("/princesslap2.wav", 100);

@@ -134,8 +134,11 @@ void AIEnemies::MonkeyAI1(AIEnemies* e,PlayerObject* p)
 
 
 /**
- * A little more advanced AI. It is based on the basic AI, but will be a bit thougher.
- * This AI should be the biggest obstacle for the character.
+ * Boss AI. It is based on the basic AI, but a bit thougher.
+ * The boss is controlled by this function and AIEnemies::GotHurt().
+ * MonkeyAI2 is a modified copy of MonkeyAI1, but will instead of
+ * following the player character blindly, it will stop following
+ * the player character if it reaches the end of it's patrol area.
  * @param e The AI character.
  * @param p The Player character.
  */
@@ -144,8 +147,11 @@ void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerObject* p)
     if((p->GetPositionX() - e->GetPositionX() < this->enragerange && p->GetPositionX() - e->GetPositionX() > -this->enragerange) &&
        (p->GetPositionY() - e->GetPositionY() <  this->enragerange && p->GetPositionY() - e->GetPositionY() > -this->enragerange))
     {
-        e->SetEnraged(true);
-        e->SetEnrageCountdown(e->GetEnrageDuration());
+        if(!(e->GetPositionX() > this->patrolright) && !(e->GetPositionX() < this->patrolleft))
+        {
+            e->SetEnraged(true);
+            e->SetEnrageCountdown(e->GetEnrageDuration());
+        }
     }
 
 
@@ -181,11 +187,7 @@ void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerObject* p)
             e->SetMaxMoveSpeed(e->GetCalmSpeed());
             e->SetEnraged(false);
         }
-
-
-
     }
-
         // Common patrol behaviour
     else
     {
@@ -202,24 +204,32 @@ void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerObject* p)
     }
 }
 
+/**
+ * GotHurt gets called whenever the player harms an enemy.
+ * It will enable only the boss to perform two moves
+ * individually or combined. Either jump back a little bit
+ * or throw the player character really far away.
+ * @param e AI calling the function
+ * @param p The player character
+ */
 void AIEnemies::GotHurt(AIEnemies *e, PlayerObject *p)
 {
     if(!e->boss)
     {
         return;
     }
-    if((rand() % 100 < 80) && (!(e->GetPositionX() > this->patrolright) && !(e->GetPositionX() < this->patrolleft)))
+    if((rand() % 100 < 80) && (!(e->GetPositionX() > (this->patrolright + 100)) && !(e->GetPositionX() < (this->patrolleft + 100))))
     {
         if(p->GetLastMoveDirection() == 1)
         {
-            e->SetMoveSpeedL(700);
+            e->SetMoveSpeedL(250);
             e->SetRightKey(false);
             e->SetLeftKey(true);
             e->SetUpKey(true);
         }
         else if(p->GetLastMoveDirection() == 0)
         {
-            e->SetMoveSpeedR(700);
+            e->SetMoveSpeedR(250);
             e->SetRightKey(true);
             e->SetLeftKey(false);
             e->SetUpKey(true);
@@ -227,6 +237,9 @@ void AIEnemies::GotHurt(AIEnemies *e, PlayerObject *p)
     }
     /****************************
      * BOSS THROW DEFENSIVE MOVE
+     * This function makes the boss
+     * perform a move that throws
+     * the player away.
      ***********************'***/
     if((rand() % 3) + 1 == 3)
     {

@@ -1,11 +1,6 @@
 #include <iostream>
 #include "animation.h"
 
-/**
- * Init of the animation
- * Load in the textures
- * Create the frame used to select which picture to use in the animation.
- */
 void Animation::init()
 {
 /* **********************************
@@ -67,14 +62,6 @@ void Animation::init()
         std::cout << "Failed to load data/Character-Animation/princessidleleft.png" << std::endl << std::endl;
 }
 
-/**
- * @param character, which character the texture is being applied for.
- * @param lastplayeranimationplayed, is used to check what animation is played last.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
 void Animation::PlayerWalkRight(sf::RectangleShape* character)
 {
     if(lastplayeranimationplayed != 3)
@@ -109,14 +96,6 @@ void Animation::PlayerWalkRight(sf::RectangleShape* character)
     character->setTextureRect(*frameSelected);
 }
 
-/**
- * @param character, which character the texture is being applied for.
- * @param lastplayeranimationplayed, is used to check what animation is played last.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
 void Animation::PlayerWalkLeft(sf::RectangleShape* character)
 {
     if(lastplayeranimationplayed != 2)
@@ -151,14 +130,6 @@ void Animation::PlayerWalkLeft(sf::RectangleShape* character)
     character->setTextureRect(*frameSelected);
 }
 
-/**
- * @param character, which character the texture is being applied for.
- * @param lastplayeranimationplayed, is used to check what animation is played last.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
 void Animation::PlayerIdleLeft(sf::RectangleShape* character)
 {
     if(lastplayeranimationplayed != 3)
@@ -203,14 +174,6 @@ void Animation::PlayerIdleLeft(sf::RectangleShape* character)
     character->setTextureRect(*frameSelected);
 }
 
-/**
- * @param character, which character the texture is being applied for.
- * @param lastplayeranimationplayed, is used to check what animation is played last.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
 void Animation::PlayerIdle(sf::RectangleShape* character)
 {
     if(lastplayeranimationplayed != 5)
@@ -255,14 +218,6 @@ void Animation::PlayerIdle(sf::RectangleShape* character)
     character->setTextureRect(*frameSelected);
 }
 
-/**
- * @param character, which character the texture is being applied for.
- * @param lastplayeranimationplayed, is used to check what animation is played last.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
 void Animation::PlayerJumpRight(sf::RectangleShape* character)
 {
     if(lastplayeranimationplayed != 0)
@@ -297,14 +252,6 @@ void Animation::PlayerJumpRight(sf::RectangleShape* character)
     character->setTextureRect(*frameSelected);
 }
 
-/**
- * @param character, which character the texture is being applied for.
- * @param lastplayeranimationplayed, is used to check what animation is played last.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
 void Animation::PlayerJumpLeft(sf::RectangleShape* character)
 {
     if(lastplayeranimationplayed != 1)
@@ -339,26 +286,11 @@ void Animation::PlayerJumpLeft(sf::RectangleShape* character)
     character->setTextureRect(*frameSelected);
 }
 
-/**
- * TODO: not implemented yet. Due to the pictures being so different in sizes
- * @param character, which character the texture is being applied for.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
 void Animation::PlayerDie(sf::RectangleShape* character)
 {
 
 }
 
-/**
- * @param character, which character the texture is being applied for.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
 void Animation::AIWalkRight(sf::RectangleShape* character)
 {
     if(frameSelected->left > 216)
@@ -388,13 +320,6 @@ void Animation::AIWalkRight(sf::RectangleShape* character)
     character->setTextureRect(*frameSelected);
 }
 
-/**
- * @param character, which character the texture is being applied for.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
 void Animation::AIWalkLeft(sf::RectangleShape* character)
 {
     if(frameSelected->left > 216)
@@ -424,13 +349,7 @@ void Animation::AIWalkLeft(sf::RectangleShape* character)
     character->setTextureRect(*frameSelected);
 }
 
-/**
- * @param character, which character the texture is being applied for.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
+
 void Animation::AIMiniBossWalkRight(sf::RectangleShape* character)
 {
     if(frameSelected->left > 216)
@@ -460,13 +379,6 @@ void Animation::AIMiniBossWalkRight(sf::RectangleShape* character)
     character->setTextureRect(*frameSelected);
 }
 
-/**
- * @param character, which character the texture is being applied for.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
 void Animation::AIMiniBossWalkLeft(sf::RectangleShape* character)
 {
     if(frameSelected->left > 216)
@@ -496,13 +408,7 @@ void Animation::AIMiniBossWalkLeft(sf::RectangleShape* character)
     character->setTextureRect(*frameSelected);
 }
 
-/**
- * @param character, which character the texture is being applied for.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
+
 void Animation::AIBossWalkRight(sf::RectangleShape* character)
 {
     if(frameSelected->left > 605)
@@ -532,13 +438,6 @@ void Animation::AIBossWalkRight(sf::RectangleShape* character)
     character->setTextureRect(*frameSelectedBoss);
 }
 
-/**
- * @param character, which character the texture is being applied for.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
 void Animation::AIBossWalkLeft(sf::RectangleShape* character)
 {
     if(frameSelected->left > 605)
@@ -568,13 +467,7 @@ void Animation::AIBossWalkLeft(sf::RectangleShape* character)
     character->setTextureRect(*frameSelectedBoss);
 }
 
-/**
- * @param character, which character the texture is being applied for.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
+
 void Animation::PrincessWalkRight(sf::RectangleShape* character)
 {
     if(frameSelected->left > 68)
@@ -604,13 +497,6 @@ void Animation::PrincessWalkRight(sf::RectangleShape* character)
     character->setTextureRect(*frameSelected);
 }
 
-/**
- * @param character, which character the texture is being applied for.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
 void Animation::PrincessWalkLeft(sf::RectangleShape* character)
 {
     if(frameSelected->left > 102)

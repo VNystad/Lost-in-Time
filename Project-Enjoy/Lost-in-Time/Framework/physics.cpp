@@ -1,16 +1,17 @@
 #include <map>
 #include "physics.h"
-#include <iostream>
 
 
-
-//Horisontal movement for player
+/**
+ * This function handles movement to the left or to the right. The object will gradually reach its max velocity
+ *  which it is limited by, and also gradually slow down at different rates wether one tries to move the
+ * object to the other direction or not. It is limited by collision. Known bug: will skip through walls at high
+ * velocities.
+ * @param p The player character
+ * @param collidableArray An array of collidable tiles to be used in collision detection.
+ * @param delta tick time.
+ */
 void Physics::Movement(PlayerObject* p, int** collidableArray, float delta) {
-    //This function handles movement to the left or to the right. The object will gradually reach its max velocity
-    //which it is limited by, and also gradually slow down at different rates wether one tries to move the
-    //object to the other direction or not.
-
-
     //Checks if player got hit by enemy
     if(p->GetPlayerHurt() != 5)
     {
@@ -133,7 +134,17 @@ void Physics::Movement(PlayerObject* p, int** collidableArray, float delta) {
 }
 
 
-//Gravity for player
+/**
+ * This function will make the object move vertically. The object is limited by its own
+ * jumping strength (specified in the objects variables) and the gravity.
+ * It will also stop accelerating beyond a specified maximum falling velocity,
+ * which is meant to simulate the wind resistance we have here on earth.
+ * The function checks every pixel it moves the object for collision, and
+ * avoids moving it through anything collidable.
+ * @param p The Object to be manipulated.
+ * @param collidableArray An array of collidable tiles to be used in collision detection.
+ * @param delta tick time.
+ */
 void Physics::Gravity(PlayerObject* p, int** collidableArray, float delta)
 {
     //Gravity Start-----------------------------------------------------------------------------------------------------
@@ -233,9 +244,9 @@ void Physics::Gravity(PlayerObject* p, int** collidableArray, float delta)
 
 /**
  * Function that checks if there is a horisontal collision
- * @param p the player
+ * @param p the object
  * @param collidableArray 2D array with all collidable tiles
- * @return True if there is a block infront of player, false if not
+ * @return True if there is a block infront of object, false if not
  */
 bool Physics::HorisontalCollision(PlayerObject* p, int** collidableArray)
 {
@@ -257,15 +268,15 @@ bool Physics::HorisontalCollision(PlayerObject* p, int** collidableArray)
 
 
 /*************************************************************
- * checks if player is in touch with a collidable tile beneath
- * @param p the player
+ * checks if object is in touch with a collidable tile beneath
+ * @param p the object
  * @param collidableArray 2d array with all collidable tiles
  * @return true if on top of a tile, else false
  */
 bool Physics::Grounded(PlayerObject* p, int** collidableArray)
 {
     int playerArrayCoordX = (p->GetPositionX() + 17) / 32;
-    int playerSouthCoord = (p->GetPositionY() / 32)>0? (p->GetPositionY()+50) / 32 :0;
+    int playerSouthCoord = ((p->GetPositionY() +50) / 32)>0? (p->GetPositionY()+50) / 32 :0;
 
     return p->GetApexCheck() && collidableArray[playerSouthCoord][playerArrayCoordX];
     /*if(p->GetApexCheck()&& collidableArray[playerSouthCoord][playerArrayCoordX])
@@ -276,8 +287,8 @@ bool Physics::Grounded(PlayerObject* p, int** collidableArray)
 }
 
 /*******************************************************
- * Checks if player "head" is in touch with a tile above
- * @param p the player
+ * Checks if object "head" is in touch with a tile above
+ * @param p the object
  * @param collidableArray 2d array with all collidable tiles
  * @return true if in touch with tile above, else false
  */
@@ -297,13 +308,24 @@ bool Physics::Roofed(PlayerObject* p, int** collidableArray)
  * AI PHYSICS
 ***************************************/
 
-//Horisontal movement for AI
+/**
+ *  This function handles movement to the left or to the right. The object will gradually reach its max velocity
+ * which it is limited by, and also gradually slow down at different rates wether one tries to move the
+ * object to the other direction or not. It is limited by collision. Known bug: will skip through walls at high
+ * velocities.
+ * @param e The object going through AIMovement, an enemy in this case.
+ * @param p The player character, to be used in collision detection.
+ * @param AIVector A Vector containing all AI controlled objects. Used to check for AI on AI collision.
+ * @param i Int containing the index of e. Used for excluding self collision when checking for AI on AI collision.
+ * @param collidableArray Array containing all collidable tiles.
+ * @param delta tick time.
+ */
 void Physics::AIMovement(AIEnemies* e, PlayerObject* p, std::vector<AIEnemies*>* AIVector, int i, int** collidableArray, float delta) {
     //This function handles movement to the left or to the right. The object will gradually reach its max velocity
     //which it is limited by, and also gradually slow down at different rates wether one tries to move the
     //object to the other direction or not.
 
-    //Checks if player should be hurt or not
+    //Checks if object should be hurt or not
     Hurt(p, e, &i, AIVector);
 
     if(e->GetAIColliding() != 5)
@@ -430,7 +452,17 @@ void Physics::AIMovement(AIEnemies* e, PlayerObject* p, std::vector<AIEnemies*>*
 }
 
 
-//Gravity for AI
+/**
+ * This function will make the object move vertically. The object is limited by its own
+ * jumping strength (specified in the objects variables) and the gravity.
+ * It will also stop accelerating beyond a specified maximum falling velocity,
+ * which is meant to simulate the wind resistance we have here on earth.
+ * The function checks every pixel it moves the object for collision, and
+ * avoids moving it through anything collidable.
+ * @param e The object going through the code, an enemy in this case.
+ * @param collidableArray An array of all collidable tiles.
+ * @param delta tick time.
+ */
 void Physics::AIGravity(AIEnemies* e, int** collidableArray, float delta)
 {
     //Gravity Start-----------------------------------------------------------------------------------------------------
@@ -525,24 +557,24 @@ void Physics::AIGravity(AIEnemies* e, int** collidableArray, float delta)
 
 /**
  * Function that checks if there is a horisontal collision, it also makes ai jump and informs miniboss of nearby pits.
- * @param e the player
+ * @param e the object
  * @param collidabletiles Map with all collidable tiles
- * @return True if there is a block infront of player, false if not
+ * @return True if there is a block infront of object, false if not
  */
 bool Physics::AIHorisontalCollision(AIEnemies* e, int** collidableArray)
 {
-    int upperPlayerYArrayCoord = ((e->GetPositionY() -5) / 32) >0? (e->GetPositionY()-5)/32 :0; //Experimental bug fix
+    int upperObjectYArrayCoord = ((e->GetPositionY() -5) / 32) >0? (e->GetPositionY()-5)/32 :0; //Experimental bug fix
     if(e->GetBoss())
     {
-        upperPlayerYArrayCoord = ((e->GetPositionY() +5) / 32) >0? (e->GetPositionY() +5)/32 :0; //Experimental bug fix
+        upperObjectYArrayCoord = ((e->GetPositionY() +5) / 32) >0? (e->GetPositionY() +5)/32 :0; //Experimental bug fix
     }
-    int lowerPlayerArrayCoord = upperPlayerYArrayCoord +1;
-    int playerWestCoord = (e->GetPositionX() / 32);
-    int playerEastCoord = playerWestCoord +1;
+    int lowerObjectArrayCoord = upperObjectYArrayCoord +1;
+    int ObjectWestCoord = (e->GetPositionX() / 32);
+    int ObjectEastCoord = ObjectWestCoord +1;
 
 
-    if((e->GetMoveSpeedL() > 0 && (collidableArray[upperPlayerYArrayCoord][playerWestCoord] || collidableArray[lowerPlayerArrayCoord][playerWestCoord]))
-       || (e->GetMoveSpeedR() > 0 && (collidableArray[upperPlayerYArrayCoord][playerEastCoord] || collidableArray[lowerPlayerArrayCoord][playerEastCoord])))
+    if((e->GetMoveSpeedL() > 0 && (collidableArray[upperObjectYArrayCoord][ObjectWestCoord] || collidableArray[lowerObjectArrayCoord][ObjectWestCoord]))
+       || (e->GetMoveSpeedR() > 0 && (collidableArray[upperObjectYArrayCoord][ObjectEastCoord] || collidableArray[lowerObjectArrayCoord][ObjectEastCoord])))
     {
         e->SetUpKey(true);
         return true;
@@ -552,26 +584,26 @@ bool Physics::AIHorisontalCollision(AIEnemies* e, int** collidableArray)
 
 
 /*************************************************************
- * checks if player is in touch with a collidable tile beneath
- * @param e the player
+ * checks if object is in touch with a collidable tile beneath
+ * @param e the object
  * @param collidableArray 2d array with all collidable tiles
  * @return true if on top of a tile, else false
  */
 bool Physics::AIGrounded(AIEnemies* e, int** collidableArray)
 {
-    int playerArrayCoordX = (e->GetPositionX() + 16) / 32;
-    int playerSouthCoord = (e->GetPositionY() + e->GetSizeHeight()/2 +3) / 32;
+    int ObjectArrayCoordX = (e->GetPositionX() + 16) / 32;
+    int ObjectSouthCoord = (e->GetPositionY() + e->GetSizeHeight()/2 +3) / 32;
 
     if(e->GetBoss())
     {
-        playerArrayCoordX = (e->GetPositionX() + (e->GetSizeWidth()/2)) / 32;
-        playerSouthCoord = (e->GetPositionY() + 100) / 32;
-        //player southcord: +43 is underground, +44 is above ground. Need float.
+        ObjectArrayCoordX = (e->GetPositionX() + (e->GetSizeWidth()/2)) / 32;
+        ObjectSouthCoord = (e->GetPositionY() + 100) / 32;
+        //Object southcord: +43 is underground, +44 is above ground. Need float.
     }
 
 
 
-    if(e->GetApexCheck() == 1 && collidableArray[playerSouthCoord][playerArrayCoordX] != 0)
+    if(e->GetApexCheck() == 1 && collidableArray[ObjectSouthCoord][ObjectArrayCoordX] != 0)
     {
         return true;
     }
@@ -579,17 +611,17 @@ bool Physics::AIGrounded(AIEnemies* e, int** collidableArray)
 }
 
 /*******************************************************||
- * Checks if player "head" is in touch with a tile above
- * @param e the player
+ * Checks if objects "head" is in touch with a tile above
+ * @param e the object
  * @param collidableArray 2d array with all collidable tiles
  * @return true if in touch with tile above, else false
  */
 bool Physics::AIRoofed(AIEnemies* e, int** collidableArray)
 {
-    int playerArrayCoordX = (e->GetPositionX() + 17) / 32;
-    int playerNorthCoord = (e->GetPositionY()+30 / 32)>0?(e->GetPositionY()+30)/32 -1:0;
+    int ObjectArrayCoordX = (e->GetPositionX() + 17) / 32;
+    int ObjectNorthCoord = (e->GetPositionY()+30 / 32)>0?(e->GetPositionY()+30)/32 -1:0;
 
-    if(collidableArray[playerNorthCoord][playerArrayCoordX] != 0)
+    if(collidableArray[ObjectNorthCoord][ObjectArrayCoordX] != 0)
     {
         return true;
     }
@@ -608,7 +640,7 @@ bool Physics::AIRoofed(AIEnemies* e, int** collidableArray)
  *  1 = From the right
  *  2 = From above
  *  3 = From beneath
- * @param p Player
+ * @param p Player character
  * @param e Selected AI
  * @param i The index of the selected AI(to hinder self colliding)
  * @param AIVector The whole vector of all the AI
@@ -623,23 +655,25 @@ void Physics::Hurt(PlayerObject*p, AIEnemies* e, int* i, std::vector<AIEnemies*>
     if(e->GetBoss())
     {
         int exright= e->GetPositionX() + e->GetSizeWidth()/2;
-        int exleft = exright -e->GetSizeWidth()/4;
+        int exleft = exright -e->GetSizeWidth()/2.5;
         ey = e->GetPositionY() + e->GetSizeHeight()/2;
 
         if((px - exleft < p->GetSizeWidth() && px - exleft > -p->GetSizeWidth()) &&
            (py - ey < p->GetSizeHeight() && py - ey > -p->GetSizeHeight()))
         {
-            if(px < ex &&  ex - px > ey - py)
-                p->SetPlayerHurt(0);
-            else if(px > ex && px - ex > ey - py)
-                p->SetPlayerHurt(1);
-            else if(py < ey)
+            if(py < ey)
             {
                 p->PlayerSoundEnemyLanded();
                 p->SetPlayerHurt(2);
-                e->health.Hit(e->health.GetOriginalLifePoints());
+                e->health.Hit(100);
                 e->GotHurt(e, p);
             }
+
+            else if(px < ex &&  ex - px > ey - py)
+                p->SetPlayerHurt(0);
+            else if(px > ex && px - ex > ey - py)
+                p->SetPlayerHurt(1);
+
 
             else
                 p->SetPlayerHurt(3);
@@ -656,13 +690,12 @@ void Physics::Hurt(PlayerObject*p, AIEnemies* e, int* i, std::vector<AIEnemies*>
             {
                 p->PlayerSoundEnemyLanded();
                 p->SetPlayerHurt(2);
-                e->health.Hit(e->health.GetOriginalLifePoints());
+                e->health.Hit(100);
                 e->GotHurt(e, p);
             }
 
             else
                 p->SetPlayerHurt(3);
-
         }
     }
 
@@ -678,7 +711,7 @@ void Physics::Hurt(PlayerObject*p, AIEnemies* e, int* i, std::vector<AIEnemies*>
         {
             p->PlayerSoundEnemyLanded();
             p->SetPlayerHurt(2);
-            e->health.Hit(e->health.GetOriginalLifePoints());
+            e->health.Hit(100);
             e->GotHurt(e, p);
         }
 
@@ -753,7 +786,17 @@ void Physics::AISelfCollision(AIEnemies* e, int* i, std::vector<AIEnemies*>* AIV
 
 
 
-
+/**
+ * This function handles movement to the left or to the right.
+ * The object will gradually reach its max velocity
+ * which it is limited by, and also gradually slow down at different
+ * rates wether one tries to move the
+ * object to the other direction or not. It is limited by collision.
+ * Known bug: will skip through walls at high velocities.
+ * @param p the object.
+ * @param collidableArray Array of collidable tiles to be used in collision detection-
+ * @param delta tick time.
+ */
 void Physics::PrincessMovement(PrincessObject* p, int** collidableArray, float delta) {
     //This function handles movement to the left or to the right. The object will gradually reach its max velocity
     //which it is limited by, and also gradually slow down at different rates wether one tries to move the
@@ -855,7 +898,17 @@ void Physics::PrincessMovement(PrincessObject* p, int** collidableArray, float d
 }
 
 
-//Gravity for player
+/**
+ * This function will make the object move vertically. The object is limited by its own
+ * jumping strength (specified in the objects variables) and the gravity.
+ * It will also stop accelerating beyond a specified maximum falling velocity,
+ * which is meant to simulate the wind resistance we have here on earth.
+ * The function checks every pixel it moves the object for collision, and
+ * avoids moving it through anything collidable.
+ * @param p the object.
+ * @param collidableArray Array of collidable tiles, to be used for collision detection.
+ * @param delta tick time.
+ */
 void Physics::PrincessGravity(PrincessObject* p, int** collidableArray, float delta)
 {
     //Gravity Start-----------------------------------------------------------------------------------------------------
@@ -952,27 +1005,27 @@ void Physics::PrincessGravity(PrincessObject* p, int** collidableArray, float de
 
 /**
  * Function that checks if there is a horisontal collision
- * @param p the player
+ * @param p the object
  * @param collidableArray 2D array with all collidable tiles
- * @return True if there is a block infront of player, false if not
+ * @return True if there is a block infront of object, false if not
  */
 bool Physics::PrincessHorisontalCollision(PrincessObject* p, int** collidableArray)
 {
-    int upperPlayerYArrayCoord = (p->GetPositionY() / 32) >0? (p->GetPositionY()+17)/32 :0; //Experimental bug fix
-    int lowerPlayerArrayCoord = upperPlayerYArrayCoord +1;
-    int playerWestCoord = (p->GetPositionX() / 32);
-    int playerEastCoord = playerWestCoord +1;
+    int upperObjectYArrayCoord = (p->GetPositionY() / 32) >0? (p->GetPositionY()+17)/32 :0; //Experimental bug fix
+    int lowerObjectArrayCoord = upperObjectYArrayCoord +1;
+    int ObjectWestCoord = (p->GetPositionX() / 32);
+    int ObjectEastCoord = ObjectWestCoord +1;
 
-    if((p->GetMoveSpeedL() > 0 && (collidableArray[upperPlayerYArrayCoord][playerWestCoord] || collidableArray[lowerPlayerArrayCoord][playerWestCoord]))
-       || (p->GetMoveSpeedR() > 0 && (collidableArray[upperPlayerYArrayCoord][playerEastCoord] || collidableArray[lowerPlayerArrayCoord][playerEastCoord])))
+    if((p->GetMoveSpeedL() > 0 && (collidableArray[upperObjectYArrayCoord][ObjectWestCoord] || collidableArray[lowerObjectArrayCoord][ObjectWestCoord]))
+       || (p->GetMoveSpeedR() > 0 && (collidableArray[upperObjectYArrayCoord][ObjectEastCoord] || collidableArray[lowerObjectArrayCoord][ObjectEastCoord])))
     {
         p->SetUpKey(true);
         return true;
     }
     return false;
     /*
-    if((p->GetMoveSpeedL() > 0 && (collidableArray[upperPlayerYArrayCoord][playerWestCoord] || collidableArray[lowerPlayerArrayCoord][playerWestCoord]))
-       || (p->GetMoveSpeedR() > 0 && (collidableArray[upperPlayerYArrayCoord][playerEastCoord] || collidableArray[lowerPlayerArrayCoord][playerEastCoord])))
+    if((p->GetMoveSpeedL() > 0 && (collidableArray[upperObjectYArrayCoord][ObjectWestCoord] || collidableArray[lowerObjectArrayCoord][ObjectWestCoord]))
+       || (p->GetMoveSpeedR() > 0 && (collidableArray[upperObjectYArrayCoord][ObjectEastCoord] || collidableArray[lowerObjectArrayCoord][ObjectEastCoord])))
     {
         return true;
     }
@@ -981,18 +1034,18 @@ bool Physics::PrincessHorisontalCollision(PrincessObject* p, int** collidableArr
 
 
 /*************************************************************
- * checks if player is in touch with a collidable tile beneath
- * @param p the player
+ * checks if object is in touch with a collidable tile beneath
+ * @param p the object
  * @param collidableArray 2d array with all collidable tiles
  * @return true if on top of a tile, else false
  */
 bool Physics::PrincessGrounded(PrincessObject* p, int** collidableArray)
 {
-    int playerArrayCoordX = (p->GetPositionX() + 17) / 32;
-    int playerSouthCoord = (p->GetPositionY() / 32)>0? (p->GetPositionY()+50) / 32 :0;
+    int ObjectArrayCoordX = (p->GetPositionX() + 17) / 32;
+    int ObjectSouthCoord = (p->GetPositionY() / 32)>0? (p->GetPositionY()+50) / 32 :0;
 
-    return p->GetApexCheck() && collidableArray[playerSouthCoord][playerArrayCoordX];
-    /*if(p->GetApexCheck()&& collidableArray[playerSouthCoord][playerArrayCoordX])
+    return p->GetApexCheck() && collidableArray[ObjectSouthCoord][ObjectArrayCoordX];
+    /*if(p->GetApexCheck()&& collidableArray[ObjectSouthCoord][ObjectArrayCoordX])
     {
         return true;
     }
@@ -1000,17 +1053,17 @@ bool Physics::PrincessGrounded(PrincessObject* p, int** collidableArray)
 }
 
 /*******************************************************
- * Checks if player "head" is in touch with a tile above
- * @param p the player
+ * Checks if object "head" is in touch with a tile above
+ * @param p the object
  * @param collidableArray 2d array with all collidable tiles
  * @return true if in touch with tile above, else false
  */
 bool Physics::PrincessRoofed(PrincessObject* p, int** collidableArray)
 {
-    int playerArrayCoordX = (p->GetPositionX() +17) / 32;
-    int playerNorthCoord = (p->GetPositionY() / 32)>0?(p->GetPositionY()+30)/32 -1:0;
+    int ObjectArrayCoordX = (p->GetPositionX() +17) / 32;
+    int ObjectNorthCoord = (p->GetPositionY() / 32)>0?(p->GetPositionY()+30)/32 -1:0;
 
-    if(collidableArray[playerNorthCoord][playerArrayCoordX] != 0)
+    if(collidableArray[ObjectNorthCoord][ObjectArrayCoordX] != 0)
     {
         return true;
     }

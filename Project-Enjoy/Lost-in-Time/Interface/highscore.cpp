@@ -84,11 +84,11 @@ void Highscore::LoadHighScore()
         {
             std::getline(highscoreFile, playerName);
             std::getline(highscoreFile, temp);
-            std::cout << temp << std::endl;
+            //std::cout << temp << std::endl;
             playerScore = std::stoul(temp);
             highscoreMap->emplace(playerScore, playerName);
         }
     }
 
-    std::cout << "Loaded highscore" << std::endl;
+    //std::cout << "Loaded highscore" << std::endl;
 }

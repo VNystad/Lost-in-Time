@@ -892,18 +892,18 @@ void TestApp::LoadImages()
     int nothing;
     heart = LoadTexture("data/victory/heart.png",nothing);
 
-    save1 = LoadTexture("data/loadgame/save1.png", amountOfSaves);
-    save2 = LoadTexture("data/loadgame/save2.png", amountOfSaves);
-    save3 = LoadTexture("data/loadgame/save3.png", amountOfSaves);
-    save1Selected = LoadTexture("data/loadgame/save1selected.png", nothing);
-    save2Selected = LoadTexture("data/loadgame/save2selected.png", nothing);
-    save3Selected = LoadTexture("data/loadgame/save3selected.png", nothing);
+    save1 = LoadTexture("data/loadgame/Save1.png", amountOfSaves);
+    save2 = LoadTexture("data/loadgame/Save2.png", amountOfSaves);
+    save3 = LoadTexture("data/loadgame/Save3.png", amountOfSaves);
+    save1Selected = LoadTexture("data/loadgame/Save1Selected.png", nothing);
+    save2Selected = LoadTexture("data/loadgame/Save2Selected.png", nothing);
+    save3Selected = LoadTexture("data/loadgame/Save3Selected.png", nothing);
 
     resumeGame = LoadTexture("data/EscMenu/ResumeGame.png", amountOfEscOptions);
     resumeGameSelected = LoadTexture("data/EscMenu/ResumeGameSelected.png", nothing);
-    mainMenu = LoadTexture("data/EscMenu/MainMenu.png", amountOfEscOptions);
+    mainMenu = LoadTexture("data/EscMenu/mainmenu.png", amountOfEscOptions);
     mainMenuSelected = LoadTexture("data/EscMenu/MainMenuSelected.png", nothing);
-    saveGame = LoadTexture("data/EscMenu/SaveGame.png", amountOfEscOptions);
+    saveGame = LoadTexture("data/EscMenu/savegame.png", amountOfEscOptions);
     saveGameSelected = LoadTexture("data/EscMenu/SaveGameSelected.png", nothing);
     exitGame = LoadTexture("data/main-menu/ExitGame.png", amountOfEscOptions);
     exitGameSelected = LoadTexture("data/main-menu/ExitGameSelected.png", nothing);

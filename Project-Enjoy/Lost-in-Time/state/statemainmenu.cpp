@@ -230,7 +230,7 @@ bool StateMainMenu::loadMedia()
     LoadGameSelectedTexture = LoadTexture("data/main-menu/LoadGameSelected.png");
 
     HighscoreTexture = LoadTexture("data/main-menu/Highscore.png");
-    HighscoreSelectedTexture = LoadTexture("data/main-menu/HighscoreSelected.png");
+    HighscoreSelectedTexture = LoadTexture("data/main-menu/HighScoreSelected.png");
 
     HowToPlayTexture = LoadTexture("data/main-menu/HowToPlay2.png");
     HowToPlaySelectedTexture = LoadTexture("data/main-menu/HowToPlaySelected.png");

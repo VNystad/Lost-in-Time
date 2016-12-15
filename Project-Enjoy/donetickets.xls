@@ -1,0 +1,1237 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<title>JIRA</title>
+<style type="text/css">
+table {
+    mso-displayed-decimal-separator:"\.";
+    mso-displayed-thousand-separator:"\,";
+}
+body
+{
+    margin: 0px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color:black;
+}
+
+</style>
+<META HTTP-EQUIV="Content-Type" Content="application/vnd.ms-excel; charset=UTF-8">
+<!-- JRA-7598 - ensure fields (e.g. description) occupy only one cell - even fields containing newlines. -->
+<!--
+Vertical align all cells to the top, in order to align all issue rows of issuetable to the top,
+since Excel does not use or save the css files it is hardcoded here.
+-->
+<style>
+@page
+{
+mso-page-orientation:landscape;
+margin:.25in .25in .5in .25in;
+mso-header-margin:.5in;
+mso-footer-margin:.25in;
+mso-footer-data:"&R&P of &N";
+mso-horizontal-page-align:center;
+mso-vertical-page-align:center;
+}
+
+td.issuekey,
+td.issuetype,
+td.status {
+    mso-style-parent: "";
+    mso-number-format: \@;
+    text-align: left;
+}
+br
+{
+    mso-data-placement:same-cell;
+}
+
+td
+{
+    vertical-align: top;
+}
+</style>
+
+<!--[if gte mso 9]><xml>
+<x:ExcelWorkbook>
+<x:ExcelWorksheets>
+<x:ExcelWorksheet>
+<x:Name>general_report</x:Name>
+<x:WorksheetOptions>
+<x:Print>
+<x:ValidPrinterInfo/>
+</x:Print>
+</x:WorksheetOptions>
+</x:ExcelWorksheet>
+</x:ExcelWorksheets>
+</x:ExcelWorkbook>
+</xml><![endif]-->
+</head>
+<body>
+
+<table border="1">
+    <tr bgcolor="#205081" height="30">
+        <td colspan="11">
+            <img src="https://tools.uia.no/jira/images/icon-jira-logo.png" width="57" height="30" border="0" alt="JIRA">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="11">
+            <a href="https://tools.uia.no/jira/issues/?jql=project+%3D+PE+AND+resolution+%3D+Done+ORDER+BY+priority+DESC%2C+updated+DESC">JIRA</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="11">
+            Displaying <strong>38</strong> issues at <strong>15/Dec/16 12:37 PM</strong>.
+        </td>
+    </tr>
+</table>
+
+
+
+
+                                        <table id="issuetable"  border="1" cellpadding="3" cellspacing="1" width="100%">
+                        <thead>
+        <tr class="rowHeader">
+            
+                                                            <th class="colHeaderLink headerrow-issuetype" data-id="issuetype">
+                            Issue Type
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuekey" data-id="issuekey">
+                            Key
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-summary" data-id="summary">
+                            Summary
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-assignee" data-id="assignee">
+                            Assignee
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-reporter" data-id="reporter">
+                            Reporter
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-priority" data-id="priority">
+                            Priority
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-status" data-id="status">
+                            Status
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-resolution" data-id="resolution">
+                            Resolution
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-created" data-id="created">
+                            Created
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-updated" data-id="updated">
+                            Updated
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-duedate" data-id="duedate">
+                            Due Date
+                                                    </th>
+                                                                    </tr>
+    </thead>
+    <tbody>
+                    
+
+                <tr id="issuerow20173" rel="20173" data-issuekey="PE-28" class="issuerow">
+                                            <td class="issuetype">    Task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-28" href="https://tools.uia.no/jira/browse/PE-28">PE-28</a>
+</td>
+                                            <td class="summary"><p>
+                Check surroundings for collision with movable objects
+    </p>
+</td>
+                                            <td class="assignee">            Vebjørn Nystad
+    </td>
+                                            <td class="reporter">            Vebjørn Nystad
+    </td>
+                                            <td class="priority">           Critical
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 28/Oct/16 11:40 PM </td>
+                                            <td class="updated"> 02/Dec/16 11:26 AM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow20487" rel="20487" data-issuekey="PE-37" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-37" href="https://tools.uia.no/jira/browse/PE-37">PE-37</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-36</span>
+                Level 1 - Stone Age Design
+    </p>
+</td>
+                                            <td class="assignee">            Vetle Nikolai Prebensen Norman
+    </td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 06/Nov/16 12:03 PM </td>
+                                            <td class="updated"> 14/Dec/16 9:05 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow21505" rel="21505" data-issuekey="PE-53" class="issuerow">
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-53" href="https://tools.uia.no/jira/browse/PE-53">PE-53</a>
+</td>
+                                            <td class="summary"><p>
+                Add sound effects
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Vetle Nikolai Prebensen Norman
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 11/Dec/16 7:46 PM </td>
+                                            <td class="updated"> 14/Dec/16 9:02 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow20341" rel="20341" data-issuekey="PE-29" class="issuerow">
+                                            <td class="issuetype">    Task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-29" href="https://tools.uia.no/jira/browse/PE-29">PE-29</a>
+</td>
+                                            <td class="summary"><p>
+                Animation Class
+    </p>
+</td>
+                                            <td class="assignee">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="reporter">            Vebjørn Nystad
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 02/Nov/16 2:19 PM </td>
+                                            <td class="updated"> 14/Dec/16 4:12 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19456" rel="19456" data-issuekey="PE-4" class="issuerow">
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-4" href="https://tools.uia.no/jira/browse/PE-4">PE-4</a>
+</td>
+                                            <td class="summary"><p>
+                States
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Vebjørn Nystad
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 17/Oct/16 11:44 AM </td>
+                                            <td class="updated"> 14/Dec/16 3:18 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow20486" rel="20486" data-issuekey="PE-36" class="issuerow">
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-36" href="https://tools.uia.no/jira/browse/PE-36">PE-36</a>
+</td>
+                                            <td class="summary"><p>
+                Level 1 - Stone Age
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 06/Nov/16 12:01 PM </td>
+                                            <td class="updated"> 14/Dec/16 3:18 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow20488" rel="20488" data-issuekey="PE-38" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-38" href="https://tools.uia.no/jira/browse/PE-38">PE-38</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-36</span>
+                Level 1 - Stone Age Coding
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 06/Nov/16 12:04 PM </td>
+                                            <td class="updated"> 14/Dec/16 3:17 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow20837" rel="20837" data-issuekey="PE-43" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-43" href="https://tools.uia.no/jira/browse/PE-43">PE-43</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-40</span>
+                Health Class
+    </p>
+</td>
+                                            <td class="assignee">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 14/Nov/16 2:55 PM </td>
+                                            <td class="updated"> 14/Dec/16 12:52 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow21043" rel="21043" data-issuekey="PE-47" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-47" href="https://tools.uia.no/jira/browse/PE-47">PE-47</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-46</span>
+                Highscore
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 19/Nov/16 12:24 PM </td>
+                                            <td class="updated"> 14/Dec/16 10:38 AM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow21498" rel="21498" data-issuekey="PE-51" class="issuerow">
+                                            <td class="issuetype">    Task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-51" href="https://tools.uia.no/jira/browse/PE-51">PE-51</a>
+</td>
+                                            <td class="summary"><p>
+                Winning condition
+    </p>
+</td>
+                                            <td class="assignee">            Vebjørn Nystad
+    </td>
+                                            <td class="reporter">            Vebjørn Nystad
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 11/Dec/16 11:01 AM </td>
+                                            <td class="updated"> 13/Dec/16 9:46 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19458" rel="19458" data-issuekey="PE-6" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-6" href="https://tools.uia.no/jira/browse/PE-6">PE-6</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-4</span>
+                MainMenuState
+    </p>
+</td>
+                                            <td class="assignee">            Vebjørn Nystad
+    </td>
+                                            <td class="reporter">            Vebjørn Nystad
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 17/Oct/16 11:46 AM </td>
+                                            <td class="updated"> 13/Dec/16 9:44 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19582" rel="19582" data-issuekey="PE-14" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-14" href="https://tools.uia.no/jira/browse/PE-14">PE-14</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-10</span>
+                Jump
+    </p>
+</td>
+                                            <td class="assignee">            Martin Bråten
+    </td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 19/Oct/16 4:25 PM </td>
+                                            <td class="updated"> 12/Dec/16 8:49 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow20370" rel="20370" data-issuekey="PE-31" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-31" href="https://tools.uia.no/jira/browse/PE-31">PE-31</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-20</span>
+                Monkey Minions Code
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 03/Nov/16 10:45 AM </td>
+                                            <td class="updated"> 12/Dec/16 12:09 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19809" rel="19809" data-issuekey="PE-20" class="issuerow">
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-20" href="https://tools.uia.no/jira/browse/PE-20">PE-20</a>
+</td>
+                                            <td class="summary"><p>
+                Enemies lvl 1
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 24/Oct/16 9:36 AM </td>
+                                            <td class="updated"> 12/Dec/16 12:09 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow20968" rel="20968" data-issuekey="PE-44" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-44" href="https://tools.uia.no/jira/browse/PE-44">PE-44</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-20</span>
+                Minion Handler
+    </p>
+</td>
+                                            <td class="assignee">            Martin Bråten
+    </td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 17/Nov/16 11:34 AM </td>
+                                            <td class="updated"> 12/Dec/16 12:08 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19810" rel="19810" data-issuekey="PE-21" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-21" href="https://tools.uia.no/jira/browse/PE-21">PE-21</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-20</span>
+                Minion
+    </p>
+</td>
+                                            <td class="assignee">            Martin Bråten
+    </td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 24/Oct/16 9:37 AM </td>
+                                            <td class="updated"> 12/Dec/16 12:08 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow21506" rel="21506" data-issuekey="PE-54" class="issuerow">
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-54" href="https://tools.uia.no/jira/browse/PE-54">PE-54</a>
+</td>
+                                            <td class="summary"><p>
+                Move background along with the player
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Vetle Nikolai Prebensen Norman
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 11/Dec/16 7:47 PM </td>
+                                            <td class="updated"> 11/Dec/16 8:01 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow20369" rel="20369" data-issuekey="PE-30" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-30" href="https://tools.uia.no/jira/browse/PE-30">PE-30</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-20</span>
+                Monkey Minions Design
+    </p>
+</td>
+                                            <td class="assignee">            Vetle Nikolai Prebensen Norman
+    </td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 03/Nov/16 10:44 AM </td>
+                                            <td class="updated"> 11/Dec/16 7:44 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow21042" rel="21042" data-issuekey="PE-46" class="issuerow">
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-46" href="https://tools.uia.no/jira/browse/PE-46">PE-46</a>
+</td>
+                                            <td class="summary"><p>
+                Clock/Timer
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 19/Nov/16 12:22 PM </td>
+                                            <td class="updated"> 10/Dec/16 3:46 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow20460" rel="20460" data-issuekey="PE-35" class="issuerow">
+                                            <td class="issuetype">    Task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-35" href="https://tools.uia.no/jira/browse/PE-35">PE-35</a>
+</td>
+                                            <td class="summary"><p>
+                Physics class
+    </p>
+</td>
+                                            <td class="assignee">            Vebjørn Nystad
+    </td>
+                                            <td class="reporter">            Vebjørn Nystad
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 04/Nov/16 5:02 PM </td>
+                                            <td class="updated"> 08/Dec/16 12:36 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow20646" rel="20646" data-issuekey="PE-41" class="issuerow">
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-41" href="https://tools.uia.no/jira/browse/PE-41">PE-41</a>
+</td>
+                                            <td class="summary"><p>
+                Camera
+    </p>
+</td>
+                                            <td class="assignee">            Vetle Nikolai Prebensen Norman
+    </td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 09/Nov/16 9:15 PM </td>
+                                            <td class="updated"> 23/Nov/16 10:05 AM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19751" rel="19751" data-issuekey="PE-18" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-18" href="https://tools.uia.no/jira/browse/PE-18">PE-18</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-17</span>
+                Level 1 Demo Build Design
+    </p>
+</td>
+                                            <td class="assignee">            Vetle Nikolai Prebensen Norman
+    </td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 21/Oct/16 9:52 AM </td>
+                                            <td class="updated"> 23/Nov/16 10:00 AM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19750" rel="19750" data-issuekey="PE-17" class="issuerow">
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-17" href="https://tools.uia.no/jira/browse/PE-17">PE-17</a>
+</td>
+                                            <td class="summary"><p>
+                Level 1 Demo Build v01
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 21/Oct/16 9:52 AM </td>
+                                            <td class="updated"> 16/Nov/16 3:19 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19752" rel="19752" data-issuekey="PE-19" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-19" href="https://tools.uia.no/jira/browse/PE-19">PE-19</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-17</span>
+                Level 1 Demo Build Coding
+    </p>
+</td>
+                                            <td class="assignee">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 21/Oct/16 9:53 AM </td>
+                                            <td class="updated"> 16/Nov/16 3:19 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19578" rel="19578" data-issuekey="PE-10" class="issuerow">
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-10" href="https://tools.uia.no/jira/browse/PE-10">PE-10</a>
+</td>
+                                            <td class="summary"><p>
+                Player Character
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 19/Oct/16 4:20 PM </td>
+                                            <td class="updated"> 10/Nov/16 12:06 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19581" rel="19581" data-issuekey="PE-13" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-13" href="https://tools.uia.no/jira/browse/PE-13">PE-13</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-10</span>
+                Forward &amp; Backward
+    </p>
+</td>
+                                            <td class="assignee">            Martin Bråten
+    </td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 19/Oct/16 4:24 PM </td>
+                                            <td class="updated"> 31/Oct/16 9:24 AM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19459" rel="19459" data-issuekey="PE-7" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-7" href="https://tools.uia.no/jira/browse/PE-7">PE-7</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-4</span>
+                StateMachine
+    </p>
+</td>
+                                            <td class="assignee">            Vebjørn Nystad
+    </td>
+                                            <td class="reporter">            Vebjørn Nystad
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 17/Oct/16 11:47 AM </td>
+                                            <td class="updated"> 21/Oct/16 7:59 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19483" rel="19483" data-issuekey="PE-9" class="issuerow">
+                                            <td class="issuetype">    Task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-9" href="https://tools.uia.no/jira/browse/PE-9">PE-9</a>
+</td>
+                                            <td class="summary"><p>
+                Make the player figure
+    </p>
+</td>
+                                            <td class="assignee">            Vetle Nikolai Prebensen Norman
+    </td>
+                                            <td class="reporter">            Vebjørn Nystad
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 17/Oct/16 12:30 PM </td>
+                                            <td class="updated"> 21/Oct/16 10:48 AM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19627" rel="19627" data-issuekey="PE-16" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-16" href="https://tools.uia.no/jira/browse/PE-16">PE-16</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-9</span>
+                Forward &amp; Backward animation
+    </p>
+</td>
+                                            <td class="assignee">            Vetle Nikolai Prebensen Norman
+    </td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 20/Oct/16 10:43 AM </td>
+                                            <td class="updated"> 20/Oct/16 10:44 AM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19425" rel="19425" data-issuekey="PE-1" class="issuerow">
+                                            <td class="issuetype">    Task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-1" href="https://tools.uia.no/jira/browse/PE-1">PE-1</a>
+</td>
+                                            <td class="summary"><p>
+                Programmerings regler
+    </p>
+</td>
+                                            <td class="assignee">            Vebjørn Nystad
+    </td>
+                                            <td class="reporter">            Vebjørn Nystad
+    </td>
+                                            <td class="priority">           Major
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 17/Oct/16 10:49 AM </td>
+                                            <td class="updated"> 17/Oct/16 10:55 AM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow20371" rel="20371" data-issuekey="PE-32" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-32" href="https://tools.uia.no/jira/browse/PE-32">PE-32</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-20</span>
+                Monkey Boss Code
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Minor
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 03/Nov/16 10:45 AM </td>
+                                            <td class="updated"> 14/Dec/16 4:29 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow20645" rel="20645" data-issuekey="PE-40" class="issuerow">
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-40" href="https://tools.uia.no/jira/browse/PE-40">PE-40</a>
+</td>
+                                            <td class="summary"><p>
+                H U D
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Minor
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 09/Nov/16 9:13 PM </td>
+                                            <td class="updated"> 14/Dec/16 3:17 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow20372" rel="20372" data-issuekey="PE-33" class="issuerow">
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-33" href="https://tools.uia.no/jira/browse/PE-33">PE-33</a>
+</td>
+                                            <td class="summary"><p>
+                Load Game
+    </p>
+</td>
+                                            <td class="assignee">            Vebjørn Nystad
+    </td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Minor
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 03/Nov/16 10:46 AM </td>
+                                            <td class="updated"> 14/Dec/16 10:38 AM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow21504" rel="21504" data-issuekey="PE-52" class="issuerow">
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-52" href="https://tools.uia.no/jira/browse/PE-52">PE-52</a>
+</td>
+                                            <td class="summary"><p>
+                Add background
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Vetle Nikolai Prebensen Norman
+    </td>
+                                            <td class="priority">           Minor
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 11/Dec/16 7:45 PM </td>
+                                            <td class="updated"> 11/Dec/16 8:00 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow21507" rel="21507" data-issuekey="PE-55" class="issuerow">
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-55" href="https://tools.uia.no/jira/browse/PE-55">PE-55</a>
+</td>
+                                            <td class="summary"><p>
+                HUD
+    </p>
+</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="reporter">            Vetle Nikolai Prebensen Norman
+    </td>
+                                            <td class="priority">           Minor
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 11/Dec/16 7:53 PM </td>
+                                            <td class="updated"> 11/Dec/16 8:00 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow21177" rel="21177" data-issuekey="PE-48" class="issuerow">
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-48" href="https://tools.uia.no/jira/browse/PE-48">PE-48</a>
+</td>
+                                            <td class="summary"><p>
+                Music
+    </p>
+</td>
+                                            <td class="assignee">            Vetle Nikolai Prebensen Norman
+    </td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Minor
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 23/Nov/16 9:30 AM </td>
+                                            <td class="updated"> 11/Dec/16 7:57 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow19811" rel="19811" data-issuekey="PE-22" class="issuerow">
+                                            <td class="issuetype">    Sub-task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-22" href="https://tools.uia.no/jira/browse/PE-22">PE-22</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">PE-20</span>
+                Monkey Boss Design
+    </p>
+</td>
+                                            <td class="assignee">            Vetle Nikolai Prebensen Norman
+    </td>
+                                            <td class="reporter">            Kristoffer Lomeland Magelssen
+    </td>
+                                            <td class="priority">           Minor
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 24/Oct/16 9:37 AM </td>
+                                            <td class="updated"> 11/Dec/16 7:44 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+
+
+                <tr id="issuerow21311" rel="21311" data-issuekey="PE-50" class="issuerow">
+                                            <td class="issuetype">    Task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PE-50" href="https://tools.uia.no/jira/browse/PE-50">PE-50</a>
+</td>
+                                            <td class="summary"><p>
+                Fix all the tons of warnings 29/11/2016
+    </p>
+</td>
+                                            <td class="assignee">            Vebjørn Nystad
+    </td>
+                                            <td class="reporter">            Vebjørn Nystad
+    </td>
+                                            <td class="priority">           Minor
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;">Done</span>    </td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="created"> 29/Nov/16 5:34 PM </td>
+                                            <td class="updated"> 29/Nov/16 5:36 PM </td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                    </tr>
+                </tbody>
+    </table>
+    <div class="end-of-stable-message"></div>
+            <table border="1" >
+<tr>
+    <td bgcolor="#dddddd" colspan="11"><font size="1">
+        Generated at Thu Dec 15 12:37:05 CET 2016 by Kristoffer Lomeland Magelssen using JIRA 7.1.9#71013-sha1:1aa0586d78efb7ed8b3de5c648d4b24912070b66.
+    </font></td>
+</tr>
+</table>
+
+</body>
+</html>

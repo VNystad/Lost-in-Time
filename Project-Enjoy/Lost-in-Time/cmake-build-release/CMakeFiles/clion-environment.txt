@@ -1,2 +1,1 @@
-ToolSet: w64 5.0@E:\Programmer\TheMinGW64\mingw64
-CMake: 3.6.2@E:\Programmer\CLion\CLion 2016.2.2\bin\cmake\bin\cmake.exe
+CMake: 3.6.2@/home/kristoffer/Downloads/clion-2016.2.1/bin/cmake/bin/cmake

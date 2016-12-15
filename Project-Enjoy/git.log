@@ -1,0 +1,147 @@
+5b9c509 Vetle Norman                  2016-12-15 Fixed sound for gorilla
+32ccab2 Martin Bråten                 2016-12-15 Added things in Credits
+626e7f0 Martin Bråten                 2016-12-15 Added cooldown for gorilla noise
+431c956 Kristoffer Lomeland Magelssen 2016-12-15 Made doxygen files
+8d88065 Vetle Norman                  2016-12-15 added some more sound effects, some commenting on functions, and new map
+fc5e0e9 Martin Bråten                 2016-12-15 Fixed esc menu: menu click sound shortened (lots of unneccessary sound) which made the crash bug when quickly changing esc menu option go away. Also the green selected text for esc menu have been properly aligned ontop of red nonselected menu options
+8f641d1 Martin Bråten                 2016-12-15 added something in credits
+2811a5e Martin Bråten                 2016-12-15 Martins second last push? Made it so that the playeranimation for all flipped playeranimations are displayed using the same frame so if a player were to turn, it will have the same pose. When falling, the player will display falling animation, and jumping animation when jumping, and then falling. This is done using variables and the same functions as before. Killing monkeys now awards bonus points: 25 for kill, 100 for making it fall out of the map. Disabled save and load. Added sound effect for menu choices. There is a bug if one were to change option very quickly in the esc menu, but it would most likely not be a problem in release
+37a5a13 Martin Bråten                 2016-12-14 Fixed animation not restarting properly, Martins last push
+1017ded Martin Bråten                 2016-12-14 Reimplemented Kristoffers commenting in Animation, because it as cone
+939437d Martin Bråten                 2016-12-14 Commented all of physics, changed variable names, removed cutscene hearth. And minor Harambe HP boost.
+8be5f46 Martin Bråten                 2016-12-14 Fixing harambe hit box and commenting
+3dbee5e Vetle Norman                  2016-12-14 Added Dialogue, dialogue boxes, dialogue class
+87b5fa2 Kristoffer Lomeland Magelssen 2016-12-14 Cleaned some code in health.h
+b5982a6 Kristoffer Lomeland Magelssen 2016-12-14 Made comments above functions in animation.cpp
+f610fae Martin Bråten                 2016-12-14 Fixed AI, Fixed animations so that first frame is being displayed when other animation starts to play for player
+f99d1fd Kristoffer Lomeland Magelssen 2016-12-14 Fixed picture loading path. Working on windows, but not on linux due to it being strict on capital letter and small letters.
+dbe4e55 Martin Bråten                 2016-12-14 Fixed Princess AI, and Cutscene both characters face each other
+9a85dca Vebjørn Nystad                2016-12-14 load game & savegame now 100%? working, if player loads savegame with EmptySave as playername, game goes back to mainmenu.
+ae250b1 Vebjørn Nystad                2016-12-14 Fixed segment fault on Audio from loadgame
+7494b65 Vebjørn Nystad                2016-12-14 Load game now reads correctly if boss or not
+f8f7abe Vebjørn Nystad                2016-12-13 Decorated some code in Enemy folder
+e428b3f Vebjørn Nystad                2016-12-13 Added highscore to mainmenu, how to play shows up too now. Mainmenu now fully functional! Woohoo!
+5234282 Vebjørn Nystad                2016-12-13 Highscore now working! Woohooogit status Added some comments to functions and above som code
+5784d72 Vebjørn Nystad                2016-12-13 Fixed some unnecessary code in princessobject class
+e37aa65 Martin Bråten                 2016-12-13 Fixed spawning of princess, and improved wall collision for player. Stil buggy when fighting Harambe, but that is not a priority because Harambe should stay at home. Also fixed the skipping of cutscene
+d6f7569 Martin Bråten                 2016-12-13 Made princess AI be deactivated until she spawns, instead of being invisible. Cutscene are now mostly deltabased. Harambe have 2000 hp instead of 3000. Changed Harambe spawn. Changed AI falldamage. Changed princess detection functionality, princess now no longer plays hard to get.
+1ace520 Vebjørn Nystad                2016-12-13 Disabled LoadGame and savegame
+910d817 Vebjørn Nystad                2016-12-13 Fixed menus with new images
+60259d3 Vetle Norman                  2016-12-13 Added Hoe to play text and sprite
+0785adf Vetle Norman                  2016-12-13 Added new textfiles for menus
+3d557a5 Martin Bråten                 2016-12-13 Added txt document Credits for adding credits
+7e3f7f8 Martin Bråten                 2016-12-13 Lost-in-Time
+15d3143 Martin Bråten                 2016-12-13 Added sound that plays when player hurts enemy. Princess slapping sound added. Renamed playertest to playerobject, princess to princessobject, testapp to app.
+2fa7e29 Vebjørn Nystad                2016-12-12 Highscore almost working, saving only 1 score. Changed so that when player picks new game, you have to write in name
+b58b741 Martin Bråten                 2016-12-12 Fixed harambe grounded problems, he is now walking properly. Added land on enemy sound, but i need to find a proper sou
+17a43f5 Martin Bråten                 2016-12-12 Princess now spawns properly, and fabulously climbs stairs. Also playerspawning coords fixed, was using likenamed variables as class variables
+60985c8 Martin Bråten                 2016-12-12 Princess added, functions as AI, but no damage nor collision. Will not jump when crashing into walls
+259373d Martin Bråten                 2016-12-12 Fixed sound
+d7cc4c4 Martin Bråten                 2016-12-12 Added sounds, YAY
+91c1905 Martin Bråten                 2016-12-12 little more animation fix, jump right and left was the same
+754c858 Martin Bråten                 2016-12-12 Fixed Harambe, and some animation.
+6ec9d4e Vetle Norman                  2016-12-12 Added Princess animation sprite
+ab216a0 Kristoffer Lomeland Magelssen 2016-12-12 Fixed boss animation fixed
+045b5b8 Vebjørn Nystad                2016-12-12 Added few more monkeys and changed spawn position.
+ed08070 Martin Bråten                 2016-12-12 Harambe now collides properly. Also he cannot walk away from his territory
+a077dc5 Kristoffer Lomeland Magelssen 2016-12-12 Removed some unneeded lines and fixed healthbar shrinking
+4646288 Vebjørn Nystad                2016-12-12 Timer now placed correctly
+7681576 Vetle Norman                  2016-12-12 Added Sprite for HUD
+6356fe2 Vetle Norman                  2016-12-12 added HUD sprite
+5a0fd2c Kristoffer Lomeland Magelssen 2016-12-11 Fixed on boss animation. Added a left movement animation for boss. Boss model is a bit bugged, floating through the ground
+14b93d6 Martin Bråten                 2016-12-11 Implemented Boss functionality, combined with boss throw
+3258c0d Vebjørn Nystad                2016-12-11 Load game now reads correctly if enemy is boss or not
+6041e02 Vebjørn Nystad                2016-12-11 Boss has now a defensive move to throw a player
+34794ea Vebjørn Nystad                2016-12-11 Boss animation now working decently
+979b478 Martin Bråten                 2016-12-11 Experimental, not working. Will be fixed by vebs. Boss almost implemented
+8cd3b31 Martin Bråten                 2016-12-11 Added jump sound
+945e942 Martin Bråten                 2016-12-11 Showed Vetle where to play jump sound and implementet a variable to hande single playout
+192c92f Vetle Norman                  2016-12-11 Added background and made them moving, added sound effects for certain events, added new map
+2286e72 Vebjørn Nystad                2016-12-11 Player goes now back to mainmenu after a win
+f8ec0eb Vebjørn Nystad                2016-12-11 Added a victory condition, game now finishes when all monkeys dead
+cc64744 Vebjørn Nystad                2016-12-10 In load menu it shows the correct amount of saves
+2dbcbf7 Vebjørn Nystad                2016-12-10 Program now asks player to type in playername when saving, yeeey!
+47ac166 Vebjørn Nystad                2016-12-10 Healthbar now being displayed and is functional!
+1b5597b Vebjørn Nystad                2016-12-10 added font folder
+8373ca2 Vebjørn Nystad                2016-12-10 Timer now working
+bf769a6 Martin Bråten                 2016-12-09 Added seconadary random encounter minion
+8127116 Martin Bråten                 2016-12-09 Minor fix in ai handler within testapp
+511f678 Martin Bråten                 2016-12-09 Minor AI and falldamage bug fix
+99e4604 Vebjørn Nystad                2016-12-09 Load and save is now working.
+de77423 Martin Bråten                 2016-12-08 Made it so vertical movement is calculated based on delta, which means consistent jumping on all PC
+9da3eb8 Martin Bråten                 2016-12-08 Now AI takes falldamage equal to player
+88c3d10 Martin Bråten                 2016-12-08 Added falldamage and moved AIs
+c5bfcf7 Vebjørn Nystad                2016-12-08 Added loadscreen, added EscMenu screen, added SaveGameMenu screen, saving works on this commit
+9159364 Vebjørn Nystad                2016-12-02 Adjusted some if statements on camera movement
+a253b39 Vebjørn Nystad                2016-12-02 Edited the code so we only make 1 window
+6b80f40 Martin Bråten                 2016-12-01 Fixed AI wall collision
+100bb28 Martin Bråten                 2016-12-01 No more jumpy monkeys
+88c5d4e Vebjørn Nystad                2016-11-30 No more buggy jsonfile
+9540e02 Vetle Norman                  2016-11-30 Fixed coding issue and made music loop
+e3f0600 Vetle Norman                  2016-11-30 Added Music, better camera movement and new map
+ccb3932 Vebjørn Nystad                2016-11-30 Adjusted AI Idle animasion to more realistic movements
+98bd74f Vebjørn Nystad                2016-11-30 Merge branch 'master' of ssh://tools.uia.no:7999/dat220_2016/pe
+f597c86 Vebjørn Nystad                2016-11-30 Adjusted idle animation so it looks more realistic
+657cac3 Martin Bråten                 2016-11-30 AI now decently animated
+f9f38d1 Martin Bråten                 2016-11-30 AI no longer collides with itself, with the cost of a warning
+e580c12 Vebjørn Nystad                2016-11-29 Fixed all warnings and added an invisible timer
+3397e0a Martin Bråten                 2016-11-29 Important AI bug fix, the AI placed last in the vector can now die without crashing the game
+841639a Martin Bråten                 2016-11-28 The grand visual patch: Idle both ways, running updated. And platforms fixes
+74d64d3 Martin Bråten                 2016-11-28 Health is now integrated with AI collision (collision between both player and each other). AI cannot hurt each other though, and health is not visible
+7473e07 Kristoffer Lomeland Magelssen 2016-11-28 Did some tweaking to health class
+738a5f8 Kristoffer Lomeland Magelssen 2016-11-24 Changed void Animation() in AI.h to AnimationAI()
+bd5cbf0 Martin Bråten                 2016-11-23 Now with AI cavemen
+027a0a7 Kristoffer Lomeland Magelssen 2016-11-23 Made a class for font load, a class for deathscreen. Debugging healthbar and deathscreen, why won't it draw to the screen.
+75281dc Vebjørn Nystad                2016-11-17  Fixed so background tiles dont get added into collidablearray
+c77f329 Martin Bråten                 2016-11-17 Special just for vebis because he is very special
+00a36dc Martin Bråten                 2016-11-17 Animation now goes from start to right instead of simply through
+61ebccc Kristoffer Lomeland Magelssen 2016-11-17 Finished movement anmiation for player character. Need new animation pictures.
+94aa838 Martin Bråten                 2016-11-17 Minor physics for loop fix
+e4af1c3 Martin Bråten                 2016-11-17 Fixed wall collision. It now does not shake when touching walls. HorisCollision now take direction the player is trying to move into consideration
+fb886d8 Martin Bråten                 2016-11-16 Fixed bug in CD to prevent negative value crash
+4be4868 Kristoffer Lomeland Magelssen 2016-11-16 Fixed segmentation fault in health and animation class.
+765e254 Vebjørn Nystad                2016-11-16 Updated collision detection, uses now 2D array to detect
+76a66ef Kristoffer Lomeland Magelssen 2016-11-15 Merged code. Added health and Animation class. Deleted teststate, gamestate took over the job
+ba192f0 Vetle Norman                  2016-11-15 Camera movement and new test map changed
+7d8d4a8 Vebjørn Nystad                2016-11-15 Merged all code to one file
+e1248fa Kristoffer Lomeland Magelssen 2016-11-10 Merged code, not runnable atm
+5adb627 Martin Bråten                 2016-11-09 Concept not final: Fixed collision detections landing, it now lands on platform and does not fall through. Our CD is based on contact so the solution was to add invisible box beneath visible box
+6526476 Vebjørn Nystad                2016-11-08 Collision working with some bugg
+6f6b384 Kristoffer Lomeland Magelssen 2016-11-07 fixed some links towards the new folders
+86a13c2 Kristoffer Lomeland Magelssen 2016-11-07 Added martintest to main Lost-in-Time project. Re-did some folders. A folder for main menu resources, one for character animation.
+3e6703c Vebjørn Nystad                2016-11-04 made a working, but weird physics class
+164afd2 Vebjørn Nystad                2016-11-03 fixed? with setposition
+caa3efe Vebjørn Nystad                2016-11-03 Martin test dette
+87a7a52 Martin Bråten                 2016-11-02 Added in Other code: jumping mechanism with collidable roof and walls
+7b7e5b7 Martin Bråten                 2016-11-02 Other Code jump collides with roof
+84ba648 Martin Bråten                 2016-11-02 In other code beta jump, box will now not fall into platform
+ae980e2 Martin Bråten                 2016-11-01 Added roof detection in jump example
+58fc821 Kristoffer Lomeland Magelssen 2016-10-31 Cleaned up in game.cpp
+e7648fc Kristoffer Lomeland Magelssen 2016-10-31 Removed Resource folder, removed empty.txt
+c782cfd Vebjørn Nystad                2016-10-31 Fixed that the game now goes into Game state
+7b6aac5 Vebjørn Nystad                2016-10-30 Making gameobject suberclass
+7aff6d0 Kristoffer Lomeland Magelssen 2016-10-30 Removed unneeded text files from some folders, changed Resource folder into data folder
+f11da79 Kristoffer Lomeland Magelssen 2016-10-30 Added demo level with martin's code implemented. Collision detection is NOT implemented yet. Character sprite is NOT added yet
+4b2b77c Vebjørn Nystad                2016-10-28 new pictures
+56689c8 Vebjørn Nystad                2016-10-28 added lost code lines from last commit
+c6bcda8 Vebjørn Nystad                2016-10-28 Added object folder and fixed transparency on background on pictures
+574b765 Martin Bråten                 2016-10-28 Updated jump test
+258eac1 Vebjørn Nystad                2016-10-26 fixed some sprite issues: drawing without white background
+43795df Vebjørn Nystad                2016-10-26 Fixed background for mainmenu, added some pictures for newgame, load game, exit game
+bada673 Vebjørn Nystad                2016-10-25 Menu switching now works in mainmenu state
+f2aea7e Kristoffer Lomeland Magelssen 2016-10-24 Fixed folders, after someone messed them up
+2910e9e Kristoffer Lomeland Magelssen 2016-10-24 Fixed folders, after someone messed them up
+120c7cd Martin Bråten                 2016-10-24 added jump code in separate folder
+24ceebc Vebjørn Nystad                2016-10-24 added new game picture to resource folder
+69385d3 Kristoffer Lomeland Magelssen 2016-10-24 Fixed the folders. Added møte referat for 24 Oktober. Added PNG bilder for animasjon
+acbd876 Vetle Norman                  2016-10-24 Added Resources folder
+477cd3f Vebjørn Nystad                2016-10-21 Statemachine working with mainmenu and pause
+f216e12 Kristoffer Lomeland Magelssen 2016-10-17 Added final meeting referat for 17 Oktober 2016
+5516287 Kristoffer Lomeland Magelssen 2016-10-17 Folder changes
+3e0879a Kristoffer Lomeland Magelssen 2016-10-17 Folder Changes
+d04839c Kristoffer Lomeland Magelssen 2016-10-17 Added empty.txt file into the folders so they will be commited to bitbucket. Removed a copy meeting document
+1f91bcd Kristoffer Lomeland Magelssen 2016-10-17 Added meeting referat 17 Oktober 2016 and added folders for classes
+489ac8e Kristoffer Lomeland Magelssen 2016-10-17 Made a folder and CLion project
+f20a8aa Kristoffer Lomeland Magelssen 2016-10-13 Changed folder names
+ee14094 Kristoffer Lomeland Magelssen 2016-10-13 Changed folder names
+7cb3301 Kristoffer Lomeland Magelssen 2016-10-13 Added folder for meetings aswell as documents from first meeting on 11Oktober

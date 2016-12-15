@@ -19,6 +19,7 @@ AIEnemies::AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *wind
 
     if(boss)
     {
+        sound2 = new Sounds();
         sf::Vector2f scale = character->getScale();
         character->scale(scale.x*3.5, scale.y*2);
 
@@ -39,6 +40,7 @@ AIEnemies::AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *wind
 
     else if(rand() % 100 <20)
     {
+        sound1 = new Sounds();
         this->miniboss = true;
         animation.AIMiniBossWalkRight(character);
         health.SetOriginalLifePoints(300);
@@ -51,7 +53,7 @@ AIEnemies::AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *wind
     }
     else
     {
-
+        sound1 = new Sounds();
         animation.AIWalkLeft(character);
         health.SetOriginalLifePoints(100);
         health.SetActualLifePoints(100);
@@ -79,8 +81,13 @@ void AIEnemies::MonkeyAI1(AIEnemies* e,PlayerObject* p)
 
 
     // Common enraged behaviour for all AI
-    if(e->GetEnraged())
-    {
+    if(e->GetEnraged()) {
+        if (playedEnraged == false)
+        {
+            sound1->playSound("/monkey.wav", 100);
+            playedEnraged = true;
+        }
+
         e->SetMaxMoveSpeed(e->GetEnragedSpeed());
         e->SetEnrageCountdown(e->GetEnrageCountdown()-1);
         if(e->GetEnrageCountdown() <= 0){
@@ -157,6 +164,11 @@ void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerObject* p)
 
     // Specific enraged behaviour for creepy stalking minion, normal as of now.
     if(e->GetEnraged()) {
+        if(playedEnraged == false)
+        {
+            sound2->playSound("/gorilla.wav", 100);
+            playedEnraged = true;
+        }
         //std::cout << "Super Angry" << std::endl;
         e->SetMaxMoveSpeed(e->GetEnragedSpeed());
         e->SetEnrageCountdown(e->GetEnrageCountdown() - 1);
@@ -164,6 +176,9 @@ void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerObject* p)
             e->SetEnrageCountdown(e->GetEnrageDuration());
             e->SetMaxMoveSpeed(e->GetCalmSpeed());
             e->SetEnraged(false);
+            playedEnraged = false;
+
+
         }
         //if (rand() % 100 > 1)
           //  this->SetUpKey(true);
@@ -186,6 +201,7 @@ void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerObject* p)
             e->SetEnrageCountdown(e->GetEnrageDuration());
             e->SetMaxMoveSpeed(e->GetCalmSpeed());
             e->SetEnraged(false);
+            playedEnraged = false;
         }
     }
         // Common patrol behaviour
@@ -250,5 +266,17 @@ void AIEnemies::GotHurt(AIEnemies *e, PlayerObject *p)
             p->SetMoveSpeedR(1000);
         else
             p->SetMoveSpeedL(1000);
+    }
+}
+
+void AIEnemies::StopSound(int voice) {
+    if (voice == 1)
+    {
+        std::cout << "Sound tried to stop" << std::endl;
+        sound1->sound.stop();
+    }
+    else if (voice == 2)
+    {
+        sound2->sound.stop();
     }
 }

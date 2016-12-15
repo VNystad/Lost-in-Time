@@ -535,32 +535,7 @@ void TestApp::AIHandler(float delta)
             AIVectorPointer->erase(AIVectorPointer->begin() + i);
             monkeykill += 100;
         }
-        //Meant for fixing invincible AI bug, but Boss get Invincible with this code.
-        /*
-        if(AIVectorPointer->at(i)->health.GetActualLifePoints() > 2*(AIVectorPointer->at(i)->health.GetOriginalLifePoints()))
-        {
 
-            if(AIVectorPointer->at(i)->GetBoss())
-            {
-                AIVectorPointer->at(i)->health.SetOriginalLifePoints(1000);
-                AIVectorPointer->at(i)->health.SetActualLifePoints(1000);
-                AIVectorPointer->at(i)->health.SetVisibleLifePoints(1000);
-            }
-
-            else if(AIVectorPointer->at(i)->GetMiniBoss())
-            {
-                AIVectorPointer->at(i)->health.SetOriginalLifePoints(300);
-                AIVectorPointer->at(i)->health.SetActualLifePoints(300);
-                AIVectorPointer->at(i)->health.SetVisibleLifePoints(300);
-            }
-            else
-            {
-                AIVectorPointer->at(i)->health.SetOriginalLifePoints(100);
-                AIVectorPointer->at(i)->health.SetActualLifePoints(100);
-                AIVectorPointer->at(i)->health.SetVisibleLifePoints(100);
-            }
-        }
-         */
 
         if (AIVectorPointer->at(i)->health.GetActualLifePoints() <= 0)//Dead())
         {
@@ -569,6 +544,11 @@ void TestApp::AIHandler(float delta)
             AIVectorPointer->at(i)->health.DeathHandle();
             AIVectorPointer->erase(AIVectorPointer->begin() + i);
             monkeykill += 25;
+            AIVectorPointer->at(i)->StopSound(1);
+
+
+            std::cout << "kjempedood!" << std::endl;
+
         }
         else
         {

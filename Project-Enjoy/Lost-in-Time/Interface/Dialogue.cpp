@@ -11,6 +11,16 @@ Dialogue::Dialogue()
      * Draws Dialogue
      ****************/
 
+/*********************************************************************
+* Function for drawing dialogue boxes for when game is in regular mode
+* using the function DrawDialogue
+@param player: Where the player is located
+@param currentView: What view the camera is displaying
+@param DialogueDuration: Timer, how long the dialogue should be displayed
+@param window: the address of the window
+
+***********************************************************/
+
 void Dialogue::DrawDialogue(PlayerObject* player, sf::RenderWindow& window, sf::View& currentView, sf::Clock &DialogueDuration)
     {
 
@@ -156,7 +166,16 @@ void Dialogue::DrawDialogue(PlayerObject* player, sf::RenderWindow& window, sf::
 
 
 
+/*********************************************************************
+* Function for drawing dialogue boxes for when game is in victory mode
+* using the function DrawVictoryDialogue
+@param player = Where the player is located
+@param princess = Where the princess is located
+@param currentView = What view the camera is displaying
+@param DialogueDuration = Timer, how long the dialogue should be displayed
+@param window = the address of the window
 
+***********************************************************/
 
 void Dialogue::DrawVictoryDialogue(PlayerObject* player, PrincessObject* princess, sf::RenderWindow& window, sf::View& currentView, sf::Clock &DialogueDuration)
 {
@@ -201,7 +220,11 @@ void Dialogue::DrawVictoryDialogue(PlayerObject* player, PrincessObject* princes
 
 }
 
-
+/***********************************
+ * Loads texture pointers
+ * using the function LoadTexture
+ * Placing all textures into sprites
+ **********************************/
 
 void Dialogue::LoadImages()
         {
@@ -316,6 +339,14 @@ void Dialogue::LoadImages()
 
     }
 
+/**********************************************
+ * Loads image from file into texture
+ * @param path: where file is placed
+ * @param menuAmount: int counter to easy find
+ *          the amount of options on a menu
+ *          (ONLY USED FOR ESC & SAVE MENU)
+ * @return returns the texture loaded
+ *********************************************/
 
 sf::Texture *Dialogue::LoadTexture(std::string path)
 {

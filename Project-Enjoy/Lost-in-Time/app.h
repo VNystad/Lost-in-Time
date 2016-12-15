@@ -10,8 +10,9 @@
 #include "Objects/princessobject.h"
 #include "Map/map.h"
 #include "Framework/Camera.h"
-#include "Enemy/AIEnemies.h"
 #include "Framework/Music.h"
+#include "Framework/Sounds.h"
+#include "Enemy/AIEnemies.h"
 #include "state/machine.h"
 #include "Interface/Dialogue.h"
 
@@ -138,11 +139,16 @@ protected:
     int penaltyTime = 0;
     int EscMenuTime = 0;
 
+    //Bonus Score
+    int monkeykill = 0;
+
+
     // Clock for DialogDuration
     sf::Clock* DialogueDuration;
     sf::View* currentView;
-    Camera camera;
+    //Camera camera;
     Music* music;
+    Sounds* sound;
     Dialogue dialogue;
 };
 

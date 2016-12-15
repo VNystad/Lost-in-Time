@@ -76,10 +76,11 @@ void Animation::init()
  */
 void Animation::PlayerWalkRight(sf::RectangleShape* character)
 {
-    if(lastplayeranimationplayed != 3)
+    if(lastplayeranimationplayed != 2)
     {
         frameSelected->left = 0;
-        lastplayeranimationplayed = 3;
+        lastplayeranimationplayed = 2;
+        felldown = false;
     }
     else if(frameSelected->left > 102)
         frameSelected->left = 0;
@@ -121,6 +122,7 @@ void Animation::PlayerWalkLeft(sf::RectangleShape* character)
     {
         frameSelected->left = 0;
         lastplayeranimationplayed = 2;
+        felldown = false;
     }
     else if(frameSelected->left > 102)
         frameSelected->left = 0;
@@ -162,6 +164,7 @@ void Animation::PlayerIdleLeft(sf::RectangleShape* character)
     {
         frameSelected->left = 0;
         lastplayeranimationplayed = 3;
+        felldown = false;
     }
     else if(frameSelected->left > 102)
         frameSelected->left = 0;
@@ -209,10 +212,11 @@ void Animation::PlayerIdleLeft(sf::RectangleShape* character)
  */
 void Animation::PlayerIdle(sf::RectangleShape* character)
 {
-    if(lastplayeranimationplayed != 5)
+    if(lastplayeranimationplayed != 3)
     {
         frameSelected->left = 0;
-        lastplayeranimationplayed = 5;
+        lastplayeranimationplayed = 3;
+        felldown = false;
     }
     else if(frameSelected->left > 102)
         frameSelected->left = 0;
@@ -252,18 +256,25 @@ void Animation::PlayerIdle(sf::RectangleShape* character)
 }
 /**
  * @param character, which character the texture is being applied for.
+ * @param fallingdown Used to know wether the player is falling down or not.
+ * @param fellingdown Used to know wether animation already know the player started to fall down.
  * @param lastplayeranimationplayed, is used to check what animation is played last.
  * So that it always start at the beginning.
  * @param frameSelected, is the actual frame used to select which picture to use as texture.
  * frameSelected->left is where the picture begins.
  * Animation goes from left to right, then right to left.
  */
-void Animation::PlayerJumpRight(sf::RectangleShape* character)
+void Animation::PlayerJumpRight(sf::RectangleShape* character, bool fallingdown)
 {
     if(lastplayeranimationplayed != 1)
     {
         frameSelected->left = 0;
         lastplayeranimationplayed = 1;
+        if(fallingdown && !felldown)
+        {
+            frameSelected->left = 68;
+            felldown = true;
+        }
     }
     else if(frameSelected->left > 136)
         frameSelected->left = 0;
@@ -293,18 +304,25 @@ void Animation::PlayerJumpRight(sf::RectangleShape* character)
 }
 /**
  * @param character, which character the texture is being applied for.
+ * @param fallingdown Used to know wether the player is falling down or not.
+ * @param fellingdown Used to know wether animation already know the player started to fall down.
  * @param lastplayeranimationplayed, is used to check what animation is played last.
  * So that it always start at the beginning.
  * @param frameSelected, is the actual frame used to select which picture to use as texture.
  * frameSelected->left is where the picture begins.
  * Animation goes from left to right, then right to left.
  */
-void Animation::PlayerJumpLeft(sf::RectangleShape* character)
+void Animation::PlayerJumpLeft(sf::RectangleShape* character, bool fallingdown)
 {
     if(lastplayeranimationplayed != 1)
     {
         frameSelected->left = 0;
         lastplayeranimationplayed = 1;
+        if(fallingdown && !felldown)
+        {
+            frameSelected->left = 68;
+            felldown = true;
+        }
     }
     else if(frameSelected->left > 136)
         frameSelected->left = 0;

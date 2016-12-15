@@ -3,6 +3,7 @@
 
 #include "state.h"
 #include "../Framework/config.h"
+#include "../Framework/Sounds.h"
 #include "../Interface/highscore.h"
 
 class StateMainMenu : public State
@@ -55,6 +56,8 @@ protected:
     sf::Sprite HowToPlayPictureSprite;
     sf::Sprite exitGameSprite;
     sf::Sprite exitGameSelectedSprite;
+
+    Sounds* sound;
 };
 
 

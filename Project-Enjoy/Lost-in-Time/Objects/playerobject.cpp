@@ -110,20 +110,20 @@ void PlayerObject::PlayerAnimation(float delta)
         counter = 0;
         if (jumpcheck && movedirection == 1) // If jumping to the right
         {
-            animation.PlayerJumpRight(character);
+            animation.PlayerJumpRight(character, apexcheck);
             lastmovedirection = 1;
         }
         else if (jumpcheck && movedirection == 0) // If jumping to the left
         {
-            animation.PlayerJumpLeft(character);
+            animation.PlayerJumpLeft(character, apexcheck);
             lastmovedirection = 0;
         }
         else if (jumpcheck) //If jumping upwards.
         {
             if (lastmovedirection == 1)
-                animation.PlayerJumpRight(character);
+                animation.PlayerJumpRight(character, apexcheck);
             else
-                animation.PlayerJumpLeft(character);
+                animation.PlayerJumpLeft(character, apexcheck);
         }
 
         else

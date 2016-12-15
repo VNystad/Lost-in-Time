@@ -15,6 +15,7 @@ void StateMainMenu::ShowHighscore(sf::RenderWindow& window, Highscore& highscore
     highscoreText.setCharacterSize(30);
     highscoreText.setColor(sf::Color::White);
     highscoreText.setString("Highscores: ");
+    //sound = new Sounds();
 
     for(auto iter = highscoreMap->rbegin(); iter != highscoreMap->rend(); ++iter)
     {
@@ -28,6 +29,8 @@ void StateMainMenu::ShowHighscore(sf::RenderWindow& window, Highscore& highscore
         window.draw(highscoreText);
         window.display();
     }
+    sound->playSound("/MenuClick.wav", 50);
+
 }
 
 void StateMainMenu::ShowHowToPlay(sf::RenderWindow& window)
@@ -38,6 +41,7 @@ void StateMainMenu::ShowHowToPlay(sf::RenderWindow& window)
         window.draw(HowToPlayPictureSprite);
         window.display();
     }
+    sound->playSound("/MenuClick.wav", 50);
 }
 
 void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObject&, Highscore& highscore)
@@ -47,6 +51,7 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
     keypressed = false;
     // Loads media
     loadMedia();
+    sound = new Sounds();
 
     while (machine.GetRunning()) {
 
@@ -64,6 +69,7 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
          ****************************/
         if(!keypressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
         {
+            sound->playSound("/MenuClick.wav", 50);
             keypressed = true;
             if(menu == 4)
                 menu = 5;
@@ -77,6 +83,7 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
         }
         else if(!keypressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
         {
+            sound->playSound("/MenuClick.wav", 50);
             keypressed = true;
             if(menu == 1 || menu == 2)
                 menu = 5;
@@ -87,6 +94,7 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
         }
         else if(!keypressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
         {
+            sound->playSound("/MenuClick.wav", 50);
             keypressed = true;
             if(menu == 5);
             else if(menu % 2 == 1)
@@ -98,6 +106,7 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
         }
         else if(!keypressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
         {
+            sound->playSound("/MenuClick.wav", 50);
             keypressed = true;
             if(menu == 5);
             else if(menu % 2 == 0)
@@ -161,16 +170,20 @@ void StateMainMenu::GoNext(Machine &machine, sf::RenderWindow& window, SavedObje
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
         {
+            sound = new Sounds();
+            sound->playSound("/MenuClick.wav", 50);
             if(menu == 1)
             {
                 machine.SetState(Machine::StateId::GAME);
                 return;
             }
+                /*
             else if(menu == 2)
             {
                 machine.SetState(Machine::StateId::LOAD);
                 return;
             }
+                 */
             else if(menu == 3)
             {
                 ShowHighscore(window, highscore);

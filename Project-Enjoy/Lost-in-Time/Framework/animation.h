@@ -18,8 +18,8 @@ public:
     void PlayerWalkLeft(sf::RectangleShape* character);
     void PlayerIdleLeft(sf::RectangleShape* character);
     void PlayerIdle(sf::RectangleShape* character);
-    void PlayerJumpRight(sf::RectangleShape* character);
-    void PlayerJumpLeft(sf::RectangleShape* character);
+    void PlayerJumpRight(sf::RectangleShape* character, bool fallingdown);
+    void PlayerJumpLeft(sf::RectangleShape* character, bool fallingdown);
     void PlayerDie(sf::RectangleShape* character);
 
     void AIWalkRight(sf::RectangleShape* character);
@@ -45,12 +45,13 @@ protected:
     * Special for smooth PlayerAnimation:
     * The last animation that was played:
     * 1 = jumping
-    * 2 = walkleft
-    * 3 = walkright
-    * 4 = idleleft
-    * 5 = idleright
+    * 2 = walk
+    * 3 = idle
     */
     int lastplayeranimationplayed = 0;
+
+    //Bool for deciding if player already started to fall down.
+    int felldown = false;
 
     // Choose starting frame in texture picture
     sf::IntRect *frameSelected;

@@ -20,6 +20,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
     music = new Music();
     music->music.setLoop(true);
     music->music.setVolume(20);
+    sound = new Sounds();
 
     /****************************************************************************
      *                            LOADED FROM SAVE
@@ -532,6 +533,7 @@ void TestApp::AIHandler(float delta)
             AIVectorPointer->at(i)->health.Hit(AIVectorPointer->at(i)->health.GetOriginalLifePoints());
             AIVectorPointer->at(i)->health.DeathHandle();
             AIVectorPointer->erase(AIVectorPointer->begin() + i);
+            monkeykill += 100;
         }
         //Meant for fixing invincible AI bug, but Boss get Invincible with this code.
         /*
@@ -566,6 +568,7 @@ void TestApp::AIHandler(float delta)
                 princessSpawn = true;
             AIVectorPointer->at(i)->health.DeathHandle();
             AIVectorPointer->erase(AIVectorPointer->begin() + i);
+            monkeykill += 25;
         }
         else
         {
@@ -618,7 +621,7 @@ bool TestApp::VictoryHandler(Highscore& highscore, float delta)
         player->SetFallSpeed(0);
         player->SetJumpSpeed(0);
 
-        int score = 1000 / winTime;
+        int score = 1000 / winTime + monkeykill;
 
         /*************************************
          * Handle score
@@ -743,19 +746,24 @@ bool TestApp::EscMenu(Machine& machine)
     // Resume game
     if(selected == 1)
     {
+        sound->playSound("/MenuClick.wav", 50);
         music->music.play();
         return true;
     }
 
         // Save game
+        /*
     else if(selected == 2)
     {
+        sound->playSound("/MenuClick.wav", 100);
         selected = menuSelected("SaveGameMenu");
         SaveGame(selected);
     }
+         */
     // Back to mainmenu
     else if(selected == 3)
     {
+        sound->playSound("/MenuClick.wav", 50);
         music->music.stop();
         return false;
     }
@@ -763,6 +771,7 @@ bool TestApp::EscMenu(Machine& machine)
         // Exit game
     else if(selected == 4)
     {
+        sound->playSound("/MenuClick.wav", 50);
         music->music.stop();
         delete[] collidableArray[0];
         delete[] collidableArray;
@@ -894,23 +903,26 @@ int TestApp::menuSelected(std::string menu)
         window->display();
         if(!keyPressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
             choice++;
+            sound->playSound("/MenuClick.wav", 50);
             if (choice > amountOfChoices)
                 choice = 1;
             keyPressed = true;
         }
         else if(!keyPressed && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
             choice--;
+            sound->playSound("/MenuClick.wav", 50);
             if (choice <= 0)
                 choice = amountOfChoices;
             keyPressed = true;
         }
         else if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+        {
             keyPressed = false;
+        }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+        {
             return choice;
-
-
-
+        }
     }
 }
 

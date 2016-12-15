@@ -288,10 +288,10 @@ void Dialogue::LoadImages()
     HelpMe2 = LoadTexture("data/Dialogue/Princess/HelpMe.png");
     HowCouldIEverRepayYou = LoadTexture("data/Dialogue/Princess/HowCouldIEverRepayYou.png");
     HowDidYouKnowILikeItRough = LoadTexture("data/Dialogue/Princess/HowDidYouKnowILikeItRough.png");
-    IveGotHandcuffs = LoadTexture("data/Dialogue/Princess/IGotHandcuffs.png");
+    IveGotHandcuffs = LoadTexture("data/Dialogue/Princess/IgotHandcuffs.png");
     MyHero = LoadTexture("data/Dialogue/Princess/MyHero.png");
     ThankYouForSavingMe = LoadTexture("data/Dialogue/Princess/ThankYouForSavingMe.png");
-    WantToGoBackToMyHut = LoadTexture("data/Dialogue/Princess/WantToGoBackToMyhut.png");
+    WantToGoBackToMyHut = LoadTexture("data/Dialogue/Princess/WantToGoBackToMyHut.png");
 
 
     AnyoneSprite.setTexture(*Anyone);

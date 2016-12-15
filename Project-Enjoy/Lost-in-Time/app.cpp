@@ -838,9 +838,9 @@ int TestApp::menuSelected(std::string menu)
         if(!menu.compare("EscMenu"))
         {
             resumeGameSprite.setPosition(MenuPositionX, MenuPositionY);
-            resumeGameSelectedSprite.setPosition(MenuPositionX, MenuPositionY);
+            resumeGameSelectedSprite.setPosition(MenuPositionX, MenuPositionY-4);
             saveGameSprite.setPosition(MenuPositionX, MenuPositionY + 100);
-            saveGameSelectedSprite.setPosition(MenuPositionX, MenuPositionY + 100);
+            saveGameSelectedSprite.setPosition(MenuPositionX + 13, MenuPositionY + 100);
             mainMenuSprite.setPosition(MenuPositionX, MenuPositionY + 200);
             mainMenuSelectedSprite.setPosition(MenuPositionX, MenuPositionY + 200);
             exitGameSprite.setPosition(MenuPositionX, MenuPositionY + 300);

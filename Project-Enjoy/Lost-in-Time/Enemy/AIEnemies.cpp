@@ -149,7 +149,7 @@ void AIEnemies::MonkeyAI1(AIEnemies* e,PlayerObject* p)
  * @param e The AI character.
  * @param p The Player character.
  */
-void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerObject* p)
+void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerObject* p, float delta)
 {
     if((p->GetPositionX() - e->GetPositionX() < this->enragerange && p->GetPositionX() - e->GetPositionX() > -this->enragerange) &&
        (p->GetPositionY() - e->GetPositionY() <  this->enragerange && p->GetPositionY() - e->GetPositionY() > -this->enragerange))
@@ -164,11 +164,14 @@ void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerObject* p)
 
     // Specific enraged behaviour for creepy stalking minion, normal as of now.
     if(e->GetEnraged()) {
-        if(playedEnraged == false)
+        if(playedEnraged == false && enragedsoundcooldown >= 1)
         {
             sound2->playSound("/gorilla.wav", 100);
             playedEnraged = true;
+            enragedsoundcooldown = 0;
         }
+        else if(enragedsoundcooldown <= 1)
+            enragedsoundcooldown += delta;
         //std::cout << "Super Angry" << std::endl;
         e->SetMaxMoveSpeed(e->GetEnragedSpeed());
         e->SetEnrageCountdown(e->GetEnrageCountdown() - 1);
@@ -177,8 +180,6 @@ void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerObject* p)
             e->SetMaxMoveSpeed(e->GetCalmSpeed());
             e->SetEnraged(false);
             playedEnraged = false;
-
-
         }
         //if (rand() % 100 > 1)
           //  this->SetUpKey(true);

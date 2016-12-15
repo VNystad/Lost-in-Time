@@ -75,7 +75,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
          *******************/
         // 160, 398 Start
         //4450, 558 Harambe
-        player = new PlayerObject(160, 398, &window);
+        player = new PlayerObject(4460, 558, &window);
 
         /***********************
          *  Create the princess
@@ -544,11 +544,6 @@ void TestApp::AIHandler(float delta)
             AIVectorPointer->at(i)->health.DeathHandle();
             AIVectorPointer->erase(AIVectorPointer->begin() + i);
             monkeykill += 25;
-            AIVectorPointer->at(i)->StopSound(1);
-
-
-            std::cout << "kjempedood!" << std::endl;
-
         }
         else
         {
@@ -560,7 +555,7 @@ void TestApp::AIHandler(float delta)
                 AIVectorPointer->at(i)->AnimationAI(delta);
             AIVectorPointer->at(i)->DrawMe();
             if(AIVectorPointer->at(i)->GetBoss())
-                AIVectorPointer->at(i)->MonkeyAI2(AIVectorPointer->at(i), player);
+                AIVectorPointer->at(i)->MonkeyAI2(AIVectorPointer->at(i), player, delta);
             else
                 AIVectorPointer->at(i)->MonkeyAI1(AIVectorPointer->at(i), player);
             Physics::AIMovement(AIVectorPointer->at(i), player, AIVectorPointer, i, collidableArray, delta);

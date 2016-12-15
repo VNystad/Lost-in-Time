@@ -1,6 +1,6 @@
 #include <fstream>
 #include <cstring>
-#include <json/json.h>
+#include <jsoncpp/json/json.h>
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "map.h"

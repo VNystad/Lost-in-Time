@@ -267,10 +267,10 @@ void Dialogue::LoadImages()
     WhatWasThatSprite.scale(WhatWasThatSprite.getScale().x*0.7,WhatWasThatSprite.getScale().y*0.7);
 
     YeahYeahCalmDownSprite.setTexture(*YeahYeahCalmDown);
-    YeahYeahCalmDownSprite.scale(YeahYeahCalmDownSprite.getScale().x*0.88,YeahYeahCalmDownSprite.getScale().y*0.88);
+    YeahYeahCalmDownSprite.scale(YeahYeahCalmDownSprite.getScale().x*0.7,YeahYeahCalmDownSprite.getScale().y*0.7);
 
     AlwaysWithTheYellingSprite.setTexture(*AlwaysWithTheyelling);
-    AlwaysWithTheYellingSprite.scale(YeahYeahCalmDownSprite.getScale().x*0.7,YeahYeahCalmDownSprite.getScale().y*0.7);
+    AlwaysWithTheYellingSprite.scale(YeahYeahCalmDownSprite.getScale().x*1.2,YeahYeahCalmDownSprite.getScale().y*1.2);
 
 
 

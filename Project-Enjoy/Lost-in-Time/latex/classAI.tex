@@ -1,0 +1,1493 @@
+\hypertarget{classAI}{}\section{AI Class Reference}
+\label{classAI}\index{AI@{AI}}
+
+
+{\ttfamily \#include $<$A\+I.\+h$>$}
+
+
+
+Inheritance diagram for AI\+:
+% FIG 0
+
+
+Collaboration diagram for AI\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAI_a30783f011bab5e461811f1f513261424}{AI} (int x, int y, int \hyperlink{classAI_ac28e1dce23ebfb9beb0542ddd46ec3da}{patrol}, sf\+::\+Render\+Window $\ast$\hyperlink{classAI_a0484a23ffd7e5c09b7fc252350a2c8c4}{window})
+\item 
+void \hyperlink{classAI_a05612024ed9f8c37bf239a085e8e1734}{Draw\+Me} ()
+\item 
+void \hyperlink{classAI_a4b25d77453af108dcfefc096a9153233}{Set\+Size\+Width} (int sizewidth)
+\item 
+int \hyperlink{classAI_a9d84d316c17038eecee2abf8e2141385}{Get\+Size\+Width} () const 
+\item 
+void \hyperlink{classAI_ab63724e76ed2efa586b09593c62edc51}{Set\+Size\+Height} (int sizeheight)
+\item 
+int \hyperlink{classAI_adb31196a4fcbbe4d92299e899f04d789}{Get\+Size\+Height} () const 
+\item 
+void \hyperlink{classAI_a31e4fec3672db036e511ca2c6a5d2b75}{Set\+A\+I\+Colliding} (int \hyperlink{classAI_a17f6d2ecc23b43a425623947b639656d}{aicolliding})
+\item 
+int \hyperlink{classAI_a0757c03ecae2e2f3145ad1fc1eab2f03}{Get\+A\+I\+Colliding} () const 
+\item 
+int \hyperlink{classAI_ade2ee4c9c75cdf9f4edd85227193e73d}{Get\+PositionX} ()
+\item 
+int \hyperlink{classAI_af234b480b8502f3dc1b1f3bac15e8b98}{Get\+PositionY} ()
+\item 
+void \hyperlink{classAI_a5436f878f8f02597de9ec5ebfdcc7cd9}{Set\+PositionX} (int x)
+\item 
+void \hyperlink{classAI_a4e042958bb678aebdee4af9925efa389}{Set\+PositionY} (int y)
+\item 
+int \hyperlink{classAI_a2652ab0999a03f538c9f3b5706a4022e}{Get\+OriginalX} ()
+\item 
+int \hyperlink{classAI_a9048855bd39d76f5c6eb71bffd94b545}{Get\+OriginalY} ()
+\item 
+void \hyperlink{classAI_a5a76a0c5030dcbe0ab3a59e26ca0908a}{Set\+OriginalX} (int x)
+\item 
+void \hyperlink{classAI_ab9ca5d112a4b790549d1db387802b849}{Set\+OriginalY} (int y)
+\item 
+void \hyperlink{classAI_a9e60e3da7ae96c1a7bc5dbff38c4128e}{Reset2\+OriginalX} (float x)
+\item 
+void \hyperlink{classAI_ac0f90e7b4065125014f476b2132e61ed}{Reset2\+OriginalY} (float y)
+\item 
+void \hyperlink{classAI_a59b0db7fd1d68dd2724d2da0f6e37bda}{Death} ()
+\item 
+void \hyperlink{classAI_a8d7eba7842ac12a513bff9ac31afac9d}{Animation\+AI} (float delta)
+\item 
+void \hyperlink{classAI_a00eb52508c12ac57d2e6de304f0eb0c6}{Animation\+A\+I\+Mini\+Boss} (float delta)
+\item 
+void \hyperlink{classAI_a935f110e6b65684db196569228325c2e}{Animation\+Boss} (float delta)
+\item 
+void \hyperlink{classAI_a09030418ab60079321ccb0bbee7f5267}{A\+I\+Patrol} ()
+\item 
+void \hyperlink{classAI_a5ed430bba92b7a7183337257d78a189b}{A\+I\+Enraged} ()
+\item 
+void \hyperlink{classAI_abcb80800d582425bcca0e6265ff5c771}{Set\+Left\+Key} (bool \hyperlink{classAI_af4a6576f510ed03a56c98bfc5b711f1a}{leftkey})
+\item 
+bool \hyperlink{classAI_a0d8e57db11f22335ef2a7dcf3408ea6b}{Get\+Left\+Key} () const 
+\item 
+void \hyperlink{classAI_abacb14347200b16386e21d7977b51f85}{Set\+Right\+Key} (bool \hyperlink{classAI_afd8bf97dd365a456af724aade73129fb}{rightkey})
+\item 
+bool \hyperlink{classAI_aeb518aba00b996380158b247aa1dca7f}{Get\+Right\+Key} () const 
+\item 
+void \hyperlink{classAI_ab4061283b1ef4cb50b6d7110882c20ab}{Set\+Up\+Key} (bool \hyperlink{classAI_a1bde8ebcfb666d83ffb7e71993bf06fc}{upkey})
+\item 
+bool \hyperlink{classAI_a2e3c9d6a73594994858c13bfffaa7450}{Get\+Up\+Key} () const 
+\item 
+void \hyperlink{classAI_acf469b2d4b6bfa66ebf81cffce614b35}{Set\+Mini\+Boss} (bool \hyperlink{classAI_aee02bf098d14d402140bdeb9516280f9}{miniboss})
+\item 
+bool \hyperlink{classAI_a4b16ff859e873a2fe1b5b2eae5a7c5ab}{Get\+Mini\+Boss} () const 
+\item 
+void \hyperlink{classAI_a6c385b58bce2c0314e521addee4ba209}{Set\+Boss} (bool \hyperlink{classAI_a1fa0702b9e1c4b6a29227dfc6e58be46}{boss})
+\item 
+bool \hyperlink{classAI_abcffa9942e266731c6993c2040e69f6e}{Get\+Boss} () const 
+\item 
+void \hyperlink{classAI_a9fbf2081f38575bc61a7f251b2bb9a3b}{Set\+Enraged} (bool \hyperlink{classAI_a0b809846d43813799b3e44c42114e9a1}{enraged})
+\item 
+bool \hyperlink{classAI_aec03758c556c899055e9cbaf255dc500}{Get\+Enraged} () const 
+\item 
+int \hyperlink{classAI_aeba013301a6a62af203c8e0ad204d40b}{Get\+Enrage\+Range} () const 
+\item 
+int \hyperlink{classAI_a41d1bb99dc6892c367c23a799ad9aec6}{Get\+Enrage\+Duration} () const 
+\item 
+void \hyperlink{classAI_af9e9f4b5bef37e9800dbeb5e20adddf2}{Set\+Enrage\+Countdown} (int \hyperlink{classAI_a155447249032f20011edefe8be3d081d}{enragecountdown})
+\item 
+int \hyperlink{classAI_adfd6fae7457c89e305d4d3f17ddc41a1}{Get\+Enrage\+Countdown} () const 
+\item 
+void \hyperlink{classAI_a82152a7a8a96bbd259ced87eea4f4ef8}{Set\+Enraged\+Speed} (int \hyperlink{classAI_af6b753eddb25c163d5b359420b314d4e}{enragedspeed})
+\item 
+int \hyperlink{classAI_a92907b66d44bf13562d95e54cc5513b6}{Get\+Enraged\+Speed} () const 
+\item 
+void \hyperlink{classAI_a88eb2b0ed216184bb890dc4e763b5d1c}{Set\+Calm\+Speed} (int \hyperlink{classAI_abdd48a54d265d83866f11fbe2ad8eed0}{calmspeed})
+\item 
+int \hyperlink{classAI_adaccf4bbe450127d198e46d7b8cf4f5c}{Get\+Calm\+Speed} () const 
+\item 
+void \hyperlink{classAI_ac97aecfd5b2950e30befa579fe2b2e2b}{Set\+Patrol\+Left} (int \hyperlink{classAI_a8a572d9fa33e579a4c8eea9e1ab09e8f}{patrolleft})
+\item 
+int \hyperlink{classAI_a7110967584c670de961d47f2bf04f7b0}{Get\+Patrol\+Left} () const 
+\item 
+void \hyperlink{classAI_aa2afe9d83b68d31ab6b0bc6df452d344}{Set\+Patrol\+Right} (int \hyperlink{classAI_a5af0047dcf09f37b7f2feb8d2b078ce8}{patrolright})
+\item 
+int \hyperlink{classAI_afbdc815ba4215f0fcaca85f304ad88bf}{Get\+Patrol\+Right} () const 
+\item 
+void \hyperlink{classAI_a57045e1587ca559b44019190a2433e07}{Set\+Slow\+DownR} (bool \hyperlink{classAI_a4ae562cbe6afd5d010d5329c0c926459}{slowingdownright})
+\item 
+void \hyperlink{classAI_ab07dcb050c20c646927e16e2ead40728}{Set\+Slow\+DownL} (bool \hyperlink{classAI_a33b48858d468564363727d20164f2c54}{slowingdownleft})
+\item 
+bool \hyperlink{classAI_a144406629e0344569a28b1f02c1503ad}{Get\+Slow\+DownR} () const 
+\item 
+bool \hyperlink{classAI_ab0d09d0379209305cdbedff71615be8e}{Get\+Slow\+DownL} () const 
+\item 
+void \hyperlink{classAI_a171141e877f08757696a65e3d9305660}{Set\+Move\+SpeedR} (float \hyperlink{classAI_a5b9ee08216e80b40ef278c0b8e71bdf2}{movespeedright})
+\item 
+void \hyperlink{classAI_a7e52788a6f93f78feaa0c8867f454888}{Set\+Move\+SpeedL} (float \hyperlink{classAI_aa4053f5803c847fc13db08bc8cd6737b}{movespeedleft})
+\item 
+float \hyperlink{classAI_af237abb2520be87abb2fc709b23736ec}{Get\+Move\+SpeedR} () const 
+\item 
+float \hyperlink{classAI_a727dd212a4f6dea5030399943b66a285}{Get\+Move\+SpeedL} () const 
+\item 
+float \hyperlink{classAI_a492eb8602d131ddd7d1002a5175c677b}{Get\+Hor\+Brake} () const 
+\item 
+float \hyperlink{classAI_a12164015cfb14576341e0cd31939927a}{Get\+Regular\+Brake} () const 
+\item 
+void \hyperlink{classAI_a4423ec546f1d37cec368321e119ac6b0}{Set\+Max\+Move\+Speed} (float \hyperlink{classAI_a3af9cf8b86fff09d7e95ed913636e18a}{maxmovespeed})
+\item 
+float \hyperlink{classAI_a7b6da292ee6fde22465b2a956c1c1aff}{Get\+Max\+Move\+Speed} () const 
+\item 
+float \hyperlink{classAI_aa6c83658cc7028645288d90dac360ba4}{Get\+Move\+Power} () const 
+\item 
+void \hyperlink{classAI_a7b1fa9a0546e462e633bbdcbbf12eb50}{Set\+Mov\+Dir} (int \hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection})
+\item 
+int \hyperlink{classAI_af44b60f433e7046939fa564f17e4655f}{Get\+Mov\+Dir} () const 
+\item 
+void \hyperlink{classAI_abc21616a023e18fe33740326b22b21fa}{Set\+Last\+Move\+Direction} (int \hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection})
+\item 
+int \hyperlink{classAI_ad5a76573afc4ca46c3e8c63bb71c1cef}{Get\+Last\+Move\+Direction} () const 
+\item 
+float \hyperlink{classAI_aaf2f8c7e9bf518bee620e5731faa1ed7}{Get\+Gravity} () const 
+\item 
+sf\+::\+Rectangle\+Shape \hyperlink{classAI_af8845b14b9634d95149a881489284b55}{Get\+Character} () const 
+\item 
+void \hyperlink{classAI_af70dcfec2f6f98c2113f416895c14214}{Set\+Jump\+Check} (bool \hyperlink{classAI_aefe27541a9d4aaa10d23b421de4b2405}{jumpcheck})
+\item 
+void \hyperlink{classAI_acb9cc6624a01a27516f68406429f7496}{Set\+Apex\+Check} (bool \hyperlink{classAI_a4f56968f26a5263911c83062945aaec7}{apexcheck})
+\item 
+bool \hyperlink{classAI_a44af0b44c634384d9aa5200b6e1b7427}{Get\+Jump\+Check} () const 
+\item 
+bool \hyperlink{classAI_ada8f2f0cbeef5ebaf251564d4e9b6510}{Get\+Apex\+Check} () const 
+\item 
+void \hyperlink{classAI_ab42bf8c5b4ec0d54423b55e2db524640}{Set\+Fall\+Speed} (float \hyperlink{classAI_a8aff5a3b49415dcb533f0a570290bd86}{fallspeed})
+\item 
+float \hyperlink{classAI_a5518f137f504e35a88a16a374c30390b}{Get\+Fall\+Speed} () const 
+\item 
+float \hyperlink{classAI_a9c878567c39d6a9c293931a679b37ffd}{Get\+Max\+Fall\+Speed} () const 
+\item 
+void \hyperlink{classAI_a90247314e34a1d0e1376a27dac61f1c4}{Set\+Jump\+Speed} (float \hyperlink{classAI_a9bcfb85a19a10d064a1db2772be9e30d}{jumpspeed})
+\item 
+float \hyperlink{classAI_a9d3a04adec2708eae25fa24af2eb23f7}{Get\+Jump\+Speed} () const 
+\item 
+float \hyperlink{classAI_a028ef0d497fa8f7d9acb93dc7cc7aaf7}{Get\+Orig\+Jump\+Speed} () const 
+\item 
+void \hyperlink{classAI_a5fbb2086d91fe1a31e916d0874f39eb3}{Set\+Jump\+Power} (float \hyperlink{classAI_a79f9ea14d535b646e35ab8f2d95f59da}{jumppower})
+\item 
+float \hyperlink{classAI_a92873a9908dc947bba6f7270765614a7}{Get\+Jump\+Power} () const 
+\item 
+void \hyperlink{classAI_ae6a7d8162fbe9a74c86dec4efb5d940c}{Set\+Fall\+Power} (float \hyperlink{classAI_ab6d693d4a0669758d7bcc48d43d348b7}{fallpower})
+\item 
+float \hyperlink{classAI_a660ad0d23f78462f58063848a2796e9d}{Get\+Fall\+Power} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Rectangle\+Shape $\ast$ \hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character}
+\item 
+\hyperlink{classAnimation}{Animation} \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}
+\item 
+\hyperlink{classHealth}{Health} \hyperlink{classAI_a073d65bf0b0b08b31710cf9743d2e364}{health}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classAI_afff2954d66c370ee45640977182f5e41}{size\+Width} = 37
+\item 
+int \hyperlink{classAI_a85fd1bdecd52faf9017230708c558276}{size\+Height} = 50
+\item 
+int \hyperlink{classAI_a17f6d2ecc23b43a425623947b639656d}{aicolliding} = 5
+\item 
+bool \hyperlink{classAI_af4a6576f510ed03a56c98bfc5b711f1a}{leftkey} = true
+\item 
+bool \hyperlink{classAI_afd8bf97dd365a456af724aade73129fb}{rightkey} = false
+\item 
+bool \hyperlink{classAI_a1bde8ebcfb666d83ffb7e71993bf06fc}{upkey} = false
+\item 
+bool \hyperlink{classAI_aee02bf098d14d402140bdeb9516280f9}{miniboss} = false
+\item 
+bool \hyperlink{classAI_a1fa0702b9e1c4b6a29227dfc6e58be46}{boss} = false
+\item 
+bool \hyperlink{classAI_a0b809846d43813799b3e44c42114e9a1}{enraged} = false
+\item 
+int \hyperlink{classAI_a768ddc6536a7b929c44f5deb643c60bc}{enragerange} = 100
+\item 
+int \hyperlink{classAI_a2e89055bd6a91949269c76ec94017194}{enrageduration} = 1000
+\item 
+int \hyperlink{classAI_a155447249032f20011edefe8be3d081d}{enragecountdown} = \hyperlink{classAI_a2e89055bd6a91949269c76ec94017194}{enrageduration}
+\item 
+int \hyperlink{classAI_af6b753eddb25c163d5b359420b314d4e}{enragedspeed} = 120
+\item 
+int \hyperlink{classAI_abdd48a54d265d83866f11fbe2ad8eed0}{calmspeed} = 100
+\item 
+int \hyperlink{classAI_ac28e1dce23ebfb9beb0542ddd46ec3da}{patrol}
+\item 
+int \hyperlink{classAI_a8a572d9fa33e579a4c8eea9e1ab09e8f}{patrolleft}
+\item 
+int \hyperlink{classAI_a5af0047dcf09f37b7f2feb8d2b078ce8}{patrolright}
+\item 
+float \hyperlink{classAI_ad7d82b191fab3c529f0f8c60b0e71ab2}{brakehorslowdown} = 2
+\item 
+float \hyperlink{classAI_a021f46f3eb1d76607a5a22bdcd296d11}{regularhorslowdown} = 1.\+5
+\item 
+float \hyperlink{classAI_a3af9cf8b86fff09d7e95ed913636e18a}{maxmovespeed} = 250
+\item 
+float \hyperlink{classAI_a9cf2ba2f23c71833d6337b9e486cb6a3}{movepower} = 40
+\item 
+float \hyperlink{classAI_aa4053f5803c847fc13db08bc8cd6737b}{movespeedleft} = 0
+\item 
+float \hyperlink{classAI_a5b9ee08216e80b40ef278c0b8e71bdf2}{movespeedright} = 0
+\item 
+int \hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} = 2
+\item 
+bool \hyperlink{classAI_a33b48858d468564363727d20164f2c54}{slowingdownleft} = false
+\item 
+bool \hyperlink{classAI_a4ae562cbe6afd5d010d5329c0c926459}{slowingdownright} = false
+\item 
+float \hyperlink{classAI_af653a36c44ed6b2d781f09027df55ab7}{gravity} = 9
+\item 
+const int \hyperlink{classAI_ac7bc723979294e5fe5d7438713229473}{origjumpspeed} = 15
+\item 
+float \hyperlink{classAI_a8aff5a3b49415dcb533f0a570290bd86}{fallspeed}
+\item 
+float \hyperlink{classAI_ade9dbd955f4aea8feab5bbff996c3a48}{maxfallspeed} = 80
+\item 
+float \hyperlink{classAI_a79f9ea14d535b646e35ab8f2d95f59da}{jumppower} = 250
+\item 
+float \hyperlink{classAI_ab6d693d4a0669758d7bcc48d43d348b7}{fallpower} = 280
+\item 
+float \hyperlink{classAI_a9bcfb85a19a10d064a1db2772be9e30d}{jumpspeed} = 0
+\item 
+bool \hyperlink{classAI_aefe27541a9d4aaa10d23b421de4b2405}{jumpcheck} = true
+\item 
+bool \hyperlink{classAI_a4f56968f26a5263911c83062945aaec7}{apexcheck} = true
+\item 
+int \hyperlink{classAI_a3399d587364d2fef3e4a176ecdc294cc}{OriginalX}
+\item 
+int \hyperlink{classAI_a652d91a3a0b53d7919f6a2b02e301f26}{OriginalY}
+\item 
+int \hyperlink{classAI_a123529be0b9d2c660accf40ae93bc007}{positionX}
+\item 
+int \hyperlink{classAI_a558d3803098870a349f6f37c2f29a22d}{positionY}
+\item 
+float \hyperlink{classAI_af56d250c7efc5f36915193949d87be21}{counter} = 0
+\item 
+int \hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection} = 2
+\item 
+sf\+::\+Render\+Window $\ast$ \hyperlink{classAI_a0484a23ffd7e5c09b7fc252350a2c8c4}{window}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{AI@{AI}!AI@{AI}}
+\index{AI@{AI}!AI@{AI}}
+\subsubsection[{\texorpdfstring{A\+I(int x, int y, int patrol, sf\+::\+Render\+Window $\ast$window)}{AI(int x, int y, int patrol, sf::RenderWindow *window)}}]{\setlength{\rightskip}{0pt plus 5cm}A\+I\+::\+AI (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{patrol, }
+\item[{sf\+::\+Render\+Window $\ast$}]{window}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_a30783f011bab5e461811f1f513261424}{}\label{classAI_a30783f011bab5e461811f1f513261424}
+
+\begin{DoxyCode}
+4                                                        : \hyperlink{classAI_a0484a23ffd7e5c09b7fc252350a2c8c4}{window}(\hyperlink{classAI_a0484a23ffd7e5c09b7fc252350a2c8c4}{window})
+5 \{
+6     this->\hyperlink{classAI_a123529be0b9d2c660accf40ae93bc007}{positionX} = x;
+7     this->\hyperlink{classAI_a558d3803098870a349f6f37c2f29a22d}{positionY} = y;
+8     this->\hyperlink{classAI_a3399d587364d2fef3e4a176ecdc294cc}{OriginalX} = x;
+9     this->\hyperlink{classAI_a652d91a3a0b53d7919f6a2b02e301f26}{OriginalY} = y;
+10     \textcolor{comment}{//this->patrol = patrol;}
+11     \textcolor{comment}{//this->patrolleft = x - patrol;}
+12     \textcolor{comment}{//this->patrolright = x + patrol;}
+13     \hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character} = \textcolor{keyword}{new} sf::RectangleShape;
+14     \hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character}->setSize(sf::Vector2f(\hyperlink{classAI_afff2954d66c370ee45640977182f5e41}{sizeWidth},\hyperlink{classAI_a85fd1bdecd52faf9017230708c558276}{sizeHeight}));
+15 
+16     \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_a71cd77a66064b85cb34061b47c414709}{init}();
+17     \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_ac27ea35e042306fbf3656cd7001b2a31}{AIWalkLeft}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+18 
+19     \hyperlink{classAI_a073d65bf0b0b08b31710cf9743d2e364}{health}.\hyperlink{classHealth_a33873878b816ca504c1bda9674507666}{init}();
+20     \hyperlink{classAI_a073d65bf0b0b08b31710cf9743d2e364}{health}.\hyperlink{classHealth_a6e4c354b8b1147591345550769b22f5c}{SetOriginalLifePoints}(100);
+21     \hyperlink{classAI_a073d65bf0b0b08b31710cf9743d2e364}{health}.\hyperlink{classHealth_abca68d47c02b173013543c46b794bca7}{SetActualLifePoints}(100);
+22     \hyperlink{classAI_a073d65bf0b0b08b31710cf9743d2e364}{health}.\hyperlink{classHealth_acc38e31a9899242c374c99ef241872a4}{SetVisibleLifePoints}(100);
+23 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{AI@{AI}!A\+I\+Enraged@{A\+I\+Enraged}}
+\index{A\+I\+Enraged@{A\+I\+Enraged}!AI@{AI}}
+\subsubsection[{\texorpdfstring{A\+I\+Enraged()}{AIEnraged()}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+A\+I\+Enraged (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_a5ed430bba92b7a7183337257d78a189b}{}\label{classAI_a5ed430bba92b7a7183337257d78a189b}
+\index{AI@{AI}!A\+I\+Patrol@{A\+I\+Patrol}}
+\index{A\+I\+Patrol@{A\+I\+Patrol}!AI@{AI}}
+\subsubsection[{\texorpdfstring{A\+I\+Patrol()}{AIPatrol()}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+A\+I\+Patrol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_a09030418ab60079321ccb0bbee7f5267}{}\label{classAI_a09030418ab60079321ccb0bbee7f5267}
+\index{AI@{AI}!Animation\+AI@{Animation\+AI}}
+\index{Animation\+AI@{Animation\+AI}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Animation\+A\+I(float delta)}{AnimationAI(float delta)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Animation\+AI (
+\begin{DoxyParamCaption}
+\item[{float}]{delta}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_a8d7eba7842ac12a513bff9ac31afac9d}{}\label{classAI_a8d7eba7842ac12a513bff9ac31afac9d}
+
+\begin{DoxyCode}
+73 \{
+74     \hyperlink{classAI_af56d250c7efc5f36915193949d87be21}{counter} += delta;
+75     \textcolor{keywordflow}{if} (\hyperlink{classAI_af56d250c7efc5f36915193949d87be21}{counter} >= 0.1)
+76     \{
+77         \hyperlink{classAI_af56d250c7efc5f36915193949d87be21}{counter} = 0;
+78         \textcolor{keywordflow}{if} (\hyperlink{classAI_aefe27541a9d4aaa10d23b421de4b2405}{jumpcheck} && \hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 1) \textcolor{comment}{// If jumping to the right}
+79         \{
+80             \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_a61e2eb4c7a32f2e562ad0905a1a592e3}{AIWalkRight}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+81             \hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection} = 1;
+82         \}
+83         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classAI_aefe27541a9d4aaa10d23b421de4b2405}{jumpcheck} && \hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 0) \textcolor{comment}{// If jumping to the left}
+84         \{
+85             \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_ac27ea35e042306fbf3656cd7001b2a31}{AIWalkLeft}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+86             \hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection} = 0;
+87         \}
+88         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classAI_aefe27541a9d4aaa10d23b421de4b2405}{jumpcheck}) \textcolor{comment}{//If jumping upwards.}
+89         \{
+90             \textcolor{keywordflow}{if} (\hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection} == 1)
+91                 \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_a61e2eb4c7a32f2e562ad0905a1a592e3}{AIWalkRight}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+92             \textcolor{keywordflow}{else}
+93                 \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_ac27ea35e042306fbf3656cd7001b2a31}{AIWalkLeft}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+94         \}
+95 
+96         \textcolor{keywordflow}{else}
+97         \{
+98             \textcolor{keywordflow}{if} (\hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 0) \textcolor{comment}{// If moving to left, play left animation}
+99             \{
+100                 \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_ac27ea35e042306fbf3656cd7001b2a31}{AIWalkLeft}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+101             \}
+102             \textcolor{keywordflow}{if} (\hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 1) \textcolor{comment}{// If moving to right, play right animation}
+103             \{
+104                 \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_a61e2eb4c7a32f2e562ad0905a1a592e3}{AIWalkRight}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+105             \}
+106             \textcolor{keywordflow}{if} (\hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 2) \textcolor{comment}{// If movement stopped, play idle animation}
+107             \{
+108                 \textcolor{keywordflow}{if}(\hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection} == 0)
+109                     \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_ac27ea35e042306fbf3656cd7001b2a31}{AIWalkLeft}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+110                 \textcolor{keywordflow}{else}
+111                     \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_a61e2eb4c7a32f2e562ad0905a1a592e3}{AIWalkRight}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+112 
+113             \}
+114         \}
+115     \}
+116 \}
+\end{DoxyCode}
+\index{AI@{AI}!Animation\+A\+I\+Mini\+Boss@{Animation\+A\+I\+Mini\+Boss}}
+\index{Animation\+A\+I\+Mini\+Boss@{Animation\+A\+I\+Mini\+Boss}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Animation\+A\+I\+Mini\+Boss(float delta)}{AnimationAIMiniBoss(float delta)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Animation\+A\+I\+Mini\+Boss (
+\begin{DoxyParamCaption}
+\item[{float}]{delta}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_a00eb52508c12ac57d2e6de304f0eb0c6}{}\label{classAI_a00eb52508c12ac57d2e6de304f0eb0c6}
+
+\begin{DoxyCode}
+120 \{
+121     \hyperlink{classAI_af56d250c7efc5f36915193949d87be21}{counter} += delta;
+122     \textcolor{keywordflow}{if} (\hyperlink{classAI_af56d250c7efc5f36915193949d87be21}{counter} >= 0.1)
+123     \{
+124         \hyperlink{classAI_af56d250c7efc5f36915193949d87be21}{counter} = 0;
+125         \textcolor{keywordflow}{if} (\hyperlink{classAI_aefe27541a9d4aaa10d23b421de4b2405}{jumpcheck} && \hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 1) \textcolor{comment}{// If jumping to the right}
+126         \{
+127             \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_a218b34b75cb4c574f713cc402a73e707}{AIMiniBossWalkRight}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+128             \hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection} = 1;
+129         \}
+130         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classAI_aefe27541a9d4aaa10d23b421de4b2405}{jumpcheck} && \hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 0) \textcolor{comment}{// If jumping to the left}
+131         \{
+132             \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_aa3e38b98c8fb47c082d661c55cb40495}{AIMiniBossWalkLeft}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+133             \hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection} = 0;
+134         \}
+135         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classAI_aefe27541a9d4aaa10d23b421de4b2405}{jumpcheck}) \textcolor{comment}{//If jumping upwards.}
+136         \{
+137             \textcolor{keywordflow}{if} (\hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection} == 1)
+138                 \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_a218b34b75cb4c574f713cc402a73e707}{AIMiniBossWalkRight}(
+      \hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+139             \textcolor{keywordflow}{else}
+140                 \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_aa3e38b98c8fb47c082d661c55cb40495}{AIMiniBossWalkLeft}(
+      \hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+141         \}
+142 
+143         \textcolor{keywordflow}{else}
+144         \{
+145             \textcolor{keywordflow}{if} (\hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 0) \textcolor{comment}{// If moving to left, play left animation}
+146             \{
+147                 \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_aa3e38b98c8fb47c082d661c55cb40495}{AIMiniBossWalkLeft}(
+      \hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+148             \}
+149             \textcolor{keywordflow}{if} (\hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 1) \textcolor{comment}{// If moving to right, play right animation}
+150             \{
+151                 \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_a218b34b75cb4c574f713cc402a73e707}{AIMiniBossWalkRight}(
+      \hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+152             \}
+153             \textcolor{keywordflow}{if} (\hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 2) \textcolor{comment}{// If movement stopped, play idle animation}
+154             \{
+155                 \textcolor{keywordflow}{if}(\hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection} == 0)
+156                     \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_aa3e38b98c8fb47c082d661c55cb40495}{AIMiniBossWalkLeft}(
+      \hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+157                 \textcolor{keywordflow}{else}
+158                     \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_a218b34b75cb4c574f713cc402a73e707}{AIMiniBossWalkRight}(
+      \hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+159             \}
+160         \}
+161     \}
+162 \}
+\end{DoxyCode}
+\index{AI@{AI}!Animation\+Boss@{Animation\+Boss}}
+\index{Animation\+Boss@{Animation\+Boss}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Animation\+Boss(float delta)}{AnimationBoss(float delta)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Animation\+Boss (
+\begin{DoxyParamCaption}
+\item[{float}]{delta}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_a935f110e6b65684db196569228325c2e}{}\label{classAI_a935f110e6b65684db196569228325c2e}
+
+\begin{DoxyCode}
+165 \{
+166     \hyperlink{classAI_af56d250c7efc5f36915193949d87be21}{counter} += delta;
+167     \textcolor{keywordflow}{if} (\hyperlink{classAI_af56d250c7efc5f36915193949d87be21}{counter} >= 0.1)
+168     \{
+169         \hyperlink{classAI_af56d250c7efc5f36915193949d87be21}{counter} = 0;
+170         \textcolor{keywordflow}{if} (\hyperlink{classAI_aefe27541a9d4aaa10d23b421de4b2405}{jumpcheck} && \hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 1) \textcolor{comment}{// If jumping to the right}
+171         \{
+172             \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_a1999fd6ce4fb70a4c058ac8479cdc3f9}{AIBossWalkRight}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+173             \hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection} = 1;
+174         \}
+175         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classAI_aefe27541a9d4aaa10d23b421de4b2405}{jumpcheck} && \hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 0) \textcolor{comment}{// If jumping to the left}
+176         \{
+177             \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_ab39a686342b722a37c63ea0917424ee3}{AIBossWalkLeft}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+178             \hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection} = 0;
+179         \}
+180         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classAI_aefe27541a9d4aaa10d23b421de4b2405}{jumpcheck}) \textcolor{comment}{//If jumping upwards.}
+181         \{
+182             \textcolor{keywordflow}{if} (\hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection} == 1)
+183                 \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_a1999fd6ce4fb70a4c058ac8479cdc3f9}{AIBossWalkRight}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+184             \textcolor{keywordflow}{else}
+185                 \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_ab39a686342b722a37c63ea0917424ee3}{AIBossWalkLeft}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+186         \}
+187 
+188         \textcolor{keywordflow}{else}
+189         \{
+190             \textcolor{keywordflow}{if} (\hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 0) \textcolor{comment}{// If moving to left, play left animation}
+191             \{
+192                 \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_ab39a686342b722a37c63ea0917424ee3}{AIBossWalkLeft}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+193             \}
+194             \textcolor{keywordflow}{if} (\hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 1) \textcolor{comment}{// If moving to right, play right animation}
+195             \{
+196                 \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_a1999fd6ce4fb70a4c058ac8479cdc3f9}{AIBossWalkRight}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+197             \}
+198             \textcolor{keywordflow}{if} (\hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} == 2) \textcolor{comment}{// If movement stopped, play idle animation}
+199             \{
+200                 \textcolor{keywordflow}{if}(\hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection} == 0)
+201                     \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_ab39a686342b722a37c63ea0917424ee3}{AIBossWalkLeft}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+202                 \textcolor{keywordflow}{else}
+203                     \hyperlink{classAI_a6669dc8af30f760cbeca3008727913d0}{animation}.\hyperlink{classAnimation_a1999fd6ce4fb70a4c058ac8479cdc3f9}{AIBossWalkRight}(\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+204             \}
+205         \}
+206     \}
+207 \}
+\end{DoxyCode}
+\index{AI@{AI}!Death@{Death}}
+\index{Death@{Death}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Death()}{Death()}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Death (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_a59b0db7fd1d68dd2724d2da0f6e37bda}{}\label{classAI_a59b0db7fd1d68dd2724d2da0f6e37bda}
+
+\begin{DoxyCode}
+210 \{
+211 \textcolor{comment}{//Delete AI}
+212     this->\hyperlink{classAI_a073d65bf0b0b08b31710cf9743d2e364}{health}.\hyperlink{classHealth_a565eec980a98122472e88c57e43b9f16}{Hit}(100000000000);
+213 
+214 \}
+\end{DoxyCode}
+\index{AI@{AI}!Draw\+Me@{Draw\+Me}}
+\index{Draw\+Me@{Draw\+Me}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Draw\+Me()}{DrawMe()}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Draw\+Me (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_a05612024ed9f8c37bf239a085e8e1734}{}\label{classAI_a05612024ed9f8c37bf239a085e8e1734}
+
+\begin{DoxyCode}
+217 \{
+218     \textcolor{comment}{// Position the rectangle used to draw the square}
+219     \hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character}->setPosition(\hyperlink{classAI_a123529be0b9d2c660accf40ae93bc007}{positionX}, \hyperlink{classAI_a558d3803098870a349f6f37c2f29a22d}{positionY});
+220 
+221     \textcolor{comment}{// Draw the square}
+222     \hyperlink{classAI_a0484a23ffd7e5c09b7fc252350a2c8c4}{window}->draw(*\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character});
+223 \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+A\+I\+Colliding@{Get\+A\+I\+Colliding}}
+\index{Get\+A\+I\+Colliding@{Get\+A\+I\+Colliding}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+A\+I\+Colliding() const }{GetAIColliding() const }}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+A\+I\+Colliding (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a0757c03ecae2e2f3145ad1fc1eab2f03}{}\label{classAI_a0757c03ecae2e2f3145ad1fc1eab2f03}
+
+\begin{DoxyCode}
+34 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a17f6d2ecc23b43a425623947b639656d}{aicolliding}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Apex\+Check@{Get\+Apex\+Check}}
+\index{Get\+Apex\+Check@{Get\+Apex\+Check}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Apex\+Check() const }{GetApexCheck() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::\+Get\+Apex\+Check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_ada8f2f0cbeef5ebaf251564d4e9b6510}{}\label{classAI_ada8f2f0cbeef5ebaf251564d4e9b6510}
+
+\begin{DoxyCode}
+142 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a4f56968f26a5263911c83062945aaec7}{apexcheck}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Boss@{Get\+Boss}}
+\index{Get\+Boss@{Get\+Boss}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Boss() const }{GetBoss() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::\+Get\+Boss (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_abcffa9942e266731c6993c2040e69f6e}{}\label{classAI_abcffa9942e266731c6993c2040e69f6e}
+
+\begin{DoxyCode}
+73 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a1fa0702b9e1c4b6a29227dfc6e58be46}{boss}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Calm\+Speed@{Get\+Calm\+Speed}}
+\index{Get\+Calm\+Speed@{Get\+Calm\+Speed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Calm\+Speed() const }{GetCalmSpeed() const }}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+Calm\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_adaccf4bbe450127d198e46d7b8cf4f5c}{}\label{classAI_adaccf4bbe450127d198e46d7b8cf4f5c}
+
+\begin{DoxyCode}
+88 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_abdd48a54d265d83866f11fbe2ad8eed0}{calmspeed}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Character@{Get\+Character}}
+\index{Get\+Character@{Get\+Character}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Character() const }{GetCharacter() const }}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Rectangle\+Shape A\+I\+::\+Get\+Character (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_af8845b14b9634d95149a881489284b55}{}\label{classAI_af8845b14b9634d95149a881489284b55}
+
+\begin{DoxyCode}
+133 \{ \textcolor{keywordflow}{return} *\hyperlink{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{character}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Enrage\+Countdown@{Get\+Enrage\+Countdown}}
+\index{Get\+Enrage\+Countdown@{Get\+Enrage\+Countdown}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Enrage\+Countdown() const }{GetEnrageCountdown() const }}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+Enrage\+Countdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_adfd6fae7457c89e305d4d3f17ddc41a1}{}\label{classAI_adfd6fae7457c89e305d4d3f17ddc41a1}
+
+\begin{DoxyCode}
+82 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a155447249032f20011edefe8be3d081d}{enragecountdown}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Enraged@{Get\+Enraged}}
+\index{Get\+Enraged@{Get\+Enraged}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Enraged() const }{GetEnraged() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::\+Get\+Enraged (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_aec03758c556c899055e9cbaf255dc500}{}\label{classAI_aec03758c556c899055e9cbaf255dc500}
+
+\begin{DoxyCode}
+76 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a0b809846d43813799b3e44c42114e9a1}{enraged}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Enraged\+Speed@{Get\+Enraged\+Speed}}
+\index{Get\+Enraged\+Speed@{Get\+Enraged\+Speed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Enraged\+Speed() const }{GetEnragedSpeed() const }}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+Enraged\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a92907b66d44bf13562d95e54cc5513b6}{}\label{classAI_a92907b66d44bf13562d95e54cc5513b6}
+
+\begin{DoxyCode}
+85 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_af6b753eddb25c163d5b359420b314d4e}{enragedspeed}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Enrage\+Duration@{Get\+Enrage\+Duration}}
+\index{Get\+Enrage\+Duration@{Get\+Enrage\+Duration}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Enrage\+Duration() const }{GetEnrageDuration() const }}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+Enrage\+Duration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a41d1bb99dc6892c367c23a799ad9aec6}{}\label{classAI_a41d1bb99dc6892c367c23a799ad9aec6}
+
+\begin{DoxyCode}
+79 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a2e89055bd6a91949269c76ec94017194}{enrageduration}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Enrage\+Range@{Get\+Enrage\+Range}}
+\index{Get\+Enrage\+Range@{Get\+Enrage\+Range}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Enrage\+Range() const }{GetEnrageRange() const }}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+Enrage\+Range (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_aeba013301a6a62af203c8e0ad204d40b}{}\label{classAI_aeba013301a6a62af203c8e0ad204d40b}
+
+\begin{DoxyCode}
+78 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a768ddc6536a7b929c44f5deb643c60bc}{enragerange}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Fall\+Power@{Get\+Fall\+Power}}
+\index{Get\+Fall\+Power@{Get\+Fall\+Power}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Fall\+Power() const }{GetFallPower() const }}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::\+Get\+Fall\+Power (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a660ad0d23f78462f58063848a2796e9d}{}\label{classAI_a660ad0d23f78462f58063848a2796e9d}
+
+\begin{DoxyCode}
+156 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_ab6d693d4a0669758d7bcc48d43d348b7}{fallpower}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Fall\+Speed@{Get\+Fall\+Speed}}
+\index{Get\+Fall\+Speed@{Get\+Fall\+Speed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Fall\+Speed() const }{GetFallSpeed() const }}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::\+Get\+Fall\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a5518f137f504e35a88a16a374c30390b}{}\label{classAI_a5518f137f504e35a88a16a374c30390b}
+
+\begin{DoxyCode}
+145 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a8aff5a3b49415dcb533f0a570290bd86}{fallspeed}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Gravity@{Get\+Gravity}}
+\index{Get\+Gravity@{Get\+Gravity}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Gravity() const }{GetGravity() const }}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::\+Get\+Gravity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_aaf2f8c7e9bf518bee620e5731faa1ed7}{}\label{classAI_aaf2f8c7e9bf518bee620e5731faa1ed7}
+
+\begin{DoxyCode}
+131 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_af653a36c44ed6b2d781f09027df55ab7}{gravity}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Hor\+Brake@{Get\+Hor\+Brake}}
+\index{Get\+Hor\+Brake@{Get\+Hor\+Brake}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Hor\+Brake() const }{GetHorBrake() const }}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::\+Get\+Hor\+Brake (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a492eb8602d131ddd7d1002a5175c677b}{}\label{classAI_a492eb8602d131ddd7d1002a5175c677b}
+
+\begin{DoxyCode}
+115 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_ad7d82b191fab3c529f0f8c60b0e71ab2}{brakehorslowdown}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Jump\+Check@{Get\+Jump\+Check}}
+\index{Get\+Jump\+Check@{Get\+Jump\+Check}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Jump\+Check() const }{GetJumpCheck() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::\+Get\+Jump\+Check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a44af0b44c634384d9aa5200b6e1b7427}{}\label{classAI_a44af0b44c634384d9aa5200b6e1b7427}
+
+\begin{DoxyCode}
+141 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_aefe27541a9d4aaa10d23b421de4b2405}{jumpcheck}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Jump\+Power@{Get\+Jump\+Power}}
+\index{Get\+Jump\+Power@{Get\+Jump\+Power}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Jump\+Power() const }{GetJumpPower() const }}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::\+Get\+Jump\+Power (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a92873a9908dc947bba6f7270765614a7}{}\label{classAI_a92873a9908dc947bba6f7270765614a7}
+
+\begin{DoxyCode}
+153 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a79f9ea14d535b646e35ab8f2d95f59da}{jumppower}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Jump\+Speed@{Get\+Jump\+Speed}}
+\index{Get\+Jump\+Speed@{Get\+Jump\+Speed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Jump\+Speed() const }{GetJumpSpeed() const }}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::\+Get\+Jump\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a9d3a04adec2708eae25fa24af2eb23f7}{}\label{classAI_a9d3a04adec2708eae25fa24af2eb23f7}
+
+\begin{DoxyCode}
+149 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a9bcfb85a19a10d064a1db2772be9e30d}{jumpspeed}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Last\+Move\+Direction@{Get\+Last\+Move\+Direction}}
+\index{Get\+Last\+Move\+Direction@{Get\+Last\+Move\+Direction}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Last\+Move\+Direction() const }{GetLastMoveDirection() const }}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+Last\+Move\+Direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_ad5a76573afc4ca46c3e8c63bb71c1cef}{}\label{classAI_ad5a76573afc4ca46c3e8c63bb71c1cef}
+
+\begin{DoxyCode}
+129 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Left\+Key@{Get\+Left\+Key}}
+\index{Get\+Left\+Key@{Get\+Left\+Key}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Left\+Key() const }{GetLeftKey() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::\+Get\+Left\+Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a0d8e57db11f22335ef2a7dcf3408ea6b}{}\label{classAI_a0d8e57db11f22335ef2a7dcf3408ea6b}
+
+\begin{DoxyCode}
+63 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_af4a6576f510ed03a56c98bfc5b711f1a}{leftkey}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Max\+Fall\+Speed@{Get\+Max\+Fall\+Speed}}
+\index{Get\+Max\+Fall\+Speed@{Get\+Max\+Fall\+Speed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Max\+Fall\+Speed() const }{GetMaxFallSpeed() const }}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::\+Get\+Max\+Fall\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a9c878567c39d6a9c293931a679b37ffd}{}\label{classAI_a9c878567c39d6a9c293931a679b37ffd}
+
+\begin{DoxyCode}
+146 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_ade9dbd955f4aea8feab5bbff996c3a48}{maxfallspeed}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Max\+Move\+Speed@{Get\+Max\+Move\+Speed}}
+\index{Get\+Max\+Move\+Speed@{Get\+Max\+Move\+Speed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Max\+Move\+Speed() const }{GetMaxMoveSpeed() const }}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::\+Get\+Max\+Move\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a7b6da292ee6fde22465b2a956c1c1aff}{}\label{classAI_a7b6da292ee6fde22465b2a956c1c1aff}
+
+\begin{DoxyCode}
+120 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a3af9cf8b86fff09d7e95ed913636e18a}{maxmovespeed}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Mini\+Boss@{Get\+Mini\+Boss}}
+\index{Get\+Mini\+Boss@{Get\+Mini\+Boss}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Mini\+Boss() const }{GetMiniBoss() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::\+Get\+Mini\+Boss (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a4b16ff859e873a2fe1b5b2eae5a7c5ab}{}\label{classAI_a4b16ff859e873a2fe1b5b2eae5a7c5ab}
+
+\begin{DoxyCode}
+70 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_aee02bf098d14d402140bdeb9516280f9}{miniboss}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Mov\+Dir@{Get\+Mov\+Dir}}
+\index{Get\+Mov\+Dir@{Get\+Mov\+Dir}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Mov\+Dir() const }{GetMovDir() const }}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+Mov\+Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_af44b60f433e7046939fa564f17e4655f}{}\label{classAI_af44b60f433e7046939fa564f17e4655f}
+
+\begin{DoxyCode}
+125 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Move\+Power@{Get\+Move\+Power}}
+\index{Get\+Move\+Power@{Get\+Move\+Power}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Move\+Power() const }{GetMovePower() const }}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::\+Get\+Move\+Power (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_aa6c83658cc7028645288d90dac360ba4}{}\label{classAI_aa6c83658cc7028645288d90dac360ba4}
+
+\begin{DoxyCode}
+121 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a9cf2ba2f23c71833d6337b9e486cb6a3}{movepower}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Move\+SpeedL@{Get\+Move\+SpeedL}}
+\index{Get\+Move\+SpeedL@{Get\+Move\+SpeedL}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Move\+Speed\+L() const }{GetMoveSpeedL() const }}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::\+Get\+Move\+SpeedL (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a727dd212a4f6dea5030399943b66a285}{}\label{classAI_a727dd212a4f6dea5030399943b66a285}
+
+\begin{DoxyCode}
+112 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_aa4053f5803c847fc13db08bc8cd6737b}{movespeedleft}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Move\+SpeedR@{Get\+Move\+SpeedR}}
+\index{Get\+Move\+SpeedR@{Get\+Move\+SpeedR}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Move\+Speed\+R() const }{GetMoveSpeedR() const }}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::\+Get\+Move\+SpeedR (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_af237abb2520be87abb2fc709b23736ec}{}\label{classAI_af237abb2520be87abb2fc709b23736ec}
+
+\begin{DoxyCode}
+111 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a5b9ee08216e80b40ef278c0b8e71bdf2}{movespeedright}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+OriginalX@{Get\+OriginalX}}
+\index{Get\+OriginalX@{Get\+OriginalX}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Original\+X()}{GetOriginalX()}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+OriginalX (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_a2652ab0999a03f538c9f3b5706a4022e}{}\label{classAI_a2652ab0999a03f538c9f3b5706a4022e}
+
+\begin{DoxyCode}
+43 \{
+44     \textcolor{keywordflow}{return} \hyperlink{classAI_a3399d587364d2fef3e4a176ecdc294cc}{OriginalX};
+45 \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+OriginalY@{Get\+OriginalY}}
+\index{Get\+OriginalY@{Get\+OriginalY}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Original\+Y()}{GetOriginalY()}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+OriginalY (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_a9048855bd39d76f5c6eb71bffd94b545}{}\label{classAI_a9048855bd39d76f5c6eb71bffd94b545}
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keywordflow}{return} \hyperlink{classAI_a652d91a3a0b53d7919f6a2b02e301f26}{OriginalY};
+50 \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Orig\+Jump\+Speed@{Get\+Orig\+Jump\+Speed}}
+\index{Get\+Orig\+Jump\+Speed@{Get\+Orig\+Jump\+Speed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Orig\+Jump\+Speed() const }{GetOrigJumpSpeed() const }}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::\+Get\+Orig\+Jump\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a028ef0d497fa8f7d9acb93dc7cc7aaf7}{}\label{classAI_a028ef0d497fa8f7d9acb93dc7cc7aaf7}
+
+\begin{DoxyCode}
+150 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_ac7bc723979294e5fe5d7438713229473}{origjumpspeed}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Patrol\+Left@{Get\+Patrol\+Left}}
+\index{Get\+Patrol\+Left@{Get\+Patrol\+Left}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Patrol\+Left() const }{GetPatrolLeft() const }}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+Patrol\+Left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a7110967584c670de961d47f2bf04f7b0}{}\label{classAI_a7110967584c670de961d47f2bf04f7b0}
+
+\begin{DoxyCode}
+91 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a8a572d9fa33e579a4c8eea9e1ab09e8f}{patrolleft}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Patrol\+Right@{Get\+Patrol\+Right}}
+\index{Get\+Patrol\+Right@{Get\+Patrol\+Right}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Patrol\+Right() const }{GetPatrolRight() const }}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+Patrol\+Right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_afbdc815ba4215f0fcaca85f304ad88bf}{}\label{classAI_afbdc815ba4215f0fcaca85f304ad88bf}
+
+\begin{DoxyCode}
+94 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a5af0047dcf09f37b7f2feb8d2b078ce8}{patrolright}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+PositionX@{Get\+PositionX}}
+\index{Get\+PositionX@{Get\+PositionX}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Position\+X()}{GetPositionX()}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+PositionX (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_ade2ee4c9c75cdf9f4edd85227193e73d}{}\label{classAI_ade2ee4c9c75cdf9f4edd85227193e73d}
+
+\begin{DoxyCode}
+26 \{
+27     \textcolor{keywordflow}{return} \hyperlink{classAI_a123529be0b9d2c660accf40ae93bc007}{positionX};
+28 \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+PositionY@{Get\+PositionY}}
+\index{Get\+PositionY@{Get\+PositionY}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Position\+Y()}{GetPositionY()}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+PositionY (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_af234b480b8502f3dc1b1f3bac15e8b98}{}\label{classAI_af234b480b8502f3dc1b1f3bac15e8b98}
+
+\begin{DoxyCode}
+30 \{
+31     \textcolor{keywordflow}{return} \hyperlink{classAI_a558d3803098870a349f6f37c2f29a22d}{positionY};
+32 \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Regular\+Brake@{Get\+Regular\+Brake}}
+\index{Get\+Regular\+Brake@{Get\+Regular\+Brake}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Regular\+Brake() const }{GetRegularBrake() const }}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::\+Get\+Regular\+Brake (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a12164015cfb14576341e0cd31939927a}{}\label{classAI_a12164015cfb14576341e0cd31939927a}
+
+\begin{DoxyCode}
+116 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a021f46f3eb1d76607a5a22bdcd296d11}{regularhorslowdown}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Right\+Key@{Get\+Right\+Key}}
+\index{Get\+Right\+Key@{Get\+Right\+Key}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Right\+Key() const }{GetRightKey() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::\+Get\+Right\+Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_aeb518aba00b996380158b247aa1dca7f}{}\label{classAI_aeb518aba00b996380158b247aa1dca7f}
+
+\begin{DoxyCode}
+65 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_afd8bf97dd365a456af724aade73129fb}{rightkey}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Size\+Height@{Get\+Size\+Height}}
+\index{Get\+Size\+Height@{Get\+Size\+Height}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Size\+Height() const }{GetSizeHeight() const }}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+Size\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_adb31196a4fcbbe4d92299e899f04d789}{}\label{classAI_adb31196a4fcbbe4d92299e899f04d789}
+
+\begin{DoxyCode}
+31 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a85fd1bdecd52faf9017230708c558276}{sizeHeight}; \};
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Size\+Width@{Get\+Size\+Width}}
+\index{Get\+Size\+Width@{Get\+Size\+Width}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Size\+Width() const }{GetSizeWidth() const }}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+Get\+Size\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a9d84d316c17038eecee2abf8e2141385}{}\label{classAI_a9d84d316c17038eecee2abf8e2141385}
+
+\begin{DoxyCode}
+29 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_afff2954d66c370ee45640977182f5e41}{sizeWidth}; \};
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Slow\+DownL@{Get\+Slow\+DownL}}
+\index{Get\+Slow\+DownL@{Get\+Slow\+DownL}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Slow\+Down\+L() const }{GetSlowDownL() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::\+Get\+Slow\+DownL (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_ab0d09d0379209305cdbedff71615be8e}{}\label{classAI_ab0d09d0379209305cdbedff71615be8e}
+
+\begin{DoxyCode}
+106 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a33b48858d468564363727d20164f2c54}{slowingdownleft}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Slow\+DownR@{Get\+Slow\+DownR}}
+\index{Get\+Slow\+DownR@{Get\+Slow\+DownR}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Slow\+Down\+R() const }{GetSlowDownR() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::\+Get\+Slow\+DownR (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a144406629e0344569a28b1f02c1503ad}{}\label{classAI_a144406629e0344569a28b1f02c1503ad}
+
+\begin{DoxyCode}
+105 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a4ae562cbe6afd5d010d5329c0c926459}{slowingdownright}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Get\+Up\+Key@{Get\+Up\+Key}}
+\index{Get\+Up\+Key@{Get\+Up\+Key}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Get\+Up\+Key() const }{GetUpKey() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::\+Get\+Up\+Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a2e3c9d6a73594994858c13bfffaa7450}{}\label{classAI_a2e3c9d6a73594994858c13bfffaa7450}
+
+\begin{DoxyCode}
+67 \{ \textcolor{keywordflow}{return} \hyperlink{classAI_a1bde8ebcfb666d83ffb7e71993bf06fc}{upkey}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Reset2\+OriginalX@{Reset2\+OriginalX}}
+\index{Reset2\+OriginalX@{Reset2\+OriginalX}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Reset2\+Original\+X(float x)}{Reset2OriginalX(float x)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Reset2\+OriginalX (
+\begin{DoxyParamCaption}
+\item[{float}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_a9e60e3da7ae96c1a7bc5dbff38c4128e}{}\label{classAI_a9e60e3da7ae96c1a7bc5dbff38c4128e}
+
+\begin{DoxyCode}
+63 \{
+64     x = this->\hyperlink{classAI_a3399d587364d2fef3e4a176ecdc294cc}{OriginalX};
+65 \}
+\end{DoxyCode}
+\index{AI@{AI}!Reset2\+OriginalY@{Reset2\+OriginalY}}
+\index{Reset2\+OriginalY@{Reset2\+OriginalY}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Reset2\+Original\+Y(float y)}{Reset2OriginalY(float y)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Reset2\+OriginalY (
+\begin{DoxyParamCaption}
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_ac0f90e7b4065125014f476b2132e61ed}{}\label{classAI_ac0f90e7b4065125014f476b2132e61ed}
+
+\begin{DoxyCode}
+68 \{
+69     y = this->\hyperlink{classAI_a652d91a3a0b53d7919f6a2b02e301f26}{OriginalY};
+70 \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+A\+I\+Colliding@{Set\+A\+I\+Colliding}}
+\index{Set\+A\+I\+Colliding@{Set\+A\+I\+Colliding}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+A\+I\+Colliding(int aicolliding)}{SetAIColliding(int aicolliding)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+A\+I\+Colliding (
+\begin{DoxyParamCaption}
+\item[{int}]{aicolliding}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a31e4fec3672db036e511ca2c6a5d2b75}{}\label{classAI_a31e4fec3672db036e511ca2c6a5d2b75}
+
+\begin{DoxyCode}
+33 \{ this->\hyperlink{classAI_a17f6d2ecc23b43a425623947b639656d}{aicolliding} = \hyperlink{classAI_a17f6d2ecc23b43a425623947b639656d}{aicolliding}; \};
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Apex\+Check@{Set\+Apex\+Check}}
+\index{Set\+Apex\+Check@{Set\+Apex\+Check}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Apex\+Check(bool apexcheck)}{SetApexCheck(bool apexcheck)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Apex\+Check (
+\begin{DoxyParamCaption}
+\item[{bool}]{apexcheck}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_acb9cc6624a01a27516f68406429f7496}{}\label{classAI_acb9cc6624a01a27516f68406429f7496}
+
+\begin{DoxyCode}
+140 \{ this->\hyperlink{classAI_a4f56968f26a5263911c83062945aaec7}{apexcheck} = \hyperlink{classAI_a4f56968f26a5263911c83062945aaec7}{apexcheck}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Boss@{Set\+Boss}}
+\index{Set\+Boss@{Set\+Boss}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Boss(bool boss)}{SetBoss(bool boss)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Boss (
+\begin{DoxyParamCaption}
+\item[{bool}]{boss}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a6c385b58bce2c0314e521addee4ba209}{}\label{classAI_a6c385b58bce2c0314e521addee4ba209}
+
+\begin{DoxyCode}
+72 \{ this->\hyperlink{classAI_a1fa0702b9e1c4b6a29227dfc6e58be46}{boss} = \hyperlink{classAI_a1fa0702b9e1c4b6a29227dfc6e58be46}{boss}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Calm\+Speed@{Set\+Calm\+Speed}}
+\index{Set\+Calm\+Speed@{Set\+Calm\+Speed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Calm\+Speed(int calmspeed)}{SetCalmSpeed(int calmspeed)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Calm\+Speed (
+\begin{DoxyParamCaption}
+\item[{int}]{calmspeed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a88eb2b0ed216184bb890dc4e763b5d1c}{}\label{classAI_a88eb2b0ed216184bb890dc4e763b5d1c}
+
+\begin{DoxyCode}
+87 \{ this->\hyperlink{classAI_abdd48a54d265d83866f11fbe2ad8eed0}{calmspeed} = \hyperlink{classAI_abdd48a54d265d83866f11fbe2ad8eed0}{calmspeed}; \};
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Enrage\+Countdown@{Set\+Enrage\+Countdown}}
+\index{Set\+Enrage\+Countdown@{Set\+Enrage\+Countdown}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Enrage\+Countdown(int enragecountdown)}{SetEnrageCountdown(int enragecountdown)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Enrage\+Countdown (
+\begin{DoxyParamCaption}
+\item[{int}]{enragecountdown}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_af9e9f4b5bef37e9800dbeb5e20adddf2}{}\label{classAI_af9e9f4b5bef37e9800dbeb5e20adddf2}
+
+\begin{DoxyCode}
+81 \{ this->\hyperlink{classAI_a155447249032f20011edefe8be3d081d}{enragecountdown} = \hyperlink{classAI_a155447249032f20011edefe8be3d081d}{enragecountdown}; \};
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Enraged@{Set\+Enraged}}
+\index{Set\+Enraged@{Set\+Enraged}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Enraged(bool enraged)}{SetEnraged(bool enraged)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Enraged (
+\begin{DoxyParamCaption}
+\item[{bool}]{enraged}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a9fbf2081f38575bc61a7f251b2bb9a3b}{}\label{classAI_a9fbf2081f38575bc61a7f251b2bb9a3b}
+
+\begin{DoxyCode}
+75 \{ this->\hyperlink{classAI_a0b809846d43813799b3e44c42114e9a1}{enraged} = \hyperlink{classAI_a0b809846d43813799b3e44c42114e9a1}{enraged}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Enraged\+Speed@{Set\+Enraged\+Speed}}
+\index{Set\+Enraged\+Speed@{Set\+Enraged\+Speed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Enraged\+Speed(int enragedspeed)}{SetEnragedSpeed(int enragedspeed)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Enraged\+Speed (
+\begin{DoxyParamCaption}
+\item[{int}]{enragedspeed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a82152a7a8a96bbd259ced87eea4f4ef8}{}\label{classAI_a82152a7a8a96bbd259ced87eea4f4ef8}
+
+\begin{DoxyCode}
+84 \{ this->\hyperlink{classAI_af6b753eddb25c163d5b359420b314d4e}{enragedspeed} = \hyperlink{classAI_af6b753eddb25c163d5b359420b314d4e}{enragedspeed}; \};
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Fall\+Power@{Set\+Fall\+Power}}
+\index{Set\+Fall\+Power@{Set\+Fall\+Power}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Fall\+Power(float fallpower)}{SetFallPower(float fallpower)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Fall\+Power (
+\begin{DoxyParamCaption}
+\item[{float}]{fallpower}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_ae6a7d8162fbe9a74c86dec4efb5d940c}{}\label{classAI_ae6a7d8162fbe9a74c86dec4efb5d940c}
+
+\begin{DoxyCode}
+155 \{ this->\hyperlink{classAI_ab6d693d4a0669758d7bcc48d43d348b7}{fallpower} = \hyperlink{classAI_ab6d693d4a0669758d7bcc48d43d348b7}{fallpower}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Fall\+Speed@{Set\+Fall\+Speed}}
+\index{Set\+Fall\+Speed@{Set\+Fall\+Speed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Fall\+Speed(float fallspeed)}{SetFallSpeed(float fallspeed)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Fall\+Speed (
+\begin{DoxyParamCaption}
+\item[{float}]{fallspeed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_ab42bf8c5b4ec0d54423b55e2db524640}{}\label{classAI_ab42bf8c5b4ec0d54423b55e2db524640}
+
+\begin{DoxyCode}
+144 \{ this->\hyperlink{classAI_a8aff5a3b49415dcb533f0a570290bd86}{fallspeed} = \hyperlink{classAI_a8aff5a3b49415dcb533f0a570290bd86}{fallspeed}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Jump\+Check@{Set\+Jump\+Check}}
+\index{Set\+Jump\+Check@{Set\+Jump\+Check}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Jump\+Check(bool jumpcheck)}{SetJumpCheck(bool jumpcheck)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Jump\+Check (
+\begin{DoxyParamCaption}
+\item[{bool}]{jumpcheck}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_af70dcfec2f6f98c2113f416895c14214}{}\label{classAI_af70dcfec2f6f98c2113f416895c14214}
+
+\begin{DoxyCode}
+139 \{ this->\hyperlink{classAI_aefe27541a9d4aaa10d23b421de4b2405}{jumpcheck} = \hyperlink{classAI_aefe27541a9d4aaa10d23b421de4b2405}{jumpcheck}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Jump\+Power@{Set\+Jump\+Power}}
+\index{Set\+Jump\+Power@{Set\+Jump\+Power}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Jump\+Power(float jumppower)}{SetJumpPower(float jumppower)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Jump\+Power (
+\begin{DoxyParamCaption}
+\item[{float}]{jumppower}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a5fbb2086d91fe1a31e916d0874f39eb3}{}\label{classAI_a5fbb2086d91fe1a31e916d0874f39eb3}
+
+\begin{DoxyCode}
+152 \{ this->\hyperlink{classAI_a79f9ea14d535b646e35ab8f2d95f59da}{jumppower} = \hyperlink{classAI_a79f9ea14d535b646e35ab8f2d95f59da}{jumppower}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Jump\+Speed@{Set\+Jump\+Speed}}
+\index{Set\+Jump\+Speed@{Set\+Jump\+Speed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Jump\+Speed(float jumpspeed)}{SetJumpSpeed(float jumpspeed)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Jump\+Speed (
+\begin{DoxyParamCaption}
+\item[{float}]{jumpspeed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a90247314e34a1d0e1376a27dac61f1c4}{}\label{classAI_a90247314e34a1d0e1376a27dac61f1c4}
+
+\begin{DoxyCode}
+148 \{ this->\hyperlink{classAI_a9bcfb85a19a10d064a1db2772be9e30d}{jumpspeed} = \hyperlink{classAI_a9bcfb85a19a10d064a1db2772be9e30d}{jumpspeed}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Last\+Move\+Direction@{Set\+Last\+Move\+Direction}}
+\index{Set\+Last\+Move\+Direction@{Set\+Last\+Move\+Direction}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Last\+Move\+Direction(int lastmovedirection)}{SetLastMoveDirection(int lastmovedirection)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Last\+Move\+Direction (
+\begin{DoxyParamCaption}
+\item[{int}]{lastmovedirection}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_abc21616a023e18fe33740326b22b21fa}{}\label{classAI_abc21616a023e18fe33740326b22b21fa}
+
+\begin{DoxyCode}
+128 \{ this->\hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection} = \hyperlink{classAI_ad23ffbd48fb9fd95ec18df649810b766}{lastmovedirection}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Left\+Key@{Set\+Left\+Key}}
+\index{Set\+Left\+Key@{Set\+Left\+Key}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Left\+Key(bool leftkey)}{SetLeftKey(bool leftkey)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Left\+Key (
+\begin{DoxyParamCaption}
+\item[{bool}]{leftkey}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_abcb80800d582425bcca0e6265ff5c771}{}\label{classAI_abcb80800d582425bcca0e6265ff5c771}
+
+\begin{DoxyCode}
+62 \{ this->\hyperlink{classAI_af4a6576f510ed03a56c98bfc5b711f1a}{leftkey} = \hyperlink{classAI_af4a6576f510ed03a56c98bfc5b711f1a}{leftkey}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Max\+Move\+Speed@{Set\+Max\+Move\+Speed}}
+\index{Set\+Max\+Move\+Speed@{Set\+Max\+Move\+Speed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Max\+Move\+Speed(float maxmovespeed)}{SetMaxMoveSpeed(float maxmovespeed)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Max\+Move\+Speed (
+\begin{DoxyParamCaption}
+\item[{float}]{maxmovespeed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a4423ec546f1d37cec368321e119ac6b0}{}\label{classAI_a4423ec546f1d37cec368321e119ac6b0}
+
+\begin{DoxyCode}
+119 \{ this->\hyperlink{classAI_a3af9cf8b86fff09d7e95ed913636e18a}{maxmovespeed} = \hyperlink{classAI_a3af9cf8b86fff09d7e95ed913636e18a}{maxmovespeed}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Mini\+Boss@{Set\+Mini\+Boss}}
+\index{Set\+Mini\+Boss@{Set\+Mini\+Boss}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Mini\+Boss(bool miniboss)}{SetMiniBoss(bool miniboss)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Mini\+Boss (
+\begin{DoxyParamCaption}
+\item[{bool}]{miniboss}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_acf469b2d4b6bfa66ebf81cffce614b35}{}\label{classAI_acf469b2d4b6bfa66ebf81cffce614b35}
+
+\begin{DoxyCode}
+69 \{ this->\hyperlink{classAI_aee02bf098d14d402140bdeb9516280f9}{miniboss} = \hyperlink{classAI_aee02bf098d14d402140bdeb9516280f9}{miniboss}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Mov\+Dir@{Set\+Mov\+Dir}}
+\index{Set\+Mov\+Dir@{Set\+Mov\+Dir}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Mov\+Dir(int movedirection)}{SetMovDir(int movedirection)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Mov\+Dir (
+\begin{DoxyParamCaption}
+\item[{int}]{movedirection}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a7b1fa9a0546e462e633bbdcbbf12eb50}{}\label{classAI_a7b1fa9a0546e462e633bbdcbbf12eb50}
+
+\begin{DoxyCode}
+124 \{ this->\hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection} = \hyperlink{classAI_ac23347ccaa9f699521417509ab73e271}{movedirection}; \};
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Move\+SpeedL@{Set\+Move\+SpeedL}}
+\index{Set\+Move\+SpeedL@{Set\+Move\+SpeedL}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Move\+Speed\+L(float movespeedleft)}{SetMoveSpeedL(float movespeedleft)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Move\+SpeedL (
+\begin{DoxyParamCaption}
+\item[{float}]{movespeedleft}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a7e52788a6f93f78feaa0c8867f454888}{}\label{classAI_a7e52788a6f93f78feaa0c8867f454888}
+
+\begin{DoxyCode}
+110 \{ this->\hyperlink{classAI_aa4053f5803c847fc13db08bc8cd6737b}{movespeedleft} = \hyperlink{classAI_aa4053f5803c847fc13db08bc8cd6737b}{movespeedleft}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Move\+SpeedR@{Set\+Move\+SpeedR}}
+\index{Set\+Move\+SpeedR@{Set\+Move\+SpeedR}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Move\+Speed\+R(float movespeedright)}{SetMoveSpeedR(float movespeedright)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Move\+SpeedR (
+\begin{DoxyParamCaption}
+\item[{float}]{movespeedright}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a171141e877f08757696a65e3d9305660}{}\label{classAI_a171141e877f08757696a65e3d9305660}
+
+\begin{DoxyCode}
+109 \{ this->\hyperlink{classAI_a5b9ee08216e80b40ef278c0b8e71bdf2}{movespeedright} = \hyperlink{classAI_a5b9ee08216e80b40ef278c0b8e71bdf2}{movespeedright}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+OriginalX@{Set\+OriginalX}}
+\index{Set\+OriginalX@{Set\+OriginalX}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Original\+X(int x)}{SetOriginalX(int x)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+OriginalX (
+\begin{DoxyParamCaption}
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_a5a76a0c5030dcbe0ab3a59e26ca0908a}{}\label{classAI_a5a76a0c5030dcbe0ab3a59e26ca0908a}
+
+\begin{DoxyCode}
+53 \{
+54     this->\hyperlink{classAI_a3399d587364d2fef3e4a176ecdc294cc}{OriginalX} = x;
+55 \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+OriginalY@{Set\+OriginalY}}
+\index{Set\+OriginalY@{Set\+OriginalY}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Original\+Y(int y)}{SetOriginalY(int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+OriginalY (
+\begin{DoxyParamCaption}
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_ab9ca5d112a4b790549d1db387802b849}{}\label{classAI_ab9ca5d112a4b790549d1db387802b849}
+
+\begin{DoxyCode}
+58 \{
+59     this->\hyperlink{classAI_a652d91a3a0b53d7919f6a2b02e301f26}{OriginalY} = y;
+60 \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Patrol\+Left@{Set\+Patrol\+Left}}
+\index{Set\+Patrol\+Left@{Set\+Patrol\+Left}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Patrol\+Left(int patrolleft)}{SetPatrolLeft(int patrolleft)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Patrol\+Left (
+\begin{DoxyParamCaption}
+\item[{int}]{patrolleft}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_ac97aecfd5b2950e30befa579fe2b2e2b}{}\label{classAI_ac97aecfd5b2950e30befa579fe2b2e2b}
+
+\begin{DoxyCode}
+90 \{ this->\hyperlink{classAI_a8a572d9fa33e579a4c8eea9e1ab09e8f}{patrolleft} = \hyperlink{classAI_a8a572d9fa33e579a4c8eea9e1ab09e8f}{patrolleft}; \};
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Patrol\+Right@{Set\+Patrol\+Right}}
+\index{Set\+Patrol\+Right@{Set\+Patrol\+Right}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Patrol\+Right(int patrolright)}{SetPatrolRight(int patrolright)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Patrol\+Right (
+\begin{DoxyParamCaption}
+\item[{int}]{patrolright}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_aa2afe9d83b68d31ab6b0bc6df452d344}{}\label{classAI_aa2afe9d83b68d31ab6b0bc6df452d344}
+
+\begin{DoxyCode}
+93 \{ this->\hyperlink{classAI_a5af0047dcf09f37b7f2feb8d2b078ce8}{patrolright} = \hyperlink{classAI_a5af0047dcf09f37b7f2feb8d2b078ce8}{patrolright}; \};
+\end{DoxyCode}
+\index{AI@{AI}!Set\+PositionX@{Set\+PositionX}}
+\index{Set\+PositionX@{Set\+PositionX}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Position\+X(int x)}{SetPositionX(int x)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+PositionX (
+\begin{DoxyParamCaption}
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_a5436f878f8f02597de9ec5ebfdcc7cd9}{}\label{classAI_a5436f878f8f02597de9ec5ebfdcc7cd9}
+
+\begin{DoxyCode}
+34 \{
+35     this->\hyperlink{classAI_a123529be0b9d2c660accf40ae93bc007}{positionX} = x;
+36 \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+PositionY@{Set\+PositionY}}
+\index{Set\+PositionY@{Set\+PositionY}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Position\+Y(int y)}{SetPositionY(int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+PositionY (
+\begin{DoxyParamCaption}
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classAI_a4e042958bb678aebdee4af9925efa389}{}\label{classAI_a4e042958bb678aebdee4af9925efa389}
+
+\begin{DoxyCode}
+38 \{
+39     this->\hyperlink{classAI_a558d3803098870a349f6f37c2f29a22d}{positionY} = y;
+40 \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Right\+Key@{Set\+Right\+Key}}
+\index{Set\+Right\+Key@{Set\+Right\+Key}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Right\+Key(bool rightkey)}{SetRightKey(bool rightkey)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Right\+Key (
+\begin{DoxyParamCaption}
+\item[{bool}]{rightkey}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_abacb14347200b16386e21d7977b51f85}{}\label{classAI_abacb14347200b16386e21d7977b51f85}
+
+\begin{DoxyCode}
+64 \{ this->\hyperlink{classAI_afd8bf97dd365a456af724aade73129fb}{rightkey} = \hyperlink{classAI_afd8bf97dd365a456af724aade73129fb}{rightkey}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Size\+Height@{Set\+Size\+Height}}
+\index{Set\+Size\+Height@{Set\+Size\+Height}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Size\+Height(int sizeheight)}{SetSizeHeight(int sizeheight)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Size\+Height (
+\begin{DoxyParamCaption}
+\item[{int}]{sizeheight}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_ab63724e76ed2efa586b09593c62edc51}{}\label{classAI_ab63724e76ed2efa586b09593c62edc51}
+
+\begin{DoxyCode}
+30 \{ this->\hyperlink{classAI_a85fd1bdecd52faf9017230708c558276}{sizeHeight} = sizeheight; \};
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Size\+Width@{Set\+Size\+Width}}
+\index{Set\+Size\+Width@{Set\+Size\+Width}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Size\+Width(int sizewidth)}{SetSizeWidth(int sizewidth)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Size\+Width (
+\begin{DoxyParamCaption}
+\item[{int}]{sizewidth}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a4b25d77453af108dcfefc096a9153233}{}\label{classAI_a4b25d77453af108dcfefc096a9153233}
+
+\begin{DoxyCode}
+28 \{ this->\hyperlink{classAI_afff2954d66c370ee45640977182f5e41}{sizeWidth} = sizewidth; \};
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Slow\+DownL@{Set\+Slow\+DownL}}
+\index{Set\+Slow\+DownL@{Set\+Slow\+DownL}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Slow\+Down\+L(bool slowingdownleft)}{SetSlowDownL(bool slowingdownleft)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Slow\+DownL (
+\begin{DoxyParamCaption}
+\item[{bool}]{slowingdownleft}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_ab07dcb050c20c646927e16e2ead40728}{}\label{classAI_ab07dcb050c20c646927e16e2ead40728}
+
+\begin{DoxyCode}
+104 \{ this->\hyperlink{classAI_a33b48858d468564363727d20164f2c54}{slowingdownleft} = \hyperlink{classAI_a33b48858d468564363727d20164f2c54}{slowingdownleft}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Slow\+DownR@{Set\+Slow\+DownR}}
+\index{Set\+Slow\+DownR@{Set\+Slow\+DownR}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Slow\+Down\+R(bool slowingdownright)}{SetSlowDownR(bool slowingdownright)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Slow\+DownR (
+\begin{DoxyParamCaption}
+\item[{bool}]{slowingdownright}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_a57045e1587ca559b44019190a2433e07}{}\label{classAI_a57045e1587ca559b44019190a2433e07}
+
+\begin{DoxyCode}
+103 \{ this->\hyperlink{classAI_a4ae562cbe6afd5d010d5329c0c926459}{slowingdownright} = \hyperlink{classAI_a4ae562cbe6afd5d010d5329c0c926459}{slowingdownright}; \}
+\end{DoxyCode}
+\index{AI@{AI}!Set\+Up\+Key@{Set\+Up\+Key}}
+\index{Set\+Up\+Key@{Set\+Up\+Key}!AI@{AI}}
+\subsubsection[{\texorpdfstring{Set\+Up\+Key(bool upkey)}{SetUpKey(bool upkey)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+I\+::\+Set\+Up\+Key (
+\begin{DoxyParamCaption}
+\item[{bool}]{upkey}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAI_ab4061283b1ef4cb50b6d7110882c20ab}{}\label{classAI_ab4061283b1ef4cb50b6d7110882c20ab}
+
+\begin{DoxyCode}
+66 \{ this->\hyperlink{classAI_a1bde8ebcfb666d83ffb7e71993bf06fc}{upkey} = \hyperlink{classAI_a1bde8ebcfb666d83ffb7e71993bf06fc}{upkey}; \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{AI@{AI}!aicolliding@{aicolliding}}
+\index{aicolliding@{aicolliding}!AI@{AI}}
+\subsubsection[{\texorpdfstring{aicolliding}{aicolliding}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::aicolliding = 5\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a17f6d2ecc23b43a425623947b639656d}{}\label{classAI_a17f6d2ecc23b43a425623947b639656d}
+\index{AI@{AI}!animation@{animation}}
+\index{animation@{animation}!AI@{AI}}
+\subsubsection[{\texorpdfstring{animation}{animation}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Animation} A\+I\+::animation}\hypertarget{classAI_a6669dc8af30f760cbeca3008727913d0}{}\label{classAI_a6669dc8af30f760cbeca3008727913d0}
+\index{AI@{AI}!apexcheck@{apexcheck}}
+\index{apexcheck@{apexcheck}!AI@{AI}}
+\subsubsection[{\texorpdfstring{apexcheck}{apexcheck}}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::apexcheck = true\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a4f56968f26a5263911c83062945aaec7}{}\label{classAI_a4f56968f26a5263911c83062945aaec7}
+\index{AI@{AI}!boss@{boss}}
+\index{boss@{boss}!AI@{AI}}
+\subsubsection[{\texorpdfstring{boss}{boss}}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::boss = false\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a1fa0702b9e1c4b6a29227dfc6e58be46}{}\label{classAI_a1fa0702b9e1c4b6a29227dfc6e58be46}
+\index{AI@{AI}!brakehorslowdown@{brakehorslowdown}}
+\index{brakehorslowdown@{brakehorslowdown}!AI@{AI}}
+\subsubsection[{\texorpdfstring{brakehorslowdown}{brakehorslowdown}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::brakehorslowdown = 2\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_ad7d82b191fab3c529f0f8c60b0e71ab2}{}\label{classAI_ad7d82b191fab3c529f0f8c60b0e71ab2}
+\index{AI@{AI}!calmspeed@{calmspeed}}
+\index{calmspeed@{calmspeed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{calmspeed}{calmspeed}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::calmspeed = 100\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_abdd48a54d265d83866f11fbe2ad8eed0}{}\label{classAI_abdd48a54d265d83866f11fbe2ad8eed0}
+\index{AI@{AI}!character@{character}}
+\index{character@{character}!AI@{AI}}
+\subsubsection[{\texorpdfstring{character}{character}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Rectangle\+Shape$\ast$ A\+I\+::character}\hypertarget{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}{}\label{classAI_a4cf1d3f0c4e6342f7b78dbd143ec915f}
+\index{AI@{AI}!counter@{counter}}
+\index{counter@{counter}!AI@{AI}}
+\subsubsection[{\texorpdfstring{counter}{counter}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::counter = 0\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_af56d250c7efc5f36915193949d87be21}{}\label{classAI_af56d250c7efc5f36915193949d87be21}
+\index{AI@{AI}!enragecountdown@{enragecountdown}}
+\index{enragecountdown@{enragecountdown}!AI@{AI}}
+\subsubsection[{\texorpdfstring{enragecountdown}{enragecountdown}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::enragecountdown = {\bf enrageduration}\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a155447249032f20011edefe8be3d081d}{}\label{classAI_a155447249032f20011edefe8be3d081d}
+\index{AI@{AI}!enraged@{enraged}}
+\index{enraged@{enraged}!AI@{AI}}
+\subsubsection[{\texorpdfstring{enraged}{enraged}}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::enraged = false\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a0b809846d43813799b3e44c42114e9a1}{}\label{classAI_a0b809846d43813799b3e44c42114e9a1}
+\index{AI@{AI}!enragedspeed@{enragedspeed}}
+\index{enragedspeed@{enragedspeed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{enragedspeed}{enragedspeed}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::enragedspeed = 120\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_af6b753eddb25c163d5b359420b314d4e}{}\label{classAI_af6b753eddb25c163d5b359420b314d4e}
+\index{AI@{AI}!enrageduration@{enrageduration}}
+\index{enrageduration@{enrageduration}!AI@{AI}}
+\subsubsection[{\texorpdfstring{enrageduration}{enrageduration}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::enrageduration = 1000\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a2e89055bd6a91949269c76ec94017194}{}\label{classAI_a2e89055bd6a91949269c76ec94017194}
+\index{AI@{AI}!enragerange@{enragerange}}
+\index{enragerange@{enragerange}!AI@{AI}}
+\subsubsection[{\texorpdfstring{enragerange}{enragerange}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::enragerange = 100\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a768ddc6536a7b929c44f5deb643c60bc}{}\label{classAI_a768ddc6536a7b929c44f5deb643c60bc}
+\index{AI@{AI}!fallpower@{fallpower}}
+\index{fallpower@{fallpower}!AI@{AI}}
+\subsubsection[{\texorpdfstring{fallpower}{fallpower}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::fallpower = 280\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_ab6d693d4a0669758d7bcc48d43d348b7}{}\label{classAI_ab6d693d4a0669758d7bcc48d43d348b7}
+\index{AI@{AI}!fallspeed@{fallspeed}}
+\index{fallspeed@{fallspeed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{fallspeed}{fallspeed}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::fallspeed\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a8aff5a3b49415dcb533f0a570290bd86}{}\label{classAI_a8aff5a3b49415dcb533f0a570290bd86}
+\index{AI@{AI}!gravity@{gravity}}
+\index{gravity@{gravity}!AI@{AI}}
+\subsubsection[{\texorpdfstring{gravity}{gravity}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::gravity = 9\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_af653a36c44ed6b2d781f09027df55ab7}{}\label{classAI_af653a36c44ed6b2d781f09027df55ab7}
+\index{AI@{AI}!health@{health}}
+\index{health@{health}!AI@{AI}}
+\subsubsection[{\texorpdfstring{health}{health}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Health} A\+I\+::health}\hypertarget{classAI_a073d65bf0b0b08b31710cf9743d2e364}{}\label{classAI_a073d65bf0b0b08b31710cf9743d2e364}
+\index{AI@{AI}!jumpcheck@{jumpcheck}}
+\index{jumpcheck@{jumpcheck}!AI@{AI}}
+\subsubsection[{\texorpdfstring{jumpcheck}{jumpcheck}}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::jumpcheck = true\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_aefe27541a9d4aaa10d23b421de4b2405}{}\label{classAI_aefe27541a9d4aaa10d23b421de4b2405}
+\index{AI@{AI}!jumppower@{jumppower}}
+\index{jumppower@{jumppower}!AI@{AI}}
+\subsubsection[{\texorpdfstring{jumppower}{jumppower}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::jumppower = 250\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a79f9ea14d535b646e35ab8f2d95f59da}{}\label{classAI_a79f9ea14d535b646e35ab8f2d95f59da}
+\index{AI@{AI}!jumpspeed@{jumpspeed}}
+\index{jumpspeed@{jumpspeed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{jumpspeed}{jumpspeed}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::jumpspeed = 0\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a9bcfb85a19a10d064a1db2772be9e30d}{}\label{classAI_a9bcfb85a19a10d064a1db2772be9e30d}
+\index{AI@{AI}!lastmovedirection@{lastmovedirection}}
+\index{lastmovedirection@{lastmovedirection}!AI@{AI}}
+\subsubsection[{\texorpdfstring{lastmovedirection}{lastmovedirection}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::lastmovedirection = 2\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_ad23ffbd48fb9fd95ec18df649810b766}{}\label{classAI_ad23ffbd48fb9fd95ec18df649810b766}
+\index{AI@{AI}!leftkey@{leftkey}}
+\index{leftkey@{leftkey}!AI@{AI}}
+\subsubsection[{\texorpdfstring{leftkey}{leftkey}}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::leftkey = true\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_af4a6576f510ed03a56c98bfc5b711f1a}{}\label{classAI_af4a6576f510ed03a56c98bfc5b711f1a}
+\index{AI@{AI}!maxfallspeed@{maxfallspeed}}
+\index{maxfallspeed@{maxfallspeed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{maxfallspeed}{maxfallspeed}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::maxfallspeed = 80\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_ade9dbd955f4aea8feab5bbff996c3a48}{}\label{classAI_ade9dbd955f4aea8feab5bbff996c3a48}
+\index{AI@{AI}!maxmovespeed@{maxmovespeed}}
+\index{maxmovespeed@{maxmovespeed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{maxmovespeed}{maxmovespeed}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::maxmovespeed = 250\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a3af9cf8b86fff09d7e95ed913636e18a}{}\label{classAI_a3af9cf8b86fff09d7e95ed913636e18a}
+\index{AI@{AI}!miniboss@{miniboss}}
+\index{miniboss@{miniboss}!AI@{AI}}
+\subsubsection[{\texorpdfstring{miniboss}{miniboss}}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::miniboss = false\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_aee02bf098d14d402140bdeb9516280f9}{}\label{classAI_aee02bf098d14d402140bdeb9516280f9}
+\index{AI@{AI}!movedirection@{movedirection}}
+\index{movedirection@{movedirection}!AI@{AI}}
+\subsubsection[{\texorpdfstring{movedirection}{movedirection}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::movedirection = 2\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_ac23347ccaa9f699521417509ab73e271}{}\label{classAI_ac23347ccaa9f699521417509ab73e271}
+\index{AI@{AI}!movepower@{movepower}}
+\index{movepower@{movepower}!AI@{AI}}
+\subsubsection[{\texorpdfstring{movepower}{movepower}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::movepower = 40\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a9cf2ba2f23c71833d6337b9e486cb6a3}{}\label{classAI_a9cf2ba2f23c71833d6337b9e486cb6a3}
+\index{AI@{AI}!movespeedleft@{movespeedleft}}
+\index{movespeedleft@{movespeedleft}!AI@{AI}}
+\subsubsection[{\texorpdfstring{movespeedleft}{movespeedleft}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::movespeedleft = 0\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_aa4053f5803c847fc13db08bc8cd6737b}{}\label{classAI_aa4053f5803c847fc13db08bc8cd6737b}
+\index{AI@{AI}!movespeedright@{movespeedright}}
+\index{movespeedright@{movespeedright}!AI@{AI}}
+\subsubsection[{\texorpdfstring{movespeedright}{movespeedright}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::movespeedright = 0\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a5b9ee08216e80b40ef278c0b8e71bdf2}{}\label{classAI_a5b9ee08216e80b40ef278c0b8e71bdf2}
+\index{AI@{AI}!OriginalX@{OriginalX}}
+\index{OriginalX@{OriginalX}!AI@{AI}}
+\subsubsection[{\texorpdfstring{OriginalX}{OriginalX}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+OriginalX\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a3399d587364d2fef3e4a176ecdc294cc}{}\label{classAI_a3399d587364d2fef3e4a176ecdc294cc}
+\index{AI@{AI}!OriginalY@{OriginalY}}
+\index{OriginalY@{OriginalY}!AI@{AI}}
+\subsubsection[{\texorpdfstring{OriginalY}{OriginalY}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::\+OriginalY\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a652d91a3a0b53d7919f6a2b02e301f26}{}\label{classAI_a652d91a3a0b53d7919f6a2b02e301f26}
+\index{AI@{AI}!origjumpspeed@{origjumpspeed}}
+\index{origjumpspeed@{origjumpspeed}!AI@{AI}}
+\subsubsection[{\texorpdfstring{origjumpspeed}{origjumpspeed}}]{\setlength{\rightskip}{0pt plus 5cm}const int A\+I\+::origjumpspeed = 15\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_ac7bc723979294e5fe5d7438713229473}{}\label{classAI_ac7bc723979294e5fe5d7438713229473}
+\index{AI@{AI}!patrol@{patrol}}
+\index{patrol@{patrol}!AI@{AI}}
+\subsubsection[{\texorpdfstring{patrol}{patrol}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::patrol\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_ac28e1dce23ebfb9beb0542ddd46ec3da}{}\label{classAI_ac28e1dce23ebfb9beb0542ddd46ec3da}
+\index{AI@{AI}!patrolleft@{patrolleft}}
+\index{patrolleft@{patrolleft}!AI@{AI}}
+\subsubsection[{\texorpdfstring{patrolleft}{patrolleft}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::patrolleft\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a8a572d9fa33e579a4c8eea9e1ab09e8f}{}\label{classAI_a8a572d9fa33e579a4c8eea9e1ab09e8f}
+\index{AI@{AI}!patrolright@{patrolright}}
+\index{patrolright@{patrolright}!AI@{AI}}
+\subsubsection[{\texorpdfstring{patrolright}{patrolright}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::patrolright\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a5af0047dcf09f37b7f2feb8d2b078ce8}{}\label{classAI_a5af0047dcf09f37b7f2feb8d2b078ce8}
+\index{AI@{AI}!positionX@{positionX}}
+\index{positionX@{positionX}!AI@{AI}}
+\subsubsection[{\texorpdfstring{positionX}{positionX}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::positionX\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a123529be0b9d2c660accf40ae93bc007}{}\label{classAI_a123529be0b9d2c660accf40ae93bc007}
+\index{AI@{AI}!positionY@{positionY}}
+\index{positionY@{positionY}!AI@{AI}}
+\subsubsection[{\texorpdfstring{positionY}{positionY}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::positionY\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a558d3803098870a349f6f37c2f29a22d}{}\label{classAI_a558d3803098870a349f6f37c2f29a22d}
+\index{AI@{AI}!regularhorslowdown@{regularhorslowdown}}
+\index{regularhorslowdown@{regularhorslowdown}!AI@{AI}}
+\subsubsection[{\texorpdfstring{regularhorslowdown}{regularhorslowdown}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+I\+::regularhorslowdown = 1.\+5\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a021f46f3eb1d76607a5a22bdcd296d11}{}\label{classAI_a021f46f3eb1d76607a5a22bdcd296d11}
+\index{AI@{AI}!rightkey@{rightkey}}
+\index{rightkey@{rightkey}!AI@{AI}}
+\subsubsection[{\texorpdfstring{rightkey}{rightkey}}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::rightkey = false\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_afd8bf97dd365a456af724aade73129fb}{}\label{classAI_afd8bf97dd365a456af724aade73129fb}
+\index{AI@{AI}!size\+Height@{size\+Height}}
+\index{size\+Height@{size\+Height}!AI@{AI}}
+\subsubsection[{\texorpdfstring{size\+Height}{sizeHeight}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::size\+Height = 50\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a85fd1bdecd52faf9017230708c558276}{}\label{classAI_a85fd1bdecd52faf9017230708c558276}
+\index{AI@{AI}!size\+Width@{size\+Width}}
+\index{size\+Width@{size\+Width}!AI@{AI}}
+\subsubsection[{\texorpdfstring{size\+Width}{sizeWidth}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::size\+Width = 37\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_afff2954d66c370ee45640977182f5e41}{}\label{classAI_afff2954d66c370ee45640977182f5e41}
+\index{AI@{AI}!slowingdownleft@{slowingdownleft}}
+\index{slowingdownleft@{slowingdownleft}!AI@{AI}}
+\subsubsection[{\texorpdfstring{slowingdownleft}{slowingdownleft}}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::slowingdownleft = false\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a33b48858d468564363727d20164f2c54}{}\label{classAI_a33b48858d468564363727d20164f2c54}
+\index{AI@{AI}!slowingdownright@{slowingdownright}}
+\index{slowingdownright@{slowingdownright}!AI@{AI}}
+\subsubsection[{\texorpdfstring{slowingdownright}{slowingdownright}}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::slowingdownright = false\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a4ae562cbe6afd5d010d5329c0c926459}{}\label{classAI_a4ae562cbe6afd5d010d5329c0c926459}
+\index{AI@{AI}!upkey@{upkey}}
+\index{upkey@{upkey}!AI@{AI}}
+\subsubsection[{\texorpdfstring{upkey}{upkey}}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+I\+::upkey = false\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a1bde8ebcfb666d83ffb7e71993bf06fc}{}\label{classAI_a1bde8ebcfb666d83ffb7e71993bf06fc}
+\index{AI@{AI}!window@{window}}
+\index{window@{window}!AI@{AI}}
+\subsubsection[{\texorpdfstring{window}{window}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Render\+Window$\ast$ A\+I\+::window\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAI_a0484a23ffd7e5c09b7fc252350a2c8c4}{}\label{classAI_a0484a23ffd7e5c09b7fc252350a2c8c4}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Enemy/\hyperlink{AI_8h}{A\+I.\+h}\item 
+Enemy/\hyperlink{AI_8cpp}{A\+I.\+cpp}\end{DoxyCompactItemize}

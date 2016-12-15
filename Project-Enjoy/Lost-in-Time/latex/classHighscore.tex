@@ -1,0 +1,184 @@
+\hypertarget{classHighscore}{}\section{Highscore Class Reference}
+\label{classHighscore}\index{Highscore@{Highscore}}
+
+
+{\ttfamily \#include $<$highscore.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHighscore_a763df51b57887c8e68b6c09f4d5f27a5}{Highscore} ()
+\item 
+void \hyperlink{classHighscore_aa2a15102d554fd504d98ef7a378ea0aa}{Save\+To\+File} ()
+\item 
+sf\+::\+Text $\ast$ \hyperlink{classHighscore_a4b041465e4a5d91f5eba7ce9c911b66a}{Save\+New\+Highscore} (std\+::string name, int score)
+\item 
+std\+::map$<$ int, std\+::string $>$ $\ast$ \hyperlink{classHighscore_a12a65ff55b3f78e32c24a5948951f38e}{Get\+Highscore\+Map} () const 
+\item 
+void \hyperlink{classHighscore_a8b451de65e47425a47703729a9f50dbd}{Load\+High\+Score} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Font $\ast$ \hyperlink{classHighscore_a40b7537ae183e56d521f8a1f5cfe0c87}{font} = nullptr
+\item 
+sf\+::\+Text $\ast$ \hyperlink{classHighscore_a4b09b1cd06d8344957beff965b809f38}{highscore\+Text} = nullptr
+\item 
+std\+::map$<$ int, std\+::string $>$ $\ast$ \hyperlink{classHighscore_a10c5bc666cbc80e11ddb6e09cb2a2696}{highscore\+Map}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Highscore@{Highscore}!Highscore@{Highscore}}
+\index{Highscore@{Highscore}!Highscore@{Highscore}}
+\subsubsection[{\texorpdfstring{Highscore()}{Highscore()}}]{\setlength{\rightskip}{0pt plus 5cm}Highscore\+::\+Highscore (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classHighscore_a763df51b57887c8e68b6c09f4d5f27a5}{}\label{classHighscore_a763df51b57887c8e68b6c09f4d5f27a5}
+
+\begin{DoxyCode}
+7 \{
+8     \hyperlink{classHighscore_a40b7537ae183e56d521f8a1f5cfe0c87}{font} = \textcolor{keyword}{new} sf::Font;
+9     \textcolor{keywordflow}{if}(!\hyperlink{classHighscore_a40b7537ae183e56d521f8a1f5cfe0c87}{font}->loadFromFile(\textcolor{stringliteral}{"data/Fonts/Arial/arial.ttf"}))
+10         std::cout << \textcolor{stringliteral}{"Could not load font from directory 'data/font.ttf'"} << std::endl;
+11     \hyperlink{classHighscore_a4b09b1cd06d8344957beff965b809f38}{highscoreText} = \textcolor{keyword}{new} sf::Text(\textcolor{stringliteral}{"hi"} , *\hyperlink{classHighscore_a40b7537ae183e56d521f8a1f5cfe0c87}{font});
+12     \hyperlink{classHighscore_a4b09b1cd06d8344957beff965b809f38}{highscoreText}->setCharacterSize(50);
+13     \hyperlink{classHighscore_a4b09b1cd06d8344957beff965b809f38}{highscoreText}->setStyle(sf::Text::Regular);
+14     \hyperlink{classHighscore_a4b09b1cd06d8344957beff965b809f38}{highscoreText}->setColor(sf::Color::White);
+15     \hyperlink{classHighscore_a10c5bc666cbc80e11ddb6e09cb2a2696}{highscoreMap} = \textcolor{keyword}{new} std::map<int, std::string>;
+16     \hyperlink{classHighscore_a8b451de65e47425a47703729a9f50dbd}{LoadHighScore}();
+17 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Highscore@{Highscore}!Get\+Highscore\+Map@{Get\+Highscore\+Map}}
+\index{Get\+Highscore\+Map@{Get\+Highscore\+Map}!Highscore@{Highscore}}
+\subsubsection[{\texorpdfstring{Get\+Highscore\+Map() const }{GetHighscoreMap() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$int, std\+::string$>$$\ast$ Highscore\+::\+Get\+Highscore\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classHighscore_a12a65ff55b3f78e32c24a5948951f38e}{}\label{classHighscore_a12a65ff55b3f78e32c24a5948951f38e}
+
+\begin{DoxyCode}
+17 \{ \textcolor{keywordflow}{return} \hyperlink{classHighscore_a10c5bc666cbc80e11ddb6e09cb2a2696}{highscoreMap}; \};
+\end{DoxyCode}
+\index{Highscore@{Highscore}!Load\+High\+Score@{Load\+High\+Score}}
+\index{Load\+High\+Score@{Load\+High\+Score}!Highscore@{Highscore}}
+\subsubsection[{\texorpdfstring{Load\+High\+Score()}{LoadHighScore()}}]{\setlength{\rightskip}{0pt plus 5cm}void Highscore\+::\+Load\+High\+Score (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classHighscore_a8b451de65e47425a47703729a9f50dbd}{}\label{classHighscore_a8b451de65e47425a47703729a9f50dbd}
+
+\begin{DoxyCode}
+69 \{
+70     std::ifstream highscoreFile;
+71     std::string temp;
+72     std::string playerName;
+73     \textcolor{keywordtype}{int} playerScore;
+74     highscoreFile.open(\textcolor{stringliteral}{"data/highscore.txt"});
+75 
+76     std::getline(highscoreFile, temp);
+77 
+78     \textcolor{comment}{// Read information from file}
+79     \textcolor{keywordflow}{while}(highscoreFile.is\_open())
+80     \{
+81         \textcolor{keywordflow}{if}(highscoreFile.eof())
+82             highscoreFile.close();
+83         \textcolor{keywordflow}{else}
+84         \{
+85             std::getline(highscoreFile, playerName);
+86             std::getline(highscoreFile, temp);
+87             \textcolor{comment}{//std::cout << temp << std::endl;}
+88             playerScore = std::stoul(temp);
+89             \hyperlink{classHighscore_a10c5bc666cbc80e11ddb6e09cb2a2696}{highscoreMap}->emplace(playerScore, playerName);
+90         \}
+91     \}
+92 
+93     \textcolor{comment}{//std::cout << "Loaded highscore" << std::endl;}
+94 \}\end{DoxyCode}
+\index{Highscore@{Highscore}!Save\+New\+Highscore@{Save\+New\+Highscore}}
+\index{Save\+New\+Highscore@{Save\+New\+Highscore}!Highscore@{Highscore}}
+\subsubsection[{\texorpdfstring{Save\+New\+Highscore(std\+::string name, int score)}{SaveNewHighscore(std::string name, int score)}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Text $\ast$ Highscore\+::\+Save\+New\+Highscore (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name, }
+\item[{int}]{score}
+\end{DoxyParamCaption}
+)}\hypertarget{classHighscore_a4b041465e4a5d91f5eba7ce9c911b66a}{}\label{classHighscore_a4b041465e4a5d91f5eba7ce9c911b66a}
+Adds highscore or a new players score to map, returns string depending on score and player 
+\begin{DoxyParams}{Parameters}
+{\em name} & playername \\
+\hline
+{\em score} & score of the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a Text with \char`\"{}new\char`\"{} if new player, returns \char`\"{}high\char`\"{} if new highscore of excisting player returns empty string if excisting player but no highscore 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+42 \{
+43     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} x : *\hyperlink{classHighscore_a10c5bc666cbc80e11ddb6e09cb2a2696}{highscoreMap})
+44     \{
+45         \textcolor{keywordflow}{if}(!x.second.compare(name))
+46         \{
+47             \textcolor{keywordflow}{if}(x.first < score)
+48             \{
+49                 highscoreMap->emplace(score, name);
+50                 highscoreMap->erase(x.first);
+51                 \hyperlink{classHighscore_a4b09b1cd06d8344957beff965b809f38}{highscoreText}->setString(\textcolor{stringliteral}{"high"});
+52                 \hyperlink{classHighscore_aa2a15102d554fd504d98ef7a378ea0aa}{SaveToFile}();
+53             \}
+54             \textcolor{keywordflow}{else}
+55                 \hyperlink{classHighscore_a4b09b1cd06d8344957beff965b809f38}{highscoreText}->setString(\textcolor{stringliteral}{""});
+56             \textcolor{keywordflow}{return}  \hyperlink{classHighscore_a4b09b1cd06d8344957beff965b809f38}{highscoreText};
+57         \}
+58     \}
+59 
+60     highscoreMap->emplace(score, name);
+61     \hyperlink{classHighscore_a4b09b1cd06d8344957beff965b809f38}{highscoreText}->setString(\textcolor{stringliteral}{"new"});
+62     \hyperlink{classHighscore_aa2a15102d554fd504d98ef7a378ea0aa}{SaveToFile}();
+63     \textcolor{keywordflow}{return} \hyperlink{classHighscore_a4b09b1cd06d8344957beff965b809f38}{highscoreText};
+64 \}
+\end{DoxyCode}
+\index{Highscore@{Highscore}!Save\+To\+File@{Save\+To\+File}}
+\index{Save\+To\+File@{Save\+To\+File}!Highscore@{Highscore}}
+\subsubsection[{\texorpdfstring{Save\+To\+File()}{SaveToFile()}}]{\setlength{\rightskip}{0pt plus 5cm}void Highscore\+::\+Save\+To\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classHighscore_aa2a15102d554fd504d98ef7a378ea0aa}{}\label{classHighscore_aa2a15102d554fd504d98ef7a378ea0aa}
+
+\begin{DoxyCode}
+22 \{
+23     std::ofstream savefile;
+24     savefile.open(\textcolor{stringliteral}{"data/highscore.txt"});
+25 
+26     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} x: *\hyperlink{classHighscore_a10c5bc666cbc80e11ddb6e09cb2a2696}{highscoreMap})
+27     \{
+28         savefile << std::endl << x.second;
+29         savefile << std::endl << x.first;
+30     \}
+31     savefile.close();
+32 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{Highscore@{Highscore}!font@{font}}
+\index{font@{font}!Highscore@{Highscore}}
+\subsubsection[{\texorpdfstring{font}{font}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Font$\ast$ Highscore\+::font = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classHighscore_a40b7537ae183e56d521f8a1f5cfe0c87}{}\label{classHighscore_a40b7537ae183e56d521f8a1f5cfe0c87}
+\index{Highscore@{Highscore}!highscore\+Map@{highscore\+Map}}
+\index{highscore\+Map@{highscore\+Map}!Highscore@{Highscore}}
+\subsubsection[{\texorpdfstring{highscore\+Map}{highscoreMap}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$int, std\+::string$>$$\ast$ Highscore\+::highscore\+Map\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classHighscore_a10c5bc666cbc80e11ddb6e09cb2a2696}{}\label{classHighscore_a10c5bc666cbc80e11ddb6e09cb2a2696}
+\index{Highscore@{Highscore}!highscore\+Text@{highscore\+Text}}
+\index{highscore\+Text@{highscore\+Text}!Highscore@{Highscore}}
+\subsubsection[{\texorpdfstring{highscore\+Text}{highscoreText}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Text$\ast$ Highscore\+::highscore\+Text = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classHighscore_a4b09b1cd06d8344957beff965b809f38}{}\label{classHighscore_a4b09b1cd06d8344957beff965b809f38}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Interface/\hyperlink{highscore_8h}{highscore.\+h}\item 
+Interface/\hyperlink{highscore_8cpp}{highscore.\+cpp}\end{DoxyCompactItemize}

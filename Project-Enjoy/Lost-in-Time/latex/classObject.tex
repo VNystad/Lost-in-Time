@@ -1,0 +1,151 @@
+\hypertarget{classObject}{}\section{Object Class Reference}
+\label{classObject}\index{Object@{Object}}
+
+
+{\ttfamily \#include $<$object.\+h$>$}
+
+
+
+Inheritance diagram for Object\+:
+% FIG 0
+
+
+Collaboration diagram for Object\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classObject_a0c2b99c7e193a7f310c4df5467040999}{Object} (\hyperlink{structTileSize}{Tile\+Size} \hyperlink{classObject_a40a932c0593ca2687eebc518b2c84c71}{tile\+Size})
+\item 
+virtual \hyperlink{classObject_ae8f5483f459e46687bd01e6f9977afd3}{$\sim$\+Object} ()
+\item 
+virtual void \hyperlink{classObject_a5d7bc884ceacd943750903bf2621a6c8}{process} (float delta\+Time)
+\item 
+virtual void \hyperlink{classObject_a944ca63a566c02245cfa0b6960842f7f}{draw} (sf\+::\+Render\+Window \&window)
+\item 
+void \hyperlink{classObject_ace7b815442aff0e5baeb71fe5bb7c50f}{get\+Tile\+Coords} (int tile, int \&x, int \&y)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structTileSize}{Tile\+Size} \hyperlink{classObject_a40a932c0593ca2687eebc518b2c84c71}{tile\+Size}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Texture $\ast$ \hyperlink{classObject_a5279eaf90d320e3437f21298a18688fb}{texture}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classObject_ad2f32e921244459f7cc6d50355429cc6}{Map}
+\item 
+class \hyperlink{classObject_aa2fab026580d6f14280c2ffb8063a314}{Game}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Object@{Object}!Object@{Object}}
+\index{Object@{Object}!Object@{Object}}
+\subsubsection[{\texorpdfstring{Object(\+Tile\+Size tile\+Size)}{Object(TileSize tileSize)}}]{\setlength{\rightskip}{0pt plus 5cm}Object\+::\+Object (
+\begin{DoxyParamCaption}
+\item[{{\bf Tile\+Size}}]{tile\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classObject_a0c2b99c7e193a7f310c4df5467040999}{}\label{classObject_a0c2b99c7e193a7f310c4df5467040999}
+
+\begin{DoxyCode}
+29 : \hyperlink{classObject_a40a932c0593ca2687eebc518b2c84c71}{tileSize}(tileSize) \{ \}
+\end{DoxyCode}
+\index{Object@{Object}!````~Object@{$\sim$\+Object}}
+\index{````~Object@{$\sim$\+Object}!Object@{Object}}
+\subsubsection[{\texorpdfstring{$\sim$\+Object()}{~Object()}}]{\setlength{\rightskip}{0pt plus 5cm}Object\+::$\sim$\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classObject_ae8f5483f459e46687bd01e6f9977afd3}{}\label{classObject_ae8f5483f459e46687bd01e6f9977afd3}
+
+\begin{DoxyCode}
+6 \{
+7     \textcolor{keyword}{delete} \hyperlink{classObject_a5279eaf90d320e3437f21298a18688fb}{texture};
+8     \hyperlink{classObject_a5279eaf90d320e3437f21298a18688fb}{texture} = \textcolor{keyword}{nullptr};
+9 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Object@{Object}!draw@{draw}}
+\index{draw@{draw}!Object@{Object}}
+\subsubsection[{\texorpdfstring{draw(sf\+::\+Render\+Window \&window)}{draw(sf::RenderWindow &window)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Object\+::draw (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classObject_a944ca63a566c02245cfa0b6960842f7f}{}\label{classObject_a944ca63a566c02245cfa0b6960842f7f}
+
+
+Reimplemented in \hyperlink{classSprite_adf1e840c7fe51abacc8a8f80c9e63c81}{Sprite}, and \hyperlink{classLayer_a0b53da5d6f0358bcda1470fc0193c2ce}{Layer}.
+
+
+\begin{DoxyCode}
+33 \{\}
+\end{DoxyCode}
+\index{Object@{Object}!get\+Tile\+Coords@{get\+Tile\+Coords}}
+\index{get\+Tile\+Coords@{get\+Tile\+Coords}!Object@{Object}}
+\subsubsection[{\texorpdfstring{get\+Tile\+Coords(int tile, int \&x, int \&y)}{getTileCoords(int tile, int &x, int &y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Object\+::get\+Tile\+Coords (
+\begin{DoxyParamCaption}
+\item[{int}]{tile, }
+\item[{int \&}]{x, }
+\item[{int \&}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classObject_ace7b815442aff0e5baeb71fe5bb7c50f}{}\label{classObject_ace7b815442aff0e5baeb71fe5bb7c50f}
+
+\begin{DoxyCode}
+12 \{
+13     \textcolor{comment}{// Tileid 0 means no tile, so the ids actually start from 1}
+14     tile--;
+15 
+16     \textcolor{keywordtype}{int} tileXcount = \hyperlink{classObject_a5279eaf90d320e3437f21298a18688fb}{texture}->getSize().x / (\hyperlink{classObject_a40a932c0593ca2687eebc518b2c84c71}{tileSize}.\hyperlink{structTileSize_add80f453cede5e47fc0c598c1660e174}{x} + 
+      \hyperlink{classObject_a40a932c0593ca2687eebc518b2c84c71}{tileSize}.\hyperlink{structTileSize_ad2b8b0f1bf57c2d662533a870e0fc2a6}{s});
+17 
+18     x = (tile % tileXcount) * (\hyperlink{classObject_a40a932c0593ca2687eebc518b2c84c71}{tileSize}.\hyperlink{structTileSize_add80f453cede5e47fc0c598c1660e174}{x} + \hyperlink{classObject_a40a932c0593ca2687eebc518b2c84c71}{tileSize}.\hyperlink{structTileSize_ad2b8b0f1bf57c2d662533a870e0fc2a6}{s});
+19     y = (tile / tileXcount) * (\hyperlink{classObject_a40a932c0593ca2687eebc518b2c84c71}{tileSize}.\hyperlink{structTileSize_add80f453cede5e47fc0c598c1660e174}{x} + \hyperlink{classObject_a40a932c0593ca2687eebc518b2c84c71}{tileSize}.\hyperlink{structTileSize_ad2b8b0f1bf57c2d662533a870e0fc2a6}{s});
+20 \}
+\end{DoxyCode}
+\index{Object@{Object}!process@{process}}
+\index{process@{process}!Object@{Object}}
+\subsubsection[{\texorpdfstring{process(float delta\+Time)}{process(float deltaTime)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Object\+::process (
+\begin{DoxyParamCaption}
+\item[{float}]{delta\+Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classObject_a5d7bc884ceacd943750903bf2621a6c8}{}\label{classObject_a5d7bc884ceacd943750903bf2621a6c8}
+
+
+Reimplemented in \hyperlink{classSprite_a852ed249ba3b41700dfcae12bf04c56b}{Sprite}.
+
+
+\begin{DoxyCode}
+32 \{\}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Object@{Object}!Game@{Game}}
+\index{Game@{Game}!Object@{Object}}
+\subsubsection[{\texorpdfstring{Game}{Game}}]{\setlength{\rightskip}{0pt plus 5cm}friend class Game\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classObject_aa2fab026580d6f14280c2ffb8063a314}{}\label{classObject_aa2fab026580d6f14280c2ffb8063a314}
+\index{Object@{Object}!Map@{Map}}
+\index{Map@{Map}!Object@{Object}}
+\subsubsection[{\texorpdfstring{Map}{Map}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Map}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classObject_ad2f32e921244459f7cc6d50355429cc6}{}\label{classObject_ad2f32e921244459f7cc6d50355429cc6}
+
+
+\subsection{Member Data Documentation}
+\index{Object@{Object}!texture@{texture}}
+\index{texture@{texture}!Object@{Object}}
+\subsubsection[{\texorpdfstring{texture}{texture}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture$\ast$ Object\+::texture\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classObject_a5279eaf90d320e3437f21298a18688fb}{}\label{classObject_a5279eaf90d320e3437f21298a18688fb}
+\index{Object@{Object}!tile\+Size@{tile\+Size}}
+\index{tile\+Size@{tile\+Size}!Object@{Object}}
+\subsubsection[{\texorpdfstring{tile\+Size}{tileSize}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Tile\+Size} Object\+::tile\+Size}\hypertarget{classObject_a40a932c0593ca2687eebc518b2c84c71}{}\label{classObject_a40a932c0593ca2687eebc518b2c84c71}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Map/\hyperlink{object_8h}{object.\+h}\item 
+Map/\hyperlink{object_8cpp}{object.\+cpp}\end{DoxyCompactItemize}

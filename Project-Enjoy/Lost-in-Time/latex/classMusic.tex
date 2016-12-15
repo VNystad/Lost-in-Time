@@ -1,0 +1,56 @@
+\hypertarget{classMusic}{}\section{Music Class Reference}
+\label{classMusic}\index{Music@{Music}}
+
+
+{\ttfamily \#include $<$Music.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classMusic_aafbf12ec36f4401d544403521fb4b2c5}{play\+Music} (const std\+::string \&filename)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Music \hyperlink{classMusic_a5b300a70ca62ec94d0e41c71bc0f9e40}{music}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{Music@{Music}!play\+Music@{play\+Music}}
+\index{play\+Music@{play\+Music}!Music@{Music}}
+\subsubsection[{\texorpdfstring{play\+Music(const std\+::string \&filename)}{playMusic(const std::string &filename)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Music\+::play\+Music (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{filename}
+\end{DoxyParamCaption}
+)}\hypertarget{classMusic_aafbf12ec36f4401d544403521fb4b2c5}{}\label{classMusic_aafbf12ec36f4401d544403521fb4b2c5}
+
+\begin{DoxyCode}
+13                                                \{
+14 
+15     \textcolor{keywordflow}{if} (!\hyperlink{classMusic_a5b300a70ca62ec94d0e41c71bc0f9e40}{music}.openFromFile(\textcolor{stringliteral}{"data/Music"} + filename)) \{
+16         std::cout << \textcolor{stringliteral}{"Could not locate file!"};
+17         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+18     \}
+19 
+20     \textcolor{keywordflow}{if} (\hyperlink{classMusic_a5b300a70ca62ec94d0e41c71bc0f9e40}{Music::music}.getStatus() == sf::Music::Playing) \{
+21 
+22         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+23     \}
+24     \hyperlink{classMusic_a5b300a70ca62ec94d0e41c71bc0f9e40}{music}.setVolume(60);
+25     \hyperlink{classMusic_a5b300a70ca62ec94d0e41c71bc0f9e40}{music}.play();
+26 
+27     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+28 \}\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{Music@{Music}!music@{music}}
+\index{music@{music}!Music@{Music}}
+\subsubsection[{\texorpdfstring{music}{music}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Music Music\+::music}\hypertarget{classMusic_a5b300a70ca62ec94d0e41c71bc0f9e40}{}\label{classMusic_a5b300a70ca62ec94d0e41c71bc0f9e40}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Framework/\hyperlink{Music_8h}{Music.\+h}\item 
+Framework/\hyperlink{Music_8cpp}{Music.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,172 @@
+\hypertarget{classMachine}{}\section{Machine Class Reference}
+\label{classMachine}\index{Machine@{Machine}}
+
+
+{\ttfamily \#include $<$machine.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520}{State\+Id} \{ \hyperlink{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520a3287971e79b4dca11067ed287847c1e6}{State\+Id\+::\+M\+A\+I\+N\+M\+E\+NU}, 
+\hyperlink{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520a615d2885ef7576cedd9aafbb2578f028}{State\+Id\+::\+L\+O\+AD}, 
+\hyperlink{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520a4504e1ed59cd9732b8a844e5424e6f13}{State\+Id\+::\+G\+A\+ME}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMachine_a99427b767b7c15ceb33e391166cd7d68}{Machine} ()
+\item 
+\hyperlink{classMachine_a7f595e09b54761f6c1e73b192067bd9c}{$\sim$\+Machine} ()
+\item 
+void \hyperlink{classMachine_a9f3475798776d0e9bb42a14dec204292}{Go\+Next} (sf\+::\+Render\+Window \&window, \hyperlink{classSavedObject}{Saved\+Object} \&, \hyperlink{classHighscore}{Highscore} \&)
+\item 
+void \hyperlink{classMachine_abe967397f2de76335bd90ab7aabd8f9f}{Set\+State} (\hyperlink{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520}{State\+Id} \hyperlink{classMachine_a76e105e6a1e86eb11af49ca4c9a9ead9}{state})
+\item 
+bool \hyperlink{classMachine_aea08caf7a90b58c29efe1c243a1683a6}{Get\+Running} () const 
+\item 
+void \hyperlink{classMachine_a5db8f7c8abac6d9ea950676917e98a80}{Set\+Running} (bool \hyperlink{classMachine_aaf4949e30c3e33602e4082c9739d3e37}{running})
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classMachine_aaf4949e30c3e33602e4082c9739d3e37}{running}
+\item 
+\hyperlink{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520}{State\+Id} \hyperlink{classMachine_a76e105e6a1e86eb11af49ca4c9a9ead9}{state}
+\item 
+std\+::map$<$ \hyperlink{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520}{State\+Id}, \hyperlink{classState}{State} $\ast$ $>$ \hyperlink{classMachine_ab6245c4e251df9deaff8b6fa99f7a6e5}{states}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\index{Machine@{Machine}!State\+Id@{State\+Id}}
+\index{State\+Id@{State\+Id}!Machine@{Machine}}
+\subsubsection[{\texorpdfstring{State\+Id}{StateId}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Machine\+::\+State\+Id}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520}{}\label{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\+A\+I\+N\+M\+E\+NU@{M\+A\+I\+N\+M\+E\+NU}!Machine@{Machine}}\index{Machine@{Machine}!M\+A\+I\+N\+M\+E\+NU@{M\+A\+I\+N\+M\+E\+NU}}\item[{\em 
+M\+A\+I\+N\+M\+E\+NU\hypertarget{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520a3287971e79b4dca11067ed287847c1e6}{}\label{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520a3287971e79b4dca11067ed287847c1e6}
+}]\index{L\+O\+AD@{L\+O\+AD}!Machine@{Machine}}\index{Machine@{Machine}!L\+O\+AD@{L\+O\+AD}}\item[{\em 
+L\+O\+AD\hypertarget{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520a615d2885ef7576cedd9aafbb2578f028}{}\label{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520a615d2885ef7576cedd9aafbb2578f028}
+}]\index{G\+A\+ME@{G\+A\+ME}!Machine@{Machine}}\index{Machine@{Machine}!G\+A\+ME@{G\+A\+ME}}\item[{\em 
+G\+A\+ME\hypertarget{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520a4504e1ed59cd9732b8a844e5424e6f13}{}\label{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520a4504e1ed59cd9732b8a844e5424e6f13}
+}]\end{description}
+\end{Desc}
+
+\begin{DoxyCode}
+15 \{ MAINMENU, LOAD, GAME\};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Machine@{Machine}!Machine@{Machine}}
+\index{Machine@{Machine}!Machine@{Machine}}
+\subsubsection[{\texorpdfstring{Machine()}{Machine()}}]{\setlength{\rightskip}{0pt plus 5cm}Machine\+::\+Machine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMachine_a99427b767b7c15ceb33e391166cd7d68}{}\label{classMachine_a99427b767b7c15ceb33e391166cd7d68}
+
+\begin{DoxyCode}
+9 \{
+10     \textcolor{comment}{// Start state machine}
+11     \hyperlink{classMachine_aaf4949e30c3e33602e4082c9739d3e37}{running} = \textcolor{keyword}{true};
+12 
+13     \textcolor{comment}{// Start in mainmenu}
+14     \hyperlink{classMachine_a76e105e6a1e86eb11af49ca4c9a9ead9}{state} = \hyperlink{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520a3287971e79b4dca11067ed287847c1e6}{StateId::MAINMENU};
+15 
+16     \textcolor{comment}{// Add all states to the map}
+17     \hyperlink{classMachine_ab6245c4e251df9deaff8b6fa99f7a6e5}{states}.emplace(\hyperlink{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520a4504e1ed59cd9732b8a844e5424e6f13}{StateId::GAME}, \textcolor{keyword}{new} \hyperlink{classStateGame}{StateGame}());
+18     \hyperlink{classMachine_ab6245c4e251df9deaff8b6fa99f7a6e5}{states}.emplace(\hyperlink{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520a3287971e79b4dca11067ed287847c1e6}{StateId::MAINMENU}, \textcolor{keyword}{new} \hyperlink{classStateMainMenu}{StateMainMenu}());
+19     \hyperlink{classMachine_ab6245c4e251df9deaff8b6fa99f7a6e5}{states}.emplace(\hyperlink{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520a615d2885ef7576cedd9aafbb2578f028}{StateId::LOAD}, \textcolor{keyword}{new} \hyperlink{classStateLoadGame}{StateLoadGame}());
+20 \}
+\end{DoxyCode}
+\index{Machine@{Machine}!````~Machine@{$\sim$\+Machine}}
+\index{````~Machine@{$\sim$\+Machine}!Machine@{Machine}}
+\subsubsection[{\texorpdfstring{$\sim$\+Machine()}{~Machine()}}]{\setlength{\rightskip}{0pt plus 5cm}Machine\+::$\sim$\+Machine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMachine_a7f595e09b54761f6c1e73b192067bd9c}{}\label{classMachine_a7f595e09b54761f6c1e73b192067bd9c}
+
+\begin{DoxyCode}
+24 \{
+25     \textcolor{comment}{// Free states from memory}
+26     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \hyperlink{classMachine_a76e105e6a1e86eb11af49ca4c9a9ead9}{state}: \hyperlink{classMachine_ab6245c4e251df9deaff8b6fa99f7a6e5}{states})
+27         \textcolor{keyword}{delete} \hyperlink{classMachine_a76e105e6a1e86eb11af49ca4c9a9ead9}{state}.second;
+28 
+29     states.clear();
+30 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Machine@{Machine}!Get\+Running@{Get\+Running}}
+\index{Get\+Running@{Get\+Running}!Machine@{Machine}}
+\subsubsection[{\texorpdfstring{Get\+Running() const }{GetRunning() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Machine\+::\+Get\+Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classMachine_aea08caf7a90b58c29efe1c243a1683a6}{}\label{classMachine_aea08caf7a90b58c29efe1c243a1683a6}
+
+\begin{DoxyCode}
+26 \{ \textcolor{keywordflow}{return} \hyperlink{classMachine_aaf4949e30c3e33602e4082c9739d3e37}{running}; \}
+\end{DoxyCode}
+\index{Machine@{Machine}!Go\+Next@{Go\+Next}}
+\index{Go\+Next@{Go\+Next}!Machine@{Machine}}
+\subsubsection[{\texorpdfstring{Go\+Next(sf\+::\+Render\+Window \&window, Saved\+Object \&, Highscore \&)}{GoNext(sf::RenderWindow &window, SavedObject &, Highscore &)}}]{\setlength{\rightskip}{0pt plus 5cm}void Machine\+::\+Go\+Next (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window, }
+\item[{{\bf Saved\+Object} \&}]{SO, }
+\item[{{\bf Highscore} \&}]{highscore}
+\end{DoxyParamCaption}
+)}\hypertarget{classMachine_a9f3475798776d0e9bb42a14dec204292}{}\label{classMachine_a9f3475798776d0e9bb42a14dec204292}
+
+\begin{DoxyCode}
+34 \{
+35     \hyperlink{classMachine_ab6245c4e251df9deaff8b6fa99f7a6e5}{states}[\hyperlink{classMachine_a76e105e6a1e86eb11af49ca4c9a9ead9}{state}]->GoNext(*\textcolor{keyword}{this}, window, SO, highscore);
+36 \}
+\end{DoxyCode}
+\index{Machine@{Machine}!Set\+Running@{Set\+Running}}
+\index{Set\+Running@{Set\+Running}!Machine@{Machine}}
+\subsubsection[{\texorpdfstring{Set\+Running(bool running)}{SetRunning(bool running)}}]{\setlength{\rightskip}{0pt plus 5cm}void Machine\+::\+Set\+Running (
+\begin{DoxyParamCaption}
+\item[{bool}]{running}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classMachine_a5db8f7c8abac6d9ea950676917e98a80}{}\label{classMachine_a5db8f7c8abac6d9ea950676917e98a80}
+
+\begin{DoxyCode}
+27 \{ this->\hyperlink{classMachine_aaf4949e30c3e33602e4082c9739d3e37}{running} = \hyperlink{classMachine_aaf4949e30c3e33602e4082c9739d3e37}{running}; \}
+\end{DoxyCode}
+\index{Machine@{Machine}!Set\+State@{Set\+State}}
+\index{Set\+State@{Set\+State}!Machine@{Machine}}
+\subsubsection[{\texorpdfstring{Set\+State(\+State\+Id state)}{SetState(StateId state)}}]{\setlength{\rightskip}{0pt plus 5cm}void Machine\+::\+Set\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf State\+Id}}]{state}
+\end{DoxyParamCaption}
+)}\hypertarget{classMachine_abe967397f2de76335bd90ab7aabd8f9f}{}\label{classMachine_abe967397f2de76335bd90ab7aabd8f9f}
+
+\begin{DoxyCode}
+40 \{
+41     this->\hyperlink{classMachine_a76e105e6a1e86eb11af49ca4c9a9ead9}{state} = \hyperlink{classMachine_a76e105e6a1e86eb11af49ca4c9a9ead9}{state};
+42 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{Machine@{Machine}!running@{running}}
+\index{running@{running}!Machine@{Machine}}
+\subsubsection[{\texorpdfstring{running}{running}}]{\setlength{\rightskip}{0pt plus 5cm}bool Machine\+::running\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classMachine_aaf4949e30c3e33602e4082c9739d3e37}{}\label{classMachine_aaf4949e30c3e33602e4082c9739d3e37}
+\index{Machine@{Machine}!state@{state}}
+\index{state@{state}!Machine@{Machine}}
+\subsubsection[{\texorpdfstring{state}{state}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf State\+Id} Machine\+::state\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classMachine_a76e105e6a1e86eb11af49ca4c9a9ead9}{}\label{classMachine_a76e105e6a1e86eb11af49ca4c9a9ead9}
+\index{Machine@{Machine}!states@{states}}
+\index{states@{states}!Machine@{Machine}}
+\subsubsection[{\texorpdfstring{states}{states}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<${\bf State\+Id}, {\bf State}$\ast$$>$ Machine\+::states\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classMachine_ab6245c4e251df9deaff8b6fa99f7a6e5}{}\label{classMachine_ab6245c4e251df9deaff8b6fa99f7a6e5}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+state/\hyperlink{machine_8h}{machine.\+h}\item 
+state/\hyperlink{machine_8cpp}{machine.\+cpp}\end{DoxyCompactItemize}

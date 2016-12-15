@@ -1,0 +1,1050 @@
+\hypertarget{classPlayerObject}{}\section{Player\+Object Class Reference}
+\label{classPlayerObject}\index{Player\+Object@{Player\+Object}}
+
+
+{\ttfamily \#include $<$playerobject.\+h$>$}
+
+
+
+Collaboration diagram for Player\+Object\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPlayerObject_a22c36bbb3a9f2f8121470aa78b294334}{Player\+Object} (float x, float y, sf\+::\+Render\+Window $\ast$\hyperlink{classPlayerObject_aed44bc97791e54cd2169f508699fa311}{window})
+\item 
+void \hyperlink{classPlayerObject_a510e91305c929bb86d7628b87b0d7e39}{Draw\+Me} ()
+\item 
+int \hyperlink{classPlayerObject_ae6a6f078e01cf54d91108ecfa4e2da02}{Get\+Size\+Width} () const 
+\item 
+int \hyperlink{classPlayerObject_a01be69eae2aad78c6e03ce6890179a22}{Get\+Size\+Height} () const 
+\item 
+void \hyperlink{classPlayerObject_a632afc4f75ec8df95d81c2ae81a08a70}{Set\+Player\+Hurt} (int \hyperlink{classPlayerObject_ae033dcf570f627c5b2a0286b882e8c21}{playerhurt})
+\item 
+int \hyperlink{classPlayerObject_a9cedbd637ab791f2ff2188fba2d7612a}{Get\+Player\+Hurt} () const 
+\item 
+float \hyperlink{classPlayerObject_aa84a7779304b680fa32b88b01ba95d02}{Get\+PositionX} ()
+\item 
+float \hyperlink{classPlayerObject_ad17b9ec44299f4dc9ca20064c883496b}{Get\+PositionY} ()
+\item 
+void \hyperlink{classPlayerObject_abe7e23cb831430c9926cb3b5206fff1f}{Set\+PositionX} (float x)
+\item 
+void \hyperlink{classPlayerObject_a19962eed7a6cfd28af75d9d5e15cb27a}{Set\+PositionY} (float y)
+\item 
+float \hyperlink{classPlayerObject_ac87a43be5d38f99829c9b02f6c042c6c}{Get\+OriginalX} ()
+\item 
+float \hyperlink{classPlayerObject_aa756cf94d6309698f2220e7ec59140f0}{Get\+OriginalY} ()
+\item 
+void \hyperlink{classPlayerObject_ac1f2670c32ea1222ddcbbdd4d4fda0f1}{Set\+OriginalX} (float x)
+\item 
+void \hyperlink{classPlayerObject_ae20d0ed730204b7d471ab13d32e9626e}{Set\+OriginalY} (float y)
+\item 
+void \hyperlink{classPlayerObject_a9dd4494cfaeb6dfa74b84ad19df5d650}{Reset2\+OriginalX} (float x)
+\item 
+void \hyperlink{classPlayerObject_af545457981fc51138ba2c735bdeecb31}{Reset2\+OriginalY} (float y)
+\item 
+void \hyperlink{classPlayerObject_a180ae1fcbd6b7eb4491cbf1f846b8b25}{Player\+Dead} ()
+\item 
+void \hyperlink{classPlayerObject_a7ee73e003e589eb3f41392013a0dbcae}{Player\+Cutscene\+Animation\+Left} (float delta)
+\item 
+void \hyperlink{classPlayerObject_ac5935efe401480fd63bb5a2a9a09c54d}{Player\+Cutscene\+Animation\+Right} (float delta)
+\item 
+void \hyperlink{classPlayerObject_a34d8b9e121f017b3163bb5b8aa392af8}{Player\+Animation} (float delta)
+\item 
+void \hyperlink{classPlayerObject_a4f41bf61971eb3a71346681f25a97fc0}{Player\+Sound\+Jump} ()
+\item 
+void \hyperlink{classPlayerObject_aca6d9328e3f55987fbe4762c10b893b2}{Player\+Sound\+Hurt} ()
+\item 
+void \hyperlink{classPlayerObject_ad133797db4760e6ae229eb7889888a89}{Player\+Sound\+Enemy\+Landed} ()
+\item 
+void \hyperlink{classPlayerObject_a4b250de8af994ba9c3d7020c440a9d5d}{Set\+Slow\+DownR} (bool \hyperlink{classPlayerObject_a3f5b7c904edac7e254297849659d01b3}{slowingdownright})
+\item 
+void \hyperlink{classPlayerObject_a17ffd5b043b80c4070d15c2f92c93852}{Set\+Slow\+DownL} (bool \hyperlink{classPlayerObject_a4894d3619cdf5cb0c35c480aa89502a4}{slowingdownleft})
+\item 
+bool \hyperlink{classPlayerObject_a39d8a278186eee72968d8edd3ab681e8}{Get\+Slow\+DownR} () const 
+\item 
+bool \hyperlink{classPlayerObject_a7f7fa1fd6ac9c5dc038ebae46c932a25}{Get\+Slow\+DownL} () const 
+\item 
+void \hyperlink{classPlayerObject_a9147fbd6a35b05cc1e1a6faeb9b8bf22}{Set\+Move\+SpeedR} (float \hyperlink{classPlayerObject_aabfd7e3dac7eaa6851528fdefc65c734}{movespeedright})
+\item 
+void \hyperlink{classPlayerObject_a60999058bc5ed47cbbd52c468a400c5f}{Set\+Move\+SpeedL} (float \hyperlink{classPlayerObject_a0215c8600251b36a27d49bd6b01d34bb}{movespeedleft})
+\item 
+float \hyperlink{classPlayerObject_a9cbba4823a54769e65e437883897f7ef}{Get\+Move\+SpeedR} () const 
+\item 
+float \hyperlink{classPlayerObject_a14c7cacdcf3fc748e18e1ea5968f794a}{Get\+Move\+SpeedL} () const 
+\item 
+float \hyperlink{classPlayerObject_a4a519b15f12e06aa35ae9796c30fac08}{Get\+Hor\+Brake} () const 
+\item 
+float \hyperlink{classPlayerObject_a7d3bf55fb40eb92f4cea3d11766ca4e3}{Get\+Regular\+Brake} () const 
+\item 
+float \hyperlink{classPlayerObject_a13568f0d8efb4863be25aed36e0250a3}{Get\+Max\+Move\+Speed} () const 
+\item 
+float \hyperlink{classPlayerObject_a0e3039ff401d366e2acd4e3c04577e8a}{Get\+Move\+Power} () const 
+\item 
+void \hyperlink{classPlayerObject_a6f79723dde4a3eccdd819213114e52a3}{Set\+Mov\+Dir} (int \hyperlink{classPlayerObject_a1f0041d3a3195f684e002534329afdd2}{movedirection})
+\item 
+int \hyperlink{classPlayerObject_a6d7441e0284e6af65a064f5d9781a7a9}{Get\+Mov\+Dir} () const 
+\item 
+void \hyperlink{classPlayerObject_a75951d9991393f08e478607deb7f19a4}{Set\+Last\+Move\+Direction} (int \hyperlink{classPlayerObject_a59b667f647f5e3c5e6fbb93ca0f69a4d}{lastmovedirection})
+\item 
+int \hyperlink{classPlayerObject_aa41270fe17f41bf4ce804048b5dff594}{Get\+Last\+Move\+Direction} () const 
+\item 
+float \hyperlink{classPlayerObject_a6eeb8a060c9d5b6b4ca0104bf77aa346}{Get\+Gravity} () const 
+\item 
+sf\+::\+Rectangle\+Shape \hyperlink{classPlayerObject_ac4250fb9f8cc001a6641c63478722b7e}{Get\+Character} () const 
+\item 
+void \hyperlink{classPlayerObject_a1084ab4b57deee26ae98a131be9fb9ad}{Set\+Jump\+Check} (bool \hyperlink{classPlayerObject_a4b6f9ec15a3af10d75aab0f4e4211b09}{jumpcheck})
+\item 
+void \hyperlink{classPlayerObject_a6cd0c1faaf0d2cd1749d11a7e9e20ff8}{Set\+Apex\+Check} (bool \hyperlink{classPlayerObject_a47a3eb9e0b7df90a470ac69a59bb2fbe}{apexcheck})
+\item 
+bool \hyperlink{classPlayerObject_a203e254033dbe429d05f6c022994a824}{Get\+Jump\+Check} () const 
+\item 
+bool \hyperlink{classPlayerObject_a6ec9bab3a7af3a353dbae4db861fee4a}{Get\+Apex\+Check} () const 
+\item 
+void \hyperlink{classPlayerObject_a4b3506e5454430af8634eecda17a9f70}{Set\+Fall\+Speed} (float \hyperlink{classPlayerObject_a37c477ff51a290d74dba382079474340}{fallspeed})
+\item 
+float \hyperlink{classPlayerObject_a5f93613a07676e31931780ae1b64965a}{Get\+Fall\+Speed} () const 
+\item 
+float \hyperlink{classPlayerObject_a980dabd2d14fa5583ed08d9f6349270f}{Get\+Max\+Fall\+Speed} () const 
+\item 
+void \hyperlink{classPlayerObject_a9fcbe47e9d0cb21d6eae498280087076}{Set\+Jump\+Speed} (float \hyperlink{classPlayerObject_a331066bad9ab1e29d89037bb911609b7}{jumpspeed})
+\item 
+float \hyperlink{classPlayerObject_a5beb2aab79ca831d12736e068f83c1f8}{Get\+Jump\+Speed} () const 
+\item 
+float \hyperlink{classPlayerObject_a45b90f5407670b9bc79e9fb5b5618541}{Get\+Orig\+Jump\+Speed} () const 
+\item 
+void \hyperlink{classPlayerObject_ad253408204429c8514cfc1007a89343f}{Set\+Jump\+Power} (float \hyperlink{classPlayerObject_a3f83ebd349e87ef690ad69e88cf1b9a0}{jumppower})
+\item 
+float \hyperlink{classPlayerObject_a857d074a00ebc41ff169470b713c42a6}{Get\+Jump\+Power} () const 
+\item 
+void \hyperlink{classPlayerObject_af095d9c5a94133dff0d05cd261157d61}{Set\+Fall\+Power} (float \hyperlink{classPlayerObject_ae7475f2af3c338f765ff39dacf51a91d}{fallpower})
+\item 
+float \hyperlink{classPlayerObject_af92460ccdd53dbc2ac844cc36c34908b}{Get\+Fall\+Power} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Rectangle\+Shape $\ast$ \hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character}
+\item 
+\hyperlink{classAnimation}{Animation} \hyperlink{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}{animation}
+\item 
+\hyperlink{classHealth}{Health} \hyperlink{classPlayerObject_ad09efd50cf54cefed3250636a2fb1013}{health}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{classPlayerObject_a8c608e72f443704dcbbd2856c677d7ae}{size\+Width} = 34
+\item 
+const int \hyperlink{classPlayerObject_af89c0c451568d673a7d81ebfd9d71605}{size\+Height} = 50
+\item 
+int \hyperlink{classPlayerObject_ae033dcf570f627c5b2a0286b882e8c21}{playerhurt} = 5
+\item 
+float \hyperlink{classPlayerObject_a7f3a2004c470db8c3013143f0dca1070}{brakehorslowdown} = 2
+\item 
+float \hyperlink{classPlayerObject_a925251c105714f50f384a9ab4039a961}{regularhorslowdown} = 1.\+5
+\item 
+const float \hyperlink{classPlayerObject_a8b2f3724844592cb856020805ec30cec}{maxmovespeed} = 350
+\item 
+float \hyperlink{classPlayerObject_a95107fdb81d2094f9f0255908e3dfbf3}{movepower} = 20
+\item 
+float \hyperlink{classPlayerObject_a0215c8600251b36a27d49bd6b01d34bb}{movespeedleft} = 0
+\item 
+float \hyperlink{classPlayerObject_aabfd7e3dac7eaa6851528fdefc65c734}{movespeedright} = 0
+\item 
+int \hyperlink{classPlayerObject_a1f0041d3a3195f684e002534329afdd2}{movedirection} = 2
+\item 
+bool \hyperlink{classPlayerObject_a4894d3619cdf5cb0c35c480aa89502a4}{slowingdownleft} = false
+\item 
+bool \hyperlink{classPlayerObject_a3f5b7c904edac7e254297849659d01b3}{slowingdownright} = false
+\item 
+float \hyperlink{classPlayerObject_ac066dbdd99349fc992e701bfa3a344b1}{gravity} = 9
+\item 
+const int \hyperlink{classPlayerObject_a352711ae9a2f07845e69a6a345b2e341}{origjumpspeed} = 15
+\item 
+float \hyperlink{classPlayerObject_a37c477ff51a290d74dba382079474340}{fallspeed}
+\item 
+float \hyperlink{classPlayerObject_a657f15307fb36294d4fc5f38a37edc22}{maxfallspeed} = 80
+\item 
+float \hyperlink{classPlayerObject_a3f83ebd349e87ef690ad69e88cf1b9a0}{jumppower} = 500
+\item 
+float \hyperlink{classPlayerObject_ae7475f2af3c338f765ff39dacf51a91d}{fallpower} = 250
+\item 
+float \hyperlink{classPlayerObject_a331066bad9ab1e29d89037bb911609b7}{jumpspeed} = 0
+\item 
+bool \hyperlink{classPlayerObject_a4b6f9ec15a3af10d75aab0f4e4211b09}{jumpcheck} = true
+\item 
+bool \hyperlink{classPlayerObject_a47a3eb9e0b7df90a470ac69a59bb2fbe}{apexcheck} = true
+\item 
+float \hyperlink{classPlayerObject_a2171b8772f4959d8a217aa0269df6250}{OriginalX}
+\item 
+float \hyperlink{classPlayerObject_ac0a91ffa7a56cacd15b49052addacbda}{OriginalY}
+\item 
+float \hyperlink{classPlayerObject_a3dad46e7719e2547b5a85910cd998089}{positionX} = \hyperlink{classPlayerObject_a2171b8772f4959d8a217aa0269df6250}{OriginalX}
+\item 
+float \hyperlink{classPlayerObject_a8b9c744d2108d8927367a38005c4cc72}{positionY} = \hyperlink{classPlayerObject_ac0a91ffa7a56cacd15b49052addacbda}{OriginalY}
+\item 
+float \hyperlink{classPlayerObject_a2867ecbfadc35a30151ead9053e6b37e}{counter} = 0
+\item 
+int \hyperlink{classPlayerObject_a59b667f647f5e3c5e6fbb93ca0f69a4d}{lastmovedirection} = 2
+\item 
+sf\+::\+Render\+Window $\ast$ \hyperlink{classPlayerObject_aed44bc97791e54cd2169f508699fa311}{window}
+\item 
+\hyperlink{classSounds}{Sounds} $\ast$ \hyperlink{classPlayerObject_a645addb4a01f3b4e4d67f9740b7c9963}{sound}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Player\+Object@{Player\+Object}!Player\+Object@{Player\+Object}}
+\index{Player\+Object@{Player\+Object}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Player\+Object(float x, float y, sf\+::\+Render\+Window $\ast$window)}{PlayerObject(float x, float y, sf::RenderWindow *window)}}]{\setlength{\rightskip}{0pt plus 5cm}Player\+Object\+::\+Player\+Object (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{sf\+::\+Render\+Window $\ast$}]{window}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_a22c36bbb3a9f2f8121470aa78b294334}{}\label{classPlayerObject_a22c36bbb3a9f2f8121470aa78b294334}
+
+\begin{DoxyCode}
+5                                                                    : \hyperlink{classPlayerObject_aed44bc97791e54cd2169f508699fa311}{window}(
+      \hyperlink{classPlayerObject_aed44bc97791e54cd2169f508699fa311}{window})
+6 \{
+7     this->\hyperlink{classPlayerObject_a2171b8772f4959d8a217aa0269df6250}{OriginalX} = x;
+8     this->\hyperlink{classPlayerObject_ac0a91ffa7a56cacd15b49052addacbda}{OriginalY} = y;
+9     this->\hyperlink{classPlayerObject_a3dad46e7719e2547b5a85910cd998089}{positionX} = x;
+10     this->\hyperlink{classPlayerObject_a8b9c744d2108d8927367a38005c4cc72}{positionY} = y;
+11     \hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character} = \textcolor{keyword}{new} sf::RectangleShape;
+12     \hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character}->setSize(sf::Vector2f(\hyperlink{classPlayerObject_a8c608e72f443704dcbbd2856c677d7ae}{sizeWidth},\hyperlink{classPlayerObject_af89c0c451568d673a7d81ebfd9d71605}{sizeHeight}));
+13 
+14     \hyperlink{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}{animation}.\hyperlink{classAnimation_a71cd77a66064b85cb34061b47c414709}{init}();
+15     \hyperlink{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}{animation}.\hyperlink{classAnimation_a83f5edfffa3d2349f71e1bb7d81395c3}{PlayerIdle}(\hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character});
+16 
+17     \hyperlink{classPlayerObject_ad09efd50cf54cefed3250636a2fb1013}{health}.\hyperlink{classHealth_a33873878b816ca504c1bda9674507666}{init}();
+18     \hyperlink{classPlayerObject_ad09efd50cf54cefed3250636a2fb1013}{health}.\hyperlink{classHealth_a6e4c354b8b1147591345550769b22f5c}{SetOriginalLifePoints}(100);
+19     \hyperlink{classPlayerObject_ad09efd50cf54cefed3250636a2fb1013}{health}.\hyperlink{classHealth_abca68d47c02b173013543c46b794bca7}{SetActualLifePoints}(100);
+20     \hyperlink{classPlayerObject_ad09efd50cf54cefed3250636a2fb1013}{health}.\hyperlink{classHealth_acc38e31a9899242c374c99ef241872a4}{SetVisibleLifePoints}(100);
+21 
+22     \hyperlink{classPlayerObject_a645addb4a01f3b4e4d67f9740b7c9963}{sound} = \textcolor{keyword}{new} \hyperlink{classSounds}{Sounds}();
+23 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Player\+Object@{Player\+Object}!Draw\+Me@{Draw\+Me}}
+\index{Draw\+Me@{Draw\+Me}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Draw\+Me()}{DrawMe()}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Draw\+Me (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_a510e91305c929bb86d7628b87b0d7e39}{}\label{classPlayerObject_a510e91305c929bb86d7628b87b0d7e39}
+Set the position for the character at PositionX and Y Draw the character to the window. 
+\begin{DoxyCode}
+205 \{
+206     \textcolor{comment}{// Position the rectangle used to draw the square}
+207     \hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character}->setPosition(\hyperlink{classPlayerObject_a3dad46e7719e2547b5a85910cd998089}{positionX}, \hyperlink{classPlayerObject_a8b9c744d2108d8927367a38005c4cc72}{positionY});
+208 
+209     \textcolor{comment}{// Draw the square}
+210     \hyperlink{classPlayerObject_aed44bc97791e54cd2169f508699fa311}{window}->draw(*\hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character});
+211 \}\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Apex\+Check@{Get\+Apex\+Check}}
+\index{Get\+Apex\+Check@{Get\+Apex\+Check}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Apex\+Check() const }{GetApexCheck() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+Object\+::\+Get\+Apex\+Check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a6ec9bab3a7af3a353dbae4db861fee4a}{}\label{classPlayerObject_a6ec9bab3a7af3a353dbae4db861fee4a}
+
+\begin{DoxyCode}
+98 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a47a3eb9e0b7df90a470ac69a59bb2fbe}{apexcheck}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Character@{Get\+Character}}
+\index{Get\+Character@{Get\+Character}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Character() const }{GetCharacter() const }}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Rectangle\+Shape Player\+Object\+::\+Get\+Character (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_ac4250fb9f8cc001a6641c63478722b7e}{}\label{classPlayerObject_ac4250fb9f8cc001a6641c63478722b7e}
+
+\begin{DoxyCode}
+89 \{ \textcolor{keywordflow}{return} *\hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Fall\+Power@{Get\+Fall\+Power}}
+\index{Get\+Fall\+Power@{Get\+Fall\+Power}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Fall\+Power() const }{GetFallPower() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+Fall\+Power (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_af92460ccdd53dbc2ac844cc36c34908b}{}\label{classPlayerObject_af92460ccdd53dbc2ac844cc36c34908b}
+
+\begin{DoxyCode}
+112 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_ae7475f2af3c338f765ff39dacf51a91d}{fallpower}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Fall\+Speed@{Get\+Fall\+Speed}}
+\index{Get\+Fall\+Speed@{Get\+Fall\+Speed}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Fall\+Speed() const }{GetFallSpeed() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+Fall\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a5f93613a07676e31931780ae1b64965a}{}\label{classPlayerObject_a5f93613a07676e31931780ae1b64965a}
+
+\begin{DoxyCode}
+101 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a37c477ff51a290d74dba382079474340}{fallspeed}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Gravity@{Get\+Gravity}}
+\index{Get\+Gravity@{Get\+Gravity}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Gravity() const }{GetGravity() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+Gravity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a6eeb8a060c9d5b6b4ca0104bf77aa346}{}\label{classPlayerObject_a6eeb8a060c9d5b6b4ca0104bf77aa346}
+
+\begin{DoxyCode}
+87 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_ac066dbdd99349fc992e701bfa3a344b1}{gravity}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Hor\+Brake@{Get\+Hor\+Brake}}
+\index{Get\+Hor\+Brake@{Get\+Hor\+Brake}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Hor\+Brake() const }{GetHorBrake() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+Hor\+Brake (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a4a519b15f12e06aa35ae9796c30fac08}{}\label{classPlayerObject_a4a519b15f12e06aa35ae9796c30fac08}
+
+\begin{DoxyCode}
+72 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a7f3a2004c470db8c3013143f0dca1070}{brakehorslowdown}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Jump\+Check@{Get\+Jump\+Check}}
+\index{Get\+Jump\+Check@{Get\+Jump\+Check}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Jump\+Check() const }{GetJumpCheck() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+Object\+::\+Get\+Jump\+Check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a203e254033dbe429d05f6c022994a824}{}\label{classPlayerObject_a203e254033dbe429d05f6c022994a824}
+
+\begin{DoxyCode}
+97 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a4b6f9ec15a3af10d75aab0f4e4211b09}{jumpcheck}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Jump\+Power@{Get\+Jump\+Power}}
+\index{Get\+Jump\+Power@{Get\+Jump\+Power}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Jump\+Power() const }{GetJumpPower() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+Jump\+Power (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a857d074a00ebc41ff169470b713c42a6}{}\label{classPlayerObject_a857d074a00ebc41ff169470b713c42a6}
+
+\begin{DoxyCode}
+109 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a3f83ebd349e87ef690ad69e88cf1b9a0}{jumppower}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Jump\+Speed@{Get\+Jump\+Speed}}
+\index{Get\+Jump\+Speed@{Get\+Jump\+Speed}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Jump\+Speed() const }{GetJumpSpeed() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+Jump\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a5beb2aab79ca831d12736e068f83c1f8}{}\label{classPlayerObject_a5beb2aab79ca831d12736e068f83c1f8}
+
+\begin{DoxyCode}
+105 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a331066bad9ab1e29d89037bb911609b7}{jumpspeed}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Last\+Move\+Direction@{Get\+Last\+Move\+Direction}}
+\index{Get\+Last\+Move\+Direction@{Get\+Last\+Move\+Direction}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Last\+Move\+Direction() const }{GetLastMoveDirection() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+Object\+::\+Get\+Last\+Move\+Direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_aa41270fe17f41bf4ce804048b5dff594}{}\label{classPlayerObject_aa41270fe17f41bf4ce804048b5dff594}
+
+\begin{DoxyCode}
+85 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a59b667f647f5e3c5e6fbb93ca0f69a4d}{lastmovedirection}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Max\+Fall\+Speed@{Get\+Max\+Fall\+Speed}}
+\index{Get\+Max\+Fall\+Speed@{Get\+Max\+Fall\+Speed}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Max\+Fall\+Speed() const }{GetMaxFallSpeed() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+Max\+Fall\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a980dabd2d14fa5583ed08d9f6349270f}{}\label{classPlayerObject_a980dabd2d14fa5583ed08d9f6349270f}
+
+\begin{DoxyCode}
+102 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a657f15307fb36294d4fc5f38a37edc22}{maxfallspeed}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Max\+Move\+Speed@{Get\+Max\+Move\+Speed}}
+\index{Get\+Max\+Move\+Speed@{Get\+Max\+Move\+Speed}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Max\+Move\+Speed() const }{GetMaxMoveSpeed() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+Max\+Move\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a13568f0d8efb4863be25aed36e0250a3}{}\label{classPlayerObject_a13568f0d8efb4863be25aed36e0250a3}
+
+\begin{DoxyCode}
+76 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a8b2f3724844592cb856020805ec30cec}{maxmovespeed}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Mov\+Dir@{Get\+Mov\+Dir}}
+\index{Get\+Mov\+Dir@{Get\+Mov\+Dir}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Mov\+Dir() const }{GetMovDir() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+Object\+::\+Get\+Mov\+Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a6d7441e0284e6af65a064f5d9781a7a9}{}\label{classPlayerObject_a6d7441e0284e6af65a064f5d9781a7a9}
+
+\begin{DoxyCode}
+81 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a1f0041d3a3195f684e002534329afdd2}{movedirection}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Move\+Power@{Get\+Move\+Power}}
+\index{Get\+Move\+Power@{Get\+Move\+Power}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Move\+Power() const }{GetMovePower() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+Move\+Power (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a0e3039ff401d366e2acd4e3c04577e8a}{}\label{classPlayerObject_a0e3039ff401d366e2acd4e3c04577e8a}
+
+\begin{DoxyCode}
+77 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a95107fdb81d2094f9f0255908e3dfbf3}{movepower}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Move\+SpeedL@{Get\+Move\+SpeedL}}
+\index{Get\+Move\+SpeedL@{Get\+Move\+SpeedL}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Move\+Speed\+L() const }{GetMoveSpeedL() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+Move\+SpeedL (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a14c7cacdcf3fc748e18e1ea5968f794a}{}\label{classPlayerObject_a14c7cacdcf3fc748e18e1ea5968f794a}
+
+\begin{DoxyCode}
+69 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a0215c8600251b36a27d49bd6b01d34bb}{movespeedleft}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Move\+SpeedR@{Get\+Move\+SpeedR}}
+\index{Get\+Move\+SpeedR@{Get\+Move\+SpeedR}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Move\+Speed\+R() const }{GetMoveSpeedR() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+Move\+SpeedR (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a9cbba4823a54769e65e437883897f7ef}{}\label{classPlayerObject_a9cbba4823a54769e65e437883897f7ef}
+
+\begin{DoxyCode}
+68 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_aabfd7e3dac7eaa6851528fdefc65c734}{movespeedright}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+OriginalX@{Get\+OriginalX}}
+\index{Get\+OriginalX@{Get\+OriginalX}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Original\+X()}{GetOriginalX()}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+OriginalX (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_ac87a43be5d38f99829c9b02f6c042c6c}{}\label{classPlayerObject_ac87a43be5d38f99829c9b02f6c042c6c}
+
+\begin{DoxyCode}
+43 \{
+44     \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a2171b8772f4959d8a217aa0269df6250}{OriginalX};
+45 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+OriginalY@{Get\+OriginalY}}
+\index{Get\+OriginalY@{Get\+OriginalY}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Original\+Y()}{GetOriginalY()}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+OriginalY (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_aa756cf94d6309698f2220e7ec59140f0}{}\label{classPlayerObject_aa756cf94d6309698f2220e7ec59140f0}
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_ac0a91ffa7a56cacd15b49052addacbda}{OriginalY};
+50 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Orig\+Jump\+Speed@{Get\+Orig\+Jump\+Speed}}
+\index{Get\+Orig\+Jump\+Speed@{Get\+Orig\+Jump\+Speed}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Orig\+Jump\+Speed() const }{GetOrigJumpSpeed() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+Orig\+Jump\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a45b90f5407670b9bc79e9fb5b5618541}{}\label{classPlayerObject_a45b90f5407670b9bc79e9fb5b5618541}
+
+\begin{DoxyCode}
+106 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a352711ae9a2f07845e69a6a345b2e341}{origjumpspeed}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Player\+Hurt@{Get\+Player\+Hurt}}
+\index{Get\+Player\+Hurt@{Get\+Player\+Hurt}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Player\+Hurt() const }{GetPlayerHurt() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+Object\+::\+Get\+Player\+Hurt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a9cedbd637ab791f2ff2188fba2d7612a}{}\label{classPlayerObject_a9cedbd637ab791f2ff2188fba2d7612a}
+
+\begin{DoxyCode}
+34 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_ae033dcf570f627c5b2a0286b882e8c21}{playerhurt}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+PositionX@{Get\+PositionX}}
+\index{Get\+PositionX@{Get\+PositionX}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Position\+X()}{GetPositionX()}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+PositionX (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_aa84a7779304b680fa32b88b01ba95d02}{}\label{classPlayerObject_aa84a7779304b680fa32b88b01ba95d02}
+
+\begin{DoxyCode}
+26 \{
+27     \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a3dad46e7719e2547b5a85910cd998089}{positionX};
+28 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+PositionY@{Get\+PositionY}}
+\index{Get\+PositionY@{Get\+PositionY}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Position\+Y()}{GetPositionY()}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+PositionY (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_ad17b9ec44299f4dc9ca20064c883496b}{}\label{classPlayerObject_ad17b9ec44299f4dc9ca20064c883496b}
+
+\begin{DoxyCode}
+30 \{
+31     \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a8b9c744d2108d8927367a38005c4cc72}{positionY};
+32 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Regular\+Brake@{Get\+Regular\+Brake}}
+\index{Get\+Regular\+Brake@{Get\+Regular\+Brake}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Regular\+Brake() const }{GetRegularBrake() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+Get\+Regular\+Brake (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a7d3bf55fb40eb92f4cea3d11766ca4e3}{}\label{classPlayerObject_a7d3bf55fb40eb92f4cea3d11766ca4e3}
+
+\begin{DoxyCode}
+73 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a925251c105714f50f384a9ab4039a961}{regularhorslowdown}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Size\+Height@{Get\+Size\+Height}}
+\index{Get\+Size\+Height@{Get\+Size\+Height}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Size\+Height() const }{GetSizeHeight() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+Object\+::\+Get\+Size\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a01be69eae2aad78c6e03ce6890179a22}{}\label{classPlayerObject_a01be69eae2aad78c6e03ce6890179a22}
+
+\begin{DoxyCode}
+31 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_af89c0c451568d673a7d81ebfd9d71605}{sizeHeight}; \};
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Size\+Width@{Get\+Size\+Width}}
+\index{Get\+Size\+Width@{Get\+Size\+Width}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Size\+Width() const }{GetSizeWidth() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+Object\+::\+Get\+Size\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_ae6a6f078e01cf54d91108ecfa4e2da02}{}\label{classPlayerObject_ae6a6f078e01cf54d91108ecfa4e2da02}
+
+\begin{DoxyCode}
+30 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a8c608e72f443704dcbbd2856c677d7ae}{sizeWidth}; \};
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Slow\+DownL@{Get\+Slow\+DownL}}
+\index{Get\+Slow\+DownL@{Get\+Slow\+DownL}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Slow\+Down\+L() const }{GetSlowDownL() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+Object\+::\+Get\+Slow\+DownL (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a7f7fa1fd6ac9c5dc038ebae46c932a25}{}\label{classPlayerObject_a7f7fa1fd6ac9c5dc038ebae46c932a25}
+
+\begin{DoxyCode}
+63 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a4894d3619cdf5cb0c35c480aa89502a4}{slowingdownleft}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Get\+Slow\+DownR@{Get\+Slow\+DownR}}
+\index{Get\+Slow\+DownR@{Get\+Slow\+DownR}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Get\+Slow\+Down\+R() const }{GetSlowDownR() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+Object\+::\+Get\+Slow\+DownR (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a39d8a278186eee72968d8edd3ab681e8}{}\label{classPlayerObject_a39d8a278186eee72968d8edd3ab681e8}
+
+\begin{DoxyCode}
+62 \{ \textcolor{keywordflow}{return} \hyperlink{classPlayerObject_a3f5b7c904edac7e254297849659d01b3}{slowingdownright}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Player\+Animation@{Player\+Animation}}
+\index{Player\+Animation@{Player\+Animation}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Player\+Animation(float delta)}{PlayerAnimation(float delta)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Player\+Animation (
+\begin{DoxyParamCaption}
+\item[{float}]{delta}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_a34d8b9e121f017b3163bb5b8aa392af8}{}\label{classPlayerObject_a34d8b9e121f017b3163bb5b8aa392af8}
+The function that is responsible to call each of the player character\textquotesingle{}s animations. All animations switch frames based on a delta timer. 
+\begin{DoxyParams}{Parameters}
+{\em delta} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+106 \{
+107     \hyperlink{classPlayerObject_a2867ecbfadc35a30151ead9053e6b37e}{counter} += delta;
+108     \textcolor{keywordflow}{if} (\hyperlink{classPlayerObject_a2867ecbfadc35a30151ead9053e6b37e}{counter} >= 0.15)
+109     \{
+110         \hyperlink{classPlayerObject_a2867ecbfadc35a30151ead9053e6b37e}{counter} = 0;
+111         \textcolor{keywordflow}{if} (\hyperlink{classPlayerObject_a4b6f9ec15a3af10d75aab0f4e4211b09}{jumpcheck} && \hyperlink{classPlayerObject_a1f0041d3a3195f684e002534329afdd2}{movedirection} == 1) \textcolor{comment}{// If jumping to the right}
+112         \{
+113             \hyperlink{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}{animation}.\hyperlink{classAnimation_ab7f9df65827e2d2b4bb75f908189f716}{PlayerJumpRight}(\hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character}, 
+      \hyperlink{classPlayerObject_a47a3eb9e0b7df90a470ac69a59bb2fbe}{apexcheck});
+114             \hyperlink{classPlayerObject_a59b667f647f5e3c5e6fbb93ca0f69a4d}{lastmovedirection} = 1;
+115         \}
+116         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classPlayerObject_a4b6f9ec15a3af10d75aab0f4e4211b09}{jumpcheck} && \hyperlink{classPlayerObject_a1f0041d3a3195f684e002534329afdd2}{movedirection} == 0) \textcolor{comment}{// If jumping to the left}
+117         \{
+118             \hyperlink{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}{animation}.\hyperlink{classAnimation_a0469ce861da8662b3abb2f05fb7ce509}{PlayerJumpLeft}(\hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character}, 
+      \hyperlink{classPlayerObject_a47a3eb9e0b7df90a470ac69a59bb2fbe}{apexcheck});
+119             \hyperlink{classPlayerObject_a59b667f647f5e3c5e6fbb93ca0f69a4d}{lastmovedirection} = 0;
+120         \}
+121         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classPlayerObject_a4b6f9ec15a3af10d75aab0f4e4211b09}{jumpcheck}) \textcolor{comment}{//If jumping upwards.}
+122         \{
+123             \textcolor{keywordflow}{if} (\hyperlink{classPlayerObject_a59b667f647f5e3c5e6fbb93ca0f69a4d}{lastmovedirection} == 1)
+124                 \hyperlink{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}{animation}.\hyperlink{classAnimation_ab7f9df65827e2d2b4bb75f908189f716}{PlayerJumpRight}(\hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character}, 
+      \hyperlink{classPlayerObject_a47a3eb9e0b7df90a470ac69a59bb2fbe}{apexcheck});
+125             \textcolor{keywordflow}{else}
+126                 \hyperlink{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}{animation}.\hyperlink{classAnimation_a0469ce861da8662b3abb2f05fb7ce509}{PlayerJumpLeft}(\hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character}, 
+      \hyperlink{classPlayerObject_a47a3eb9e0b7df90a470ac69a59bb2fbe}{apexcheck});
+127         \}
+128 
+129         \textcolor{keywordflow}{else}
+130         \{
+131             \textcolor{keywordflow}{if} (\hyperlink{classPlayerObject_a1f0041d3a3195f684e002534329afdd2}{movedirection} == 0) \textcolor{comment}{// If moving to left, play left animation}
+132             \{
+133                 \hyperlink{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}{animation}.\hyperlink{classAnimation_ada6222ad6014e0c7582ad27f05e26461}{PlayerWalkLeft}(\hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character});
+134             \}
+135             \textcolor{keywordflow}{if} (\hyperlink{classPlayerObject_a1f0041d3a3195f684e002534329afdd2}{movedirection} == 1) \textcolor{comment}{// If moving to right, play right animation}
+136             \{
+137                 \hyperlink{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}{animation}.\hyperlink{classAnimation_a21c41b29f392f2f0badaae5c7444ae40}{PlayerWalkRight}(\hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character});
+138             \}
+139             \textcolor{keywordflow}{if} (\hyperlink{classPlayerObject_a1f0041d3a3195f684e002534329afdd2}{movedirection} == 2) \textcolor{comment}{// If movement stopped, play idle animation}
+140             \{
+141                 \textcolor{keywordflow}{if}(\hyperlink{classPlayerObject_a59b667f647f5e3c5e6fbb93ca0f69a4d}{lastmovedirection} == 0)
+142                     \hyperlink{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}{animation}.\hyperlink{classAnimation_a508a78a4830ace728dc529f96fa43813}{PlayerIdleLeft}(\hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character});
+143                 \textcolor{keywordflow}{else}
+144                     \hyperlink{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}{animation}.\hyperlink{classAnimation_a83f5edfffa3d2349f71e1bb7d81395c3}{PlayerIdle}(\hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character});
+145             \}
+146         \}
+147     \}
+148 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Player\+Cutscene\+Animation\+Left@{Player\+Cutscene\+Animation\+Left}}
+\index{Player\+Cutscene\+Animation\+Left@{Player\+Cutscene\+Animation\+Left}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Player\+Cutscene\+Animation\+Left(float delta)}{PlayerCutsceneAnimationLeft(float delta)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Player\+Cutscene\+Animation\+Left (
+\begin{DoxyParamCaption}
+\item[{float}]{delta}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_a7ee73e003e589eb3f41392013a0dbcae}{}\label{classPlayerObject_a7ee73e003e589eb3f41392013a0dbcae}
+Cutscene animation for player facing left. 
+\begin{DoxyParams}{Parameters}
+{\em delta} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+76 \{
+77     \hyperlink{classPlayerObject_a2867ecbfadc35a30151ead9053e6b37e}{counter} += delta;
+78     \textcolor{keywordflow}{if}(\hyperlink{classPlayerObject_a2867ecbfadc35a30151ead9053e6b37e}{counter} >= 0.1)
+79     \{
+80         \hyperlink{classPlayerObject_a2867ecbfadc35a30151ead9053e6b37e}{counter} = 0;
+81         \hyperlink{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}{animation}.\hyperlink{classAnimation_a508a78a4830ace728dc529f96fa43813}{PlayerIdleLeft}(\hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character});
+82     \}
+83 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Player\+Cutscene\+Animation\+Right@{Player\+Cutscene\+Animation\+Right}}
+\index{Player\+Cutscene\+Animation\+Right@{Player\+Cutscene\+Animation\+Right}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Player\+Cutscene\+Animation\+Right(float delta)}{PlayerCutsceneAnimationRight(float delta)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Player\+Cutscene\+Animation\+Right (
+\begin{DoxyParamCaption}
+\item[{float}]{delta}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_ac5935efe401480fd63bb5a2a9a09c54d}{}\label{classPlayerObject_ac5935efe401480fd63bb5a2a9a09c54d}
+Cutscene animation for player facing right. 
+\begin{DoxyParams}{Parameters}
+{\em delta} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+89 \{
+90     \hyperlink{classPlayerObject_a2867ecbfadc35a30151ead9053e6b37e}{counter} += delta;
+91     \textcolor{keywordflow}{if}(\hyperlink{classPlayerObject_a2867ecbfadc35a30151ead9053e6b37e}{counter} >= 0.1)
+92     \{
+93         \hyperlink{classPlayerObject_a2867ecbfadc35a30151ead9053e6b37e}{counter} = 0;
+94         \hyperlink{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}{animation}.\hyperlink{classAnimation_a83f5edfffa3d2349f71e1bb7d81395c3}{PlayerIdle}(\hyperlink{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{character});
+95     \}
+96 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Player\+Dead@{Player\+Dead}}
+\index{Player\+Dead@{Player\+Dead}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Player\+Dead()}{PlayerDead()}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Player\+Dead (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_a180ae1fcbd6b7eb4491cbf1f846b8b25}{}\label{classPlayerObject_a180ae1fcbd6b7eb4491cbf1f846b8b25}
+When player is dead this function is called. Reset variables that need reseted. Call to health reset function. Set player position back to spawn position. T\+O\+DO\+: Draw deathscreen, atm\+: print out deathmessage 
+\begin{DoxyCode}
+187 \{
+188     this->\hyperlink{classPlayerObject_a4b6f9ec15a3af10d75aab0f4e4211b09}{jumpcheck} = \textcolor{keyword}{true};
+189     this->\hyperlink{classPlayerObject_a47a3eb9e0b7df90a470ac69a59bb2fbe}{apexcheck} = \textcolor{keyword}{true};
+190     \hyperlink{classPlayerObject_a331066bad9ab1e29d89037bb911609b7}{jumpspeed} = \hyperlink{classPlayerObject_a352711ae9a2f07845e69a6a345b2e341}{origjumpspeed};
+191     \hyperlink{classPlayerObject_a37c477ff51a290d74dba382079474340}{fallspeed} = 0;
+192     \hyperlink{classPlayerObject_a1f0041d3a3195f684e002534329afdd2}{movedirection} = 2;
+193     \hyperlink{classPlayerObject_a0215c8600251b36a27d49bd6b01d34bb}{movespeedleft} = 0;
+194     \hyperlink{classPlayerObject_aabfd7e3dac7eaa6851528fdefc65c734}{movespeedright} = 0;
+195     \hyperlink{classPlayerObject_a3dad46e7719e2547b5a85910cd998089}{positionX} = \hyperlink{classPlayerObject_a2171b8772f4959d8a217aa0269df6250}{OriginalX};
+196     \hyperlink{classPlayerObject_a8b9c744d2108d8927367a38005c4cc72}{positionY} = \hyperlink{classPlayerObject_ac0a91ffa7a56cacd15b49052addacbda}{OriginalY};
+197     \hyperlink{classPlayerObject_a645addb4a01f3b4e4d67f9740b7c9963}{sound}->\hyperlink{classSounds_a5a93229c3804b9364b324a4e6245fcbe}{playSound}(\textcolor{stringliteral}{"/Death.wav"}, 100);
+198 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Player\+Sound\+Enemy\+Landed@{Player\+Sound\+Enemy\+Landed}}
+\index{Player\+Sound\+Enemy\+Landed@{Player\+Sound\+Enemy\+Landed}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Player\+Sound\+Enemy\+Landed()}{PlayerSoundEnemyLanded()}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Player\+Sound\+Enemy\+Landed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_ad133797db4760e6ae229eb7889888a89}{}\label{classPlayerObject_ad133797db4760e6ae229eb7889888a89}
+The sound to be played if the player character were to succeed on harming an enemy by jumping on it. 
+\begin{DoxyCode}
+174 \{
+175     \hyperlink{classPlayerObject_a645addb4a01f3b4e4d67f9740b7c9963}{sound}->\hyperlink{classSounds_a5a93229c3804b9364b324a4e6245fcbe}{playSound}(\textcolor{stringliteral}{"/jumpedonenemy.wav"}, 100);
+176 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Player\+Sound\+Hurt@{Player\+Sound\+Hurt}}
+\index{Player\+Sound\+Hurt@{Player\+Sound\+Hurt}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Player\+Sound\+Hurt()}{PlayerSoundHurt()}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Player\+Sound\+Hurt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_aca6d9328e3f55987fbe4762c10b893b2}{}\label{classPlayerObject_aca6d9328e3f55987fbe4762c10b893b2}
+The sounds to be played if the player character were to be harmed. There is about 50\% for each of the sounds to be played. 
+\begin{DoxyCode}
+162 \{
+163     \textcolor{keywordflow}{if}(rand() % 20 < 10)
+164         \hyperlink{classPlayerObject_a645addb4a01f3b4e4d67f9740b7c9963}{sound}->\hyperlink{classSounds_a5a93229c3804b9364b324a4e6245fcbe}{playSound}(\textcolor{stringliteral}{"/manhurt1.wav"}, 100);
+165     \textcolor{keywordflow}{else}
+166         \hyperlink{classPlayerObject_a645addb4a01f3b4e4d67f9740b7c9963}{sound}->\hyperlink{classSounds_a5a93229c3804b9364b324a4e6245fcbe}{playSound}(\textcolor{stringliteral}{"/manhurt2.wav"}, 100);
+167 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Player\+Sound\+Jump@{Player\+Sound\+Jump}}
+\index{Player\+Sound\+Jump@{Player\+Sound\+Jump}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Player\+Sound\+Jump()}{PlayerSoundJump()}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Player\+Sound\+Jump (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_a4f41bf61971eb3a71346681f25a97fc0}{}\label{classPlayerObject_a4f41bf61971eb3a71346681f25a97fc0}
+The sound to be played when the player character jumps. 
+\begin{DoxyCode}
+154 \{
+155     \hyperlink{classPlayerObject_a645addb4a01f3b4e4d67f9740b7c9963}{sound}->\hyperlink{classSounds_a5a93229c3804b9364b324a4e6245fcbe}{playSound}(\textcolor{stringliteral}{"/Jump.wav"}, 100);
+156 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Reset2\+OriginalX@{Reset2\+OriginalX}}
+\index{Reset2\+OriginalX@{Reset2\+OriginalX}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Reset2\+Original\+X(float x)}{Reset2OriginalX(float x)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Reset2\+OriginalX (
+\begin{DoxyParamCaption}
+\item[{float}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_a9dd4494cfaeb6dfa74b84ad19df5d650}{}\label{classPlayerObject_a9dd4494cfaeb6dfa74b84ad19df5d650}
+
+\begin{DoxyCode}
+63 \{
+64     x = this->\hyperlink{classPlayerObject_a2171b8772f4959d8a217aa0269df6250}{OriginalX};
+65 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Reset2\+OriginalY@{Reset2\+OriginalY}}
+\index{Reset2\+OriginalY@{Reset2\+OriginalY}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Reset2\+Original\+Y(float y)}{Reset2OriginalY(float y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Reset2\+OriginalY (
+\begin{DoxyParamCaption}
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_af545457981fc51138ba2c735bdeecb31}{}\label{classPlayerObject_af545457981fc51138ba2c735bdeecb31}
+
+\begin{DoxyCode}
+68 \{
+69     y = this->\hyperlink{classPlayerObject_ac0a91ffa7a56cacd15b49052addacbda}{OriginalY};
+70 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+Apex\+Check@{Set\+Apex\+Check}}
+\index{Set\+Apex\+Check@{Set\+Apex\+Check}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Apex\+Check(bool apexcheck)}{SetApexCheck(bool apexcheck)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+Apex\+Check (
+\begin{DoxyParamCaption}
+\item[{bool}]{apexcheck}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a6cd0c1faaf0d2cd1749d11a7e9e20ff8}{}\label{classPlayerObject_a6cd0c1faaf0d2cd1749d11a7e9e20ff8}
+
+\begin{DoxyCode}
+96 \{ this->\hyperlink{classPlayerObject_a47a3eb9e0b7df90a470ac69a59bb2fbe}{apexcheck} = \hyperlink{classPlayerObject_a47a3eb9e0b7df90a470ac69a59bb2fbe}{apexcheck}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+Fall\+Power@{Set\+Fall\+Power}}
+\index{Set\+Fall\+Power@{Set\+Fall\+Power}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Fall\+Power(float fallpower)}{SetFallPower(float fallpower)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+Fall\+Power (
+\begin{DoxyParamCaption}
+\item[{float}]{fallpower}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_af095d9c5a94133dff0d05cd261157d61}{}\label{classPlayerObject_af095d9c5a94133dff0d05cd261157d61}
+
+\begin{DoxyCode}
+111 \{ this->\hyperlink{classPlayerObject_ae7475f2af3c338f765ff39dacf51a91d}{fallpower} = \hyperlink{classPlayerObject_ae7475f2af3c338f765ff39dacf51a91d}{fallpower}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+Fall\+Speed@{Set\+Fall\+Speed}}
+\index{Set\+Fall\+Speed@{Set\+Fall\+Speed}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Fall\+Speed(float fallspeed)}{SetFallSpeed(float fallspeed)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+Fall\+Speed (
+\begin{DoxyParamCaption}
+\item[{float}]{fallspeed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a4b3506e5454430af8634eecda17a9f70}{}\label{classPlayerObject_a4b3506e5454430af8634eecda17a9f70}
+
+\begin{DoxyCode}
+100 \{ this->\hyperlink{classPlayerObject_a37c477ff51a290d74dba382079474340}{fallspeed} = \hyperlink{classPlayerObject_a37c477ff51a290d74dba382079474340}{fallspeed}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+Jump\+Check@{Set\+Jump\+Check}}
+\index{Set\+Jump\+Check@{Set\+Jump\+Check}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Jump\+Check(bool jumpcheck)}{SetJumpCheck(bool jumpcheck)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+Jump\+Check (
+\begin{DoxyParamCaption}
+\item[{bool}]{jumpcheck}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a1084ab4b57deee26ae98a131be9fb9ad}{}\label{classPlayerObject_a1084ab4b57deee26ae98a131be9fb9ad}
+
+\begin{DoxyCode}
+95 \{ this->\hyperlink{classPlayerObject_a4b6f9ec15a3af10d75aab0f4e4211b09}{jumpcheck} = \hyperlink{classPlayerObject_a4b6f9ec15a3af10d75aab0f4e4211b09}{jumpcheck}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+Jump\+Power@{Set\+Jump\+Power}}
+\index{Set\+Jump\+Power@{Set\+Jump\+Power}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Jump\+Power(float jumppower)}{SetJumpPower(float jumppower)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+Jump\+Power (
+\begin{DoxyParamCaption}
+\item[{float}]{jumppower}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_ad253408204429c8514cfc1007a89343f}{}\label{classPlayerObject_ad253408204429c8514cfc1007a89343f}
+
+\begin{DoxyCode}
+108 \{ this->\hyperlink{classPlayerObject_a3f83ebd349e87ef690ad69e88cf1b9a0}{jumppower} = \hyperlink{classPlayerObject_a3f83ebd349e87ef690ad69e88cf1b9a0}{jumppower}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+Jump\+Speed@{Set\+Jump\+Speed}}
+\index{Set\+Jump\+Speed@{Set\+Jump\+Speed}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Jump\+Speed(float jumpspeed)}{SetJumpSpeed(float jumpspeed)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+Jump\+Speed (
+\begin{DoxyParamCaption}
+\item[{float}]{jumpspeed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a9fcbe47e9d0cb21d6eae498280087076}{}\label{classPlayerObject_a9fcbe47e9d0cb21d6eae498280087076}
+
+\begin{DoxyCode}
+104 \{ this->\hyperlink{classPlayerObject_a331066bad9ab1e29d89037bb911609b7}{jumpspeed} = \hyperlink{classPlayerObject_a331066bad9ab1e29d89037bb911609b7}{jumpspeed}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+Last\+Move\+Direction@{Set\+Last\+Move\+Direction}}
+\index{Set\+Last\+Move\+Direction@{Set\+Last\+Move\+Direction}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Last\+Move\+Direction(int lastmovedirection)}{SetLastMoveDirection(int lastmovedirection)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+Last\+Move\+Direction (
+\begin{DoxyParamCaption}
+\item[{int}]{lastmovedirection}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a75951d9991393f08e478607deb7f19a4}{}\label{classPlayerObject_a75951d9991393f08e478607deb7f19a4}
+
+\begin{DoxyCode}
+84 \{ this->\hyperlink{classPlayerObject_a59b667f647f5e3c5e6fbb93ca0f69a4d}{lastmovedirection} = \hyperlink{classPlayerObject_a59b667f647f5e3c5e6fbb93ca0f69a4d}{lastmovedirection}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+Mov\+Dir@{Set\+Mov\+Dir}}
+\index{Set\+Mov\+Dir@{Set\+Mov\+Dir}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Mov\+Dir(int movedirection)}{SetMovDir(int movedirection)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+Mov\+Dir (
+\begin{DoxyParamCaption}
+\item[{int}]{movedirection}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a6f79723dde4a3eccdd819213114e52a3}{}\label{classPlayerObject_a6f79723dde4a3eccdd819213114e52a3}
+
+\begin{DoxyCode}
+80 \{ this->\hyperlink{classPlayerObject_a1f0041d3a3195f684e002534329afdd2}{movedirection} = \hyperlink{classPlayerObject_a1f0041d3a3195f684e002534329afdd2}{movedirection}; \};
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+Move\+SpeedL@{Set\+Move\+SpeedL}}
+\index{Set\+Move\+SpeedL@{Set\+Move\+SpeedL}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Move\+Speed\+L(float movespeedleft)}{SetMoveSpeedL(float movespeedleft)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+Move\+SpeedL (
+\begin{DoxyParamCaption}
+\item[{float}]{movespeedleft}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a60999058bc5ed47cbbd52c468a400c5f}{}\label{classPlayerObject_a60999058bc5ed47cbbd52c468a400c5f}
+
+\begin{DoxyCode}
+67 \{ this->\hyperlink{classPlayerObject_a0215c8600251b36a27d49bd6b01d34bb}{movespeedleft} = \hyperlink{classPlayerObject_a0215c8600251b36a27d49bd6b01d34bb}{movespeedleft}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+Move\+SpeedR@{Set\+Move\+SpeedR}}
+\index{Set\+Move\+SpeedR@{Set\+Move\+SpeedR}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Move\+Speed\+R(float movespeedright)}{SetMoveSpeedR(float movespeedright)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+Move\+SpeedR (
+\begin{DoxyParamCaption}
+\item[{float}]{movespeedright}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a9147fbd6a35b05cc1e1a6faeb9b8bf22}{}\label{classPlayerObject_a9147fbd6a35b05cc1e1a6faeb9b8bf22}
+
+\begin{DoxyCode}
+66 \{ this->\hyperlink{classPlayerObject_aabfd7e3dac7eaa6851528fdefc65c734}{movespeedright} = \hyperlink{classPlayerObject_aabfd7e3dac7eaa6851528fdefc65c734}{movespeedright}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+OriginalX@{Set\+OriginalX}}
+\index{Set\+OriginalX@{Set\+OriginalX}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Original\+X(float x)}{SetOriginalX(float x)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+OriginalX (
+\begin{DoxyParamCaption}
+\item[{float}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_ac1f2670c32ea1222ddcbbdd4d4fda0f1}{}\label{classPlayerObject_ac1f2670c32ea1222ddcbbdd4d4fda0f1}
+
+\begin{DoxyCode}
+53 \{
+54     this->\hyperlink{classPlayerObject_a2171b8772f4959d8a217aa0269df6250}{OriginalX} = x;
+55 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+OriginalY@{Set\+OriginalY}}
+\index{Set\+OriginalY@{Set\+OriginalY}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Original\+Y(float y)}{SetOriginalY(float y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+OriginalY (
+\begin{DoxyParamCaption}
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_ae20d0ed730204b7d471ab13d32e9626e}{}\label{classPlayerObject_ae20d0ed730204b7d471ab13d32e9626e}
+
+\begin{DoxyCode}
+58 \{
+59     this->\hyperlink{classPlayerObject_ac0a91ffa7a56cacd15b49052addacbda}{OriginalY} = y;
+60 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+Player\+Hurt@{Set\+Player\+Hurt}}
+\index{Set\+Player\+Hurt@{Set\+Player\+Hurt}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Player\+Hurt(int playerhurt)}{SetPlayerHurt(int playerhurt)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+Player\+Hurt (
+\begin{DoxyParamCaption}
+\item[{int}]{playerhurt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a632afc4f75ec8df95d81c2ae81a08a70}{}\label{classPlayerObject_a632afc4f75ec8df95d81c2ae81a08a70}
+
+\begin{DoxyCode}
+33 \{ this->\hyperlink{classPlayerObject_ae033dcf570f627c5b2a0286b882e8c21}{playerhurt} = \hyperlink{classPlayerObject_ae033dcf570f627c5b2a0286b882e8c21}{playerhurt}; \};
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+PositionX@{Set\+PositionX}}
+\index{Set\+PositionX@{Set\+PositionX}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Position\+X(float x)}{SetPositionX(float x)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+PositionX (
+\begin{DoxyParamCaption}
+\item[{float}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_abe7e23cb831430c9926cb3b5206fff1f}{}\label{classPlayerObject_abe7e23cb831430c9926cb3b5206fff1f}
+
+\begin{DoxyCode}
+34 \{
+35     this->\hyperlink{classPlayerObject_a3dad46e7719e2547b5a85910cd998089}{positionX} = x;
+36 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+PositionY@{Set\+PositionY}}
+\index{Set\+PositionY@{Set\+PositionY}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Position\+Y(float y)}{SetPositionY(float y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+PositionY (
+\begin{DoxyParamCaption}
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classPlayerObject_a19962eed7a6cfd28af75d9d5e15cb27a}{}\label{classPlayerObject_a19962eed7a6cfd28af75d9d5e15cb27a}
+
+\begin{DoxyCode}
+38 \{
+39     this->\hyperlink{classPlayerObject_a8b9c744d2108d8927367a38005c4cc72}{positionY} = y;
+40 \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+Slow\+DownL@{Set\+Slow\+DownL}}
+\index{Set\+Slow\+DownL@{Set\+Slow\+DownL}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Slow\+Down\+L(bool slowingdownleft)}{SetSlowDownL(bool slowingdownleft)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+Slow\+DownL (
+\begin{DoxyParamCaption}
+\item[{bool}]{slowingdownleft}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a17ffd5b043b80c4070d15c2f92c93852}{}\label{classPlayerObject_a17ffd5b043b80c4070d15c2f92c93852}
+
+\begin{DoxyCode}
+61 \{ this->\hyperlink{classPlayerObject_a4894d3619cdf5cb0c35c480aa89502a4}{slowingdownleft} = \hyperlink{classPlayerObject_a4894d3619cdf5cb0c35c480aa89502a4}{slowingdownleft}; \}
+\end{DoxyCode}
+\index{Player\+Object@{Player\+Object}!Set\+Slow\+DownR@{Set\+Slow\+DownR}}
+\index{Set\+Slow\+DownR@{Set\+Slow\+DownR}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{Set\+Slow\+Down\+R(bool slowingdownright)}{SetSlowDownR(bool slowingdownright)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+Object\+::\+Set\+Slow\+DownR (
+\begin{DoxyParamCaption}
+\item[{bool}]{slowingdownright}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPlayerObject_a4b250de8af994ba9c3d7020c440a9d5d}{}\label{classPlayerObject_a4b250de8af994ba9c3d7020c440a9d5d}
+
+\begin{DoxyCode}
+60 \{ this->\hyperlink{classPlayerObject_a3f5b7c904edac7e254297849659d01b3}{slowingdownright} = \hyperlink{classPlayerObject_a3f5b7c904edac7e254297849659d01b3}{slowingdownright}; \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{Player\+Object@{Player\+Object}!animation@{animation}}
+\index{animation@{animation}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{animation}{animation}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Animation} Player\+Object\+::animation}\hypertarget{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}{}\label{classPlayerObject_a936b3d503b65e7ab60d8c2946046f72c}
+\index{Player\+Object@{Player\+Object}!apexcheck@{apexcheck}}
+\index{apexcheck@{apexcheck}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{apexcheck}{apexcheck}}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+Object\+::apexcheck = true\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a47a3eb9e0b7df90a470ac69a59bb2fbe}{}\label{classPlayerObject_a47a3eb9e0b7df90a470ac69a59bb2fbe}
+\index{Player\+Object@{Player\+Object}!brakehorslowdown@{brakehorslowdown}}
+\index{brakehorslowdown@{brakehorslowdown}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{brakehorslowdown}{brakehorslowdown}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::brakehorslowdown = 2\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a7f3a2004c470db8c3013143f0dca1070}{}\label{classPlayerObject_a7f3a2004c470db8c3013143f0dca1070}
+\index{Player\+Object@{Player\+Object}!character@{character}}
+\index{character@{character}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{character}{character}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Rectangle\+Shape$\ast$ Player\+Object\+::character}\hypertarget{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}{}\label{classPlayerObject_af8d9f9653a6aab0020abd43c6feeea2e}
+\index{Player\+Object@{Player\+Object}!counter@{counter}}
+\index{counter@{counter}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{counter}{counter}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::counter = 0\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a2867ecbfadc35a30151ead9053e6b37e}{}\label{classPlayerObject_a2867ecbfadc35a30151ead9053e6b37e}
+\index{Player\+Object@{Player\+Object}!fallpower@{fallpower}}
+\index{fallpower@{fallpower}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{fallpower}{fallpower}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::fallpower = 250\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_ae7475f2af3c338f765ff39dacf51a91d}{}\label{classPlayerObject_ae7475f2af3c338f765ff39dacf51a91d}
+\index{Player\+Object@{Player\+Object}!fallspeed@{fallspeed}}
+\index{fallspeed@{fallspeed}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{fallspeed}{fallspeed}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::fallspeed\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a37c477ff51a290d74dba382079474340}{}\label{classPlayerObject_a37c477ff51a290d74dba382079474340}
+\index{Player\+Object@{Player\+Object}!gravity@{gravity}}
+\index{gravity@{gravity}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{gravity}{gravity}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::gravity = 9\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_ac066dbdd99349fc992e701bfa3a344b1}{}\label{classPlayerObject_ac066dbdd99349fc992e701bfa3a344b1}
+\index{Player\+Object@{Player\+Object}!health@{health}}
+\index{health@{health}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{health}{health}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Health} Player\+Object\+::health}\hypertarget{classPlayerObject_ad09efd50cf54cefed3250636a2fb1013}{}\label{classPlayerObject_ad09efd50cf54cefed3250636a2fb1013}
+\index{Player\+Object@{Player\+Object}!jumpcheck@{jumpcheck}}
+\index{jumpcheck@{jumpcheck}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{jumpcheck}{jumpcheck}}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+Object\+::jumpcheck = true\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a4b6f9ec15a3af10d75aab0f4e4211b09}{}\label{classPlayerObject_a4b6f9ec15a3af10d75aab0f4e4211b09}
+\index{Player\+Object@{Player\+Object}!jumppower@{jumppower}}
+\index{jumppower@{jumppower}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{jumppower}{jumppower}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::jumppower = 500\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a3f83ebd349e87ef690ad69e88cf1b9a0}{}\label{classPlayerObject_a3f83ebd349e87ef690ad69e88cf1b9a0}
+\index{Player\+Object@{Player\+Object}!jumpspeed@{jumpspeed}}
+\index{jumpspeed@{jumpspeed}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{jumpspeed}{jumpspeed}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::jumpspeed = 0\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a331066bad9ab1e29d89037bb911609b7}{}\label{classPlayerObject_a331066bad9ab1e29d89037bb911609b7}
+\index{Player\+Object@{Player\+Object}!lastmovedirection@{lastmovedirection}}
+\index{lastmovedirection@{lastmovedirection}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{lastmovedirection}{lastmovedirection}}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+Object\+::lastmovedirection = 2\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a59b667f647f5e3c5e6fbb93ca0f69a4d}{}\label{classPlayerObject_a59b667f647f5e3c5e6fbb93ca0f69a4d}
+\index{Player\+Object@{Player\+Object}!maxfallspeed@{maxfallspeed}}
+\index{maxfallspeed@{maxfallspeed}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{maxfallspeed}{maxfallspeed}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::maxfallspeed = 80\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a657f15307fb36294d4fc5f38a37edc22}{}\label{classPlayerObject_a657f15307fb36294d4fc5f38a37edc22}
+\index{Player\+Object@{Player\+Object}!maxmovespeed@{maxmovespeed}}
+\index{maxmovespeed@{maxmovespeed}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{maxmovespeed}{maxmovespeed}}]{\setlength{\rightskip}{0pt plus 5cm}const float Player\+Object\+::maxmovespeed = 350\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a8b2f3724844592cb856020805ec30cec}{}\label{classPlayerObject_a8b2f3724844592cb856020805ec30cec}
+\index{Player\+Object@{Player\+Object}!movedirection@{movedirection}}
+\index{movedirection@{movedirection}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{movedirection}{movedirection}}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+Object\+::movedirection = 2\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a1f0041d3a3195f684e002534329afdd2}{}\label{classPlayerObject_a1f0041d3a3195f684e002534329afdd2}
+\index{Player\+Object@{Player\+Object}!movepower@{movepower}}
+\index{movepower@{movepower}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{movepower}{movepower}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::movepower = 20\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a95107fdb81d2094f9f0255908e3dfbf3}{}\label{classPlayerObject_a95107fdb81d2094f9f0255908e3dfbf3}
+\index{Player\+Object@{Player\+Object}!movespeedleft@{movespeedleft}}
+\index{movespeedleft@{movespeedleft}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{movespeedleft}{movespeedleft}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::movespeedleft = 0\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a0215c8600251b36a27d49bd6b01d34bb}{}\label{classPlayerObject_a0215c8600251b36a27d49bd6b01d34bb}
+\index{Player\+Object@{Player\+Object}!movespeedright@{movespeedright}}
+\index{movespeedright@{movespeedright}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{movespeedright}{movespeedright}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::movespeedright = 0\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_aabfd7e3dac7eaa6851528fdefc65c734}{}\label{classPlayerObject_aabfd7e3dac7eaa6851528fdefc65c734}
+\index{Player\+Object@{Player\+Object}!OriginalX@{OriginalX}}
+\index{OriginalX@{OriginalX}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{OriginalX}{OriginalX}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+OriginalX\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a2171b8772f4959d8a217aa0269df6250}{}\label{classPlayerObject_a2171b8772f4959d8a217aa0269df6250}
+\index{Player\+Object@{Player\+Object}!OriginalY@{OriginalY}}
+\index{OriginalY@{OriginalY}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{OriginalY}{OriginalY}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::\+OriginalY\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_ac0a91ffa7a56cacd15b49052addacbda}{}\label{classPlayerObject_ac0a91ffa7a56cacd15b49052addacbda}
+\index{Player\+Object@{Player\+Object}!origjumpspeed@{origjumpspeed}}
+\index{origjumpspeed@{origjumpspeed}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{origjumpspeed}{origjumpspeed}}]{\setlength{\rightskip}{0pt plus 5cm}const int Player\+Object\+::origjumpspeed = 15\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a352711ae9a2f07845e69a6a345b2e341}{}\label{classPlayerObject_a352711ae9a2f07845e69a6a345b2e341}
+\index{Player\+Object@{Player\+Object}!playerhurt@{playerhurt}}
+\index{playerhurt@{playerhurt}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{playerhurt}{playerhurt}}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+Object\+::playerhurt = 5\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_ae033dcf570f627c5b2a0286b882e8c21}{}\label{classPlayerObject_ae033dcf570f627c5b2a0286b882e8c21}
+\index{Player\+Object@{Player\+Object}!positionX@{positionX}}
+\index{positionX@{positionX}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{positionX}{positionX}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::positionX = {\bf OriginalX}\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a3dad46e7719e2547b5a85910cd998089}{}\label{classPlayerObject_a3dad46e7719e2547b5a85910cd998089}
+\index{Player\+Object@{Player\+Object}!positionY@{positionY}}
+\index{positionY@{positionY}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{positionY}{positionY}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::positionY = {\bf OriginalY}\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a8b9c744d2108d8927367a38005c4cc72}{}\label{classPlayerObject_a8b9c744d2108d8927367a38005c4cc72}
+\index{Player\+Object@{Player\+Object}!regularhorslowdown@{regularhorslowdown}}
+\index{regularhorslowdown@{regularhorslowdown}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{regularhorslowdown}{regularhorslowdown}}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+Object\+::regularhorslowdown = 1.\+5\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a925251c105714f50f384a9ab4039a961}{}\label{classPlayerObject_a925251c105714f50f384a9ab4039a961}
+\index{Player\+Object@{Player\+Object}!size\+Height@{size\+Height}}
+\index{size\+Height@{size\+Height}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{size\+Height}{sizeHeight}}]{\setlength{\rightskip}{0pt plus 5cm}const int Player\+Object\+::size\+Height = 50\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_af89c0c451568d673a7d81ebfd9d71605}{}\label{classPlayerObject_af89c0c451568d673a7d81ebfd9d71605}
+\index{Player\+Object@{Player\+Object}!size\+Width@{size\+Width}}
+\index{size\+Width@{size\+Width}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{size\+Width}{sizeWidth}}]{\setlength{\rightskip}{0pt plus 5cm}const int Player\+Object\+::size\+Width = 34\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a8c608e72f443704dcbbd2856c677d7ae}{}\label{classPlayerObject_a8c608e72f443704dcbbd2856c677d7ae}
+\index{Player\+Object@{Player\+Object}!slowingdownleft@{slowingdownleft}}
+\index{slowingdownleft@{slowingdownleft}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{slowingdownleft}{slowingdownleft}}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+Object\+::slowingdownleft = false\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a4894d3619cdf5cb0c35c480aa89502a4}{}\label{classPlayerObject_a4894d3619cdf5cb0c35c480aa89502a4}
+\index{Player\+Object@{Player\+Object}!slowingdownright@{slowingdownright}}
+\index{slowingdownright@{slowingdownright}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{slowingdownright}{slowingdownright}}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+Object\+::slowingdownright = false\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a3f5b7c904edac7e254297849659d01b3}{}\label{classPlayerObject_a3f5b7c904edac7e254297849659d01b3}
+\index{Player\+Object@{Player\+Object}!sound@{sound}}
+\index{sound@{sound}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{sound}{sound}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sounds}$\ast$ Player\+Object\+::sound\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_a645addb4a01f3b4e4d67f9740b7c9963}{}\label{classPlayerObject_a645addb4a01f3b4e4d67f9740b7c9963}
+\index{Player\+Object@{Player\+Object}!window@{window}}
+\index{window@{window}!Player\+Object@{Player\+Object}}
+\subsubsection[{\texorpdfstring{window}{window}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Render\+Window$\ast$ Player\+Object\+::window\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classPlayerObject_aed44bc97791e54cd2169f508699fa311}{}\label{classPlayerObject_aed44bc97791e54cd2169f508699fa311}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Objects/\hyperlink{playerobject_8h}{playerobject.\+h}\item 
+Objects/\hyperlink{playerobject_8cpp}{playerobject.\+cpp}\end{DoxyCompactItemize}

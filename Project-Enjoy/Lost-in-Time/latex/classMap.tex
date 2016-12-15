@@ -1,0 +1,93 @@
+\hypertarget{classMap}{}\section{Map Class Reference}
+\label{classMap}\index{Map@{Map}}
+
+
+{\ttfamily \#include $<$map.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMap_a0f5ad0fd4563497b4214038cbca8b582}{Map} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classMap_a3a87d3a880cfd2d78224b797b44554a3}{load} (std\+::string filename, std\+::list$<$ \hyperlink{classObject}{Object} $\ast$ $>$ \&objects, int $\ast$$\ast$collidable\+Array)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\subsubsection[{\texorpdfstring{Map()}{Map()}}]{\setlength{\rightskip}{0pt plus 5cm}Map\+::\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classMap_a0f5ad0fd4563497b4214038cbca8b582}{}\label{classMap_a0f5ad0fd4563497b4214038cbca8b582}
+
+\begin{DoxyCode}
+20 \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Map@{Map}!load@{load}}
+\index{load@{load}!Map@{Map}}
+\subsubsection[{\texorpdfstring{load(std\+::string filename, std\+::list$<$ Object $\ast$ $>$ \&objects, int $\ast$$\ast$collidable\+Array)}{load(std::string filename, std::list< Object * > &objects, int **collidableArray)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Map\+::load (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{filename, }
+\item[{std\+::list$<$ {\bf Object} $\ast$ $>$ \&}]{objects, }
+\item[{int $\ast$$\ast$}]{collidable\+Array}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classMap_a3a87d3a880cfd2d78224b797b44554a3}{}\label{classMap_a3a87d3a880cfd2d78224b797b44554a3}
+
+\begin{DoxyCode}
+10 \{
+11     \textcolor{comment}{// Will contain the data we read in}
+12     Json::Value root;
+13 
+14     \textcolor{comment}{// Parses the file}
+15     Json::Reader reader;
+16 
+17     \textcolor{comment}{// Stream used for reading the data file. The data file has been saved as JSON in Tiled}
+18     std::ifstream file(filename);
+19 
+20     \textcolor{comment}{// Read data from file into root object}
+21     \textcolor{keywordtype}{bool} parsingSuccessful = reader.parse(file, root);
+22     \textcolor{keywordflow}{if} (parsingSuccessful)
+23     \{
+24         std::cout << \textcolor{stringliteral}{"Succesfully read from file into root object."} << std::endl << std::endl;
+25     \}
+26 
+27     \textcolor{comment}{// Get tile size information}
+28     \hyperlink{structTileSize}{TileSize} tileSize;
+29     tileSize.\hyperlink{structTileSize_add80f453cede5e47fc0c598c1660e174}{x} = root[\textcolor{stringliteral}{"tilesets"}][0u][\textcolor{stringliteral}{"tilewidth"}].asInt();
+30     tileSize.\hyperlink{structTileSize_a1ee6672b06f91d6100c93e6664ada05e}{y} = root[\textcolor{stringliteral}{"tilesets"}][0u][\textcolor{stringliteral}{"tileheight"}].asInt();
+31     tileSize.\hyperlink{structTileSize_ad2b8b0f1bf57c2d662533a870e0fc2a6}{s} = root[\textcolor{stringliteral}{"tilesets"}][0u][\textcolor{stringliteral}{"spacing"}].asInt();
+32 
+33     \textcolor{comment}{// Read in each layer}
+34     \textcolor{keywordflow}{for} (Json::Value& layer: root[\textcolor{stringliteral}{"layers"}])
+35     \{
+36         \textcolor{keywordflow}{if} (layer[\textcolor{stringliteral}{"name"}].asString() != \textcolor{stringliteral}{"objects"})
+37             loadLayer(layer, objects, tileSize, collidableArray);
+38         \textcolor{keywordflow}{else}
+39             loadObjects(root, layer, objects, tileSize);
+40     \}
+41 
+42     \textcolor{comment}{// Read in tileset (Should be handled by a resource handler)}
+43     sf::Texture* tileset = \textcolor{keyword}{new} sf::Texture();
+44     tileset->loadFromFile(\textcolor{stringliteral}{"data/tileset.png"});
+45 
+46     \textcolor{comment}{// Assign tileset to every object}
+47     \textcolor{keywordflow}{for} (\hyperlink{classObject}{Object}* \textcolor{keywordtype}{object}: objects)
+48         \textcolor{keywordtype}{object}->texture = tileset;
+49 
+50     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+51 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Map/\hyperlink{map_8h}{map.\+h}\item 
+Map/\hyperlink{map_8cpp}{map.\+cpp}\end{DoxyCompactItemize}

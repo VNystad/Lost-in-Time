@@ -1,0 +1,16 @@
+digraph "Framework" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_bcbb2cf9a3d3d83e5515c82071a07177 [shape=box, label="Framework", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_bcbb2cf9a3d3d83e5515c82071a07177.html"];
+  dir_5dafd4660615c7e05a84a5ee9d9fd12b [shape=box label="Objects" URL="dir_5dafd4660615c7e05a84a5ee9d9fd12b.html"];
+  dir_daae6d8fb495f1898d520bc20da0985c [shape=box label="Enemy" URL="dir_daae6d8fb495f1898d520bc20da0985c.html"];
+  dir_95c9c9bead5808cc0bb4e78e340041f8 [shape=box label="Map" URL="dir_95c9c9bead5808cc0bb4e78e340041f8.html"];
+  dir_5dafd4660615c7e05a84a5ee9d9fd12b->dir_daae6d8fb495f1898d520bc20da0985c [headlabel="1", labeldistance=1.5 headhref="dir_000004_000000.html"];
+  dir_5dafd4660615c7e05a84a5ee9d9fd12b->dir_bcbb2cf9a3d3d83e5515c82071a07177 [headlabel="6", labeldistance=1.5 headhref="dir_000004_000001.html"];
+  dir_daae6d8fb495f1898d520bc20da0985c->dir_5dafd4660615c7e05a84a5ee9d9fd12b [headlabel="1", labeldistance=1.5 headhref="dir_000000_000004.html"];
+  dir_daae6d8fb495f1898d520bc20da0985c->dir_bcbb2cf9a3d3d83e5515c82071a07177 [headlabel="2", labeldistance=1.5 headhref="dir_000000_000001.html"];
+  dir_bcbb2cf9a3d3d83e5515c82071a07177->dir_5dafd4660615c7e05a84a5ee9d9fd12b [headlabel="2", labeldistance=1.5 headhref="dir_000001_000004.html"];
+  dir_bcbb2cf9a3d3d83e5515c82071a07177->dir_daae6d8fb495f1898d520bc20da0985c [headlabel="1", labeldistance=1.5 headhref="dir_000001_000000.html"];
+  dir_bcbb2cf9a3d3d83e5515c82071a07177->dir_95c9c9bead5808cc0bb4e78e340041f8 [headlabel="1", labeldistance=1.5 headhref="dir_000001_000003.html"];
+}

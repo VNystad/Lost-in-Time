@@ -1,0 +1,146 @@
+\hypertarget{classLayer}{}\section{Layer Class Reference}
+\label{classLayer}\index{Layer@{Layer}}
+
+
+{\ttfamily \#include $<$layer.\+h$>$}
+
+
+
+Inheritance diagram for Layer\+:
+% FIG 0
+
+
+Collaboration diagram for Layer\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLayer_a4643db0682665b8f8de285e2e5ed3cb2}{Layer} (\hyperlink{structTileSize}{Tile\+Size} \hyperlink{classObject_a40a932c0593ca2687eebc518b2c84c71}{tile\+Size})
+\item 
+void \hyperlink{classLayer_a0b53da5d6f0358bcda1470fc0193c2ce}{draw} (sf\+::\+Render\+Window \&window)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classLayer_ac84dc3efe941817d099a158ab0da7ebd}{collidable\+ID}
+\item 
+bool \hyperlink{classLayer_a1ccf349686f89af692c7a4f4087ce279}{collidable} = false
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classLayer_a2d61e86f27d4c5c43224281ec9fd6357}{count} = 0
+\item 
+int \hyperlink{classLayer_a45c20f94cdebe331b0af278f1f127bab}{tilemap} \mbox{[}1000\mbox{]}\mbox{[}1000\mbox{]}
+\item 
+int \hyperlink{classLayer_a724d3020ddbe5f9280caa325541e70a3}{width}
+\item 
+int \hyperlink{classLayer_a6a0bc24033339368a0ca9747485f0053}{height}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classLayer_ad2f32e921244459f7cc6d50355429cc6}{Map}
+\item 
+class \hyperlink{classLayer_aa2fab026580d6f14280c2ffb8063a314}{Game}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Layer@{Layer}!Layer@{Layer}}
+\index{Layer@{Layer}!Layer@{Layer}}
+\subsubsection[{\texorpdfstring{Layer(\+Tile\+Size tile\+Size)}{Layer(TileSize tileSize)}}]{\setlength{\rightskip}{0pt plus 5cm}Layer\+::\+Layer (
+\begin{DoxyParamCaption}
+\item[{{\bf Tile\+Size}}]{tile\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classLayer_a4643db0682665b8f8de285e2e5ed3cb2}{}\label{classLayer_a4643db0682665b8f8de285e2e5ed3cb2}
+
+\begin{DoxyCode}
+15 : \hyperlink{classObject_a0c2b99c7e193a7f310c4df5467040999}{Object}(tileSize) \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Layer@{Layer}!draw@{draw}}
+\index{draw@{draw}!Layer@{Layer}}
+\subsubsection[{\texorpdfstring{draw(sf\+::\+Render\+Window \&window)}{draw(sf::RenderWindow &window)}}]{\setlength{\rightskip}{0pt plus 5cm}void Layer\+::draw (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classLayer_a0b53da5d6f0358bcda1470fc0193c2ce}{}\label{classLayer_a0b53da5d6f0358bcda1470fc0193c2ce}
+
+
+Reimplemented from \hyperlink{classObject_a944ca63a566c02245cfa0b6960842f7f}{Object}.
+
+
+\begin{DoxyCode}
+7 \{
+8     \textcolor{comment}{//std::cout << "Counter = " << count << std::endl;}
+9     \textcolor{comment}{// Render each tile}
+10     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} y = 0; y < \hyperlink{classLayer_a6a0bc24033339368a0ca9747485f0053}{height}; y++)
+11     \{
+12         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x = 0; x < \hyperlink{classLayer_a724d3020ddbe5f9280caa325541e70a3}{width}; x++)
+13         \{
+14             \textcolor{comment}{// Skip empty tiles}
+15             \textcolor{keywordflow}{if} (\hyperlink{classLayer_a45c20f94cdebe331b0af278f1f127bab}{tilemap}[x][y] == 0)
+16                 \textcolor{keywordflow}{continue};
+17 
+18             \textcolor{keywordtype}{int} tileid = \hyperlink{classLayer_a45c20f94cdebe331b0af278f1f127bab}{tilemap}[x][y];
+19 
+20             \textcolor{comment}{// Texture coordinates}
+21             \textcolor{keywordtype}{int} tilex, tiley;
+22             \hyperlink{classObject_ace7b815442aff0e5baeb71fe5bb7c50f}{getTileCoords}(tileid, tilex, tiley);
+23 
+24             \textcolor{keywordflow}{if}(\hyperlink{classLayer_a2d61e86f27d4c5c43224281ec9fd6357}{count} < height * width)
+25             \{
+26                 ++\hyperlink{classLayer_a2d61e86f27d4c5c43224281ec9fd6357}{count};
+27                 \textcolor{comment}{//collidableArray[y][x] = tileid;}
+28             \}
+29 
+30             \textcolor{comment}{// Using vertex arrays or permanent sprites would be faster}
+31             sf::Sprite sprite(*\hyperlink{classObject_a5279eaf90d320e3437f21298a18688fb}{texture}, sf::IntRect(tilex, tiley, 
+      \hyperlink{classObject_a40a932c0593ca2687eebc518b2c84c71}{tileSize}.\hyperlink{structTileSize_add80f453cede5e47fc0c598c1660e174}{x}, \hyperlink{classObject_a40a932c0593ca2687eebc518b2c84c71}{tileSize}.\hyperlink{structTileSize_a1ee6672b06f91d6100c93e6664ada05e}{y}));
+32             sprite.setPosition((\textcolor{keywordtype}{float})(x * \hyperlink{classObject_a40a932c0593ca2687eebc518b2c84c71}{tileSize}.\hyperlink{structTileSize_add80f453cede5e47fc0c598c1660e174}{x}), (\textcolor{keywordtype}{float})(y * 
+      \hyperlink{classObject_a40a932c0593ca2687eebc518b2c84c71}{tileSize}.\hyperlink{structTileSize_a1ee6672b06f91d6100c93e6664ada05e}{y}));
+33 
+34             window.draw(sprite);
+35         \}
+36     \}
+37 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Layer@{Layer}!Game@{Game}}
+\index{Game@{Game}!Layer@{Layer}}
+\subsubsection[{\texorpdfstring{Game}{Game}}]{\setlength{\rightskip}{0pt plus 5cm}friend class Game\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classLayer_aa2fab026580d6f14280c2ffb8063a314}{}\label{classLayer_aa2fab026580d6f14280c2ffb8063a314}
+\index{Layer@{Layer}!Map@{Map}}
+\index{Map@{Map}!Layer@{Layer}}
+\subsubsection[{\texorpdfstring{Map}{Map}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Map}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classLayer_ad2f32e921244459f7cc6d50355429cc6}{}\label{classLayer_ad2f32e921244459f7cc6d50355429cc6}
+
+
+\subsection{Member Data Documentation}
+\index{Layer@{Layer}!collidable@{collidable}}
+\index{collidable@{collidable}!Layer@{Layer}}
+\subsubsection[{\texorpdfstring{collidable}{collidable}}]{\setlength{\rightskip}{0pt plus 5cm}bool Layer\+::collidable = false}\hypertarget{classLayer_a1ccf349686f89af692c7a4f4087ce279}{}\label{classLayer_a1ccf349686f89af692c7a4f4087ce279}
+\index{Layer@{Layer}!collidable\+ID@{collidable\+ID}}
+\index{collidable\+ID@{collidable\+ID}!Layer@{Layer}}
+\subsubsection[{\texorpdfstring{collidable\+ID}{collidableID}}]{\setlength{\rightskip}{0pt plus 5cm}int Layer\+::collidable\+ID}\hypertarget{classLayer_ac84dc3efe941817d099a158ab0da7ebd}{}\label{classLayer_ac84dc3efe941817d099a158ab0da7ebd}
+\index{Layer@{Layer}!count@{count}}
+\index{count@{count}!Layer@{Layer}}
+\subsubsection[{\texorpdfstring{count}{count}}]{\setlength{\rightskip}{0pt plus 5cm}int Layer\+::count = 0\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classLayer_a2d61e86f27d4c5c43224281ec9fd6357}{}\label{classLayer_a2d61e86f27d4c5c43224281ec9fd6357}
+\index{Layer@{Layer}!height@{height}}
+\index{height@{height}!Layer@{Layer}}
+\subsubsection[{\texorpdfstring{height}{height}}]{\setlength{\rightskip}{0pt plus 5cm}int Layer\+::height\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classLayer_a6a0bc24033339368a0ca9747485f0053}{}\label{classLayer_a6a0bc24033339368a0ca9747485f0053}
+\index{Layer@{Layer}!tilemap@{tilemap}}
+\index{tilemap@{tilemap}!Layer@{Layer}}
+\subsubsection[{\texorpdfstring{tilemap}{tilemap}}]{\setlength{\rightskip}{0pt plus 5cm}int Layer\+::tilemap\mbox{[}1000\mbox{]}\mbox{[}1000\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classLayer_a45c20f94cdebe331b0af278f1f127bab}{}\label{classLayer_a45c20f94cdebe331b0af278f1f127bab}
+\index{Layer@{Layer}!width@{width}}
+\index{width@{width}!Layer@{Layer}}
+\subsubsection[{\texorpdfstring{width}{width}}]{\setlength{\rightskip}{0pt plus 5cm}int Layer\+::width\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classLayer_a724d3020ddbe5f9280caa325541e70a3}{}\label{classLayer_a724d3020ddbe5f9280caa325541e70a3}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Map/\hyperlink{layer_8h}{layer.\+h}\item 
+Map/\hyperlink{layer_8cpp}{layer.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,535 @@
+\hypertarget{classStateMainMenu}{}\section{State\+Main\+Menu Class Reference}
+\label{classStateMainMenu}\index{State\+Main\+Menu@{State\+Main\+Menu}}
+
+
+{\ttfamily \#include $<$statemainmenu.\+h$>$}
+
+
+
+Inheritance diagram for State\+Main\+Menu\+:
+% FIG 0
+
+
+Collaboration diagram for State\+Main\+Menu\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Texture $\ast$ \hyperlink{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}{Load\+Texture} (std\+::string path)
+\item 
+bool \hyperlink{classStateMainMenu_a5556c573c81a77614b5d4d4dfe9dd4ed}{load\+Media} ()
+\item 
+void \hyperlink{classStateMainMenu_a62d95bde455b83436f28a76d7ead0fd3}{Show\+Highscore} (sf\+::\+Render\+Window \&window, \hyperlink{classHighscore}{Highscore} \&highscore)
+\item 
+void \hyperlink{classStateMainMenu_ab6b48304f4697b5a0eca285bc6d7d087}{Show\+How\+To\+Play} (sf\+::\+Render\+Window \&window)
+\item 
+void \hyperlink{classStateMainMenu_a868e9a3bcd1b6392491e06b706dc4925}{Go\+Next} (\hyperlink{classMachine}{Machine} \&machine, sf\+::\+Render\+Window \&window, \hyperlink{classSavedObject}{Saved\+Object} \&, \hyperlink{classHighscore}{Highscore} \&)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classStateMainMenu_afa0c8a2d24b6724e68c6f53d7d23e454}{menu\+Amount} = 0
+\item 
+int \hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} = 1
+\item 
+std\+::map$<$ int, std\+::string $>$ $\ast$ \hyperlink{classStateMainMenu_aab67f5deb21d0baf93a9032e98e16038}{highscore\+Map}
+\item 
+bool \hyperlink{classStateMainMenu_aadc999cca9e9a3f1e0c0bacaea2a21a8}{keypressed}
+\item 
+\hyperlink{classConfig}{Config} \hyperlink{classStateMainMenu_ac56c2c42cb67e8e173645e2db04a38b8}{config}
+\item 
+sf\+::\+Font $\ast$ \hyperlink{classStateMainMenu_a2b8538a5a0e8c8e9b54f454d45426263}{font}
+\item 
+sf\+::\+Texture $\ast$ \hyperlink{classStateMainMenu_a2f42ec4ca75ae671b65aa9176d2ff63f}{Background\+Texture} = nullptr
+\item 
+sf\+::\+Texture $\ast$ \hyperlink{classStateMainMenu_a8c54545853bf8f34ca224ff4030016dd}{New\+Game\+Texture} = nullptr
+\item 
+sf\+::\+Texture $\ast$ \hyperlink{classStateMainMenu_aa6bcd3d4dd129313a0b0c53868bb8334}{New\+Game\+Selected\+Texture} = nullptr
+\item 
+sf\+::\+Texture $\ast$ \hyperlink{classStateMainMenu_af12831c95e41fc915f025903e1299bc3}{Load\+Game\+Texture} = nullptr
+\item 
+sf\+::\+Texture $\ast$ \hyperlink{classStateMainMenu_a47c8756a24cb3fbbeb17402d573754c8}{Load\+Game\+Selected\+Texture} = nullptr
+\item 
+sf\+::\+Texture $\ast$ \hyperlink{classStateMainMenu_ae1057cba0cec32e03cb8c0defc7bcc0b}{Highscore\+Texture} = nullptr
+\item 
+sf\+::\+Texture $\ast$ \hyperlink{classStateMainMenu_a8302a7a3167e113b25aec8ea80997e87}{Highscore\+Selected\+Texture} = nullptr
+\item 
+sf\+::\+Texture $\ast$ \hyperlink{classStateMainMenu_a0e729c72932f87ffc6690f4ca3190672}{How\+To\+Play\+Picture\+Texture} = nullptr
+\item 
+sf\+::\+Texture $\ast$ \hyperlink{classStateMainMenu_afe9186d897d4dd4cf786e1496ef66ed1}{How\+To\+Play\+Selected\+Texture} = nullptr
+\item 
+sf\+::\+Texture $\ast$ \hyperlink{classStateMainMenu_a7170389c3a31a58f8bdd06b1bd36d9b7}{Exit\+Game\+Texture} = nullptr
+\item 
+sf\+::\+Texture $\ast$ \hyperlink{classStateMainMenu_ac42fbbb2cf5c1f8031bc41753cf6ef10}{Exit\+Game\+Selected\+Texture} = nullptr
+\item 
+sf\+::\+Texture $\ast$ \hyperlink{classStateMainMenu_a6f376b471cd23501af052628209cabd4}{How\+To\+Play\+Texture} = nullptr
+\item 
+sf\+::\+Sprite \hyperlink{classStateMainMenu_a9885f1391d304c1567feaa48aee40587}{background\+Sprite}
+\item 
+sf\+::\+Sprite \hyperlink{classStateMainMenu_adc3e471543be20775b7c8272c8660991}{New\+Game\+Sprite}
+\item 
+sf\+::\+Sprite \hyperlink{classStateMainMenu_a3307dac9269a6515ae9e1563487c413b}{New\+Game\+Selected\+Sprite}
+\item 
+sf\+::\+Sprite \hyperlink{classStateMainMenu_a309cb7c0187583ea7e984d59e77c0978}{Load\+Game\+Sprite}
+\item 
+sf\+::\+Sprite \hyperlink{classStateMainMenu_ac90a9dbfa8ec5f26b576e27afbc389a1}{Load\+Game\+Selected\+Sprite}
+\item 
+sf\+::\+Sprite \hyperlink{classStateMainMenu_a52b1859470406294eb22fc86a8f16453}{Highscore\+Sprite}
+\item 
+sf\+::\+Sprite \hyperlink{classStateMainMenu_a3b058162bfa6c0bcaab50a7563720159}{Highscore\+Selected\+Sprite}
+\item 
+sf\+::\+Sprite \hyperlink{classStateMainMenu_aa5c71ce1a86be4f06055ed291037a10f}{How\+To\+Play\+Sprite}
+\item 
+sf\+::\+Sprite \hyperlink{classStateMainMenu_afaff9d33a337f71aef9fe757f35f4162}{How\+To\+Play\+Selected\+Sprite}
+\item 
+sf\+::\+Sprite \hyperlink{classStateMainMenu_a6cc04c69495bf5d7469c21d44e901a67}{How\+To\+Play\+Picture\+Sprite}
+\item 
+sf\+::\+Sprite \hyperlink{classStateMainMenu_a1640dc6e497a1d7f83a57886d31aa456}{exit\+Game\+Sprite}
+\item 
+sf\+::\+Sprite \hyperlink{classStateMainMenu_a114cf646751b0b7a6ca4486a1c7227da}{exit\+Game\+Selected\+Sprite}
+\item 
+\hyperlink{classSounds}{Sounds} $\ast$ \hyperlink{classStateMainMenu_a6095be3835bac4e3de32ff1700cf8dcd}{sound}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Go\+Next@{Go\+Next}}
+\index{Go\+Next@{Go\+Next}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Go\+Next(\+Machine \&machine, sf\+::\+Render\+Window \&window, Saved\+Object \&, Highscore \&)}{GoNext(Machine &machine, sf::RenderWindow &window, SavedObject &, Highscore &)}}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Main\+Menu\+::\+Go\+Next (
+\begin{DoxyParamCaption}
+\item[{{\bf Machine} \&}]{machine, }
+\item[{sf\+::\+Render\+Window \&}]{window, }
+\item[{{\bf Saved\+Object} \&}]{, }
+\item[{{\bf Highscore} \&}]{highscore}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classStateMainMenu_a868e9a3bcd1b6392491e06b706dc4925}{}\label{classStateMainMenu_a868e9a3bcd1b6392491e06b706dc4925}
+
+
+Implements \hyperlink{classState_aa64fccff3427feb37d929cd5b327209c}{State}.
+
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keywordflow}{while}(sf::Keyboard::isKeyPressed(sf::Keyboard::Return));
+50     \textcolor{comment}{//Key pressed flag off}
+51     \hyperlink{classStateMainMenu_aadc999cca9e9a3f1e0c0bacaea2a21a8}{keypressed} = \textcolor{keyword}{false};
+52     \textcolor{comment}{// Loads media}
+53     \hyperlink{classStateMainMenu_a5556c573c81a77614b5d4d4dfe9dd4ed}{loadMedia}();
+54     \hyperlink{classStateMainMenu_a6095be3835bac4e3de32ff1700cf8dcd}{sound} = \textcolor{keyword}{new} \hyperlink{classSounds}{Sounds}();
+55 
+56     \textcolor{keywordflow}{while} (machine.\hyperlink{classMachine_aea08caf7a90b58c29efe1c243a1683a6}{GetRunning}()) \{
+57 
+58         \textcolor{keywordflow}{while} (window.pollEvent(\hyperlink{classState_a6e01842c2b93b36eba5d1153aa6ae952}{event})) \{
+59             \textcolor{comment}{//If X clicked on window}
+60             \textcolor{keywordflow}{if} (\hyperlink{classState_a6e01842c2b93b36eba5d1153aa6ae952}{event}.type == sf::Event::Closed)
+61             \{
+62                 window.close();
+63                 machine.\hyperlink{classMachine_a5db8f7c8abac6d9ea950676917e98a80}{SetRunning}(\textcolor{keyword}{false});
+64             \}
+65         \}
+66 
+67         \textcolor{comment}{/*****************************}
+68 \textcolor{comment}{         * If you press down or up key}
+69 \textcolor{comment}{         ****************************/}
+70         \textcolor{keywordflow}{if}(!\hyperlink{classStateMainMenu_aadc999cca9e9a3f1e0c0bacaea2a21a8}{keypressed} && sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+71         \{
+72             \hyperlink{classStateMainMenu_a6095be3835bac4e3de32ff1700cf8dcd}{sound}->\hyperlink{classSounds_a5a93229c3804b9364b324a4e6245fcbe}{playSound}(\textcolor{stringliteral}{"/MenuClick.wav"}, 50);
+73             \hyperlink{classStateMainMenu_aadc999cca9e9a3f1e0c0bacaea2a21a8}{keypressed} = \textcolor{keyword}{true};
+74             \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 4)
+75                 \hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} = 5;
+76             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 5)
+77                 \hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} = 1;
+78             \textcolor{keywordflow}{else}
+79             \{
+80                 \hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} += 2;
+81             \}
+82 
+83         \}
+84         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(!\hyperlink{classStateMainMenu_aadc999cca9e9a3f1e0c0bacaea2a21a8}{keypressed} && sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+85         \{
+86             \hyperlink{classStateMainMenu_a6095be3835bac4e3de32ff1700cf8dcd}{sound}->\hyperlink{classSounds_a5a93229c3804b9364b324a4e6245fcbe}{playSound}(\textcolor{stringliteral}{"/MenuClick.wav"}, 50);
+87             \hyperlink{classStateMainMenu_aadc999cca9e9a3f1e0c0bacaea2a21a8}{keypressed} = \textcolor{keyword}{true};
+88             \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 1 || \hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 2)
+89                 \hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} = 5;
+90             \textcolor{keywordflow}{else}
+91             \{
+92                 \hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} -= 2;
+93             \}
+94         \}
+95         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(!\hyperlink{classStateMainMenu_aadc999cca9e9a3f1e0c0bacaea2a21a8}{keypressed} && sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+96         \{
+97             \hyperlink{classStateMainMenu_a6095be3835bac4e3de32ff1700cf8dcd}{sound}->\hyperlink{classSounds_a5a93229c3804b9364b324a4e6245fcbe}{playSound}(\textcolor{stringliteral}{"/MenuClick.wav"}, 50);
+98             \hyperlink{classStateMainMenu_aadc999cca9e9a3f1e0c0bacaea2a21a8}{keypressed} = \textcolor{keyword}{true};
+99             \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 5);
+100             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} % 2 == 1)
+101             \{
+102                 \hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} += 1;
+103             \}
+104             \textcolor{keywordflow}{else}
+105                 \hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} -= 1;
+106         \}
+107         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(!\hyperlink{classStateMainMenu_aadc999cca9e9a3f1e0c0bacaea2a21a8}{keypressed} && sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+108         \{
+109             \hyperlink{classStateMainMenu_a6095be3835bac4e3de32ff1700cf8dcd}{sound}->\hyperlink{classSounds_a5a93229c3804b9364b324a4e6245fcbe}{playSound}(\textcolor{stringliteral}{"/MenuClick.wav"}, 50);
+110             \hyperlink{classStateMainMenu_aadc999cca9e9a3f1e0c0bacaea2a21a8}{keypressed} = \textcolor{keyword}{true};
+111             \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 5);
+112             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} % 2 == 0)
+113             \{
+114                 \hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} -= 1;
+115             \}
+116             \textcolor{keywordflow}{else}
+117                 \hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} += 1;
+118         \}
+119         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(!sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !sf::Keyboard::isKeyPressed(
+      sf::Keyboard::Up) &&
+120                 !sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && !sf::Keyboard::isKeyPressed(
+      sf::Keyboard::Right))
+121             \hyperlink{classStateMainMenu_aadc999cca9e9a3f1e0c0bacaea2a21a8}{keypressed} = \textcolor{keyword}{false};
+122 
+123         \textcolor{comment}{/******************************}
+124 \textcolor{comment}{         * Check what option user is on}
+125 \textcolor{comment}{         * and draw new picture}
+126 \textcolor{comment}{         *****************************/}
+127 
+128         window.clear(sf::Color::Black);
+129         window.draw(\hyperlink{classStateMainMenu_a9885f1391d304c1567feaa48aee40587}{backgroundSprite});
+130         \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 1)
+131         \{
+132             window.draw(\hyperlink{classStateMainMenu_a3307dac9269a6515ae9e1563487c413b}{NewGameSelectedSprite});
+133             window.draw(\hyperlink{classStateMainMenu_a309cb7c0187583ea7e984d59e77c0978}{LoadGameSprite});
+134             window.draw(\hyperlink{classStateMainMenu_a52b1859470406294eb22fc86a8f16453}{HighscoreSprite});
+135             window.draw(\hyperlink{classStateMainMenu_aa5c71ce1a86be4f06055ed291037a10f}{HowToPlaySprite});
+136             window.draw(\hyperlink{classStateMainMenu_a1640dc6e497a1d7f83a57886d31aa456}{exitGameSprite});
+137         \}
+138         \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 2)
+139         \{
+140             window.draw(\hyperlink{classStateMainMenu_adc3e471543be20775b7c8272c8660991}{NewGameSprite});
+141             window.draw(\hyperlink{classStateMainMenu_ac90a9dbfa8ec5f26b576e27afbc389a1}{LoadGameSelectedSprite});
+142             window.draw(\hyperlink{classStateMainMenu_a52b1859470406294eb22fc86a8f16453}{HighscoreSprite});
+143             window.draw(\hyperlink{classStateMainMenu_aa5c71ce1a86be4f06055ed291037a10f}{HowToPlaySprite});
+144             window.draw(\hyperlink{classStateMainMenu_a1640dc6e497a1d7f83a57886d31aa456}{exitGameSprite});
+145         \}
+146         \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 3)
+147         \{
+148             window.draw(\hyperlink{classStateMainMenu_adc3e471543be20775b7c8272c8660991}{NewGameSprite});
+149             window.draw(\hyperlink{classStateMainMenu_a309cb7c0187583ea7e984d59e77c0978}{LoadGameSprite});
+150             window.draw(\hyperlink{classStateMainMenu_a3b058162bfa6c0bcaab50a7563720159}{HighscoreSelectedSprite});
+151             window.draw(\hyperlink{classStateMainMenu_aa5c71ce1a86be4f06055ed291037a10f}{HowToPlaySprite});
+152             window.draw(\hyperlink{classStateMainMenu_a1640dc6e497a1d7f83a57886d31aa456}{exitGameSprite});
+153         \}
+154         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 4)
+155         \{
+156             window.draw(\hyperlink{classStateMainMenu_adc3e471543be20775b7c8272c8660991}{NewGameSprite});
+157             window.draw(\hyperlink{classStateMainMenu_a309cb7c0187583ea7e984d59e77c0978}{LoadGameSprite});
+158             window.draw(\hyperlink{classStateMainMenu_a52b1859470406294eb22fc86a8f16453}{HighscoreSprite});
+159             window.draw(\hyperlink{classStateMainMenu_afaff9d33a337f71aef9fe757f35f4162}{HowToPlaySelectedSprite});
+160             window.draw(\hyperlink{classStateMainMenu_a1640dc6e497a1d7f83a57886d31aa456}{exitGameSprite});
+161         \}
+162         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 5)
+163         \{
+164             window.draw(\hyperlink{classStateMainMenu_adc3e471543be20775b7c8272c8660991}{NewGameSprite});
+165             window.draw(\hyperlink{classStateMainMenu_a309cb7c0187583ea7e984d59e77c0978}{LoadGameSprite});
+166             window.draw(\hyperlink{classStateMainMenu_a52b1859470406294eb22fc86a8f16453}{HighscoreSprite});
+167             window.draw(\hyperlink{classStateMainMenu_aa5c71ce1a86be4f06055ed291037a10f}{HowToPlaySprite});
+168             window.draw(\hyperlink{classStateMainMenu_a114cf646751b0b7a6ca4486a1c7227da}{exitGameSelectedSprite});
+169         \}
+170 
+171         \textcolor{keywordflow}{if}(sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+172         \{
+173             \hyperlink{classStateMainMenu_a6095be3835bac4e3de32ff1700cf8dcd}{sound} = \textcolor{keyword}{new} \hyperlink{classSounds}{Sounds}();
+174             \hyperlink{classStateMainMenu_a6095be3835bac4e3de32ff1700cf8dcd}{sound}->\hyperlink{classSounds_a5a93229c3804b9364b324a4e6245fcbe}{playSound}(\textcolor{stringliteral}{"/MenuClick.wav"}, 50);
+175             \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 1)
+176             \{
+177                 machine.\hyperlink{classMachine_abe967397f2de76335bd90ab7aabd8f9f}{SetState}(\hyperlink{classMachine_a5fb0c119d231dd1bfe1dd2c9ca533520a4504e1ed59cd9732b8a844e5424e6f13}{Machine::StateId::GAME});
+178                 \textcolor{keywordflow}{return};
+179             \}
+180                 \textcolor{comment}{/*}
+181 \textcolor{comment}{            else if(menu == 2)}
+182 \textcolor{comment}{            \{}
+183 \textcolor{comment}{                machine.SetState(Machine::StateId::LOAD);}
+184 \textcolor{comment}{                return;}
+185 \textcolor{comment}{            \}}
+186 \textcolor{comment}{                 */}
+187             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 3)
+188             \{
+189                 \hyperlink{classStateMainMenu_a62d95bde455b83436f28a76d7ead0fd3}{ShowHighscore}(window, highscore);
+190             \}
+191             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 4)
+192             \{
+193                 \hyperlink{classStateMainMenu_ab6b48304f4697b5a0eca285bc6d7d087}{ShowHowToPlay}(window);
+194             \}
+195             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{menu} == 5)
+196             \{
+197                 window.close();
+198                 machine.\hyperlink{classMachine_a5db8f7c8abac6d9ea950676917e98a80}{SetRunning}(\textcolor{keyword}{false});
+199             \}
+200         \}
+201 
+202         \textcolor{comment}{/********************************}
+203 \textcolor{comment}{         * Display window with new content}
+204 \textcolor{comment}{         ********************************/}
+205         window.display();
+206     \}
+207 
+208 \}
+\end{DoxyCode}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!load\+Media@{load\+Media}}
+\index{load\+Media@{load\+Media}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{load\+Media()}{loadMedia()}}]{\setlength{\rightskip}{0pt plus 5cm}bool State\+Main\+Menu\+::load\+Media (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStateMainMenu_a5556c573c81a77614b5d4d4dfe9dd4ed}{}\label{classStateMainMenu_a5556c573c81a77614b5d4d4dfe9dd4ed}
+
+\begin{DoxyCode}
+233 \{
+234     \textcolor{comment}{//Load success flag}
+235     \textcolor{keywordtype}{bool} success = \textcolor{keyword}{true};
+236 
+237     \hyperlink{classStateMainMenu_a2f42ec4ca75ae671b65aa9176d2ff63f}{BackgroundTexture} = \hyperlink{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}{LoadTexture}(\textcolor{stringliteral}{"data/main-menu/backgroundmainmenu.png"});
+238 
+239     \hyperlink{classStateMainMenu_a8c54545853bf8f34ca224ff4030016dd}{NewGameTexture} = \hyperlink{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}{LoadTexture}(\textcolor{stringliteral}{"data/main-menu/NewGame.png"});
+240     \hyperlink{classStateMainMenu_aa6bcd3d4dd129313a0b0c53868bb8334}{NewGameSelectedTexture} = \hyperlink{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}{LoadTexture}(\textcolor{stringliteral}{"
+      data/main-menu/NewGameSelected.png"});
+241 
+242     \hyperlink{classStateMainMenu_af12831c95e41fc915f025903e1299bc3}{LoadGameTexture} = \hyperlink{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}{LoadTexture}(\textcolor{stringliteral}{"data/main-menu/LoadGame.png"});
+243     \hyperlink{classStateMainMenu_a47c8756a24cb3fbbeb17402d573754c8}{LoadGameSelectedTexture} = \hyperlink{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}{LoadTexture}(\textcolor{stringliteral}{"
+      data/main-menu/LoadGameSelected.png"});
+244 
+245     \hyperlink{classStateMainMenu_ae1057cba0cec32e03cb8c0defc7bcc0b}{HighscoreTexture} = \hyperlink{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}{LoadTexture}(\textcolor{stringliteral}{"data/main-menu/Highscore.png"});
+246     \hyperlink{classStateMainMenu_a8302a7a3167e113b25aec8ea80997e87}{HighscoreSelectedTexture} = \hyperlink{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}{LoadTexture}(\textcolor{stringliteral}{"
+      data/main-menu/HighScoreSelected.png"});
+247 
+248     \hyperlink{classStateMainMenu_a6f376b471cd23501af052628209cabd4}{HowToPlayTexture} = \hyperlink{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}{LoadTexture}(\textcolor{stringliteral}{"data/main-menu/HowToPlay2.png"});
+249     \hyperlink{classStateMainMenu_afe9186d897d4dd4cf786e1496ef66ed1}{HowToPlaySelectedTexture} = \hyperlink{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}{LoadTexture}(\textcolor{stringliteral}{"
+      data/main-menu/HowToPlaySelected.png"});
+250     \hyperlink{classStateMainMenu_a0e729c72932f87ffc6690f4ca3190672}{HowToPlayPictureTexture} = \hyperlink{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}{LoadTexture}(\textcolor{stringliteral}{"
+      data/main-menu/HowToPlaySprite.png"});
+251 
+252     \hyperlink{classStateMainMenu_a7170389c3a31a58f8bdd06b1bd36d9b7}{ExitGameTexture} = \hyperlink{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}{LoadTexture}(\textcolor{stringliteral}{"data/main-menu/ExitGame.png"});
+253     \hyperlink{classStateMainMenu_ac42fbbb2cf5c1f8031bc41753cf6ef10}{ExitGameSelectedTexture} = \hyperlink{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}{LoadTexture}(\textcolor{stringliteral}{"
+      data/main-menu/ExitGameSelected.png"});
+254 
+255 
+256     \hyperlink{classStateMainMenu_a9885f1391d304c1567feaa48aee40587}{backgroundSprite}.setTexture(*\hyperlink{classStateMainMenu_a2f42ec4ca75ae671b65aa9176d2ff63f}{BackgroundTexture});
+257     \hyperlink{classStateMainMenu_a9885f1391d304c1567feaa48aee40587}{backgroundSprite}.setPosition(100,0);
+258 
+259     \hyperlink{classStateMainMenu_adc3e471543be20775b7c8272c8660991}{NewGameSprite}.setTexture(*\hyperlink{classStateMainMenu_a8c54545853bf8f34ca224ff4030016dd}{NewGameTexture});
+260     \hyperlink{classStateMainMenu_adc3e471543be20775b7c8272c8660991}{NewGameSprite}.setPosition(25, 230);
+261     \hyperlink{classStateMainMenu_a3307dac9269a6515ae9e1563487c413b}{NewGameSelectedSprite}.setTexture(*
+      \hyperlink{classStateMainMenu_aa6bcd3d4dd129313a0b0c53868bb8334}{NewGameSelectedTexture});
+262     \hyperlink{classStateMainMenu_a3307dac9269a6515ae9e1563487c413b}{NewGameSelectedSprite}.setPosition(25, 230);
+263 
+264     \hyperlink{classStateMainMenu_a309cb7c0187583ea7e984d59e77c0978}{LoadGameSprite}.setTexture(*\hyperlink{classStateMainMenu_af12831c95e41fc915f025903e1299bc3}{LoadGameTexture});
+265     \hyperlink{classStateMainMenu_a309cb7c0187583ea7e984d59e77c0978}{LoadGameSprite}.setPosition(500, 230);
+266     \hyperlink{classStateMainMenu_ac90a9dbfa8ec5f26b576e27afbc389a1}{LoadGameSelectedSprite}.setTexture(*
+      \hyperlink{classStateMainMenu_a47c8756a24cb3fbbeb17402d573754c8}{LoadGameSelectedTexture});
+267     \hyperlink{classStateMainMenu_ac90a9dbfa8ec5f26b576e27afbc389a1}{LoadGameSelectedSprite}.setPosition(500, 230);
+268 
+269     \hyperlink{classStateMainMenu_a52b1859470406294eb22fc86a8f16453}{HighscoreSprite}.setTexture(*\hyperlink{classStateMainMenu_ae1057cba0cec32e03cb8c0defc7bcc0b}{HighscoreTexture});
+270     \hyperlink{classStateMainMenu_a52b1859470406294eb22fc86a8f16453}{HighscoreSprite}.setPosition(25, 320);
+271     \hyperlink{classStateMainMenu_a3b058162bfa6c0bcaab50a7563720159}{HighscoreSelectedSprite}.setTexture(*
+      \hyperlink{classStateMainMenu_a8302a7a3167e113b25aec8ea80997e87}{HighscoreSelectedTexture});
+272     \hyperlink{classStateMainMenu_a3b058162bfa6c0bcaab50a7563720159}{HighscoreSelectedSprite}.setPosition(25, 320);
+273 
+274     \hyperlink{classStateMainMenu_aa5c71ce1a86be4f06055ed291037a10f}{HowToPlaySprite}.setTexture(*\hyperlink{classStateMainMenu_a6f376b471cd23501af052628209cabd4}{HowToPlayTexture});
+275     \hyperlink{classStateMainMenu_aa5c71ce1a86be4f06055ed291037a10f}{HowToPlaySprite}.setPosition(500, 307);
+276     \hyperlink{classStateMainMenu_afaff9d33a337f71aef9fe757f35f4162}{HowToPlaySelectedSprite}.setTexture(*
+      \hyperlink{classStateMainMenu_afe9186d897d4dd4cf786e1496ef66ed1}{HowToPlaySelectedTexture});
+277     \hyperlink{classStateMainMenu_afaff9d33a337f71aef9fe757f35f4162}{HowToPlaySelectedSprite}.setPosition(500, 307);
+278     \hyperlink{classStateMainMenu_a6cc04c69495bf5d7469c21d44e901a67}{HowToPlayPictureSprite}.setTexture(*
+      \hyperlink{classStateMainMenu_a0e729c72932f87ffc6690f4ca3190672}{HowToPlayPictureTexture});
+279     \hyperlink{classStateMainMenu_a6cc04c69495bf5d7469c21d44e901a67}{HowToPlayPictureSprite}.setPosition(0,0);
+280 
+281     \hyperlink{classStateMainMenu_a1640dc6e497a1d7f83a57886d31aa456}{exitGameSprite}.setTexture(*\hyperlink{classStateMainMenu_a7170389c3a31a58f8bdd06b1bd36d9b7}{ExitGameTexture});
+282     \hyperlink{classStateMainMenu_a1640dc6e497a1d7f83a57886d31aa456}{exitGameSprite}.setPosition(250, 425);
+283     \hyperlink{classStateMainMenu_a114cf646751b0b7a6ca4486a1c7227da}{exitGameSelectedSprite}.setTexture(*
+      \hyperlink{classStateMainMenu_ac42fbbb2cf5c1f8031bc41753cf6ef10}{ExitGameSelectedTexture});
+284     \hyperlink{classStateMainMenu_a114cf646751b0b7a6ca4486a1c7227da}{exitGameSelectedSprite}.setPosition(250, 425);
+285 
+286     \textcolor{keywordflow}{return} success;
+287 \}
+\end{DoxyCode}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Load\+Texture@{Load\+Texture}}
+\index{Load\+Texture@{Load\+Texture}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Load\+Texture(std\+::string path)}{LoadTexture(std::string path)}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture $\ast$ State\+Main\+Menu\+::\+Load\+Texture (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{path}
+\end{DoxyParamCaption}
+)}\hypertarget{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}{}\label{classStateMainMenu_abf976d139c7276e7f354e9ecc7fb9e06}
+
+\begin{DoxyCode}
+215 \{
+216     \textcolor{comment}{//temp texture}
+217     sf::Texture *newTexture = \textcolor{keyword}{new} sf::Texture();
+218     \textcolor{comment}{//newTexture->loadFromFile(path);}
+219 
+220     \textcolor{keywordflow}{if}(!newTexture->loadFromFile(path))
+221     \{
+222         std::cout << \textcolor{stringliteral}{"Could not load image on path: "} << path << std::endl;
+223     \}
+224     \hyperlink{classStateMainMenu_afa0c8a2d24b6724e68c6f53d7d23e454}{menuAmount}++;
+225     \textcolor{keywordflow}{return} newTexture;
+226 \}
+\end{DoxyCode}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Show\+Highscore@{Show\+Highscore}}
+\index{Show\+Highscore@{Show\+Highscore}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Show\+Highscore(sf\+::\+Render\+Window \&window, Highscore \&highscore)}{ShowHighscore(sf::RenderWindow &window, Highscore &highscore)}}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Main\+Menu\+::\+Show\+Highscore (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window, }
+\item[{{\bf Highscore} \&}]{highscore}
+\end{DoxyParamCaption}
+)}\hypertarget{classStateMainMenu_a62d95bde455b83436f28a76d7ead0fd3}{}\label{classStateMainMenu_a62d95bde455b83436f28a76d7ead0fd3}
+
+\begin{DoxyCode}
+7 \{
+8     \hyperlink{classStateMainMenu_aab67f5deb21d0baf93a9032e98e16038}{highscoreMap} = highscore.\hyperlink{classHighscore_a12a65ff55b3f78e32c24a5948951f38e}{GetHighscoreMap}();
+9     std::string score;
+10     sf::Text highscoreText;
+11     \hyperlink{classStateMainMenu_a2b8538a5a0e8c8e9b54f454d45426263}{font} = \textcolor{keyword}{new} sf::Font;
+12     \textcolor{keywordflow}{if}(!\hyperlink{classStateMainMenu_a2b8538a5a0e8c8e9b54f454d45426263}{font}->loadFromFile(\textcolor{stringliteral}{"data/Fonts/Arial/arial.ttf"}))
+13         std::cout << \textcolor{stringliteral}{"Could not load font from directory 'data/font.ttf'"} << std::endl;
+14     highscoreText.setFont(*\hyperlink{classStateMainMenu_a2b8538a5a0e8c8e9b54f454d45426263}{font});
+15     highscoreText.setCharacterSize(30);
+16     highscoreText.setColor(sf::Color::White);
+17     highscoreText.setString(\textcolor{stringliteral}{"Highscores: "});
+18     \textcolor{comment}{//sound = new Sounds();}
+19 
+20     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} iter = \hyperlink{classStateMainMenu_aab67f5deb21d0baf93a9032e98e16038}{highscoreMap}->rbegin(); iter != \hyperlink{classStateMainMenu_aab67f5deb21d0baf93a9032e98e16038}{highscoreMap}->rend(); ++iter)
+21     \{
+22         score = std::to\_string(iter->first);
+23         highscoreText.setString(highscoreText.getString() + \textcolor{stringliteral}{"\(\backslash\)n"} + iter->second + \textcolor{stringliteral}{": "} + score);
+24     \}
+25 
+26     \textcolor{keywordflow}{while}(!sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+27     \{
+28         window.clear(sf::Color::Black);
+29         window.draw(highscoreText);
+30         window.display();
+31     \}
+32     \hyperlink{classStateMainMenu_a6095be3835bac4e3de32ff1700cf8dcd}{sound}->\hyperlink{classSounds_a5a93229c3804b9364b324a4e6245fcbe}{playSound}(\textcolor{stringliteral}{"/MenuClick.wav"}, 50);
+33 
+34 \}
+\end{DoxyCode}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Show\+How\+To\+Play@{Show\+How\+To\+Play}}
+\index{Show\+How\+To\+Play@{Show\+How\+To\+Play}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Show\+How\+To\+Play(sf\+::\+Render\+Window \&window)}{ShowHowToPlay(sf::RenderWindow &window)}}]{\setlength{\rightskip}{0pt plus 5cm}void State\+Main\+Menu\+::\+Show\+How\+To\+Play (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window}
+\end{DoxyParamCaption}
+)}\hypertarget{classStateMainMenu_ab6b48304f4697b5a0eca285bc6d7d087}{}\label{classStateMainMenu_ab6b48304f4697b5a0eca285bc6d7d087}
+
+\begin{DoxyCode}
+37 \{
+38     \textcolor{keywordflow}{while}(!sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+39     \{
+40         window.clear(sf::Color::Black);
+41         window.draw(\hyperlink{classStateMainMenu_a6cc04c69495bf5d7469c21d44e901a67}{HowToPlayPictureSprite});
+42         window.display();
+43     \}
+44     \hyperlink{classStateMainMenu_a6095be3835bac4e3de32ff1700cf8dcd}{sound}->\hyperlink{classSounds_a5a93229c3804b9364b324a4e6245fcbe}{playSound}(\textcolor{stringliteral}{"/MenuClick.wav"}, 50);
+45 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!background\+Sprite@{background\+Sprite}}
+\index{background\+Sprite@{background\+Sprite}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{background\+Sprite}{backgroundSprite}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite State\+Main\+Menu\+::background\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a9885f1391d304c1567feaa48aee40587}{}\label{classStateMainMenu_a9885f1391d304c1567feaa48aee40587}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Background\+Texture@{Background\+Texture}}
+\index{Background\+Texture@{Background\+Texture}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Background\+Texture}{BackgroundTexture}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture$\ast$ State\+Main\+Menu\+::\+Background\+Texture = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a2f42ec4ca75ae671b65aa9176d2ff63f}{}\label{classStateMainMenu_a2f42ec4ca75ae671b65aa9176d2ff63f}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!config@{config}}
+\index{config@{config}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{config}{config}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Config} State\+Main\+Menu\+::config\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_ac56c2c42cb67e8e173645e2db04a38b8}{}\label{classStateMainMenu_ac56c2c42cb67e8e173645e2db04a38b8}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!exit\+Game\+Selected\+Sprite@{exit\+Game\+Selected\+Sprite}}
+\index{exit\+Game\+Selected\+Sprite@{exit\+Game\+Selected\+Sprite}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{exit\+Game\+Selected\+Sprite}{exitGameSelectedSprite}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite State\+Main\+Menu\+::exit\+Game\+Selected\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a114cf646751b0b7a6ca4486a1c7227da}{}\label{classStateMainMenu_a114cf646751b0b7a6ca4486a1c7227da}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Exit\+Game\+Selected\+Texture@{Exit\+Game\+Selected\+Texture}}
+\index{Exit\+Game\+Selected\+Texture@{Exit\+Game\+Selected\+Texture}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Exit\+Game\+Selected\+Texture}{ExitGameSelectedTexture}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture$\ast$ State\+Main\+Menu\+::\+Exit\+Game\+Selected\+Texture = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_ac42fbbb2cf5c1f8031bc41753cf6ef10}{}\label{classStateMainMenu_ac42fbbb2cf5c1f8031bc41753cf6ef10}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!exit\+Game\+Sprite@{exit\+Game\+Sprite}}
+\index{exit\+Game\+Sprite@{exit\+Game\+Sprite}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{exit\+Game\+Sprite}{exitGameSprite}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite State\+Main\+Menu\+::exit\+Game\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a1640dc6e497a1d7f83a57886d31aa456}{}\label{classStateMainMenu_a1640dc6e497a1d7f83a57886d31aa456}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Exit\+Game\+Texture@{Exit\+Game\+Texture}}
+\index{Exit\+Game\+Texture@{Exit\+Game\+Texture}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Exit\+Game\+Texture}{ExitGameTexture}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture$\ast$ State\+Main\+Menu\+::\+Exit\+Game\+Texture = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a7170389c3a31a58f8bdd06b1bd36d9b7}{}\label{classStateMainMenu_a7170389c3a31a58f8bdd06b1bd36d9b7}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!font@{font}}
+\index{font@{font}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{font}{font}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Font$\ast$ State\+Main\+Menu\+::font\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a2b8538a5a0e8c8e9b54f454d45426263}{}\label{classStateMainMenu_a2b8538a5a0e8c8e9b54f454d45426263}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!highscore\+Map@{highscore\+Map}}
+\index{highscore\+Map@{highscore\+Map}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{highscore\+Map}{highscoreMap}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$int, std\+::string$>$$\ast$ State\+Main\+Menu\+::highscore\+Map\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_aab67f5deb21d0baf93a9032e98e16038}{}\label{classStateMainMenu_aab67f5deb21d0baf93a9032e98e16038}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Highscore\+Selected\+Sprite@{Highscore\+Selected\+Sprite}}
+\index{Highscore\+Selected\+Sprite@{Highscore\+Selected\+Sprite}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Highscore\+Selected\+Sprite}{HighscoreSelectedSprite}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite State\+Main\+Menu\+::\+Highscore\+Selected\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a3b058162bfa6c0bcaab50a7563720159}{}\label{classStateMainMenu_a3b058162bfa6c0bcaab50a7563720159}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Highscore\+Selected\+Texture@{Highscore\+Selected\+Texture}}
+\index{Highscore\+Selected\+Texture@{Highscore\+Selected\+Texture}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Highscore\+Selected\+Texture}{HighscoreSelectedTexture}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture$\ast$ State\+Main\+Menu\+::\+Highscore\+Selected\+Texture = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a8302a7a3167e113b25aec8ea80997e87}{}\label{classStateMainMenu_a8302a7a3167e113b25aec8ea80997e87}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Highscore\+Sprite@{Highscore\+Sprite}}
+\index{Highscore\+Sprite@{Highscore\+Sprite}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Highscore\+Sprite}{HighscoreSprite}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite State\+Main\+Menu\+::\+Highscore\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a52b1859470406294eb22fc86a8f16453}{}\label{classStateMainMenu_a52b1859470406294eb22fc86a8f16453}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Highscore\+Texture@{Highscore\+Texture}}
+\index{Highscore\+Texture@{Highscore\+Texture}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Highscore\+Texture}{HighscoreTexture}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture$\ast$ State\+Main\+Menu\+::\+Highscore\+Texture = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_ae1057cba0cec32e03cb8c0defc7bcc0b}{}\label{classStateMainMenu_ae1057cba0cec32e03cb8c0defc7bcc0b}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!How\+To\+Play\+Picture\+Sprite@{How\+To\+Play\+Picture\+Sprite}}
+\index{How\+To\+Play\+Picture\+Sprite@{How\+To\+Play\+Picture\+Sprite}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{How\+To\+Play\+Picture\+Sprite}{HowToPlayPictureSprite}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite State\+Main\+Menu\+::\+How\+To\+Play\+Picture\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a6cc04c69495bf5d7469c21d44e901a67}{}\label{classStateMainMenu_a6cc04c69495bf5d7469c21d44e901a67}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!How\+To\+Play\+Picture\+Texture@{How\+To\+Play\+Picture\+Texture}}
+\index{How\+To\+Play\+Picture\+Texture@{How\+To\+Play\+Picture\+Texture}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{How\+To\+Play\+Picture\+Texture}{HowToPlayPictureTexture}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture$\ast$ State\+Main\+Menu\+::\+How\+To\+Play\+Picture\+Texture = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a0e729c72932f87ffc6690f4ca3190672}{}\label{classStateMainMenu_a0e729c72932f87ffc6690f4ca3190672}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!How\+To\+Play\+Selected\+Sprite@{How\+To\+Play\+Selected\+Sprite}}
+\index{How\+To\+Play\+Selected\+Sprite@{How\+To\+Play\+Selected\+Sprite}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{How\+To\+Play\+Selected\+Sprite}{HowToPlaySelectedSprite}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite State\+Main\+Menu\+::\+How\+To\+Play\+Selected\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_afaff9d33a337f71aef9fe757f35f4162}{}\label{classStateMainMenu_afaff9d33a337f71aef9fe757f35f4162}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!How\+To\+Play\+Selected\+Texture@{How\+To\+Play\+Selected\+Texture}}
+\index{How\+To\+Play\+Selected\+Texture@{How\+To\+Play\+Selected\+Texture}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{How\+To\+Play\+Selected\+Texture}{HowToPlaySelectedTexture}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture$\ast$ State\+Main\+Menu\+::\+How\+To\+Play\+Selected\+Texture = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_afe9186d897d4dd4cf786e1496ef66ed1}{}\label{classStateMainMenu_afe9186d897d4dd4cf786e1496ef66ed1}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!How\+To\+Play\+Sprite@{How\+To\+Play\+Sprite}}
+\index{How\+To\+Play\+Sprite@{How\+To\+Play\+Sprite}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{How\+To\+Play\+Sprite}{HowToPlaySprite}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite State\+Main\+Menu\+::\+How\+To\+Play\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_aa5c71ce1a86be4f06055ed291037a10f}{}\label{classStateMainMenu_aa5c71ce1a86be4f06055ed291037a10f}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!How\+To\+Play\+Texture@{How\+To\+Play\+Texture}}
+\index{How\+To\+Play\+Texture@{How\+To\+Play\+Texture}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{How\+To\+Play\+Texture}{HowToPlayTexture}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture$\ast$ State\+Main\+Menu\+::\+How\+To\+Play\+Texture = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a6f376b471cd23501af052628209cabd4}{}\label{classStateMainMenu_a6f376b471cd23501af052628209cabd4}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!keypressed@{keypressed}}
+\index{keypressed@{keypressed}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{keypressed}{keypressed}}]{\setlength{\rightskip}{0pt plus 5cm}bool State\+Main\+Menu\+::keypressed\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_aadc999cca9e9a3f1e0c0bacaea2a21a8}{}\label{classStateMainMenu_aadc999cca9e9a3f1e0c0bacaea2a21a8}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Load\+Game\+Selected\+Sprite@{Load\+Game\+Selected\+Sprite}}
+\index{Load\+Game\+Selected\+Sprite@{Load\+Game\+Selected\+Sprite}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Load\+Game\+Selected\+Sprite}{LoadGameSelectedSprite}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite State\+Main\+Menu\+::\+Load\+Game\+Selected\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_ac90a9dbfa8ec5f26b576e27afbc389a1}{}\label{classStateMainMenu_ac90a9dbfa8ec5f26b576e27afbc389a1}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Load\+Game\+Selected\+Texture@{Load\+Game\+Selected\+Texture}}
+\index{Load\+Game\+Selected\+Texture@{Load\+Game\+Selected\+Texture}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Load\+Game\+Selected\+Texture}{LoadGameSelectedTexture}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture$\ast$ State\+Main\+Menu\+::\+Load\+Game\+Selected\+Texture = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a47c8756a24cb3fbbeb17402d573754c8}{}\label{classStateMainMenu_a47c8756a24cb3fbbeb17402d573754c8}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Load\+Game\+Sprite@{Load\+Game\+Sprite}}
+\index{Load\+Game\+Sprite@{Load\+Game\+Sprite}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Load\+Game\+Sprite}{LoadGameSprite}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite State\+Main\+Menu\+::\+Load\+Game\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a309cb7c0187583ea7e984d59e77c0978}{}\label{classStateMainMenu_a309cb7c0187583ea7e984d59e77c0978}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!Load\+Game\+Texture@{Load\+Game\+Texture}}
+\index{Load\+Game\+Texture@{Load\+Game\+Texture}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{Load\+Game\+Texture}{LoadGameTexture}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture$\ast$ State\+Main\+Menu\+::\+Load\+Game\+Texture = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_af12831c95e41fc915f025903e1299bc3}{}\label{classStateMainMenu_af12831c95e41fc915f025903e1299bc3}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!menu@{menu}}
+\index{menu@{menu}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{menu}{menu}}]{\setlength{\rightskip}{0pt plus 5cm}int State\+Main\+Menu\+::menu = 1\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}{}\label{classStateMainMenu_ad717957c78811629a2a495ee98dbe0b9}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!menu\+Amount@{menu\+Amount}}
+\index{menu\+Amount@{menu\+Amount}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{menu\+Amount}{menuAmount}}]{\setlength{\rightskip}{0pt plus 5cm}int State\+Main\+Menu\+::menu\+Amount = 0\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_afa0c8a2d24b6724e68c6f53d7d23e454}{}\label{classStateMainMenu_afa0c8a2d24b6724e68c6f53d7d23e454}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!New\+Game\+Selected\+Sprite@{New\+Game\+Selected\+Sprite}}
+\index{New\+Game\+Selected\+Sprite@{New\+Game\+Selected\+Sprite}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{New\+Game\+Selected\+Sprite}{NewGameSelectedSprite}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite State\+Main\+Menu\+::\+New\+Game\+Selected\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a3307dac9269a6515ae9e1563487c413b}{}\label{classStateMainMenu_a3307dac9269a6515ae9e1563487c413b}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!New\+Game\+Selected\+Texture@{New\+Game\+Selected\+Texture}}
+\index{New\+Game\+Selected\+Texture@{New\+Game\+Selected\+Texture}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{New\+Game\+Selected\+Texture}{NewGameSelectedTexture}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture$\ast$ State\+Main\+Menu\+::\+New\+Game\+Selected\+Texture = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_aa6bcd3d4dd129313a0b0c53868bb8334}{}\label{classStateMainMenu_aa6bcd3d4dd129313a0b0c53868bb8334}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!New\+Game\+Sprite@{New\+Game\+Sprite}}
+\index{New\+Game\+Sprite@{New\+Game\+Sprite}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{New\+Game\+Sprite}{NewGameSprite}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite State\+Main\+Menu\+::\+New\+Game\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_adc3e471543be20775b7c8272c8660991}{}\label{classStateMainMenu_adc3e471543be20775b7c8272c8660991}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!New\+Game\+Texture@{New\+Game\+Texture}}
+\index{New\+Game\+Texture@{New\+Game\+Texture}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{New\+Game\+Texture}{NewGameTexture}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture$\ast$ State\+Main\+Menu\+::\+New\+Game\+Texture = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a8c54545853bf8f34ca224ff4030016dd}{}\label{classStateMainMenu_a8c54545853bf8f34ca224ff4030016dd}
+\index{State\+Main\+Menu@{State\+Main\+Menu}!sound@{sound}}
+\index{sound@{sound}!State\+Main\+Menu@{State\+Main\+Menu}}
+\subsubsection[{\texorpdfstring{sound}{sound}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sounds}$\ast$ State\+Main\+Menu\+::sound\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classStateMainMenu_a6095be3835bac4e3de32ff1700cf8dcd}{}\label{classStateMainMenu_a6095be3835bac4e3de32ff1700cf8dcd}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+state/\hyperlink{statemainmenu_8h}{statemainmenu.\+h}\item 
+state/\hyperlink{statemainmenu_8cpp}{statemainmenu.\+cpp}\end{DoxyCompactItemize}

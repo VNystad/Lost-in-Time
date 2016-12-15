@@ -1,0 +1,1062 @@
+\hypertarget{classAnimation}{}\section{Animation Class Reference}
+\label{classAnimation}\index{Animation@{Animation}}
+
+
+{\ttfamily \#include $<$animation.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAnimation_a83f0a16cef7117f187ad596de38dd9d6}{Animation} ()
+\item 
+\hyperlink{classAnimation_a401b68793d4fbf48d481c030ee4b2a16}{$\sim$\+Animation} ()
+\item 
+void \hyperlink{classAnimation_a71cd77a66064b85cb34061b47c414709}{init} ()
+\item 
+int \hyperlink{classAnimation_a17d7d2d6b964bd376eecd11526ec713e}{Get\+Size\+Width} ()
+\item 
+int \hyperlink{classAnimation_a7c267306f82cc1ea24efb7eeb837a7c7}{Get\+Size\+Height} ()
+\item 
+void \hyperlink{classAnimation_ab52da84939f7cea63e8c3926abefa595}{Set\+Size\+Width} (int width)
+\item 
+void \hyperlink{classAnimation_aa25c884e5931c4afa2238480e83c9df4}{Set\+Size\+Height} (int height)
+\item 
+void \hyperlink{classAnimation_a21c41b29f392f2f0badaae5c7444ae40}{Player\+Walk\+Right} (sf\+::\+Rectangle\+Shape $\ast$character)
+\item 
+void \hyperlink{classAnimation_ada6222ad6014e0c7582ad27f05e26461}{Player\+Walk\+Left} (sf\+::\+Rectangle\+Shape $\ast$character)
+\item 
+void \hyperlink{classAnimation_a508a78a4830ace728dc529f96fa43813}{Player\+Idle\+Left} (sf\+::\+Rectangle\+Shape $\ast$character)
+\item 
+void \hyperlink{classAnimation_a83f5edfffa3d2349f71e1bb7d81395c3}{Player\+Idle} (sf\+::\+Rectangle\+Shape $\ast$character)
+\item 
+void \hyperlink{classAnimation_ab7f9df65827e2d2b4bb75f908189f716}{Player\+Jump\+Right} (sf\+::\+Rectangle\+Shape $\ast$character, bool fallingdown)
+\item 
+void \hyperlink{classAnimation_a0469ce861da8662b3abb2f05fb7ce509}{Player\+Jump\+Left} (sf\+::\+Rectangle\+Shape $\ast$character, bool fallingdown)
+\item 
+void \hyperlink{classAnimation_a04ea6ebfc31ec57de2666f3ef46e310e}{Player\+Die} (sf\+::\+Rectangle\+Shape $\ast$character)
+\item 
+void \hyperlink{classAnimation_a61e2eb4c7a32f2e562ad0905a1a592e3}{A\+I\+Walk\+Right} (sf\+::\+Rectangle\+Shape $\ast$character)
+\item 
+void \hyperlink{classAnimation_ac27ea35e042306fbf3656cd7001b2a31}{A\+I\+Walk\+Left} (sf\+::\+Rectangle\+Shape $\ast$character)
+\item 
+void \hyperlink{classAnimation_a218b34b75cb4c574f713cc402a73e707}{A\+I\+Mini\+Boss\+Walk\+Right} (sf\+::\+Rectangle\+Shape $\ast$character)
+\item 
+void \hyperlink{classAnimation_aa3e38b98c8fb47c082d661c55cb40495}{A\+I\+Mini\+Boss\+Walk\+Left} (sf\+::\+Rectangle\+Shape $\ast$character)
+\item 
+void \hyperlink{classAnimation_a1999fd6ce4fb70a4c058ac8479cdc3f9}{A\+I\+Boss\+Walk\+Right} (sf\+::\+Rectangle\+Shape $\ast$character)
+\item 
+void \hyperlink{classAnimation_ab39a686342b722a37c63ea0917424ee3}{A\+I\+Boss\+Walk\+Left} (sf\+::\+Rectangle\+Shape $\ast$character)
+\item 
+void \hyperlink{classAnimation_ae384739d671f69c9259eea76b2b80f65}{Princess\+Walk\+Right} (sf\+::\+Rectangle\+Shape $\ast$character)
+\item 
+void \hyperlink{classAnimation_a62a619987f93d55f95cf6d3e8928cd83}{Princess\+Walk\+Left} (sf\+::\+Rectangle\+Shape $\ast$character)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{Idle\+Count} = 0
+\item 
+int \hyperlink{classAnimation_a5fa2dfbbf58158d08b03b3f6fe677d6c}{Playersize\+Width} = 34
+\item 
+int \hyperlink{classAnimation_a8aff77b932ad98856335149cbd9b0eb9}{Playersize\+Height} = 50
+\item 
+int \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1
+\item 
+int \hyperlink{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}{lastplayeranimationplayed} = 0
+\item 
+int \hyperlink{classAnimation_a280c2cafd8a95afa1dcfd1f7a78e0427}{felldown} = false
+\item 
+sf\+::\+Int\+Rect $\ast$ \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frame\+Selected}
+\item 
+sf\+::\+Int\+Rect $\ast$ \hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frame\+Selected\+Boss}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_ae4b3ea24c42829931659562795a5f2a1}{Player\+Texture\+Jump}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_a180eeacc0353a8809fafccbbb27bac87}{Player\+Texture\+Idle}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_a8c0f17a9bd55c23ab3dcf4af5cb83d8a}{Player\+Texture\+Walk}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_ae2c4250f642ea945b2370857712d120b}{Player\+Texture\+Death}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_ae0d16eacff8f27f0308a63718c34a832}{Player\+Texture\+Idle\+Flipped}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_adecc1934d4a148f0cfa36e01c2b2de62}{Player\+Texture\+Jumpflipped}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_a3e5bd7e9fd80edc832581382f6f38ebf}{Player\+Texture\+Walkflipped}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_a30495fb9193f8f7cefc524200d35c44e}{A\+I\+Texture\+Walk\+Right}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_a7c82d99498237bc172f933f4663810c5}{A\+I\+Texture\+Walk\+Left}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_aee6ee164fad1b55ab6d36f447ef20275}{A\+I\+Mini\+Boss\+Texture\+Walk\+Right}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_a9664ca5d22db69c2cc835b49ec8383bc}{A\+I\+Mini\+Boss\+Texture\+Walk\+Left}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_a2de9d819490c4799986cda87f8c9f498}{A\+I\+Boss\+Texture\+Walk\+Right}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_ac4e77ff7823c13967563c9f818ca1a9e}{A\+I\+Boss\+Texture\+Walk\+Left}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_ab77fb25df92b7ad25ffb925763cb650d}{Princess\+Texture\+Walk\+Right}
+\item 
+sf\+::\+Texture \hyperlink{classAnimation_abfb9fab906ea1a5c9fbd0195bc1e0e5f}{Princess\+Texture\+Walk\+Left}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Animation()}{Animation()}}]{\setlength{\rightskip}{0pt plus 5cm}Animation\+::\+Animation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnimation_a83f0a16cef7117f187ad596de38dd9d6}{}\label{classAnimation_a83f0a16cef7117f187ad596de38dd9d6}
+
+\begin{DoxyCode}
+8 \{ \};
+\end{DoxyCode}
+\index{Animation@{Animation}!````~Animation@{$\sim$\+Animation}}
+\index{````~Animation@{$\sim$\+Animation}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{$\sim$\+Animation()}{~Animation()}}]{\setlength{\rightskip}{0pt plus 5cm}Animation\+::$\sim$\+Animation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnimation_a401b68793d4fbf48d481c030ee4b2a16}{}\label{classAnimation_a401b68793d4fbf48d481c030ee4b2a16}
+
+\begin{DoxyCode}
+9 \{ \};
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Animation@{Animation}!A\+I\+Boss\+Walk\+Left@{A\+I\+Boss\+Walk\+Left}}
+\index{A\+I\+Boss\+Walk\+Left@{A\+I\+Boss\+Walk\+Left}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{A\+I\+Boss\+Walk\+Left(sf\+::\+Rectangle\+Shape $\ast$character)}{AIBossWalkLeft(sf::RectangleShape *character)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+A\+I\+Boss\+Walk\+Left (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_ab39a686342b722a37c63ea0917424ee3}{}\label{classAnimation_ab39a686342b722a37c63ea0917424ee3}
+
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+550 \{
+551     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 605)
+552         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+553     character->setTexture(&\hyperlink{classAnimation_ac4e77ff7823c13967563c9f818ca1a9e}{AIBossTextureWalkLeft});
+554     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} == 1)
+555     \{
+556         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss}->left < 605)
+557             \hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss}->left += 55;
+558         \textcolor{keywordflow}{else}
+559         \{
+560             \hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss}->left -= 55;
+561             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 0;
+562         \}
+563     \}
+564     \textcolor{keywordflow}{else}
+565     \{
+566         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss}->left > 0)
+567             \hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss}->left -= 55;
+568         \textcolor{keywordflow}{else}
+569         \{
+570             \hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss}->left += 55;
+571             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1;
+572         \}
+573     \}
+574 
+575     character->setTextureRect(*\hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss});
+576 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!A\+I\+Boss\+Walk\+Right@{A\+I\+Boss\+Walk\+Right}}
+\index{A\+I\+Boss\+Walk\+Right@{A\+I\+Boss\+Walk\+Right}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{A\+I\+Boss\+Walk\+Right(sf\+::\+Rectangle\+Shape $\ast$character)}{AIBossWalkRight(sf::RectangleShape *character)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+A\+I\+Boss\+Walk\+Right (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_a1999fd6ce4fb70a4c058ac8479cdc3f9}{}\label{classAnimation_a1999fd6ce4fb70a4c058ac8479cdc3f9}
+
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+515 \{
+516     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 605)
+517         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+518     character->setTexture(&\hyperlink{classAnimation_a2de9d819490c4799986cda87f8c9f498}{AIBossTextureWalkRight});
+519     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} == 1)
+520     \{
+521         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss}->left < 605)
+522             \hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss}->left += 55;
+523         \textcolor{keywordflow}{else}
+524         \{
+525             \hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss}->left -= 55;
+526             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 0;
+527         \}
+528     \}
+529     \textcolor{keywordflow}{else}
+530     \{
+531         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss}->left > 0)
+532             \hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss}->left -= 55;
+533         \textcolor{keywordflow}{else}
+534         \{
+535             \hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss}->left += 55;
+536             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1;
+537         \}
+538     \}
+539 
+540     character->setTextureRect(*\hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss});
+541 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!A\+I\+Mini\+Boss\+Walk\+Left@{A\+I\+Mini\+Boss\+Walk\+Left}}
+\index{A\+I\+Mini\+Boss\+Walk\+Left@{A\+I\+Mini\+Boss\+Walk\+Left}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{A\+I\+Mini\+Boss\+Walk\+Left(sf\+::\+Rectangle\+Shape $\ast$character)}{AIMiniBossWalkLeft(sf::RectangleShape *character)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+A\+I\+Mini\+Boss\+Walk\+Left (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_aa3e38b98c8fb47c082d661c55cb40495}{}\label{classAnimation_aa3e38b98c8fb47c082d661c55cb40495}
+
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+479 \{
+480     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 216)
+481         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+482     character->setTexture(&\hyperlink{classAnimation_a9664ca5d22db69c2cc835b49ec8383bc}{AIMiniBossTextureWalkLeft});
+483     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} == 1)
+484     \{
+485         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left < 216)
+486             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 36;
+487         \textcolor{keywordflow}{else}
+488         \{
+489             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 36;
+490             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 0;
+491         \}
+492     \}
+493     \textcolor{keywordflow}{else}
+494     \{
+495         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 0)
+496             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 36;
+497         \textcolor{keywordflow}{else}
+498         \{
+499             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 36;
+500             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1;
+501         \}
+502     \}
+503 
+504     character->setTextureRect(*\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected});
+505 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!A\+I\+Mini\+Boss\+Walk\+Right@{A\+I\+Mini\+Boss\+Walk\+Right}}
+\index{A\+I\+Mini\+Boss\+Walk\+Right@{A\+I\+Mini\+Boss\+Walk\+Right}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{A\+I\+Mini\+Boss\+Walk\+Right(sf\+::\+Rectangle\+Shape $\ast$character)}{AIMiniBossWalkRight(sf::RectangleShape *character)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+A\+I\+Mini\+Boss\+Walk\+Right (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_a218b34b75cb4c574f713cc402a73e707}{}\label{classAnimation_a218b34b75cb4c574f713cc402a73e707}
+
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+444 \{
+445     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 216)
+446         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+447     character->setTexture(&\hyperlink{classAnimation_aee6ee164fad1b55ab6d36f447ef20275}{AIMiniBossTextureWalkRight});
+448     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} == 1)
+449     \{
+450         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left < 216)
+451             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 36;
+452         \textcolor{keywordflow}{else}
+453         \{
+454             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 216;
+455             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 0;
+456         \}
+457     \}
+458     \textcolor{keywordflow}{else}
+459     \{
+460         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 0)
+461             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 36;
+462         \textcolor{keywordflow}{else}
+463         \{
+464             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 36;
+465             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1;
+466         \}
+467     \}
+468 
+469     character->setTextureRect(*\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected});
+470 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!A\+I\+Walk\+Left@{A\+I\+Walk\+Left}}
+\index{A\+I\+Walk\+Left@{A\+I\+Walk\+Left}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{A\+I\+Walk\+Left(sf\+::\+Rectangle\+Shape $\ast$character)}{AIWalkLeft(sf::RectangleShape *character)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+A\+I\+Walk\+Left (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_ac27ea35e042306fbf3656cd7001b2a31}{}\label{classAnimation_ac27ea35e042306fbf3656cd7001b2a31}
+
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+408 \{
+409     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 216)
+410         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+411     character->setTexture(&\hyperlink{classAnimation_a7c82d99498237bc172f933f4663810c5}{AITextureWalkLeft});
+412     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} == 1)
+413     \{
+414         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left < 216)
+415             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 36;
+416         \textcolor{keywordflow}{else}
+417         \{
+418             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 36;
+419             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 0;
+420         \}
+421     \}
+422     \textcolor{keywordflow}{else}
+423     \{
+424         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 0)
+425             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 36;
+426         \textcolor{keywordflow}{else}
+427         \{
+428             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 36;
+429             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1;
+430         \}
+431     \}
+432 
+433     character->setTextureRect(*\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected});
+434 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!A\+I\+Walk\+Right@{A\+I\+Walk\+Right}}
+\index{A\+I\+Walk\+Right@{A\+I\+Walk\+Right}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{A\+I\+Walk\+Right(sf\+::\+Rectangle\+Shape $\ast$character)}{AIWalkRight(sf::RectangleShape *character)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+A\+I\+Walk\+Right (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_a61e2eb4c7a32f2e562ad0905a1a592e3}{}\label{classAnimation_a61e2eb4c7a32f2e562ad0905a1a592e3}
+
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+373 \{
+374     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 216)
+375         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+376     character->setTexture(&\hyperlink{classAnimation_a30495fb9193f8f7cefc524200d35c44e}{AITextureWalkRight});
+377     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} == 1)
+378     \{
+379         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left < 216)
+380             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 36;
+381         \textcolor{keywordflow}{else}
+382         \{
+383             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 216;
+384             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 0;
+385         \}
+386     \}
+387     \textcolor{keywordflow}{else}
+388     \{
+389         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 0)
+390             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 36;
+391         \textcolor{keywordflow}{else}
+392         \{
+393             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 36;
+394             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1;
+395         \}
+396     \}
+397 
+398     character->setTextureRect(*\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected});
+399 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!Get\+Size\+Height@{Get\+Size\+Height}}
+\index{Get\+Size\+Height@{Get\+Size\+Height}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Get\+Size\+Height()}{GetSizeHeight()}}]{\setlength{\rightskip}{0pt plus 5cm}int Animation\+::\+Get\+Size\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnimation_a7c267306f82cc1ea24efb7eeb837a7c7}{}\label{classAnimation_a7c267306f82cc1ea24efb7eeb837a7c7}
+
+\begin{DoxyCode}
+13 \{ \textcolor{keywordflow}{return} \hyperlink{classAnimation_a8aff77b932ad98856335149cbd9b0eb9}{PlayersizeHeight}; \};
+\end{DoxyCode}
+\index{Animation@{Animation}!Get\+Size\+Width@{Get\+Size\+Width}}
+\index{Get\+Size\+Width@{Get\+Size\+Width}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Get\+Size\+Width()}{GetSizeWidth()}}]{\setlength{\rightskip}{0pt plus 5cm}int Animation\+::\+Get\+Size\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnimation_a17d7d2d6b964bd376eecd11526ec713e}{}\label{classAnimation_a17d7d2d6b964bd376eecd11526ec713e}
+
+\begin{DoxyCode}
+12 \{ \textcolor{keywordflow}{return} \hyperlink{classAnimation_a5fa2dfbbf58158d08b03b3f6fe677d6c}{PlayersizeWidth}; \};
+\end{DoxyCode}
+\index{Animation@{Animation}!init@{init}}
+\index{init@{init}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{init()}{init()}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_a71cd77a66064b85cb34061b47c414709}{}\label{classAnimation_a71cd77a66064b85cb34061b47c414709}
+Init of the animation Load in the textures Create the frame used to select which picture to use in the animation. 
+\begin{DoxyCode}
+10 \{
+11     \textcolor{comment}{/* **********************************}
+12 \textcolor{comment}{               PLAYER CHARACTER}
+13 \textcolor{comment}{       ********************************** */}
+14     \textcolor{comment}{// Load the animation textures}
+15     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_a8c0f17a9bd55c23ab3dcf4af5cb83d8a}{PlayerTextureWalk}.loadFromFile(\textcolor{stringliteral}{"data/Character-Animation/charactermove.png"}))
+16         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/charactermove.png"} << std::endl << std::endl;
+17     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_a3e5bd7e9fd80edc832581382f6f38ebf}{PlayerTextureWalkflipped}.loadFromFile(\textcolor{stringliteral}{"
+      data/Character-Animation/charactermoveflipped.png"}))
+18         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/charactermoveflipped.png"} << std::endl << 
+      std::endl;
+19     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_a180eeacc0353a8809fafccbbb27bac87}{PlayerTextureIdle}.loadFromFile(\textcolor{stringliteral}{"data/Character-Animation/characteridle.png"}))
+20         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/characteridle.png"} << std::endl << std::endl;
+21     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_ae0d16eacff8f27f0308a63718c34a832}{PlayerTextureIdleFlipped}.loadFromFile(\textcolor{stringliteral}{"
+      data/Character-Animation/characteridleflipped.png"}))
+22         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/characteridleflipped.png"} << std::endl << 
+      std::endl;
+23     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_ae4b3ea24c42829931659562795a5f2a1}{PlayerTextureJump}.loadFromFile(\textcolor{stringliteral}{"data/Character-Animation/characterjump.png"}))
+24         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/characterjump.png"} << std::endl << std::endl;
+25     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_adecc1934d4a148f0cfa36e01c2b2de62}{PlayerTextureJumpflipped}.loadFromFile(\textcolor{stringliteral}{"
+      data/Character-Animation/characterjumpflipped.png"}))
+26         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/characterjumpflipped.png"} << std::endl << 
+      std::endl;
+27     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_ae2c4250f642ea945b2370857712d120b}{PlayerTextureDeath}.loadFromFile(\textcolor{stringliteral}{"data/Character-Animation/characterdeath.png"}))
+28         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/characterdeath.png"} << std::endl << std::endl
+      ;
+29 
+30     \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected} = \textcolor{keyword}{new} sf::IntRect(0,0,\hyperlink{classAnimation_a17d7d2d6b964bd376eecd11526ec713e}{GetSizeWidth}(),
+      \hyperlink{classAnimation_a7c267306f82cc1ea24efb7eeb837a7c7}{GetSizeHeight}());
+31     \hyperlink{classAnimation_a642ba989c928d568640537c2c4233047}{frameSelectedBoss} = \textcolor{keyword}{new} sf::IntRect(0,0,55,44);
+32 
+33     \textcolor{comment}{/* **********************************}
+34 \textcolor{comment}{           MINION CHARACTER}
+35 \textcolor{comment}{    ********************************** */}
+36 
+37     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_a30495fb9193f8f7cefc524200d35c44e}{AITextureWalkRight}.loadFromFile(\textcolor{stringliteral}{"data/Character-Animation/apemoveright.png"}))
+38         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/apemoveright.png"} << std::endl << std::endl;
+39     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_a7c82d99498237bc172f933f4663810c5}{AITextureWalkLeft}.loadFromFile(\textcolor{stringliteral}{"data/Character-Animation/apemoveleft.png"}))
+40         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/apemoveleft.png"} << std::endl << std::endl;
+41 
+42 
+43     \textcolor{comment}{/* **********************************}
+44 \textcolor{comment}{        MINIBOSS CHARACTER}
+45 \textcolor{comment}{    ********************************** */}
+46     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_aee6ee164fad1b55ab6d36f447ef20275}{AIMiniBossTextureWalkRight}.loadFromFile(\textcolor{stringliteral}{"
+      data/Character-Animation/minibossapemoveright.png"}))
+47         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/minibossapemoveright.png"} << std::endl << 
+      std::endl;
+48     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_a9664ca5d22db69c2cc835b49ec8383bc}{AIMiniBossTextureWalkLeft}.loadFromFile(\textcolor{stringliteral}{"
+      data/Character-Animation/minibossapemoveleft.png"}))
+49         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/minibossapemoveleft.png"} << std::endl << 
+      std::endl;
+50 
+51 
+52     \textcolor{comment}{/* **********************************}
+53 \textcolor{comment}{                BOSS CHARACTER}
+54 \textcolor{comment}{     ********************************** */}
+55     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_a2de9d819490c4799986cda87f8c9f498}{AIBossTextureWalkRight}.loadFromFile(\textcolor{stringliteral}{"
+      data/Character-Animation/gorillamoveright.png"}))
+56         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/gorillamoveright.png"} << std::endl << 
+      std::endl;
+57     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_ac4e77ff7823c13967563c9f818ca1a9e}{AIBossTextureWalkLeft}.loadFromFile(\textcolor{stringliteral}{"
+      data/Character-Animation/gorillamoveleft.png"}))
+58         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/gorillamoveleft.png"} << std::endl << 
+      std::endl;
+59 
+60     \textcolor{comment}{/* **********************************}
+61 \textcolor{comment}{                PRINCESS CHARACTER}
+62 \textcolor{comment}{     ********************************** */}
+63 
+64     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_ab77fb25df92b7ad25ffb925763cb650d}{PrincessTextureWalkRight}.loadFromFile(\textcolor{stringliteral}{"
+      data/Character-Animation/princessidleright.png"}))
+65         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/princessidleright.png"} << std::endl << 
+      std::endl;
+66     \textcolor{keywordflow}{if} (!\hyperlink{classAnimation_abfb9fab906ea1a5c9fbd0195bc1e0e5f}{PrincessTextureWalkLeft}.loadFromFile(\textcolor{stringliteral}{"
+      data/Character-Animation/princessidleleft.png"}))
+67         std::cout << \textcolor{stringliteral}{"Failed to load data/Character-Animation/princessidleleft.png"} << std::endl << 
+      std::endl;
+68 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!Player\+Die@{Player\+Die}}
+\index{Player\+Die@{Player\+Die}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Player\+Die(sf\+::\+Rectangle\+Shape $\ast$character)}{PlayerDie(sf::RectangleShape *character)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+Player\+Die (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_a04ea6ebfc31ec57de2666f3ef46e310e}{}\label{classAnimation_a04ea6ebfc31ec57de2666f3ef46e310e}
+T\+O\+DO\+: not implemented yet. Due to the pictures being so different in sizes 
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+362 \{
+363 
+364 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!Player\+Idle@{Player\+Idle}}
+\index{Player\+Idle@{Player\+Idle}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Player\+Idle(sf\+::\+Rectangle\+Shape $\ast$character)}{PlayerIdle(sf::RectangleShape *character)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+Player\+Idle (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_a83f5edfffa3d2349f71e1bb7d81395c3}{}\label{classAnimation_a83f5edfffa3d2349f71e1bb7d81395c3}
+
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. \\
+\hline
+{\em lastplayeranimationplayed,is} & used to check what animation is played last. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+214 \{
+215     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}{lastplayeranimationplayed} != 3)
+216     \{
+217         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+218         \hyperlink{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}{lastplayeranimationplayed} = 3;
+219         \hyperlink{classAnimation_a280c2cafd8a95afa1dcfd1f7a78e0427}{felldown} = \textcolor{keyword}{false};
+220     \}
+221     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 102)
+222         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+223     character->setTexture(&\hyperlink{classAnimation_a180eeacc0353a8809fafccbbb27bac87}{PlayerTextureIdle});
+224     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} == 1)
+225     \{
+226         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left < 102 && \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount}>=2)
+227         \{
+228             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+229             \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount} = 0;
+230         \}
+231         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount}>=2)
+232         \{
+233             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+234             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 0;
+235             \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount} = 0;
+236         \}
+237         \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount}++;
+238     \}
+239     \textcolor{keywordflow}{else}
+240     \{
+241         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 0 && \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount}>=2)
+242         \{
+243             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+244             \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount} = 0;
+245         \}
+246         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount}>=2)
+247         \{
+248             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+249             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1;
+250             \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount} = 0;
+251         \}
+252         \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount}++;
+253     \}
+254 
+255     character->setTextureRect(*\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected});
+256 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!Player\+Idle\+Left@{Player\+Idle\+Left}}
+\index{Player\+Idle\+Left@{Player\+Idle\+Left}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Player\+Idle\+Left(sf\+::\+Rectangle\+Shape $\ast$character)}{PlayerIdleLeft(sf::RectangleShape *character)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+Player\+Idle\+Left (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_a508a78a4830ace728dc529f96fa43813}{}\label{classAnimation_a508a78a4830ace728dc529f96fa43813}
+
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. \\
+\hline
+{\em lastplayeranimationplayed,is} & used to check what animation is played last. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+162 \{
+163     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}{lastplayeranimationplayed} != 3)
+164     \{
+165         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+166         \hyperlink{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}{lastplayeranimationplayed} = 3;
+167         \hyperlink{classAnimation_a280c2cafd8a95afa1dcfd1f7a78e0427}{felldown} = \textcolor{keyword}{false};
+168     \}
+169     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 102)
+170         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+171     character->setTexture(&\hyperlink{classAnimation_ae0d16eacff8f27f0308a63718c34a832}{PlayerTextureIdleFlipped});
+172     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} == 1)
+173     \{
+174         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left < 102 && \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount}>=2)
+175         \{
+176             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+177             \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount} = 0;
+178         \}
+179         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount} >= 2)
+180         \{
+181             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+182             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 0;
+183             \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount} = 0;
+184         \}
+185         \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount}++;
+186     \}
+187     \textcolor{keywordflow}{else}
+188     \{
+189         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 0&& \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount}>=2)
+190         \{
+191             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+192             \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount} = 0;
+193         \}
+194         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount} >= 2)
+195         \{
+196             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+197             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1;
+198             \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount} = 0;
+199         \}
+200         \hyperlink{classAnimation_ac717012475788ebb501d44c5acc8f09e}{IdleCount}++;
+201     \}
+202 
+203     character->setTextureRect(*\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected});
+204 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!Player\+Jump\+Left@{Player\+Jump\+Left}}
+\index{Player\+Jump\+Left@{Player\+Jump\+Left}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Player\+Jump\+Left(sf\+::\+Rectangle\+Shape $\ast$character, bool fallingdown)}{PlayerJumpLeft(sf::RectangleShape *character, bool fallingdown)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+Player\+Jump\+Left (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character, }
+\item[{bool}]{fallingdown}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_a0469ce861da8662b3abb2f05fb7ce509}{}\label{classAnimation_a0469ce861da8662b3abb2f05fb7ce509}
+
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. \\
+\hline
+{\em fallingdown} & Used to know wether the player is falling down or not. \\
+\hline
+{\em fellingdown} & Used to know wether animation already know the player started to fall down. \\
+\hline
+{\em lastplayeranimationplayed,is} & used to check what animation is played last. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+316 \{
+317     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}{lastplayeranimationplayed} != 1)
+318     \{
+319         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+320         \hyperlink{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}{lastplayeranimationplayed} = 1;
+321         \textcolor{keywordflow}{if}(fallingdown && !\hyperlink{classAnimation_a280c2cafd8a95afa1dcfd1f7a78e0427}{felldown})
+322         \{
+323             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 68;
+324             \hyperlink{classAnimation_a280c2cafd8a95afa1dcfd1f7a78e0427}{felldown} = \textcolor{keyword}{true};
+325         \}
+326     \}
+327     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 136)
+328         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+329     character->setTexture(&\hyperlink{classAnimation_adecc1934d4a148f0cfa36e01c2b2de62}{PlayerTextureJumpflipped});
+330     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} == 1)
+331     \{
+332         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left < 136)
+333             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+334         \textcolor{keywordflow}{else}
+335         \{
+336             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+337             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 0;
+338         \}
+339     \}
+340     \textcolor{keywordflow}{else}
+341     \{
+342         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 68)
+343             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+344         \textcolor{keywordflow}{else}
+345         \{
+346             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+347             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1;
+348         \}
+349     \}
+350 
+351     character->setTextureRect(*\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected});
+352 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!Player\+Jump\+Right@{Player\+Jump\+Right}}
+\index{Player\+Jump\+Right@{Player\+Jump\+Right}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Player\+Jump\+Right(sf\+::\+Rectangle\+Shape $\ast$character, bool fallingdown)}{PlayerJumpRight(sf::RectangleShape *character, bool fallingdown)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+Player\+Jump\+Right (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character, }
+\item[{bool}]{fallingdown}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_ab7f9df65827e2d2b4bb75f908189f716}{}\label{classAnimation_ab7f9df65827e2d2b4bb75f908189f716}
+
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. \\
+\hline
+{\em fallingdown} & Used to know wether the player is falling down or not. \\
+\hline
+{\em fellingdown} & Used to know wether animation already know the player started to fall down. \\
+\hline
+{\em lastplayeranimationplayed,is} & used to check what animation is played last. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+268 \{
+269     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}{lastplayeranimationplayed} != 1)
+270     \{
+271         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+272         \hyperlink{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}{lastplayeranimationplayed} = 1;
+273         \textcolor{keywordflow}{if}(fallingdown && !\hyperlink{classAnimation_a280c2cafd8a95afa1dcfd1f7a78e0427}{felldown})
+274         \{
+275             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 68;
+276             \hyperlink{classAnimation_a280c2cafd8a95afa1dcfd1f7a78e0427}{felldown} = \textcolor{keyword}{true};
+277         \}
+278     \}
+279     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 136)
+280         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+281     character->setTexture(&\hyperlink{classAnimation_ae4b3ea24c42829931659562795a5f2a1}{PlayerTextureJump});
+282     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} == 1)
+283     \{
+284         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left < 136)
+285             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+286         \textcolor{keywordflow}{else}
+287         \{
+288             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+289             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 0;
+290         \}
+291     \}
+292     \textcolor{keywordflow}{else}
+293     \{
+294         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 68)
+295             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+296         \textcolor{keywordflow}{else}
+297         \{
+298             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+299             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1;
+300         \}
+301     \}
+302 
+303     character->setTextureRect(*\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected});
+304 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!Player\+Walk\+Left@{Player\+Walk\+Left}}
+\index{Player\+Walk\+Left@{Player\+Walk\+Left}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Player\+Walk\+Left(sf\+::\+Rectangle\+Shape $\ast$character)}{PlayerWalkLeft(sf::RectangleShape *character)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+Player\+Walk\+Left (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_ada6222ad6014e0c7582ad27f05e26461}{}\label{classAnimation_ada6222ad6014e0c7582ad27f05e26461}
+
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. \\
+\hline
+{\em lastplayeranimationplayed,is} & used to check what animation is played last. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+120 \{
+121     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}{lastplayeranimationplayed} != 2)
+122     \{
+123         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+124         \hyperlink{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}{lastplayeranimationplayed} = 2;
+125         \hyperlink{classAnimation_a280c2cafd8a95afa1dcfd1f7a78e0427}{felldown} = \textcolor{keyword}{false};
+126     \}
+127     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 102)
+128         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+129     character->setTexture(&\hyperlink{classAnimation_a3e5bd7e9fd80edc832581382f6f38ebf}{PlayerTextureWalkflipped});
+130     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} == 1)
+131     \{
+132         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left < 102)
+133             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+134         \textcolor{keywordflow}{else}
+135         \{
+136             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+137             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 0;
+138         \}
+139     \}
+140     \textcolor{keywordflow}{else}
+141     \{
+142         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 0)
+143             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+144         \textcolor{keywordflow}{else}
+145         \{
+146             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+147             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1;
+148         \}
+149     \}
+150 
+151     character->setTextureRect(*\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected});
+152 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!Player\+Walk\+Right@{Player\+Walk\+Right}}
+\index{Player\+Walk\+Right@{Player\+Walk\+Right}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Player\+Walk\+Right(sf\+::\+Rectangle\+Shape $\ast$character)}{PlayerWalkRight(sf::RectangleShape *character)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+Player\+Walk\+Right (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_a21c41b29f392f2f0badaae5c7444ae40}{}\label{classAnimation_a21c41b29f392f2f0badaae5c7444ae40}
+
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. \\
+\hline
+{\em lastplayeranimationplayed,is} & used to check what animation is played last. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+78 \{
+79     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}{lastplayeranimationplayed} != 2)
+80     \{
+81         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+82         \hyperlink{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}{lastplayeranimationplayed} = 2;
+83         \hyperlink{classAnimation_a280c2cafd8a95afa1dcfd1f7a78e0427}{felldown} = \textcolor{keyword}{false};
+84     \}
+85     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 102)
+86         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+87     character->setTexture(&\hyperlink{classAnimation_a8c0f17a9bd55c23ab3dcf4af5cb83d8a}{PlayerTextureWalk});
+88     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} == 1)
+89     \{
+90         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left < 102)
+91             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+92         \textcolor{keywordflow}{else}
+93         \{
+94             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+95             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 0;
+96         \}
+97     \}
+98     \textcolor{keywordflow}{else}
+99     \{
+100         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 0)
+101             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+102         \textcolor{keywordflow}{else}
+103         \{
+104             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+105             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1;
+106         \}
+107     \}
+108 
+109     character->setTextureRect(*\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected});
+110 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!Princess\+Walk\+Left@{Princess\+Walk\+Left}}
+\index{Princess\+Walk\+Left@{Princess\+Walk\+Left}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Princess\+Walk\+Left(sf\+::\+Rectangle\+Shape $\ast$character)}{PrincessWalkLeft(sf::RectangleShape *character)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+Princess\+Walk\+Left (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_a62a619987f93d55f95cf6d3e8928cd83}{}\label{classAnimation_a62a619987f93d55f95cf6d3e8928cd83}
+
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+621 \{
+622     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 102)
+623         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 34;
+624     character->setTexture(&\hyperlink{classAnimation_abfb9fab906ea1a5c9fbd0195bc1e0e5f}{PrincessTextureWalkLeft});
+625     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} == 1)
+626     \{
+627         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left < 102)
+628             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+629         \textcolor{keywordflow}{else}
+630         \{
+631             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+632             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 0;
+633         \}
+634     \}
+635     \textcolor{keywordflow}{else}
+636     \{
+637         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 34)
+638             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+639         \textcolor{keywordflow}{else}
+640         \{
+641             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+642             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1;
+643         \}
+644     \}
+645 
+646     character->setTextureRect(*\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected});
+647 \}\end{DoxyCode}
+\index{Animation@{Animation}!Princess\+Walk\+Right@{Princess\+Walk\+Right}}
+\index{Princess\+Walk\+Right@{Princess\+Walk\+Right}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Princess\+Walk\+Right(sf\+::\+Rectangle\+Shape $\ast$character)}{PrincessWalkRight(sf::RectangleShape *character)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+Princess\+Walk\+Right (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Rectangle\+Shape $\ast$}]{character}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimation_ae384739d671f69c9259eea76b2b80f65}{}\label{classAnimation_ae384739d671f69c9259eea76b2b80f65}
+
+\begin{DoxyParams}{Parameters}
+{\em character,which} & character the texture is being applied for. So that it always start at the beginning. \\
+\hline
+{\em frame\+Selected,is} & the actual frame used to select which picture to use as texture. frame\+Selected-\/$>$left is where the picture begins. \hyperlink{classAnimation}{Animation} goes from left to right, then right to left. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+586 \{
+587     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 68)
+588         \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left = 0;
+589     character->setTexture(&\hyperlink{classAnimation_ab77fb25df92b7ad25ffb925763cb650d}{PrincessTextureWalkRight});
+590     \textcolor{keywordflow}{if}(\hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} == 1)
+591     \{
+592         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left < 68)
+593             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+594         \textcolor{keywordflow}{else}
+595         \{
+596             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+597             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 0;
+598         \}
+599     \}
+600     \textcolor{keywordflow}{else}
+601     \{
+602         \textcolor{keywordflow}{if} (\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left > 0)
+603             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left -= 34;
+604         \textcolor{keywordflow}{else}
+605         \{
+606             \hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected}->left += 34;
+607             \hyperlink{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{animationdir} = 1;
+608         \}
+609     \}
+610 
+611     character->setTextureRect(*\hyperlink{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{frameSelected});
+612 \}
+\end{DoxyCode}
+\index{Animation@{Animation}!Set\+Size\+Height@{Set\+Size\+Height}}
+\index{Set\+Size\+Height@{Set\+Size\+Height}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Set\+Size\+Height(int height)}{SetSizeHeight(int height)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+Set\+Size\+Height (
+\begin{DoxyParamCaption}
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnimation_aa25c884e5931c4afa2238480e83c9df4}{}\label{classAnimation_aa25c884e5931c4afa2238480e83c9df4}
+
+\begin{DoxyCode}
+15 \{ this->\hyperlink{classAnimation_a8aff77b932ad98856335149cbd9b0eb9}{PlayersizeHeight} = height; \}
+\end{DoxyCode}
+\index{Animation@{Animation}!Set\+Size\+Width@{Set\+Size\+Width}}
+\index{Set\+Size\+Width@{Set\+Size\+Width}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Set\+Size\+Width(int width)}{SetSizeWidth(int width)}}]{\setlength{\rightskip}{0pt plus 5cm}void Animation\+::\+Set\+Size\+Width (
+\begin{DoxyParamCaption}
+\item[{int}]{width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnimation_ab52da84939f7cea63e8c3926abefa595}{}\label{classAnimation_ab52da84939f7cea63e8c3926abefa595}
+
+\begin{DoxyCode}
+14 \{ this->\hyperlink{classAnimation_a5fa2dfbbf58158d08b03b3f6fe677d6c}{PlayersizeWidth} = width; \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{Animation@{Animation}!A\+I\+Boss\+Texture\+Walk\+Left@{A\+I\+Boss\+Texture\+Walk\+Left}}
+\index{A\+I\+Boss\+Texture\+Walk\+Left@{A\+I\+Boss\+Texture\+Walk\+Left}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{A\+I\+Boss\+Texture\+Walk\+Left}{AIBossTextureWalkLeft}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+A\+I\+Boss\+Texture\+Walk\+Left\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_ac4e77ff7823c13967563c9f818ca1a9e}{}\label{classAnimation_ac4e77ff7823c13967563c9f818ca1a9e}
+\index{Animation@{Animation}!A\+I\+Boss\+Texture\+Walk\+Right@{A\+I\+Boss\+Texture\+Walk\+Right}}
+\index{A\+I\+Boss\+Texture\+Walk\+Right@{A\+I\+Boss\+Texture\+Walk\+Right}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{A\+I\+Boss\+Texture\+Walk\+Right}{AIBossTextureWalkRight}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+A\+I\+Boss\+Texture\+Walk\+Right\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_a2de9d819490c4799986cda87f8c9f498}{}\label{classAnimation_a2de9d819490c4799986cda87f8c9f498}
+\index{Animation@{Animation}!A\+I\+Mini\+Boss\+Texture\+Walk\+Left@{A\+I\+Mini\+Boss\+Texture\+Walk\+Left}}
+\index{A\+I\+Mini\+Boss\+Texture\+Walk\+Left@{A\+I\+Mini\+Boss\+Texture\+Walk\+Left}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{A\+I\+Mini\+Boss\+Texture\+Walk\+Left}{AIMiniBossTextureWalkLeft}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+A\+I\+Mini\+Boss\+Texture\+Walk\+Left\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_a9664ca5d22db69c2cc835b49ec8383bc}{}\label{classAnimation_a9664ca5d22db69c2cc835b49ec8383bc}
+\index{Animation@{Animation}!A\+I\+Mini\+Boss\+Texture\+Walk\+Right@{A\+I\+Mini\+Boss\+Texture\+Walk\+Right}}
+\index{A\+I\+Mini\+Boss\+Texture\+Walk\+Right@{A\+I\+Mini\+Boss\+Texture\+Walk\+Right}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{A\+I\+Mini\+Boss\+Texture\+Walk\+Right}{AIMiniBossTextureWalkRight}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+A\+I\+Mini\+Boss\+Texture\+Walk\+Right\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_aee6ee164fad1b55ab6d36f447ef20275}{}\label{classAnimation_aee6ee164fad1b55ab6d36f447ef20275}
+\index{Animation@{Animation}!A\+I\+Texture\+Walk\+Left@{A\+I\+Texture\+Walk\+Left}}
+\index{A\+I\+Texture\+Walk\+Left@{A\+I\+Texture\+Walk\+Left}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{A\+I\+Texture\+Walk\+Left}{AITextureWalkLeft}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+A\+I\+Texture\+Walk\+Left\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_a7c82d99498237bc172f933f4663810c5}{}\label{classAnimation_a7c82d99498237bc172f933f4663810c5}
+\index{Animation@{Animation}!A\+I\+Texture\+Walk\+Right@{A\+I\+Texture\+Walk\+Right}}
+\index{A\+I\+Texture\+Walk\+Right@{A\+I\+Texture\+Walk\+Right}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{A\+I\+Texture\+Walk\+Right}{AITextureWalkRight}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+A\+I\+Texture\+Walk\+Right\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_a30495fb9193f8f7cefc524200d35c44e}{}\label{classAnimation_a30495fb9193f8f7cefc524200d35c44e}
+\index{Animation@{Animation}!animationdir@{animationdir}}
+\index{animationdir@{animationdir}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{animationdir}{animationdir}}]{\setlength{\rightskip}{0pt plus 5cm}int Animation\+::animationdir = 1\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}{}\label{classAnimation_a1e2bb6d1c9f98f54006d4e38a60b0843}
+\index{Animation@{Animation}!felldown@{felldown}}
+\index{felldown@{felldown}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{felldown}{felldown}}]{\setlength{\rightskip}{0pt plus 5cm}int Animation\+::felldown = false\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_a280c2cafd8a95afa1dcfd1f7a78e0427}{}\label{classAnimation_a280c2cafd8a95afa1dcfd1f7a78e0427}
+\index{Animation@{Animation}!frame\+Selected@{frame\+Selected}}
+\index{frame\+Selected@{frame\+Selected}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{frame\+Selected}{frameSelected}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Int\+Rect$\ast$ Animation\+::frame\+Selected\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}{}\label{classAnimation_ad46a2f93624e4c2ed6df5852d1e43306}
+\index{Animation@{Animation}!frame\+Selected\+Boss@{frame\+Selected\+Boss}}
+\index{frame\+Selected\+Boss@{frame\+Selected\+Boss}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{frame\+Selected\+Boss}{frameSelectedBoss}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Int\+Rect$\ast$ Animation\+::frame\+Selected\+Boss\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_a642ba989c928d568640537c2c4233047}{}\label{classAnimation_a642ba989c928d568640537c2c4233047}
+\index{Animation@{Animation}!Idle\+Count@{Idle\+Count}}
+\index{Idle\+Count@{Idle\+Count}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Idle\+Count}{IdleCount}}]{\setlength{\rightskip}{0pt plus 5cm}int Animation\+::\+Idle\+Count = 0\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_ac717012475788ebb501d44c5acc8f09e}{}\label{classAnimation_ac717012475788ebb501d44c5acc8f09e}
+\index{Animation@{Animation}!lastplayeranimationplayed@{lastplayeranimationplayed}}
+\index{lastplayeranimationplayed@{lastplayeranimationplayed}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{lastplayeranimationplayed}{lastplayeranimationplayed}}]{\setlength{\rightskip}{0pt plus 5cm}int Animation\+::lastplayeranimationplayed = 0\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}{}\label{classAnimation_a5d14d0bf77c2f5eb34f84a51c32ab465}
+Special for smooth Player\+Animation\+: The last animation that was played\+: 1 = jumping 2 = walk 3 = idle \index{Animation@{Animation}!Playersize\+Height@{Playersize\+Height}}
+\index{Playersize\+Height@{Playersize\+Height}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Playersize\+Height}{PlayersizeHeight}}]{\setlength{\rightskip}{0pt plus 5cm}int Animation\+::\+Playersize\+Height = 50\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_a8aff77b932ad98856335149cbd9b0eb9}{}\label{classAnimation_a8aff77b932ad98856335149cbd9b0eb9}
+\index{Animation@{Animation}!Playersize\+Width@{Playersize\+Width}}
+\index{Playersize\+Width@{Playersize\+Width}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Playersize\+Width}{PlayersizeWidth}}]{\setlength{\rightskip}{0pt plus 5cm}int Animation\+::\+Playersize\+Width = 34\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_a5fa2dfbbf58158d08b03b3f6fe677d6c}{}\label{classAnimation_a5fa2dfbbf58158d08b03b3f6fe677d6c}
+\index{Animation@{Animation}!Player\+Texture\+Death@{Player\+Texture\+Death}}
+\index{Player\+Texture\+Death@{Player\+Texture\+Death}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Player\+Texture\+Death}{PlayerTextureDeath}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+Player\+Texture\+Death\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_ae2c4250f642ea945b2370857712d120b}{}\label{classAnimation_ae2c4250f642ea945b2370857712d120b}
+\index{Animation@{Animation}!Player\+Texture\+Idle@{Player\+Texture\+Idle}}
+\index{Player\+Texture\+Idle@{Player\+Texture\+Idle}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Player\+Texture\+Idle}{PlayerTextureIdle}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+Player\+Texture\+Idle\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_a180eeacc0353a8809fafccbbb27bac87}{}\label{classAnimation_a180eeacc0353a8809fafccbbb27bac87}
+\index{Animation@{Animation}!Player\+Texture\+Idle\+Flipped@{Player\+Texture\+Idle\+Flipped}}
+\index{Player\+Texture\+Idle\+Flipped@{Player\+Texture\+Idle\+Flipped}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Player\+Texture\+Idle\+Flipped}{PlayerTextureIdleFlipped}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+Player\+Texture\+Idle\+Flipped\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_ae0d16eacff8f27f0308a63718c34a832}{}\label{classAnimation_ae0d16eacff8f27f0308a63718c34a832}
+\index{Animation@{Animation}!Player\+Texture\+Jump@{Player\+Texture\+Jump}}
+\index{Player\+Texture\+Jump@{Player\+Texture\+Jump}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Player\+Texture\+Jump}{PlayerTextureJump}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+Player\+Texture\+Jump\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_ae4b3ea24c42829931659562795a5f2a1}{}\label{classAnimation_ae4b3ea24c42829931659562795a5f2a1}
+\index{Animation@{Animation}!Player\+Texture\+Jumpflipped@{Player\+Texture\+Jumpflipped}}
+\index{Player\+Texture\+Jumpflipped@{Player\+Texture\+Jumpflipped}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Player\+Texture\+Jumpflipped}{PlayerTextureJumpflipped}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+Player\+Texture\+Jumpflipped\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_adecc1934d4a148f0cfa36e01c2b2de62}{}\label{classAnimation_adecc1934d4a148f0cfa36e01c2b2de62}
+\index{Animation@{Animation}!Player\+Texture\+Walk@{Player\+Texture\+Walk}}
+\index{Player\+Texture\+Walk@{Player\+Texture\+Walk}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Player\+Texture\+Walk}{PlayerTextureWalk}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+Player\+Texture\+Walk\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_a8c0f17a9bd55c23ab3dcf4af5cb83d8a}{}\label{classAnimation_a8c0f17a9bd55c23ab3dcf4af5cb83d8a}
+\index{Animation@{Animation}!Player\+Texture\+Walkflipped@{Player\+Texture\+Walkflipped}}
+\index{Player\+Texture\+Walkflipped@{Player\+Texture\+Walkflipped}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Player\+Texture\+Walkflipped}{PlayerTextureWalkflipped}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+Player\+Texture\+Walkflipped\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_a3e5bd7e9fd80edc832581382f6f38ebf}{}\label{classAnimation_a3e5bd7e9fd80edc832581382f6f38ebf}
+\index{Animation@{Animation}!Princess\+Texture\+Walk\+Left@{Princess\+Texture\+Walk\+Left}}
+\index{Princess\+Texture\+Walk\+Left@{Princess\+Texture\+Walk\+Left}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Princess\+Texture\+Walk\+Left}{PrincessTextureWalkLeft}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+Princess\+Texture\+Walk\+Left\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_abfb9fab906ea1a5c9fbd0195bc1e0e5f}{}\label{classAnimation_abfb9fab906ea1a5c9fbd0195bc1e0e5f}
+\index{Animation@{Animation}!Princess\+Texture\+Walk\+Right@{Princess\+Texture\+Walk\+Right}}
+\index{Princess\+Texture\+Walk\+Right@{Princess\+Texture\+Walk\+Right}!Animation@{Animation}}
+\subsubsection[{\texorpdfstring{Princess\+Texture\+Walk\+Right}{PrincessTextureWalkRight}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Animation\+::\+Princess\+Texture\+Walk\+Right\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnimation_ab77fb25df92b7ad25ffb925763cb650d}{}\label{classAnimation_ab77fb25df92b7ad25ffb925763cb650d}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Framework/\hyperlink{animation_8h}{animation.\+h}\item 
+Framework/\hyperlink{animation_8cpp}{animation.\+cpp}\end{DoxyCompactItemize}

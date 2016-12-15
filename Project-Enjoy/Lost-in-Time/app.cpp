@@ -75,7 +75,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
          *******************/
         // 160, 398 Start
         //4450, 558 Harambe
-        player = new PlayerObject(4460, 558, &window);
+        player = new PlayerObject(160, 398, &window);
 
         /***********************
          *  Create the princess
@@ -88,10 +88,10 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
          **********************************/
         AIVectorPointer->push_back(new AIEnemies(4410, 400, 460, true, &window));
         AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, false, &window));
-        AIVectorPointer->push_back(new AIEnemies(1950, 1220, 150, false, &window));
-        AIVectorPointer->push_back(new AIEnemies(2340, 250, 260, false, &window));
+        AIVectorPointer->push_back(new AIEnemies(1823, 1280, 20, false, &window));
+        AIVectorPointer->push_back(new AIEnemies(2340, 10, 260, false, &window));
         //AIVectorPointer->push_back(new AIEnemies(Start X, Start Y, Patrol Each Way From Start, IsBoss?, *config, &window));
-        AIVectorPointer->push_back(new AIEnemies(1530, 510, 400, false, &window));
+        AIVectorPointer->push_back(new AIEnemies(1630, 510, 250, false, &window));
         AIVectorPointer->push_back(new AIEnemies(4562, 878, 10, false, &window));
         AIVectorPointer->push_back(new AIEnemies(4917, 1134, 2, false, &window));
         AIVectorPointer->push_back(new AIEnemies(4157, 1358, 0, false, &window));

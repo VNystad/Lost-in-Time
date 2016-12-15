@@ -28,7 +28,7 @@ private:
     Sounds* sound1;
     Sounds* sound2;
     bool playedEnraged = false;
-    int enragedsoundcooldown = 1;
+    float enragedsoundcooldown = 1;
 };
 
 

@@ -21,6 +21,8 @@ class TestApp
 public:
     TestApp(sf::RenderWindow& window, SavedObject);
     bool Tick(Machine& machine, Highscore& highscore);
+    void RenderMap(float delta);
+    void PositionCamera();
     void Move(float delta);
     void AIHandler(float delta);
 

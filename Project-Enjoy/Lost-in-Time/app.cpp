@@ -231,7 +231,7 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     std::string tempForTime = std::to_string(winTime);
     timerInText->setString(tempForTime);
     timerInText->setPosition(timerX, timerY);
-
+    /*****************************************/
 
 
 
@@ -252,6 +252,7 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
         machine.SetState(Machine::StateId::MAINMENU);
         return false;
     }
+    /***********************************************/
 
 
     // Get events from OS
@@ -371,6 +372,16 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     player->health.SetPosition(currentView->getCenter().x - 70, currentView->getCenter().y - 231);
     HudSprite.setPosition(currentView->getCenter().x - 119, currentView->getCenter().y - 268);
 
+
+    RenderMap(delta);
+
+    PositionCamera();
+
+    return true;
+}
+
+void TestApp::RenderMap(float delta)
+{
     /***********************
      * Clearing old window
      * Draws background images
@@ -430,74 +441,70 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
 
 
     window->display();
+}
 
+void TestApp::PositionCamera()
+{
     /*****************************************
      * Set camera to follow player position
      ****************************************/
+    float playerX = player->GetPositionX();
+    float playerY = player->GetPositionY();
 
-    if (player->GetPositionX() >= 512)
+    sf::View tempView = window->getDefaultView();
+    window->setView(tempView);
+
+    if(playerX >= 512 && playerX <= 5238)
     {
-        if (player->GetPositionY() <= 1290)
+        // Positions background movement
+        Junglebackground1Sprite.setPosition((playerX * 0.18) - 97,-300);
+        Cavebackground2Sprite.setPosition((playerX* 0.18) - 97,600);
+        if(playerY >= 1294)
         {
-            sf::View view2 = window->getDefaultView();
-            view2.setCenter(player->GetPositionX(), player->GetPositionY());
-            *currentView = view2;
-            window->setView(view2);
-
-            // Positions background movement
-            Junglebackground1Sprite.setPosition((player->GetPositionX()*1.5/8)-195,-300);
-            Cavebackground2Sprite.setPosition((player->GetPositionX()*1.5/8)-195,600);
+            tempView.setCenter(playerX, 1294);
+            *currentView = tempView;
+            window->setView(*currentView);
+            return;
         }
 
-        if (player->GetPositionX() >= 5238)
+        tempView.setCenter(playerX, playerY);
+        *currentView = tempView;
+        window->setView(*currentView);
+        return;
+    }
+    else
+    {
+        if(playerX <= 512)
         {
-            if (player->GetPositionY() <= 1290) {
-                sf::View view5 = window->getDefaultView();
-                view5.setCenter(5238, player->GetPositionY());
-                *currentView = view5;
-                window->setView(view5);
+            if(playerY >= 1290)
+            {
+                tempView.setCenter(512, 1290);
+                *currentView = tempView;
+                window->setView(*currentView);
+                return;
             }
+            tempView.setCenter(512, playerY);
+            *currentView = tempView;
+            window->setView(*currentView);
+            return;
         }
-        else if(player->GetPositionY() >= 1290)
+        else
         {
-            sf::View view2 = window->getDefaultView();
-            view2.setCenter(player->GetPositionX(), 1290);
-            *currentView = view2;
-            window->setView(view2);
-
-            // Positions background movement
-            Cavebackground2Sprite.setPosition((player->GetPositionX()*1.5/8)-195,600);
-            Junglebackground6Sprite.setPosition(player->GetPositionX()*1.5/8,200);
+            if(playerY >= 1290)
+            {
+                tempView.setCenter(5238, 1290);
+                *currentView = tempView;
+                window->setView(*currentView);
+                return;
+            }
+            tempView.setCenter(5238, playerY);
+            *currentView = tempView;
+            window->setView(*currentView);
+            return;
         }
     }
-    else if (player->GetPositionX() <=  512)
-    {
-        if (player->GetPositionY() <= 1290)
-        {
-            sf::View view3 = window->getDefaultView();
-            view3.setCenter(512, player->GetPositionY());
-            *currentView = view3;
-            window->setView(view3);
-
-            // Positions background movement
-            Junglebackground1Sprite.setPosition(-100,-300);
-            Cavebackground2Sprite.setPosition(-100,600);
-
-        }
-        else if (player->GetPositionY() >= 1290)
-        {
-            sf::View view3 = window->getDefaultView();
-            view3.setCenter(512, 1290);
-            *currentView = view3;
-            window->setView(view3);
-
-            // Positions background movement
-            Cavebackground2Sprite.setPosition(-100,600);
-        }
-    }
-
-    return true;
 }
+
 /*****************************************************
  * This function will make the object able
  * to move and fall,

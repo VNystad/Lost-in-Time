@@ -16,6 +16,7 @@ void Sprite::process(float deltaTime)
 
 void Sprite::draw(sf::RenderWindow& window)
 {
+
 	int tilex, tiley;
 	getTileCoords(id, tilex, tiley);
 
@@ -23,5 +24,5 @@ void Sprite::draw(sf::RenderWindow& window)
 	sf::Sprite sprite(*texture, sf::IntRect(tilex + frame * (tileSize.x + tileSize.s), tiley, tileSize.x, tileSize.y));
 	sprite.setPosition((float)x, (float)y);
 
-	window.draw(sprite);
+    window.draw(sprite);
 }

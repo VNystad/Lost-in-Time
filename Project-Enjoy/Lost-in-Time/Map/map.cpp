@@ -69,6 +69,8 @@ void Map::loadLayer(Json::Value& layer, std::list<Object*>& objects, TileSize ti
 
     }
 
+
+
 	if((layer["name"].asString() == "foreground"))
     {
 		int count = 0;

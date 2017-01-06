@@ -14,6 +14,8 @@ public:
     void MonkeyAI2(AIEnemies* e,PlayerObject* p, float delta);
     void GotHurt(AIEnemies* e, PlayerObject* p);
 
+    void StopSound();
+
 
 private:
     //const int sizeWidth = 34;
@@ -25,7 +27,7 @@ private:
 
     int enragerange = 150;
 
-    Sounds* sound1;
+    Sounds* sound;
     Sounds* sound2;
     bool playedEnraged = false;
     float enragedsoundcooldown = 1;

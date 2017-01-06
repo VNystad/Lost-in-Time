@@ -75,7 +75,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
          *******************/
         // 160, 398 Start
         //4450, 558 Harambe
-        player = new PlayerObject(160, 398, &window);
+        player = new PlayerObject(4400, 398, &window);
 
         /***********************
          *  Create the princess
@@ -328,7 +328,7 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
      * If player hits the bottom of map,
      * player lifepoints = 0, player death function called
      *****************************************************/
-    if (player->GetPositionY() >= 1870)
+    if (player->GetPositionY() >= 3000)
     {
         penaltyTime = penaltyTime + 20;
         player->health.DeathHandle();
@@ -454,14 +454,14 @@ void TestApp::PositionCamera()
     sf::View tempView = window->getDefaultView();
     window->setView(tempView);
 
-    if(playerX >= 512 && playerX <= 5238)
+    if(playerX >= 512 && playerX <= 5600)
     {
         // Positions background movement
         Junglebackground1Sprite.setPosition((playerX * 0.18) - 97,-300);
         Cavebackground2Sprite.setPosition((playerX* 0.18) - 97,600);
-        if(playerY >= 1294)
+        if(playerY >= 3000)
         {
-            tempView.setCenter(playerX, 1294);
+            tempView.setCenter(playerX, 3000);
             *currentView = tempView;
             window->setView(*currentView);
             return;
@@ -476,9 +476,9 @@ void TestApp::PositionCamera()
     {
         if(playerX <= 512)
         {
-            if(playerY >= 1290)
+            if(playerY >= 3000)
             {
-                tempView.setCenter(512, 1290);
+                tempView.setCenter(512, 3000);
                 *currentView = tempView;
                 window->setView(*currentView);
                 return;
@@ -490,14 +490,14 @@ void TestApp::PositionCamera()
         }
         else
         {
-            if(playerY >= 1290)
+            if(playerY >= 3000)
             {
-                tempView.setCenter(5238, 1290);
+                tempView.setCenter(5600, 3000);
                 *currentView = tempView;
                 window->setView(*currentView);
                 return;
             }
-            tempView.setCenter(5238, playerY);
+            tempView.setCenter(5600, playerY);
             *currentView = tempView;
             window->setView(*currentView);
             return;
@@ -549,6 +549,7 @@ void TestApp::AIHandler(float delta)
             if(AIVectorPointer->at(i)->GetBoss())
                 princessSpawn = true;
             AIVectorPointer->at(i)->health.DeathHandle();
+            AIVectorPointer->at(i)->StopSound();
             AIVectorPointer->erase(AIVectorPointer->begin() + i);
             monkeykill += 25;
         }

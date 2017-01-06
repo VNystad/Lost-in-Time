@@ -17,9 +17,11 @@ AIEnemies::AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *wind
     this->patrolleft = x - patrol;
     this->patrolright = x + patrol;
 
+    sound = new Sounds();
+
     if(boss)
     {
-        sound2 = new Sounds();
+        //sound2 = new Sounds();
         sf::Vector2f scale = character->getScale();
         character->scale(scale.x*3.5, scale.y*2);
 
@@ -40,7 +42,7 @@ AIEnemies::AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *wind
 
     else if(rand() % 100 <20)
     {
-        sound1 = new Sounds();
+        //sound1 = new Sounds();
         this->miniboss = true;
         animation.AIMiniBossWalkRight(character);
         health.SetOriginalLifePoints(300);
@@ -53,7 +55,7 @@ AIEnemies::AIEnemies(int x, int y, int patrol, bool boss, sf::RenderWindow *wind
     }
     else
     {
-        sound1 = new Sounds();
+        //sound1 = new Sounds();
         animation.AIWalkLeft(character);
         health.SetOriginalLifePoints(100);
         health.SetActualLifePoints(100);
@@ -84,7 +86,7 @@ void AIEnemies::MonkeyAI1(AIEnemies* e,PlayerObject* p)
     if(e->GetEnraged()) {
         if (playedEnraged == false)
         {
-            sound1->playSound("/monkey.wav", 100);
+            sound->playSound("/monkey.wav", 100);
             playedEnraged = true;
         }
 
@@ -168,7 +170,7 @@ void AIEnemies::MonkeyAI2(AIEnemies* e,PlayerObject* p, float delta)
     if(e->GetEnraged()) {
         if(playedEnraged == false && enragedsoundcooldown >= 34)
         {
-            sound2->playSound("/gorilla.wav", 100);
+            sound->playSound("/gorilla.wav", 100);
             playedEnraged = true;
             enragedsoundcooldown = 0;
         }
@@ -269,4 +271,9 @@ void AIEnemies::GotHurt(AIEnemies *e, PlayerObject *p)
         else
             p->SetMoveSpeedL(1000);
     }
+}
+
+void AIEnemies::StopSound()
+{
+    this->sound->sound.stop();
 }

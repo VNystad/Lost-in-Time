@@ -25,6 +25,9 @@ public:
     //                  FUNCTIONS                   //
     /* ******************************************** */
 
+    bool GotWeap() const { return weapon; };
+    void setWeap(bool weapon){ this->weapon = weapon; }
+
     void DrawMe();
 
     int GetSizeWidth() const { return sizeWidth; };
@@ -50,7 +53,7 @@ public:
 
     void PlayerCutsceneAnimationLeft(float delta);
     void PlayerCutsceneAnimationRight(float delta);
-    void PlayerAnimation(float delta);
+    void PlayerAnimation(float delta, bool attack);
 
     void PlayerSoundJump();
     void PlayerSoundHurt();
@@ -113,6 +116,7 @@ public:
 
 
 protected:
+    bool weapon = false;
     const int sizeWidth = 34;
     const int sizeHeight = 50;
 

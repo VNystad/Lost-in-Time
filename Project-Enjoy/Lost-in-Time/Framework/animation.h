@@ -14,6 +14,7 @@ public:
     void SetSizeWidth(int width) { this->PlayersizeWidth = width; }
     void SetSizeHeight(int height) { this->PlayersizeHeight = height; }
 
+    void PlayerAttackRight(sf::RectangleShape* character);
     void PlayerWalkRight(sf::RectangleShape* character);
     void PlayerWalkLeft(sf::RectangleShape* character);
     void PlayerIdleLeft(sf::RectangleShape* character);
@@ -40,6 +41,7 @@ protected:
     int PlayersizeWidth = 34;
     int PlayersizeHeight = 50;
     int animationdir = 1;
+    bool attackPlayed = true;
 
     /**
     * Special for smooth PlayerAnimation:
@@ -47,6 +49,7 @@ protected:
     * 1 = jumping
     * 2 = walk
     * 3 = idle
+     * 4 = attack
     */
     int lastplayeranimationplayed = 0;
 
@@ -62,6 +65,7 @@ protected:
     sf::Texture PlayerTextureIdle;
     sf::Texture PlayerTextureWalk;
     sf::Texture PlayerTextureDeath;
+    sf::Texture PlayerTextureAttack;
 
     // Textures for flipped animations
     sf::Texture PlayerTextureIdleFlipped;

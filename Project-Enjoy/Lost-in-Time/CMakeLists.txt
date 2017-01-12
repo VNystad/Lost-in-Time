@@ -64,7 +64,7 @@ set(SOURCE_FILES
         main.cpp
         app.cpp
         app.h
-        Objects/princessobject.cpp Objects/princessobject.h)
+        Objects/princessobject.cpp Objects/princessobject.h Objects/Items/Mace.cpp Objects/Items/Mace.h Objects/Items/item.cpp Objects/Items/item.h Objects/spawnpoint.cpp Objects/spawnpoint.h)
 
 add_executable(Lost-in-Time ${SOURCE_FILES})
 

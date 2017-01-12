@@ -5,13 +5,11 @@
 void Sprite::process(float deltaTime)
 {
 	// Go to next animation frame if required
-	if (clock.getElapsedTime().asMilliseconds() < frameDuration)
+	if (deltaTime < frameDuration)
 		return;
 
 	if (++frame >= frameCount)
 		frame = 0;
-
-	clock.restart();
 }
 
 void Sprite::draw(sf::RenderWindow& window)

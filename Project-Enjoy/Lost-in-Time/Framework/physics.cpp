@@ -277,13 +277,10 @@ bool Physics::Grounded(PlayerObject* p, int** collidableArray)
 {
     int playerArrayCoordX = (p->GetPositionX() + 17) / 32;
     int playerSouthCoord = ((p->GetPositionY() +50) / 32)>0? (p->GetPositionY()+50) / 32 :0;
+    if(collidableArray[playerSouthCoord][playerArrayCoordX] == 142 || collidableArray[playerSouthCoord -1][playerArrayCoordX] == 142) //Hit lava
+        p->health.Hit(1);
 
     return p->GetApexCheck() && collidableArray[playerSouthCoord][playerArrayCoordX];
-    /*if(p->GetApexCheck()&& collidableArray[playerSouthCoord][playerArrayCoordX])
-    {
-        return true;
-    }
-    return false;*/
 }
 
 /*******************************************************

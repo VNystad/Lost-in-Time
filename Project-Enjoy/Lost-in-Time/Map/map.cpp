@@ -6,7 +6,7 @@
 #include "map.h"
 #include "sprite.h"
 
-bool Map::load(std::string filename, std::list<Object*>& objects, int** collidableArray)
+bool Map::load(std::string filename, std::list<Object*>& objects, int** collidableArray, std::list<SpawnPoint*>& spawnpointList)
 {
 	// Will contain the data we read in
 	Json::Value root;
@@ -33,8 +33,12 @@ bool Map::load(std::string filename, std::list<Object*>& objects, int** collidab
 	// Read in each layer
 	for (Json::Value& layer: root["layers"])
 	{
-		if (layer["name"].asString() != "objects")
+		if (layer["name"].asString() != "objects" && layer["name"].asString() != "spawnPoints")
 			loadLayer(layer, objects, tileSize, collidableArray);
+
+        else if (layer["name"].asString() == "spawnPoints")
+            loadSpawnPoints(root, layer, spawnpointList);
+
         else
 			loadObjects(root, layer, objects, tileSize);
 	}
@@ -110,4 +114,20 @@ void Map::loadObjects(Json::Value& root, Json::Value& layer, std::list<Object*>&
 		objects.push_back(sprite);
 	}
 
+}
+
+void Map::loadSpawnPoints(Json::Value& root, Json::Value& layer, std::list<SpawnPoint*>& spawnpointList)
+{
+    // Get all spawnpoints from spawnPoint layer
+    for (Json::Value& object: layer["objects"])
+    {
+        SpawnPoint* spawnPoint = new SpawnPoint();
+
+        spawnPoint->typeOfObject = object["name"].asString();
+        spawnPoint->x = object["x"].asFloat();
+        spawnPoint->y = object["y"].asFloat();
+        spawnPoint->patrol = object["properties"]["patrol"].asInt();
+
+        spawnpointList.push_back(spawnPoint);
+    }
 }

@@ -102,11 +102,13 @@ void PlayerObject::PlayerCutsceneAnimationRight(float delta)
  * frames based on a delta timer.
  * @param delta
  */
-void PlayerObject::PlayerAnimation(float delta)
+void PlayerObject::PlayerAnimation(float delta, bool attack)
 {
     counter += delta;
     if (counter >= 0.15)
     {
+        if(attack)
+            animation.PlayerAttackRight(character);
         counter = 0;
         if (jumpcheck && movedirection == 1) // If jumping to the right
         {

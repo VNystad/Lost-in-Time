@@ -15,6 +15,7 @@
 #include "Enemy/AIEnemies.h"
 #include "state/machine.h"
 #include "Interface/Dialogue.h"
+#include "Objects/Items/Mace.h"
 
 class TestApp
 {
@@ -39,6 +40,14 @@ protected:
     bool keyPressed = false;
     bool playerNamed = false;
     bool emptySave = false;
+    bool attack = true;
+    bool noAttack = false;
+
+    /***************
+     * List of Items
+     **************/
+    //std::list<Item>* items;
+    std::vector<Item>* items;
 
     /****************
      *  Victory stuff
@@ -124,11 +133,14 @@ protected:
 
     PrincessObject* princess;
 
+    Mace* mace;
+
     std::vector<AIEnemies*>* AIVectorPointer = &AIVector;
     std::vector<AIEnemies*> AIVector;
 
     Config* config;
     std::list<Object*> objects;
+    std::list<SpawnPoint*> spawnpointList;
     sf::Clock* clock;
     sf::RenderWindow* window;
 

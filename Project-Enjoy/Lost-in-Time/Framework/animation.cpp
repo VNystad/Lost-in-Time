@@ -26,6 +26,8 @@ void Animation::init()
         std::cout << "Failed to load data/Character-Animation/characterjumpflipped.png" << std::endl << std::endl;
     if (!PlayerTextureDeath.loadFromFile("data/Character-Animation/characterdeath.png"))
         std::cout << "Failed to load data/Character-Animation/characterdeath.png" << std::endl << std::endl;
+    if (!PlayerTextureAttack.loadFromFile("data/Character-Animation/CharacterAttack.png"))
+        std::cout << "Failed to load data/Character-Animation/CharacterAttack.png" << std::endl << std::endl;
 
     frameSelected = new sf::IntRect(0,0,GetSizeWidth(),GetSizeHeight());
     frameSelectedBoss = new sf::IntRect(0,0,55,44);
@@ -66,6 +68,25 @@ void Animation::init()
     if (!PrincessTextureWalkLeft.loadFromFile("data/Character-Animation/princessidleleft.png"))
         std::cout << "Failed to load data/Character-Animation/princessidleleft.png" << std::endl << std::endl;
 }
+
+void Animation::PlayerAttackRight(sf::RectangleShape* character)
+{
+    character->setTexture(&PlayerTextureAttack);
+    if(frameSelected->left > 170)
+    {
+        frameSelected->left = 0;
+        attackPlayed = true;
+    }
+    else
+    {
+        attackPlayed = false;
+        frameSelected->left += 34;
+    }
+
+
+    character->setTextureRect(*frameSelected);
+}
+
 /**
  * @param character, which character the texture is being applied for.
  * @param lastplayeranimationplayed, is used to check what animation is played last.
@@ -76,37 +97,41 @@ void Animation::init()
  */
 void Animation::PlayerWalkRight(sf::RectangleShape* character)
 {
-    if(lastplayeranimationplayed != 2)
-    {
-        frameSelected->left = 0;
-        lastplayeranimationplayed = 2;
-        felldown = false;
-    }
-    else if(frameSelected->left > 102)
-        frameSelected->left = 0;
-    character->setTexture(&PlayerTextureWalk);
-    if(animationdir == 1)
-    {
-        if (frameSelected->left < 102)
-            frameSelected->left += 34;
-        else
-        {
-            frameSelected->left -= 34;
-            animationdir = 0;
-        }
-    }
-    else
-    {
-        if (frameSelected->left > 0)
-            frameSelected->left -= 34;
-        else
-        {
-            frameSelected->left += 34;
-            animationdir = 1;
-        }
-    }
 
-    character->setTextureRect(*frameSelected);
+    if (attackPlayed)
+    {
+        if(lastplayeranimationplayed != 2)
+        {
+            frameSelected->left = 0;
+            lastplayeranimationplayed = 2;
+            felldown = false;
+        }
+        else if(frameSelected->left > 102)
+            frameSelected->left = 0;
+        character->setTexture(&PlayerTextureWalk);
+        if(animationdir == 1)
+        {
+            if (frameSelected->left < 102)
+                frameSelected->left += 34;
+            else
+            {
+                frameSelected->left -= 34;
+                animationdir = 0;
+            }
+        }
+        else
+        {
+            if (frameSelected->left > 0)
+                frameSelected->left -= 34;
+            else
+            {
+                frameSelected->left += 34;
+                animationdir = 1;
+            }
+        }
+
+        character->setTextureRect(*frameSelected);
+    }
 }
 /**
  * @param character, which character the texture is being applied for.
@@ -118,37 +143,40 @@ void Animation::PlayerWalkRight(sf::RectangleShape* character)
  */
 void Animation::PlayerWalkLeft(sf::RectangleShape* character)
 {
-    if(lastplayeranimationplayed != 2)
+    if (attackPlayed)
     {
-        frameSelected->left = 0;
-        lastplayeranimationplayed = 2;
-        felldown = false;
-    }
-    else if(frameSelected->left > 102)
-        frameSelected->left = 0;
-    character->setTexture(&PlayerTextureWalkflipped);
-    if(animationdir == 1)
-    {
-        if (frameSelected->left < 102)
-            frameSelected->left += 34;
+        if(lastplayeranimationplayed != 2)
+        {
+            frameSelected->left = 0;
+            lastplayeranimationplayed = 2;
+            felldown = false;
+        }
+        else if(frameSelected->left > 102)
+            frameSelected->left = 0;
+        character->setTexture(&PlayerTextureWalkflipped);
+        if(animationdir == 1)
+        {
+            if (frameSelected->left < 102)
+                frameSelected->left += 34;
+            else
+            {
+                frameSelected->left -= 34;
+                animationdir = 0;
+            }
+        }
         else
         {
-            frameSelected->left -= 34;
-            animationdir = 0;
+            if (frameSelected->left > 0)
+                frameSelected->left -= 34;
+            else
+            {
+                frameSelected->left += 34;
+                animationdir = 1;
+            }
         }
-    }
-    else
-    {
-        if (frameSelected->left > 0)
-            frameSelected->left -= 34;
-        else
-        {
-            frameSelected->left += 34;
-            animationdir = 1;
-        }
-    }
 
-    character->setTextureRect(*frameSelected);
+        character->setTextureRect(*frameSelected);
+    }
 }
 /**
  * @param character, which character the texture is being applied for.
@@ -160,47 +188,50 @@ void Animation::PlayerWalkLeft(sf::RectangleShape* character)
  */
 void Animation::PlayerIdleLeft(sf::RectangleShape* character)
 {
-    if(lastplayeranimationplayed != 3)
+    if (attackPlayed)
     {
-        frameSelected->left = 0;
-        lastplayeranimationplayed = 3;
-        felldown = false;
-    }
-    else if(frameSelected->left > 102)
-        frameSelected->left = 0;
-    character->setTexture(&PlayerTextureIdleFlipped);
-    if(animationdir == 1)
-    {
-        if (frameSelected->left < 102 && IdleCount>=2)
+        if(lastplayeranimationplayed != 3)
         {
-            frameSelected->left += 34;
-            IdleCount = 0;
+            frameSelected->left = 0;
+            lastplayeranimationplayed = 3;
+            felldown = false;
         }
-        else if(IdleCount >= 2)
+        else if(frameSelected->left > 102)
+            frameSelected->left = 0;
+        character->setTexture(&PlayerTextureIdleFlipped);
+        if(animationdir == 1)
         {
-            frameSelected->left -= 34;
-            animationdir = 0;
-            IdleCount = 0;
+            if (frameSelected->left < 102 && IdleCount>=2)
+            {
+                frameSelected->left += 34;
+                IdleCount = 0;
+            }
+            else if(IdleCount >= 2)
+            {
+                frameSelected->left -= 34;
+                animationdir = 0;
+                IdleCount = 0;
+            }
+            IdleCount++;
         }
-        IdleCount++;
-    }
-    else
-    {
-        if (frameSelected->left > 0&& IdleCount>=2)
+        else
         {
-            frameSelected->left -= 34;
-            IdleCount = 0;
+            if (frameSelected->left > 0&& IdleCount>=2)
+            {
+                frameSelected->left -= 34;
+                IdleCount = 0;
+            }
+            else if(IdleCount >= 2)
+            {
+                frameSelected->left += 34;
+                animationdir = 1;
+                IdleCount = 0;
+            }
+            IdleCount++;
         }
-        else if(IdleCount >= 2)
-        {
-            frameSelected->left += 34;
-            animationdir = 1;
-            IdleCount = 0;
-        }
-        IdleCount++;
-    }
 
-    character->setTextureRect(*frameSelected);
+        character->setTextureRect(*frameSelected);
+    }
 }
 /**
  * @param character, which character the texture is being applied for.
@@ -212,47 +243,50 @@ void Animation::PlayerIdleLeft(sf::RectangleShape* character)
  */
 void Animation::PlayerIdle(sf::RectangleShape* character)
 {
-    if(lastplayeranimationplayed != 3)
+    if (attackPlayed)
     {
-        frameSelected->left = 0;
-        lastplayeranimationplayed = 3;
-        felldown = false;
-    }
-    else if(frameSelected->left > 102)
-        frameSelected->left = 0;
-    character->setTexture(&PlayerTextureIdle);
-    if(animationdir == 1)
-    {
-        if (frameSelected->left < 102 && IdleCount>=2)
+        if(lastplayeranimationplayed != 3)
         {
-            frameSelected->left += 34;
-            IdleCount = 0;
+            frameSelected->left = 0;
+            lastplayeranimationplayed = 3;
+            felldown = false;
         }
-        else if(IdleCount>=2)
+        else if(frameSelected->left > 102)
+            frameSelected->left = 0;
+        character->setTexture(&PlayerTextureIdle);
+        if(animationdir == 1)
         {
-            frameSelected->left -= 34;
-            animationdir = 0;
-            IdleCount = 0;
+            if (frameSelected->left < 102 && IdleCount>=2)
+            {
+                frameSelected->left += 34;
+                IdleCount = 0;
+            }
+            else if(IdleCount>=2)
+            {
+                frameSelected->left -= 34;
+                animationdir = 0;
+                IdleCount = 0;
+            }
+            IdleCount++;
         }
-        IdleCount++;
-    }
-    else
-    {
-        if (frameSelected->left > 0 && IdleCount>=2)
+        else
         {
-            frameSelected->left -= 34;
-            IdleCount = 0;
+            if (frameSelected->left > 0 && IdleCount>=2)
+            {
+                frameSelected->left -= 34;
+                IdleCount = 0;
+            }
+            else if(IdleCount>=2)
+            {
+                frameSelected->left += 34;
+                animationdir = 1;
+                IdleCount = 0;
+            }
+            IdleCount++;
         }
-        else if(IdleCount>=2)
-        {
-            frameSelected->left += 34;
-            animationdir = 1;
-            IdleCount = 0;
-        }
-        IdleCount++;
-    }
 
-    character->setTextureRect(*frameSelected);
+        character->setTextureRect(*frameSelected);
+    }
 }
 /**
  * @param character, which character the texture is being applied for.
@@ -266,41 +300,44 @@ void Animation::PlayerIdle(sf::RectangleShape* character)
  */
 void Animation::PlayerJumpRight(sf::RectangleShape* character, bool fallingdown)
 {
-    if(lastplayeranimationplayed != 1)
+    if (attackPlayed)
     {
-        frameSelected->left = 0;
-        lastplayeranimationplayed = 1;
-        if(fallingdown && !felldown)
+        if(lastplayeranimationplayed != 1)
         {
-            frameSelected->left = 68;
-            felldown = true;
+            frameSelected->left = 0;
+            lastplayeranimationplayed = 1;
+            if(fallingdown && !felldown)
+            {
+                frameSelected->left = 68;
+                felldown = true;
+            }
         }
-    }
-    else if(frameSelected->left > 136)
-        frameSelected->left = 0;
-    character->setTexture(&PlayerTextureJump);
-    if(animationdir == 1)
-    {
-        if (frameSelected->left < 136)
-            frameSelected->left += 34;
+        else if(frameSelected->left > 136)
+            frameSelected->left = 0;
+        character->setTexture(&PlayerTextureJump);
+        if(animationdir == 1)
+        {
+            if (frameSelected->left < 136)
+                frameSelected->left += 34;
+            else
+            {
+                frameSelected->left -= 34;
+                animationdir = 0;
+            }
+        }
         else
         {
-            frameSelected->left -= 34;
-            animationdir = 0;
+            if (frameSelected->left > 68)
+                frameSelected->left -= 34;
+            else
+            {
+                frameSelected->left += 34;
+                animationdir = 1;
+            }
         }
-    }
-    else
-    {
-        if (frameSelected->left > 68)
-            frameSelected->left -= 34;
-        else
-        {
-            frameSelected->left += 34;
-            animationdir = 1;
-        }
-    }
 
-    character->setTextureRect(*frameSelected);
+        character->setTextureRect(*frameSelected);
+    }
 }
 /**
  * @param character, which character the texture is being applied for.
@@ -314,41 +351,44 @@ void Animation::PlayerJumpRight(sf::RectangleShape* character, bool fallingdown)
  */
 void Animation::PlayerJumpLeft(sf::RectangleShape* character, bool fallingdown)
 {
-    if(lastplayeranimationplayed != 1)
+    if (attackPlayed)
     {
-        frameSelected->left = 0;
-        lastplayeranimationplayed = 1;
-        if(fallingdown && !felldown)
+        if(lastplayeranimationplayed != 1)
         {
-            frameSelected->left = 68;
-            felldown = true;
+            frameSelected->left = 0;
+            lastplayeranimationplayed = 1;
+            if(fallingdown && !felldown)
+            {
+                frameSelected->left = 68;
+                felldown = true;
+            }
         }
-    }
-    else if(frameSelected->left > 136)
-        frameSelected->left = 0;
-    character->setTexture(&PlayerTextureJumpflipped);
-    if(animationdir == 1)
-    {
-        if (frameSelected->left < 136)
-            frameSelected->left += 34;
+        else if(frameSelected->left > 136)
+            frameSelected->left = 0;
+        character->setTexture(&PlayerTextureJumpflipped);
+        if(animationdir == 1)
+        {
+            if (frameSelected->left < 136)
+                frameSelected->left += 34;
+            else
+            {
+                frameSelected->left -= 34;
+                animationdir = 0;
+            }
+        }
         else
         {
-            frameSelected->left -= 34;
-            animationdir = 0;
+            if (frameSelected->left > 68)
+                frameSelected->left -= 34;
+            else
+            {
+                frameSelected->left += 34;
+                animationdir = 1;
+            }
         }
-    }
-    else
-    {
-        if (frameSelected->left > 68)
-            frameSelected->left -= 34;
-        else
-        {
-            frameSelected->left += 34;
-            animationdir = 1;
-        }
+        character->setTextureRect(*frameSelected);
     }
 
-    character->setTextureRect(*frameSelected);
 }
 /**
  * TODO: not implemented yet. Due to the pictures being so different in sizes

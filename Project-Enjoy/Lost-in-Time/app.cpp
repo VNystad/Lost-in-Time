@@ -14,6 +14,12 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
      ****************/
     LoadImages();
 
+    /***************
+     * Load Items
+     **************/
+    items = new std::vector<Item>;
+    mace = new Mace();
+
     /********************
      * Load up music
      *******************/
@@ -25,19 +31,19 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
     /****************************************************************************
      *                            LOADED FROM SAVE
      ***************************************************************************/
-    if(so.LoadFromSave())
+    /*if(so.LoadFromSave())
     {
         /******************************
          * If savename equals EmptySave
          * Go back to main menu
-         *****************************/
+         ****************************
         if(!so.GetPlayerName().compare("EmptySave"))
         {
             emptySave = true;
         }
         /********************|
          * Create the player
-         *******************/
+         ******************
         player = new PlayerObject(so.GetPlayerX(), so.GetPlayerY(), &window);
         player->health.SetActualLifePoints(so.GetPlayerHP());
         playerName = so.GetPlayerName();
@@ -46,13 +52,13 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
 
         /***********************
          *  Create the princess
-         **********************/
+         *********************
         princess = new PrincessObject(4862, 558, 50, &window);
 
         /***********************************
          * Creating AI
          * Using vector to keep track on AIs
-         **********************************/
+         *********************************
         for(std::vector<AIEnemies*>::iterator it = so.GetAIVectorPointer()->begin(); it != so.GetAIVectorPointer()->end(); ++it)
         {
             int x = (*it)->GetOriginalX();
@@ -64,28 +70,28 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
 
         music->playMusic("/Jungle Theme 2.ogg");
 
-    }
+    }*/
     /****************************************************************************
      *                             NEW GAME
      ***************************************************************************/
-    else
+    /*else
     {
         /********************|
          * Create the player
-         *******************/
+         *******************//*
         // 160, 398 Start
         //4450, 558 Harambe
-        player = new PlayerObject(4400, 398, &window);
+        player = new PlayerObject(4600, 558, &window);
 
         /***********************
          *  Create the princess
-         **********************/
+         **********************//*
         princess = new PrincessObject(4862, 550, 50, &window);
 
         /***********************************
          * Creating AI
          * Using vector to keep track on AIs
-         **********************************/
+         **********************************//*
         AIVectorPointer->push_back(new AIEnemies(4410, 400, 460, true, &window));
         AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, false, &window));
         AIVectorPointer->push_back(new AIEnemies(1823, 1280, 20, false, &window));
@@ -96,7 +102,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         AIVectorPointer->push_back(new AIEnemies(4917, 1134, 2, false, &window));
         AIVectorPointer->push_back(new AIEnemies(4157, 1358, 0, false, &window));
 
-    }
+    }*/
 
     /*************************************************
      * Making 2D array for collidable tiles
@@ -109,9 +115,28 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
     /*************************************************
      * Load map information from JSON into object list
      ************************************************/
-    if (!Map::load("data/map.json", objects, collidableArray))
+    if (!Map::load("data/map.json", objects, collidableArray, spawnpointList))
         std::cout << "Failed to load map data." << std::endl << std::endl;
 
+
+    /**************************************************
+     * Create and place objects loaded from spawnpoints
+     *************************************************/
+    for (std::list<SpawnPoint*>::const_iterator it = spawnpointList.begin(), end = spawnpointList.end(); it != end; ++it)
+    {
+        std::string temp = (*it)->GetObject();
+        if(!temp.compare("player"))
+            player = new PlayerObject((*it)->GetX(), (*it)->GetY(), &window);
+
+        else if(!temp.compare("princess"))
+            princess = new PrincessObject(4862, 550, 50, &window);
+
+        else if(!temp.compare("smallEnemy"))
+            AIVectorPointer->push_back(new AIEnemies((*it)->GetX(), (*it)->GetY(), (*it)->GetPatrol(), false, &window));
+
+        else
+            AIVectorPointer->push_back(new AIEnemies((*it)->GetX(), (*it)->GetY(), (*it)->GetPatrol(), true, &window));
+    }
     /*****************************************
      * Set camera position in middle of screen
      ****************************************/
@@ -269,6 +294,11 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
         }
     }
 
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+    {
+        player->PlayerAnimation(delta, attack);
+    }
+
     /*****************************************************************
      *        KEYBOARD EVENTS ( but not for physical player actions )
      ****************************************************************/
@@ -289,6 +319,13 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
 
         EscMenuTime = EscMenuTime + timer->getElapsedTime().asSeconds() - tempTime;
         clock->restart();
+    }
+
+    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::C))
+    {
+        int x = (int) (player->GetPositionX() + 17) / 32;
+        int y = ((player->GetPositionY() +50) / 32)>0? (int)(player->GetPositionY()+50) / 32 :0;
+        std::cout << collidableArray[y][x] << std::endl;
     }
     /*************
     * KILL ALL AI
@@ -348,7 +385,7 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     }
 
     // Player player animation
-    player->PlayerAnimation(delta);
+    player->PlayerAnimation(delta, noAttack);
 
     /*************************
      * if princess spawned
@@ -365,6 +402,7 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
      * Handles player movements
      **************************/
     Move(delta);
+
 
     /********************
      * POSITION HEALTHBAR
@@ -400,7 +438,7 @@ void TestApp::RenderMap(float delta)
      **************/
     for (Object *object : objects)
     {
-        //object->process(deltaTime);
+        object->process(delta);
         object->draw(*window);
     }
 
@@ -419,6 +457,10 @@ void TestApp::RenderMap(float delta)
         Physics::PrincessMovement(princess, collidableArray, delta);
         Physics::PrincessGravity(princess, collidableArray, delta);
         princess->DrawMe();
+    }
+    if(!mace->isPicked())
+    {
+        mace->drawItem(*window);
     }
     /***********************
      * Draws HUD sprite
@@ -525,9 +567,9 @@ void TestApp::Move(float delta)
 
 /**
  * AIHandler handles all the AI, and sends each of them
- * through the same process as the player(animation, drawing, physics
+ * through the same process as the player(animation, drawing, p
+ * @param deltahysics
  * and AI ofcourse).
- * @param delta
  */
 void TestApp::AIHandler(float delta)
 {
@@ -555,6 +597,8 @@ void TestApp::AIHandler(float delta)
         }
         else
         {
+            Physics::AIMovement(AIVectorPointer->at(i), player, AIVectorPointer, i, collidableArray, delta);
+            Physics::AIGravity(AIVectorPointer->at(i), collidableArray, delta);
             if(AIVectorPointer->at(i)->GetBoss())
                 AIVectorPointer->at(i)->AnimationBoss(delta);
             else if(AIVectorPointer->at(i)->GetMiniBoss())
@@ -566,8 +610,7 @@ void TestApp::AIHandler(float delta)
                 AIVectorPointer->at(i)->MonkeyAI2(AIVectorPointer->at(i), player, delta);
             else
                 AIVectorPointer->at(i)->MonkeyAI1(AIVectorPointer->at(i), player);
-            Physics::AIMovement(AIVectorPointer->at(i), player, AIVectorPointer, i, collidableArray, delta);
-            Physics::AIGravity(AIVectorPointer->at(i), collidableArray, delta);
+
         }
     }
 }

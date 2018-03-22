@@ -1,8 +1,0 @@
-\hypertarget{app_8cpp}{}\section{app.\+cpp File Reference}
-\label{app_8cpp}\index{app.\+cpp@{app.\+cpp}}
-{\ttfamily \#include $<$iostream$>$}\\*
-{\ttfamily \#include $<$fstream$>$}\\*
-{\ttfamily \#include \char`\"{}app.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}Framework/physics.\+h\char`\"{}}\\*
-Include dependency graph for app.\+cpp\+:
-% FIG 0

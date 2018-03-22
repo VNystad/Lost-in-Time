@@ -152,6 +152,10 @@ protected:
     int timerY;
     int penaltyTime = 0;
     int EscMenuTime = 0;
+    int fps = 0;
+    float fpsBeforeRender = 0.00;
+    float fpsAfterRender = 0.00;
+    float fpsDelta = 0.00;
 
     //Bonus Score
     int monkeykill = 0;

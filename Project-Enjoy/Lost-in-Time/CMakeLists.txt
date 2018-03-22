@@ -4,7 +4,6 @@ project(Lost-in-Time)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -pedantic")
 
 set(SOURCE_FILES
-        cmake-build-debug
         data
 
         Enemy/AI.cpp
@@ -44,10 +43,18 @@ set(SOURCE_FILES
         Map/sprite.h
         Map/tile.h
 
+        Objects/Items/Mace.cpp
+        Objects/Items/Mace.h
+        Objects/Items/item.cpp
+        Objects/Items/item.h
         Objects/playerobject.cpp
         Objects/playerobject.h
+        Objects/princessobject.cpp
+        Objects/princessobject.h
         Objects/savedobject.cpp
         Objects/savedobject.h
+        Objects/spawnpoint.cpp
+        Objects/spawnpoint.h
 
         SaveFiles
 
@@ -64,7 +71,7 @@ set(SOURCE_FILES
         main.cpp
         app.cpp
         app.h
-        Objects/princessobject.cpp Objects/princessobject.h Objects/Items/Mace.cpp Objects/Items/Mace.h Objects/Items/item.cpp Objects/Items/item.h Objects/spawnpoint.cpp Objects/spawnpoint.h)
+        )
 
 add_executable(Lost-in-Time ${SOURCE_FILES})
 

@@ -74,35 +74,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
     /****************************************************************************
      *                             NEW GAME
      ***************************************************************************/
-    /*else
-    {
-        /********************|
-         * Create the player
-         *******************//*
-        // 160, 398 Start
-        //4450, 558 Harambe
-        player = new PlayerObject(4600, 558, &window);
 
-        /***********************
-         *  Create the princess
-         **********************//*
-        princess = new PrincessObject(4862, 550, 50, &window);
-
-        /***********************************
-         * Creating AI
-         * Using vector to keep track on AIs
-         **********************************//*
-        AIVectorPointer->push_back(new AIEnemies(4410, 400, 460, true, &window));
-        AIVectorPointer->push_back(new AIEnemies(354, 1230, 200, false, &window));
-        AIVectorPointer->push_back(new AIEnemies(1823, 1280, 20, false, &window));
-        AIVectorPointer->push_back(new AIEnemies(2340, 10, 260, false, &window));
-        //AIVectorPointer->push_back(new AIEnemies(Start X, Start Y, Patrol Each Way From Start, IsBoss?, *config, &window));
-        AIVectorPointer->push_back(new AIEnemies(1630, 510, 250, false, &window));
-        AIVectorPointer->push_back(new AIEnemies(4562, 878, 10, false, &window));
-        AIVectorPointer->push_back(new AIEnemies(4917, 1134, 2, false, &window));
-        AIVectorPointer->push_back(new AIEnemies(4157, 1358, 0, false, &window));
-
-    }*/
 
     /*************************************************
      * Making 2D array for collidable tiles
@@ -184,6 +156,7 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
 
 bool TestApp::Tick(Machine& machine, Highscore& highscore)
 {
+    fpsBeforeRender = timer->getElapsedTime().asMilliseconds();
     /***********************
      * Lets player type name
      **********************/
@@ -264,18 +237,21 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     /*********************
      * CHECK IF PLAYER WON
      ********************/
-    if((princessSpawn) &&((princess->GetPositionX() - player->GetPositionX() < 50 && princess->GetPositionX() - player->GetPositionX() > -50) &&
-       (princess->GetPositionY() - player->GetPositionY() <  50 && princess->GetPositionY() - player->GetPositionY() > -50)))
+    if(princessSpawn)
     {
-        VictoryHandler(highscore, delta);
+        if(((princess->GetPositionX() - player->GetPositionX() < 50 && princess->GetPositionX() - player->GetPositionX() > -50) &&
+            (princess->GetPositionY() - player->GetPositionY() <  50 && princess->GetPositionY() - player->GetPositionY() > -50)))
+        {
+            VictoryHandler(highscore, delta);
 
-        sf::View mainMenuView = window->getDefaultView();
-        mainMenuView.setCenter(512, 290);
-        *currentView = mainMenuView;
-        window->setView(mainMenuView);
-        music->music.stop();
-        machine.SetState(Machine::StateId::MAINMENU);
-        return false;
+            sf::View mainMenuView = window->getDefaultView();
+            mainMenuView.setCenter(512, 290);
+            *currentView = mainMenuView;
+            window->setView(mainMenuView);
+            music->music.stop();
+            machine.SetState(Machine::StateId::MAINMENU);
+            return false;
+        }
     }
     /***********************************************/
 
@@ -414,6 +390,13 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     RenderMap(delta);
 
     PositionCamera();
+
+    fpsAfterRender = timer->getElapsedTime().asMilliseconds();
+
+    std::cout << fpsAfterRender - fpsBeforeRender << std::endl;
+
+
+
 
     return true;
 }
@@ -624,9 +607,111 @@ void TestApp::AIHandler(float delta)
  ****************************************************************/
 bool TestApp::VictoryHandler(Highscore& highscore, float delta)
 {
-    if(true)
+    music->music.stop();
+    window->clear(sf::Color::Black);
+    window->draw(Treebackground1Sprite);
+    // Process and render each object
+    for (Object *object : objects)
     {
-        music->music.stop();
+        //object->process(deltaTime);
+        object->draw(*window);
+    }
+    sf::View victoryView = window->getDefaultView();
+
+    sf::Clock end;
+    victoryView.setCenter(player->GetPositionX() - 200, player->GetPositionY());
+    *currentView = victoryView;
+    window->setView(*currentView);
+
+    player->SetMoveSpeedL(0);
+    player->SetMoveSpeedR(0);
+    player->SetFallSpeed(0);
+    player->SetJumpSpeed(0);
+
+    int score = 1000 / winTime + monkeykill;
+
+    /*************************************
+     * Handle score
+     * If player got new highscore
+     * if new player
+     * or not new player no new highscore
+     ************************************/
+    victoryText = highscore.SaveNewHighscore(playerName, score);
+    std::string temp = victoryText->getString();
+    std::string tempForScore = std::to_string(score);
+    if(!temp.compare("high"))
+        victoryText->setString(victoryText->getString() + " New score: " + tempForScore);
+    else if(!temp.compare("new"))
+        victoryText->setString("Welcome " + playerName + "! Score: " + tempForScore);
+    else
+        victoryText->setString("Score: " + tempForScore);
+
+
+    /********************************************
+     * Position victory texts that pops up at end
+     *******************************************/
+    victoryText->setPosition(player->GetPositionX() - 500, player->GetPositionY() - 200);
+    secretText->setPosition(player->GetPositionX() - 600, player->GetPositionY()- 100);
+
+    sf::Vector2f scale = heartSprite.getScale();
+
+    // Count to end the game
+    int count = 0;
+
+    // Draw player and princess
+    player->DrawMe();
+    princess->DrawMe();
+
+    window->display();
+
+    // True love never ends when finally found the perfect girl
+    bool truelove = true;
+    bool roughLove = false;
+    // Victory speach
+    //Making character stand still
+    end.restart();
+    int slapped = 0;
+    DialogueDuration = new sf::Clock;
+    DialogueDuration->restart();
+    princess->SetActivated(false);
+    while (truelove)
+    {
+        /********************************************
+         * Secret attack ( for now )
+         * If player hits princess
+         * true love SHOULD end
+         * rough love is on
+         * Should activate "evil" player for next lvl
+         *******************************************/
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::A) && slapped <= 5)
+        {
+            while(sf::Keyboard::isKeyPressed(sf::Keyboard::A));
+            slapped += 1;
+            roughLove = true;
+            princess->PrincessSoundHurt();
+            score += 1000/end.getElapsedTime().asSeconds();
+            tempForScore = std::to_string(score);
+            victoryText->setString("Score: " + tempForScore);
+            secretText->setString("OMG \n you just slapped the Princess! \n You earn additional points!");
+        }
+
+        if(princess->GetPositionX() < player->GetPositionX())
+        {
+            player->PlayerCutsceneAnimationLeft(delta);
+            princess->PrincessCutsceneAnimationRight(delta);
+        }
+        else
+        {
+            player->PlayerCutsceneAnimationRight(delta);
+            princess->PrincessCutsceneAnimationLeft(delta);
+        }
+        if(end.getElapsedTime().asSeconds() >= 20)
+        {
+            if(roughLove)
+                highscore.SaveNewHighscore(playerName, score);
+            return true;
+        }
+
         window->clear(sf::Color::Black);
         window->draw(Treebackground1Sprite);
         // Process and render each object
@@ -635,120 +720,13 @@ bool TestApp::VictoryHandler(Highscore& highscore, float delta)
             //object->process(deltaTime);
             object->draw(*window);
         }
-        sf::View victoryView = window->getDefaultView();
-
-        sf::Clock end;
-        victoryView.setCenter(player->GetPositionX() - 200, player->GetPositionY());
-        *currentView = victoryView;
-        window->setView(*currentView);
-
-        player->SetMoveSpeedL(0);
-        player->SetMoveSpeedR(0);
-        player->SetFallSpeed(0);
-        player->SetJumpSpeed(0);
-
-        int score = 1000 / winTime + monkeykill;
-
-        /*************************************
-         * Handle score
-         * If player got new highscore
-         * if new player
-         * or not new player no new highscore
-         ************************************/
-        victoryText = highscore.SaveNewHighscore(playerName, score);
-        std::string temp = victoryText->getString();
-        std::string tempForScore = std::to_string(score);
-        if(!temp.compare("high"))
-            victoryText->setString(victoryText->getString() + " New score: " + tempForScore);
-        else if(!temp.compare("new"))
-            victoryText->setString("Welcome " + playerName + "! Score: " + tempForScore);
-        else
-            victoryText->setString("Score: " + tempForScore);
-
-
-        /********************************************
-         * Position victory texts that pops up at end
-         *******************************************/
-        victoryText->setPosition(player->GetPositionX() - 500, player->GetPositionY() - 200);
-        secretText->setPosition(player->GetPositionX() - 600, player->GetPositionY()- 100);
-
-        sf::Vector2f scale = heartSprite.getScale();
-
-        // Count to end the game
-        int count = 0;
-
-        // Draw player and princess
+        if(roughLove)
+            window->draw(*secretText);
         player->DrawMe();
         princess->DrawMe();
-
+        dialogue.DrawVictoryDialogue(player,princess,*window,*currentView, *DialogueDuration);
+        window->draw(*victoryText);
         window->display();
-        if(1)
-        {
-            // True love never ends when finally found the perfect girl
-            bool truelove = true;
-            bool roughLove = false;
-            // Victory speach
-            //Making character stand still
-            end.restart();
-            int slapped = 0;
-            DialogueDuration = new sf::Clock;
-            DialogueDuration->restart();
-            princess->SetActivated(false);
-            while (truelove)
-            {
-                /********************************************
-                 * Secret attack ( for now )
-                 * If player hits princess
-                 * true love SHOULD end
-                 * rough love is on
-                 * Should activate "evil" player for next lvl
-                 *******************************************/
-                if(sf::Keyboard::isKeyPressed(sf::Keyboard::A) && slapped <= 5)
-                {
-                    while(sf::Keyboard::isKeyPressed(sf::Keyboard::A));
-                    slapped += 1;
-                    roughLove = true;
-                    princess->PrincessSoundHurt();
-                    score += 1000/end.getElapsedTime().asSeconds();
-                    tempForScore = std::to_string(score);
-                    victoryText->setString("Score: " + tempForScore);
-                    secretText->setString("OMG \n you just slapped the Princess! \n You earn additional points!");
-                }
-
-                if(princess->GetPositionX() < player->GetPositionX())
-                {
-                    player->PlayerCutsceneAnimationLeft(delta);
-                    princess->PrincessCutsceneAnimationRight(delta);
-                }
-                else
-                {
-                    player->PlayerCutsceneAnimationRight(delta);
-                    princess->PrincessCutsceneAnimationLeft(delta);
-                }
-                if(end.getElapsedTime().asSeconds() >= 20)
-                {
-                    if(roughLove)
-                        highscore.SaveNewHighscore(playerName, score);
-                    return true;
-                }
-
-                window->clear(sf::Color::Black);
-                window->draw(Treebackground1Sprite);
-                // Process and render each object
-                for (Object *object : objects)
-                {
-                    //object->process(deltaTime);
-                    object->draw(*window);
-                }
-                if(roughLove)
-                    window->draw(*secretText);
-                player->DrawMe();
-                princess->DrawMe();
-                dialogue.DrawVictoryDialogue(player,princess,*window,*currentView, *DialogueDuration);
-                window->draw(*victoryText);
-                window->display();
-            }
-        }
     }
 }
 /**************************************************

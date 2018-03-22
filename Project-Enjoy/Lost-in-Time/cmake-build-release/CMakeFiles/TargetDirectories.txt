@@ -1,3 +1,0 @@
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-release/CMakeFiles/edit_cache.dir
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-release/CMakeFiles/rebuild_cache.dir
-/home/kristoffer/krislm15/DAT220/pe/Project-Enjoy/Lost-in-Time/cmake-build-release/CMakeFiles/Lost-in-Time.dir

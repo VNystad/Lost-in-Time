@@ -21,9 +21,20 @@ public:
 
     Health health;
 
+    enum State
+    {
+        STATE_STANDING,
+        STATE_JUMPING,
+        STATE_DUCKING,
+        STATE_DIVING
+    };
+
     /* ******************************************** */
     //                  FUNCTIONS                   //
     /* ******************************************** */
+
+    // function to handle inputs
+    void HandleInput();
 
     bool GotWeap() const { return weapon; };
     void setWeap(bool weapon){ this->weapon = weapon; }

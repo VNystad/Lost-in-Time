@@ -25,7 +25,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.o"
   "CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.o"
   "CMakeFiles/Lost-in-Time.dir/main.cpp.o"
-  "CMakeFiles/Lost-in-Time.dir/app.cpp.o"
+  "CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o"
   "Lost-in-Time.pdb"
   "Lost-in-Time"
 )

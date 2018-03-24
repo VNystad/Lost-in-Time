@@ -32,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app.cpp">
+      <file leaf-file-name="levelOne.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/levelOne.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="1014" column="17" lean-forward="true" selection-start-line="1014" selection-start-column="17" selection-end-line="1014" selection-end-column="17" />
+            <state relative-caret-position="245">
+              <caret line="423" column="31" lean-forward="true" selection-start-line="423" selection-start-column="31" selection-end-line="423" selection-end-column="31" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -44,8 +44,48 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.h">
+      <file leaf-file-name="object.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Map/object.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="playerobject.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Objects/playerobject.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="playerobject.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Objects/playerobject.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sprite.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Map/sprite.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="levelOne.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/levelOne.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="407">
               <caret line="157" column="26" lean-forward="false" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
@@ -92,37 +132,7 @@
         <entry file="file://$PROJECT_DIR$/Framework/physics.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
-              <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Objects/Items/item.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="map.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/map.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="356" column="25" lean-forward="false" selection-start-line="356" selection-start-column="25" selection-end-line="356" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Mace.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Objects/Items/Mace.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+              <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -167,7 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/State/stategame.h" />
         <option value="$PROJECT_DIR$/State/stateloadgame.h" />
         <option value="$PROJECT_DIR$/State/machine.cpp" />
@@ -204,7 +213,6 @@
         <option value="$PROJECT_DIR$/Objects/Items/Mace.h" />
         <option value="$PROJECT_DIR$/Objects/Items/item.h" />
         <option value="$PROJECT_DIR$/Objects/Items/Mace.cpp" />
-        <option value="$PROJECT_DIR$/Objects/playerobject.h" />
         <option value="$PROJECT_DIR$/Objects/playerobject.cpp" />
         <option value="$PROJECT_DIR$/Framework/animation.cpp" />
         <option value="$PROJECT_DIR$/Framework/animation.h" />
@@ -218,6 +226,8 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/app.h" />
         <option value="$PROJECT_DIR$/app.cpp" />
+        <option value="$PROJECT_DIR$/levelOne.cpp" />
+        <option value="$PROJECT_DIR$/Objects/playerobject.h" />
       </list>
     </option>
   </component>
@@ -259,7 +269,12 @@
             <path>
               <item name="Lost-in-Time" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="Lost-in-Time" type="462c0819:PsiDirectoryNode" />
-              <item name="Framework" type="462c0819:PsiDirectoryNode" />
+              <item name="Map" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lost-in-Time" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="Lost-in-Time" type="462c0819:PsiDirectoryNode" />
+              <item name="Objects" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Lost-in-Time" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
@@ -628,12 +643,12 @@
       <workItem from="1483837821607" duration="4553000" />
       <workItem from="1484171070010" duration="3021000" />
       <workItem from="1484246924467" duration="7843000" />
-      <workItem from="1521747532942" duration="6456000" />
+      <workItem from="1521747532942" duration="8976000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="503564000" />
+    <option name="totallyTimeSpent" value="506084000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -701,7 +716,7 @@
           <option name="timeStamp" value="348" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/app.cpp</url>
+          <url>file://$PROJECT_DIR$/levelOne.cpp</url>
           <line>162</line>
           <option name="timeStamp" value="350" />
         </line-breakpoint>
@@ -792,13 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Map/sprite.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Objects/Items/Mace.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -846,13 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Map/object.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -869,6 +870,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
           <caret line="461" column="8" lean-forward="false" selection-start-line="461" selection-start-column="8" selection-end-line="461" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -879,14 +881,6 @@
           <folding>
             <element signature="e#0#19#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Objects/playerobject.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,14 +923,6 @@
           <folding>
             <element signature="e#0#18#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Objects/playerobject.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,16 +996,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="157" column="26" lean-forward="false" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
-          <folding>
-            <element signature="e#64#79#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Framework/config.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1031,18 +1007,60 @@
     <entry file="file://$PROJECT_DIR$/Framework/physics.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="32" />
+          <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.cpp">
+    <entry file="file://$PROJECT_DIR$/levelOne.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="1014" column="17" lean-forward="true" selection-start-line="1014" selection-start-column="17" selection-end-line="1014" selection-end-column="17" />
+        <state relative-caret-position="245">
+          <caret line="423" column="31" lean-forward="true" selection-start-line="423" selection-start-column="31" selection-end-line="423" selection-end-column="31" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/levelOne.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="157" column="26" lean-forward="false" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
+          <folding>
+            <element signature="e#64#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Map/object.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Map/sprite.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Objects/playerobject.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Objects/playerobject.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

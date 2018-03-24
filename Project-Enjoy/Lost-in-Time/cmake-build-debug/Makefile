@@ -690,32 +690,32 @@ Objects/spawnpoint.cpp.s:
 	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.s
 .PHONY : Objects/spawnpoint.cpp.s
 
-app.o: app.cpp.o
+levelOne.o: levelOne.cpp.o
 
-.PHONY : app.o
+.PHONY : levelOne.o
 
 # target to build an object file
-app.cpp.o:
-	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/app.cpp.o
-.PHONY : app.cpp.o
+levelOne.cpp.o:
+	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o
+.PHONY : levelOne.cpp.o
 
-app.i: app.cpp.i
+levelOne.i: levelOne.cpp.i
 
-.PHONY : app.i
+.PHONY : levelOne.i
 
 # target to preprocess a source file
-app.cpp.i:
-	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/app.cpp.i
-.PHONY : app.cpp.i
+levelOne.cpp.i:
+	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/levelOne.cpp.i
+.PHONY : levelOne.cpp.i
 
-app.s: app.cpp.s
+levelOne.s: levelOne.cpp.s
 
-.PHONY : app.s
+.PHONY : levelOne.s
 
 # target to generate assembly for a file
-app.cpp.s:
-	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/app.cpp.s
-.PHONY : app.cpp.s
+levelOne.cpp.s:
+	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/levelOne.cpp.s
+.PHONY : levelOne.cpp.s
 
 main.o: main.cpp.o
 
@@ -924,9 +924,9 @@ help:
 	@echo "... Objects/spawnpoint.o"
 	@echo "... Objects/spawnpoint.i"
 	@echo "... Objects/spawnpoint.s"
-	@echo "... app.o"
-	@echo "... app.i"
-	@echo "... app.s"
+	@echo "... levelOne.o"
+	@echo "... levelOne.i"
+	@echo "... levelOne.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,6 +1,6 @@
 #include "stategame.h"
 #include "machine.h"
-#include "../app.h"
+#include "../levelOne.h"
 
 void StateGame::GoNext(Machine &machine, sf::RenderWindow& window, SavedObject& so, Highscore& highscore)
 {

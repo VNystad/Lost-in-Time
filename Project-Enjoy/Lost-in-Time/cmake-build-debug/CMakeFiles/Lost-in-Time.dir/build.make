@@ -681,28 +681,28 @@ CMakeFiles/Lost-in-Time.dir/main.cpp.o.provides: CMakeFiles/Lost-in-Time.dir/mai
 CMakeFiles/Lost-in-Time.dir/main.cpp.o.provides.build: CMakeFiles/Lost-in-Time.dir/main.cpp.o
 
 
-CMakeFiles/Lost-in-Time.dir/app.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
-CMakeFiles/Lost-in-Time.dir/app.cpp.o: ../app.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/Lost-in-Time.dir/app.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/app.cpp.o -c /home/vebis/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/app.cpp
+CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
+CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o: ../levelOne.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o -c /home/vebis/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/levelOne.cpp
 
-CMakeFiles/Lost-in-Time.dir/app.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/app.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/app.cpp > CMakeFiles/Lost-in-Time.dir/app.cpp.i
+CMakeFiles/Lost-in-Time.dir/levelOne.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/levelOne.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/levelOne.cpp > CMakeFiles/Lost-in-Time.dir/levelOne.cpp.i
 
-CMakeFiles/Lost-in-Time.dir/app.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/app.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/app.cpp -o CMakeFiles/Lost-in-Time.dir/app.cpp.s
+CMakeFiles/Lost-in-Time.dir/levelOne.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/levelOne.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/levelOne.cpp -o CMakeFiles/Lost-in-Time.dir/levelOne.cpp.s
 
-CMakeFiles/Lost-in-Time.dir/app.cpp.o.requires:
+CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o.requires:
 
-.PHONY : CMakeFiles/Lost-in-Time.dir/app.cpp.o.requires
+.PHONY : CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o.requires
 
-CMakeFiles/Lost-in-Time.dir/app.cpp.o.provides: CMakeFiles/Lost-in-Time.dir/app.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/app.cpp.o.provides.build
-.PHONY : CMakeFiles/Lost-in-Time.dir/app.cpp.o.provides
+CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o.provides: CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Lost-in-Time.dir/build.make CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o.provides.build
+.PHONY : CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o.provides
 
-CMakeFiles/Lost-in-Time.dir/app.cpp.o.provides.build: CMakeFiles/Lost-in-Time.dir/app.cpp.o
+CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o.provides.build: CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o
 
 
 # Object files for target Lost-in-Time
@@ -733,7 +733,7 @@ Lost__in__Time_OBJECTS = \
 "CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.o" \
 "CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.o" \
 "CMakeFiles/Lost-in-Time.dir/main.cpp.o" \
-"CMakeFiles/Lost-in-Time.dir/app.cpp.o"
+"CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o"
 
 # External object files for target Lost-in-Time
 Lost__in__Time_EXTERNAL_OBJECTS =
@@ -764,7 +764,7 @@ Lost-in-Time: CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.o
 Lost-in-Time: CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.o
 Lost-in-Time: CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.o
 Lost-in-Time: CMakeFiles/Lost-in-Time.dir/main.cpp.o
-Lost-in-Time: CMakeFiles/Lost-in-Time.dir/app.cpp.o
+Lost-in-Time: CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o
 Lost-in-Time: CMakeFiles/Lost-in-Time.dir/build.make
 Lost-in-Time: CMakeFiles/Lost-in-Time.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vebis/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable Lost-in-Time"
@@ -801,7 +801,7 @@ CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/state/stategam
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.o.requires
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.o.requires
 CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/main.cpp.o.requires
-CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/app.cpp.o.requires
+CMakeFiles/Lost-in-Time.dir/requires: CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o.requires
 
 .PHONY : CMakeFiles/Lost-in-Time.dir/requires
 

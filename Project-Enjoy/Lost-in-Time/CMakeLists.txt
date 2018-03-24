@@ -69,8 +69,8 @@ set(SOURCE_FILES
         state/statemainmenu.h
 
         main.cpp
-        app.cpp
-        app.h
+        levelOne.cpp
+        levelOne.h
         )
 
 add_executable(Lost-in-Time ${SOURCE_FILES})

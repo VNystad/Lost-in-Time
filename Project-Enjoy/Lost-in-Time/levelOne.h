@@ -7,14 +7,12 @@
 #include <SFML/Graphics.hpp>
 #include "Framework/config.h"
 #include "Objects/playerobject.h"
-#include "Objects/princessobject.h"
 #include "Map/map.h"
 #include "Framework/Camera.h"
 #include "Framework/Music.h"
 #include "Framework/Sounds.h"
 #include "Enemy/AIEnemies.h"
 #include "state/machine.h"
-#include "Interface/Dialogue.h"
 #include "Objects/Items/Mace.h"
 
 class TestApp
@@ -52,8 +50,6 @@ protected:
     /****************
      *  Victory stuff
      ****************/
-    // princess?
-    bool princessSpawn = false;
     sf::Text* victoryText;
     sf::Text* secretText;
     sf::Texture* heart = nullptr;
@@ -131,8 +127,6 @@ protected:
     //Dependensies
     PlayerObject* player;
 
-    PrincessObject* princess;
-
     Mace* mace;
 
     std::vector<AIEnemies*>* AIVectorPointer = &AIVector;
@@ -143,6 +137,9 @@ protected:
     std::list<SpawnPoint*> spawnpointList;
     sf::Clock* clock;
     sf::RenderWindow* window;
+    Music* music;
+    Sounds* sound;
+    sf::View* currentView;
 
     // Stuff for timer
     sf::Clock* timer;
@@ -160,14 +157,6 @@ protected:
     //Bonus Score
     int monkeykill = 0;
 
-
-    // Clock for DialogDuration
-    sf::Clock* DialogueDuration;
-    sf::View* currentView;
-    //Camera camera;
-    Music* music;
-    Sounds* sound;
-    Dialogue dialogue;
 };
 
 

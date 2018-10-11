@@ -26,8 +26,6 @@ set(SOURCE_FILES
 
         Interface/deathscreen.cpp
         Interface/deathscreen.h
-        Interface/Dialogue.cpp
-        Interface/Dialogue.h
         Interface/health.cpp
         Interface/health.h
         Interface/highscore.cpp
@@ -49,8 +47,6 @@ set(SOURCE_FILES
         Objects/Items/item.h
         Objects/playerobject.cpp
         Objects/playerobject.h
-        Objects/princessobject.cpp
-        Objects/princessobject.h
         Objects/savedobject.cpp
         Objects/savedobject.h
         Objects/spawnpoint.cpp

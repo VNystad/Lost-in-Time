@@ -32,10 +32,6 @@ public:
     void AIBossWalkRight(sf::RectangleShape* character);
     void AIBossWalkLeft(sf::RectangleShape* character);
 
-    void PrincessWalkRight(sf::RectangleShape* character);
-    void PrincessWalkLeft(sf::RectangleShape* character);
-
-
 protected:
     int IdleCount = 0;
     int PlayersizeWidth = 34;
@@ -81,9 +77,6 @@ protected:
 
     sf::Texture AIBossTextureWalkRight;
     sf::Texture AIBossTextureWalkLeft;
-
-    sf::Texture PrincessTextureWalkRight;
-    sf::Texture PrincessTextureWalkLeft;
 };
 
 

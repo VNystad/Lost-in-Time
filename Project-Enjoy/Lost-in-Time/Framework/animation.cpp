@@ -58,15 +58,6 @@ void Animation::init()
         std::cout << "Failed to load data/Character-Animation/gorillamoveright.png" << std::endl << std::endl;
     if (!AIBossTextureWalkLeft.loadFromFile("data/Character-Animation/gorillamoveleft.png"))
         std::cout << "Failed to load data/Character-Animation/gorillamoveleft.png" << std::endl << std::endl;
-
-    /* **********************************
-                PRINCESS CHARACTER
-     ********************************** */
-
-    if (!PrincessTextureWalkRight.loadFromFile("data/Character-Animation/princessidleright.png"))
-        std::cout << "Failed to load data/Character-Animation/princessidleright.png" << std::endl << std::endl;
-    if (!PrincessTextureWalkLeft.loadFromFile("data/Character-Animation/princessidleleft.png"))
-        std::cout << "Failed to load data/Character-Animation/princessidleleft.png" << std::endl << std::endl;
 }
 
 void Animation::PlayerAttackRight(sf::RectangleShape* character)
@@ -613,75 +604,4 @@ void Animation::AIBossWalkLeft(sf::RectangleShape* character)
     }
 
     character->setTextureRect(*frameSelectedBoss);
-}
-
-/**
- * @param character, which character the texture is being applied for.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
-void Animation::PrincessWalkRight(sf::RectangleShape* character)
-{
-    if(frameSelected->left > 68)
-        frameSelected->left = 0;
-    character->setTexture(&PrincessTextureWalkRight);
-    if(animationdir == 1)
-    {
-        if (frameSelected->left < 68)
-            frameSelected->left += 34;
-        else
-        {
-            frameSelected->left -= 34;
-            animationdir = 0;
-        }
-    }
-    else
-    {
-        if (frameSelected->left > 0)
-            frameSelected->left -= 34;
-        else
-        {
-            frameSelected->left += 34;
-            animationdir = 1;
-        }
-    }
-
-    character->setTextureRect(*frameSelected);
-}
-/**
- * @param character, which character the texture is being applied for.
- * So that it always start at the beginning.
- * @param frameSelected, is the actual frame used to select which picture to use as texture.
- * frameSelected->left is where the picture begins.
- * Animation goes from left to right, then right to left.
- */
-void Animation::PrincessWalkLeft(sf::RectangleShape* character)
-{
-    if(frameSelected->left > 102)
-        frameSelected->left = 34;
-    character->setTexture(&PrincessTextureWalkLeft);
-    if(animationdir == 1)
-    {
-        if (frameSelected->left < 102)
-            frameSelected->left += 34;
-        else
-        {
-            frameSelected->left -= 34;
-            animationdir = 0;
-        }
-    }
-    else
-    {
-        if (frameSelected->left > 34)
-            frameSelected->left -= 34;
-        else
-        {
-            frameSelected->left += 34;
-            animationdir = 1;
-        }
-    }
-
-    character->setTextureRect(*frameSelected);
 }

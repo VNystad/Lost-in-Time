@@ -50,11 +50,6 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         playerNamed = true;
         timeFromLoad = so.GetTimeElapsed();
 
-        /***********************
-         *  Create the princess
-         *********************
-        princess = new PrincessObject(4862, 558, 50, &window);
-
         /***********************************
          * Creating AI
          * Using vector to keep track on AIs
@@ -100,9 +95,6 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
         if(!temp.compare("player"))
             player = new PlayerObject((*it)->GetX(), (*it)->GetY(), &window);
 
-        else if(!temp.compare("princess"))
-            princess = new PrincessObject(4862, 550, 50, &window);
-
         else if(!temp.compare("smallEnemy"))
             AIVectorPointer->push_back(new AIEnemies((*it)->GetX(), (*it)->GetY(), (*it)->GetPatrol(), false, &window));
 
@@ -127,7 +119,6 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
     //TEST
     currentView = new sf::View;
 
-
     /***********************************
      * Creating Timer and text for timer
      **********************************/
@@ -147,10 +138,6 @@ TestApp::TestApp(sf::RenderWindow& window, SavedObject so)
     secretText->setCharacterSize(70);
     secretText->setStyle(sf::Text::Underlined);
     secretText->setColor(sf::Color::Red);
-
-    DialogueDuration = new sf::Clock;
-    DialogueDuration->restart();
-    dialogue.LoadImages();
 
 }
 
@@ -230,30 +217,6 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     timerInText->setString(tempForTime);
     timerInText->setPosition(timerX, timerY);
     /*****************************************/
-
-
-
-
-    /*********************
-     * CHECK IF PLAYER WON
-     ********************/
-    if(princessSpawn)
-    {
-        if(((princess->GetPositionX() - player->GetPositionX() < 50 && princess->GetPositionX() - player->GetPositionX() > -50) &&
-            (princess->GetPositionY() - player->GetPositionY() <  50 && princess->GetPositionY() - player->GetPositionY() > -50)))
-        {
-            VictoryHandler(highscore, delta);
-
-            sf::View mainMenuView = window->getDefaultView();
-            mainMenuView.setCenter(512, 290);
-            *currentView = mainMenuView;
-            window->setView(mainMenuView);
-            music->music.stop();
-            machine.SetState(Machine::StateId::MAINMENU);
-            return false;
-        }
-    }
-    /***********************************************/
 
 
     // Get events from OS
@@ -363,17 +326,6 @@ bool TestApp::Tick(Machine& machine, Highscore& highscore)
     // Player player animation
     player->PlayerAnimation(delta, noAttack);
 
-    /*************************
-     * if princess spawned
-     * play princess animation
-     ************************/
-    if(princessSpawn)
-    {
-        princess->PrincessAnimation(delta);
-        princess->SetActivated(true);
-    }
-
-
     /***************************
      * Handles player movements
      **************************/
@@ -428,19 +380,6 @@ void TestApp::RenderMap(float delta)
     // Draw player
     player->DrawMe();
 
-    /*********************
-     * if princess spawned
-     * handle movements
-     * draw her
-     ********************/
-    if(princessSpawn == true)
-    {
-        // checks if player is nearby? if so handle it
-        princess->PrincessAI(princess, player);
-        Physics::PrincessMovement(princess, collidableArray, delta);
-        Physics::PrincessGravity(princess, collidableArray, delta);
-        princess->DrawMe();
-    }
     if(!mace->isPicked())
     {
         mace->drawItem(*window);
@@ -450,13 +389,6 @@ void TestApp::RenderMap(float delta)
      **********************/
     window->draw(HudSprite);
     player->health.DrawMe(*window);
-
-    /****************
-     * Draws Dialogue
-    ****************/
-
-    dialogue.DrawDialogue(player,*window,*currentView, *DialogueDuration);
-
 
     AIHandler(delta);
     window->draw(*timerInText);
@@ -571,8 +503,6 @@ void TestApp::AIHandler(float delta)
 
         if (AIVectorPointer->at(i)->health.GetActualLifePoints() <= 0)//Dead())
         {
-            if(AIVectorPointer->at(i)->GetBoss())
-                princessSpawn = true;
             AIVectorPointer->at(i)->health.DeathHandle();
             AIVectorPointer->at(i)->StopSound();
             AIVectorPointer->erase(AIVectorPointer->begin() + i);
@@ -595,138 +525,6 @@ void TestApp::AIHandler(float delta)
                 AIVectorPointer->at(i)->MonkeyAI1(AIVectorPointer->at(i), player);
 
         }
-    }
-}
-/*****************************************************************
- * What happens when player wins the level (game for now)
- * @param highscore adress of highscore so we can save new
- * @param score: score of player
- * @param delta: to make thing go with same speed on all computers
- * @return true: go to next lvl as a nice man (not implemented)
- *          false: go to next lvl as an evil man (not implemented
- ****************************************************************/
-bool TestApp::VictoryHandler(Highscore& highscore, float delta)
-{
-    music->music.stop();
-    window->clear(sf::Color::Black);
-    window->draw(Treebackground1Sprite);
-    // Process and render each object
-    for (Object *object : objects)
-    {
-        //object->process(deltaTime);
-        object->draw(*window);
-    }
-    sf::View victoryView = window->getDefaultView();
-
-    sf::Clock end;
-    victoryView.setCenter(player->GetPositionX() - 200, player->GetPositionY());
-    *currentView = victoryView;
-    window->setView(*currentView);
-
-    player->SetMoveSpeedL(0);
-    player->SetMoveSpeedR(0);
-    player->SetFallSpeed(0);
-    player->SetJumpSpeed(0);
-
-    int score = 1000 / winTime + monkeykill;
-
-    /*************************************
-     * Handle score
-     * If player got new highscore
-     * if new player
-     * or not new player no new highscore
-     ************************************/
-    victoryText = highscore.SaveNewHighscore(playerName, score);
-    std::string temp = victoryText->getString();
-    std::string tempForScore = std::to_string(score);
-    if(!temp.compare("high"))
-        victoryText->setString(victoryText->getString() + " New score: " + tempForScore);
-    else if(!temp.compare("new"))
-        victoryText->setString("Welcome " + playerName + "! Score: " + tempForScore);
-    else
-        victoryText->setString("Score: " + tempForScore);
-
-
-    /********************************************
-     * Position victory texts that pops up at end
-     *******************************************/
-    victoryText->setPosition(player->GetPositionX() - 500, player->GetPositionY() - 200);
-    secretText->setPosition(player->GetPositionX() - 600, player->GetPositionY()- 100);
-
-    sf::Vector2f scale = heartSprite.getScale();
-
-    // Count to end the game
-    int count = 0;
-
-    // Draw player and princess
-    player->DrawMe();
-    princess->DrawMe();
-
-    window->display();
-
-    // True love never ends when finally found the perfect girl
-    bool truelove = true;
-    bool roughLove = false;
-    // Victory speach
-    //Making character stand still
-    end.restart();
-    int slapped = 0;
-    DialogueDuration = new sf::Clock;
-    DialogueDuration->restart();
-    princess->SetActivated(false);
-    while (truelove)
-    {
-        /********************************************
-         * Secret attack ( for now )
-         * If player hits princess
-         * true love SHOULD end
-         * rough love is on
-         * Should activate "evil" player for next lvl
-         *******************************************/
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::A) && slapped <= 5)
-        {
-            while(sf::Keyboard::isKeyPressed(sf::Keyboard::A));
-            slapped += 1;
-            roughLove = true;
-            princess->PrincessSoundHurt();
-            score += 1000/end.getElapsedTime().asSeconds();
-            tempForScore = std::to_string(score);
-            victoryText->setString("Score: " + tempForScore);
-            secretText->setString("OMG \n you just slapped the Princess! \n You earn additional points!");
-        }
-
-        if(princess->GetPositionX() < player->GetPositionX())
-        {
-            player->PlayerCutsceneAnimationLeft(delta);
-            princess->PrincessCutsceneAnimationRight(delta);
-        }
-        else
-        {
-            player->PlayerCutsceneAnimationRight(delta);
-            princess->PrincessCutsceneAnimationLeft(delta);
-        }
-        if(end.getElapsedTime().asSeconds() >= 20)
-        {
-            if(roughLove)
-                highscore.SaveNewHighscore(playerName, score);
-            return true;
-        }
-
-        window->clear(sf::Color::Black);
-        window->draw(Treebackground1Sprite);
-        // Process and render each object
-        for (Object *object : objects)
-        {
-            //object->process(deltaTime);
-            object->draw(*window);
-        }
-        if(roughLove)
-            window->draw(*secretText);
-        player->DrawMe();
-        princess->DrawMe();
-        dialogue.DrawVictoryDialogue(player,princess,*window,*currentView, *DialogueDuration);
-        window->draw(*victoryText);
-        window->display();
     }
 }
 /**************************************************

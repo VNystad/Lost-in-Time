@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/vebis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.4505.18/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/vnystad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.4892.24/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/vebis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.4505.18/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/vnystad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.4892.24/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time
+CMAKE_SOURCE_DIR = /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug
+CMAKE_BINARY_DIR = /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Lost-in-Time.dir/depend.make
@@ -59,328 +59,328 @@ include CMakeFiles/Lost-in-Time.dir/flags.make
 
 CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.o: ../Enemy/AI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Enemy/AI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Enemy/AI.cpp
 
 CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Enemy/AI.cpp > CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Enemy/AI.cpp > CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Enemy/AI.cpp -o CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Enemy/AI.cpp -o CMakeFiles/Lost-in-Time.dir/Enemy/AI.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.o: ../Enemy/AIEnemies.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.cpp
 
 CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.cpp > CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.cpp > CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.cpp -o CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Enemy/AIEnemies.cpp -o CMakeFiles/Lost-in-Time.dir/Enemy/AIEnemies.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.o: ../Framework/animation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/animation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/animation.cpp
 
 CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/animation.cpp > CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/animation.cpp > CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/animation.cpp -o CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/animation.cpp -o CMakeFiles/Lost-in-Time.dir/Framework/animation.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Framework/font.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Framework/font.cpp.o: ../Framework/font.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Lost-in-Time.dir/Framework/font.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Framework/font.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/font.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Lost-in-Time.dir/Framework/font.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Framework/font.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/font.cpp
 
 CMakeFiles/Lost-in-Time.dir/Framework/font.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Framework/font.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/font.cpp > CMakeFiles/Lost-in-Time.dir/Framework/font.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/font.cpp > CMakeFiles/Lost-in-Time.dir/Framework/font.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Framework/font.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Framework/font.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/font.cpp -o CMakeFiles/Lost-in-Time.dir/Framework/font.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/font.cpp -o CMakeFiles/Lost-in-Time.dir/Framework/font.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.o: ../Framework/physics.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/physics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/physics.cpp
 
 CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/physics.cpp > CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/physics.cpp > CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/physics.cpp -o CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/physics.cpp -o CMakeFiles/Lost-in-Time.dir/Framework/physics.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.o: ../Framework/Music.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/Music.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/Music.cpp
 
 CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/Music.cpp > CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/Music.cpp > CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/Music.cpp -o CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/Music.cpp -o CMakeFiles/Lost-in-Time.dir/Framework/Music.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.o: ../Framework/Sounds.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/Sounds.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/Sounds.cpp
 
 CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/Sounds.cpp > CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/Sounds.cpp > CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/Sounds.cpp -o CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Framework/Sounds.cpp -o CMakeFiles/Lost-in-Time.dir/Framework/Sounds.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.o: ../Interface/deathscreen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/deathscreen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/deathscreen.cpp
 
 CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/deathscreen.cpp > CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/deathscreen.cpp > CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/deathscreen.cpp -o CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/deathscreen.cpp -o CMakeFiles/Lost-in-Time.dir/Interface/deathscreen.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.o: ../Interface/health.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/health.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/health.cpp
 
 CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/health.cpp > CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/health.cpp > CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/health.cpp -o CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/health.cpp -o CMakeFiles/Lost-in-Time.dir/Interface/health.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.o: ../Interface/highscore.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/highscore.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/highscore.cpp
 
 CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/highscore.cpp > CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/highscore.cpp > CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/highscore.cpp -o CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Interface/highscore.cpp -o CMakeFiles/Lost-in-Time.dir/Interface/highscore.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.o: ../Map/layer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/layer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/layer.cpp
 
 CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/layer.cpp > CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/layer.cpp > CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/layer.cpp -o CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/layer.cpp -o CMakeFiles/Lost-in-Time.dir/Map/layer.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Map/map.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Map/map.cpp.o: ../Map/map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Lost-in-Time.dir/Map/map.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Map/map.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/map.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Lost-in-Time.dir/Map/map.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Map/map.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/map.cpp
 
 CMakeFiles/Lost-in-Time.dir/Map/map.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Map/map.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/map.cpp > CMakeFiles/Lost-in-Time.dir/Map/map.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/map.cpp > CMakeFiles/Lost-in-Time.dir/Map/map.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Map/map.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Map/map.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/map.cpp -o CMakeFiles/Lost-in-Time.dir/Map/map.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/map.cpp -o CMakeFiles/Lost-in-Time.dir/Map/map.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Map/object.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Map/object.cpp.o: ../Map/object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Lost-in-Time.dir/Map/object.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Map/object.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Lost-in-Time.dir/Map/object.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Map/object.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/object.cpp
 
 CMakeFiles/Lost-in-Time.dir/Map/object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Map/object.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/object.cpp > CMakeFiles/Lost-in-Time.dir/Map/object.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/object.cpp > CMakeFiles/Lost-in-Time.dir/Map/object.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Map/object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Map/object.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/object.cpp -o CMakeFiles/Lost-in-Time.dir/Map/object.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/object.cpp -o CMakeFiles/Lost-in-Time.dir/Map/object.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.o: ../Map/sprite.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/sprite.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/sprite.cpp
 
 CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/sprite.cpp > CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/sprite.cpp > CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/sprite.cpp -o CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Map/sprite.cpp -o CMakeFiles/Lost-in-Time.dir/Map/sprite.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Objects/Items/Mace.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Objects/Items/Mace.cpp.o: ../Objects/Items/Mace.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Lost-in-Time.dir/Objects/Items/Mace.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Objects/Items/Mace.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/Items/Mace.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Lost-in-Time.dir/Objects/Items/Mace.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Objects/Items/Mace.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/Items/Mace.cpp
 
 CMakeFiles/Lost-in-Time.dir/Objects/Items/Mace.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Objects/Items/Mace.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/Items/Mace.cpp > CMakeFiles/Lost-in-Time.dir/Objects/Items/Mace.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/Items/Mace.cpp > CMakeFiles/Lost-in-Time.dir/Objects/Items/Mace.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Objects/Items/Mace.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Objects/Items/Mace.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/Items/Mace.cpp -o CMakeFiles/Lost-in-Time.dir/Objects/Items/Mace.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/Items/Mace.cpp -o CMakeFiles/Lost-in-Time.dir/Objects/Items/Mace.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Objects/Items/item.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Objects/Items/item.cpp.o: ../Objects/Items/item.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Lost-in-Time.dir/Objects/Items/item.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Objects/Items/item.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/Items/item.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Lost-in-Time.dir/Objects/Items/item.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Objects/Items/item.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/Items/item.cpp
 
 CMakeFiles/Lost-in-Time.dir/Objects/Items/item.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Objects/Items/item.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/Items/item.cpp > CMakeFiles/Lost-in-Time.dir/Objects/Items/item.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/Items/item.cpp > CMakeFiles/Lost-in-Time.dir/Objects/Items/item.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Objects/Items/item.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Objects/Items/item.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/Items/item.cpp -o CMakeFiles/Lost-in-Time.dir/Objects/Items/item.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/Items/item.cpp -o CMakeFiles/Lost-in-Time.dir/Objects/Items/item.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.o: ../Objects/playerobject.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/playerobject.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/playerobject.cpp
 
 CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/playerobject.cpp > CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/playerobject.cpp > CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/playerobject.cpp -o CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/playerobject.cpp -o CMakeFiles/Lost-in-Time.dir/Objects/playerobject.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.o: ../Objects/savedobject.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/savedobject.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/savedobject.cpp
 
 CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/savedobject.cpp > CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/savedobject.cpp > CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/savedobject.cpp -o CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/savedobject.cpp -o CMakeFiles/Lost-in-Time.dir/Objects/savedobject.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.o: ../Objects/spawnpoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/spawnpoint.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/spawnpoint.cpp
 
 CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/spawnpoint.cpp > CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/spawnpoint.cpp > CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/spawnpoint.cpp -o CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/Objects/spawnpoint.cpp -o CMakeFiles/Lost-in-Time.dir/Objects/spawnpoint.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/state/machine.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/state/machine.cpp.o: ../state/machine.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Lost-in-Time.dir/state/machine.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/state/machine.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/machine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Lost-in-Time.dir/state/machine.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/state/machine.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/machine.cpp
 
 CMakeFiles/Lost-in-Time.dir/state/machine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/state/machine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/machine.cpp > CMakeFiles/Lost-in-Time.dir/state/machine.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/machine.cpp > CMakeFiles/Lost-in-Time.dir/state/machine.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/state/machine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/state/machine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/machine.cpp -o CMakeFiles/Lost-in-Time.dir/state/machine.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/machine.cpp -o CMakeFiles/Lost-in-Time.dir/state/machine.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.o: ../state/stategame.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/stategame.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/stategame.cpp
 
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/stategame.cpp > CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/stategame.cpp > CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/stategame.cpp -o CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/stategame.cpp -o CMakeFiles/Lost-in-Time.dir/state/stategame.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.o: ../state/stateloadgame.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/stateloadgame.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/stateloadgame.cpp
 
 CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/stateloadgame.cpp > CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/stateloadgame.cpp > CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/stateloadgame.cpp -o CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/stateloadgame.cpp -o CMakeFiles/Lost-in-Time.dir/state/stateloadgame.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.o: ../state/statemainmenu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/statemainmenu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/statemainmenu.cpp
 
 CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/statemainmenu.cpp > CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/statemainmenu.cpp > CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/statemainmenu.cpp -o CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/state/statemainmenu.cpp -o CMakeFiles/Lost-in-Time.dir/state/statemainmenu.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/main.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Lost-in-Time.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/main.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Lost-in-Time.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/main.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/main.cpp
 
 CMakeFiles/Lost-in-Time.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/main.cpp > CMakeFiles/Lost-in-Time.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/main.cpp > CMakeFiles/Lost-in-Time.dir/main.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/main.cpp -o CMakeFiles/Lost-in-Time.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/main.cpp -o CMakeFiles/Lost-in-Time.dir/main.cpp.s
 
 CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o: CMakeFiles/Lost-in-Time.dir/flags.make
 CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o: ../levelOne.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o -c /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/levelOne.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o -c /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/levelOne.cpp
 
 CMakeFiles/Lost-in-Time.dir/levelOne.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lost-in-Time.dir/levelOne.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/levelOne.cpp > CMakeFiles/Lost-in-Time.dir/levelOne.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/levelOne.cpp > CMakeFiles/Lost-in-Time.dir/levelOne.cpp.i
 
 CMakeFiles/Lost-in-Time.dir/levelOne.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lost-in-Time.dir/levelOne.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/levelOne.cpp -o CMakeFiles/Lost-in-Time.dir/levelOne.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/levelOne.cpp -o CMakeFiles/Lost-in-Time.dir/levelOne.cpp.s
 
 # Object files for target Lost-in-Time
 Lost__in__Time_OBJECTS = \
@@ -440,7 +440,7 @@ Lost-in-Time: CMakeFiles/Lost-in-Time.dir/main.cpp.o
 Lost-in-Time: CMakeFiles/Lost-in-Time.dir/levelOne.cpp.o
 Lost-in-Time: CMakeFiles/Lost-in-Time.dir/build.make
 Lost-in-Time: CMakeFiles/Lost-in-Time.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable Lost-in-Time"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable Lost-in-Time"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Lost-in-Time.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -453,6 +453,6 @@ CMakeFiles/Lost-in-Time.dir/clean:
 .PHONY : CMakeFiles/Lost-in-Time.dir/clean
 
 CMakeFiles/Lost-in-Time.dir/depend:
-	cd /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles/Lost-in-Time.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug /home/vnystad/CLionProjects/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug/CMakeFiles/Lost-in-Time.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Lost-in-Time.dir/depend
 

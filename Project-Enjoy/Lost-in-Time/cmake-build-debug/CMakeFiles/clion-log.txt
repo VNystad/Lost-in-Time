@@ -1,4 +1,0 @@
-/home/vebis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.4505.18/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time
--- Configuring done
--- Generating done
--- Build files have been written to: /home/vebis/dev/repos/Lost-in-Time/Project-Enjoy/Lost-in-Time/cmake-build-debug
